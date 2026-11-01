@@ -98,3 +98,32 @@ a{color:inherit;text-decoration:none}
   *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .revelar{opacity:1;transform:none}
 }
+
+/* ===== Páginas interiores ===== */
+.nav a.activo::after{width:100%}
+.cabecera-pagina{padding:48px 0 12px}
+.cabecera-pagina h1{font-family:var(--titulos);font-size:clamp(36px,5vw,58px);line-height:1.05;margin:0 0 10px;letter-spacing:-.015em}
+.cabecera-pagina p{font-size:18px;color:var(--suave);margin:0;max-width:640px}
+.listado{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;padding:28px 0 20px}
+.texto{max-width:720px;margin:0 auto;padding:40px 20px}
+.texto p,.texto li{font-size:18px;line-height:1.7}
+.texto h2{font-family:var(--titulos);font-size:30px;margin:2em 0 .5em;line-height:1.15}
+.boton{display:inline-block;background:var(--acento);color:#fff;font-weight:700;padding:14px 22px;border-radius:999px;transition:transform .2s}
+.boton:hover{transform:translateY(-3px)}
+
+/* ===== Artículo ===== */
+.articulo{max-width:720px;margin:0 auto;padding:44px 20px 20px}
+.articulo h1{font-family:var(--titulos);font-size:clamp(34px,5.5vw,56px);line-height:1.05;margin:6px 0 16px;letter-spacing:-.015em}
+.articulo .entradilla{font-size:21px;line-height:1.5;margin:0 0 18px}
+.meta{font-size:14px;color:var(--suave);padding:14px 0;border-top:1px solid var(--linea);border-bottom:1px solid var(--linea);margin-bottom:28px}
+.articulo p{font-size:19px;line-height:1.75;margin:0 0 1.2em}
+.articulo h2{font-family:var(--titulos);font-size:30px;line-height:1.15;margin:1.8em 0 .5em}
+.articulo blockquote{margin:1.6em 0;padding:4px 0 4px 22px;border-left:5px solid var(--acento);font-family:var(--titulos);font-size:26px;line-height:1.3}
+.articulo figure{margin:1.8em 0}
+.articulo figure .foto{height:320px;border-radius:16px;background:linear-gradient(135deg,#FFE3D9,#DCE4FF)}
+.articulo figcaption{font-size:13px;color:var(--suave);margin-top:8px}
+.fuentes{background:var(--blanco);border:1px solid var(--linea);border-radius:14px;padding:18px 22px;margin:2em 0;font-size:15px}
+.fuentes h3{margin:0 0 8px;font-size:15px;text-transform:uppercase;letter-spacing:.08em}
+.fuentes ul{margin:0;padding-left:20px}
+.relacionados{max-width:1160px;margin:0 auto;padding:20px 20px 10px}
+@media (max-width:860px){.listado{grid-template-columns:1fr}.articulo figure .foto{height:220px}}
