@@ -1,0 +1,18 @@
+---
+layout: base.njk
+---
+<article class="articulo">
+  {% for s in secciones %}{% if s.clave == seccion %}<a class="etiqueta" href="{{ ('/' + s.clave + '/') | url }}">{{ s.menu }}</a>{% endif %}{% endfor %}
+  <h1>{{ title }}</h1>
+  <p class="entradilla">{{ resumen }}</p>
+  <p class="meta">Por <strong>{{ autor or "[Tu nombre]" }}</strong> · {{ page.date | fecha }}</p>
+  {{ content | safe }}
+</article>
+<section class="relacionados">
+  <h2 class="seccion__titulo">Te puede interesar</h2>
+  <div class="rejilla rejilla--2">
+    {% for a in collections.recientes | excepto(page.url) | limite(2) %}
+    <a class="tarjeta tarjeta--clara" href="{{ a.url | url }}"><small>{{ a.date | fecha }}</small><h3>{{ a.data.title }}</h3><p>{{ a.data.resumen }}</p></a>
+    {% endfor %}
+  </div>
+</section>

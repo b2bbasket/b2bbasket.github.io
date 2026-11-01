@@ -1,0 +1,19 @@
+---
+layout: base.njk
+pagination:
+  data: secciones
+  size: 1
+  alias: s
+permalink: "{{ s.clave }}/index.html"
+eleventyComputed:
+  title: "{{ s.titulo }}"
+  resumen: "{{ s.descripcion }}"
+---
+<div class="contenedor">
+  <div class="cabecera-pagina"><h1>{{ s.titulo }}</h1><p>{{ s.descripcion }}</p></div>
+  <div class="listado">
+    {% for a in collections.recientes %}{% if a.data.seccion == s.clave %}
+    <a class="tarjeta tarjeta--clara revelar" href="{{ a.url | url }}"><small>{{ a.date | fecha }}</small><h3>{{ a.data.title }}</h3><p>{{ a.data.resumen }}</p></a>
+    {% endif %}{% endfor %}
+  </div>
+</div>

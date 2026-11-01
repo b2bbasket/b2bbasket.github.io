@@ -1,0 +1,49 @@
+---
+layout: base.njk
+permalink: /index.html
+---
+{% set principal = collections.recientes[0] %}
+<section class="portada contenedor">
+  {% if principal %}
+  <article class="destacado revelar">
+    <div class="destacado__foto"><span>[FOTO AUTORIZADA]</span></div>
+    {% for s in secciones %}{% if s.clave == principal.data.seccion %}<p class="etiqueta">{{ s.menu }}</p>{% endif %}{% endfor %}
+    <h1><a href="{{ principal.url | url }}">{{ principal.data.title }}</a></h1>
+    <p class="entradilla">{{ principal.data.resumen }}</p>
+    <p class="firma">Por {{ principal.data.autor or "[Tu nombre]" }} · {{ principal.date | fecha }}</p>
+  </article>
+  <aside class="lateral revelar">
+    <h2 class="lateral__titulo">Última hora</h2>
+    {% for a in collections.recientes | excepto(principal.url) | limite(4) %}
+    <a class="item" href="{{ a.url | url }}"><small>{{ a.date | fecha }}</small><strong>{{ a.data.title }}</strong></a>
+    {% endfor %}
+    <a class="insta" href="{{ site.instagram }}">Síguenos en Instagram → @[usuario]</a>
+  </aside>
+  {% endif %}
+</section>
+
+<section class="cifras">
+  <div class="contenedor">
+    <h2 class="seccion__titulo revelar">Resultados de la jornada</h2>
+    <p class="cifras__fecha">{{ resultados.fecha }}</p>
+    <div class="partidos">
+      {% for p in resultados.partidos %}
+      <div class="partido revelar">
+        <span class="eq">{{ p.local }}</span>
+        <b data-contar="{{ p.pl }}">0</b><i>-</i><b data-contar="{{ p.pv }}">0</b>
+        <span class="eq">{{ p.visitante }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="contenedor seccion">
+  <h2 class="seccion__titulo revelar">Lo último</h2>
+  {% set colores = ['tarjeta--naranja', 'tarjeta--azul', 'tarjeta--amarilla'] %}
+  <div class="rejilla">
+    {% for a in collections.recientes | limite(3) %}
+    <a class="tarjeta {{ colores[loop.index0] }} revelar" href="{{ a.url | url }}"><small>{{ a.date | fecha }}</small><h3>{{ a.data.title }}</h3><p>{{ a.data.resumen }}</p></a>
+    {% endfor %}
+  </div>
+</section>

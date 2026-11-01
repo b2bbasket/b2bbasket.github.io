@@ -1,0 +1,8 @@
+{
+  "fecha": "EJEMPLO · datos inventados para ver el diseño",
+  "partidos": [
+    { "local": "[Equipo A]", "pl": 112, "visitante": "[Equipo B]", "pv": 104 },
+    { "local": "[Equipo C]", "pl": 98, "visitante": "[Equipo D]", "pv": 101 },
+    { "local": "[Equipo E]", "pl": 120, "visitante": "[Equipo F]", "pv": 117 }
+  ]
+}

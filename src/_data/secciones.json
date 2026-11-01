@@ -1,0 +1,7 @@
+[
+  { "clave": "actualidad", "menu": "Actualidad", "titulo": "Actualidad", "descripcion": "Noticias, lesiones, traspasos y todo lo que mueve la liga, siempre con fuentes contrastadas." },
+  { "clave": "cronicas", "menu": "Crónicas", "titulo": "Crónicas", "descripcion": "Qué pasó en los partidos más importantes de la jornada y por qué." },
+  { "clave": "analisis", "menu": "Análisis", "titulo": "Análisis", "descripcion": "Sistemas de juego, decisiones de los entrenadores y tendencias de la competición." },
+  { "clave": "datos", "menu": "Datos", "titulo": "Datos y estadísticas", "descripcion": "Comparativas, gráficos y métricas explicadas para entender mejor el juego." },
+  { "clave": "historias", "menu": "Historias", "titulo": "Historias y reportajes", "descripcion": "Perfiles, rivalidades y relatos que van más allá del marcador." }
+]
