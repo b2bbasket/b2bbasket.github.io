@@ -4,7 +4,7 @@ date: 2026-11-01
 seccion: cronicas
 resumen: 'Texto de ejemplo para ver cómo queda una crónica: el equipo local remonta en los minutos finales y se lleva un partido que parecía perdido.'
 autor: Hugo Amigo Suárez
-borrador: false
+borrador: true
 ---
 Este texto es un \*\*ejemplo inventado\*\* para comprobar el diseño. Ni los equipos ni los datos son reales. Aquí iría el arranque de la crónica: el contexto del partido, qué se jugaba cada equipo y cómo llegaba a la cita.
 
