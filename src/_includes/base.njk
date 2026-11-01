@@ -21,6 +21,13 @@
     </nav>
   </div>
 </header>
+{% if collections.recientes.length %}
+<div class="ticker" aria-label="Últimas noticias">
+  <div class="ticker__pista">
+    {% for i in [1, 2] %}<span class="ticker__marca">ÚLTIMA HORA</span>{% for a in collections.recientes | limite(6) %}<a href="{{ a.url | url }}">{{ a.data.title }}</a>{% endfor %}{% endfor %}
+  </div>
+</div>
+{% endif %}
 <main>
 {{ content | safe }}
 </main>

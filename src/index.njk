@@ -5,13 +5,15 @@ permalink: /index.html
 {% set principal = collections.recientes[0] %}
 <section class="portada contenedor">
   {% if principal %}
-  <article class="destacado revelar">
-    <div class="destacado__foto"><span>[FOTO AUTORIZADA]</span></div>
-    {% for s in secciones %}{% if s.clave == principal.data.seccion %}<p class="etiqueta">{{ s.menu }}</p>{% endif %}{% endfor %}
-    <h1><a href="{{ principal.url | url }}">{{ principal.data.title }}</a></h1>
-    <p class="entradilla">{{ principal.data.resumen }}</p>
-    <p class="firma">Por {{ principal.data.autor or "[Tu nombre]" }} · {{ principal.date | fecha }}</p>
-  </article>
+  <a class="hero revelar" href="{{ principal.url | url }}">
+    <div class="hero__fondo"{% if principal.data.imagen %} style="background-image:url('{{ principal.data.imagen }}')"{% endif %}></div>
+    <div class="hero__texto">
+      {% for s in secciones %}{% if s.clave == principal.data.seccion %}<span class="etiqueta">{{ s.menu }}</span>{% endif %}{% endfor %}
+      <h1 class="hero__titulo">{{ principal.data.title }}</h1>
+      <p>{{ principal.data.resumen }}</p>
+      <small>Por {{ principal.data.autor or "[Tu nombre]" }} · {{ principal.date | fecha }}</small>
+    </div>
+  </a>
   <aside class="lateral revelar">
     <h2 class="lateral__titulo">Última hora</h2>
     {% for a in collections.recientes | excepto(principal.url) | limite(4) %}
@@ -35,6 +37,16 @@ permalink: /index.html
       </div>
       {% endfor %}
     </div>
+  </div>
+</section>
+
+<section class="contenedor seccion">
+  <h2 class="seccion__titulo revelar">Explora por sección</h2>
+  {% set tonos = ['t-naranja', 't-azul', 't-amarillo', 't-verde', 't-morado'] %}
+  <div class="secciones-rejilla">
+    {% for s in secciones %}
+    <a class="seccion-bloque {{ tonos[loop.index0] }} revelar" href="{{ ('/' + s.clave + '/') | url }}"><span>0{{ loop.index }}</span><strong>{{ s.menu }}</strong></a>
+    {% endfor %}
   </div>
 </section>
 

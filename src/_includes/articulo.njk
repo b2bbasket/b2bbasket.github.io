@@ -5,7 +5,8 @@ layout: base.njk
   {% for s in secciones %}{% if s.clave == seccion %}<a class="etiqueta" href="{{ ('/' + s.clave + '/') | url }}">{{ s.menu }}</a>{% endif %}{% endfor %}
   <h1>{{ title }}</h1>
   <p class="entradilla">{{ resumen }}</p>
-  <p class="meta">Por <strong>{{ autor or "[Tu nombre]" }}</strong> · {{ page.date | fecha }}</p>
+  <p class="meta">Por <strong>{{ autor or "[Tu nombre]" }}</strong> · {{ page.date | fecha }} · {{ content | lectura }} min de lectura</p>
+  {% if imagen %}<figure class="articulo__foto"><img src="{{ imagen }}" alt="{{ title }}" loading="lazy"><figcaption>{{ credito }}</figcaption></figure>{% endif %}
   {{ content | safe }}
 </article>
 <section class="relacionados">

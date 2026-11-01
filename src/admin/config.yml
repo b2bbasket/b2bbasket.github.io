@@ -34,6 +34,8 @@ collections:
       - { label: Entradilla, name: resumen, widget: text, hint: "Qué ha pasado y por qué importa, en una o dos frases." }
       - { label: Autor, name: autor, widget: string, default: "[Tu nombre]" }
       - { label: Borrador (si está activado, NO se publica), name: borrador, widget: boolean, default: true, required: false }
+      - { label: Imagen principal (solo con licencia o autorización), name: imagen, widget: image, required: false }
+      - { label: Crédito de la imagen, name: credito, widget: string, required: false }
       - { label: Texto del artículo, name: body, widget: markdown }
 
   - name: ajustes

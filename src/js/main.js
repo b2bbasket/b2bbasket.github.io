@@ -52,3 +52,45 @@ nav.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => {
   nav.classList.remove('abierto');
   boton.setAttribute('aria-expanded', 'false');
 }));
+
+// 5) Titular del destacado: aparece palabra a palabra
+const tituloHero = document.querySelector('.hero__titulo');
+if (tituloHero && !reducir) {
+  const palabras = tituloHero.textContent.trim().split(/\s+/);
+  tituloHero.textContent = '';
+  palabras.forEach((p, i) => {
+    const s = document.createElement('span');
+    s.className = 'palabra';
+    s.style.animationDelay = i * 70 + 'ms';
+    s.textContent = p;
+    tituloHero.appendChild(s);
+    tituloHero.appendChild(document.createTextNode(' '));
+  });
+}
+
+// 6) Efecto parallax suave en la imagen del destacado
+const fondoHero = document.querySelector('.hero__fondo');
+if (fondoHero && !reducir) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY < 900) {
+      fondoHero.style.transform = 'translateY(' + window.scrollY * 0.12 + 'px) scale(1.1)';
+    }
+  }, { passive: true });
+}
+
+// 7) Las tarjetas se inclinan ligeramente al pasar el ratón (solo en ordenador)
+if (!reducir && window.matchMedia('(hover: hover)').matches) {
+  document.querySelectorAll('.tarjeta').forEach((c) => {
+    c.addEventListener('mousemove', (e) => {
+      const r = c.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5;
+      const y = (e.clientY - r.top) / r.height - 0.5;
+      c.style.setProperty('--ry', x * 8 + 'deg');
+      c.style.setProperty('--rx', -y * 8 + 'deg');
+    });
+    c.addEventListener('mouseleave', () => {
+      c.style.setProperty('--rx', '0deg');
+      c.style.setProperty('--ry', '0deg');
+    });
+  });
+}

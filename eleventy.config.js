@@ -16,6 +16,9 @@ export default function (eleventyConfig) {
   );
   eleventyConfig.addFilter("limite", (lista, n) => lista.slice(0, n));
   eleventyConfig.addFilter("excepto", (lista, url) => lista.filter((a) => a.url !== url));
+  eleventyConfig.addFilter("lectura", (html) =>
+    Math.max(1, Math.round(String(html).replace(/<[^>]*>/g, " ").split(/\s+/).filter(Boolean).length / 200))
+  );
 
   // Los artículos con "borrador: true" NO se publican
   eleventyConfig.addPreprocessor("borradores", "md", (data) => {

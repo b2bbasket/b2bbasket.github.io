@@ -139,3 +139,39 @@ a{color:inherit;text-decoration:none}
 .partido i{font-style:normal;color:#8E93A3}
 .destacado h1 a:hover{color:var(--acento)}
 @media (max-width:860px){.partidos{grid-template-columns:1fr}}
+
+/* ===== Diseño v5: portada, ticker, bloques y efectos ===== */
+:root{--verde:#12B76A;--morado:#7A4DFF}
+.portada{align-items:stretch}
+.hero{position:relative;display:flex;align-items:flex-end;min-height:480px;border-radius:22px;overflow:hidden;color:#fff;background:#16181D}
+.hero__fondo{position:absolute;inset:0;background:linear-gradient(135deg,var(--acento),var(--azul)) center/cover;transform:scale(1.1);transition:filter .4s}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,14,.88),rgba(10,10,14,.05) 65%)}
+.hero:hover .hero__fondo{filter:saturate(1.2) brightness(1.05)}
+.hero__texto{position:relative;z-index:1;padding:32px}
+.hero__texto .etiqueta{margin:0 0 12px}
+.hero__titulo{font-family:var(--titulos);font-size:clamp(30px,4.4vw,50px);line-height:1.06;margin:0 0 12px;letter-spacing:-.015em}
+.hero__texto p{margin:0 0 10px;font-size:18px;opacity:.9;max-width:560px}
+.hero__texto small{opacity:.75}
+.palabra{display:inline-block;opacity:0;transform:translateY(.6em);animation:subir .6s ease forwards}
+@keyframes subir{to{opacity:1;transform:none}}
+
+.ticker a{color:#fff;margin-right:0}
+.ticker a:hover{color:var(--amarillo)}
+.ticker__marca{color:var(--amarillo);font-weight:700}
+
+.secciones-rejilla{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.seccion-bloque{display:flex;flex-direction:column;justify-content:space-between;min-height:150px;padding:18px;border-radius:18px;color:#fff;transition:transform .25s,box-shadow .25s}
+.seccion-bloque span{font-family:var(--titulos);font-size:34px;opacity:.7}
+.seccion-bloque strong{font-size:18px}
+.seccion-bloque:hover{transform:translateY(-6px) scale(1.03);box-shadow:0 14px 26px rgba(22,24,29,.18)}
+.t-naranja{background:var(--acento)}.t-azul{background:var(--azul)}.t-amarillo{background:var(--amarillo);color:var(--texto)}.t-verde{background:var(--verde)}.t-morado{background:var(--morado)}
+
+.tarjeta:hover{transform:perspective(700px) translateY(-8px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg))}
+.articulo__foto{margin:1.6em 0}
+.articulo__foto img{width:100%;border-radius:16px;display:block}
+.articulo__foto figcaption{font-size:13px;color:var(--suave);margin-top:8px}
+
+@media (max-width:860px){
+  .hero{min-height:380px}
+  .secciones-rejilla{grid-template-columns:repeat(2,1fr)}
+}
