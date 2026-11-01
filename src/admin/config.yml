@@ -1,0 +1,62 @@
+backend:
+  name: github
+  repo: hugoamigo2006-collab/medio-nba
+  branch: main
+
+locale: es
+site_url: https://hugoamigo2006-collab.github.io/medio-nba/
+media_folder: src/img/subidas
+public_folder: /medio-nba/img/subidas
+
+collections:
+  - name: articulos
+    label: Artículos
+    label_singular: Artículo
+    folder: src/articulos
+    create: true
+    extension: md
+    format: frontmatter
+    slug: "{{slug}}"
+    summary: "{{title}} · {{seccion}}"
+    sortable_fields: [date, title]
+    fields:
+      - { label: Titular, name: title, widget: string }
+      - { label: Fecha de publicación, name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - label: Sección
+        name: seccion
+        widget: select
+        options:
+          - { label: Actualidad, value: actualidad }
+          - { label: Crónicas, value: cronicas }
+          - { label: Análisis, value: analisis }
+          - { label: Datos y estadísticas, value: datos }
+          - { label: Historias y reportajes, value: historias }
+      - { label: Entradilla, name: resumen, widget: text, hint: "Qué ha pasado y por qué importa, en una o dos frases." }
+      - { label: Autor, name: autor, widget: string, default: "[Tu nombre]" }
+      - { label: Borrador (si está activado, NO se publica), name: borrador, widget: boolean, default: true, required: false }
+      - { label: Texto del artículo, name: body, widget: markdown }
+
+  - name: ajustes
+    label: Resultados y ajustes
+    files:
+      - label: Resultados de la jornada
+        name: resultados
+        file: src/_data/resultados.json
+        fields:
+          - { label: Fecha o título del bloque, name: fecha, widget: string }
+          - label: Partidos
+            name: partidos
+            widget: list
+            fields:
+              - { label: Equipo local, name: local, widget: string }
+              - { label: Puntos local, name: pl, widget: number, value_type: int }
+              - { label: Equipo visitante, name: visitante, widget: string }
+              - { label: Puntos visitante, name: pv, widget: number, value_type: int }
+      - label: Datos del medio
+        name: site
+        file: src/_data/site.json
+        fields:
+          - { label: Nombre del medio, name: nombre, widget: string }
+          - { label: Descripción, name: descripcion, widget: text }
+          - { label: Enlace de Instagram, name: instagram, widget: string }
+          - { label: Correo de contacto, name: email, widget: string }

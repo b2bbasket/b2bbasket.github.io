@@ -2,6 +2,8 @@ export default function (eleventyConfig) {
   // Copia tal cual estos archivos a la web final
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
+  eleventyConfig.addPassthroughCopy("src/img");
+  eleventyConfig.addPassthroughCopy("src/admin");
 
   // Artículos más recientes primero
   eleventyConfig.addCollection("recientes", (api) =>
