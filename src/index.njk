@@ -42,11 +42,13 @@ permalink: /index.html
 
 <section class="contenedor seccion">
   <h2 class="seccion__titulo revelar">Explora por sección</h2>
-  {% set tonos = ['t-naranja', 't-azul', 't-amarillo', 't-verde', 't-morado'] %}
   <div class="secciones-rejilla">
     {% for s in secciones %}
-    <a class="seccion-bloque {{ tonos[loop.index0] }} revelar" href="{{ ('/' + s.clave + '/') | url }}"><span>0{{ loop.index }}</span><strong>{{ s.menu }}</strong></a>
+    {% set fondo = s.clave | imagenSeccion %}
+    <a class="seccion-bloque {{ s.tono }}{% if fondo %} con-imagen{% endif %} revelar" href="{{ ('/' + s.clave + '/') | url }}"{% if fondo %} style="background-image:url('{{ fondo | url }}')"{% endif %}><span>0{{ loop.index }}</span><strong>{{ s.menu }}</strong></a>
     {% endfor %}
+    {% set fondoE = 'equipos' | imagenSeccion %}
+    <a class="seccion-bloque t-verde{% if fondoE %} con-imagen{% endif %} revelar" href="{{ '/equipos/' | url }}"{% if fondoE %} style="background-image:url('{{ fondoE | url }}')"{% endif %}><span>08</span><strong>Equipos</strong></a>
   </div>
 </section>
 

@@ -94,3 +94,14 @@ if (!reducir && window.matchMedia('(hover: hover)').matches) {
     });
   });
 }
+
+// 8) Botón para volver arriba
+const botonSubir = document.getElementById('subir');
+if (botonSubir) {
+  window.addEventListener('scroll', () => {
+    botonSubir.classList.toggle('visible', window.scrollY > 500);
+  }, { passive: true });
+  botonSubir.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: reducir ? 'auto' : 'smooth' });
+  });
+}

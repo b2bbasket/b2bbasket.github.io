@@ -1,3 +1,5 @@
+import fs from "node:fs";
+
 export default function (eleventyConfig) {
   // Copia tal cual estos archivos a la web final
   eleventyConfig.addPassthroughCopy("src/css");
@@ -16,6 +18,13 @@ export default function (eleventyConfig) {
   );
   eleventyConfig.addFilter("limite", (lista, n) => lista.slice(0, n));
   eleventyConfig.addFilter("excepto", (lista, url) => lista.filter((a) => a.url !== url));
+  // Si existe src/img/secciones/<clave>.jpg (o png/webp) se usa como imagen de la sección
+  eleventyConfig.addFilter("imagenSeccion", (clave) => {
+    for (const ext of ["jpg", "jpeg", "png", "webp"]) {
+      if (fs.existsSync(`src/img/secciones/${clave}.${ext}`)) return `/img/secciones/${clave}.${ext}`;
+    }
+    return "";
+  });
   eleventyConfig.addFilter("lectura", (html) =>
     Math.max(1, Math.round(String(html).replace(/<[^>]*>/g, " ").split(/\s+/).filter(Boolean).length / 200))
   );

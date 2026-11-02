@@ -1,0 +1,25 @@
+---
+layout: base.njk
+title: Equipos
+resumen: Los 30 equipos de la NBA agrupados por conferencias y divisiones.
+permalink: /equipos/index.html
+---
+<div class="contenedor">
+  {% set fondo = 'equipos' | imagenSeccion %}
+  <div class="banner t-verde{% if fondo %} con-imagen{% endif %}"{% if fondo %} style="background-image:url('{{ fondo | url }}')"{% endif %}>
+    <h1>Equipos</h1><p>Los 30 equipos de la NBA: 15 en cada conferencia y 5 en cada división.</p>
+  </div>
+  {% for conferencia, divisiones in equipos %}
+  <section class="conferencia">
+    <h2 class="seccion__titulo revelar">{{ conferencia }}</h2>
+    <div class="divisiones">
+      {% for division, lista in divisiones %}
+      <div class="division revelar">
+        <h3>{{ division }}</h3>
+        {% for e in lista %}<div class="equipo">{{ e }}</div>{% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endfor %}
+</div>

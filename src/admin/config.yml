@@ -26,10 +26,12 @@ collections:
         name: seccion
         widget: select
         options:
-          - { label: Actualidad, value: actualidad }
+          - { label: Noticias, value: noticias }
+          - { label: Previas, value: previas }
           - { label: Crónicas, value: cronicas }
           - { label: Análisis, value: analisis }
           - { label: Datos y estadísticas, value: datos }
+          - { label: Guías, value: guias }
           - { label: Historias y reportajes, value: historias }
       - { label: Entradilla, name: resumen, widget: text, hint: "Qué ha pasado y por qué importa, en una o dos frases." }
       - { label: Autor, name: autor, widget: string, default: "[Tu nombre]" }

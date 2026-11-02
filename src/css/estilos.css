@@ -175,3 +175,51 @@ a{color:inherit;text-decoration:none}
   .hero{min-height:380px}
   .secciones-rejilla{grid-template-columns:repeat(2,1fr)}
 }
+
+/* ===== v6: menú de 8 secciones, pantalla de entrada, subir, banners ===== */
+.nav{gap:20px;font-size:14px}
+@media (max-width:1040px){
+  .menu-boton{display:block}
+  .nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--fondo);border-bottom:1px solid var(--linea);padding:8px 20px 16px;font-size:17px}
+  .nav.abierto{display:flex}
+  .nav a{padding:12px 0}
+}
+.t-naranja{background-color:var(--acento);color:#fff}.t-azul{background-color:var(--azul);color:#fff}.t-amarillo{background-color:var(--amarillo);color:var(--texto)}.t-verde{background-color:var(--verde);color:#fff}.t-morado{background-color:var(--morado);color:#fff}
+
+.secciones-rejilla{grid-template-columns:repeat(4,1fr)}
+.seccion-bloque,.banner{position:relative;overflow:hidden;background-size:cover;background-position:center}
+.seccion-bloque::after,.banner::after{content:"";position:absolute;right:-16px;bottom:-16px;width:120px;height:120px;opacity:.22;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='white' stroke-width='3'%3E%3Ccircle cx='50' cy='50' r='44'/%3E%3Cpath d='M50 6v88M6 50h88M16 18c22 18 22 46 0 64M84 18c-22 18-22 46 0 64'/%3E%3C/svg%3E") center/contain no-repeat}
+.t-amarillo.seccion-bloque::after,.t-amarillo.banner::after{filter:invert(1)}
+.con-imagen::before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,14,.78),rgba(10,10,14,.2))}
+.con-imagen::after{display:none}
+.seccion-bloque>*,.banner>*{position:relative;z-index:1}
+.con-imagen,.con-imagen *{color:#fff}
+.banner{border-radius:22px;padding:48px 32px;margin:30px 0 10px}
+.banner h1{font-family:var(--titulos);font-size:clamp(36px,5vw,58px);line-height:1.05;margin:0 0 10px;letter-spacing:-.015em}
+.banner p{margin:0;font-size:18px;max-width:620px;opacity:.92}
+
+.conferencia{margin:26px 0}
+.divisiones{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.division{background:var(--blanco);border:1px solid var(--linea);border-radius:18px;padding:20px}
+.division h3{font-family:var(--titulos);font-size:22px;margin:0 0 8px}
+.equipo{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--linea);font-weight:600}
+.equipo:last-child{border-bottom:0}
+.equipo::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--acento);flex:none}
+@media (max-width:860px){.divisiones{grid-template-columns:1fr}.secciones-rejilla{grid-template-columns:repeat(2,1fr)}.banner{padding:34px 22px}}
+
+.splash{position:fixed;inset:0;z-index:300;background:var(--texto);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;animation:splashFuera .6s ease 2.2s forwards}
+.splash-visto .splash{display:none}
+.splash__balon{width:52px;height:52px;animation:botar .9s ease-in-out infinite}
+.splash__logo{font-family:var(--titulos);font-weight:800;font-size:clamp(46px,11vw,88px);letter-spacing:-.01em;animation:splashEntra .9s ease both}
+.splash__logo span{color:var(--acento)}
+.splash__linea{width:0;height:4px;border-radius:4px;background:var(--acento);animation:splashLinea 1.5s ease .3s forwards}
+.splash__lema{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:#C9CCD6;animation:splashEntra .9s ease .4s both}
+@keyframes splashEntra{from{opacity:0;transform:translateY(18px) scale(.96)}to{opacity:1;transform:none}}
+@keyframes splashLinea{to{width:min(240px,50vw)}}
+@keyframes splashFuera{to{opacity:0;visibility:hidden}}
+@keyframes botar{0%,100%{transform:translateY(0)}50%{transform:translateY(-24px)}}
+
+.subir{position:fixed;right:18px;bottom:18px;width:50px;height:50px;border-radius:50%;border:0;background:var(--acento);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 8px 18px rgba(22,24,29,.28);opacity:0;transform:translateY(14px);pointer-events:none;transition:opacity .25s,transform .25s;z-index:90}
+.subir.visible{opacity:1;transform:none;pointer-events:auto}
+.subir:hover{background:var(--azul)}
+@media (prefers-reduced-motion:reduce){.splash{display:none!important}}
