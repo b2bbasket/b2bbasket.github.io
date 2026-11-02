@@ -12,6 +12,15 @@ export default function (eleventyConfig) {
     api.getFilteredByTag("articulo").reverse()
   );
 
+  // Portada: todo menos las guías. Noticias: solo la sección de última hora
+  eleventyConfig.addCollection("portada", (api) =>
+    api.getFilteredByTag("articulo").filter((a) => a.data.seccion !== "guias").reverse()
+  );
+  eleventyConfig.addCollection("noticias", (api) =>
+    api.getFilteredByTag("articulo").filter((a) => a.data.seccion === "noticias").reverse()
+  );
+  eleventyConfig.addFilter("deSeccion", (lista, clave) => (lista || []).filter((a) => a.data.seccion === clave));
+
   // Fecha en español: 31 de octubre de 2026
   eleventyConfig.addFilter("fecha", (d) =>
     new Intl.DateTimeFormat("es-ES", { dateStyle: "long", timeZone: "UTC" }).format(d)

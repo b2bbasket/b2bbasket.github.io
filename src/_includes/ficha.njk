@@ -2,7 +2,7 @@
 layout: base.njk
 ---
 <div class="contenedor">
-  <div class="banner t-verde">
+  <div class="banner banner--compacto t-verde">
     <h1>{{ nombre }}</h1>
     <p>Conferencia {{ conferencia }} · División {{ division }}</p>
   </div>
@@ -15,8 +15,24 @@ layout: base.njk
       </dl>
     </aside>
     <div class="ficha__texto">
-      {% if imagen %}<figure class="articulo__foto"><img src="{{ imagen }}" alt="{{ nombre }}" loading="lazy"><figcaption>{{ credito }}</figcaption></figure>{% endif %}
-      {{ content | safe }}
+      <div class="pestanas">
+        <button class="pestana activa" data-panel="historia">Historia</button>
+        {% if lideres and lideres.length %}<button class="pestana" data-panel="lideres">Líderes del equipo</button>{% endif %}
+      </div>
+      <div class="panel-pestana" id="panel-historia">
+        {% if imagen %}<figure class="articulo__foto"><img src="{{ imagen }}" alt="{{ nombre }}" loading="lazy"><figcaption>{{ credito }}</figcaption></figure>{% endif %}
+        {{ content | safe }}
+      </div>
+      {% if lideres and lideres.length %}
+      <div class="panel-pestana" id="panel-lideres" hidden>
+        <h2>Líderes históricos de la franquicia</h2>
+        <div class="tabla-envoltorio"><table class="tabla">
+          <thead><tr><th>Categoría</th><th>Jugador</th><th>Dato</th></tr></thead>
+          <tbody>{% for l in lideres %}<tr><td>{{ l.categoria }}</td><td>{{ l.jugador }}</td><td>{{ l.dato or "—" }}</td></tr>{% endfor %}</tbody>
+        </table></div>
+        {% if nota_lideres %}<p class="nota-fuente">{{ nota_lideres }}</p>{% endif %}
+      </div>
+      {% endif %}
     </div>
   </div>
   <p class="ficha__volver"><a href="{{ '/equipos/' | url }}">← Todos los equipos</a></p>

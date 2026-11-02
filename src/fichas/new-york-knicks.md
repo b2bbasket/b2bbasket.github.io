@@ -5,6 +5,17 @@ division: Atlántico
 fundacion: "1946"
 pabellon: Madison Square Garden (Nueva York)
 titulos: "3 (1970, 1973 y 2026)"
+lideres:
+  - categoria: Puntos
+    jugador: Patrick Ewing
+    dato: ""
+  - categoria: Rebotes
+    jugador: Patrick Ewing
+    dato: ""
+  - categoria: Asistencias
+    jugador: Walt Frazier
+    dato: ""
+nota_lideres: "[BORRADOR] Jugadores y cifras pendientes de verificar con fuentes oficiales de la franquicia."
 ---
 
 **[BORRADOR: texto pendiente de verificar con fuentes antes de publicar.]**

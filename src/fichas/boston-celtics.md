@@ -5,6 +5,17 @@ division: Atlántico
 fundacion: "1946"
 pabellon: TD Garden (Boston)
 titulos: "18"
+lideres:
+  - categoria: Puntos
+    jugador: John Havlicek
+    dato: ""
+  - categoria: Rebotes
+    jugador: Bill Russell
+    dato: ""
+  - categoria: Asistencias
+    jugador: Bob Cousy
+    dato: ""
+nota_lideres: "[BORRADOR] Jugadores y cifras pendientes de verificar con fuentes oficiales de la franquicia."
 ---
 
 **[BORRADOR: texto pendiente de verificar con fuentes antes de publicar.]**

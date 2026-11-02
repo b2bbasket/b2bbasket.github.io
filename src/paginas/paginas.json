@@ -1,0 +1,1 @@
+{ "layout": "texto.njk", "permalink": "/{{ page.fileSlug }}/index.html" }

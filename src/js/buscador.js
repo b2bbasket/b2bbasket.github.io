@@ -1,6 +1,7 @@
 (function () {
   const campo = document.getElementById('buscador');
   const caja = document.getElementById('resultadosBusqueda');
+  const contador = document.getElementById('contadorBusqueda');
   if (!campo) return;
   const base = campo.dataset.base;
   let datos = [];
@@ -9,11 +10,15 @@
     caja.textContent = 'No se ha podido cargar el buscador.';
   });
   function pintar() {
-    const q = limpiar(campo.value.trim());
+    const palabras = limpiar(campo.value.trim()).split(/\s+/).filter(Boolean);
     caja.textContent = '';
-    if (!q) return;
-    const res = datos.filter((i) => limpiar(i.t + ' ' + i.r).includes(q));
-    if (!res.length) { caja.textContent = 'No hay resultados.'; return; }
+    contador.textContent = '';
+    if (!palabras.length) return;
+    const res = datos.filter((i) => {
+      const texto = limpiar(i.t + ' ' + i.r + ' ' + i.k);
+      return palabras.every((p) => texto.includes(p));
+    });
+    contador.textContent = res.length ? res.length + (res.length === 1 ? ' resultado' : ' resultados') : 'No hay resultados. Prueba con otra palabra.';
     res.forEach((i) => {
       const a = document.createElement('a');
       a.className = 'resultado';
@@ -26,4 +31,7 @@
     });
   }
   campo.addEventListener('input', pintar);
+  document.querySelectorAll('#sugerencias button').forEach((b) => b.addEventListener('click', () => {
+    campo.value = b.dataset.q; pintar(); campo.focus();
+  }));
 })();

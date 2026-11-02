@@ -29,7 +29,6 @@ collections:
           - { label: Noticias, value: noticias }
           - { label: Previas, value: previas }
           - { label: Crónicas, value: cronicas }
-          - { label: Análisis, value: analisis }
           - { label: Datos y estadísticas, value: datos }
           - { label: Guías, value: guias }
           - { label: Historias y reportajes, value: historias }
@@ -80,8 +79,28 @@ collections:
       - { label: Títulos de la NBA, name: titulos, widget: string, required: false }
       - { label: Imagen (solo con licencia o autorización), name: imagen, widget: image, required: false }
       - { label: Crédito y licencia de la imagen, name: credito, widget: string, required: false, hint: "Autor, licencia y enlace de origen" }
+      - label: Líderes del equipo
+        name: lideres
+        widget: list
+        required: false
+        summary: "{{fields.categoria}}: {{fields.jugador}}"
+        fields:
+          - { label: Categoría, name: categoria, widget: string, hint: "Por ejemplo: Puntos, Rebotes, Asistencias" }
+          - { label: Jugador, name: jugador, widget: string }
+          - { label: Cifra (opcional), name: dato, widget: string, required: false }
+      - { label: Nota sobre los líderes (fuente o aviso), name: nota_lideres, widget: string, required: false }
       - { label: Borrador (si está activado, NO se publica), name: borrador, widget: boolean, default: true, required: false }
       - { label: Historia del equipo, name: body, widget: markdown }
+
+  - name: paginas
+    label: Páginas
+    files:
+      - label: Quiénes somos
+        name: quienes_somos
+        file: src/paginas/quienes-somos.md
+        fields:
+          - { label: Título, name: title, widget: string }
+          - { label: Texto, name: body, widget: markdown }
 
   - name: ajustes
     label: Resultados y ajustes
@@ -121,22 +140,6 @@ collections:
               - { label: Equipo, name: equipo, widget: string }
               - { label: Victorias, name: v, widget: number, value_type: int }
               - { label: Derrotas, name: d, widget: number, value_type: int }
-      - label: Salarios
-        name: salarios
-        file: src/_data/salarios.json
-        fields:
-          - { label: Temporada, name: temporada, widget: string }
-          - { label: Actualizado el, name: actualizado, widget: string }
-          - { label: Fuente, name: fuente, widget: string }
-          - { label: Enlace de la fuente, name: fuente_url, widget: string, required: false }
-          - label: Jugadores (de mayor a menor salario)
-            name: jugadores
-            widget: list
-            summary: "{{fields.jugador}} ({{fields.equipo}})"
-            fields:
-              - { label: Jugador, name: jugador, widget: string }
-              - { label: Equipo, name: equipo, widget: string }
-              - { label: Salario en millones de dólares, name: millones, widget: number, value_type: float }
       - label: Datos del medio
         name: site
         file: src/_data/site.json

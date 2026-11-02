@@ -105,3 +105,47 @@ if (botonSubir) {
     window.scrollTo({ top: 0, behavior: reducir ? 'auto' : 'smooth' });
   });
 }
+
+// 9) Carrusel de la portada (dedo en el móvil, flechas del teclado y botones en ordenador)
+const pistaSlider = document.getElementById('sliderPista');
+if (pistaSlider) {
+  const slider = document.getElementById('slider');
+  const slides = Array.from(pistaSlider.children);
+  const puntos = document.getElementById('sliderPuntos');
+  if (slides.length < 2) slider.classList.add('solo');
+  slides.forEach((_, i) => {
+    const b = document.createElement('button');
+    b.setAttribute('aria-label', 'Ir a la noticia ' + (i + 1));
+    b.addEventListener('click', () => ir(i));
+    puntos.appendChild(b);
+  });
+  const actual = () => Math.round(pistaSlider.scrollLeft / pistaSlider.clientWidth);
+  function ir(i) {
+    i = Math.max(0, Math.min(slides.length - 1, i));
+    pistaSlider.scrollTo({ left: i * pistaSlider.clientWidth, behavior: reducir ? 'auto' : 'smooth' });
+  }
+  function marcar() {
+    const a = actual();
+    Array.from(puntos.children).forEach((b, i) => b.classList.toggle('activo', i === a));
+  }
+  pistaSlider.addEventListener('scroll', () => requestAnimationFrame(marcar), { passive: true });
+  marcar();
+  document.getElementById('sliderIzq').addEventListener('click', () => ir(actual() - 1));
+  document.getElementById('sliderDer').addEventListener('click', () => ir(actual() + 1));
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+    const tag = (document.activeElement || {}).tagName;
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+    const r = slider.getBoundingClientRect();
+    if (r.bottom < 0 || r.top > window.innerHeight) return;
+    ir(actual() + (e.key === 'ArrowRight' ? 1 : -1));
+  });
+}
+
+// 10) Pestañas de la ficha de equipo
+document.querySelectorAll('.pestana').forEach((b) => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('.pestana').forEach((x) => x.classList.toggle('activa', x === b));
+    document.querySelectorAll('.panel-pestana').forEach((p) => { p.hidden = p.id !== 'panel-' + b.dataset.panel; });
+  });
+});

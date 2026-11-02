@@ -26,14 +26,15 @@
     <nav class="nav" id="nav">
       {% for s in secciones %}<a href="{{ ('/' + s.clave + '/') | url }}">{{ s.menu }}</a>{% endfor %}
       <a href="{{ '/equipos/' | url }}">Equipos</a>
+      <a href="{{ '/clasificacion/' | url }}">Clasificación</a>
       <a href="{{ '/buscar/' | url }}">Buscar</a>
     </nav>
   </div>
 </header>
-{% if collections.recientes.length %}
+{% if collections.noticias.length %}
 <div class="ticker" aria-label="Últimas noticias">
   <div class="ticker__pista">
-    {% for i in [1, 2] %}<span class="ticker__marca">ÚLTIMA HORA</span>{% for a in collections.recientes | limite(6) %}<a href="{{ a.url | url }}">{{ a.data.title }}</a>{% endfor %}{% endfor %}
+    {% for i in [1, 2] %}<span class="ticker__marca">ÚLTIMA HORA</span>{% for a in collections.noticias | limite(6) %}<a href="{{ a.url | url }}">{{ a.data.title }}</a>{% endfor %}{% endfor %}
   </div>
 </div>
 {% endif %}
@@ -41,9 +42,24 @@
 {{ content | safe }}
 </main>
 <footer class="pie">
-  <div class="contenedor pie__fila">
-    <div><a class="logo" href="{{ '/' | url }}">{{ site.nombre }}<span>.</span></a><p>Medio digital independiente sobre la NBA en español.</p></div>
-    <div class="pie__enlaces"><a href="{{ '/sobre/' | url }}">Sobre el proyecto</a><a href="{{ '/contacto/' | url }}">Contacto</a><a href="{{ site.instagram }}">Instagram</a></div>
+  <div class="contenedor">
+    <h2 class="pie__titulo">Todo sobre la NBA</h2>
+    <div class="pie__columnas">
+      <div><h3>Datos y estadísticas</h3>
+        <a href="{{ '/clasificacion/' | url }}">Clasificación</a>
+        <a href="{{ '/articulos/lideres-historicos-nba/' | url }}">Líderes históricos</a>
+        <a href="{{ '/equipos/' | url }}">Equipos por conferencias</a></div>
+      <div><h3>Curiosidades NBA</h3>
+        <a href="{{ '/articulos/curiosidades-nba/' | url }}">Jugadores y equipos</a></div>
+      <div><h3>Historia de la liga</h3>
+        <a href="{{ '/articulos/historia-de-la-nba/' | url }}">Cómo empezó todo</a>
+        <a href="{{ '/articulos/guia-como-funciona-la-nba/' | url }}">Cómo funciona la NBA</a>
+        <a href="{{ '/articulos/guia-copa-nba/' | url }}">La NBA Cup</a></div>
+      <div><h3>El medio</h3>
+        <a href="{{ '/quienes-somos/' | url }}">Quiénes somos</a>
+        <a href="{{ '/contacto/' | url }}">Contacto</a>
+        <a href="{{ site.instagram }}">Instagram</a></div>
+    </div>
   </div>
   <div class="contenedor pie__legal">
     <a href="{{ '/aviso-legal/' | url }}">Aviso legal</a>

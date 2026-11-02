@@ -2,26 +2,36 @@
 layout: base.njk
 permalink: /index.html
 ---
-{% set principal = collections.recientes[0] %}
 <section class="portada contenedor">
-  {% if principal %}
-  <a class="hero revelar" href="{{ principal.url | url }}">
-    <div class="hero__fondo"{% if principal.data.imagen %} style="background-image:url('{{ principal.data.imagen }}')"{% endif %}></div>
-    <div class="hero__texto">
-      {% for s in secciones %}{% if s.clave == principal.data.seccion %}<span class="etiqueta">{{ s.menu }}</span>{% endif %}{% endfor %}
-      <h1 class="hero__titulo">{{ principal.data.title }}</h1>
-      <p>{{ principal.data.resumen }}</p>
-      <small>Por {{ principal.data.autor or "[Tu nombre]" }} · {{ principal.date | fecha }}</small>
+  {% if collections.portada.length %}
+  <div class="slider revelar" id="slider" tabindex="0" aria-roledescription="carrusel" aria-label="Noticias destacadas">
+    <div class="slider__pista" id="sliderPista">
+      {% for a in collections.portada | limite(5) %}
+      <a class="hero" href="{{ a.url | url }}">
+        <div class="hero__fondo"{% if a.data.imagen %} style="background-image:url('{{ a.data.imagen }}')"{% endif %}></div>
+        <div class="hero__texto">
+          {% for s in secciones %}{% if s.clave == a.data.seccion %}<span class="etiqueta">{{ s.menu }}</span>{% endif %}{% endfor %}
+          <h1 class="hero__titulo">{{ a.data.title }}</h1>
+          <p>{{ a.data.resumen }}</p>
+          <small>Por {{ a.data.autor or "[Tu nombre]" }} · {{ a.date | fecha }}</small>
+        </div>
+      </a>
+      {% endfor %}
     </div>
-  </a>
+    <button class="slider__flecha slider__flecha--izq" id="sliderIzq" aria-label="Anterior"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button class="slider__flecha slider__flecha--der" id="sliderDer" aria-label="Siguiente"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+    <div class="slider__puntos" id="sliderPuntos"></div>
+  </div>
+  {% endif %}
   <aside class="lateral revelar">
     <h2 class="lateral__titulo">Última hora</h2>
-    {% for a in collections.recientes | excepto(principal.url) | limite(4) %}
+    {% for a in collections.noticias | limite(5) %}
     <a class="item" href="{{ a.url | url }}"><small>{{ a.date | fecha }}</small><strong>{{ a.data.title }}</strong></a>
+    {% else %}
+    <p class="vacio">Todavía no hay noticias de última hora.</p>
     {% endfor %}
     <a class="insta" href="{{ site.instagram }}">Síguenos en Instagram → @[usuario]</a>
   </aside>
-  {% endif %}
 </section>
 
 <section class="cifras">
@@ -46,10 +56,12 @@ permalink: /index.html
   <div class="secciones-rejilla">
     {% for s in secciones %}
     {% set fondo = s.clave | imagenSeccion %}
-    <a class="seccion-bloque {{ s.tono }}{% if fondo %} con-imagen{% endif %} revelar" href="{{ ('/' + s.clave + '/') | url }}"{% if fondo %} style="background-image:url('{{ fondo | url }}')"{% endif %}><span>0{{ loop.index }}</span><strong>{{ s.menu }}</strong></a>
+    <a class="seccion-bloque {{ s.tono }} m-{{ s.motivo }}{% if fondo %} con-imagen{% endif %} revelar" href="{{ ('/' + s.clave + '/') | url }}"{% if fondo %} style="background-image:url('{{ fondo | url }}')"{% endif %}><span>0{{ loop.index }}</span><strong>{{ s.menu }}</strong></a>
     {% endfor %}
     {% set fondoE = 'equipos' | imagenSeccion %}
-    <a class="seccion-bloque t-verde{% if fondoE %} con-imagen{% endif %} revelar" href="{{ '/equipos/' | url }}"{% if fondoE %} style="background-image:url('{{ fondoE | url }}')"{% endif %}><span>08</span><strong>Equipos</strong></a>
+    <a class="seccion-bloque t-verde{% if fondoE %} con-imagen{% endif %} revelar" href="{{ '/equipos/' | url }}"{% if fondoE %} style="background-image:url('{{ fondoE | url }}')"{% endif %}><span>0{{ secciones.length + 1 }}</span><strong>Equipos</strong></a>
+    {% set fondoC = 'clasificacion' | imagenSeccion %}
+    <a class="seccion-bloque t-morado m-barras{% if fondoC %} con-imagen{% endif %} revelar" href="{{ '/clasificacion/' | url }}"{% if fondoC %} style="background-image:url('{{ fondoC | url }}')"{% endif %}><span>0{{ secciones.length + 2 }}</span><strong>Clasificación</strong></a>
   </div>
 </section>
 
@@ -57,7 +69,7 @@ permalink: /index.html
   <h2 class="seccion__titulo revelar">Lo último</h2>
   {% set colores = ['tarjeta--naranja', 'tarjeta--azul', 'tarjeta--amarilla'] %}
   <div class="rejilla">
-    {% for a in collections.recientes | limite(3) %}
+    {% for a in collections.portada | limite(3) %}
     <a class="tarjeta {{ colores[loop.index0] }} revelar" href="{{ a.url | url }}"><small>{{ a.date | fecha }}</small><h3>{{ a.data.title }}</h3><p>{{ a.data.resumen }}</p></a>
     {% endfor %}
   </div>

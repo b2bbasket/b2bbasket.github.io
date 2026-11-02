@@ -5,6 +5,17 @@ division: Pacífico
 fundacion: "1947 (Minneapolis); en Los Ángeles desde 1960"
 pabellon: Los Ángeles (California)
 titulos: "17"
+lideres:
+  - categoria: Puntos
+    jugador: Kobe Bryant
+    dato: ""
+  - categoria: Rebotes
+    jugador: Elgin Baylor
+    dato: ""
+  - categoria: Asistencias
+    jugador: Magic Johnson
+    dato: ""
+nota_lideres: "[BORRADOR] Jugadores y cifras pendientes de verificar con fuentes oficiales de la franquicia."
 ---
 
 **[BORRADOR: texto pendiente de verificar con fuentes antes de publicar.]**

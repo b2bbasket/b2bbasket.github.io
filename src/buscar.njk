@@ -1,12 +1,21 @@
 ---
 layout: base.njk
 title: "Buscar"
-resumen: "Busca artículos y equipos."
+resumen: "Busca artículos, equipos y secciones."
 permalink: /buscar/index.html
 ---
 <div class="contenedor">
-  <div class="cabecera-pagina"><h1>Buscar</h1><p>Escribe el nombre de un equipo, un jugador o un tema.</p></div>
-  <input class="buscador" id="buscador" type="search" placeholder="Por ejemplo: Knicks, Copa NBA, salarios..." autocomplete="off" data-base="{{ '/' | url }}">
+  <div class="cabecera-pagina"><h1>Buscar</h1><p>Busca un equipo, una sección, un artículo o un tema.</p></div>
+  <input class="buscador" id="buscador" type="search" placeholder="Por ejemplo: Knicks, Copa NBA, clasificación..." autocomplete="off" data-base="{{ '/' | url }}">
+  <div class="sugerencias" id="sugerencias">
+    <span>Prueba con:</span>
+    <button type="button" data-q="Knicks">Knicks</button>
+    <button type="button" data-q="Copa">Copa NBA</button>
+    <button type="button" data-q="Clasificación">Clasificación</button>
+    <button type="button" data-q="Líderes">Líderes históricos</button>
+    <button type="button" data-q="Historia">Historia</button>
+  </div>
+  <p class="contador-busqueda" id="contadorBusqueda"></p>
   <div class="resultados-busqueda" id="resultadosBusqueda"></div>
 </div>
 <script src="{{ '/js/buscador.js' | url }}"></script>
