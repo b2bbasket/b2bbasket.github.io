@@ -62,6 +62,7 @@ permalink: /index.html
     <a class="seccion-bloque t-verde{% if fondoE %} con-imagen{% endif %} revelar" href="{{ '/equipos/' | url }}"{% if fondoE %} style="background-image:url('{{ fondoE | url }}')"{% endif %}><span>0{{ secciones.length + 1 }}</span><strong>Equipos</strong></a>
     {% set fondoC = 'clasificacion' | imagenSeccion %}
     <a class="seccion-bloque t-morado m-barras{% if fondoC %} con-imagen{% endif %} revelar" href="{{ '/clasificacion/' | url }}"{% if fondoC %} style="background-image:url('{{ fondoC | url }}')"{% endif %}><span>0{{ secciones.length + 2 }}</span><strong>Clasificación</strong></a>
+    <a class="seccion-bloque t-azul m-estrella revelar" href="{{ '/lideres/' | url }}"><span>0{{ secciones.length + 3 }}</span><strong>Líderes</strong></a>
   </div>
 </section>
 

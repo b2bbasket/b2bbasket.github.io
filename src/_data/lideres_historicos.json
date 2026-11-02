@@ -1,0 +1,281 @@
+{
+ "actualizado": "Temporada regular, hasta el final de la temporada 2025-26",
+ "categorias": [
+  {
+   "nombre": "Puntos",
+   "verificado": true,
+   "top": [
+    {
+     "jugador": "LeBron James",
+     "cifra": "43.440"
+    },
+    {
+     "jugador": "Kareem Abdul-Jabbar",
+     "cifra": "38.387"
+    },
+    {
+     "jugador": "Karl Malone",
+     "cifra": "36.928"
+    },
+    {
+     "jugador": "Kobe Bryant",
+     "cifra": "33.643"
+    },
+    {
+     "jugador": "Kevin Durant",
+     "cifra": "32.597"
+    },
+    {
+     "jugador": "Michael Jordan",
+     "cifra": "32.292"
+    },
+    {
+     "jugador": "Dirk Nowitzki",
+     "cifra": "31.560"
+    },
+    {
+     "jugador": "Wilt Chamberlain",
+     "cifra": "31.419"
+    },
+    {
+     "jugador": "James Harden",
+     "cifra": "29.339"
+    },
+    {
+     "jugador": "Shaquille O'Neal",
+     "cifra": "28.596"
+    }
+   ]
+  },
+  {
+   "nombre": "Rebotes",
+   "verificado": false,
+   "top": [
+    {
+     "jugador": "Wilt Chamberlain",
+     "cifra": "23.924"
+    },
+    {
+     "jugador": "Bill Russell",
+     "cifra": "21.620"
+    },
+    {
+     "jugador": "Kareem Abdul-Jabbar",
+     "cifra": "17.440"
+    },
+    {
+     "jugador": "Elvin Hayes",
+     "cifra": "16.279"
+    },
+    {
+     "jugador": "Moses Malone",
+     "cifra": "16.212"
+    },
+    {
+     "jugador": "Tim Duncan",
+     "cifra": "15.091"
+    },
+    {
+     "jugador": "Karl Malone",
+     "cifra": "14.968"
+    },
+    {
+     "jugador": "Robert Parish",
+     "cifra": "14.715"
+    },
+    {
+     "jugador": "Kevin Garnett",
+     "cifra": "14.662"
+    },
+    {
+     "jugador": "Dwight Howard",
+     "cifra": "14.627"
+    }
+   ]
+  },
+  {
+   "nombre": "Asistencias",
+   "verificado": true,
+   "top": [
+    {
+     "jugador": "John Stockton",
+     "cifra": "15.806"
+    },
+    {
+     "jugador": "Chris Paul",
+     "cifra": "12.552"
+    },
+    {
+     "jugador": "Jason Kidd",
+     "cifra": "12.091"
+    },
+    {
+     "jugador": "LeBron James",
+     "cifra": "12.016"
+    },
+    {
+     "jugador": "Russell Westbrook",
+     "cifra": "10.351"
+    },
+    {
+     "jugador": "Steve Nash",
+     "cifra": "10.335"
+    },
+    {
+     "jugador": "Mark Jackson",
+     "cifra": "10.334"
+    },
+    {
+     "jugador": "Magic Johnson",
+     "cifra": "10.141"
+    },
+    {
+     "jugador": "Oscar Robertson",
+     "cifra": "9.887"
+    },
+    {
+     "jugador": "Isiah Thomas",
+     "cifra": "9.061"
+    }
+   ]
+  },
+  {
+   "nombre": "Tapones",
+   "verificado": false,
+   "top": [
+    {
+     "jugador": "Hakeem Olajuwon",
+     "cifra": "3.830"
+    },
+    {
+     "jugador": "Dikembe Mutombo",
+     "cifra": "3.289"
+    },
+    {
+     "jugador": "Kareem Abdul-Jabbar",
+     "cifra": "3.189"
+    },
+    {
+     "jugador": "Mark Eaton",
+     "cifra": "3.064"
+    },
+    {
+     "jugador": "Tim Duncan",
+     "cifra": "3.020"
+    },
+    {
+     "jugador": "David Robinson",
+     "cifra": "2.954"
+    },
+    {
+     "jugador": "Patrick Ewing",
+     "cifra": "2.894"
+    },
+    {
+     "jugador": "Shaquille O'Neal",
+     "cifra": "2.732"
+    },
+    {
+     "jugador": "Robert Parish",
+     "cifra": "2.361"
+    },
+    {
+     "jugador": "Alonzo Mourning",
+     "cifra": "2.356"
+    }
+   ]
+  },
+  {
+   "nombre": "Robos",
+   "verificado": false,
+   "top": [
+    {
+     "jugador": "John Stockton",
+     "cifra": "3.265"
+    },
+    {
+     "jugador": "[Pendiente de verificar]",
+     "cifra": ""
+    },
+    {
+     "jugador": "[Pendiente de verificar]",
+     "cifra": ""
+    },
+    {
+     "jugador": "[Pendiente de verificar]",
+     "cifra": ""
+    },
+    {
+     "jugador": "[Pendiente de verificar]",
+     "cifra": ""
+    },
+    {
+     "jugador": "[Pendiente de verificar]",
+     "cifra": ""
+    },
+    {
+     "jugador": "[Pendiente de verificar]",
+     "cifra": ""
+    },
+    {
+     "jugador": "[Pendiente de verificar]",
+     "cifra": ""
+    },
+    {
+     "jugador": "[Pendiente de verificar]",
+     "cifra": ""
+    },
+    {
+     "jugador": "[Pendiente de verificar]",
+     "cifra": ""
+    }
+   ]
+  },
+  {
+   "nombre": "Triples",
+   "verificado": false,
+   "top": [
+    {
+     "jugador": "Stephen Curry",
+     "cifra": "4.248"
+    },
+    {
+     "jugador": "James Harden",
+     "cifra": "3.390"
+    },
+    {
+     "jugador": "Ray Allen",
+     "cifra": "2.973"
+    },
+    {
+     "jugador": "[Pendiente de verificar]",
+     "cifra": ""
+    },
+    {
+     "jugador": "[Pendiente de verificar]",
+     "cifra": ""
+    },
+    {
+     "jugador": "[Pendiente de verificar]",
+     "cifra": ""
+    },
+    {
+     "jugador": "[Pendiente de verificar]",
+     "cifra": ""
+    },
+    {
+     "jugador": "[Pendiente de verificar]",
+     "cifra": ""
+    },
+    {
+     "jugador": "[Pendiente de verificar]",
+     "cifra": ""
+    },
+    {
+     "jugador": "[Pendiente de verificar]",
+     "cifra": ""
+    }
+   ]
+  }
+ ]
+}

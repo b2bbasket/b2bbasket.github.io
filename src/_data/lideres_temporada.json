@@ -1,0 +1,165 @@
+{
+ "actualizado": "Pendiente de actualizar (se actualiza cada semana)",
+ "puntos": [
+  {
+   "jugador": "[Jugador]",
+   "equipo": "[Equipo]",
+   "valor": ""
+  },
+  {
+   "jugador": "[Jugador]",
+   "equipo": "[Equipo]",
+   "valor": ""
+  },
+  {
+   "jugador": "[Jugador]",
+   "equipo": "[Equipo]",
+   "valor": ""
+  },
+  {
+   "jugador": "[Jugador]",
+   "equipo": "[Equipo]",
+   "valor": ""
+  },
+  {
+   "jugador": "[Jugador]",
+   "equipo": "[Equipo]",
+   "valor": ""
+  }
+ ],
+ "rebotes": [
+  {
+   "jugador": "[Jugador]",
+   "equipo": "[Equipo]",
+   "valor": ""
+  },
+  {
+   "jugador": "[Jugador]",
+   "equipo": "[Equipo]",
+   "valor": ""
+  },
+  {
+   "jugador": "[Jugador]",
+   "equipo": "[Equipo]",
+   "valor": ""
+  },
+  {
+   "jugador": "[Jugador]",
+   "equipo": "[Equipo]",
+   "valor": ""
+  },
+  {
+   "jugador": "[Jugador]",
+   "equipo": "[Equipo]",
+   "valor": ""
+  }
+ ],
+ "asistencias": [
+  {
+   "jugador": "[Jugador]",
+   "equipo": "[Equipo]",
+   "valor": ""
+  },
+  {
+   "jugador": "[Jugador]",
+   "equipo": "[Equipo]",
+   "valor": ""
+  },
+  {
+   "jugador": "[Jugador]",
+   "equipo": "[Equipo]",
+   "valor": ""
+  },
+  {
+   "jugador": "[Jugador]",
+   "equipo": "[Equipo]",
+   "valor": ""
+  },
+  {
+   "jugador": "[Jugador]",
+   "equipo": "[Equipo]",
+   "valor": ""
+  }
+ ],
+ "tapones": [
+  {
+   "jugador": "[Jugador]",
+   "equipo": "[Equipo]",
+   "valor": ""
+  },
+  {
+   "jugador": "[Jugador]",
+   "equipo": "[Equipo]",
+   "valor": ""
+  },
+  {
+   "jugador": "[Jugador]",
+   "equipo": "[Equipo]",
+   "valor": ""
+  },
+  {
+   "jugador": "[Jugador]",
+   "equipo": "[Equipo]",
+   "valor": ""
+  },
+  {
+   "jugador": "[Jugador]",
+   "equipo": "[Equipo]",
+   "valor": ""
+  }
+ ],
+ "robos": [
+  {
+   "jugador": "[Jugador]",
+   "equipo": "[Equipo]",
+   "valor": ""
+  },
+  {
+   "jugador": "[Jugador]",
+   "equipo": "[Equipo]",
+   "valor": ""
+  },
+  {
+   "jugador": "[Jugador]",
+   "equipo": "[Equipo]",
+   "valor": ""
+  },
+  {
+   "jugador": "[Jugador]",
+   "equipo": "[Equipo]",
+   "valor": ""
+  },
+  {
+   "jugador": "[Jugador]",
+   "equipo": "[Equipo]",
+   "valor": ""
+  }
+ ],
+ "triples": [
+  {
+   "jugador": "[Jugador]",
+   "equipo": "[Equipo]",
+   "valor": ""
+  },
+  {
+   "jugador": "[Jugador]",
+   "equipo": "[Equipo]",
+   "valor": ""
+  },
+  {
+   "jugador": "[Jugador]",
+   "equipo": "[Equipo]",
+   "valor": ""
+  },
+  {
+   "jugador": "[Jugador]",
+   "equipo": "[Equipo]",
+   "valor": ""
+  },
+  {
+   "jugador": "[Jugador]",
+   "equipo": "[Equipo]",
+   "valor": ""
+  }
+ ]
+}

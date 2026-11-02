@@ -30,6 +30,8 @@
       caja.appendChild(a);
     });
   }
+  const q0 = new URLSearchParams(location.search).get('q');
+  if (q0) campo.value = q0;
   campo.addEventListener('input', pintar);
   document.querySelectorAll('#sugerencias button').forEach((b) => b.addEventListener('click', () => {
     campo.value = b.dataset.q; pintar(); campo.focus();

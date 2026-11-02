@@ -1,0 +1,25 @@
+---
+layout: base.njk
+title: "Líderes de la temporada"
+resumen: "Los cinco mejores de la temporada en puntos, rebotes, asistencias, tapones, robos y triples."
+permalink: /lideres/index.html
+---
+<div class="contenedor">
+  <div class="banner banner--a t-azul m-estrella"><h1>Líderes esta temporada</h1><p>Los cinco mejores en cada estadística. Actualizado: {{ lideres_temporada.actualizado }}.</p></div>
+  {% set cats = [ { k: "puntos", n: "Puntos" }, { k: "rebotes", n: "Rebotes" }, { k: "asistencias", n: "Asistencias" }, { k: "tapones", n: "Tapones" }, { k: "robos", n: "Robos" }, { k: "triples", n: "Triples" } ] %}
+  <div class="lideres-rejilla">
+    {% for c in cats %}
+    <section class="lider-tarjeta revelar">
+      <h2>{{ c.n }}</h2>
+      <table class="tabla">
+        <thead><tr><th>#</th><th>Jugador</th><th>Promedio</th></tr></thead>
+        <tbody>
+        {% for j in lideres_temporada[c.k] %}
+          <tr><td>{{ loop.index }}</td><td>{{ j.jugador }}<small>{{ j.equipo }}</small></td><td>{{ j.valor or "—" }}</td></tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </section>
+    {% endfor %}
+  </div>
+</div>

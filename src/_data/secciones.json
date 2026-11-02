@@ -2,7 +2,5 @@
   { "clave": "noticias", "menu": "Noticias", "titulo": "Noticias", "tono": "t-naranja", "motivo": "ondas", "variante": "a", "diseno": "lista", "descripcion": "Lesiones, traspasos, declaraciones y todo lo que mueve la liga, siempre con fuentes contrastadas." },
   { "clave": "previas", "menu": "Previas", "titulo": "Previas", "tono": "t-azul", "motivo": "calendario", "variante": "b", "diseno": "tarjetas", "descripcion": "Qué hay que saber antes de cada partido: horario, dónde verlo, claves y bajas." },
   { "clave": "cronicas", "menu": "Crónicas", "titulo": "Crónicas", "tono": "t-amarillo", "motivo": "libreta", "variante": "c", "diseno": "revista", "descripcion": "Qué pasó en los partidos más importantes de la jornada y por qué." },
-  { "clave": "datos", "menu": "Datos", "titulo": "Datos y estadísticas", "tono": "t-morado", "motivo": "barras", "variante": "a", "diseno": "tarjetas", "descripcion": "Líderes históricos, récords y estadísticas explicadas para entender mejor el juego." },
-  { "clave": "guias", "menu": "Guías", "titulo": "Guías", "tono": "t-naranja", "motivo": "libro", "variante": "b", "diseno": "numerada", "descripcion": "Cómo funciona la liga, la Copa NBA y todo lo que necesitas para seguir la NBA sin perderte." },
-  { "clave": "historias", "menu": "Historias", "titulo": "Historias y reportajes", "tono": "t-azul", "motivo": "estrella", "variante": "c", "diseno": "revista", "descripcion": "Perfiles, rivalidades, curiosidades y relatos que van más allá del marcador." }
+  { "clave": "guias", "menu": "Guías", "titulo": "Guías", "tono": "t-naranja", "motivo": "libro", "variante": "b", "diseno": "numerada", "descripcion": "Cómo funciona la NBA y cómo funciona la NBA Cup, explicado paso a paso." }
 ]

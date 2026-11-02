@@ -27,7 +27,12 @@
       {% for s in secciones %}<a href="{{ ('/' + s.clave + '/') | url }}">{{ s.menu }}</a>{% endfor %}
       <a href="{{ '/equipos/' | url }}">Equipos</a>
       <a href="{{ '/clasificacion/' | url }}">Clasificación</a>
-      <a href="{{ '/buscar/' | url }}">Buscar</a>
+      <a href="{{ '/lideres/' | url }}">Líderes</a>
+      <div class="buscar-rapido" id="buscarRapido">
+        <button type="button" class="buscar-rapido__boton" id="buscarBoton" aria-label="Buscar" aria-expanded="false"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button>
+        <input type="search" id="buscarCampo" placeholder="Buscar en la web..." autocomplete="off" aria-label="Buscar" data-base="{{ '/' | url }}">
+        <div class="buscar-rapido__res" id="buscarRes"></div>
+      </div>
     </nav>
   </div>
 </header>
@@ -43,19 +48,12 @@
 </main>
 <footer class="pie">
   <div class="contenedor">
-    <h2 class="pie__titulo">Todo sobre la NBA</h2>
-    <div class="pie__columnas">
-      <div><h3>Datos y estadísticas</h3>
-        <a href="{{ '/clasificacion/' | url }}">Clasificación</a>
-        <a href="{{ '/articulos/lideres-historicos-nba/' | url }}">Líderes históricos</a>
-        <a href="{{ '/equipos/' | url }}">Equipos por conferencias</a></div>
-      <div><h3>Curiosidades NBA</h3>
-        <a href="{{ '/articulos/curiosidades-nba/' | url }}">Jugadores y equipos</a></div>
-      <div><h3>Historia de la liga</h3>
-        <a href="{{ '/articulos/historia-de-la-nba/' | url }}">Cómo empezó todo</a>
-        <a href="{{ '/articulos/guia-como-funciona-la-nba/' | url }}">Cómo funciona la NBA</a>
-        <a href="{{ '/articulos/guia-copa-nba/' | url }}">La NBA Cup</a></div>
-      <div><h3>El medio</h3>
+    <h2 class="pie__titulo">Más información</h2>
+    <div class="pie__tarjetas">
+      <a href="{{ '/lideres-historicos/' | url }}"><strong>Líderes históricos</strong><span>Top 10 de puntos, rebotes, asistencias, tapones, robos y triples</span></a>
+      <a href="{{ '/jugadores/' | url }}"><strong>Grandes jugadores</strong><span>Diez leyendas de la liga y sus curiosidades</span></a>
+      <a href="{{ '/historia-de-la-liga/' | url }}"><strong>Historia de la liga</strong><span>Cómo empezó todo y cómo ha cambiado el juego</span></a>
+      <div class="pie__medio"><h3>El medio</h3>
         <a href="{{ '/quienes-somos/' | url }}">Quiénes somos</a>
         <a href="{{ '/contacto/' | url }}">Contacto</a>
         <a href="{{ site.instagram }}">Instagram</a></div>

@@ -1,0 +1,22 @@
+---
+layout: base.njk
+title: "Líderes históricos"
+resumen: "Top 10 de la historia de la NBA en puntos, rebotes, asistencias, tapones, robos y triples."
+permalink: /lideres-historicos/index.html
+---
+<div class="contenedor">
+  <div class="banner banner--a t-morado m-barras"><h1>Líderes históricos</h1><p>El top 10 de todos los tiempos en cada estadística. {{ lideres_historicos.actualizado }}.</p></div>
+  <div class="lideres-rejilla">
+    {% for c in lideres_historicos.categorias %}
+    <section class="lider-tarjeta revelar">
+      <h2>{{ c.nombre }}</h2>
+      <table class="tabla">
+        <thead><tr><th>#</th><th>Jugador</th><th>Total</th></tr></thead>
+        <tbody>{% for j in c.top %}<tr><td>{{ loop.index }}</td><td>{{ j.jugador }}</td><td>{{ j.cifra or "—" }}</td></tr>{% endfor %}</tbody>
+      </table>
+      {% if not c.verificado %}<p class="nota-fuente">[BORRADOR] Datos pendientes de verificar.</p>{% endif %}
+    </section>
+    {% endfor %}
+  </div>
+  <p class="nota-fuente">Cifras de temporada regular. Los jugadores en activo cambian cada noche. Fuente: estadísticas oficiales de la NBA y listas de referencia (pendiente de enlazar la fuente exacta).</p>
+</div>

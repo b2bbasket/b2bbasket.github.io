@@ -149,3 +149,58 @@ document.querySelectorAll('.pestana').forEach((b) => {
     document.querySelectorAll('.panel-pestana').forEach((p) => { p.hidden = p.id !== 'panel-' + b.dataset.panel; });
   });
 });
+
+// 11) Buscador desplegable de la cabecera
+(function () {
+  const caja = document.getElementById('buscarRapido');
+  if (!caja) return;
+  const campo = document.getElementById('buscarCampo');
+  const boton = document.getElementById('buscarBoton');
+  const res = document.getElementById('buscarRes');
+  const base = campo.dataset.base;
+  let datos = null;
+  const limpiar = (s) => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  function cargar() {
+    if (datos) return Promise.resolve(datos);
+    return fetch(base + 'buscador.json').then((r) => r.json()).then((d) => (datos = d)).catch(() => (datos = []));
+  }
+  function ir() {
+    const q = campo.value.trim();
+    if (q) location.href = base + 'buscar/?q=' + encodeURIComponent(q);
+  }
+  function pintar() {
+    const palabras = limpiar(campo.value.trim()).split(/\s+/).filter(Boolean);
+    res.textContent = '';
+    if (!palabras.length) return;
+    cargar().then((d) => {
+      const r = d.filter((i) => palabras.every((p) => limpiar(i.t + ' ' + i.r + ' ' + i.k).includes(p)));
+      if (!r.length) { const p = document.createElement('p'); p.textContent = 'Sin resultados.'; res.appendChild(p); return; }
+      r.slice(0, 6).forEach((i) => {
+        const a = document.createElement('a');
+        a.href = base.replace(/\/$/, '') + i.u;
+        const k = document.createElement('small'); k.textContent = i.k;
+        const t = document.createElement('strong'); t.textContent = i.t;
+        a.append(k, t); res.appendChild(a);
+      });
+      const v = document.createElement('a');
+      v.className = 'ver-todos'; v.href = base + 'buscar/?q=' + encodeURIComponent(campo.value.trim());
+      v.textContent = 'Ver todos los resultados →'; res.appendChild(v);
+    });
+  }
+  caja.addEventListener('mouseenter', cargar);
+  campo.addEventListener('focus', cargar);
+  campo.addEventListener('input', pintar);
+  campo.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') ir();
+    if (e.key === 'Escape') { campo.value = ''; res.textContent = ''; campo.blur(); caja.classList.remove('abierto'); }
+  });
+  boton.addEventListener('click', () => {
+    if (campo.value.trim()) { ir(); return; }
+    const abierto = caja.classList.toggle('abierto');
+    boton.setAttribute('aria-expanded', abierto);
+    if (abierto) campo.focus();
+  });
+  document.addEventListener('click', (e) => {
+    if (!caja.contains(e.target)) { caja.classList.remove('abierto'); res.textContent = ''; }
+  });
+})();

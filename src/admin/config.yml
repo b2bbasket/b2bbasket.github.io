@@ -29,9 +29,7 @@ collections:
           - { label: Noticias, value: noticias }
           - { label: Previas, value: previas }
           - { label: Crónicas, value: cronicas }
-          - { label: Datos y estadísticas, value: datos }
           - { label: Guías, value: guias }
-          - { label: Historias y reportajes, value: historias }
       - { label: Entradilla, name: resumen, widget: text, hint: "Qué ha pasado y por qué importa, en una o dos frases." }
       - { label: Autor, name: autor, widget: string, default: "[Tu nombre]" }
       - { label: Borrador (si está activado, NO se publica), name: borrador, widget: boolean, default: true, required: false }
@@ -101,6 +99,18 @@ collections:
         fields:
           - { label: Título, name: title, widget: string }
           - { label: Texto, name: body, widget: markdown }
+      - label: Grandes jugadores
+        name: jugadores
+        file: src/paginas/jugadores.md
+        fields:
+          - { label: Título, name: title, widget: string }
+          - { label: Texto, name: body, widget: markdown }
+      - label: Historia de la liga
+        name: historia_liga
+        file: src/paginas/historia-de-la-liga.md
+        fields:
+          - { label: Título, name: title, widget: string }
+          - { label: Texto, name: body, widget: markdown }
 
   - name: ajustes
     label: Resultados y ajustes
@@ -140,6 +150,78 @@ collections:
               - { label: Equipo, name: equipo, widget: string }
               - { label: Victorias, name: v, widget: number, value_type: int }
               - { label: Derrotas, name: d, widget: number, value_type: int }
+      - label: Líderes de la temporada (cada semana)
+        name: lideres_temporada
+        file: src/_data/lideres_temporada.json
+        fields:
+          - { label: Actualizado el, name: actualizado, widget: string }
+          - label: Top 5 en puntos
+            name: puntos
+            widget: list
+            summary: "{{fields.jugador}}"
+            fields:
+              - { label: Jugador, name: jugador, widget: string }
+              - { label: Equipo, name: equipo, widget: string }
+              - { label: Promedio por partido, name: valor, widget: string, required: false }
+          - label: Top 5 en rebotes
+            name: rebotes
+            widget: list
+            summary: "{{fields.jugador}}"
+            fields:
+              - { label: Jugador, name: jugador, widget: string }
+              - { label: Equipo, name: equipo, widget: string }
+              - { label: Promedio por partido, name: valor, widget: string, required: false }
+          - label: Top 5 en asistencias
+            name: asistencias
+            widget: list
+            summary: "{{fields.jugador}}"
+            fields:
+              - { label: Jugador, name: jugador, widget: string }
+              - { label: Equipo, name: equipo, widget: string }
+              - { label: Promedio por partido, name: valor, widget: string, required: false }
+          - label: Top 5 en tapones
+            name: tapones
+            widget: list
+            summary: "{{fields.jugador}}"
+            fields:
+              - { label: Jugador, name: jugador, widget: string }
+              - { label: Equipo, name: equipo, widget: string }
+              - { label: Promedio por partido, name: valor, widget: string, required: false }
+          - label: Top 5 en robos
+            name: robos
+            widget: list
+            summary: "{{fields.jugador}}"
+            fields:
+              - { label: Jugador, name: jugador, widget: string }
+              - { label: Equipo, name: equipo, widget: string }
+              - { label: Promedio por partido, name: valor, widget: string, required: false }
+          - label: Top 5 en triples
+            name: triples
+            widget: list
+            summary: "{{fields.jugador}}"
+            fields:
+              - { label: Jugador, name: jugador, widget: string }
+              - { label: Equipo, name: equipo, widget: string }
+              - { label: Promedio por partido, name: valor, widget: string, required: false }
+      - label: Líderes históricos (top 10)
+        name: lideres_historicos
+        file: src/_data/lideres_historicos.json
+        fields:
+          - { label: Texto de actualización, name: actualizado, widget: string }
+          - label: Categorías
+            name: categorias
+            widget: list
+            summary: "{{fields.nombre}}"
+            fields:
+              - { label: Nombre, name: nombre, widget: string }
+              - { label: Datos verificados, name: verificado, widget: boolean, default: false, required: false }
+              - label: Top 10
+                name: top
+                widget: list
+                summary: "{{fields.jugador}}: {{fields.cifra}}"
+                fields:
+                  - { label: Jugador, name: jugador, widget: string }
+                  - { label: Cifra, name: cifra, widget: string, required: false }
       - label: Datos del medio
         name: site
         file: src/_data/site.json
