@@ -1,0 +1,25 @@
+---
+layout: base.njk
+title: "Clasificación"
+resumen: "Clasificación de la NBA por conferencias."
+permalink: /clasificacion/index.html
+---
+<div class="contenedor">
+  <div class="banner t-morado"><h1>Clasificación</h1><p>Clasificación por conferencias. Actualizada: {{ clasificacion.actualizado }}.</p></div>
+  <p class="leyenda"><span class="punto punto--playoff"></span> Playoffs directos (1-6) &nbsp; <span class="punto punto--playin"></span> Play-in (7-10)</p>
+  <div class="tablas">
+    {% for titulo, lista in { "Conferencia Este": clasificacion.este, "Conferencia Oeste": clasificacion.oeste } %}
+    <section class="revelar">
+      <h2 class="seccion__titulo">{{ titulo }}</h2>
+      <div class="tabla-envoltorio"><table class="tabla">
+        <thead><tr><th>#</th><th>Equipo</th><th>V</th><th>D</th><th>%</th></tr></thead>
+        <tbody>
+        {% for e in lista | clasificar %}
+          <tr class="{% if loop.index <= 6 %}fila-playoff{% elif loop.index <= 10 %}fila-playin{% endif %}"><td>{{ loop.index }}</td><td>{{ e.equipo }}</td><td>{{ e.v }}</td><td>{{ e.d }}</td><td>{{ e.pct | porcentaje }}</td></tr>
+        {% endfor %}
+        </tbody>
+      </table></div>
+    </section>
+    {% endfor %}
+  </div>
+</div>

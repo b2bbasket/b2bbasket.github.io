@@ -40,6 +40,28 @@ collections:
       - { label: Crédito de la imagen, name: credito, widget: string, required: false }
       - { label: Texto del artículo, name: body, widget: markdown }
 
+  - name: previas
+    label: Previas de partido
+    label_singular: Previa
+    folder: src/previas
+    create: true
+    extension: md
+    format: frontmatter
+    slug: "{{year}}-{{month}}-{{day}}-{{fields.local}}-vs-{{fields.visitante}}"
+    summary: "{{local}} vs {{visitante}}"
+    fields:
+      - { label: Equipo local, name: local, widget: string }
+      - { label: Equipo visitante, name: visitante, widget: string }
+      - { label: Fecha del partido, name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: Día y hora (horario peninsular), name: fecha_hora, widget: string, hint: "Por ejemplo: Lunes 2 de noviembre, 01:30" }
+      - { label: Dónde verlo, name: donde, widget: string }
+      - { label: Autor, name: autor, widget: string, default: "[Tu nombre]" }
+      - { label: Las claves del partido, name: claves, widget: list, required: false, field: { label: Clave, name: clave, widget: string } }
+      - { label: Bajas del equipo local, name: bajas_local, widget: list, required: false, field: { label: Jugador, name: jugador, widget: string } }
+      - { label: Bajas del equipo visitante, name: bajas_visitante, widget: list, required: false, field: { label: Jugador, name: jugador, widget: string } }
+      - { label: Borrador (si está activado, NO se publica), name: borrador, widget: boolean, default: true, required: false }
+      - { label: Texto de la previa, name: body, widget: markdown, required: false }
+
   - name: fichas
     label: Fichas de equipo
     label_singular: Ficha de equipo
@@ -78,6 +100,43 @@ collections:
               - { label: Equipo visitante, name: visitante, widget: string }
               - { label: Puntos visitante, name: pv, widget: number, value_type: int }
               - { label: Crónica del partido (opcional), name: cronica, widget: relation, collection: articulos, search_fields: [title], value_field: "{{slug}}", display_fields: [title], required: false }
+      - label: Clasificación
+        name: clasificacion
+        file: src/_data/clasificacion.json
+        fields:
+          - { label: Actualizada el, name: actualizado, widget: string }
+          - label: Conferencia Este
+            name: este
+            widget: list
+            summary: "{{fields.equipo}}: {{fields.v}}-{{fields.d}}"
+            fields:
+              - { label: Equipo, name: equipo, widget: string }
+              - { label: Victorias, name: v, widget: number, value_type: int }
+              - { label: Derrotas, name: d, widget: number, value_type: int }
+          - label: Conferencia Oeste
+            name: oeste
+            widget: list
+            summary: "{{fields.equipo}}: {{fields.v}}-{{fields.d}}"
+            fields:
+              - { label: Equipo, name: equipo, widget: string }
+              - { label: Victorias, name: v, widget: number, value_type: int }
+              - { label: Derrotas, name: d, widget: number, value_type: int }
+      - label: Salarios
+        name: salarios
+        file: src/_data/salarios.json
+        fields:
+          - { label: Temporada, name: temporada, widget: string }
+          - { label: Actualizado el, name: actualizado, widget: string }
+          - { label: Fuente, name: fuente, widget: string }
+          - { label: Enlace de la fuente, name: fuente_url, widget: string, required: false }
+          - label: Jugadores (de mayor a menor salario)
+            name: jugadores
+            widget: list
+            summary: "{{fields.jugador}} ({{fields.equipo}})"
+            fields:
+              - { label: Jugador, name: jugador, widget: string }
+              - { label: Equipo, name: equipo, widget: string }
+              - { label: Salario en millones de dólares, name: millones, widget: number, value_type: float }
       - label: Datos del medio
         name: site
         file: src/_data/site.json
@@ -86,3 +145,4 @@ collections:
           - { label: Descripción, name: descripcion, widget: text }
           - { label: Enlace de Instagram, name: instagram, widget: string }
           - { label: Correo de contacto, name: email, widget: string }
+          - { label: Mostrar aviso de cookies (solo si hay analítica o publicidad), name: banner_cookies, widget: boolean, default: false }

@@ -1,0 +1,10 @@
+{
+  "layout": "previa.njk",
+  "tags": ["articulo"],
+  "seccion": "previas",
+  "permalink": "/previas/{{ page.fileSlug }}/index.html",
+  "eleventyComputed": {
+    "title": "{{ local }} vs {{ visitante }}: previa del partido",
+    "resumen": "Horario, dónde verlo, claves y bajas del {{ local }} - {{ visitante }}."
+  }
+}

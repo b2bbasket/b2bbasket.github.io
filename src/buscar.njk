@@ -1,0 +1,12 @@
+---
+layout: base.njk
+title: "Buscar"
+resumen: "Busca artículos y equipos."
+permalink: /buscar/index.html
+---
+<div class="contenedor">
+  <div class="cabecera-pagina"><h1>Buscar</h1><p>Escribe el nombre de un equipo, un jugador o un tema.</p></div>
+  <input class="buscador" id="buscador" type="search" placeholder="Por ejemplo: Knicks, Copa NBA, salarios..." autocomplete="off" data-base="{{ '/' | url }}">
+  <div class="resultados-busqueda" id="resultadosBusqueda"></div>
+</div>
+<script src="{{ '/js/buscador.js' | url }}"></script>

@@ -14,6 +14,12 @@ eleventyComputed:
   <div class="banner {{ s.tono }}{% if fondo %} con-imagen{% endif %}"{% if fondo %} style="background-image:url('{{ fondo | url }}')"{% endif %}>
     <h1>{{ s.titulo }}</h1><p>{{ s.descripcion }}</p>
   </div>
+  {% if s.clave == "datos" %}
+  <div class="accesos">
+    <a class="acceso t-morado" href="{{ '/clasificacion/' | url }}"><strong>Clasificación</strong><span>Este y Oeste, con zonas de playoffs y play-in</span></a>
+    <a class="acceso t-azul" href="{{ '/salarios/' | url }}"><strong>Salarios</strong><span>Los contratos más altos de la liga</span></a>
+  </div>
+  {% endif %}
   <div class="listado">
     {% for a in collections.recientes %}{% if a.data.seccion == s.clave %}
     <a class="tarjeta tarjeta--clara revelar" href="{{ a.url | url }}"><small>{{ a.date | fecha }}</small><h3>{{ a.data.title }}</h3><p>{{ a.data.resumen }}</p></a>

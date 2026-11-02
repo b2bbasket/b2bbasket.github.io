@@ -26,6 +26,7 @@
     <nav class="nav" id="nav">
       {% for s in secciones %}<a href="{{ ('/' + s.clave + '/') | url }}">{{ s.menu }}</a>{% endfor %}
       <a href="{{ '/equipos/' | url }}">Equipos</a>
+      <a href="{{ '/buscar/' | url }}">Buscar</a>
     </nav>
   </div>
 </header>
@@ -44,8 +45,25 @@
     <div><a class="logo" href="{{ '/' | url }}">{{ site.nombre }}<span>.</span></a><p>Medio digital independiente sobre la NBA en español.</p></div>
     <div class="pie__enlaces"><a href="{{ '/sobre/' | url }}">Sobre el proyecto</a><a href="{{ '/contacto/' | url }}">Contacto</a><a href="{{ site.instagram }}">Instagram</a></div>
   </div>
+  <div class="contenedor pie__legal">
+    <a href="{{ '/aviso-legal/' | url }}">Aviso legal</a>
+    <a href="{{ '/privacidad/' | url }}">Privacidad</a>
+    <a href="{{ '/cookies/' | url }}">Cookies</a>
+    <a href="{{ '/condiciones-de-uso/' | url }}">Condiciones de uso</a>
+    <a href="{{ '/principios-editoriales/' | url }}">Principios editoriales</a>
+    <a href="{{ '/correcciones/' | url }}">Correcciones</a>
+    {% if site.banner_cookies %}<a href="#" id="cookiesPreferencias">Preferencias de cookies</a>{% endif %}
+    <p>Medio independiente, no afiliado a la NBA ni a ninguna franquicia. Los nombres de equipos y jugadores se usan con fines informativos.</p>
+  </div>
 </footer>
 <button class="subir" id="subir" aria-label="Volver arriba"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+{% if site.banner_cookies %}
+<div class="cookies" id="cookies" hidden>
+  <p>Usamos cookies para analizar el uso de la web y mostrar publicidad. Puedes aceptarlas o rechazarlas. Más información en la <a href="{{ '/cookies/' | url }}">política de cookies</a>.</p>
+  <div class="cookies__botones"><button id="cookiesRechazar">Rechazar</button><button id="cookiesAceptar" class="primario">Aceptar</button></div>
+</div>
+<script src="{{ '/js/cookies.js' | url }}"></script>
+{% endif %}
 <script src="{{ '/js/main.js' | url }}"></script>
 </body>
 </html>

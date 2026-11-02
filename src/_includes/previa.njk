@@ -1,0 +1,20 @@
+---
+layout: base.njk
+---
+<article class="articulo">
+  <a class="etiqueta" href="{{ '/previas/' | url }}">Previas</a>
+  <h1>{{ local }} vs {{ visitante }}</h1>
+  <p class="entradilla">{{ resumen }}</p>
+  <p class="meta">Por <strong>{{ autor or "[Tu nombre]" }}</strong> · {{ page.date | fecha }}</p>
+  <div class="previa__datos">
+    <div><small>Cuándo (hora peninsular)</small><strong>{{ fecha_hora }}</strong></div>
+    <div><small>Dónde verlo</small><strong>{{ donde }}</strong></div>
+  </div>
+  {% if claves %}<h2>Las claves</h2><ol>{% for c in claves %}<li>{{ c }}</li>{% endfor %}</ol>{% endif %}
+  <h2>Bajas</h2>
+  <div class="previa__bajas">
+    <div><h3>{{ local }}</h3>{% if bajas_local and bajas_local.length %}<ul>{% for b in bajas_local %}<li>{{ b }}</li>{% endfor %}</ul>{% else %}<p>Sin información de bajas por el momento.</p>{% endif %}</div>
+    <div><h3>{{ visitante }}</h3>{% if bajas_visitante and bajas_visitante.length %}<ul>{% for b in bajas_visitante %}<li>{{ b }}</li>{% endfor %}</ul>{% else %}<p>Sin información de bajas por el momento.</p>{% endif %}</div>
+  </div>
+  {{ content | safe }}
+</article>

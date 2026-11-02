@@ -1,0 +1,18 @@
+---
+layout: base.njk
+title: "Salarios"
+resumen: "Los contratos más altos de la NBA, con su fuente."
+permalink: /salarios/index.html
+---
+<div class="contenedor">
+  <div class="banner t-morado"><h1>Salarios</h1><p>Los contratos más altos de la temporada {{ salarios.temporada }}. Actualizado: {{ salarios.actualizado }}.</p></div>
+  <div class="tabla-envoltorio revelar"><table class="tabla">
+    <thead><tr><th>#</th><th>Jugador</th><th>Equipo</th><th>Salario</th></tr></thead>
+    <tbody>
+    {% for j in salarios.jugadores %}
+      <tr><td>{{ loop.index }}</td><td>{{ j.jugador }}</td><td>{{ j.equipo }}</td><td>{% if j.millones %}{{ j.millones }} M$ {% else %}—{% endif %}</td></tr>
+    {% endfor %}
+    </tbody>
+  </table></div>
+  <p class="nota-fuente">Fuente: {% if salarios.fuente_url %}<a href="{{ salarios.fuente_url }}">{{ salarios.fuente }}</a>{% else %}{{ salarios.fuente }}{% endif %}. Cifras en millones de dólares, redondeadas.</p>
+</div>

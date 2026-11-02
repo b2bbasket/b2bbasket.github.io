@@ -245,3 +245,47 @@ a{color:inherit;text-decoration:none}
 .articulo th,.articulo td{border-bottom:1px solid var(--linea);padding:10px 8px;text-align:left}
 .articulo th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--suave)}
 @media (max-width:860px){.ficha{grid-template-columns:1fr}}
+
+/* ===== v8: datos, previas, buscador, cookies, legal ===== */
+.accesos{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:18px 0}
+.acceso{display:flex;flex-direction:column;gap:6px;padding:24px;border-radius:18px;transition:transform .25s,box-shadow .25s}
+.acceso strong{font-family:var(--titulos);font-size:26px}
+.acceso:hover{transform:translateY(-6px);box-shadow:0 14px 26px rgba(22,24,29,.18)}
+.tablas{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin:10px 0 30px}
+.tabla-envoltorio{overflow-x:auto}
+.tabla{width:100%;border-collapse:collapse;background:var(--blanco);border-radius:14px;overflow:hidden}
+.tabla th,.tabla td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--linea);font-size:15px}
+.tabla th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--suave);background:#F3F1EA}
+.tabla td:first-child{width:36px;color:var(--suave)}
+.fila-playoff td:first-child{box-shadow:inset 4px 0 0 var(--verde)}
+.fila-playin td:first-child{box-shadow:inset 4px 0 0 var(--amarillo)}
+.leyenda{font-size:14px;color:var(--suave);margin:18px 0 0}
+.punto{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:4px}
+.punto--playoff{background:var(--verde)}.punto--playin{background:var(--amarillo)}
+.nota-fuente{font-size:14px;color:var(--suave);margin:14px 0 30px}
+.previa__datos{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:0 0 1.6em}
+.previa__datos div{background:var(--blanco);border:1px solid var(--linea);border-radius:14px;padding:16px}
+.previa__datos small{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--suave)}
+.previa__bajas{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.previa__bajas h3{font-family:var(--titulos);font-size:20px;margin:0 0 6px}
+.articulo ol,.articulo ul{font-size:19px;line-height:1.7;padding-left:22px}
+.buscador{width:100%;font:600 18px var(--cuerpo);padding:16px 20px;border:2px solid var(--linea);border-radius:999px;background:var(--blanco);outline:none;margin:6px 0 20px}
+.buscador:focus{border-color:var(--acento)}
+.resultados-busqueda{display:grid;gap:12px;margin-bottom:40px}
+.resultado{display:flex;flex-direction:column;gap:4px;background:var(--blanco);border:1px solid var(--linea);border-radius:14px;padding:16px;transition:transform .2s}
+.resultado:hover{transform:translateY(-3px)}
+.resultado small{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--acento)}
+.resultado strong{font-family:var(--titulos);font-size:22px}
+.resultado span{color:var(--suave)}
+.aviso-borrador{background:#FFF4CC;border:1px solid #F0D77A;border-radius:12px;padding:12px 16px;font-size:15px!important}
+.pie__legal{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--suave);padding-top:20px;margin-top:20px;border-top:1px solid var(--linea)}
+.pie__legal a:hover{color:var(--acento)}
+.pie__legal p{flex-basis:100%;margin:6px 0 0;font-size:13px}
+.cookies{position:fixed;left:16px;right:16px;bottom:16px;z-index:250;display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:var(--texto);color:#fff;border-radius:16px;padding:16px 20px;box-shadow:0 12px 30px rgba(0,0,0,.35)}
+.cookies[hidden]{display:none}
+.cookies p{margin:0;font-size:14px;max-width:760px}
+.cookies a{text-decoration:underline}
+.cookies__botones{display:flex;gap:10px}
+.cookies button{font:700 14px var(--cuerpo);padding:10px 18px;border-radius:999px;border:2px solid #fff;background:transparent;color:#fff;cursor:pointer}
+.cookies button.primario{background:var(--acento);border-color:var(--acento)}
+@media (max-width:860px){.accesos,.tablas,.previa__datos,.previa__bajas{grid-template-columns:1fr}}

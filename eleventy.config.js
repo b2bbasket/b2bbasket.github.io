@@ -26,6 +26,13 @@ export default function (eleventyConfig) {
     return "";
   });
   eleventyConfig.addFilter("fichaDe", (lista, nombre) => (lista || []).find((f) => f.data.nombre === nombre));
+  // Clasificación: ordena por porcentaje de victorias
+  eleventyConfig.addFilter("clasificar", (lista) =>
+    (lista || [])
+      .map((e) => ({ ...e, pct: e.v + e.d ? e.v / (e.v + e.d) : 0 }))
+      .sort((a, b) => b.pct - a.pct || b.v - a.v || a.equipo.localeCompare(b.equipo))
+  );
+  eleventyConfig.addFilter("porcentaje", (n) => n.toFixed(3).replace(/^0/, ""));
   eleventyConfig.addFilter("lectura", (html) =>
     Math.max(1, Math.round(String(html).replace(/<[^>]*>/g, " ").split(/\s+/).filter(Boolean).length / 200))
   );
