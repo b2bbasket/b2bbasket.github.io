@@ -30,11 +30,12 @@ permalink: /index.html
     <p class="cifras__fecha">{{ resultados.fecha }}</p>
     <div class="partidos">
       {% for p in resultados.partidos %}
-      <div class="partido revelar">
+      {% if p.cronica %}<a class="partido partido--enlace revelar" href="{{ ('/articulos/' + p.cronica + '/') | url }}">{% else %}<div class="partido revelar">{% endif %}
         <span class="eq">{{ p.local }}</span>
         <b data-contar="{{ p.pl }}">0</b><i>-</i><b data-contar="{{ p.pv }}">0</b>
         <span class="eq">{{ p.visitante }}</span>
-      </div>
+        {% if p.cronica %}<span class="partido__ver">Ver la crónica →</span>{% endif %}
+      {% if p.cronica %}</a>{% else %}</div>{% endif %}
       {% endfor %}
     </div>
   </div>

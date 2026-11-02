@@ -1,0 +1,23 @@
+---
+layout: base.njk
+---
+<div class="contenedor">
+  <div class="banner t-verde">
+    <h1>{{ nombre }}</h1>
+    <p>Conferencia {{ conferencia }} · División {{ division }}</p>
+  </div>
+  <div class="ficha">
+    <aside class="ficha__datos">
+      <dl>
+        {% if fundacion %}<dt>Fundación</dt><dd>{{ fundacion }}</dd>{% endif %}
+        {% if pabellon %}<dt>Pabellón</dt><dd>{{ pabellon }}</dd>{% endif %}
+        {% if titulos %}<dt>Títulos de la NBA</dt><dd>{{ titulos }}</dd>{% endif %}
+      </dl>
+    </aside>
+    <div class="ficha__texto">
+      {% if imagen %}<figure class="articulo__foto"><img src="{{ imagen }}" alt="{{ nombre }}" loading="lazy"><figcaption>{{ credito }}</figcaption></figure>{% endif %}
+      {{ content | safe }}
+    </div>
+  </div>
+  <p class="ficha__volver"><a href="{{ '/equipos/' | url }}">← Todos los equipos</a></p>
+</div>

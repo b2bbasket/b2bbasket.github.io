@@ -25,6 +25,7 @@ export default function (eleventyConfig) {
     }
     return "";
   });
+  eleventyConfig.addFilter("fichaDe", (lista, nombre) => (lista || []).find((f) => f.data.nombre === nombre));
   eleventyConfig.addFilter("lectura", (html) =>
     Math.max(1, Math.round(String(html).replace(/<[^>]*>/g, " ").split(/\s+/).filter(Boolean).length / 200))
   );

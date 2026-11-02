@@ -1,0 +1,9 @@
+{
+  "layout": "ficha.njk",
+  "tags": ["fichas"],
+  "permalink": "/equipos/{{ page.fileSlug }}/index.html",
+  "eleventyComputed": {
+    "title": "{{ nombre }}",
+    "resumen": "Historia, datos y títulos de {{ nombre }}."
+  }
+}

@@ -16,7 +16,7 @@ permalink: /equipos/index.html
       {% for division, lista in divisiones %}
       <div class="division revelar">
         <h3>{{ division }}</h3>
-        {% for e in lista %}<div class="equipo">{{ e }}</div>{% endfor %}
+        {% for e in lista %}{% set f = collections.fichas | fichaDe(e) %}{% if f %}<a class="equipo equipo--enlace" href="{{ f.url | url }}">{{ e }}<em>Ver historia →</em></a>{% else %}<div class="equipo">{{ e }}</div>{% endif %}{% endfor %}
       </div>
       {% endfor %}
     </div>
