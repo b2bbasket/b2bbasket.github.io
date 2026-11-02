@@ -7,7 +7,7 @@ pabellon: Barclays Center (Brooklyn, Nueva York)
 titulos: '0'
 imagen: ''
 credito: ''
-borrador: true
+borrador: false
 ---
 ## Historia
 
@@ -139,7 +139,7 @@ El 23 de abril de 2012, los Nets jugaron su último partido en [Nueva Jersey](ht
 
 [![](https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Deron_Williams_Nets_2.jpg/250px-Deron_Williams_Nets_2.jpg?utm_source=es.wikipedia.org&utm_campaign=parser&utm_content=thumbnail)](https://es.wikipedia.org/wiki/Archivo:Deron_Williams_Nets_2.jpg)
 
-[_Deron Williams](https://es.wikipedia.org/wiki/Deron_Williams "Deron Williams")&#32;fue la estrella de los Nets entre 2011 y 2015._
+[_Deron Williams](https://es.wikipedia.org/wiki/Deron_Williams "Deron Williams") fue la estrella de los Nets entre 2011 y 2015._
 
 Tras el traslado a [Brooklyn](https://es.wikipedia.org/wiki/Brooklyn "Brooklyn"), el propietario del equipo, el multimillonario ruso [Mijaíl Prójorov](https://es.wikipedia.org/wiki/Mija%C3%ADl_Pr%C3%B3jorov "Mijaíl Prójorov"), prometió que el equipo lucharía por el anillo. Apoyándose en el recién renovado [Deron Williams](https://es.wikipedia.org/wiki/Deron_Williams "Deron Williams"), los Nets trataron de conseguir un equipo aspirante desde el comienzo. Tras intentar, sin éxito, el fichaje de [Dwight Howard](https://es.wikipedia.org/wiki/Dwight_Howard "Dwight Howard") (que fue traspasado a [Los Angeles Lakers](https://es.wikipedia.org/wiki/Los_Angeles_Lakers "Los Angeles Lakers")), los Nets adquirieron a [Joe Johnson](https://es.wikipedia.org/wiki/Joe_Johnson "Joe Johnson"), estrella de los [Atlanta Hawks](https://es.wikipedia.org/wiki/Atlanta_Hawks "Atlanta Hawks"), a cambio de [Anthony Morrow](https://es.wikipedia.org/wiki/Anthony_Morrow "Anthony Morrow"), [DeShawn Stevenson](https://es.wikipedia.org/wiki/DeShawn_Stevenson "DeShawn Stevenson"), [Jordan Farmar](https://es.wikipedia.org/wiki/Jordan_Farmar "Jordan Farmar"), [Johan Petro](https://es.wikipedia.org/wiki/Johan_Petro "Johan Petro") y [Jordan Williams](https://es.wikipedia.org/wiki/Jordan_Williams_(baloncestista) "Jordan Williams (baloncestista)"). Así mismo, renovaron a [Gerald Wallace](https://es.wikipedia.org/wiki/Gerald_Wallace "Gerald Wallace") y [Brook Lopez](https://es.wikipedia.org/wiki/Brook_Lopez "Brook Lopez").
 
