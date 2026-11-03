@@ -204,3 +204,14 @@ document.querySelectorAll('.pestana').forEach((b) => {
     if (!caja.contains(e.target)) { caja.classList.remove('abierto'); res.textContent = ''; }
   });
 })();
+
+
+// 12) Cambiar entre tema claro y oscuro (se recuerda la elección)
+const temaBoton = document.getElementById('temaBoton');
+if (temaBoton) {
+  temaBoton.addEventListener('click', () => {
+    const nuevo = document.documentElement.getAttribute('data-tema') === 'oscuro' ? 'claro' : 'oscuro';
+    document.documentElement.setAttribute('data-tema', nuevo);
+    try { localStorage.setItem('tema', nuevo); } catch (e) {}
+  });
+}
