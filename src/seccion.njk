@@ -16,30 +16,37 @@ eleventyComputed:
     {% if s.variante == "c" %}<span class="banner__fantasma">{{ s.menu }}</span>{% endif %}
     <h1>{{ s.titulo }}</h1><p>{{ s.descripcion }}</p>
   </div>
+  {% set equipos = lista | equiposDe %}
+  {% if equipos.length > 1 %}
+  <div class="filtros" id="filtros" role="group" aria-label="Filtrar por equipo">
+    <button type="button" class="filtro activo" data-equipo="">Todos</button>
+    {% for e in equipos %}<button type="button" class="filtro" data-equipo="{{ e }}">{{ e }}</button>{% endfor %}
+  </div>
+  {% endif %}
   {% if not lista.length %}
   <p class="vacio">Todavía no hay artículos en esta sección.</p>
   {% elif s.diseno == "lista" %}
   <div class="lista-noticias">
     {% for a in lista %}
-    <a class="noticia revelar" href="{{ a.url | url }}"><small>{{ a.date | fecha }}</small><div><strong>{{ a.data.title }}</strong><span>{{ a.data.resumen }}</span></div></a>
+    <a class="noticia revelar filtrable" data-equipo="{{ a.data.equipo }}" href="{{ a.url | url }}"><small>{{ a.date | fecha }}</small><div><strong>{{ a.data.title }}</strong><span>{{ a.data.resumen }}</span></div></a>
     {% endfor %}
   </div>
   {% elif s.diseno == "revista" %}
   <div class="revista">
     {% for a in lista %}
-    <a class="tarjeta {% if loop.first %}tarjeta--grande{% else %}tarjeta--clara{% endif %} revelar" href="{{ a.url | url }}"><small>{{ a.date | fecha }}</small><h3>{{ a.data.title }}</h3><p>{{ a.data.resumen }}</p></a>
+    <a class="tarjeta {% if loop.first %}tarjeta--grande{% else %}tarjeta--clara{% endif %} revelar filtrable" data-equipo="{{ a.data.equipo }}" href="{{ a.url | url }}"><small>{{ a.date | fecha }}</small><h3>{{ a.data.title }}</h3><p>{{ a.data.resumen }}</p></a>
     {% endfor %}
   </div>
   {% elif s.diseno == "numerada" %}
   <div class="pasos">
     {% for a in lista %}
-    <a class="paso revelar" href="{{ a.url | url }}"><b>{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</b><div><strong>{{ a.data.title }}</strong><span>{{ a.data.resumen }}</span></div></a>
+    <a class="paso revelar filtrable" data-equipo="{{ a.data.equipo }}" href="{{ a.url | url }}"><b>{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</b><div><strong>{{ a.data.title }}</strong><span>{{ a.data.resumen }}</span></div></a>
     {% endfor %}
   </div>
   {% else %}
   <div class="listado">
     {% for a in lista %}
-    <a class="tarjeta tarjeta--clara revelar" href="{{ a.url | url }}"><small>{{ a.date | fecha }}</small><h3>{{ a.data.title }}</h3><p>{{ a.data.resumen }}</p></a>
+    <a class="tarjeta tarjeta--clara revelar filtrable" data-equipo="{{ a.data.equipo }}" href="{{ a.url | url }}"><small>{{ a.date | fecha }}</small><h3>{{ a.data.title }}</h3><p>{{ a.data.resumen }}</p></a>
     {% endfor %}
   </div>
   {% endif %}

@@ -30,6 +30,7 @@ collections:
           - { label: Previas, value: previas }
           - { label: Crónicas, value: cronicas }
           - { label: Guías, value: guias }
+      - { label: Equipo principal (opcional, sirve para filtrar), name: equipo, widget: select, required: false, options: ["Atlanta Hawks", "Boston Celtics", "Brooklyn Nets", "Charlotte Hornets", "Chicago Bulls", "Cleveland Cavaliers", "Dallas Mavericks", "Denver Nuggets", "Detroit Pistons", "Golden State Warriors", "Houston Rockets", "Indiana Pacers", "Los Angeles Clippers", "Los Angeles Lakers", "Memphis Grizzlies", "Miami Heat", "Milwaukee Bucks", "Minnesota Timberwolves", "New Orleans Pelicans", "New York Knicks", "Oklahoma City Thunder", "Orlando Magic", "Philadelphia 76ers", "Phoenix Suns", "Portland Trail Blazers", "Sacramento Kings", "San Antonio Spurs", "Toronto Raptors", "Utah Jazz", "Washington Wizards"] }
       - { label: Entradilla, name: resumen, widget: text, hint: "Qué ha pasado y por qué importa, en una o dos frases." }
       - { label: Autor, name: autor, widget: string, default: "[Tu nombre]" }
       - { label: Borrador (si está activado, NO se publica), name: borrador, widget: boolean, default: true, required: false }

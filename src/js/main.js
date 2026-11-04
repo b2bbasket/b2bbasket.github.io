@@ -215,3 +215,24 @@ if (temaBoton) {
     try { localStorage.setItem('tema', nuevo); } catch (e) {}
   });
 }
+
+// 13) Copiar el enlace de un artículo
+const copiar = document.getElementById('copiarEnlace');
+if (copiar) {
+  copiar.addEventListener('click', () => {
+    const url = copiar.dataset.url;
+    const ok = () => { const t = copiar.textContent; copiar.textContent = '¡Enlace copiado!'; setTimeout(() => { copiar.textContent = t; }, 1800); };
+    if (navigator.clipboard) navigator.clipboard.writeText(url).then(ok).catch(() => window.prompt('Copia este enlace:', url));
+    else window.prompt('Copia este enlace:', url);
+  });
+}
+
+// 14) Filtros por equipo en las secciones
+const filtros = document.getElementById('filtros');
+if (filtros) {
+  filtros.querySelectorAll('.filtro').forEach((b) => b.addEventListener('click', () => {
+    filtros.querySelectorAll('.filtro').forEach((x) => x.classList.toggle('activo', x === b));
+    const eq = b.dataset.equipo;
+    document.querySelectorAll('.filtrable').forEach((c) => { c.hidden = !!eq && c.dataset.equipo !== eq; });
+  }));
+}

@@ -2,18 +2,36 @@
 layout: base.njk
 ---
 <article class="articulo">
-  {% for s in secciones %}{% if s.clave == seccion %}<a class="etiqueta" href="{{ ('/' + s.clave + '/') | url }}">{{ s.menu }}</a>{% endif %}{% endfor %}
+  {% for s in secciones %}{% if s.clave == seccion %}
+  <nav class="migas" aria-label="Ruta"><a href="{{ '/' | url }}">Inicio</a> › <a href="{{ ('/' + s.clave + '/') | url }}">{{ s.menu }}</a></nav>
+  <a class="etiqueta" href="{{ ('/' + s.clave + '/') | url }}">{{ s.menu }}</a>
+  {% endif %}{% endfor %}
+  {% if equipo %}{% set ficha = collections.fichas | fichaDe(equipo) %}{% if ficha %}<a class="chip-equipo" href="{{ ficha.url | url }}">{{ equipo }}</a>{% else %}<span class="chip-equipo">{{ equipo }}</span>{% endif %}{% endif %}
   <h1>{{ title }}</h1>
   <p class="entradilla">{{ resumen }}</p>
   <p class="meta">Por <strong>{{ autor or "[Tu nombre]" }}</strong> · {{ page.date | fecha }} · {{ content | lectura }} min de lectura</p>
   {% if imagen %}<figure class="articulo__foto"><img src="{{ imagen }}" alt="{{ title }}" loading="lazy"><figcaption>{{ credito }}</figcaption></figure>{% endif %}
   {{ content | safe }}
+  <div class="compartir">
+    <strong>Compartir</strong>
+    <a href="https://wa.me/?text={{ (title + ' ' + site.url + page.url) | urlencode }}" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="https://twitter.com/intent/tweet?text={{ title | urlencode }}&url={{ (site.url + page.url) | urlencode }}" target="_blank" rel="noopener">X</a>
+    <button type="button" id="copiarEnlace" data-url="{{ site.url }}{{ page.url }}">Copiar enlace</button>
+  </div>
+  <div class="autor-caja">
+    <strong>{{ autor or "[Tu nombre]" }}</strong>
+    <span>Escribe sobre la NBA en {{ site.nombre }}. <a href="{{ '/quienes-somos/' | url }}">Más sobre quién está detrás</a> · <a href="{{ '/principios-editoriales/' | url }}">cómo trabajamos</a></span>
+  </div>
 </article>
+{% set relacionados = collections.recientes | excepto(page.url) | deSeccion(seccion) | limite(2) %}
+{% if not relacionados.length %}{% set relacionados = collections.recientes | excepto(page.url) | limite(2) %}{% endif %}
+{% if relacionados.length %}
 <section class="relacionados">
   <h2 class="seccion__titulo">Te puede interesar</h2>
   <div class="rejilla rejilla--2">
-    {% for a in collections.recientes | excepto(page.url) | limite(2) %}
+    {% for a in relacionados %}
     <a class="tarjeta tarjeta--clara" href="{{ a.url | url }}"><small>{{ a.date | fecha }}</small><h3>{{ a.data.title }}</h3><p>{{ a.data.resumen }}</p></a>
     {% endfor %}
   </div>
 </section>
+{% endif %}
