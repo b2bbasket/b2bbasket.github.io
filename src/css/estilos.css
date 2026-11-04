@@ -438,3 +438,8 @@ html[data-tema="oscuro"] .logo{color:var(--texto)}
 html[data-tema="oscuro"] .tema-boton .sol{display:block}
 html[data-tema="oscuro"] .tema-boton .luna{display:none}
 @media (max-width:1040px){.tema-boton{margin:8px 0}}
+
+/* ===== v12: identidad Back to Back ===== */
+.splash__logo{text-transform:uppercase;text-align:center;line-height:1}
+.splash__lema{text-transform:none;letter-spacing:.14em;font-size:13px;text-align:center;max-width:90vw;line-height:1.5}
+.logo{letter-spacing:.01em}

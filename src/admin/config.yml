@@ -227,6 +227,9 @@ collections:
         file: src/_data/site.json
         fields:
           - { label: Nombre del medio, name: nombre, widget: string }
+          - { label: Nombre corto (logo de la cabecera), name: abreviatura, widget: string }
+          - { label: Eslogan, name: lema, widget: string }
+          - { label: Usuario de Instagram (con @), name: instagram_usuario, widget: string }
           - { label: Descripción, name: descripcion, widget: text }
           - { label: Enlace de Instagram, name: instagram, widget: string }
           - { label: Correo de contacto, name: email, widget: string }
