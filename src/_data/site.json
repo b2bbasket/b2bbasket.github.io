@@ -7,5 +7,6 @@
   "instagram": "https://www.instagram.com/b2b.basket/",
   "instagram_usuario": "@b2b.basket",
   "email": "[tu-correo@ejemplo.com]",
-  "banner_cookies": false
+  "banner_cookies": false,
+  "datos_automaticos": true
 }

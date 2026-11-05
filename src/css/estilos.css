@@ -462,3 +462,18 @@ a.chip-equipo:hover{border-color:var(--acento);color:var(--acento)}
 .filtro:hover{border-color:var(--acento)}
 .filtro.activo{background:var(--boton);border-color:var(--boton);color:#fff}
 .filtrable[hidden]{display:none!important}
+
+/* ===== v14: minijuego diario ===== */
+.juego{max-width:640px;margin:26px auto 40px}
+.juego__pistas{list-style:none;counter-reset:pista;padding:0;margin:0 0 20px;display:grid;gap:10px}
+.juego__pistas li{counter-increment:pista;background:var(--blanco);border:1px solid var(--linea);border-radius:14px;padding:14px 16px 14px 56px;position:relative;font-size:17px;animation:subir .4s ease both}
+.juego__pistas li::before{content:counter(pista);position:absolute;left:14px;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;background:var(--acento);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+.juego__form{display:flex;gap:10px}
+.juego__form[hidden],.juego__fin[hidden]{display:none}
+.juego__form input{flex:1;font:600 17px var(--cuerpo);padding:14px 18px;border:2px solid var(--linea);border-radius:999px;background:var(--blanco);color:var(--texto);outline:none}
+.juego__form input:focus{border-color:var(--acento)}
+.juego__form button,.juego__fin button{font:700 16px var(--cuerpo);padding:14px 22px;border-radius:999px;border:0;background:var(--acento);color:#fff;cursor:pointer}
+.juego__mensaje{color:var(--suave);font-size:14px;margin:12px 4px}
+.juego__fin{background:var(--blanco);border:1px solid var(--linea);border-radius:18px;padding:22px;text-align:center}
+.juego__fin>p:first-child{font-family:var(--titulos);font-size:24px;margin:0 0 14px}
+.juego__stats{color:var(--suave);font-size:14px;margin:12px 0 0}

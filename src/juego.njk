@@ -1,0 +1,26 @@
+---
+layout: base.njk
+title: "Adivina el jugador"
+resumen: "El minijuego diario de Back to Back: adivina el jugador de la NBA con cinco pistas."
+permalink: /juego/index.html
+---
+<div class="contenedor">
+  <div class="banner banner--a t-verde m-calendario"><h1>Adivina el jugador</h1><p>Un jugador nuevo cada día. Las pistas van de la más difícil a la más fácil: cuantas menos necesites, mejor.</p></div>
+  <div class="juego">
+    <ol class="juego__pistas" id="juegoPistas"></ol>
+    <form class="juego__form" id="juegoForm" autocomplete="off">
+      <input id="juegoCampo" list="juegoLista" placeholder="Escribe el nombre de un jugador..." aria-label="Jugador">
+      <button type="submit" id="juegoBoton">Probar</button>
+    </form>
+    <datalist id="juegoLista"></datalist>
+    <p class="juego__mensaje" id="juegoMensaje" aria-live="polite"></p>
+    <div class="juego__fin" id="juegoFin" hidden>
+      <p id="juegoResultado"></p>
+      <button type="button" id="juegoCompartir">Compartir resultado</button>
+      <p class="juego__stats" id="juegoStats"></p>
+      <p class="juego__stats">Vuelve mañana para un jugador nuevo.</p>
+    </div>
+  </div>
+</div>
+<script id="datos-juego" type="application/json">{{ juego.jugadores | dump | safe }}</script>
+<script src="{{ '/js/juego.js' | url }}"></script>

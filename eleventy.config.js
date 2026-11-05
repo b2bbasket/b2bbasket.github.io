@@ -43,6 +43,17 @@ export default function (eleventyConfig) {
   );
   eleventyConfig.addFilter("porcentaje", (n) => n.toFixed(3).replace(/^0/, ""));
   eleventyConfig.addFilter("equiposDe", (lista) => [...new Set((lista || []).map((a) => a.data.equipo).filter(Boolean))].sort());
+  // Enlaza un partido con su crónica: mismos dos equipos y fecha cercana
+  eleventyConfig.addFilter("cronicaDe", (lista, p) => {
+    const par = [p.local, p.visitante].sort().join("|");
+    const f = p.fecha ? new Date(p.fecha + "T00:00:00Z") : null;
+    const m = (lista || []).find((a) =>
+      a.data.seccion === "cronicas" && a.data.equipo_local && a.data.equipo_visitante &&
+      [a.data.equipo_local, a.data.equipo_visitante].sort().join("|") === par &&
+      (!f || Math.abs(a.date - f) <= 3 * 86400000)
+    );
+    return m ? m.url : "";
+  });
   eleventyConfig.addFilter("lectura", (html) =>
     Math.max(1, Math.round(String(html).replace(/<[^>]*>/g, " ").split(/\s+/).filter(Boolean).length / 200))
   );

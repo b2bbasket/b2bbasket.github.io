@@ -13,6 +13,7 @@ export default class {
       { t: "Líderes históricos", r: "Top 10 histórico en puntos, rebotes, asistencias, tapones, robos y triples", u: "/lideres-historicos/", k: "Página" },
       { t: "Grandes jugadores de la historia", r: "Diez leyendas de la NBA y sus curiosidades", u: "/jugadores/", k: "Página" },
       { t: "Historia de la liga", r: "Cómo empezó la NBA y cómo ha cambiado el juego", u: "/historia-de-la-liga/", k: "Página" },
+      { t: "Adivina el jugador", r: "Minijuego diario de la NBA con cinco pistas", u: "/juego/", k: "Juego" },
       { t: "Equipos", r: "Los 30 equipos por conferencias y divisiones", u: "/equipos/", k: "Página" },
       { t: "Quiénes somos", r: "Quién está detrás de este medio", u: "/quienes-somos/", k: "Página" },
       { t: "Principios editoriales", r: "Fuentes, verificación y transparencia", u: "/principios-editoriales/", k: "Página" },

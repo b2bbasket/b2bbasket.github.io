@@ -1,0 +1,354 @@
+{
+ "jugadores": [
+  {
+   "nombre": "Michael Jordan",
+   "alias": [
+    "Michael",
+    "Jordan",
+    "MJ"
+   ],
+   "pistas": [
+    "Jugó de escolta.",
+    "Debutó en 1984 tras ser elegido en el puesto 3 del draft.",
+    "Ganó 6 anillos, todos con el mismo equipo.",
+    "Se retiró varias veces y probó suerte en el béisbol.",
+    "Su equipo fueron los Chicago Bulls y su dorsal, el 23."
+   ]
+  },
+  {
+   "nombre": "LeBron James",
+   "alias": [
+    "LeBron",
+    "James"
+   ],
+   "pistas": [
+    "Alero que debutó en 2003.",
+    "Fue número 1 del draft, saliendo directamente del instituto.",
+    "Ganó anillos con tres franquicias distintas.",
+    "Es el máximo anotador de la historia de la NBA.",
+    "Jugó en Cleveland, Miami y Los Ángeles."
+   ]
+  },
+  {
+   "nombre": "Kobe Bryant",
+   "alias": [
+    "Kobe",
+    "Bryant"
+   ],
+   "pistas": [
+    "Escolta que jugó 20 temporadas.",
+    "Dio el salto directo del instituto a la NBA en 1996.",
+    "Pasó toda su carrera en un único equipo.",
+    "Anotó 81 puntos en un partido en 2006.",
+    "Usó los dorsales 8 y 24 con los Lakers."
+   ]
+  },
+  {
+   "nombre": "Tim Duncan",
+   "alias": [
+    "Duncan"
+   ],
+   "pistas": [
+    "Ala-pívot que pasó 19 temporadas en un mismo equipo.",
+    "Fue número 1 del draft de 1997.",
+    "Ganó 5 anillos y 2 MVP de la liga.",
+    "Nació en las Islas Vírgenes de Estados Unidos.",
+    "Su equipo fueron los San Antonio Spurs."
+   ]
+  },
+  {
+   "nombre": "Magic Johnson",
+   "alias": [
+    "Magic",
+    "Johnson",
+    "Earvin Johnson"
+   ],
+   "pistas": [
+    "Base muy alto para su posición.",
+    "Ganó el título de la NCAA en 1979.",
+    "Fue número 1 del draft de 1979.",
+    "Ganó 5 anillos con el \"Showtime\".",
+    "Jugó toda su carrera en los Lakers con el dorsal 32."
+   ]
+  },
+  {
+   "nombre": "Larry Bird",
+   "alias": [
+    "Bird",
+    "Larry"
+   ],
+   "pistas": [
+    "Alero que ganó tres MVP seguidos.",
+    "Fue elegido en el draft de 1978, pero debutó en 1979.",
+    "Ganó 3 anillos.",
+    "Su gran rival fue Magic Johnson.",
+    "Jugó toda su carrera en los Boston Celtics con el dorsal 33."
+   ]
+  },
+  {
+   "nombre": "Shaquille O'Neal",
+   "alias": [
+    "Shaq",
+    "O'Neal",
+    "Shaquille",
+    "Oneal"
+   ],
+   "pistas": [
+    "Pívot dominante de más de 2,10 m.",
+    "Fue número 1 del draft de 1992.",
+    "Ganó 4 anillos, tres de ellos seguidos.",
+    "Fue MVP de las Finales tres años consecutivos.",
+    "Jugó en Orlando, Lakers, Miami, Phoenix, Cleveland y Boston."
+   ]
+  },
+  {
+   "nombre": "Stephen Curry",
+   "alias": [
+    "Curry",
+    "Steph",
+    "Stephen"
+   ],
+   "pistas": [
+    "Base cuyo padre también fue jugador de la NBA.",
+    "Fue elegido en el puesto 7 del draft de 2009.",
+    "Es el máximo triplista de la historia.",
+    "Ganó 4 anillos con los Warriors entre 2015 y 2022.",
+    "Fue el primer MVP elegido por unanimidad."
+   ]
+  },
+  {
+   "nombre": "Dirk Nowitzki",
+   "alias": [
+    "Dirk",
+    "Nowitzki"
+   ],
+   "pistas": [
+    "Ala-pívot europeo que revolucionó su posición.",
+    "Nació en Alemania.",
+    "Pasó 21 temporadas en un único equipo.",
+    "Ganó el título de 2011 derrotando al Heat.",
+    "Jugó toda su carrera en los Dallas Mavericks."
+   ]
+  },
+  {
+   "nombre": "Hakeem Olajuwon",
+   "alias": [
+    "Olajuwon",
+    "Hakeem"
+   ],
+   "pistas": [
+    "Pívot nacido en Nigeria.",
+    "Fue número 1 del draft de 1984, por delante de Michael Jordan.",
+    "Es el máximo taponador de la historia.",
+    "Ganó dos anillos seguidos a mediados de los 90.",
+    "Jugó casi toda su carrera en los Houston Rockets."
+   ]
+  },
+  {
+   "nombre": "Allen Iverson",
+   "alias": [
+    "Iverson",
+    "Allen"
+   ],
+   "pistas": [
+    "Base-escolta bajito, de 1,83 m.",
+    "Fue número 1 del draft de 1996.",
+    "Fue MVP de la liga en 2001.",
+    "Llevó a su equipo a las Finales de 2001, pero perdió ante los Lakers.",
+    "Jugó sobre todo en los Philadelphia 76ers."
+   ]
+  },
+  {
+   "nombre": "Kevin Garnett",
+   "alias": [
+    "Garnett",
+    "KG"
+   ],
+   "pistas": [
+    "Ala-pívot que dio el salto del instituto a la NBA en 1995.",
+    "Fue MVP de la liga en 2004.",
+    "Ganó su único anillo en 2008.",
+    "Formó un \"Big Three\" con Paul Pierce y Ray Allen.",
+    "Jugó en Minnesota, Boston y Brooklyn."
+   ]
+  },
+  {
+   "nombre": "Steve Nash",
+   "alias": [
+    "Nash",
+    "Steve"
+   ],
+   "pistas": [
+    "Base nacido en Canadá.",
+    "Ganó dos MVP seguidos, en 2005 y 2006.",
+    "Su equipo era famoso por un ataque veloz de \"siete segundos o menos\".",
+    "Jugó en Phoenix, Dallas y Los Ángeles."
+   ]
+  },
+  {
+   "nombre": "Pau Gasol",
+   "alias": [
+    "Gasol",
+    "Pau"
+   ],
+   "pistas": [
+    "Ala-pívot nacido en Barcelona.",
+    "Fue Rookie del Año en 2002.",
+    "Ganó dos anillos seguidos, en 2009 y 2010.",
+    "Jugó junto a Kobe Bryant en los Lakers.",
+    "Su hermano Marc también fue campeón de la NBA."
+   ]
+  },
+  {
+   "nombre": "Manu Ginóbili",
+   "alias": [
+    "Ginobili",
+    "Manu"
+   ],
+   "pistas": [
+    "Escolta zurdo nacido en Argentina.",
+    "Fue elegido en el puesto 57 del draft de 1999.",
+    "Ganó 4 anillos con los San Antonio Spurs.",
+    "Era famoso por su \"eurostep\"."
+   ]
+  },
+  {
+   "nombre": "Tony Parker",
+   "alias": [
+    "Parker",
+    "Tony"
+   ],
+   "pistas": [
+    "Base nacido en Bélgica y criado en Francia.",
+    "Fue MVP de las Finales de 2007.",
+    "Ganó 4 anillos con los Spurs.",
+    "Jugó junto a Tim Duncan y Manu Ginóbili."
+   ]
+  },
+  {
+   "nombre": "Giannis Antetokounmpo",
+   "alias": [
+    "Giannis",
+    "Antetokounmpo"
+   ],
+   "pistas": [
+    "Ala-pívot nacido en Atenas, de familia nigeriana.",
+    "Fue elegido en el puesto 15 del draft de 2013.",
+    "Ganó dos MVP seguidos, en 2019 y 2020.",
+    "Fue campeón y MVP de las Finales en 2021.",
+    "Se le conoce como \"The Greek Freak\"."
+   ]
+  },
+  {
+   "nombre": "Nikola Jokić",
+   "alias": [
+    "Jokic",
+    "Nikola"
+   ],
+   "pistas": [
+    "Pívot serbio con visión de juego de base.",
+    "Fue elegido en el puesto 41 del draft de 2014.",
+    "Ha ganado al menos tres MVP de la liga.",
+    "Fue MVP de las Finales de 2023 con los Nuggets."
+   ]
+  },
+  {
+   "nombre": "Wilt Chamberlain",
+   "alias": [
+    "Wilt",
+    "Chamberlain"
+   ],
+   "pistas": [
+    "Pívot que dominó los años 60.",
+    "Anotó 100 puntos en un partido en 1962.",
+    "Es el máximo reboteador de la historia.",
+    "Promedió más de 50 puntos por partido en una temporada.",
+    "Jugó en los Warriors, los 76ers y los Lakers."
+   ]
+  },
+  {
+   "nombre": "Bill Russell",
+   "alias": [
+    "Russell",
+    "Bill"
+   ],
+   "pistas": [
+    "Pívot defensivo de los años 50 y 60.",
+    "Ganó 11 anillos.",
+    "Fue jugador y entrenador a la vez.",
+    "Jugó toda su carrera en los Boston Celtics.",
+    "El trofeo al MVP de las Finales lleva su nombre."
+   ]
+  },
+  {
+   "nombre": "Kareem Abdul-Jabbar",
+   "alias": [
+    "Kareem",
+    "Abdul-Jabbar",
+    "Alcindor",
+    "Lew Alcindor"
+   ],
+   "pistas": [
+    "Pívot con un gancho casi imposible de defender.",
+    "Ganó 6 MVP de la liga, un récord.",
+    "Nació con otro nombre: Lew Alcindor.",
+    "Jugó en los Bucks y en los Lakers.",
+    "Fue el máximo anotador de la historia hasta 2023."
+   ]
+  },
+  {
+   "nombre": "Dwyane Wade",
+   "alias": [
+    "Wade",
+    "Dwyane"
+   ],
+   "pistas": [
+    "Escolta elegido en el puesto 5 del draft de 2003.",
+    "Fue MVP de las Finales de 2006.",
+    "Formó un \"Big Three\" con LeBron James y Chris Bosh.",
+    "Pasó la mayor parte de su carrera en Miami."
+   ]
+  },
+  {
+   "nombre": "Kevin Durant",
+   "alias": [
+    "Durant",
+    "KD"
+   ],
+   "pistas": [
+    "Alero de más de 2,08 m con tiro de escolta.",
+    "Fue elegido en el puesto 2 del draft de 2007 por Seattle.",
+    "Fue MVP de la liga en 2014.",
+    "Ganó dos anillos seguidos con los Warriors, siendo MVP de las Finales las dos veces."
+   ]
+  },
+  {
+   "nombre": "Victor Wembanyama",
+   "alias": [
+    "Wembanyama",
+    "Wemby",
+    "Victor"
+   ],
+   "pistas": [
+    "Pívot francés de más de 2,20 m.",
+    "Fue número 1 del draft de 2023.",
+    "Fue Rookie del Año en 2024.",
+    "Juega en los San Antonio Spurs.",
+    "Llegó a las Finales de 2026."
+   ]
+  },
+  {
+   "nombre": "Dikembe Mutombo",
+   "alias": [
+    "Mutombo",
+    "Dikembe"
+   ],
+   "pistas": [
+    "Pívot nacido en la República Democrática del Congo.",
+    "Fue cuatro veces Mejor Defensor del Año.",
+    "Famoso por mover el dedo tras poner un tapón.",
+    "Es el segundo máximo taponador de la historia."
+   ]
+  }
+ ]
+}

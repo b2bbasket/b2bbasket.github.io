@@ -31,6 +31,8 @@ collections:
           - { label: Crónicas, value: cronicas }
           - { label: Guías, value: guias }
       - { label: Equipo principal (opcional, sirve para filtrar), name: equipo, widget: select, required: false, options: ["Atlanta Hawks", "Boston Celtics", "Brooklyn Nets", "Charlotte Hornets", "Chicago Bulls", "Cleveland Cavaliers", "Dallas Mavericks", "Denver Nuggets", "Detroit Pistons", "Golden State Warriors", "Houston Rockets", "Indiana Pacers", "Los Angeles Clippers", "Los Angeles Lakers", "Memphis Grizzlies", "Miami Heat", "Milwaukee Bucks", "Minnesota Timberwolves", "New Orleans Pelicans", "New York Knicks", "Oklahoma City Thunder", "Orlando Magic", "Philadelphia 76ers", "Phoenix Suns", "Portland Trail Blazers", "Sacramento Kings", "San Antonio Spurs", "Toronto Raptors", "Utah Jazz", "Washington Wizards"] }
+      - { label: Crónica de un partido - equipo local (opcional), name: equipo_local, widget: select, required: false, hint: "Solo para crónicas: así se enlaza sola desde Resultados de la jornada", options: ["Atlanta Hawks", "Boston Celtics", "Brooklyn Nets", "Charlotte Hornets", "Chicago Bulls", "Cleveland Cavaliers", "Dallas Mavericks", "Denver Nuggets", "Detroit Pistons", "Golden State Warriors", "Houston Rockets", "Indiana Pacers", "Los Angeles Clippers", "Los Angeles Lakers", "Memphis Grizzlies", "Miami Heat", "Milwaukee Bucks", "Minnesota Timberwolves", "New Orleans Pelicans", "New York Knicks", "Oklahoma City Thunder", "Orlando Magic", "Philadelphia 76ers", "Phoenix Suns", "Portland Trail Blazers", "Sacramento Kings", "San Antonio Spurs", "Toronto Raptors", "Utah Jazz", "Washington Wizards"] }
+      - { label: Crónica de un partido - equipo visitante (opcional), name: equipo_visitante, widget: select, required: false, options: ["Atlanta Hawks", "Boston Celtics", "Brooklyn Nets", "Charlotte Hornets", "Chicago Bulls", "Cleveland Cavaliers", "Dallas Mavericks", "Denver Nuggets", "Detroit Pistons", "Golden State Warriors", "Houston Rockets", "Indiana Pacers", "Los Angeles Clippers", "Los Angeles Lakers", "Memphis Grizzlies", "Miami Heat", "Milwaukee Bucks", "Minnesota Timberwolves", "New Orleans Pelicans", "New York Knicks", "Oklahoma City Thunder", "Orlando Magic", "Philadelphia 76ers", "Phoenix Suns", "Portland Trail Blazers", "Sacramento Kings", "San Antonio Spurs", "Toronto Raptors", "Utah Jazz", "Washington Wizards"] }
       - { label: Entradilla, name: resumen, widget: text, hint: "Qué ha pasado y por qué importa, en una o dos frases." }
       - { label: Autor, name: autor, widget: string, default: "[Tu nombre]" }
       - { label: Borrador (si está activado, NO se publica), name: borrador, widget: boolean, default: true, required: false }
@@ -223,6 +225,18 @@ collections:
                 fields:
                   - { label: Jugador, name: jugador, widget: string }
                   - { label: Cifra, name: cifra, widget: string, required: false }
+      - label: Minijuego diario (jugadores y pistas)
+        name: juego
+        file: src/_data/juego.json
+        fields:
+          - label: Jugadores
+            name: jugadores
+            widget: list
+            summary: "{{fields.nombre}}"
+            fields:
+              - { label: Nombre, name: nombre, widget: string }
+              - { label: Otros nombres válidos (apellido, apodo), name: alias, widget: list, required: false, field: { label: Alias, name: alias, widget: string } }
+              - { label: Pistas (de la más difícil a la más fácil), name: pistas, widget: list, field: { label: Pista, name: pista, widget: string } }
       - label: Datos del medio
         name: site
         file: src/_data/site.json
@@ -234,4 +248,5 @@ collections:
           - { label: Descripción, name: descripcion, widget: text }
           - { label: Enlace de Instagram, name: instagram, widget: string }
           - { label: Correo de contacto, name: email, widget: string }
+          - { label: Datos automáticos (resultados y clasificación), name: datos_automaticos, widget: boolean, default: true, required: false }
           - { label: Mostrar aviso de cookies (solo si hay analítica o publicidad), name: banner_cookies, widget: boolean, default: false }
