@@ -1,8 +1,31 @@
 {
   "fecha": "EJEMPLO · datos inventados para ver el diseño",
   "partidos": [
-    { "local": "[Equipo A]", "pl": 112, "visitante": "[Equipo B]", "pv": 104, "cronica": "ejemplo-cronica" },
-    { "local": "[Equipo C]", "pl": 98, "visitante": "[Equipo D]", "pv": 101 },
-    { "local": "[Equipo E]", "pl": 120, "visitante": "[Equipo F]", "pv": 117 }
+    {
+      "local": "[Equipo A]",
+      "pl": 112,
+      "visitante": "[Equipo B]",
+      "pv": 104,
+      "cronica": "ejemplo-cronica"
+    },
+    {
+      "local": "[Equipo C]",
+      "pl": 98,
+      "visitante": "[Equipo D]",
+      "pv": 101
+    },
+    {
+      "local": "[Equipo E]",
+      "pl": 120,
+      "visitante": "[Equipo F]",
+      "pv": 117
+    },
+    {
+      "local": "jhfkfkj",
+      "pl": 123,
+      "visitante": "jkbkkj",
+      "pv": 114,
+      "cronica": ""
+    }
   ]
 }
