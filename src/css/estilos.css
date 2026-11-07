@@ -477,3 +477,116 @@ a.chip-equipo:hover{border-color:var(--acento);color:var(--acento)}
 .juego__fin{background:var(--blanco);border:1px solid var(--linea);border-radius:18px;padding:22px;text-align:center}
 .juego__fin>p:first-child{font-family:var(--titulos);font-size:24px;margin:0 0 14px}
 .juego__stats{color:var(--suave);font-size:14px;margin:12px 0 0}
+
+/* ===== v16: portada con más personalidad ===== */
+
+/* --- Juego del día destacado --- */
+.juego-hero-wrap{padding-top:26px}
+.juego-hero-wrap+.portada{padding-top:26px}
+.juego-hero{position:relative;overflow:hidden;isolation:isolate;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:26px;padding:24px 28px;border-radius:24px;background:radial-gradient(120% 140% at 0% 0%,#2A1A16 0%,#16181D 55%);color:#fff;border:1px solid rgba(255,255,255,.08);box-shadow:0 18px 40px -22px rgba(255,75,43,.55);transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.juego-hero.revelar.visible{transition:opacity .7s ease,transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.juego-hero:hover{transform:translateY(-3px);box-shadow:0 26px 48px -22px rgba(255,75,43,.7)}
+.juego-hero:focus-visible{outline:3px solid var(--amarillo);outline-offset:4px}
+.juego-hero__pista{position:absolute;right:0;top:0;height:100%;width:62%;color:#FF4B2B;opacity:.16;z-index:-1;pointer-events:none}
+.juego-hero__balon{width:84px;height:84px;flex:none;filter:drop-shadow(0 10px 18px rgba(255,75,43,.45));transition:transform .5s cubic-bezier(.3,1.6,.5,1)}
+.juego-hero__balon svg{width:100%;height:100%;display:block}
+.juego-hero:hover .juego-hero__balon{transform:translateY(-6px) rotate(-14deg)}
+.juego-hero__texto{display:flex;flex-direction:column;gap:6px;min-width:0}
+.juego-hero__kicker{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--amarillo)}
+.juego-hero__kicker i{width:8px;height:8px;border-radius:50%;background:var(--acento);box-shadow:0 0 0 0 rgba(255,75,43,.7);animation:latido 1.8s infinite}
+@keyframes latido{0%{box-shadow:0 0 0 0 rgba(255,75,43,.7)}70%{box-shadow:0 0 0 10px rgba(255,75,43,0)}100%{box-shadow:0 0 0 0 rgba(255,75,43,0)}}
+.juego-hero__titulo{font-family:var(--titulos);font-size:clamp(24px,3vw,34px);line-height:1.08;letter-spacing:-.01em}
+.juego-hero__sub{color:#C9CCD6;font-size:15px}
+.juego-hero__pistas{display:flex;align-items:center;gap:5px;margin-top:4px}
+.juego-hero__pistas b{width:22px;height:6px;border-radius:4px;background:rgba(255,255,255,.18)}
+.juego-hero__pistas b:first-child{background:var(--acento)}
+.juego-hero__pistas em{font-style:normal;font-size:12px;font-weight:700;color:#A5AAB9;margin-left:6px}
+.juego-hero__accion{display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.juego-hero__estado{font-size:13px;font-weight:700;color:#fff;background:rgba(255,255,255,.1);padding:6px 12px;border-radius:999px;white-space:nowrap}
+.juego-hero__estado[hidden]{display:none}
+.juego-hero__cta{display:inline-flex;align-items:center;gap:10px;background:var(--acento);color:#fff;font-weight:800;font-size:16px;padding:14px 22px;border-radius:999px;white-space:nowrap;box-shadow:0 8px 18px -6px rgba(255,75,43,.8);transition:background .2s}
+.juego-hero__cta svg{transition:transform .25s}
+.juego-hero:hover .juego-hero__cta{background:#FF6340}
+.juego-hero:hover .juego-hero__cta svg{transform:translateX(4px)}
+
+/* --- Encabezados de bloque --- */
+.bloque-cab{display:flex;align-items:center;gap:14px;margin:0 0 24px}
+.bloque-cab .seccion__titulo{margin:0;white-space:nowrap}
+.bloque-cab__icono{flex:none;width:44px;height:44px;border-radius:13px;display:grid;place-items:center;background:var(--acento);color:#fff;transform:rotate(-6deg);box-shadow:0 8px 16px -8px rgba(255,75,43,.8)}
+.bloque-cab__regla{flex:1;position:relative;height:2px;background:var(--linea);margin-left:6px;min-width:24px}
+.bloque-cab__regla::before{content:"";position:absolute;left:0;top:-2px;width:56px;height:6px;border-radius:3px;background:var(--acento)}
+.bloque-cab--oscuro{margin-bottom:10px}
+.bloque-cab--oscuro .bloque-cab__icono{background:var(--amarillo);color:#16181D;box-shadow:0 8px 16px -8px rgba(255,201,60,.7)}
+.bloque-cab--oscuro .bloque-cab__regla{background:rgba(255,255,255,.14)}
+.bloque-cab--oscuro .bloque-cab__regla::before{background:var(--amarillo)}
+.bloque-cab--oscuro+.cifras__fecha{margin:0 0 24px 58px}
+
+/* --- Explora por sección --- */
+.explora{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.tile{--tile-bg:var(--acento);--tile-texto:#fff;--tile-sombra:rgba(255,75,43,.55);position:relative;overflow:hidden;isolation:isolate;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;min-height:176px;padding:20px;border-radius:20px;background:var(--tile-bg);background-size:cover;background-position:center;color:var(--tile-texto);container-type:inline-size;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.tile.revelar.visible{transition:opacity .7s ease,transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.tile--grande{grid-column:span 2}
+.tile::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.22) 50%,transparent 65%);transform:translateX(-120%);transition:transform .7s ease}
+.tile:hover{transform:translateY(-6px);box-shadow:0 20px 34px -14px var(--tile-sombra)}
+.tile:hover::after{transform:translateX(120%)}
+.tile:focus-visible{outline:3px solid var(--azul);outline-offset:3px}
+.tile__dibujo{position:absolute;right:-10px;bottom:-12px;width:min(52%,150px);aspect-ratio:1;opacity:.26;z-index:-1;transition:transform .45s cubic-bezier(.2,.8,.2,1),opacity .3s}
+.tile__dibujo svg{width:100%;height:100%;display:block}
+.tile--grande .tile__dibujo{width:min(38%,190px)}
+.tile:hover .tile__dibujo{transform:rotate(-10deg) scale(1.1);opacity:.4}
+.tile__sub{position:absolute;top:18px;left:20px;right:64px;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;opacity:.85;line-height:1.3}
+.tile__nombre{display:block;font-family:var(--cuerpo);font-weight:900;text-transform:uppercase;line-height:.92;letter-spacing:-.025em;font-size:clamp(20px,10.5cqi,40px);white-space:nowrap}
+.tile--grande .tile__nombre{font-size:clamp(30px,10cqi,68px)}
+.tile--clasificacion .tile__nombre{font-size:clamp(18px,8.4cqi,34px)}
+.tile--cronicas .tile__dibujo{opacity:.16}
+.tile--cronicas:hover .tile__dibujo{opacity:.26}
+.tarjeta--amarilla{color:#16181D}
+.tile__flecha{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.2);color:var(--tile-texto);transition:background .25s,color .25s,transform .25s}
+.tile:hover .tile__flecha{background:#fff;color:#16181D;transform:rotate(-45deg)}
+.tile--noticias{--tile-bg:linear-gradient(135deg,#FF4B2B 0%,#FF7A2F 100%);--tile-sombra:rgba(255,75,43,.6)}
+.tile--previas{--tile-bg:linear-gradient(135deg,#2B59FF 0%,#4F8BFF 100%);--tile-sombra:rgba(43,89,255,.55)}
+.tile--cronicas{--tile-bg:linear-gradient(135deg,#FFC93C 0%,#FFAE1F 100%);--tile-texto:#16181D;--tile-sombra:rgba(255,174,31,.6)}
+.tile--cronicas .tile__flecha{background:rgba(22,24,29,.12)}
+.tile--cronicas:hover .tile__flecha{background:#16181D;color:#FFC93C}
+.tile--guias{--tile-bg:linear-gradient(135deg,#1E2129 0%,#2C303B 100%);--tile-sombra:rgba(22,24,29,.6);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
+.tile--guias .tile__sub,.tile--guias .tile__dibujo{color:#FF6A3D}
+.tile--guias .tile__dibujo{opacity:.45}
+.tile--equipos{--tile-bg:linear-gradient(135deg,#12B76A 0%,#0C9457 100%);--tile-sombra:rgba(18,183,106,.55)}
+.tile--clasificacion{--tile-bg:linear-gradient(135deg,#7A4DFF 0%,#A06BFF 100%);--tile-sombra:rgba(122,77,255,.55)}
+.tile--lideres{--tile-bg:linear-gradient(135deg,#0F1B3D 0%,#24387A 100%);--tile-sombra:rgba(15,27,61,.6)}
+.tile--lideres .tile__nombre,.tile--lideres .tile__sub,.tile--lideres .tile__dibujo{color:#FFC93C}
+.tile--lideres .tile__dibujo{opacity:.4}
+.tile--imagen{background-image:none}
+.tile--imagen::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(10,10,14,.82),rgba(10,10,14,.15))}
+.tile--imagen .tile__dibujo{display:none}
+.tile--imagen,.tile--imagen .tile__nombre,.tile--imagen .tile__sub{color:#fff}
+html[data-tema="oscuro"] .tile--guias{--tile-bg:linear-gradient(135deg,#232733 0%,#323746 100%)}
+
+@media (max-width:860px){
+  .juego-hero{grid-template-columns:auto 1fr;gap:16px 18px;padding:20px}
+  .juego-hero__balon{width:60px;height:60px;align-self:start}
+  .juego-hero__pista{width:100%;opacity:.12}
+  .juego-hero__accion{grid-column:1/-1;flex-direction:row;align-items:center;justify-content:space-between;flex-wrap:wrap}
+  .juego-hero__cta{flex:1;justify-content:center}
+  .explora{grid-template-columns:repeat(2,1fr);gap:12px}
+  .tile{min-height:148px;padding:16px;border-radius:18px}
+  .tile__sub{top:15px;left:16px;right:56px;font-size:10px}
+  .tile__flecha{top:11px;right:11px;width:34px;height:34px}
+  .bloque-cab{gap:12px;flex-wrap:wrap}
+  .bloque-cab .seccion__titulo{flex:1;min-width:0}
+  .bloque-cab__regla{flex-basis:100%;margin:6px 0 0}
+  .tile--clasificacion,.tile--lideres{grid-column:span 2}
+  .tile--clasificacion .tile__nombre{font-size:clamp(24px,9cqi,40px)}
+  .tile__dibujo{width:min(46%,130px)}
+  .bloque-cab__icono{width:38px;height:38px;border-radius:11px}
+  .bloque-cab .seccion__titulo{white-space:normal}
+  .bloque-cab--oscuro+.cifras__fecha{margin:4px 0 20px}
+}
+@media (max-width:420px){
+  .juego-hero__sub{font-size:14px}
+  .tile{min-height:132px}
+}
+@media (prefers-reduced-motion:reduce){
+  .juego-hero__kicker i{animation:none}
+  .tile::after{display:none}
+}
