@@ -7,12 +7,19 @@ permalink: /juego/index.html
 <div class="contenedor">
   <div class="banner banner--a t-verde m-calendario"><h1>Adivina el jugador</h1><p>Un jugador nuevo cada día. Las pistas van de la más difícil a la más fácil: cuantas menos necesites, mejor.</p></div>
   <div class="juego">
+    <div class="juego__racha" id="juegoRacha" aria-live="polite">
+      <span class="llama" aria-hidden="true">🔥</span>
+      <span class="juego__racha-num" id="juegoRachaNum">0</span>
+      <span class="juego__racha-txt" id="juegoRachaTxt">aciertos seguidos</span>
+    </div>
     <ol class="juego__pistas" id="juegoPistas"></ol>
     <form class="juego__form" id="juegoForm" autocomplete="off">
-      <input id="juegoCampo" list="juegoLista" placeholder="Escribe el nombre de un jugador..." aria-label="Jugador">
+      <div class="juego__campo">
+        <input id="juegoCampo" placeholder="Escribe el nombre de un jugador..." aria-label="Jugador" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="juegoSugerencias">
+        <ul class="juego__sugerencias" id="juegoSugerencias" role="listbox" hidden></ul>
+      </div>
       <button type="submit" id="juegoBoton">Probar</button>
     </form>
-    <datalist id="juegoLista"></datalist>
     <p class="juego__mensaje" id="juegoMensaje" aria-live="polite"></p>
     <div class="juego__fin" id="juegoFin" hidden>
       <p id="juegoResultado"></p>
@@ -22,5 +29,24 @@ permalink: /juego/index.html
     </div>
   </div>
 </div>
+<style>
+.juego__campo{position:relative;flex:1;min-width:0}
+.juego__campo input{width:100%;box-sizing:border-box}
+.juego__sugerencias{list-style:none;margin:6px 0 0;padding:6px;position:absolute;left:0;right:0;top:100%;z-index:30;background:var(--blanco);border:1px solid var(--linea);border-radius:16px;box-shadow:0 14px 28px rgba(22,24,29,.18);max-height:280px;overflow-y:auto}
+.juego__sugerencias[hidden]{display:none}
+.juego__sugerencias li{padding:11px 14px;border-radius:10px;font-weight:600;cursor:pointer}
+.juego__sugerencias li:hover,.juego__sugerencias li.activa{background:var(--hover);color:var(--acento)}
+.juego__racha{display:flex;align-items:center;justify-content:center;gap:8px;width:fit-content;margin:0 auto 18px;padding:9px 20px;border-radius:999px;border:2px solid var(--linea);background:var(--blanco);font-weight:700;font-size:15px;color:var(--suave)}
+.juego__racha-num{font-family:var(--titulos);font-size:26px;line-height:1;color:var(--texto)}
+.juego__racha .llama{display:none;font-size:22px;line-height:1;transform-origin:50% 90%}
+.juego__racha.activa{border-color:#FF8A3D;background:linear-gradient(135deg,rgba(255,75,43,.12),rgba(255,201,60,.2));color:var(--texto)}
+.juego__racha.activa .juego__racha-num{color:var(--acento)}
+.juego__racha.activa .llama{display:inline-block;animation:llama 1.8s ease-in-out infinite}
+.juego__racha.sube{animation:rachaSube .8s ease}
+.juego__racha.sube .llama{animation:llamaSube .8s ease,llama 1.8s ease-in-out .8s infinite}
+@keyframes llama{0%,100%{transform:scale(1) rotate(-3deg)}50%{transform:scale(1.1) rotate(3deg)}}
+@keyframes rachaSube{0%{transform:scale(1)}35%{transform:scale(1.12)}100%{transform:scale(1)}}
+@keyframes llamaSube{0%{transform:scale(.5)}50%{transform:scale(1.5)}100%{transform:scale(1)}}
+</style>
 <script id="datos-juego" type="application/json">{{ juego.jugadores | dump | safe }}</script>
 <script src="{{ '/js/juego.js' | url }}"></script>
