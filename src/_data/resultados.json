@@ -1,24 +1,68 @@
 {
-  "fecha": "EJEMPLO · datos inventados para ver el diseño",
-  "partidos": [
-    {
-      "local": "[Equipo A]",
-      "pl": 112,
-      "visitante": "[Equipo B]",
-      "pv": 104,
-      "cronica": "ejemplo-cronica"
-    },
-    {
-      "local": "[Equipo C]",
-      "pl": 98,
-      "visitante": "[Equipo D]",
-      "pv": 101
-    },
-    {
-      "local": "[Equipo E]",
-      "pl": 120,
-      "visitante": "[Equipo F]",
-      "pv": 117
-    }
-  ]
+ "fecha": "Jornada NBA del 6 de noviembre de 2026",
+ "partidos": [
+  {
+   "local": "Atlanta Hawks",
+   "pl": 139,
+   "visitante": "Washington Wizards",
+   "pv": 132,
+   "fecha": "2026-11-06"
+  },
+  {
+   "local": "Charlotte Hornets",
+   "pl": 80,
+   "visitante": "Boston Celtics",
+   "pv": 119,
+   "fecha": "2026-11-06"
+  },
+  {
+   "local": "Cleveland Cavaliers",
+   "pl": 119,
+   "visitante": "Philadelphia 76ers",
+   "pv": 95,
+   "fecha": "2026-11-06"
+  },
+  {
+   "local": "Dallas Mavericks",
+   "pl": 112,
+   "visitante": "Utah Jazz",
+   "pv": 100,
+   "fecha": "2026-11-06"
+  },
+  {
+   "local": "Memphis Grizzlies",
+   "pl": 97,
+   "visitante": "Oklahoma City Thunder",
+   "pv": 128,
+   "fecha": "2026-11-06"
+  },
+  {
+   "local": "Milwaukee Bucks",
+   "pl": 107,
+   "visitante": "Toronto Raptors",
+   "pv": 121,
+   "fecha": "2026-11-06"
+  },
+  {
+   "local": "New Orleans Pelicans",
+   "pl": 109,
+   "visitante": "Minnesota Timberwolves",
+   "pv": 115,
+   "fecha": "2026-11-06"
+  },
+  {
+   "local": "Los Angeles Lakers",
+   "pl": 124,
+   "visitante": "Portland Trail Blazers",
+   "pv": 118,
+   "fecha": "2026-11-06"
+  },
+  {
+   "local": "Sacramento Kings",
+   "pl": 109,
+   "visitante": "San Antonio Spurs",
+   "pv": 124,
+   "fecha": "2026-11-06"
+  }
+ ]
 }
