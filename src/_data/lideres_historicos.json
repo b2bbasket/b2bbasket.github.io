@@ -1,5 +1,5 @@
 {
- "actualizado": "Temporada regular, hasta el final de la temporada 2025-26",
+ "actualizado": "Temporada regular. Triples actualizados al 8 de noviembre de 2026; el resto de categorías, hasta el final de la temporada 2025-26",
  "categorias": [
   {
    "nombre": "Puntos",
@@ -49,7 +49,7 @@
   },
   {
    "nombre": "Rebotes",
-   "verificado": false,
+   "verificado": true,
    "top": [
     {
      "jugador": "Wilt Chamberlain",
@@ -141,7 +141,7 @@
   },
   {
    "nombre": "Tapones",
-   "verificado": false,
+   "verificado": true,
    "top": [
     {
      "jugador": "Hakeem Olajuwon",
@@ -176,104 +176,104 @@
      "cifra": "2.732"
     },
     {
-     "jugador": "Robert Parish",
-     "cifra": "2.361"
+     "jugador": "Tree Rollins",
+     "cifra": "2.542"
     },
     {
-     "jugador": "Alonzo Mourning",
-     "cifra": "2.356"
+     "jugador": "Robert Parish",
+     "cifra": "2.361"
     }
    ]
   },
   {
    "nombre": "Robos",
-   "verificado": false,
+   "verificado": true,
    "top": [
     {
      "jugador": "John Stockton",
      "cifra": "3.265"
     },
     {
-     "jugador": "[Pendiente de verificar]",
-     "cifra": ""
+     "jugador": "Chris Paul",
+     "cifra": "2.728"
     },
     {
-     "jugador": "[Pendiente de verificar]",
-     "cifra": ""
+     "jugador": "Jason Kidd",
+     "cifra": "2.684"
     },
     {
-     "jugador": "[Pendiente de verificar]",
-     "cifra": ""
+     "jugador": "Michael Jordan",
+     "cifra": "2.514"
     },
     {
-     "jugador": "[Pendiente de verificar]",
-     "cifra": ""
+     "jugador": "Gary Payton",
+     "cifra": "2.445"
     },
     {
-     "jugador": "[Pendiente de verificar]",
-     "cifra": ""
+     "jugador": "LeBron James",
+     "cifra": "2.417"
     },
     {
-     "jugador": "[Pendiente de verificar]",
-     "cifra": ""
+     "jugador": "Maurice Cheeks",
+     "cifra": "2.310"
     },
     {
-     "jugador": "[Pendiente de verificar]",
-     "cifra": ""
+     "jugador": "Scottie Pippen",
+     "cifra": "2.307"
     },
     {
-     "jugador": "[Pendiente de verificar]",
-     "cifra": ""
+     "jugador": "Clyde Drexler",
+     "cifra": "2.207"
     },
     {
-     "jugador": "[Pendiente de verificar]",
-     "cifra": ""
+     "jugador": "Hakeem Olajuwon",
+     "cifra": "2.162"
     }
    ]
   },
   {
    "nombre": "Triples",
-   "verificado": false,
+   "verificado": true,
    "top": [
     {
      "jugador": "Stephen Curry",
-     "cifra": "4.248"
+     "cifra": "4.286"
     },
     {
      "jugador": "James Harden",
-     "cifra": "3.390"
+     "cifra": "3.415"
     },
     {
      "jugador": "Ray Allen",
      "cifra": "2.973"
     },
     {
-     "jugador": "[Pendiente de verificar]",
-     "cifra": ""
+     "jugador": "Klay Thompson",
+     "cifra": "2.932"
     },
     {
-     "jugador": "[Pendiente de verificar]",
-     "cifra": ""
+     "jugador": "Damian Lillard",
+     "cifra": "2.829"
     },
     {
-     "jugador": "[Pendiente de verificar]",
-     "cifra": ""
+     "jugador": "LeBron James",
+     "cifra": "2.642"
     },
     {
-     "jugador": "[Pendiente de verificar]",
-     "cifra": ""
+     "jugador": "Reggie Miller",
+     "cifra": "2.560"
     },
     {
-     "jugador": "[Pendiente de verificar]",
-     "cifra": ""
+     "jugador": "Paul George",
+     "cifra": "2.475"
     },
     {
-     "jugador": "[Pendiente de verificar]",
-     "cifra": ""
+     "jugador": "Kyle Korver",
+     "cifra": "2.450"
     },
     {
-     "jugador": "[Pendiente de verificar]",
-     "cifra": ""
+     "jugador": "Kevin Durant",
+     "cifra": "2.391"
     }
    ]
   }
