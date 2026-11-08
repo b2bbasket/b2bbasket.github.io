@@ -8,28 +8,33 @@ titulos: "18"
 lideres:
   - categoria: Puntos
     jugador: John Havlicek
-    dato: ""
+    dato: "26.395"
   - categoria: Rebotes
     jugador: Bill Russell
-    dato: ""
+    dato: "21.620"
   - categoria: Asistencias
     jugador: Bob Cousy
-    dato: ""
-nota_lideres: "[BORRADOR] Jugadores y cifras pendientes de verificar con fuentes oficiales de la franquicia."
+    dato: "6.945"
+nota_lideres: "Temporada regular. Fuente: NBA.com (artículos de líderes históricos de los Celtics, actualizados en julio y agosto de 2026)."
 ---
 
-**[BORRADOR: texto pendiente de verificar con fuentes antes de publicar.]**
-
-Los Celtics son una de las franquicias fundacionales de la liga y los máximos campeones de la historia de la NBA.
+Los Celtics nacieron el 6 de junio de 1946 como uno de los equipos fundadores de la BAA, la liga que en 1949 se convirtió en la NBA. Con 18 campeonatos, son los máximos ganadores de la historia de la liga. Jugaron en el Boston Garden hasta 1995 y desde entonces lo hacen en el TD Garden.
 
 ## La dinastía de Russell
 
-Con Red Auerbach en el banquillo y Bill Russell en la pista, ganaron 11 títulos en 13 temporadas entre 1957 y 1969, incluida una racha de ocho consecutivos.
+Con Red Auerbach como entrenador y Bill Russell como pilar, Boston ganó 11 títulos en 13 temporadas entre 1957 y 1969, incluidos ocho seguidos entre 1959 y 1966. Los dos últimos, en 1968 y 1969, llegaron con Russell como jugador-entrenador.
 
-## Bird, Garnett y Tatum
+## Los años 70 y la era Bird
 
-Larry Bird lideró la conquista de los títulos de los años 80. En 2008 llegó otro anillo con Kevin Garnett, Paul Pierce y Ray Allen, y en 2024 el título número 18 con Jayson Tatum y Jaylen Brown.
+John Havlicek, máximo anotador de la franquicia, y Dave Cowens llevaron al equipo a los títulos de 1974 y 1976. Después llegó Larry Bird, que junto a Kevin McHale y Robert Parish ganó los campeonatos de 1981, 1984 y 1986.
+
+## 2008 y 2024
+
+En 2008, el trío formado por Paul Pierce, Kevin Garnett y Ray Allen derrotó a los Lakers en las Finales. En 2024, Jayson Tatum y Jaylen Brown, elegido MVP de las Finales, vencieron a los Dallas Mavericks y dieron a Boston su título número 18, el récord de la NBA.
 
 ## Fuentes
 
-- [Pendiente: fuente oficial de la franquicia y recuento de títulos]
+- [Historia de todos los títulos de los Celtics, NESN (enero de 2026)](https://nesn.com/2026/01/the-complete-history-of-boston-celtics-championships-every-nba-finals-win-and-title-explained)
+- [Boston Celtics, Wikipedia](https://en.wikipedia.org/wiki/Boston_Celtics) (fundación y pabellón)
+- [Jaylen Brown, MVP de las Finales 2024, NBC Sports Boston](https://nbcsportsboston.com/nba/boston-celtics/jaylen-brown-wins-2024-nba-finals-mvp-celtics/621435)
+- Líderes: NBA.com, [anotadores](https://www.nba.com/news/top-5-all-time-boston-celtics-scoring-leaders), [reboteadores](https://www.nba.com/news/top-5-all-time-boston-celtics-rebounding-leaders) y [asistentes](https://www.nba.com/news/top-5-all-time-boston-celtics-assist-leaders)
