@@ -1,0 +1,36 @@
+name: Calendario en directo
+on:
+  schedule:
+    # cada 30 minutos entre las 17:00 y las 07:59 UTC (horas en las que hay partidos)
+    - cron: '*/30 17-23,0-7 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: datos-nba
+  cancel-in-progress: false
+jobs:
+  directo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node scripts/calendario-directo.mjs
+        env:
+          BALLDONTLIE_API_KEY: ${{ secrets.BALLDONTLIE_API_KEY }}
+      - name: Guardar cambios y publicar
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -n "$(git status --porcelain src/_data/calendario.json)" ]; then
+            git config user.name "github-actions"
+            git config user.email "github-actions@users.noreply.github.com"
+            git add src/_data/calendario.json
+            git commit -m "Calendario: actualizar partidos de hoy"
+            git pull --rebase --autostash
+            git push
+            gh workflow run publicar.yml
+          fi
