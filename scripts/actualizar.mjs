@@ -1,6 +1,7 @@
 // Actualiza los resultados de la jornada y la clasificación desde la API de BALLDONTLIE.
 // Si algo falla, no toca los datos manuales y la web se publica igualmente.
 import fs from "node:fs";
+import { compactar, guardarCalendario } from "./calendario-comun.mjs";
 
 const KEY = process.env.BALLDONTLIE_API_KEY;
 const site = JSON.parse(fs.readFileSync("src/_data/site.json", "utf8"));
@@ -42,6 +43,10 @@ try {
     if (!cursor) break;
     await espera(13000); // límite de la cuenta gratuita: 5 peticiones por minuto
   }
+
+  // Calendario completo de la temporada (aprovecha la misma descarga, sin peticiones extra)
+  try { guardarCalendario(temporada, juegos.map(compactar)); }
+  catch (e) { console.log("No se ha podido guardar el calendario:", e.message); }
 
   const finales = juegos.filter((g) => g.status === "Final" && NOMBRES[g.home_team?.abbreviation] && NOMBRES[g.visitor_team?.abbreviation]);
   if (!finales.length) { console.log("Sin partidos finalizados: se mantienen los datos actuales."); process.exit(0); }

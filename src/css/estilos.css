@@ -590,3 +590,145 @@ html[data-tema="oscuro"] .tile--guias{--tile-bg:linear-gradient(135deg,#232733 0
   .juego-hero__kicker i{animation:none}
   .tile::after{display:none}
 }
+
+/* ===== v18: Calendario NBA ===== */
+.cifras__calendario{display:inline-flex;align-items:center;gap:8px;margin-top:22px;font-weight:800;color:var(--amarillo)}
+.cifras__calendario svg{transition:transform .2s}
+.cifras__calendario:hover svg{transform:translateX(4px)}
+
+.calendario{padding-bottom:30px}
+.cal-tabs{display:inline-flex;gap:6px;padding:6px;margin:22px 0 10px;border-radius:999px;background:var(--blanco);border:1px solid var(--linea)}
+.cal-tabs[hidden]{display:none}
+.cal-tab{display:inline-flex;align-items:center;gap:8px;font:800 15px var(--cuerpo);padding:11px 20px;border:0;border-radius:999px;background:transparent;color:var(--suave);cursor:pointer;transition:background .2s,color .2s}
+.cal-tab:hover{color:var(--texto)}
+.cal-tab.activo{background:var(--acento);color:#fff;box-shadow:0 8px 16px -8px rgba(255,75,43,.8)}
+.cal-tab:focus-visible,.cal-celda:focus-visible,.cal-flecha:focus-visible,.cal-filtro:focus-visible{outline:3px solid var(--azul);outline-offset:2px}
+.cal-aviso{font-size:14px;color:var(--suave);margin:4px 0 18px}
+.cal-aviso--vacio{background:var(--blanco);border:1px dashed var(--linea);border-radius:16px;padding:22px;font-size:16px;font-weight:600;color:var(--texto)}
+.cal-panel[hidden]{display:none}
+
+/* Mes */
+.cal-general{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:24px;align-items:start}
+.cal-mes{background:var(--oscuro);color:#fff;border-radius:22px;padding:20px;position:sticky;top:96px}
+.cal-mes__cab{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.cal-mes__titulo{font-family:var(--titulos);font-size:26px;margin:0;text-transform:capitalize}
+.cal-flecha{width:40px;height:40px;border-radius:50%;border:0;display:grid;place-items:center;background:rgba(255,255,255,.1);color:#fff;cursor:pointer;transition:background .2s}
+.cal-flecha:hover:not(:disabled){background:var(--acento)}
+.cal-flecha:disabled{opacity:.3;cursor:default}
+.cal-semana,.cal-dias{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.cal-semana span{text-align:center;font-size:12px;font-weight:800;letter-spacing:.1em;color:#8E93A3;padding-bottom:4px}
+.cal-celda{position:relative;aspect-ratio:1;border:0;border-radius:12px;background:rgba(255,255,255,.04);color:#6F7484;font:700 15px var(--cuerpo);cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;transition:background .15s,transform .15s}
+.cal-celda--vacia{background:transparent;cursor:default}
+.cal-celda:hover{background:rgba(255,255,255,.12);transform:translateY(-1px)}
+.cal-celda.con-partidos{color:#fff;background:rgba(43,89,255,.22)}
+.cal-celda.todo-jugado{background:rgba(255,255,255,.1)}
+.cal-celda.hay-directo{background:rgba(255,75,43,.28)}
+.cal-celda__cant{font-size:10px;font-weight:800;line-height:1;padding:2px 5px;border-radius:999px;background:var(--azul);color:#fff}
+.cal-celda.todo-jugado .cal-celda__cant{background:#5B6070}
+.cal-celda.hay-directo .cal-celda__cant{background:var(--acento)}
+.cal-celda.es-hoy{box-shadow:inset 0 0 0 2px var(--amarillo)}
+.cal-celda.seleccionado{background:#fff;color:#16181D;transform:none}
+.cal-celda.seleccionado .cal-celda__cant{box-shadow:0 0 0 2px #fff}
+.cal-leyenda{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;margin-top:14px;font-size:12px;color:#C9CCD6}
+.cal-leyenda span{display:inline-flex;align-items:center;gap:6px}
+.pt{width:10px;height:10px;border-radius:3px;display:inline-block}
+.pt--final{background:#5B6070}.pt--directo{background:var(--acento)}.pt--proximo{background:var(--azul)}
+.cal-hoy{margin-left:auto;font:800 13px var(--cuerpo);padding:7px 14px;border-radius:999px;border:2px solid var(--amarillo);background:transparent;color:var(--amarillo);cursor:pointer}
+.cal-hoy:hover{background:var(--amarillo);color:#16181D}
+
+/* Día seleccionado */
+.cal-dia__cab{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:4px 0 14px;scroll-margin-top:90px}
+.cal-dia__titulo{font-family:var(--titulos);font-size:24px;margin:0;line-height:1.15;scroll-margin-top:90px}
+.cal-dia__num{font-size:13px;font-weight:800;color:var(--suave);white-space:nowrap}
+.cal-lista{display:grid;gap:12px}
+.cal-vacio{color:var(--suave);font-weight:600;background:var(--blanco);border:1px dashed var(--linea);border-radius:16px;padding:20px;margin:0}
+
+.cal-partido{background:var(--blanco);border:1px solid var(--linea);border-left:5px solid var(--azul);border-radius:16px;padding:14px 16px;display:grid;gap:10px}
+.cal-partido.is-final{border-left-color:#8E93A3}
+.cal-partido.is-directo{border-left-color:var(--acento);box-shadow:0 10px 24px -14px rgba(255,75,43,.6)}
+.cal-partido.is-pendiente{border-left-color:var(--amarillo)}
+.cal-partido.is-aplazado{border-left-color:var(--linea);opacity:.8}
+.cal-partido__top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.cal-chip{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--hover);color:var(--suave)}
+.cal-chip--proximo{background:rgba(43,89,255,.12);color:var(--azul)}
+.cal-chip--directo{background:var(--acento);color:#fff}
+.cal-chip--pendiente{background:rgba(255,201,60,.25);color:#8A6200}
+html[data-tema="oscuro"] .cal-chip--pendiente{color:var(--amarillo)}
+html[data-tema="oscuro"] .cal-chip--proximo{color:#8FA9FF}
+.cal-chip--aplazado{text-decoration:line-through}
+.cal-pulso{width:7px;height:7px;border-radius:50%;background:#fff;animation:latido 1.6s infinite}
+.cal-periodo{font-size:13px;font-weight:700;color:var(--acento)}
+.cal-tag{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--amarillo);color:#16181D}
+.cal-partido__equipos{display:grid;gap:6px}
+.cal-eq{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px}
+.cal-sigla{width:46px;text-align:center;font-weight:900;font-size:13px;letter-spacing:.04em;padding:6px 0;border-radius:8px;background:var(--hover);color:var(--texto)}
+.cal-nombre{font-weight:700;font-size:16px;line-height:1.2;display:flex;flex-direction:column}
+.cal-nombre small{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--suave)}
+.cal-pts{font-family:var(--titulos);font-size:26px;line-height:1;min-width:2ch;text-align:right}
+.cal-eq.gana .cal-sigla{background:var(--texto);color:var(--fondo)}
+.cal-eq.pierde{opacity:.55}
+.cal-partido__horas{display:flex;flex-wrap:wrap;gap:6px 18px;padding-top:10px;border-top:1px solid var(--linea);font-size:14px;font-weight:700}
+.cal-hora{display:inline-flex;align-items:center;gap:8px}
+.cal-hora em{font-style:normal;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--suave);background:var(--hover);padding:3px 7px;border-radius:6px}
+
+/* Por equipos */
+.cal-equipo-cab{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:14px;margin:6px 0 16px}
+.cal-select{display:flex;flex-direction:column;gap:6px;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--suave);flex:1;max-width:420px;min-width:240px}
+.cal-select select{font:700 17px var(--cuerpo);padding:13px 44px 13px 16px;border-radius:14px;border:2px solid var(--linea);background:var(--blanco) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FF4B2B' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 14px center/18px;color:var(--texto);appearance:none;-webkit-appearance:none;cursor:pointer;letter-spacing:0;text-transform:none}
+.cal-select select:focus{border-color:var(--acento);outline:none}
+.cal-filtros{display:flex;gap:6px;flex-wrap:wrap}
+.cal-filtro{font:700 14px var(--cuerpo);padding:9px 16px;border-radius:999px;border:2px solid var(--linea);background:var(--blanco);color:var(--texto);cursor:pointer}
+.cal-filtro.activo{background:var(--boton);border-color:var(--boton);color:#fff}
+.cal-resumen{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:8px}
+.cal-dato{background:var(--oscuro);color:#fff;border-radius:14px;padding:10px 16px;min-width:96px}
+.cal-dato small{display:block;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#A5AAB9}
+.cal-dato b{font-family:var(--titulos);font-size:24px;line-height:1.1}
+.cal-ir{margin-left:auto;font:800 14px var(--cuerpo);padding:11px 18px;border-radius:999px;border:0;background:var(--acento);color:#fff;cursor:pointer}
+.cal-mes-sep{font-family:var(--titulos);font-size:22px;margin:26px 0 10px;display:flex;align-items:center;gap:12px}
+.cal-mes-sep::after{content:"";flex:1;height:2px;background:var(--linea)}
+.cal-grupo{display:grid;gap:8px}
+.cal-fila{display:grid;grid-template-columns:58px 1fr auto;align-items:center;gap:14px;background:var(--blanco);border:1px solid var(--linea);border-radius:14px;padding:10px 14px;scroll-margin-top:100px}
+.cal-fila.es-proximo{border:2px solid var(--acento);box-shadow:0 10px 22px -14px rgba(255,75,43,.7)}
+.cal-fila.is-directo{border-color:var(--acento)}
+.cal-fila__fecha{text-align:center;line-height:1.05;display:flex;flex-direction:column;align-items:center;padding-right:12px;border-right:1px solid var(--linea)}
+.cal-fila__fecha small{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--suave)}
+.cal-fila__fecha b{font-family:var(--titulos);font-size:24px}
+.cal-fila__fecha span{font-size:11px;font-weight:700;text-transform:uppercase;color:var(--suave)}
+.cal-fila__info{min-width:0;display:grid;gap:3px}
+.cal-fila__rival{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.cal-fila__rival strong{font-size:16px}
+.cal-fila__horas{font-size:13px;color:var(--suave);font-weight:600}
+.cal-lugar{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:6px}
+.cal-lugar--casa{background:rgba(18,183,106,.15);color:#0C8A50}
+.cal-lugar--fuera{background:rgba(122,77,255,.14);color:#6A3FE6}
+html[data-tema="oscuro"] .cal-lugar--casa{color:#4ADE9A}
+html[data-tema="oscuro"] .cal-lugar--fuera{color:#B9A2FF}
+.cal-fila__res{display:flex;align-items:center;gap:8px;justify-content:flex-end}
+.cal-vd{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;font-weight:900;font-size:13px;color:#fff}
+.cal-vd--v{background:var(--verde)}.cal-vd--d{background:#E5484D}
+.cal-fila__marcador{font-family:var(--titulos);font-size:20px;white-space:nowrap}
+.cal-nota{margin-top:30px}
+
+@media (max-width:960px){
+  .cal-general{grid-template-columns:1fr}
+  .cal-mes{position:static}
+}
+@media (max-width:560px){
+  .cal-tabs{display:flex;width:100%}
+  .cal-tab{flex:1;justify-content:center;padding:11px 10px}
+  .cal-mes{padding:14px;border-radius:18px}
+  .cal-semana,.cal-dias{gap:4px}
+  .cal-celda{border-radius:9px;font-size:14px}
+  .cal-celda__cant{font-size:9px;padding:1px 4px}
+  .cal-hoy{margin-left:0}
+  .cal-select{max-width:none;min-width:0;flex-basis:100%}
+  .cal-fila{grid-template-columns:48px 1fr;gap:10px;padding:10px 12px}
+  .cal-fila__res{grid-column:2;justify-content:flex-start}
+  .cal-fila__fecha{padding-right:8px}
+  .cal-ir{margin-left:0;width:100%}
+  .cal-dato{min-width:0;flex:1}
+  .cal-pts{font-size:22px}
+}
+.cal-filtro.activo{background:var(--texto);border-color:var(--texto);color:var(--fondo)}
+.cal-dato small{white-space:nowrap}
+html[data-tema="oscuro"] .cal-mes,html[data-tema="oscuro"] .cal-dato{box-shadow:inset 0 0 0 1px var(--linea)}

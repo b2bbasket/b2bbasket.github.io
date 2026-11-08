@@ -1,0 +1,71 @@
+---
+layout: base.njk
+title: "Calendario NBA"
+resumen: "Calendario de la temporada NBA día a día y por equipos, con horarios en España y en Estados Unidos y resultados actualizados."
+permalink: /calendario/index.html
+---
+<div class="contenedor calendario" id="calendario" data-src="{{ '/datos/calendario.json' | url }}?v={{ calendario.actualizado or 'vacio' }}" data-base="{{ '/' | url }}">
+  <div class="banner banner--a t-azul m-calendario banner--compacto">
+    <h1>Calendario NBA</h1>
+    <p>Todos los partidos de la temporada, con hora de España y de Estados Unidos.</p>
+  </div>
+
+  <div class="cal-tabs" role="tablist" aria-label="Vista del calendario">
+    <button type="button" class="cal-tab activo" role="tab" id="tabGeneral" aria-selected="true" aria-controls="panelGeneral">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>General
+    </button>
+    <button type="button" class="cal-tab" role="tab" id="tabEquipos" aria-selected="false" aria-controls="panelEquipos" tabindex="-1">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3c1 2 7 2 8 0l4 2-1 5-3-1v12H8V9l-3 1-1-5z"/></svg>Por equipos
+    </button>
+  </div>
+
+  <p class="cal-aviso" id="calAviso" role="status">Cargando el calendario…</p>
+
+  <section class="cal-panel" id="panelGeneral" role="tabpanel" aria-labelledby="tabGeneral">
+    <div class="cal-general">
+      <div class="cal-mes">
+        <div class="cal-mes__cab">
+          <button type="button" class="cal-flecha" id="calPrev" aria-label="Mes anterior"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <h2 class="cal-mes__titulo" id="calMesTitulo" aria-live="polite">—</h2>
+          <button type="button" class="cal-flecha" id="calNext" aria-label="Mes siguiente"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+        <div class="cal-semana" aria-hidden="true"><span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+        <div class="cal-dias" id="calDias"></div>
+        <div class="cal-leyenda">
+          <span><i class="pt pt--final"></i>Jugados</span>
+          <span><i class="pt pt--directo"></i>En juego</span>
+          <span><i class="pt pt--proximo"></i>Próximos</span>
+          <button type="button" class="cal-hoy" id="calHoy">Hoy</button>
+        </div>
+      </div>
+      <div class="cal-dia">
+        <div class="cal-dia__cab">
+          <h2 class="cal-dia__titulo" id="calDiaTitulo">—</h2>
+          <span class="cal-dia__num" id="calDiaNum"></span>
+        </div>
+        <div class="cal-lista" id="calDiaPartidos"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cal-panel" id="panelEquipos" role="tabpanel" aria-labelledby="tabEquipos" hidden>
+    <div class="cal-equipo-cab">
+      <label class="cal-select">
+        <span>Equipo</span>
+        <select id="calEquipo"><option value="">Elige un equipo…</option></select>
+      </label>
+      <div class="cal-filtros" id="calFiltros" role="group" aria-label="Filtrar partidos">
+        <button type="button" class="cal-filtro activo" data-f="todos">Todos</button>
+        <button type="button" class="cal-filtro" data-f="jugados">Jugados</button>
+        <button type="button" class="cal-filtro" data-f="proximos">Próximos</button>
+      </div>
+    </div>
+    <div class="cal-resumen" id="calResumen"></div>
+    <div class="cal-temporada" id="calEquipoLista"></div>
+  </section>
+
+  <p class="nota-fuente cal-nota" id="calNota">
+    Datos: API de balldontlie. Las fechas siguen el calendario oficial de EE. UU.; la hora de España se calcula para Europe/Madrid y la de EE. UU. para la ciudad del equipo local, con los cambios de horario de verano e invierno de cada país. En partidos en sede neutral (por ejemplo en México, Europa o la final de la Copa NBA) la hora local real puede ser otra. Los resultados en juego se actualizan cada 30 minutos aproximadamente.
+  </p>
+</div>
+<script src="{{ '/js/calendario.js' | url }}?v={{ site.version or 18 }}"></script>

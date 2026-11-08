@@ -8,6 +8,7 @@ export default class {
       ...(data.collections.articulo || []).map((a) => ({ t: a.data.title, r: a.data.resumen || "", u: a.url, k: "Artículo" })),
       ...fichas.map((f) => ({ t: f.data.nombre, r: "Historia, datos y líderes del equipo", u: f.url, k: "Equipo" })),
       ...data.secciones.map((s) => ({ t: s.titulo, r: s.descripcion, u: "/" + s.clave + "/", k: "Sección" })),
+      { t: "Calendario NBA", r: "Calendario de la temporada día a día y por equipos, con horarios en España y EE. UU.", u: "/calendario/", k: "Página" },
       { t: "Clasificación", r: "Clasificación de la NBA por conferencias, Este y Oeste", u: "/clasificacion/", k: "Página" },
       { t: "Líderes de la temporada", r: "Top 5 de la temporada en puntos, rebotes, asistencias, tapones, robos y triples", u: "/lideres/", k: "Página" },
       { t: "Líderes históricos", r: "Top 10 histórico en puntos, rebotes, asistencias, tapones, robos y triples", u: "/lideres-historicos/", k: "Página" },
