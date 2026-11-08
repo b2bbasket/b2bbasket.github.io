@@ -7,6 +7,24 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/img");
   eleventyConfig.addPassthroughCopy("src/admin");
 
+  // Tipografías alojadas en la propia web (sin Google Fonts): se copian desde los paquetes de Fontsource
+  eleventyConfig.on("eleventy.after", ({ dir }) => {
+    const fuentes = [
+      ["node_modules/@fontsource-variable/inter/files", /^inter-latin-wght-normal\.woff2$/],
+      ["node_modules/@fontsource/newsreader/files", /^newsreader-latin-(600|700|800)-normal\.woff2$/],
+    ];
+    const destino = `${dir.output}/fonts`;
+    fs.mkdirSync(destino, { recursive: true });
+    let copiadas = 0;
+    for (const [carpeta, patron] of fuentes) {
+      if (!fs.existsSync(carpeta)) { console.warn(`[fuentes] No existe ${carpeta}`); continue; }
+      for (const f of fs.readdirSync(carpeta)) {
+        if (patron.test(f)) { fs.copyFileSync(`${carpeta}/${f}`, `${destino}/${f}`); copiadas++; }
+      }
+    }
+    console.log(`[fuentes] ${copiadas} archivos de tipografía copiados a /fonts`);
+  });
+
   // Artículos más recientes primero
   eleventyConfig.addCollection("recientes", (api) =>
     api.getFilteredByTag("articulo").reverse()
