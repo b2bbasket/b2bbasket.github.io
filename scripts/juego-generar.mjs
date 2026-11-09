@@ -137,12 +137,17 @@ function posicion(set) {
 }
 const lista = (xs) => (xs.length <= 1 ? xs.join("") : xs.slice(0, -1).join(", ") + " y " + xs[xs.length - 1]);
 
+const motivos = {};
+const falta = (m, j) => { (motivos[m] = motivos[m] || []).push(j.nombre); return null; };
 function construir(j, d) {
-  if (!d || !d.nacimiento || !d.pais || !d.lugar) return null;
+  if (!d) return falta("sin datos", j);
+  if (!d.nacimiento) return falta("nacimiento", j);
+  if (!d.pais || !d.lugar) return falta("lugar", j);
   const pos = posicion(d.posiciones);
-  if (!pos.length) return null;
+  if (!pos.length) return falta("posición: " + [...d.posiciones].join("/"), j);
+  if (!d.equipos.length) return falta("sin equipos NBA", j);
   const eq = d.equipos.filter((e) => e.equipo && !/^Q\d+$/.test(e.equipo) && e.inicio);
-  if (!eq.length) return null;
+  if (!eq.length) return falta("equipos sin fechas", j);
   eq.sort((a, b) => a.inicio - b.inicio);
   // Equipos sin repetir, en orden de llegada
   const nombres = [];
@@ -184,8 +189,8 @@ const cuenta = {};
 jugadores.forEach((j) => (cuenta[sinAcentos(j.nombre).toLowerCase()] = (cuenta[sinAcentos(j.nombre).toLowerCase()] || 0) + 1));
 const finales = jugadores.filter((j) => cuenta[sinAcentos(j.nombre).toLowerCase()] === 1).sort((a, b) => a.nombre.localeCompare(b.nombre, "es"));
 console.log(`Jugadores con las cinco pistas completas: ${finales.length}. Descartados por datos incompletos: ${descartados.length}`);
-console.log("Descartados: " + descartados.join(", "));
-if (finales.length < 300) throw new Error("Menos de 300 jugadores válidos; no se toca juego.json");
+for (const [m, ns] of Object.entries(motivos).sort((a, b) => b[1].length - a[1].length)) console.log(`  ${m}: ${ns.length} (${ns.slice(0, 6).join(", ")})`);
+if (finales.length < 300 && !process.env.DEPURAR) throw new Error("Menos de 300 jugadores válidos; no se toca juego.json");
 fs.writeFileSync("src/_data/juego.json", JSON.stringify({
   _nota: "Generado por scripts/juego-generar.mjs a partir de Wikipedia (All-Stars) y Wikidata. No editar a mano.",
   generado: new Date().toISOString().slice(0, 10),
