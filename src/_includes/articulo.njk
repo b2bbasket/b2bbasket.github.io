@@ -1,23 +1,56 @@
 ---
 layout: base.njk
 ---
-<article class="articulo">
+{% set partido = temporada.partidos | partidoEntre(equipo_local, equipo_visitante, page.date) if seccion == "cronicas" and equipo_local and equipo_visitante else null %}
+{% set indice = content | indiceH2 if seccion == "guias" else [] %}
+<article class="articulo articulo--{{ seccion }}{% if indice.length > 2 %} articulo--con-indice{% endif %}">
   {% for s in secciones %}{% if s.clave == seccion %}
   <nav class="migas" aria-label="Ruta"><a href="{{ '/' | url }}">Inicio</a> › <a href="{{ ('/' + s.clave + '/') | url }}">{{ s.menu }}</a></nav>
   <a class="etiqueta" href="{{ ('/' + s.clave + '/') | url }}">{{ s.menu }}</a>
   {% endif %}{% endfor %}
   {% if equipo %}{% set ficha = collections.fichas | fichaDe(equipo) %}{% if ficha %}<a class="chip-equipo" href="{{ ficha.url | url }}">{{ equipo }}</a>{% else %}<span class="chip-equipo">{{ equipo }}</span>{% endif %}{% endif %}
+
+  {% if partido %}
+  {% set b = temporada.balanceTras[partido.id] %}
+  <div class="marcador-final" aria-label="Resultado final">
+    {% for eq in [{ abr: partido.h, pts: partido.hs, bal: b.h if b else "", rol: "Local" }, { abr: partido.v, pts: partido.vs, bal: b.v if b else "", rol: "Visitante" }] %}
+    <div class="marcador-final__eq{% if (loop.first and partido.hs > partido.vs) or (not loop.first and partido.vs > partido.hs) %} gana{% endif %}">
+      <span class="marcador-final__abr">{{ eq.abr }}</span>
+      <span class="marcador-final__nombre">{{ temporada.equipos[eq.abr].nombre }}</span>
+      {% if eq.bal %}<small>({{ eq.bal }})</small>{% endif %}
+      <strong>{{ eq.pts }}</strong>
+    </div>
+    {% if loop.first %}<span class="marcador-final__fin">Final<br><small>{{ partido.d | diaCorto }}</small></span>{% endif %}
+    {% endfor %}
+  </div>
+  {% endif %}
+
   <h1>{{ title }}</h1>
   <p class="entradilla">{{ resumen }}</p>
   <p class="meta">Por <strong>{{ autor or "[Tu nombre]" }}</strong> · {{ page.date | fecha }} · {{ content | lectura }} min de lectura</p>
+
+  {% if claves and claves.length %}
+  <aside class="caja-claves caja-claves--{{ seccion }}">
+    <h2>{% if seccion == "cronicas" %}Las claves del partido{% elif seccion == "guias" %}En 30 segundos{% else %}Lo esencial{% endif %}</h2>
+    <ul>{% for c in claves %}<li>{{ c }}</li>{% endfor %}</ul>
+  </aside>
+  {% endif %}
+
   {% set foto = { imagen: imagen, credito: credito, title: title, jugador_foto: jugador_foto, fotos_jugadores: fotos_jugadores } | fotoArticulo %}
   {% if foto %}<figure class="articulo__foto"><img src="{{ foto.src }}" alt="{{ foto.alt }}"><figcaption>{{ foto.credito | safe }}</figcaption></figure>{% endif %}
+
+  {% if indice.length > 2 %}
+  <nav class="indice" aria-label="Índice de la guía">
+    <h2>Índice</h2>
+    <ol>{% for h in indice %}<li><a href="#{{ h.id }}">{{ h.texto }}</a></li>{% endfor %}</ol>
+  </nav>
+  {% endif %}
   {{ content | safe }}
   <div class="compartir">
     <strong>Compartir</strong>
-    <a href="https://wa.me/?text={{ (title + ' ' + site.url + page.url) | urlencode }}" target="_blank" rel="noopener">WhatsApp</a>
-    <a href="https://twitter.com/intent/tweet?text={{ title | urlencode }}&url={{ (site.url + page.url) | urlencode }}" target="_blank" rel="noopener">X</a>
-    <button type="button" id="copiarEnlace" data-url="{{ site.url }}{{ page.url }}">Copiar enlace</button>
+    <a href="https://wa.me/?text={{ (title + ' ' + web.url + page.url) | urlencode }}" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="https://twitter.com/intent/tweet?text={{ title | urlencode }}&url={{ (web.url + page.url) | urlencode }}" target="_blank" rel="noopener">X</a>
+    <button type="button" id="copiarEnlace" data-url="{{ web.url }}{{ page.url }}">Copiar enlace</button>
   </div>
   <div class="autor-caja">
     <strong>{{ autor or "[Tu nombre]" }}</strong>

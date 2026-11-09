@@ -1,11 +1,21 @@
 import fs from "node:fs";
 
+// Dirección de la web calculada a partir del repositorio de GitHub (variable GITHUB_REPOSITORY en Actions):
+// - repositorio «usuario.github.io»  → https://usuario.github.io/
+// - cualquier otro nombre            → https://usuario.github.io/nombre/
+// Así, si se cambia de cuenta o de nombre, la web se adapta sola.
+const [DUENO, REPO] = (process.env.GITHUB_REPOSITORY || "hugoamigo2006-collab/medio-nba").split("/");
+const EN_RAIZ = REPO.toLowerCase() === `${DUENO.toLowerCase()}.github.io`;
+const PREFIJO = EN_RAIZ ? "/" : `/${REPO}/`;
+const WEB = { repo: `${DUENO}/${REPO}`, prefijo: PREFIJO, url: `https://${DUENO.toLowerCase()}.github.io${EN_RAIZ ? "" : "/" + REPO}` };
+
 export default function (eleventyConfig) {
   // Copia tal cual estos archivos a la web final
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy("src/img");
-  eleventyConfig.addPassthroughCopy("src/admin");
+  eleventyConfig.addPassthroughCopy("src/admin/index.html");
+  eleventyConfig.addGlobalData("web", WEB);
 
   // Tipografías alojadas en la propia web (sin Google Fonts): se copian desde los paquetes de Fontsource
   eleventyConfig.on("eleventy.after", ({ dir }) => {
@@ -67,7 +77,7 @@ export default function (eleventyConfig) {
   // Foto de un artículo: la «Imagen principal» si la hay; si no, la del jugador indicado en «Jugador para la foto»
   const slugJugador = (t) => String(t || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   eleventyConfig.addFilter("fotoArticulo", (data) => {
-    if (data.imagen) return { src: data.imagen, alt: data.title, credito: data.credito || "" };
+    if (data.imagen) return { src: eleventyConfig.getFilter("url")(data.imagen), alt: data.title, credito: data.credito || "" };
     if (!data.jugador_foto) return null;
     const f = (data.fotos_jugadores || {})[slugJugador(data.jugador_foto)];
     if (!f) return null;
@@ -75,6 +85,50 @@ export default function (eleventyConfig) {
     const licencia = f.licencia_url ? `<a href="${esc(f.licencia_url)}" rel="license noopener">${esc(f.licencia)}</a>` : esc(f.licencia);
     return { src: url(f.src), alt: f.alt, credito: `Foto de archivo: ${esc(f.autor)} · ${licencia} · <a href="${esc(f.origen)}" rel="noopener">Wikimedia Commons</a>` };
   });
+  // Abreviaturas oficiales de la NBA y nombre corto (apodo) de cada equipo, para las tarjetas de resultados
+  const ABREV = { "Atlanta Hawks": "ATL", "Boston Celtics": "BOS", "Brooklyn Nets": "BKN", "Charlotte Hornets": "CHA", "Chicago Bulls": "CHI", "Cleveland Cavaliers": "CLE", "Dallas Mavericks": "DAL", "Denver Nuggets": "DEN", "Detroit Pistons": "DET", "Golden State Warriors": "GSW", "Houston Rockets": "HOU", "Indiana Pacers": "IND", "Los Angeles Clippers": "LAC", "Los Angeles Lakers": "LAL", "Memphis Grizzlies": "MEM", "Miami Heat": "MIA", "Milwaukee Bucks": "MIL", "Minnesota Timberwolves": "MIN", "New Orleans Pelicans": "NOP", "New York Knicks": "NYK", "Oklahoma City Thunder": "OKC", "Orlando Magic": "ORL", "Philadelphia 76ers": "PHI", "Phoenix Suns": "PHX", "Portland Trail Blazers": "POR", "Sacramento Kings": "SAC", "San Antonio Spurs": "SAS", "Toronto Raptors": "TOR", "Utah Jazz": "UTA", "Washington Wizards": "WAS" };
+  eleventyConfig.addFilter("abrev", (nombre) => ABREV[nombre] || String(nombre || "").replace(/[^A-Za-z]/g, "").slice(0, 3).toUpperCase());
+  eleventyConfig.addFilter("apodo", (nombre) => /Trail Blazers$/.test(nombre) ? "Trail Blazers" : String(nombre || "").split(" ").slice(-1)[0]);
+  // Fechas cortas para calendarios y resultados: «lun 10 nov» y hora peninsular «01:00»
+  eleventyConfig.addFilter("diaCorto", (iso) => iso ? new Intl.DateTimeFormat("es-ES", { weekday: "short", day: "numeric", month: "short", timeZone: "UTC" }).format(new Date(String(iso).slice(0, 10) + "T12:00:00Z")).replace(/\./g, "") : "");
+  eleventyConfig.addFilter("horaEspana", (iso) => iso ? new Intl.DateTimeFormat("es-ES", { hour: "2-digit", minute: "2-digit", timeZone: "Europe/Madrid" }).format(new Date(iso)) : "");
+  eleventyConfig.addFilter("diaEspana", (iso) => iso ? new Intl.DateTimeFormat("es-ES", { weekday: "short", day: "numeric", month: "short", timeZone: "Europe/Madrid" }).format(new Date(iso)).replace(/\./g, "") : "");
+  // Artículos relacionados con un equipo (equipo principal o cualquiera de los dos de una crónica)
+  eleventyConfig.addFilter("deEquipo", (lista, nombre) => (lista || []).filter((a) => [a.data.equipo, a.data.equipo_local, a.data.equipo_visitante, a.data.local, a.data.visitante].includes(nombre)));
+  // Partido de la temporada entre dos equipos más cercano a una fecha (para el marcador de las crónicas)
+  eleventyConfig.addFilter("partidoEntre", (partidos, local, visitante, fecha) => {
+    const inv = Object.fromEntries(Object.entries(ABREV).map(([n, a]) => [n, a]));
+    const h = inv[local], v = inv[visitante];
+    if (!h || !v) return null;
+    const f = fecha ? new Date(fecha).getTime() : Date.now();
+    const cand = (partidos || []).filter((p) => (p.h === h && p.v === v) || (p.h === v && p.v === h))
+      .map((p) => ({ ...p, dist: Math.abs(new Date(p.d + "T12:00:00Z").getTime() - f) }))
+      .filter((p) => p.dist <= 3 * 86400000).sort((a, b) => a.dist - b.dist);
+    return cand[0] || null;
+  });
+  // Índice de las guías: los subtítulos (h2) del artículo, con un identificador para poder enlazarlos
+  const idTitulo = (t) => String(t).replace(/<[^>]+>/g, "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  eleventyConfig.addFilter("indiceH2", (html) => [...String(html || "").matchAll(/<h2[^>]*>([\s\S]*?)<\/h2>/g)].map((m) => ({ id: idTitulo(m[1]), texto: m[1].replace(/<[^>]+>/g, "") })).filter((h) => h.texto !== "Fuentes"));
+  eleventyConfig.addTransform("idsTitulos", function (contenido) {
+    if (!(this.page.outputPath || "").endsWith(".html")) return contenido;
+    return contenido.replace(/<h2>([\s\S]*?)<\/h2>/g, (m, t) => `<h2 id="${idTitulo(t)}">${t}</h2>`);
+  });
+  // Agrupa artículos por día de publicación (teletipo de Noticias)
+  eleventyConfig.addFilter("porDia", function (lista) {
+    const fecha = eleventyConfig.getFilter("fecha");
+    const grupos = [];
+    for (const a of lista || []) { const d = fecha(a.date); if (!grupos.length || grupos[grupos.length - 1].dia !== d) grupos.push({ dia: d, items: [] }); grupos[grupos.length - 1].items.push(a); }
+    return grupos;
+  });
+  // Grandes jugadores: iniciales para los perfiles sin foto y perfiles de la misma época
+  eleventyConfig.addFilter("iniciales", (n) => String(n || "").split(/\s+/).map((p) => p[0]).join("").toUpperCase().slice(0, 3));
+  eleventyConfig.addFilter("mismaEpoca", (lista, epoca, url) => {
+    const otros = (lista || []).filter((l) => l.url !== url);
+    return otros.filter((l) => l.data.epoca === epoca).concat(otros.filter((l) => l.data.epoca !== epoca));
+  });
+  // Convierte cifras escritas en español («40,1», «43.440») en números para dibujar barras
+  eleventyConfig.addFilter("numero", (t) => { const n = parseFloat(String(t || "").replace(/\./g, "").replace(",", ".")); return isNaN(n) ? 0 : n; });
+  eleventyConfig.addFilter("leyendaDe", (lista, nombre) => (lista || []).find((l) => l.data.nombre === nombre));
   eleventyConfig.addFilter("fichaDe", (lista, nombre) => (lista || []).find((f) => f.data.nombre === nombre));
   // Clasificación: ordena por porcentaje de victorias
   eleventyConfig.addFilter("clasificar", (lista) =>
@@ -106,6 +160,6 @@ export default function (eleventyConfig) {
 
   return {
     dir: { input: "src", output: "_site" },
-    pathPrefix: "/medio-nba/",
+    pathPrefix: PREFIJO,
   };
 }

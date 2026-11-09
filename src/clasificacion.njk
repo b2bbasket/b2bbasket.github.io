@@ -1,25 +1,55 @@
 ---
 layout: base.njk
 title: "Clasificación"
-resumen: "Clasificación de la NBA por conferencias."
+resumen: "Clasificación de la NBA por conferencias, con racha, últimos diez partidos y balance en casa y fuera."
 permalink: /clasificacion/index.html
 ---
+{% set T = temporada %}
 <div class="contenedor">
-  <div class="banner t-morado"><h1>Clasificación</h1><p>Clasificación por conferencias. Actualizada: {{ clasificacion.actualizado }}.</p></div>
-  <p class="leyenda"><span class="punto punto--playoff"></span> Playoffs directos (1-6) &nbsp; <span class="punto punto--playin"></span> Play-in (7-10)</p>
-  <div class="tablas">
-    {% for titulo, lista in { "Conferencia Este": clasificacion.este, "Conferencia Oeste": clasificacion.oeste } %}
+  <div class="banner t-morado"><h1>Clasificación</h1><p>Temporada regular por conferencias. Actualizada: {{ clasificacion.actualizado }}.</p></div>
+
+  {% if T.destacados %}
+  <section class="destacados revelar" aria-label="Datos destacados de la temporada">
+    {% set D = T.destacados %}
+    <div class="destacado"><small>Mejor balance</small><strong>{{ D.balance.v }}-{{ D.balance.d }}</strong><span><b class="chip-abr">{{ D.balance.abr }}</b> {{ D.balance.nombre | apodo }}</span></div>
+    <div class="destacado"><small>Mejor racha activa</small><strong>{{ D.racha.rachaNum }} {{ "victoria" if D.racha.rachaNum == 1 else "victorias" }}</strong><span><b class="chip-abr">{{ D.racha.abr }}</b> {{ D.racha.nombre | apodo }}</span></div>
+    <div class="destacado"><small>Más puntos por partido</small><strong>{{ D.ataque.ataque | round(1) }}</strong><span><b class="chip-abr">{{ D.ataque.abr }}</b> {{ D.ataque.nombre | apodo }}</span></div>
+    <div class="destacado"><small>Menos puntos recibidos</small><strong>{{ D.defensa.defensa | round(1) }}</strong><span><b class="chip-abr">{{ D.defensa.abr }}</b> {{ D.defensa.nombre | apodo }}</span></div>
+  </section>
+  {% endif %}
+
+  <p class="leyenda"><span class="punto punto--playoff"></span> Playoffs directos (1-6) &nbsp; <span class="punto punto--playin"></span> Play-in (7-10) &nbsp; · &nbsp; <abbr title="Partidos de diferencia con el líder">DIF</abbr>: partidos por detrás del primero · <abbr title="Últimos diez partidos">U10</abbr>: últimos 10</p>
+  <div class="tablas tablas--clasif">
+    {% for conf in ["Este", "Oeste"] %}
+    {% set lista = T.conferencias[conf] if T.partidosJugados else [] %}
     <section class="revelar">
-      <h2 class="seccion__titulo">{{ titulo }}</h2>
-      <div class="tabla-envoltorio"><table class="tabla">
-        <thead><tr><th>#</th><th>Equipo</th><th>V</th><th>D</th><th>%</th></tr></thead>
+      <h2 class="seccion__titulo">Conferencia {{ conf }}</h2>
+      {% if lista.length %}
+      <div class="tabla-envoltorio"><table class="tabla tabla--clasif">
+        <thead><tr><th>#</th><th>Equipo</th><th>V</th><th>D</th><th>%</th><th class="col-media">DIF</th><th class="col-extra">Casa</th><th class="col-extra">Fuera</th><th class="col-media">U10</th><th>Racha</th></tr></thead>
         <tbody>
-        {% for e in lista | clasificar %}
-          <tr class="{% if loop.index <= 6 %}fila-playoff{% elif loop.index <= 10 %}fila-playin{% endif %}"><td>{{ loop.index }}</td><td>{{ e.equipo }}</td><td>{{ e.v }}</td><td>{{ e.d }}</td><td>{{ e.pct | porcentaje }}</td></tr>
+        {% for e in lista %}
+          {% set f = collections.fichas | fichaDe(e.nombre) %}
+          <tr class="{% if e.puesto <= 6 %}fila-playoff{% elif e.puesto <= 10 %}fila-playin{% endif %}{% if e.puesto == 6 or e.puesto == 10 %} fila-corte{% endif %}">
+            <td>{{ e.puesto }}</td>
+            <td class="celda-equipo"><b class="chip-abr">{{ e.abr }}</b>{% if f %}<a href="{{ f.url | url }}">{% endif %}<span class="n-largo">{{ e.nombre }}</span><span class="n-corto">{{ e.nombre | apodo }}</span>{% if f %}</a>{% endif %}</td>
+            <td>{{ e.v }}</td><td>{{ e.d }}</td><td>{{ e.pct | porcentaje }}</td>
+            <td class="col-media">{% if e.dif == 0 %}—{% else %}{{ e.dif }}{% endif %}</td>
+            <td class="col-extra">{{ e.casa.v }}-{{ e.casa.d }}</td><td class="col-extra">{{ e.fuera.v }}-{{ e.fuera.d }}</td>
+            <td class="col-media">{{ e.ultimos10.v }}-{{ e.ultimos10.d }}</td>
+            <td><span class="racha racha--{{ 'g' if e.rachaNum > 0 else 'p' }}">{{ e.racha }}</span></td>
+          </tr>
         {% endfor %}
         </tbody>
       </table></div>
+      {% else %}
+      <div class="tabla-envoltorio"><table class="tabla">
+        <thead><tr><th>#</th><th>Equipo</th><th>V</th><th>D</th><th>%</th></tr></thead>
+        <tbody>{% for e in clasificacion[conf | lower] | clasificar %}<tr><td>{{ loop.index }}</td><td>{{ e.equipo }}</td><td>{{ e.v }}</td><td>{{ e.d }}</td><td>{{ e.pct | porcentaje }}</td></tr>{% endfor %}</tbody>
+      </table></div>
+      {% endif %}
     </section>
     {% endfor %}
   </div>
+  <p class="nota-fuente">Datos: API de balldontlie, calculados con todos los resultados de la temporada regular. Con empates, el orden es por porcentaje de victorias; los criterios oficiales de desempate de la NBA pueden ordenar de otra forma a los equipos igualados.</p>
 </div>

@@ -4,22 +4,29 @@ title: "Líderes de la temporada"
 resumen: "Los cinco mejores de la temporada en puntos, rebotes, asistencias, tapones, robos y triples."
 permalink: /lideres/index.html
 ---
+{% set cats = [ { k: "puntos", n: "Puntos", u: "por partido" }, { k: "rebotes", n: "Rebotes", u: "por partido" }, { k: "asistencias", n: "Asistencias", u: "por partido" }, { k: "tapones", n: "Tapones", u: "por partido" }, { k: "robos", n: "Robos", u: "por partido" }, { k: "triples", n: "Triples", u: "por partido" } ] %}
 <div class="contenedor">
   <div class="banner banner--a t-azul m-estrella"><h1>Líderes esta temporada</h1><p>Los cinco mejores en cada estadística. Actualizado: {{ lideres_temporada.actualizado }}.</p></div>
-  {% set cats = [ { k: "puntos", n: "Puntos" }, { k: "rebotes", n: "Rebotes" }, { k: "asistencias", n: "Asistencias" }, { k: "tapones", n: "Tapones" }, { k: "robos", n: "Robos" }, { k: "triples", n: "Triples" } ] %}
-  <div class="lideres-rejilla">
-    {% for c in cats %}
-    <section class="lider-tarjeta revelar">
+  <div class="podios">
+    {% for c in cats %}{% set lista = lideres_temporada[c.k] %}{% set top = lista[0] %}
+    <section class="podio revelar podio--{{ c.k }}">
       <h2>{{ c.n }}</h2>
-      <table class="tabla">
-        <thead><tr><th>#</th><th>Jugador</th><th>Promedio</th></tr></thead>
-        <tbody>
-        {% for j in lideres_temporada[c.k] %}
-          <tr><td>{{ loop.index }}</td><td>{{ j.jugador }}<small>{{ j.equipo }}</small></td><td>{{ j.valor or "—" }}</td></tr>
-        {% endfor %}
-        </tbody>
-      </table>
+      {% if top %}
+      <div class="podio__lider">
+        <strong>{{ top.valor or "—" }}</strong>
+        <span class="podio__unidad">{{ c.u }}</span>
+        <span class="podio__jugador">{{ top.jugador }}</span>
+        <span class="podio__equipo"><b class="chip-abr">{{ top.equipo | abrev }}</b> {{ top.equipo }}</span>
+      </div>
+      <ol class="podio__resto" start="2">
+        {% set max = top.valor | numero %}
+        {% for j in lista %}{% if not loop.first %}
+        <li><span class="podio__nombre">{{ j.jugador }} <small>{{ j.equipo | abrev }}</small></span><span class="podio__barra"><i style="width:{{ ((j.valor | numero) / max * 100) | round(1) if max else 0 }}%"></i></span><b>{{ j.valor or "—" }}</b></li>
+        {% endif %}{% endfor %}
+      </ol>
+      {% endif %}
     </section>
     {% endfor %}
   </div>
+  <p class="nota-fuente">Promedios por partido de la temporada regular. Se actualizan cada lunes.</p>
 </div>

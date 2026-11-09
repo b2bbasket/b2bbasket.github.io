@@ -1,0 +1,78 @@
+---
+layout: base.njk
+title: Historia de la liga
+resumen: "Una línea del tiempo con los momentos y los cambios de reglas que explican cómo la NBA llegó a ser lo que es hoy."
+permalink: /historia-de-la-liga/index.html
+etapas:
+  - ano: "1946"
+    titulo: "Nace la liga"
+    dato: "68-66"
+    dato_texto: "resultado del primer partido"
+    texto: "La liga nació en 1946 como la BAA (Basketball Association of America). El primer partido se jugó el 1 de noviembre de 1946 en Toronto: los New York Knicks ganaron 68-66 a los Toronto Huskies. En 1949, la BAA se fusionó con la NBL (National Basketball League) y la nueva liga pasó a llamarse NBA."
+  - ano: "1950-1954"
+    titulo: "Baloncesto sin reloj"
+    dato: "19-18"
+    dato_texto: "el partido con menos puntos de la historia"
+    texto: "En los primeros años no había reloj de posesión, y los equipos que iban por delante se dedicaban a guardar el balón. El caso más extremo llegó el 22 de noviembre de 1950, cuando los Fort Wayne Pistons ganaron 19-18 a los Minneapolis Lakers. En la temporada 1954-55 se introdujo el reloj de 24 segundos, ideado por Danny Biasone, propietario de los Syracuse Nationals, que aceleró el juego y marcó un antes y un después."
+  - ano: "1957-1969"
+    titulo: "Russell contra Chamberlain"
+    dato: "11"
+    dato_texto: "títulos de los Celtics en 13 temporadas"
+    texto: "Los Celtics de Bill Russell dominaron la época con 11 títulos en 13 temporadas, entre 1957 y 1969. Su gran rival fue Wilt Chamberlain, que el 2 de marzo de 1962 anotó 100 puntos en un partido y esa temporada promedió 50,4 puntos."
+    enlaces: [{ texto: "Bill Russell", url: "/jugadores/bill-russell/" }, { texto: "Wilt Chamberlain", url: "/jugadores/wilt-chamberlain/" }]
+  - ano: "1976"
+    titulo: "La fusión con la ABA"
+    dato: "4"
+    dato_texto: "equipos de la ABA que entraron en la NBA"
+    texto: "En 1976, cuatro equipos de la liga rival, la ABA, entraron en la NBA: los Nets, los Nuggets, los Pacers y los Spurs."
+  - ano: "1979-1989"
+    titulo: "Magic, Bird y la línea de tres"
+    dato: "1985"
+    dato_texto: "primera lotería del draft"
+    texto: "En la temporada 1979-80 la NBA adoptó la línea de tres puntos. El primer triple lo anotó Chris Ford, de los Celtics, el 12 de octubre de 1979. Esa misma temporada debutaron Magic Johnson y Larry Bird, cuya rivalidad, entre Lakers y Celtics, hizo crecer la liga durante toda la década. En 1985 se celebró la primera lotería del draft, que ganaron los Knicks, que eligieron a Patrick Ewing."
+    enlaces: [{ texto: "Magic Johnson", url: "/jugadores/magic-johnson/" }, { texto: "Larry Bird", url: "/jugadores/larry-bird/" }]
+  - ano: "1991-1998"
+    titulo: "Jordan y el Dream Team"
+    dato: "6"
+    dato_texto: "títulos de los Bulls en ocho años"
+    texto: "Michael Jordan convirtió a los Bulls en una dinastía, con seis títulos entre 1991 y 1998, y el Dream Team de los Juegos Olímpicos de Barcelona 1992 llevó la NBA a todo el mundo."
+    enlaces: [{ texto: "Michael Jordan", url: "/jugadores/michael-jordan/" }]
+  - ano: "2001-hoy"
+    titulo: "El siglo XXI"
+    dato: "2026"
+    dato_texto: "los Knicks, campeones 53 años después"
+    texto: "Antes de la temporada 2001-02, la liga permitió la defensa en zona e introdujo la regla de los tres segundos defensivos. El tiro de tres se convirtió en el arma principal con Stephen Curry y los Warriors. En la temporada 2020-21 se estrenó el play-in, que la liga hizo permanente en 2022, y en 2023 se disputó la primera NBA Cup. En 2026, los Knicks ganaron su primer título en 53 años."
+fuentes:
+  - { titulo: "Cronología de la NBA, Wikipedia", url: "https://en.wikipedia.org/wiki/Timeline_of_the_NBA" }
+  - { titulo: "Efemérides de noviembre (primer partido y Pistons-Lakers 19-18), NBA.com", url: "https://www.nba.com/news/history-this-date-in-nba-nov" }
+  - { titulo: "Reloj de posesión, Wikipedia", url: "https://en.wikipedia.org/wiki/Shot_clock" }
+  - { titulo: "Perfil de Wilt Chamberlain, NBA.com", url: "https://www.nba.com/news/history-nba-legend-wilt-chamberlain" }
+  - { titulo: "Temporada 1979-80 (línea de tres), Wikipedia", url: "https://en.wikipedia.org/wiki/1979%E2%80%9380_NBA_season" }
+  - { titulo: "Lotería del draft, Wikipedia", url: "https://en.wikipedia.org/wiki/NBA_draft_lottery" }
+  - { titulo: "Tres segundos defensivos y defensa en zona, Wikipedia", url: "https://en.wikipedia.org/wiki/Defensive_three-second_violation" }
+  - { titulo: "Play-in, Wikipedia", url: "https://en.wikipedia.org/wiki/NBA_play-in_tournament" }
+  - { titulo: "Lista de campeones de la NBA, Wikipedia", url: "https://en.wikipedia.org/wiki/List_of_NBA_champions" }
+---
+<div class="contenedor">
+  <header class="leyendas-cab">
+    <p class="leyendas-cab__kicker">Historia de la liga</p>
+    <h1>De 68-66 a la NBA de hoy</h1>
+    <p>Los momentos y los cambios de reglas que explican cómo la NBA llegó a ser lo que es. Una línea del tiempo de 1946 a hoy.</p>
+  </header>
+  <ol class="cronologia">
+    {% for e in etapas %}
+    <li class="cronologia__etapa revelar">
+      <div class="cronologia__fecha">{{ e.ano }}</div>
+      <div class="cronologia__contenido">
+        <h2>{{ e.titulo }}</h2>
+        <div class="cronologia__cuerpo">
+          <p>{{ e.texto }}</p>
+          <div class="cronologia__dato"><strong>{{ e.dato }}</strong><span>{{ e.dato_texto }}</span></div>
+        </div>
+        {% if e.enlaces %}<p class="cronologia__enlaces">Perfiles: {% for l in e.enlaces %}<a href="{{ l.url | url }}">{{ l.texto }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</p>{% endif %}
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+  <section class="leyenda-fuentes"><h2>Fuentes</h2><ul>{% for s in fuentes %}<li><a href="{{ s.url }}" rel="noopener">{{ s.titulo }}</a></li>{% endfor %}</ul></section>
+</div>

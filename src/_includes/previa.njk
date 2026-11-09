@@ -1,20 +1,68 @@
 ---
 layout: base.njk
 ---
-<article class="articulo">
-  <a class="etiqueta" href="{{ '/previas/' | url }}">Previas</a>
-  <h1>{{ local }} vs {{ visitante }}</h1>
-  <p class="entradilla">{{ resumen }}</p>
-  <p class="meta">Por <strong>{{ autor or "[Tu nombre]" }}</strong> · {{ page.date | fecha }}</p>
-  <div class="previa__datos">
-    <div><small>Cuándo (hora peninsular)</small><strong>{{ fecha_hora }}</strong></div>
-    <div><small>Dónde verlo</small><strong>{{ donde }}</strong></div>
+{% set L = temporada.porNombre[local] %}
+{% set V = temporada.porNombre[visitante] %}
+{% set previo = temporada.partidos | partidoEntre(local, visitante, null) %}
+<article class="previa">
+  <div class="contenedor">
+    <nav class="migas" aria-label="Ruta"><a href="{{ '/' | url }}">Inicio</a> › <a href="{{ '/previas/' | url }}">Previas</a></nav>
+    <header class="cara-a-cara">
+      <p class="cara-a-cara__kicker">Previa · {{ fecha_hora }}</p>
+      <div class="cara-a-cara__equipos">
+        {% for eq in [{ n: local, d: L, rol: "Local" }, { n: visitante, d: V, rol: "Visitante" }] %}
+        <div class="cara-a-cara__equipo">
+          <span class="cara-a-cara__abr">{{ eq.n | abrev }}</span>
+          <small>{{ eq.rol }}</small>
+          <h2>{{ eq.n }}</h2>
+          {% if eq.d and eq.d.jugados %}
+          <ul class="cara-a-cara__datos">
+            <li><strong>{{ eq.d.v }}-{{ eq.d.d }}</strong> balance</li>
+            <li><strong>{{ eq.d.puesto }}.º</strong> del {{ eq.d.conferencia }}</li>
+            <li><span class="racha racha--{{ 'g' if eq.d.rachaNum > 0 else 'p' }}">{{ eq.d.racha }}</span> racha</li>
+          </ul>
+          <ol class="cara-a-cara__forma" aria-label="Últimos cinco partidos">{% for r in eq.d.ultimos %}<li class="forma__item--{{ 'g' if r.gano else 'p' }}" title="{{ 'Victoria' if r.gano else 'Derrota' }} {{ r.pf }}-{{ r.pc }} {{ 'contra' if r.local else 'en' }} {{ r.rival }}">{{ "G" if r.gano else "P" }}</li>{% endfor %}</ol>
+          {% endif %}
+        </div>
+        {% if loop.first %}<div class="cara-a-cara__vs" aria-hidden="true">VS</div>{% endif %}
+        {% endfor %}
+      </div>
+      <div class="cara-a-cara__info">
+        <div><small>Cuándo (hora peninsular)</small><strong>{{ fecha_hora }}</strong></div>
+        <div><small>Dónde verlo</small><strong>{{ donde }}</strong></div>
+        {% if previo %}<div><small>Último duelo esta temporada</small><strong>{{ temporada.equipos[previo.h].nombre | apodo }} {{ previo.hs }}-{{ previo.vs }} {{ temporada.equipos[previo.v].nombre | apodo }}</strong></div>{% endif %}
+      </div>
+      {% if L and L.jugados %}<p class="nota-fuente nota-fuente--clara">Balance, puesto y racha actualizados al publicar la web (datos de balldontlie).</p>{% endif %}
+    </header>
   </div>
-  {% if claves %}<h2>Las claves</h2><ol>{% for c in claves %}<li>{{ c }}</li>{% endfor %}</ol>{% endif %}
-  <h2>Bajas</h2>
-  <div class="previa__bajas">
-    <div><h3>{{ local }}</h3>{% if bajas_local and bajas_local.length %}<ul>{% for b in bajas_local %}<li>{{ b }}</li>{% endfor %}</ul>{% else %}<p>Sin información de bajas por el momento.</p>{% endif %}</div>
-    <div><h3>{{ visitante }}</h3>{% if bajas_visitante and bajas_visitante.length %}<ul>{% for b in bajas_visitante %}<li>{{ b }}</li>{% endfor %}</ul>{% else %}<p>Sin información de bajas por el momento.</p>{% endif %}</div>
+
+  <div class="contenedor previa__cuerpo">
+    <div class="previa__principal">
+      <h1 class="previa__titulo">{{ local }} vs {{ visitante }}</h1>
+      <p class="entradilla">{{ resumen }}</p>
+      <p class="meta">Por <strong>{{ autor or "[Tu nombre]" }}</strong> · {{ page.date | fecha }}</p>
+      {% if claves and claves.length %}
+      <section class="claves-tarjetas" aria-labelledby="t-claves">
+        <h2 id="t-claves">Las claves</h2>
+        <ol>{% for c in claves %}<li><b>{{ loop.index }}</b><p>{{ c }}</p></li>{% endfor %}</ol>
+      </section>
+      {% endif %}
+      {% if content | striptags | trim %}<div class="articulo__texto">{{ content | safe }}</div>{% endif %}
+    </div>
+    <aside class="previa__lateral">
+      {% if a_seguir and a_seguir.length %}
+      <section class="caja-lateral">
+        <h2>Jugadores a seguir</h2>
+        <ul class="a-seguir">{% for j in a_seguir %}<li><strong>{{ j.jugador }}</strong><small>{{ j.equipo }}</small>{% if j.motivo %}<p>{{ j.motivo }}</p>{% endif %}</li>{% endfor %}</ul>
+      </section>
+      {% endif %}
+      <section class="caja-lateral">
+        <h2>Bajas</h2>
+        <div class="bajas">
+          <div><h3>{{ local | apodo }}</h3>{% if bajas_local and bajas_local.length %}<ul>{% for b in bajas_local %}<li>{{ b }}</li>{% endfor %}</ul>{% else %}<p>Sin bajas confirmadas por ahora.</p>{% endif %}</div>
+          <div><h3>{{ visitante | apodo }}</h3>{% if bajas_visitante and bajas_visitante.length %}<ul>{% for b in bajas_visitante %}<li>{{ b }}</li>{% endfor %}</ul>{% else %}<p>Sin bajas confirmadas por ahora.</p>{% endif %}</div>
+        </div>
+      </section>
+    </aside>
   </div>
-  {{ content | safe }}
 </article>

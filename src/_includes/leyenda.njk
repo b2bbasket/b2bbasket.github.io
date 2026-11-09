@@ -1,0 +1,53 @@
+---
+layout: base.njk
+---
+{% set f = fotos[foto] if foto else null %}
+{% set iniciales = nombre | iniciales %}
+<article class="perfil-leyenda">
+  <div class="contenedor">
+    <nav class="migas" aria-label="Ruta"><a href="{{ '/' | url }}">Inicio</a> › <a href="{{ '/jugadores/' | url }}">Grandes jugadores</a></nav>
+    <header class="leyenda-cab">
+      <div class="leyenda-cab__imagen{% if not f %} leyenda-cab__imagen--tipo{% endif %}">
+        {% if f %}<img src="{{ f.src | url }}" alt="{{ f.alt }}">{% else %}<span aria-hidden="true">{{ iniciales }}</span>{% endif %}
+      </div>
+      <div class="leyenda-cab__texto">
+        <span class="leyenda-cab__epoca">{{ epoca_texto }} · {{ posicion }}</span>
+        <h1>{{ nombre }}</h1>
+        <p class="leyenda-cab__entradilla">{{ entradilla }}</p>
+        <p class="leyenda-cab__equipos">{{ clubes }}</p>
+      </div>
+    </header>
+    {% if f %}<p class="leyenda-cab__credito">Foto: {{ f.autor }} · {% if f.licencia_url %}<a href="{{ f.licencia_url }}" rel="license noopener">{{ f.licencia }}</a>{% else %}{{ f.licencia }}{% endif %} · <a href="{{ f.origen }}" rel="noopener">Wikimedia Commons</a></p>{% endif %}
+
+    <ul class="leyenda-cifras" aria-label="En cifras">
+      {% for c in cifras %}<li><strong>{{ c.valor }}</strong><span>{{ c.etiqueta }}</span></li>{% endfor %}
+    </ul>
+
+    <div class="leyenda-cuerpo">
+      <div class="leyenda-relato">{{ content | safe }}</div>
+      <aside class="leyenda-linea" aria-labelledby="t-hitos">
+        <h2 id="t-hitos">Momentos clave</h2>
+        <ol>{% for h in hitos %}<li><b>{{ h.ano }}</b><p>{{ h.texto }}</p></li>{% endfor %}</ol>
+      </aside>
+    </div>
+
+    <section class="leyenda-fuentes">
+      <h2>Fuentes</h2>
+      <ul>{% for s in fuentes %}<li><a href="{{ s.url }}" rel="noopener">{{ s.titulo }}</a></li>{% endfor %}</ul>
+    </section>
+
+    {% set misma = collections.leyendas | mismaEpoca(epoca, page.url) %}
+    <section class="leyenda-mas">
+      <h2>Sigue explorando</h2>
+      <div class="leyendas-rejilla leyendas-rejilla--mini">
+        {% for l in misma | limite(3) %}{% set lf = fotos[l.data.foto] if l.data.foto else null %}
+        <a class="leyenda-tarjeta" href="{{ l.url | url }}">
+          <span class="leyenda-tarjeta__img{% if not lf %} leyenda-tarjeta__img--tipo{% endif %}">{% if lf %}<img src="{{ lf.src | url }}" alt="" loading="lazy">{% else %}{{ l.data.nombre | iniciales }}{% endif %}</span>
+          <span class="leyenda-tarjeta__texto"><small>{{ l.data.epoca_texto }}</small><strong>{{ l.data.nombre }}</strong></span>
+        </a>
+        {% endfor %}
+      </div>
+      <p><a class="enlace-flecha" href="{{ '/jugadores/' | url }}">Todos los grandes jugadores →</a></p>
+    </section>
+  </div>
+</article>

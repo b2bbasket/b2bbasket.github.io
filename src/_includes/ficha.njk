@@ -1,35 +1,99 @@
 ---
 layout: base.njk
 ---
+{% set E = temporada.porNombre[nombre] %}
+{% set eqs = temporada.equipos %}
 <div class="contenedor">
-  <div class="banner banner--compacto t-verde">
+  <header class="ficha-cab">
+    <span class="ficha-cab__fantasma" aria-hidden="true">{{ nombre | abrev }}</span>
+    <p class="ficha-cab__kicker">Conferencia {{ conferencia }} · División {{ division }}</p>
     <h1>{{ nombre }}</h1>
-    <p>Conferencia {{ conferencia }} · División {{ division }}</p>
-  </div>
+    {% if E and E.jugados %}
+    <ul class="ficha-cab__temporada" aria-label="Esta temporada">
+      <li><strong>{{ E.puesto }}.º</strong><span>en el {{ E.conferencia }}</span></li>
+      <li><strong>{{ E.v }}-{{ E.d }}</strong><span>balance</span></li>
+      <li><strong class="racha racha--{{ 'g' if E.rachaNum > 0 else 'p' }}">{{ E.racha }}</strong><span>racha</span></li>
+    </ul>
+    {% endif %}
+  </header>
+
+  <ul class="ficha-cifras">
+    {% if fundacion %}<li><small>Fundación</small><strong>{{ fundacion }}</strong></li>{% endif %}
+    {% if titulos %}<li><small>Títulos de la NBA</small><strong>{{ titulos }}</strong></li>{% endif %}
+    {% if pabellon %}<li><small>Pabellón</small><strong>{{ pabellon }}</strong></li>{% endif %}
+    {% if lideres and lideres[0] %}<li><small>Máximo anotador</small><strong>{{ lideres[0].jugador }}{% if lideres[0].dato %} · {{ lideres[0].dato }}{% endif %}</strong></li>{% endif %}
+  </ul>
+
+  {% if E and E.jugados %}
+  <section class="ficha-actual revelar" aria-labelledby="t-actual">
+    <h2 id="t-actual" class="ficha-sub">Esta temporada</h2>
+    <div class="ficha-actual__rejilla">
+      <div class="ficha-actual__bloque">
+        <h3>Últimos partidos</h3>
+        <ol class="forma">
+          {% for r in E.ultimos %}
+          <li class="forma__item forma__item--{{ 'g' if r.gano else 'p' }}">
+            <b>{{ "G" if r.gano else "P" }}</b>
+            <span>{{ "vs" if r.local else "en" }} {{ r.rival }}</span>
+            <em>{{ r.pf }}-{{ r.pc }}</em>
+            <small>{{ r.d | diaCorto }}</small>
+          </li>
+          {% endfor %}
+        </ol>
+      </div>
+      <div class="ficha-actual__bloque">
+        <h3>En números</h3>
+        <dl class="numeros">
+          <div><dt>En casa</dt><dd>{{ E.casa.v }}-{{ E.casa.d }}</dd></div>
+          <div><dt>Fuera</dt><dd>{{ E.fuera.v }}-{{ E.fuera.d }}</dd></div>
+          <div><dt>Puntos a favor</dt><dd>{{ E.ataque | round(1) }}</dd></div>
+          <div><dt>Puntos en contra</dt><dd>{{ E.defensa | round(1) }}</dd></div>
+        </dl>
+      </div>
+      {% if E.proximos.length %}
+      <div class="ficha-actual__bloque">
+        <h3>Próximos partidos</h3>
+        <ul class="proximos">
+          {% for p in E.proximos %}
+          <li><span class="proximos__dia">{% if p.t %}{{ p.t | diaEspana }} · {{ p.t | horaEspana }}{% else %}{{ p.d | diaCorto }}{% endif %}</span><strong>{{ "vs" if p.local else "en" }} {{ eqs[p.rival].nombre }}</strong></li>
+          {% endfor %}
+        </ul>
+        <a class="enlace-flecha" href="{{ '/calendario/' | url }}">Calendario completo →</a>
+      </div>
+      {% endif %}
+    </div>
+    <p class="nota-fuente">Datos de la temporada regular (API de balldontlie). Horas en horario peninsular.</p>
+  </section>
+  {% endif %}
+
+  {% set actualidad = collections.recientes | deEquipo(nombre) | limite(3) %}
+  {% if actualidad.length %}
+  <section class="ficha-actualidad revelar">
+    <h2 class="ficha-sub">Actualidad</h2>
+    <div class="ficha-actualidad__lista">
+      {% for a in actualidad %}<a class="mini-articulo" href="{{ a.url | url }}"><small>{{ a.date | fecha }}</small><strong>{{ a.data.title }}</strong></a>{% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
   <div class="ficha">
-    <aside class="ficha__datos">
-      <dl>
-        {% if fundacion %}<dt>Fundación</dt><dd>{{ fundacion }}</dd>{% endif %}
-        {% if pabellon %}<dt>Pabellón</dt><dd>{{ pabellon }}</dd>{% endif %}
-        {% if titulos %}<dt>Títulos de la NBA</dt><dd>{{ titulos }}</dd>{% endif %}
-      </dl>
-    </aside>
     <div class="ficha__texto">
       <div class="pestanas">
         <button class="pestana activa" data-panel="historia">Historia</button>
         {% if lideres and lideres.length %}<button class="pestana" data-panel="lideres">Líderes del equipo</button>{% endif %}
       </div>
       <div class="panel-pestana" id="panel-historia">
-        {% if imagen %}<figure class="articulo__foto"><img src="{{ imagen }}" alt="{{ nombre }}" loading="lazy"><figcaption>{{ credito }}</figcaption></figure>{% endif %}
+        {% if imagen %}<figure class="articulo__foto"><img src="{{ imagen | url }}" alt="{{ nombre }}" loading="lazy"><figcaption>{{ credito }}</figcaption></figure>{% endif %}
         {{ content | safe }}
       </div>
       {% if lideres and lideres.length %}
       <div class="panel-pestana" id="panel-lideres" hidden>
         <h2>Líderes históricos de la franquicia</h2>
-        <div class="tabla-envoltorio"><table class="tabla">
-          <thead><tr><th>Categoría</th><th>Jugador</th><th>Dato</th></tr></thead>
-          <tbody>{% for l in lideres %}<tr><td>{{ l.categoria }}</td><td>{{ l.jugador }}</td><td>{{ l.dato or "—" }}</td></tr>{% endfor %}</tbody>
-        </table></div>
+        <div class="lideres-franquicia">
+          {% for l in lideres %}
+          <div class="lider-cifra"><small>{{ l.categoria }}</small><strong>{{ l.dato or "—" }}</strong><span>{{ l.jugador }}</span></div>
+          {% endfor %}
+        </div>
         {% if nota_lideres %}<p class="nota-fuente">{{ nota_lideres }}</p>{% endif %}
       </div>
       {% endif %}

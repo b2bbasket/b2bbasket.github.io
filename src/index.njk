@@ -83,14 +83,25 @@ permalink: /index.html
 <section class="cifras">
   <div class="contenedor">
     {{ cabecera("Resultados de la jornada", "resultados", "bloque-cab--oscuro") }}
-    <p class="cifras__fecha">{{ resultados.fecha }}</p>
+    <p class="cifras__fecha">{{ resultados.fecha }}{% if resultados.partidos[0] and resultados.partidos[0].rl %} · <span class="cifras__nota">entre paréntesis, balance de cada equipo tras ese partido</span>{% endif %}</p>
     <div class="partidos">
       {% for p in resultados.partidos %}
       {% set crUrl = (p.cronica and ('/articulos/' + p.cronica + '/')) or (collections.recientes | cronicaDe(p)) %}
+      {% set ganaL = p.pl > p.pv %}
       {% if crUrl %}<a class="partido partido--enlace revelar" href="{{ crUrl | url }}">{% else %}<div class="partido revelar">{% endif %}
-        <span class="eq">{{ p.local }}</span>
-        <b data-contar="{{ p.pl }}">0</b><i>-</i><b data-contar="{{ p.pv }}">0</b>
-        <span class="eq">{{ p.visitante }}</span>
+        {% for eq in [
+          { nombre: p.local, abr: p.al or (p.local | abrev), balance: p.rl, puntos: p.pl, gana: ganaL, rol: "Local" },
+          { nombre: p.visitante, abr: p.av or (p.visitante | abrev), balance: p.rv, puntos: p.pv, gana: not ganaL, rol: "Visitante" }
+        ] %}
+        <div class="partido__fila{% if eq.gana %} partido__fila--gana{% endif %}">
+          <span class="partido__abr" aria-hidden="true">{{ eq.abr }}</span>
+          <span class="partido__equipo">
+            <span class="partido__nombre"><span class="n-largo">{{ eq.nombre }}</span><span class="n-corto" aria-hidden="true">{{ eq.nombre | apodo }}</span></span>
+            {% if eq.balance %}<span class="partido__balance" title="Balance tras este partido">({{ eq.balance }})</span>{% endif %}
+          </span>
+          <b class="partido__puntos" data-contar="{{ eq.puntos }}" aria-label="{{ eq.puntos }} puntos">0</b>
+        </div>
+        {% endfor %}
         {% if crUrl %}<span class="partido__ver">Ver la crónica →</span>{% endif %}
       {% if crUrl %}</a>{% else %}</div>{% endif %}
       {% endfor %}

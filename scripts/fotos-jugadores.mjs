@@ -3,7 +3,7 @@
 // Si el jugador ya tiene foto, no la vuelve a buscar: la misma foto sirve para todos sus artículos.
 import fs from "node:fs";
 
-const UA = "BackToBackMedioNBA/1.0 (https://github.com/hugoamigo2006-collab/medio-nba)";
+const UA = `BackToBackMedioNBA/1.0 (https://github.com/${process.env.GITHUB_REPOSITORY || "hugoamigo2006-collab/medio-nba"})`;
 const API = "https://commons.wikimedia.org/w/api.php";
 const SALIDA = "src/_data/fotos_jugadores.json";
 const CARPETA = "src/img/jugadores";

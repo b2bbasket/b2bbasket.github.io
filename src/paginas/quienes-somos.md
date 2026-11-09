@@ -14,8 +14,8 @@ title: Quiénes somos
 
 ## Cómo trabajamos
 
-Cada noticia se apoya en fuentes identificables y diferenciamos entre hechos confirmados, información atribuida, rumores y opinión. Puedes leer todos los detalles en nuestros [principios editoriales](/medio-nba/principios-editoriales/).
+Cada noticia se apoya en fuentes identificables y diferenciamos entre hechos confirmados, información atribuida, rumores y opinión. Puedes leer todos los detalles en nuestros [principios editoriales](../principios-editoriales/).
 
 ## Escríbenos
 
-Si quieres proponer un tema, avisarnos de un error o colaborar, usa la página de [contacto](/medio-nba/contacto/).
+Si quieres proponer un tema, avisarnos de un error o colaborar, usa la página de [contacto](../contacto/).

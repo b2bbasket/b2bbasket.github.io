@@ -5,15 +5,19 @@ resumen: "El minijuego diario de Back to Back: adivina el jugador de la NBA con 
 permalink: /juego/index.html
 ---
 <div class="contenedor">
-  <div class="banner banner--a t-verde m-calendario"><h1>Adivina el jugador</h1><p>Un jugador nuevo cada día. Las pistas van de la más difícil a la más fácil: cuantas menos necesites, mejor.</p></div>
+  <div class="banner banner--a t-verde m-calendario"><h1>Adivina el jugador</h1><p>Un jugador nuevo cada día, elegido entre {{ juego.jugadores | length }} All-Stars de toda la historia. Tienes cinco intentos y cada fallo desbloquea una pista más fácil.</p></div>
   <div class="juego">
     <div class="juego__racha" id="juegoRacha" aria-live="polite">
       <span class="llama" aria-hidden="true">🔥</span>
       <span class="juego__racha-num" id="juegoRachaNum">0</span>
       <span class="juego__racha-txt" id="juegoRachaTxt">aciertos seguidos</span>
     </div>
+    <div class="juego__inicio" id="juegoInicio" hidden>
+      <p>Cuando estés listo, pulsa «Empezar» para ver la primera pista.</p>
+      <button type="button" id="juegoEmpezar">Empezar</button>
+    </div>
     <ol class="juego__pistas" id="juegoPistas"></ol>
-    <form class="juego__form" id="juegoForm" autocomplete="off">
+    <form class="juego__form" id="juegoForm" autocomplete="off" hidden>
       <div class="juego__campo">
         <input id="juegoCampo" placeholder="Escribe el nombre de un jugador..." aria-label="Jugador" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="juegoSugerencias">
         <ul class="juego__sugerencias" id="juegoSugerencias" role="listbox" hidden></ul>
@@ -25,6 +29,7 @@ permalink: /juego/index.html
       <p id="juegoResultado"></p>
       <button type="button" id="juegoCompartir">Compartir resultado</button>
       <p class="juego__stats" id="juegoStats"></p>
+      <p class="juego__stats" id="juegoFuente"></p>
       <p class="juego__stats">Vuelve mañana para un jugador nuevo.</p>
     </div>
   </div>
@@ -34,6 +39,10 @@ permalink: /juego/index.html
 .juego__campo input{width:100%;box-sizing:border-box}
 .juego__sugerencias{list-style:none;margin:6px 0 0;padding:6px;position:absolute;left:0;right:0;top:100%;z-index:30;background:var(--blanco);border:1px solid var(--linea);border-radius:16px;box-shadow:0 14px 28px rgba(22,24,29,.18);max-height:280px;overflow-y:auto}
 .juego__sugerencias[hidden]{display:none}
+.juego__form[hidden],.juego__inicio[hidden]{display:none}
+.juego__inicio{text-align:center;padding:26px 18px;border:2px dashed var(--linea);border-radius:20px;margin-bottom:16px}
+.juego__inicio p{margin:0 0 14px;color:var(--suave)}
+.juego__inicio button{font-size:17px;padding:12px 30px}
 .juego__sugerencias li{padding:11px 14px;border-radius:10px;font-weight:600;cursor:pointer}
 .juego__sugerencias li:hover,.juego__sugerencias li.activa{background:var(--hover);color:var(--acento)}
 .juego__racha{display:flex;align-items:center;justify-content:center;gap:8px;width:fit-content;margin:0 auto 18px;padding:9px 20px;border-radius:999px;border:2px solid var(--linea);background:var(--blanco);font-weight:700;font-size:15px;color:var(--suave)}
@@ -48,5 +57,4 @@ permalink: /juego/index.html
 @keyframes rachaSube{0%{transform:scale(1)}35%{transform:scale(1.12)}100%{transform:scale(1)}}
 @keyframes llamaSube{0%{transform:scale(.5)}50%{transform:scale(1.5)}100%{transform:scale(1)}}
 </style>
-<script id="datos-juego" type="application/json">{{ juego.jugadores | dump | safe }}</script>
-<script src="{{ '/js/juego.js' | url }}"></script>
+<script src="{{ '/js/juego.js' | url }}?v={{ juego.generado }}" data-datos="{{ '/juego/jugadores.json' | url }}?v={{ juego.generado }}" id="scriptJuego"></script>
