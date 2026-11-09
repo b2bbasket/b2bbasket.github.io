@@ -4,6 +4,11 @@ date: 2026-11-09
 seccion: guias
 resumen: "Una guía para entender cómo se organiza la liga: equipos, conferencias, temporada regular, play-in, playoffs, draft y tope salarial."
 autor: "Hugo Amigo Suárez"
+claves:
+  - "30 equipos en dos conferencias; cada uno juega 82 partidos de octubre a abril."
+  - "Del 1.º al 6.º de cada conferencia van directos a playoffs; del 7.º al 10.º se juegan las dos últimas plazas en el play-in."
+  - "Los playoffs son cuatro rondas al mejor de siete partidos, hasta las Finales de junio."
+  - "Desde el draft de 2027, la lotería castiga el tanking: los tres peores tienen menos opciones de elegir primero."
 ---
 
 Si estás empezando a seguir la NBA, esta guía te resume lo esencial para entender qué se juega cada equipo cada noche, desde octubre hasta las Finales de junio.

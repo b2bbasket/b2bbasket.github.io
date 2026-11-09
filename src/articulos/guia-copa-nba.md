@@ -4,6 +4,11 @@ date: 2026-11-09
 seccion: guias
 resumen: "Todo sobre la NBA Cup: quién juega, cómo son los grupos, cuándo se decide y qué se lleva el campeón."
 autor: "Hugo Amigo Suárez"
+claves:
+  - "Juegan los 30 equipos, en seis grupos de cinco; pasan los primeros de grupo y un comodín por conferencia."
+  - "Cuartos y semifinales, a partido único en la pista del mejor clasificado; la final, el 11 de diciembre en Indianápolis."
+  - "Todos los partidos cuentan para la temporada regular salvo la final."
+  - "Campeones: Lakers (2023), Bucks (2024) y Knicks (2025)."
 ---
 
 La NBA Cup es el torneo que la liga disputa dentro de la temporada regular, entre finales de octubre y diciembre. En 2026 se juega su cuarta edición, con dos novedades importantes: los cuartos y las semifinales se disputan en el pabellón del mejor clasificado, y la final deja Las Vegas y se traslada al Hinkle Fieldhouse de Indianápolis.
