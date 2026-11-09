@@ -1,18 +1,14 @@
 ---
-local: "Atlanta Hawks"
-visitante: "Los Angeles Lakers"
+local: "[EJEMPLO] Equipo A"
+visitante: "[EJEMPLO] Equipo B"
 date: 2026-11-02
-fecha_hora: "[EJEMPLO] Martes 10 de noviembre, 01:00"
-donde: "[EJEMPLO] Canal de ejemplo"
+fecha_hora: "Texto de ejemplo: día y hora en horario peninsular"
+donde: "Texto de ejemplo: canal o plataforma"
 autor: "[Tu nombre]"
 claves:
   - "Primera clave del partido, inventada para ver el diseño."
   - "Segunda clave del partido."
   - "Tercera clave del partido."
-a_seguir:
-  - jugador: "[EJEMPLO] Jugador A"
-    equipo: "Atlanta Hawks"
-    motivo: "Texto inventado para ver el diseño."
 bajas_local: []
 bajas_visitante:
   - "Jugador de ejemplo (duda)"
