@@ -127,7 +127,7 @@ async function datosWikidata(lista) {
 // ---------- 4. Pistas ----------
 const POSICIONES = [
   [/point guard|base/i, "base"], [/shooting guard|escolta/i, "escolta"], [/small forward|alero$|^alero/i, "alero"],
-  [/power forward|ala-p[ií]vot/i, "ala-pívot"], [/center|p[ií]vot/i, "pívot"], [/guard/i, "escolta"], [/forward|alero/i, "alero"],
+  [/power forward|ala-p[ií]vot/i, "ala-pívot"], [/^ala$|^forward$/i, "alero"], [/center|p[ií]vot/i, "pívot"], [/guard/i, "escolta"], [/forward|alero/i, "alero"],
 ];
 function posicion(set) {
   const etiquetas = [...set].filter((p) => !/^Q\d+$/.test(p));
@@ -144,29 +144,33 @@ function construir(j, d) {
   if (!d.nacimiento) return falta("nacimiento", j);
   if (!d.pais || !d.lugar) return falta("lugar", j);
   const pos = posicion(d.posiciones);
-  if (!pos.length) return falta("posición: " + [...d.posiciones].join("/"), j);
   if (!d.equipos.length) return falta("sin equipos NBA", j);
-  const eq = d.equipos.filter((e) => e.equipo && !/^Q\d+$/.test(e.equipo) && e.inicio);
-  if (!eq.length) return falta("equipos sin fechas", j);
-  eq.sort((a, b) => a.inicio - b.inicio);
-  // Equipos sin repetir, en orden de llegada
+  const todos = [];
+  d.equipos.forEach((e) => { if (e.equipo && !/^Q\d+$/.test(e.equipo) && !todos.includes(e.equipo)) todos.push(e.equipo); });
+  if (!todos.length) return falta("sin equipos NBA", j);
+  const eq = d.equipos.filter((e) => e.equipo && !/^Q\d+$/.test(e.equipo) && e.inicio).sort((a, b) => a.inicio - b.inicio);
+  // Las fechas solo sirven si las tienen todos sus equipos
+  const conFechas = eq.length && todos.every((t) => eq.some((e) => e.equipo === t));
   const nombres = [];
-  eq.forEach((e) => { if (!nombres.includes(e.equipo)) nombres.push(e.equipo); });
-  // Equipo principal: más temporadas acumuladas
-  const anosPor = {};
-  eq.forEach((e) => { anosPor[e.equipo] = (anosPor[e.equipo] || 0) + Math.max(1, (e.fin || 2026) - e.inicio); });
-  const principal = Object.entries(anosPor).sort((a, b) => b[1] - a[1])[0][0];
-  const debut = eq[0];
-  const activo = eq.some((e) => !e.fin) && d.nacimiento >= 1980;
+  (conFechas ? eq : []).forEach((e) => { if (!nombres.includes(e.equipo)) nombres.push(e.equipo); });
+  let principal = null, debut = null;
+  if (conFechas) {
+    const anosPor = {};
+    eq.forEach((e) => { anosPor[e.equipo] = (anosPor[e.equipo] || 0) + Math.max(1, (e.fin || 2026) - e.inicio); });
+    principal = Object.entries(anosPor).sort((a, b) => b[1] - a[1])[0][0];
+    debut = eq[0];
+  }
+  const listaEquipos = conFechas ? nombres : [...todos].sort((a, b) => a.localeCompare(b, "es"));
+  const activo = d.equipos.some((e) => e.inicio && !e.fin) && d.nacimiento >= 1980;
   const iniciales = j.nombre.split(/\s+/).filter((p) => !/^(jr\.?|sr\.?|ii|iii|iv)$/i.test(p)).map((p) => p[0].toUpperCase() + ".").join(" ");
   const pais = d.pais === "Estados Unidos" || d.pais === "United States" ? "Estados Unidos" : d.pais;
   const lugar = d.lugar === d.pais ? pais : `${d.lugar} (${pais})`;
   const pistas = [
-    `Jugador nacido en ${d.nacimiento} que jugaba de ${lista(pos)}.`,
+    pos.length ? `Jugador nacido en ${d.nacimiento} que jugaba de ${lista(pos)}.` : `Jugador nacido en ${d.nacimiento}.`,
     `Fue elegido All-Star ${j.veces === 1 ? "una vez" : j.veces + " veces"}${j.veces > 1 ? `, entre ${j.primero} y ${j.ultimo}` : `, en ${j.primero}`}.`,
     `Nació en ${lugar}.`,
-    `Debutó en la NBA en ${debut.inicio} con ${debut.equipo}.`,
-    `${nombres.length === 1 ? `Toda su carrera en la NBA la ${activo ? "ha pasado" : "pasó"} en ${principal}` : `Jugó en ${lista(nombres)}`}. Sus iniciales: ${iniciales}`,
+    debut ? `Debutó en la NBA en ${debut.inicio} con ${debut.equipo}.` : (listaEquipos.length === 1 ? "Jugó en un solo equipo de la NBA." : `Jugó en ${listaEquipos.length} equipos de la NBA.`),
+    `${listaEquipos.length === 1 ? `Toda su carrera en la NBA la ${activo ? "ha pasado" : "pasó"} en ${listaEquipos[0]}` : `Jugó en ${lista(listaEquipos)}`}. Sus iniciales: ${iniciales}`,
   ];
   return { nombre: j.nombre, pistas, fuente: "https://en.wikipedia.org/wiki/" + encodeURIComponent(j.articulo.replace(/ /g, "_")) };
 }
