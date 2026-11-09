@@ -1,0 +1,29 @@
+name: Jugadores del juego
+# Regenera la lista de jugadores de «Adivina el jugador» (src/_data/juego.json)
+# a partir de Wikipedia y Wikidata. Se lanza a mano (Actions → Jugadores del juego → Run workflow)
+# o cuando cambia el generador. Conviene ejecutarlo una vez por temporada, tras el All-Star.
+on:
+  push:
+    paths:
+      - scripts/juego-generar.mjs
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  generar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node scripts/juego-generar.mjs
+      - name: Guardar
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add src/_data/juego.json
+          if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
+          git commit -m "Actualizar jugadores del juego (Wikipedia y Wikidata)"
+          git pull --rebase --autostash
+          git push
