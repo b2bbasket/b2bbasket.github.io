@@ -1,25 +1,45 @@
 ---
 layout: base.njk
 title: Equipos
-resumen: Los 30 equipos de la NBA agrupados por conferencias y divisiones.
+resumen: Los 30 equipos de la NBA por conferencias y divisiones, con su balance y su puesto esta temporada.
 permalink: /equipos/index.html
 ---
 <div class="contenedor">
   {% set fondo = 'equipos' | imagenSeccion %}
   <div class="banner t-verde{% if fondo %} con-imagen{% endif %}"{% if fondo %} style="background-image:url('{{ fondo | url }}')"{% endif %}>
-    <h1>Equipos</h1><p>Los 30 equipos de la NBA: 15 en cada conferencia y 5 en cada división.</p>
+    <h1>Equipos</h1><p>Los 30 equipos de la NBA: su historia, sus líderes y cómo van esta temporada.</p>
+  </div>
+  <div class="selector-conf" role="group" aria-label="Elegir conferencia">
+    <button type="button" class="filtro activo" data-conf="todas">Todas</button>
+    <button type="button" class="filtro" data-conf="este">Este</button>
+    <button type="button" class="filtro" data-conf="oeste">Oeste</button>
   </div>
   {% for conferencia, divisiones in equipos %}
-  <section class="conferencia">
+  <section class="conferencia" data-conf="{{ 'este' if 'Este' in conferencia else 'oeste' }}">
     <h2 class="seccion__titulo revelar">{{ conferencia }}</h2>
     <div class="divisiones">
       {% for division, lista in divisiones %}
       <div class="division revelar">
         <h3>{{ division }}</h3>
-        {% for e in lista %}{% set f = collections.fichas | fichaDe(e) %}{% if f %}<a class="equipo equipo--enlace" href="{{ f.url | url }}">{{ e }}<em>Ver historia →</em></a>{% else %}<div class="equipo">{{ e }}</div>{% endif %}{% endfor %}
+        {% for e in lista %}{% set f = collections.fichas | fichaDe(e) %}{% set T = temporada.porNombre[e] %}
+        <a class="equipo-fila" href="{{ f.url | url if f else '#' }}">
+          <b class="chip-abr">{{ e | abrev }}</b>
+          <span class="equipo-fila__nombre">{{ e }}</span>
+          {% if T and T.jugados %}<span class="equipo-fila__dato"><strong>{{ T.v }}-{{ T.d }}</strong><small>{{ T.puesto }}.º</small></span>{% endif %}
+        </a>
+        {% endfor %}
       </div>
       {% endfor %}
     </div>
   </section>
   {% endfor %}
+  <p class="nota-fuente">Balance y puesto en la conferencia esta temporada (datos de balldontlie, temporada regular).</p>
 </div>
+<script>
+document.querySelectorAll('.selector-conf .filtro').forEach(function (b) {
+  b.addEventListener('click', function () {
+    document.querySelectorAll('.selector-conf .filtro').forEach(function (x) { x.classList.toggle('activo', x === b); });
+    document.querySelectorAll('.conferencia').forEach(function (s) { s.hidden = b.dataset.conf !== 'todas' && s.dataset.conf !== b.dataset.conf; });
+  });
+});
+</script>

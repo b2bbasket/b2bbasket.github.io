@@ -39,6 +39,7 @@ public_folder: /img/subidas
       - { label: Crónica de un partido - equipo local (opcional), name: equipo_local, widget: select, required: false, hint: "Solo para crónicas: así se enlaza sola desde Resultados de la jornada", options: ["Atlanta Hawks", "Boston Celtics", "Brooklyn Nets", "Charlotte Hornets", "Chicago Bulls", "Cleveland Cavaliers", "Dallas Mavericks", "Denver Nuggets", "Detroit Pistons", "Golden State Warriors", "Houston Rockets", "Indiana Pacers", "Los Angeles Clippers", "Los Angeles Lakers", "Memphis Grizzlies", "Miami Heat", "Milwaukee Bucks", "Minnesota Timberwolves", "New Orleans Pelicans", "New York Knicks", "Oklahoma City Thunder", "Orlando Magic", "Philadelphia 76ers", "Phoenix Suns", "Portland Trail Blazers", "Sacramento Kings", "San Antonio Spurs", "Toronto Raptors", "Utah Jazz", "Washington Wizards"] }
       - { label: Crónica de un partido - equipo visitante (opcional), name: equipo_visitante, widget: select, required: false, options: ["Atlanta Hawks", "Boston Celtics", "Brooklyn Nets", "Charlotte Hornets", "Chicago Bulls", "Cleveland Cavaliers", "Dallas Mavericks", "Denver Nuggets", "Detroit Pistons", "Golden State Warriors", "Houston Rockets", "Indiana Pacers", "Los Angeles Clippers", "Los Angeles Lakers", "Memphis Grizzlies", "Miami Heat", "Milwaukee Bucks", "Minnesota Timberwolves", "New Orleans Pelicans", "New York Knicks", "Oklahoma City Thunder", "Orlando Magic", "Philadelphia 76ers", "Phoenix Suns", "Portland Trail Blazers", "Sacramento Kings", "San Antonio Spurs", "Toronto Raptors", "Utah Jazz", "Washington Wizards"] }
       - { label: Entradilla, name: resumen, widget: text, hint: "Qué ha pasado y por qué importa, en una o dos frases." }
+      - { label: Claves (opcional), name: claves, widget: list, required: false, field: { label: Clave, name: clave, widget: string }, hint: "Tres o cuatro frases cortas. En crónicas salen como «Las claves del partido»; en noticias, como «Lo esencial»; en guías, como «En 30 segundos»." }
       - { label: Autor, name: autor, widget: string, default: "[Tu nombre]" }
       - { label: Borrador (si está activado, NO se publica), name: borrador, widget: boolean, default: true, required: false }
       - { label: Jugador para la foto (opcional), name: jugador_foto, widget: string, required: false, hint: "Escribe el nombre completo, por ejemplo «Stephen Curry» o «Aday Mara». La web buscará sola una foto suya con licencia libre en Wikimedia Commons y pondrá el crédito. Si rellenas «Imagen principal», se usa esa en su lugar." }
@@ -56,13 +57,21 @@ public_folder: /img/subidas
     slug: "{{year}}-{{month}}-{{day}}-{{fields.local}}-vs-{{fields.visitante}}"
     summary: "{{local}} vs {{visitante}}"
     fields:
-      - { label: Equipo local, name: local, widget: string }
-      - { label: Equipo visitante, name: visitante, widget: string }
+      - { label: Equipo local, name: local, widget: select, options: ["Atlanta Hawks", "Boston Celtics", "Brooklyn Nets", "Charlotte Hornets", "Chicago Bulls", "Cleveland Cavaliers", "Dallas Mavericks", "Denver Nuggets", "Detroit Pistons", "Golden State Warriors", "Houston Rockets", "Indiana Pacers", "Los Angeles Clippers", "Los Angeles Lakers", "Memphis Grizzlies", "Miami Heat", "Milwaukee Bucks", "Minnesota Timberwolves", "New Orleans Pelicans", "New York Knicks", "Oklahoma City Thunder", "Orlando Magic", "Philadelphia 76ers", "Phoenix Suns", "Portland Trail Blazers", "Sacramento Kings", "San Antonio Spurs", "Toronto Raptors", "Utah Jazz", "Washington Wizards"] }
+      - { label: Equipo visitante, name: visitante, widget: select, options: ["Atlanta Hawks", "Boston Celtics", "Brooklyn Nets", "Charlotte Hornets", "Chicago Bulls", "Cleveland Cavaliers", "Dallas Mavericks", "Denver Nuggets", "Detroit Pistons", "Golden State Warriors", "Houston Rockets", "Indiana Pacers", "Los Angeles Clippers", "Los Angeles Lakers", "Memphis Grizzlies", "Miami Heat", "Milwaukee Bucks", "Minnesota Timberwolves", "New Orleans Pelicans", "New York Knicks", "Oklahoma City Thunder", "Orlando Magic", "Philadelphia 76ers", "Phoenix Suns", "Portland Trail Blazers", "Sacramento Kings", "San Antonio Spurs", "Toronto Raptors", "Utah Jazz", "Washington Wizards"] }
       - { label: Fecha del partido, name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
       - { label: Día y hora (horario peninsular), name: fecha_hora, widget: string, hint: "Por ejemplo: Lunes 2 de noviembre, 01:30" }
       - { label: Dónde verlo, name: donde, widget: string }
       - { label: Autor, name: autor, widget: string, default: "[Tu nombre]" }
       - { label: Las claves del partido, name: claves, widget: list, required: false, field: { label: Clave, name: clave, widget: string } }
+      - label: Jugadores a seguir (opcional)
+        name: a_seguir
+        widget: list
+        required: false
+        fields:
+          - { label: Jugador, name: jugador, widget: string }
+          - { label: Equipo, name: equipo, widget: string }
+          - { label: Por qué (una frase, con datos verificados), name: motivo, widget: string, required: false }
       - { label: Bajas del equipo local, name: bajas_local, widget: list, required: false, field: { label: Jugador, name: jugador, widget: string } }
       - { label: Bajas del equipo visitante, name: bajas_visitante, widget: list, required: false, field: { label: Jugador, name: jugador, widget: string } }
       - { label: Borrador (si está activado, NO se publica), name: borrador, widget: boolean, default: true, required: false }

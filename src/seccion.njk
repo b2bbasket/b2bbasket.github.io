@@ -26,15 +26,35 @@ eleventyComputed:
   {% if not lista.length %}
   <p class="vacio">Todavía no hay artículos en esta sección.</p>
   {% elif s.diseno == "lista" %}
-  <div class="lista-noticias">
-    {% for a in lista %}
-    <a class="noticia revelar filtrable" data-equipo="{{ a.data.equipo }}" href="{{ a.url | url }}"><small>{{ a.date | fecha }}</small><div><strong>{{ a.data.title }}</strong><span>{{ a.data.resumen }}</span></div></a>
+  {# Noticias: la más reciente destacada y el resto en un teletipo agrupado por día #}
+  {% set lider = lista[0] %}
+  <a class="noticia-lider revelar filtrable" data-equipo="{{ lider.data.equipo }}" href="{{ lider.url | url }}">
+    <small>{{ lider.date | fecha }}{% if lider.data.equipo %} · {{ lider.data.equipo }}{% endif %}</small>
+    <strong>{{ lider.data.title }}</strong>
+    <span>{{ lider.data.resumen }}</span>
+  </a>
+  {% if lista.length > 1 %}
+  <div class="teletipo">
+    {% for grupo in lista.slice(1) | porDia %}
+      <h2 class="teletipo__dia">{{ grupo.dia }}</h2>
+      {% for a in grupo.items %}
+      <a class="teletipo__item revelar filtrable" data-equipo="{{ a.data.equipo }}" href="{{ a.url | url }}">
+        {% if a.data.equipo %}<b class="chip-abr">{{ a.data.equipo | abrev }}</b>{% else %}<b class="chip-abr chip-abr--vacio">NBA</b>{% endif %}
+        <div><strong>{{ a.data.title }}</strong><span>{{ a.data.resumen }}</span></div>
+      </a>
+      {% endfor %}
     {% endfor %}
   </div>
+  {% endif %}
   {% elif s.diseno == "revista" %}
+  {# Crónicas: cada tarjeta lleva el marcador real del partido si está en los datos de la temporada #}
   <div class="revista">
     {% for a in lista %}
-    <a class="tarjeta {% if loop.first %}tarjeta--grande{% else %}tarjeta--clara{% endif %} revelar filtrable" data-equipo="{{ a.data.equipo }}" href="{{ a.url | url }}"><small>{{ a.date | fecha }}</small><h3>{{ a.data.title }}</h3><p>{{ a.data.resumen }}</p></a>
+    {% set pt = temporada.partidos | partidoEntre(a.data.equipo_local, a.data.equipo_visitante, a.date) if a.data.equipo_local else null %}
+    <a class="tarjeta {% if loop.first %}tarjeta--grande{% else %}tarjeta--clara{% endif %} revelar filtrable" data-equipo="{{ a.data.equipo }}" href="{{ a.url | url }}">
+      {% if pt %}<span class="mini-marcador"><b>{{ pt.h }}</b> {{ pt.hs }}<i>-</i>{{ pt.vs }} <b>{{ pt.v }}</b></span>{% endif %}
+      <small>{{ a.date | fecha }}</small><h3>{{ a.data.title }}</h3><p>{{ a.data.resumen }}</p>
+    </a>
     {% endfor %}
   </div>
   {% elif s.diseno == "numerada" %}
@@ -44,9 +64,22 @@ eleventyComputed:
     {% endfor %}
   </div>
   {% else %}
-  <div class="listado">
+  {# Previas: tarjeta «cara a cara» con las abreviaturas, la hora y el balance actual de cada equipo #}
+  <div class="listado listado--previas">
     {% for a in lista %}
-    <a class="tarjeta tarjeta--clara revelar filtrable" data-equipo="{{ a.data.equipo }}" href="{{ a.url | url }}"><small>{{ a.date | fecha }}</small><h3>{{ a.data.title }}</h3><p>{{ a.data.resumen }}</p></a>
+    {% set lo = a.data.local or a.data.equipo_local %}{% set vi = a.data.visitante or a.data.equipo_visitante %}
+    {% set TL = temporada.porNombre[lo] %}{% set TV = temporada.porNombre[vi] %}
+    <a class="previa-tarjeta revelar filtrable" data-equipo="{{ a.data.equipo or lo }}" href="{{ a.url | url }}">
+      {% if lo and vi %}
+      <span class="previa-tarjeta__duelo">
+        <span><b>{{ lo | abrev }}</b>{% if TL and TL.jugados %}<small>{{ TL.v }}-{{ TL.d }}</small>{% endif %}</span>
+        <i>vs</i>
+        <span><b>{{ vi | abrev }}</b>{% if TV and TV.jugados %}<small>{{ TV.v }}-{{ TV.d }}</small>{% endif %}</span>
+      </span>
+      {% endif %}
+      <small>{{ a.data.fecha_hora or (a.date | fecha) }}</small>
+      <h3>{{ a.data.title }}</h3>
+    </a>
     {% endfor %}
   </div>
   {% endif %}
