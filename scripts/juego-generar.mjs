@@ -27,17 +27,25 @@ async function allStars() {
   const u = "https://en.wikipedia.org/w/api.php?action=parse&page=List_of_NBA_All-Stars&prop=wikitext&format=json&formatversion=2";
   const wt = (await json(u)).parse.wikitext;
   const filas = wt.split(/\n\|-/);
-  if (process.env.DEPURAR) { console.log("FILAS " + filas.length); [5, 6, 50, 200].forEach((k) => console.log("=== FILA " + k + "\n" + (filas[k] || "").slice(0, 700))); }
   const out = [];
   for (const fila of filas) {
-    const enlace = fila.match(/\[\[([^\]|#]+)(?:\|([^\]]+))?\]\]/);
-    if (!enlace) continue;
-    // Celdas de la fila
-    const celdas = fila.split(/\n[|!]|\|\|/).map((c) => c.replace(/^[^|\n]*?\|(?!\|)/, (m) => (m.includes("[[") ? m : "")).trim());
-    const num = celdas.map((c) => c.replace(/<[^>]+>|\{\{[^}]*\}\}/g, "").trim()).find((c) => /^\d{1,2}$/.test(c));
-    const anos = (fila.match(/\b(19[5-9]\d|20[0-2]\d)\b/g) || []).map(Number).filter((a) => a >= 1951 && a <= 2026);
+    let articulo = null, nombre = null;
+    const sn = fila.match(/\{\{\s*sortname\s*\|([^}]+)\}\}/i);
+    if (sn) {
+      const ps = sn[1].split("|").map((x) => x.trim());
+      const pos = ps.filter((x) => !x.includes("="));
+      const dab = (ps.find((x) => x.startsWith("dab=")) || "").slice(4);
+      nombre = `${pos[0]} ${pos[1]}`.trim();
+      articulo = pos[2] || (dab ? `${nombre} (${dab})` : nombre);
+    } else {
+      const enlace = fila.match(/^[^\n]*?\[\[([^\]|#]+)(?:\|([^\]]+))?\]\]/m);
+      if (!enlace || /All-Star Game/.test(enlace[1])) continue;
+      articulo = enlace[1].trim(); nombre = (enlace[2] || enlace[1]).trim();
+    }
+    const num = fila.match(/\|\|\s*(?:align=["']?center["']?\s*\|)?\s*(\d{1,2})\s*\|\|/);
+    const anos = [...fila.matchAll(/\[\[(\d{4}) NBA All-Star Game/g)].map((m) => Number(m[1]));
     if (!num || !anos.length) continue;
-    out.push({ articulo: enlace[1].trim(), nombre: (enlace[2] || enlace[1]).trim(), veces: Number(num), primero: Math.min(...anos), ultimo: Math.max(...anos) });
+    out.push({ articulo, nombre, veces: Number(num[1]), primero: Math.min(...anos), ultimo: Math.max(...anos) });
   }
   // Quitar duplicados por artículo
   const vistos = new Map();
