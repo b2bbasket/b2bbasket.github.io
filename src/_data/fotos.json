@@ -49,26 +49,6 @@
   "licencia_url": "https://creativecommons.org/licenses/by-sa/3.0",
   "restricciones": ""
  },
- "russell": {
-  "src": "/img/fotos/russell.jpg",
-  "alt": "Bill Russell con los Celtics",
-  "archivo": "Bill russell dribbling.jpg",
-  "origen": "https://commons.wikimedia.org/wiki/File:Bill_russell_dribbling.jpg",
-  "autor": "Autor desconocido",
-  "licencia": "Public domain",
-  "licencia_url": "",
-  "restricciones": ""
- },
- "chamberlain": {
-  "src": "/img/fotos/chamberlain.jpg",
-  "alt": "Wilt Chamberlain",
-  "archivo": "Wilt Chamberlain of the Los Angeles Lakers in the 1969 NBA World Championship Series.jpg",
-  "origen": "https://commons.wikimedia.org/wiki/File:Wilt_Chamberlain_of_the_Los_Angeles_Lakers_in_the_1969_NBA_World_Championship_Series.jpg",
-  "autor": "Autor desconocido",
-  "licencia": "Public domain",
-  "licencia_url": "",
-  "restricciones": ""
- },
  "kobe": {
   "src": "/img/fotos/kobe.jpg",
   "alt": "Kobe Bryant con los Lakers",

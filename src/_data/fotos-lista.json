@@ -53,26 +53,6 @@
    "autor_lipofsky": true
   },
   {
-   "id": "russell",
-   "destino": "src/img/fotos/russell.jpg",
-   "alt": "Bill Russell con los Celtics",
-   "candidatos": [
-    "Bill russell dribbling.jpg",
-    "Bill russell dribbling (cropped).jpg",
-    "Bill Russell dribbling Boston Celtics.jpg"
-   ]
-  },
-  {
-   "id": "chamberlain",
-   "destino": "src/img/fotos/chamberlain.jpg",
-   "alt": "Wilt Chamberlain",
-   "candidatos": [
-    "Wilt Chamberlain of the Los Angeles Lakers in the 1969 NBA World Championship Series.jpg",
-    "Wilt Chamberlain 1968.jpg",
-    "Wilt Chamberlain 100 Point Game 1962.jpg"
-   ]
-  },
-  {
    "id": "kobe",
    "destino": "src/img/fotos/kobe.jpg",
    "alt": "Kobe Bryant con los Lakers",

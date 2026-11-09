@@ -46,15 +46,11 @@ Diez leyendas que han marcado la historia de la liga, con tres datos de cada una
 
 ## 6. Bill Russell
 
-{% foto "russell", "foto--jugador" %}
-
 - Ganó 11 títulos con los Celtics, el máximo de la historia.
 - Fue el primer entrenador afroamericano de la liga, desde 1966, y ganó como jugador-entrenador los títulos de 1968 y 1969.
 - Desde 2009, el trofeo al MVP de las Finales lleva su nombre.
 
 ## 7. Wilt Chamberlain
-
-{% foto "chamberlain", "foto--jugador" %}
 
 - Anotó 100 puntos en un partido el 2 de marzo de 1962.
 - Promedió 50,4 puntos por partido en la temporada 1961-62.
