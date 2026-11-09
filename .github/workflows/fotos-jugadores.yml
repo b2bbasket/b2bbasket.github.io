@@ -1,0 +1,39 @@
+name: Fotos de jugadores
+# Cuando un artículo indica un jugador en «Jugador para la foto», busca en Wikimedia Commons
+# una foto suya con licencia Creative Commons, la descarga con su crédito y vuelve a publicar la web.
+on:
+  push:
+    branches: [main]
+    paths:
+      - src/articulos/**
+      - src/previas/**
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: fotos-jugadores
+  cancel-in-progress: false
+jobs:
+  fotos:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node scripts/fotos-jugadores.mjs
+      - name: Guardar y publicar
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -z "$(git status --porcelain src/img/jugadores src/_data/fotos_jugadores.json)" ]; then echo "Sin fotos nuevas"; exit 0; fi
+          sudo apt-get install -y -qq imagemagick > /dev/null
+          mogrify -resize '1400x1400>' -quality 80 -strip -interlace Plane src/img/jugadores/*.jpg
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add src/img/jugadores src/_data/fotos_jugadores.json
+          git commit -m "Fotos de jugadores desde Wikimedia Commons"
+          git pull --rebase --autostash
+          git push
+          gh workflow run publicar.yml

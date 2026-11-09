@@ -53,7 +53,8 @@ permalink: /index.html
     <div class="slider__pista" id="sliderPista">
       {% for a in collections.portada | limite(5) %}
       <a class="hero" href="{{ a.url | url }}">
-        <div class="hero__fondo"{% if a.data.imagen %} style="background-image:url('{{ a.data.imagen }}')"{% endif %}></div>
+        {% set fotoHero = a.data | fotoArticulo %}
+        <div class="hero__fondo"{% if fotoHero %} style="background-image:url('{{ fotoHero.src }}')"{% endif %}></div>
         <div class="hero__texto">
           {% for s in secciones %}{% if s.clave == a.data.seccion %}<span class="etiqueta">{{ s.menu }}</span>{% endif %}{% endfor %}
           <h1 class="hero__titulo">{{ a.data.title }}</h1>

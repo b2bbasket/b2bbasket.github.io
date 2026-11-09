@@ -5,10 +5,13 @@ permalink: /creditos-imagenes/index.html
 ---
 <p>En Back to Back solo usamos fotografías propias o con una licencia que permite reutilizarlas. Las de esta lista proceden de <a href="https://commons.wikimedia.org/">Wikimedia Commons</a> y se publican con licencias libres (Creative Commons o dominio público), respetando el crédito que pide cada autor.</p>
 <p>Si eres autor de alguna de estas imágenes y ves un error en el crédito, escríbenos a {{ site.email }} y lo corregiremos.</p>
-{% if fotos | length %}
+{% if fotos | length or fotos_jugadores | length %}
 <ul class="creditos">
 {% for id, f in fotos %}
   <li><strong>{{ f.alt }}</strong>. Autor: {{ f.autor }}. Licencia: {% if f.licencia_url %}<a href="{{ f.licencia_url }}" rel="license noopener">{{ f.licencia }}</a>{% else %}{{ f.licencia }}{% endif %}. <a href="{{ f.origen }}" rel="noopener">Ver original en Wikimedia Commons</a>.</li>
+{% endfor %}
+{% for id, f in fotos_jugadores %}
+  <li><strong>{{ f.alt }}</strong> (foto de archivo). Autor: {{ f.autor }}. Licencia: {% if f.licencia_url %}<a href="{{ f.licencia_url }}" rel="license noopener">{{ f.licencia }}</a>{% else %}{{ f.licencia }}{% endif %}. <a href="{{ f.origen }}" rel="noopener">Ver original en Wikimedia Commons</a>.</li>
 {% endfor %}
 </ul>
 {% else %}
