@@ -21,7 +21,7 @@
 <meta property="og:description" content="{{ resumen or site.descripcion }}">
 <meta property="og:image" content="{{ web.url }}/img/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="{{ '/css/estilos.css' | url }}?v={{ site.version or 19 }}">
+<link rel="stylesheet" href="{{ '/css/estilos.css' | url }}?v={{ site.version or 20 }}">
 <script>try{var tm=localStorage.getItem("tema");if(!tm){tm=window.matchMedia("(prefers-color-scheme: dark)").matches?"oscuro":"claro"}document.documentElement.setAttribute("data-tema",tm)}catch(e){}</script>
 <script>try{if(sessionStorage.getItem("splash")){document.documentElement.classList.add("splash-visto")}else{sessionStorage.setItem("splash","1")}}catch(e){}</script>
 </head>
@@ -96,6 +96,6 @@
 </div>
 <script src="{{ '/js/cookies.js' | url }}"></script>
 {% endif %}
-<script src="{{ '/js/main.js' | url }}?v={{ site.version or 19 }}"></script>
+<script src="{{ '/js/main.js' | url }}?v={{ site.version or 20 }}"></script>
 </body>
 </html>

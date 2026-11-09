@@ -137,6 +137,10 @@ public_folder: /img/subidas
               - { label: Puntos local, name: pl, widget: number, value_type: int }
               - { label: Equipo visitante, name: visitante, widget: string }
               - { label: Puntos visitante, name: pv, widget: number, value_type: int }
+              - { label: Balance del local tras el partido (opcional, ej. 9-2), name: rl, widget: string, required: false, hint: "Se rellena solo con los datos automáticos. Si lo escribes a mano, que sea el balance justo después de este partido." }
+              - { label: Balance del visitante tras el partido (opcional), name: rv, widget: string, required: false }
+              - { label: Abreviatura local (opcional, ej. LAL), name: al, widget: string, required: false }
+              - { label: Abreviatura visitante (opcional), name: av, widget: string, required: false }
               - { label: Crónica del partido (opcional), name: cronica, widget: relation, collection: articulos, search_fields: [title], value_field: "{{slug}}", display_fields: [title], required: false }
       - label: Clasificación
         name: clasificacion
