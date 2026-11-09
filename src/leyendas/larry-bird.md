@@ -4,7 +4,7 @@ orden: 5
 epoca: setenta
 epoca_texto: "Años 70 y 80"
 posicion: Alero
-equipos: "Boston Celtics (toda su carrera)"
+clubes: "Boston Celtics (toda su carrera)"
 foto: bird
 entradilla: "Tres MVP seguidos, tres anillos y tres concursos de triples. El rival que convirtió los Celtics-Lakers de los 80 en la rivalidad de una generación."
 cifras:

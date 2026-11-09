@@ -4,7 +4,7 @@ orden: 1
 epoca: noventa
 epoca_texto: "Años 90"
 posicion: Escolta
-equipos: "Chicago Bulls (1984-1993, 1995-1998) · Washington Wizards (2001-2003)"
+clubes: "Chicago Bulls (1984-1993, 1995-1998) · Washington Wizards (2001-2003)"
 foto: jordan
 entradilla: "Seis finales, seis anillos, seis MVP de las Finales. El jugador que convirtió a los Bulls en una dinastía y a la NBA en un fenómeno mundial."
 cifras:

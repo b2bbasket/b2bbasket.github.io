@@ -4,7 +4,7 @@ orden: 7
 epoca: pioneros
 epoca_texto: "Años 50 y 60"
 posicion: Pívot
-equipos: "Philadelphia / San Francisco Warriors · Philadelphia 76ers · Los Angeles Lakers"
+clubes: "Philadelphia / San Francisco Warriors · Philadelphia 76ers · Los Angeles Lakers"
 foto: ""
 entradilla: "100 puntos en un partido y 50,4 de media en una temporada. Las cifras de Wilt Chamberlain parecen de otro deporte."
 cifras:

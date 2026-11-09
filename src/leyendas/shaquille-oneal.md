@@ -4,7 +4,7 @@ orden: 9
 epoca: noventa
 epoca_texto: "Años 90"
 posicion: Pívot
-equipos: "Orlando Magic · Los Angeles Lakers · Miami Heat · Phoenix Suns · Cleveland Cavaliers · Boston Celtics"
+clubes: "Orlando Magic · Los Angeles Lakers · Miami Heat · Phoenix Suns · Cleveland Cavaliers · Boston Celtics"
 foto: shaq
 entradilla: "Número 1 del draft, cuatro anillos y tres MVP de las Finales seguidos. Durante una década, el pívot más dominante de la liga."
 cifras:

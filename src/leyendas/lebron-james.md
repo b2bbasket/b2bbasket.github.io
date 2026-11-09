@@ -4,7 +4,7 @@ orden: 2
 epoca: siglo21
 epoca_texto: "Siglo XXI"
 posicion: Alero
-equipos: "Cleveland Cavaliers · Miami Heat · Los Angeles Lakers · Philadelphia 76ers"
+clubes: "Cleveland Cavaliers · Miami Heat · Los Angeles Lakers · Philadelphia 76ers"
 foto: lebron
 entradilla: "El máximo anotador de la historia de la NBA. Cuatro anillos con tres franquicias distintas y más de dos décadas en la élite."
 cifras:

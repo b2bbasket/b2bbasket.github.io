@@ -4,7 +4,7 @@ orden: 4
 epoca: setenta
 epoca_texto: "Años 70 y 80"
 posicion: Base
-equipos: "Los Angeles Lakers (toda su carrera)"
+clubes: "Los Angeles Lakers (toda su carrera)"
 foto: magic
 entradilla: "Un base con cuerpo de ala-pívot que jugaba como nadie. Cinco anillos, el mejor promedio de asistencias de la historia y el alma del «Showtime»."
 cifras:

@@ -4,7 +4,7 @@ orden: 3
 epoca: setenta
 epoca_texto: "Años 70 y 80"
 posicion: Pívot
-equipos: "Milwaukee Bucks (1969-1975) · Los Angeles Lakers (1975-1989)"
+clubes: "Milwaukee Bucks (1969-1975) · Los Angeles Lakers (1975-1989)"
 foto: kareem
 entradilla: "Seis veces MVP, un récord que nadie ha igualado, y el tiro más difícil de defender de la historia: el «gancho del cielo»."
 cifras:

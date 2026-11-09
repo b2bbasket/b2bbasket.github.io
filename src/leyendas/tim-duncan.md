@@ -4,7 +4,7 @@ orden: 10
 epoca: siglo21
 epoca_texto: "Siglo XXI"
 posicion: Ala-pívot
-equipos: "San Antonio Spurs (toda su carrera, 1997-2016)"
+clubes: "San Antonio Spurs (toda su carrera, 1997-2016)"
 foto: duncan
 entradilla: "Diecinueve temporadas, un solo equipo y cinco anillos repartidos en tres décadas. La base de la dinastía de los Spurs."
 cifras:

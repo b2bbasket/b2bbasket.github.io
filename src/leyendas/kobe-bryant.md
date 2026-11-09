@@ -4,7 +4,7 @@ orden: 8
 epoca: siglo21
 epoca_texto: "Siglo XXI"
 posicion: Escolta
-equipos: "Los Angeles Lakers (toda su carrera, 1996-2016)"
+clubes: "Los Angeles Lakers (toda su carrera, 1996-2016)"
 foto: kobe
 entradilla: "Veinte temporadas en el mismo equipo, cinco anillos y una noche de 81 puntos. La gran estrella de los Lakers del siglo XXI."
 cifras:

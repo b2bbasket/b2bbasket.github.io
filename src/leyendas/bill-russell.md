@@ -4,7 +4,7 @@ orden: 6
 epoca: pioneros
 epoca_texto: "Años 50 y 60"
 posicion: Pívot
-equipos: "Boston Celtics (toda su carrera)"
+clubes: "Boston Celtics (toda su carrera)"
 foto: ""
 entradilla: "Once anillos en trece temporadas. Nadie ha ganado tanto, y el trofeo al mejor jugador de las Finales lleva su nombre."
 cifras:

@@ -3,7 +3,7 @@ layout: base.njk
 ---
 {% set f = fotos[foto] if foto else null %}
 {% set iniciales = nombre | iniciales %}
-<article class="leyenda">
+<article class="perfil-leyenda">
   <div class="contenedor">
     <nav class="migas" aria-label="Ruta"><a href="{{ '/' | url }}">Inicio</a> › <a href="{{ '/jugadores/' | url }}">Grandes jugadores</a></nav>
     <header class="leyenda-cab">
@@ -14,7 +14,7 @@ layout: base.njk
         <span class="leyenda-cab__epoca">{{ epoca_texto }} · {{ posicion }}</span>
         <h1>{{ nombre }}</h1>
         <p class="leyenda-cab__entradilla">{{ entradilla }}</p>
-        <p class="leyenda-cab__equipos">{{ equipos }}</p>
+        <p class="leyenda-cab__equipos">{{ clubes }}</p>
       </div>
     </header>
     {% if f %}<p class="leyenda-cab__credito">Foto: {{ f.autor }} · {% if f.licencia_url %}<a href="{{ f.licencia_url }}" rel="license noopener">{{ f.licencia }}</a>{% else %}{{ f.licencia }}{% endif %} · <a href="{{ f.origen }}" rel="noopener">Wikimedia Commons</a></p>{% endif %}
