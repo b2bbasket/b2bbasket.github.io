@@ -124,6 +124,85 @@ async function datosWikidata(lista) {
   return datos;
 }
 
+// ---------- 3b. Ficha (infobox) de Wikipedia: equipos con años, draft y anillos ----------
+const EQUIPOS_NBA = new Set([
+  "Atlanta Hawks","Boston Celtics","Brooklyn Nets","Charlotte Hornets","Chicago Bulls","Cleveland Cavaliers","Dallas Mavericks","Denver Nuggets","Detroit Pistons","Golden State Warriors","Houston Rockets","Indiana Pacers","Los Angeles Clippers","Los Angeles Lakers","Memphis Grizzlies","Miami Heat","Milwaukee Bucks","Minnesota Timberwolves","New Orleans Pelicans","New York Knicks","Oklahoma City Thunder","Orlando Magic","Philadelphia 76ers","Phoenix Suns","Portland Trail Blazers","Sacramento Kings","San Antonio Spurs","Toronto Raptors","Utah Jazz","Washington Wizards",
+  "Seattle SuperSonics","New Jersey Nets","New York Nets","Vancouver Grizzlies","Charlotte Bobcats","New Orleans Hornets","New Orleans/Oklahoma City Hornets","Washington Bullets","Baltimore Bullets","Capital Bullets","Kansas City Kings","Kansas City-Omaha Kings","Kansas City–Omaha Kings","Cincinnati Royals","Rochester Royals","Minneapolis Lakers","San Diego Clippers","Buffalo Braves","San Diego Rockets","Philadelphia Warriors","San Francisco Warriors","Syracuse Nationals","Fort Wayne Pistons","St. Louis Hawks","Milwaukee Hawks","Tri-Cities Blackhawks","Chicago Zephyrs","Chicago Packers","New Orleans Jazz","Baltimore Bullets (1944–1954)","Indianapolis Olympians","Washington Capitols","Chicago Stags","Anderson Packers","Waterloo Hawks","Sheboygan Red Skins","Denver Nuggets (1948–1950)","St. Louis Bombers","Providence Steamrollers","Toronto Huskies","Pittsburgh Ironmen","Detroit Falcons","Cleveland Rebels","Indianapolis Jets"
+]);
+const desenlazar = (t) => String(t || "")
+  .replace(/<ref[^>]*\/>|<ref[^>]*>[\s\S]*?<\/ref>/g, "")
+  .replace(/\{\{[^{}]*\}\}/g, (m) => { const y = m.match(/\b(19|20)\d\d\b/); return y ? y[0] : ""; })
+  .replace(/\[\[(?:[^\]|]*\|)?([^\]]+)\]\]/g, "$1")
+  .replace(/'{2,3}|<[^>]+>/g, "").trim();
+function infobox(wt) {
+  const i = wt.search(/\{\{\s*Infobox basketball biography/i);
+  if (i < 0) return null;
+  let n = 0, k = i;
+  for (; k < wt.length; k++) { if (wt.startsWith("{{", k)) { n++; k++; } else if (wt.startsWith("}}", k)) { n--; k++; if (n === 0) break; } }
+  const cuerpo = wt.slice(i, k + 1);
+  const campos = {};
+  let nivel = 0, actual = "";
+  const partes = [];
+  for (let c = 0; c < cuerpo.length; c++) {
+    const dos = cuerpo.slice(c, c + 2);
+    if (dos === "{{" || dos === "[[") { nivel++; actual += dos; c++; continue; }
+    if (dos === "}}" || dos === "]]") { nivel--; actual += dos; c++; continue; }
+    if (cuerpo[c] === "|" && nivel === 1) { partes.push(actual); actual = ""; continue; }
+    actual += cuerpo[c];
+  }
+  partes.push(actual);
+  for (const p of partes.slice(1)) { const m = p.match(/^\s*([\w ]+?)\s*=([\s\S]*)$/); if (m) campos[m[1].trim()] = m[2].trim(); }
+  return campos;
+}
+const DESCONOCIDOS = {};
+function carrera(c) {
+  const equipos = [];
+  for (let n = 1; n <= 40; n++) {
+    const t = c["team" + n]; if (!t) continue;
+    const enlace = t.match(/\[\[([^\]|#]+)/);
+    const nombre = enlace ? enlace[1].trim() : desenlazar(t);
+    if (!EQUIPOS_NBA.has(nombre)) { DESCONOCIDOS[nombre] = (DESCONOCIDOS[nombre] || 0) + 1; continue; }
+    const anos = (desenlazar(c["years" + n]).match(/\b(19|20)\d\d\b/g) || []).map(Number);
+    if (!anos.length) return null;
+    equipos.push({ equipo: nombre.replace(/ \(\d{4}–\d{4}\)$/, ""), inicio: anos[0] });
+  }
+  return equipos;
+}
+function draft(c) {
+  const ano = (desenlazar(c.draft_year).match(/\b(19|20)\d\d\b/) || [])[0];
+  const texto = (c.draft_year || "") + " " + (c.draft_round || "") + " " + (c.draft_pick || "");
+  if (/undrafted/i.test(texto)) return { ano: ano ? Number(ano) : null, elegido: false };
+  const pick = (desenlazar(c.draft_pick).match(/\d+/) || [])[0];
+  if (!ano || !pick) return null;
+  return { ano: Number(ano), elegido: true, numero: Number(pick) };
+}
+function anillos(c) {
+  const h = String(c.highlights || "").split(/As (?:head |assistant )?coach|As executive/i)[0];
+  const m = h.match(/(\d+)\s*×\s*\[\[[^\]]*NBA (?:champion|Finals)[^\]]*\]\]/i);
+  if (m) return Number(m[1]);
+  return /\[\[[^\]]*NBA champion[^\]]*\]\]/i.test(h) ? 1 : 0;
+}
+async function fichasWikipedia(articulos) {
+  const out = {};
+  for (let i = 0; i < articulos.length; i += 40) {
+    const lote = articulos.slice(i, i + 40);
+    const u = "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&rvslots=main&redirects=1&format=json&formatversion=2&titles=" + encodeURIComponent(lote.join("|"));
+    const d = await json(u);
+    const redir = {};
+    (d.query.normalized || []).forEach((r) => (redir[r.to] = r.from));
+    (d.query.redirects || []).forEach((r) => (redir[r.to] = redir[r.from] || r.from));
+    for (const p of d.query.pages || []) {
+      const wt = p.revisions?.[0]?.slots?.main?.content;
+      if (!wt) continue;
+      const c = infobox(wt);
+      if (c) out[redir[p.title] || p.title] = c;
+    }
+    console.log(`  Fichas de Wikipedia: ${Math.min(i + 40, articulos.length)} / ${articulos.length}`);
+    await espera(500);
+  }
+  return out;
+}
+
 // ---------- 4. Pistas ----------
 const POSICIONES = [
   [/point guard|base/i, "base"], [/shooting guard|escolta/i, "escolta"], [/small forward|alero$|^alero/i, "alero"],
@@ -139,38 +218,34 @@ const lista = (xs) => (xs.length <= 1 ? xs.join("") : xs.slice(0, -1).join(", ")
 
 const motivos = {};
 const falta = (m, j) => { (motivos[m] = motivos[m] || []).push(j.nombre); return null; };
-function construir(j, d) {
+function construir(j, d, f) {
   if (!d) return falta("sin datos", j);
   if (!d.nacimiento) return falta("nacimiento", j);
   if (!d.pais || !d.lugar) return falta("lugar", j);
   const pos = posicion(d.posiciones);
-  if (!d.equipos.length) return falta("sin equipos NBA", j);
-  const todos = [];
-  d.equipos.forEach((e) => { if (e.equipo && !/^Q\d+$/.test(e.equipo) && !todos.includes(e.equipo)) todos.push(e.equipo); });
-  if (!todos.length) return falta("sin equipos NBA", j);
-  const eq = d.equipos.filter((e) => e.equipo && !/^Q\d+$/.test(e.equipo) && e.inicio).sort((a, b) => a.inicio - b.inicio);
-  // Las fechas solo sirven si las tienen todos sus equipos
-  const conFechas = eq.length && todos.every((t) => eq.some((e) => e.equipo === t));
+  if (!f) return falta("sin ficha en Wikipedia", j);
+  const eq = carrera(f);
+  if (!eq) return falta("equipos sin años", j);
+  if (!eq.length) return falta("sin equipos NBA en la ficha", j);
   const nombres = [];
-  (conFechas ? eq : []).forEach((e) => { if (!nombres.includes(e.equipo)) nombres.push(e.equipo); });
-  let principal = null, debut = null;
-  if (conFechas) {
-    const anosPor = {};
-    eq.forEach((e) => { anosPor[e.equipo] = (anosPor[e.equipo] || 0) + Math.max(1, (e.fin || 2026) - e.inicio); });
-    principal = Object.entries(anosPor).sort((a, b) => b[1] - a[1])[0][0];
-    debut = eq[0];
-  }
-  const listaEquipos = conFechas ? nombres : [...todos].sort((a, b) => a.localeCompare(b, "es"));
-  const activo = d.equipos.some((e) => e.inicio && !e.fin) && d.nacimiento >= 1980;
+  eq.forEach((e) => { if (!nombres.includes(e.equipo)) nombres.push(e.equipo); });
+  const debut = eq.reduce((a, b) => (b.inicio < a.inicio ? b : a));
+  const dr = draft(f);
+  const titulos = anillos(f);
+  const ultimosAnos = Object.keys(f).filter((k) => /^years\d+$/.test(k)).map((k) => f[k]).join(" ");
+  const activo = /present/i.test(String(f.career_end || "") + " " + ultimosAnos);
   const iniciales = j.nombre.split(/\s+/).filter((p) => !/^(jr\.?|sr\.?|ii|iii|iv)$/i.test(p)).map((p) => p[0].toUpperCase() + ".").join(" ");
   const pais = d.pais === "Estados Unidos" || d.pais === "United States" ? "Estados Unidos" : d.pais;
   const lugar = d.lugar === d.pais ? pais : `${d.lugar} (${pais})`;
+  const draftTxt = !dr ? `Debutó en la NBA en ${debut.inicio}.`
+    : dr.elegido ? `Fue elegido con el número ${dr.numero} del draft de ${dr.ano} y debutó en la NBA en ${debut.inicio}.`
+    : `No fue elegido en el draft y debutó en la NBA en ${debut.inicio}.`;
   const pistas = [
-    pos.length ? `Jugador nacido en ${d.nacimiento} que jugaba de ${lista(pos)}.` : `Jugador nacido en ${d.nacimiento}.`,
+    pos.length ? `Jugador nacido en ${d.nacimiento} que ${activo ? "juega" : "jugaba"} de ${lista(pos)}.` : `Jugador nacido en ${d.nacimiento}.`,
     `Fue elegido All-Star ${j.veces === 1 ? "una vez" : j.veces + " veces"}${j.veces > 1 ? `, entre ${j.primero} y ${j.ultimo}` : `, en ${j.primero}`}.`,
-    `Nació en ${lugar}.`,
-    debut ? `Debutó en la NBA en ${debut.inicio} con ${debut.equipo}.` : (listaEquipos.length === 1 ? "Jugó en un solo equipo de la NBA." : `Jugó en ${listaEquipos.length} equipos de la NBA.`),
-    `${listaEquipos.length === 1 ? `Toda su carrera en la NBA la ${activo ? "ha pasado" : "pasó"} en ${listaEquipos[0]}` : `Jugó en ${lista(listaEquipos)}`}. Sus iniciales: ${iniciales}`,
+    draftTxt,
+    `Nació en ${lugar}.${titulos ? ` Ganó ${titulos === 1 ? "un anillo" : titulos + " anillos"} de la NBA como jugador.` : ""}`,
+    `${nombres.length === 1 ? `Toda su carrera en la NBA la ${activo ? "ha pasado" : "pasó"} en los ${nombres[0]}` : `Equipos de la NBA, por orden: ${lista(nombres)}`}. Sus iniciales: ${iniciales}`,
   ];
   return { nombre: j.nombre, pistas, fuente: "https://en.wikipedia.org/wiki/" + encodeURIComponent(j.articulo.replace(/ /g, "_")) };
 }
@@ -182,10 +257,11 @@ if (estrellas.length < 300) throw new Error("La lista de All-Stars parece incomp
 const mapa = await qids(estrellas.map((e) => e.articulo));
 const conQ = estrellas.filter((e) => mapa[e.articulo]);
 console.log(`Con ficha en Wikidata: ${conQ.length}`);
+const fichas = await fichasWikipedia(conQ.map((e) => e.articulo));
 const datos = await datosWikidata([...new Set(conQ.map((e) => mapa[e.articulo]))]);
 const jugadores = [], descartados = [];
 for (const e of conQ) {
-  const r = construir(e, datos[mapa[e.articulo]]);
+  const r = construir(e, datos[mapa[e.articulo]], fichas[e.articulo]);
   if (r) jugadores.push(r); else descartados.push(e.nombre);
 }
 // Nombres repetidos: se descartan los dos para evitar confusiones
@@ -200,5 +276,6 @@ fs.writeFileSync("src/_data/juego.json", JSON.stringify({
   generado: new Date().toISOString().slice(0, 10),
   jugadores: finales,
 }, null, 1) + "\n");
+console.log("Equipos no NBA más frecuentes (revisar que no falte ninguno): " + Object.entries(DESCONOCIDOS).sort((a, b) => b[1] - a[1]).slice(0, 60).map(([k, v]) => k + " " + v).join(" | "));
 // Muestra para revisar
-for (const j of finales.filter((_, i) => i % 40 === 0)) console.log("\n" + j.nombre + "\n  - " + j.pistas.join("\n  - "));
+for (const j of finales.filter((j, i) => i % 45 === 0 || /^(Ray Allen|Steve Kerr|LeBron James|Pau Gasol|Kevin Garnett|Victor Wembanyama)$/.test(j.nombre))) console.log("\n" + j.nombre + "\n  - " + j.pistas.join("\n  - "));
