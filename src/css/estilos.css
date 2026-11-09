@@ -737,3 +737,4 @@ html[data-tema="oscuro"] .cal-mes,html[data-tema="oscuro"] .cal-dato{box-shadow:
 .foto--jugador img{max-height:460px;object-fit:cover;object-position:center 20%}
 .creditos{padding-left:1.1em}
 .creditos li{margin:0 0 .8em;line-height:1.5}
+.foto--jugador img{width:auto;max-width:100%;margin:0 auto}

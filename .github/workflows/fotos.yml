@@ -18,6 +18,10 @@ jobs:
         with:
           node-version: 20
       - run: node scripts/fotos.mjs
+      - name: Reducir el peso de las fotos
+        run: |
+          sudo apt-get install -y -qq imagemagick > /dev/null
+          mogrify -resize '1400x1400>' -quality 80 -strip -interlace Plane src/img/fotos/*.jpg src/img/secciones/*.jpg
       - name: Guardar las fotos
         run: |
           git config user.name "github-actions"

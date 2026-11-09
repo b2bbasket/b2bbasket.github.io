@@ -30,28 +30,42 @@ async function info(archivo) {
     licencia: texto(m.LicenseShortName?.value),
     licencia_url: m.LicenseUrl?.value || "",
     restricciones: texto(m.Restrictions?.value),
+    ancho: ii.width || 0,
   };
 }
+
+// Limpia el crédito: quita «copyright», corchetes y repeticiones («Unknown author Unknown author»)
+function limpiarAutor(a) {
+  let t = a.replace(/\[|\]/g, "").replace(/copyright( held)?( by)?/gi, "").replace(/\s+/g, " ").trim();
+  const mitad = t.split(" ");
+  if (mitad.length % 2 === 0 && mitad.slice(0, mitad.length / 2).join(" ") === mitad.slice(mitad.length / 2).join(" ")) t = mitad.slice(0, mitad.length / 2).join(" ");
+  if (/^unknown( author)?$/i.test(t)) t = "Autor desconocido";
+  return t || "Autor desconocido";
+}
+const MINIMO = 700; // ancho mínimo preferido en píxeles
 
 const resultado = {};
 let errores = 0;
 for (const f of lista) {
-  let elegida = null;
+  let elegida = null, reserva = null;
   for (const c of f.candidatos) {
     try {
       const d = await info(c);
       if (!d) { console.log(`✗ ${f.id}: «${c}» no existe en Commons`); continue; }
       if (!LIBRE.test(d.licencia) || NO_LIBRE.test(d.licencia)) { console.log(`✗ ${f.id}: «${c}» tiene licencia «${d.licencia}», no válida`); continue; }
+      if (d.ancho < MINIMO) { console.log(`· ${f.id}: «${c}» solo mide ${d.ancho} px, se guarda como reserva`); if (!reserva || d.ancho > reserva.ancho) reserva = d; continue; }
       elegida = d; break;
     } catch (e) { console.log(`✗ ${f.id}: «${c}» error ${e.message}`); }
     await espera(500);
   }
+  if (!elegida && reserva) elegida = reserva;
   if (!elegida) { errores++; console.log(`!! ${f.id}: ningún candidato válido`); if (previas[f.id]) resultado[f.id] = previas[f.id]; continue; }
   const r = await fetch(elegida.descarga, { headers: { "User-Agent": UA } });
   if (!r.ok) { errores++; console.log(`!! ${f.id}: descarga fallida (${r.status})`); continue; }
   fs.mkdirSync(path.dirname(f.destino), { recursive: true });
   fs.writeFileSync(f.destino, Buffer.from(await r.arrayBuffer()));
-  const { descarga, ...credito } = elegida;
+  const { descarga, ancho, ...credito } = elegida;
+  credito.autor = f.autor_lipofsky ? "Steve Lipofsky (Basketballphoto.com)" : limpiarAutor(credito.autor);
   resultado[f.id] = { src: "/" + f.destino.replace(/^src\//, ""), alt: f.alt, ...credito };
   console.log(`✓ ${f.id}: «${elegida.archivo}» · ${elegida.autor} · ${elegida.licencia}`);
   await espera(1000);

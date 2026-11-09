@@ -1,20 +1,151 @@
 {
-  "_nota": "Fotos elegidas de Wikimedia Commons. El flujo «Descargar fotos» comprueba la licencia de cada una en Commons, descarga solo las de licencia libre y guarda autor y licencia en fotos.json. Para cada foto se prueban los candidatos en orden y se usa el primero válido. Las licencias NC o ND se descartan.",
-  "fotos": [
-    { "id": "jordan", "destino": "src/img/fotos/jordan.jpg", "alt": "Michael Jordan con los Chicago Bulls", "candidatos": ["Jordan by Lipofsky 16577.jpg", "Jordan Lipofsky.jpg", "Steve Lipfosky -- Michael Jordan (1997).jpg"] },
-    { "id": "lebron", "destino": "src/img/fotos/lebron.jpg", "alt": "LeBron James", "candidatos": ["LeBron James (15662939969).jpg", "LeBron James (15823062226).jpg", "Lebron 2017.jpg"] },
-    { "id": "kareem", "destino": "src/img/fotos/kareem.jpg", "alt": "Kareem Abdul-Jabbar con los Lakers", "candidatos": ["Kareem-Abdul-Jabbar Lipofsky.jpg", "Kareem-Abdul-Jabbar Lipofsky (HQ).jpg"] },
-    { "id": "magic", "destino": "src/img/fotos/magic.jpg", "alt": "Magic Johnson con los Lakers", "candidatos": ["Magic Lipofsky.jpg", "Kareem Magic Lipofsky.jpg"] },
-    { "id": "bird", "destino": "src/img/fotos/bird.jpg", "alt": "Larry Bird con los Celtics", "candidatos": ["Larry Bird Lipofsky (high quality).jpg", "Larry Bird Lipofsky.jpg"] },
-    { "id": "russell", "destino": "src/img/fotos/russell.jpg", "alt": "Bill Russell con los Celtics", "candidatos": ["Bill Russell dribbling Boston Celtics.jpg", "Bill russell dribbling.jpg", "Bill russell dribbling (cropped).jpg"] },
-    { "id": "chamberlain", "destino": "src/img/fotos/chamberlain.jpg", "alt": "Wilt Chamberlain", "candidatos": ["Wilt Chamberlain of the Los Angeles Lakers in the 1969 NBA World Championship Series.jpg", "Wilt Chamberlain 1968.jpg", "Wilt Chamberlain 100 Point Game 1962.jpg"] },
-    { "id": "kobe", "destino": "src/img/fotos/kobe.jpg", "alt": "Kobe Bryant con los Lakers", "candidatos": ["Kobe Bryant 2014.jpg", "Kobe Bryant 2015.jpg", "Kobe Bryant 2013.jpg"] },
-    { "id": "shaq", "destino": "src/img/fotos/shaq.jpg", "alt": "Shaquille O'Neal", "candidatos": ["Lipofsky Shaquille O'Neal.jpg", "Shaquille O'Neal Free Throw.jpg"] },
-    { "id": "duncan", "destino": "src/img/fotos/duncan.jpg", "alt": "Tim Duncan con los Spurs", "candidatos": ["TD shooting over Andrew Bynum.jpg", "Timmy free throw.JPG"] },
-    { "id": "seccion-equipos", "destino": "src/img/secciones/equipos.jpg", "alt": "Pista del Madison Square Garden", "candidatos": ["Madison Square Garden court.jpg", "New-York Knicks in the Madison Square Garden (6054203290).jpg"] },
-    { "id": "seccion-noticias", "destino": "src/img/secciones/noticias.jpg", "alt": "Partido de la NBA entre Suns y Raptors", "candidatos": ["NBA basketball, Raptors in Phoenix.jpg"] },
-    { "id": "seccion-previas", "destino": "src/img/secciones/previas.jpg", "alt": "Salto inicial de un partido de playoffs", "candidatos": ["Bulls Pacers 2011 playoffs game 1 jump ball.jpg", "Cavs wizards jump ball nov 2006.jpg"] },
-    { "id": "seccion-cronicas", "destino": "src/img/secciones/cronicas.jpg", "alt": "Balón entrando en la canasta", "candidatos": ["Basketball through hoop.jpg", "2011-06-07 Basketball in hoop still shot.jpg"] },
-    { "id": "seccion-guias", "destino": "src/img/secciones/guias.jpg", "alt": "Red de una canasta", "candidatos": ["Basketball net.jpg", "Chain basketball hoop.jpg"] }
-  ]
+ "_nota": "Fotos elegidas de Wikimedia Commons. El flujo «Descargar fotos» comprueba la licencia de cada una en Commons, descarga solo las de licencia libre y guarda autor y licencia en fotos.json. Para cada foto se prueban los candidatos en orden y se usa el primero válido. Las licencias NC o ND se descartan. Se prefieren fotos de al menos 700 píxeles de ancho. El campo «autor», si existe, sustituye al crédito de Commons para escribirlo de forma más limpia (mismo autor).",
+ "fotos": [
+  {
+   "id": "jordan",
+   "destino": "src/img/fotos/jordan.jpg",
+   "alt": "Michael Jordan con los Chicago Bulls",
+   "candidatos": [
+    "Steve Lipfosky -- Michael Jordan (1997).jpg",
+    "Jordan by Lipofsky 16577.jpg",
+    "Jordan Lipofsky.jpg"
+   ],
+   "autor_lipofsky": true
+  },
+  {
+   "id": "lebron",
+   "destino": "src/img/fotos/lebron.jpg",
+   "alt": "LeBron James",
+   "candidatos": [
+    "LeBron James (15662939969).jpg",
+    "LeBron James (15823062226).jpg",
+    "Lebron 2017.jpg"
+   ]
+  },
+  {
+   "id": "kareem",
+   "destino": "src/img/fotos/kareem.jpg",
+   "alt": "Kareem Abdul-Jabbar con los Lakers",
+   "candidatos": [
+    "Kareem-Abdul-Jabbar Lipofsky (HQ).jpg",
+    "Kareem-Abdul-Jabbar Lipofsky.jpg"
+   ],
+   "autor_lipofsky": true
+  },
+  {
+   "id": "magic",
+   "destino": "src/img/fotos/magic.jpg",
+   "alt": "Magic Johnson con los Lakers",
+   "candidatos": [
+    "Magic Lipofsky.jpg",
+    "Kareem Magic Lipofsky.jpg"
+   ],
+   "autor_lipofsky": true
+  },
+  {
+   "id": "bird",
+   "destino": "src/img/fotos/bird.jpg",
+   "alt": "Larry Bird con los Celtics",
+   "candidatos": [
+    "Larry Bird Lipofsky (high quality).jpg",
+    "Larry Bird Lipofsky.jpg"
+   ],
+   "autor_lipofsky": true
+  },
+  {
+   "id": "russell",
+   "destino": "src/img/fotos/russell.jpg",
+   "alt": "Bill Russell con los Celtics",
+   "candidatos": [
+    "Bill russell dribbling.jpg",
+    "Bill russell dribbling (cropped).jpg",
+    "Bill Russell dribbling Boston Celtics.jpg"
+   ]
+  },
+  {
+   "id": "chamberlain",
+   "destino": "src/img/fotos/chamberlain.jpg",
+   "alt": "Wilt Chamberlain",
+   "candidatos": [
+    "Wilt Chamberlain of the Los Angeles Lakers in the 1969 NBA World Championship Series.jpg",
+    "Wilt Chamberlain 1968.jpg",
+    "Wilt Chamberlain 100 Point Game 1962.jpg"
+   ]
+  },
+  {
+   "id": "kobe",
+   "destino": "src/img/fotos/kobe.jpg",
+   "alt": "Kobe Bryant con los Lakers",
+   "candidatos": [
+    "Kobe Bryant 2014.jpg",
+    "Kobe Bryant 2015.jpg",
+    "Kobe Bryant 2013.jpg"
+   ]
+  },
+  {
+   "id": "shaq",
+   "destino": "src/img/fotos/shaq.jpg",
+   "alt": "Shaquille O'Neal",
+   "candidatos": [
+    "Shaquille O'Neal Free Throw.jpg",
+    "Shaq Heat.jpg",
+    "Lipofsky Shaquille O'Neal.jpg"
+   ]
+  },
+  {
+   "id": "duncan",
+   "destino": "src/img/fotos/duncan.jpg",
+   "alt": "Tim Duncan con los Spurs",
+   "candidatos": [
+    "Tim duncan vs wizards 2009 cropped.jpg",
+    "Tim Duncan All-Star 2011.jpg",
+    "Timmy free throw.JPG",
+    "TD shooting over Andrew Bynum.jpg"
+   ]
+  },
+  {
+   "id": "seccion-equipos",
+   "destino": "src/img/secciones/equipos.jpg",
+   "alt": "Pista del Madison Square Garden",
+   "candidatos": [
+    "Madison Square Garden court.jpg",
+    "New-York Knicks in the Madison Square Garden (6054203290).jpg"
+   ]
+  },
+  {
+   "id": "seccion-noticias",
+   "destino": "src/img/secciones/noticias.jpg",
+   "alt": "Partido de la NBA entre Suns y Raptors",
+   "candidatos": [
+    "NBA basketball, Raptors in Phoenix.jpg"
+   ]
+  },
+  {
+   "id": "seccion-previas",
+   "destino": "src/img/secciones/previas.jpg",
+   "alt": "Salto inicial de un partido de playoffs",
+   "candidatos": [
+    "Bulls Pacers 2011 playoffs game 1 jump ball.jpg",
+    "Cavs wizards jump ball nov 2006.jpg"
+   ]
+  },
+  {
+   "id": "seccion-cronicas",
+   "destino": "src/img/secciones/cronicas.jpg",
+   "alt": "Balón entrando en la canasta",
+   "candidatos": [
+    "Basketball through hoop.jpg",
+    "2011-06-07 Basketball in hoop still shot.jpg"
+   ]
+  },
+  {
+   "id": "seccion-guias",
+   "destino": "src/img/secciones/guias.jpg",
+   "alt": "Red de una canasta",
+   "candidatos": [
+    "Basketball net.jpg",
+    "Chain basketball hoop.jpg"
+   ]
+  }
+ ]
 }
