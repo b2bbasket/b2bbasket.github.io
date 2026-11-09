@@ -18,6 +18,8 @@ jobs:
         with:
           node-version: 20
       - run: node scripts/juego-generar.mjs
+        env:
+          DEPURAR: "1"
       - name: Guardar
         run: |
           git config user.name "github-actions"

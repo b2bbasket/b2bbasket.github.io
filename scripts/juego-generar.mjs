@@ -27,6 +27,7 @@ async function allStars() {
   const u = "https://en.wikipedia.org/w/api.php?action=parse&page=List_of_NBA_All-Stars&prop=wikitext&format=json&formatversion=2";
   const wt = (await json(u)).parse.wikitext;
   const filas = wt.split(/\n\|-/);
+  if (process.env.DEPURAR) { console.log("FILAS " + filas.length); [5, 6, 50, 200].forEach((k) => console.log("=== FILA " + k + "\n" + (filas[k] || "").slice(0, 700))); }
   const out = [];
   for (const fila of filas) {
     const enlace = fila.match(/\[\[([^\]|#]+)(?:\|([^\]]+))?\]\]/);
