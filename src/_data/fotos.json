@@ -2,11 +2,11 @@
  "jordan": {
   "src": "/img/fotos/jordan.jpg",
   "alt": "Michael Jordan con los Chicago Bulls",
-  "archivo": "Jordan by Lipofsky 16577.jpg",
-  "origen": "https://commons.wikimedia.org/wiki/File:Jordan_by_Lipofsky_16577.jpg",
-  "autor": "Steve Lipofsky www.Basketballphoto.com",
+  "archivo": "Steve Lipfosky -- Michael Jordan (1997).jpg",
+  "origen": "https://commons.wikimedia.org/wiki/File:Steve_Lipfosky_--_Michael_Jordan_(1997).jpg",
+  "autor": "Steve Lipofsky (Basketballphoto.com)",
   "licencia": "CC BY-SA 3.0",
-  "licencia_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "licencia_url": "https://creativecommons.org/licenses/by-sa/3.0",
   "restricciones": ""
  },
  "lebron": {
@@ -22,9 +22,9 @@
  "kareem": {
   "src": "/img/fotos/kareem.jpg",
   "alt": "Kareem Abdul-Jabbar con los Lakers",
-  "archivo": "Kareem-Abdul-Jabbar Lipofsky.jpg",
-  "origen": "https://commons.wikimedia.org/wiki/File:Kareem-Abdul-Jabbar_Lipofsky.jpg",
-  "autor": "copyright Steve lipofsky www.Basketballphoto.com",
+  "archivo": "Kareem-Abdul-Jabbar Lipofsky (HQ).jpg",
+  "origen": "https://commons.wikimedia.org/wiki/File:Kareem-Abdul-Jabbar_Lipofsky_(HQ).jpg",
+  "autor": "Steve Lipofsky (Basketballphoto.com)",
   "licencia": "CC BY 3.0",
   "licencia_url": "https://creativecommons.org/licenses/by/3.0",
   "restricciones": ""
@@ -34,7 +34,7 @@
   "alt": "Magic Johnson con los Lakers",
   "archivo": "Magic Lipofsky.jpg",
   "origen": "https://commons.wikimedia.org/wiki/File:Magic_Lipofsky.jpg",
-  "autor": "[copyright held by Steve Lipofsky]",
+  "autor": "Steve Lipofsky (Basketballphoto.com)",
   "licencia": "CC BY-SA 3.0",
   "licencia_url": "https://creativecommons.org/licenses/by-sa/3.0",
   "restricciones": ""
@@ -44,7 +44,7 @@
   "alt": "Larry Bird con los Celtics",
   "archivo": "Larry Bird Lipofsky (high quality).jpg",
   "origen": "https://commons.wikimedia.org/wiki/File:Larry_Bird_Lipofsky_(high_quality).jpg",
-  "autor": "Steve Lipofsky www.Basketballphoto.com",
+  "autor": "Steve Lipofsky (Basketballphoto.com)",
   "licencia": "CC BY-SA 3.0",
   "licencia_url": "https://creativecommons.org/licenses/by-sa/3.0",
   "restricciones": ""
@@ -52,9 +52,9 @@
  "russell": {
   "src": "/img/fotos/russell.jpg",
   "alt": "Bill Russell con los Celtics",
-  "archivo": "Bill Russell dribbling Boston Celtics.jpg",
-  "origen": "https://commons.wikimedia.org/wiki/File:Bill_Russell_dribbling_Boston_Celtics.jpg",
-  "autor": "Unknown author Unknown author",
+  "archivo": "Bill russell dribbling.jpg",
+  "origen": "https://commons.wikimedia.org/wiki/File:Bill_russell_dribbling.jpg",
+  "autor": "Autor desconocido",
   "licencia": "Public domain",
   "licencia_url": "",
   "restricciones": ""
@@ -64,7 +64,7 @@
   "alt": "Wilt Chamberlain",
   "archivo": "Wilt Chamberlain of the Los Angeles Lakers in the 1969 NBA World Championship Series.jpg",
   "origen": "https://commons.wikimedia.org/wiki/File:Wilt_Chamberlain_of_the_Los_Angeles_Lakers_in_the_1969_NBA_World_Championship_Series.jpg",
-  "autor": "Unknown author Unknown author",
+  "autor": "Autor desconocido",
   "licencia": "Public domain",
   "licencia_url": "",
   "restricciones": ""
@@ -82,19 +82,19 @@
  "shaq": {
   "src": "/img/fotos/shaq.jpg",
   "alt": "Shaquille O'Neal",
-  "archivo": "Lipofsky Shaquille O'Neal.jpg",
-  "origen": "https://commons.wikimedia.org/wiki/File:Lipofsky_Shaquille_O%27Neal.jpg",
-  "autor": "Copyright by Steve Lipofsky Basketballphoto.com",
-  "licencia": "CC BY 3.0",
-  "licencia_url": "https://creativecommons.org/licenses/by/3.0",
+  "archivo": "Shaquille O'Neal Free Throw.jpg",
+  "origen": "https://commons.wikimedia.org/wiki/File:Shaquille_O%27Neal_Free_Throw.jpg",
+  "autor": "Keith Allison from Baltimore, USA",
+  "licencia": "CC BY-SA 2.0",
+  "licencia_url": "https://creativecommons.org/licenses/by-sa/2.0",
   "restricciones": ""
  },
  "duncan": {
   "src": "/img/fotos/duncan.jpg",
   "alt": "Tim Duncan con los Spurs",
-  "archivo": "TD shooting over Andrew Bynum.jpg",
-  "origen": "https://commons.wikimedia.org/wiki/File:TD_shooting_over_Andrew_Bynum.jpg",
-  "autor": "Michael248",
+  "archivo": "Tim duncan vs wizards 2009 cropped.jpg",
+  "origen": "https://commons.wikimedia.org/wiki/File:Tim_duncan_vs_wizards_2009_cropped.jpg",
+  "autor": "Keith Allison",
   "licencia": "CC BY-SA 2.0",
   "licencia_url": "https://creativecommons.org/licenses/by-sa/2.0",
   "restricciones": ""
