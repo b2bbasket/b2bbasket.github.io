@@ -120,6 +120,15 @@ export default function (eleventyConfig) {
     for (const a of lista || []) { const d = fecha(a.date); if (!grupos.length || grupos[grupos.length - 1].dia !== d) grupos.push({ dia: d, items: [] }); grupos[grupos.length - 1].items.push(a); }
     return grupos;
   });
+  // Grandes jugadores: iniciales para los perfiles sin foto y perfiles de la misma época
+  eleventyConfig.addFilter("iniciales", (n) => String(n || "").split(/\s+/).map((p) => p[0]).join("").toUpperCase().slice(0, 3));
+  eleventyConfig.addFilter("mismaEpoca", (lista, epoca, url) => {
+    const otros = (lista || []).filter((l) => l.url !== url);
+    return otros.filter((l) => l.data.epoca === epoca).concat(otros.filter((l) => l.data.epoca !== epoca));
+  });
+  // Convierte cifras escritas en español («40,1», «43.440») en números para dibujar barras
+  eleventyConfig.addFilter("numero", (t) => { const n = parseFloat(String(t || "").replace(/\./g, "").replace(",", ".")); return isNaN(n) ? 0 : n; });
+  eleventyConfig.addFilter("leyendaDe", (lista, nombre) => (lista || []).find((l) => l.data.nombre === nombre));
   eleventyConfig.addFilter("fichaDe", (lista, nombre) => (lista || []).find((f) => f.data.nombre === nombre));
   // Clasificación: ordena por porcentaje de victorias
   eleventyConfig.addFilter("clasificar", (lista) =>

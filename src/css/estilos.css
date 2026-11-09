@@ -954,3 +954,135 @@ html[data-tema="oscuro"] .racha--p{color:#FF7A5E}
   .marcador-final__eq strong{font-size:40px}
   .marcador-final__abr{font-size:18px}
 }
+
+/* Grandes jugadores: portada de la sección y perfiles */
+.leyendas-cab{margin:34px 0 18px;max-width:760px}
+.leyendas-cab__kicker,.leyenda-cab__epoca{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--acento);margin:0}
+.leyendas-cab h1{font-family:var(--titulos);font-size:clamp(36px,6vw,64px);line-height:1.02;margin:8px 0 12px}
+.leyendas-cab p{font-size:18px;color:var(--suave);margin:0}
+.leyenda-portada{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);border-radius:28px;overflow:hidden;background:var(--oscuro,#16181D);color:#fff;margin:10px 0 22px;min-height:360px}
+.leyenda-portada__img img{width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block}
+.leyenda-portada__texto{display:flex;flex-direction:column;justify-content:center;gap:12px;padding:34px}
+.leyenda-portada__texto small{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--amarillo)}
+.leyenda-portada__texto strong{font-family:var(--titulos);font-size:clamp(36px,5vw,60px);line-height:1}
+.leyenda-portada__texto span{font-size:18px;opacity:.88;line-height:1.5}
+.leyenda-portada__texto em{font-style:normal;font-weight:800;color:var(--amarillo)}
+.leyenda-portada:hover strong{text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:6px}
+.leyendas-rejilla{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:20px 0}
+.leyendas-rejilla--mini{grid-template-columns:repeat(3,1fr)}
+.leyenda-tarjeta{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:center;background:var(--blanco);border:1px solid var(--linea);border-radius:20px;padding:12px;transition:transform .2s,box-shadow .2s}
+.leyenda-tarjeta[hidden]{display:none}
+.leyenda-tarjeta:hover{transform:translateY(-4px);box-shadow:0 16px 30px -20px rgba(22,24,29,.6)}
+.leyenda-tarjeta__img{width:96px;height:120px;border-radius:14px;overflow:hidden;background:var(--linea);display:grid;place-items:center}
+.leyenda-tarjeta__img img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.leyenda-tarjeta__img--tipo,.leyenda-cab__imagen--tipo{background:linear-gradient(160deg,#16181D,#3A3F4E);color:var(--amarillo);font:900 34px/1 var(--titulos)}
+.leyenda-tarjeta__texto{display:flex;flex-direction:column;gap:4px;min-width:0}
+.leyenda-tarjeta__texto small{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--suave)}
+.leyenda-tarjeta__texto strong{font-family:var(--titulos);font-size:24px;line-height:1.1}
+.leyenda-tarjeta__dato{font-size:13px;color:var(--suave);line-height:1.35}
+.leyenda-tarjeta__dato b{font-family:var(--titulos);font-size:20px;color:var(--acento)}
+.leyenda-cab{display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:34px;align-items:center;margin:16px 0 0}
+.leyenda-cab__imagen{border-radius:26px;overflow:hidden;aspect-ratio:4/5;background:var(--linea);display:grid;place-items:center}
+.leyenda-cab__imagen img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.leyenda-cab__imagen--tipo span{font-size:clamp(90px,14vw,160px)}
+.leyenda-cab h1{font-family:var(--titulos);font-size:clamp(44px,7vw,84px);line-height:.98;margin:10px 0 16px;letter-spacing:-.02em}
+.leyenda-cab__entradilla{font-size:21px;line-height:1.5;margin:0 0 16px}
+.leyenda-cab__equipos{font-size:14px;font-weight:700;color:var(--suave);margin:0;padding-top:14px;border-top:1px solid var(--linea)}
+.leyenda-cab__credito{font-size:12px;color:var(--suave);margin:8px 0 0}
+.leyenda-cifras{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:28px 0 8px;padding:0;border-top:3px solid var(--texto);border-bottom:1px solid var(--linea)}
+.leyenda-cifras li{padding:18px 16px 18px 0;display:flex;flex-direction:column;gap:6px}
+.leyenda-cifras li+li{padding-left:16px;border-left:1px solid var(--linea)}
+.leyenda-cifras strong{font-family:var(--titulos);font-size:clamp(36px,5vw,54px);line-height:1;color:var(--acento)}
+.leyenda-cifras span{font-size:14px;color:var(--suave);line-height:1.35}
+.leyenda-cuerpo{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:44px;margin-top:20px}
+.leyenda-relato{max-width:700px}
+.leyenda-relato > p:first-child{font-size:22px;line-height:1.6}
+.leyenda-relato > p:first-child::first-letter{float:left;font-family:var(--titulos);font-size:84px;line-height:.8;margin:8px 10px 0 0;color:var(--acento)}
+.leyenda-relato p{font-size:19px;line-height:1.75;margin:0 0 1.2em}
+.leyenda-relato h2{font-family:var(--titulos);font-size:32px;line-height:1.15;margin:1.5em 0 .5em}
+.leyenda-linea{align-self:start;position:sticky;top:100px;background:var(--blanco);border:1px solid var(--linea);border-radius:22px;padding:6px 20px 16px}
+.leyenda-linea h2{font-family:var(--titulos);font-size:24px;margin:16px 0 10px}
+.leyenda-linea ol{list-style:none;margin:0;padding:0;border-left:2px solid var(--linea)}
+.leyenda-linea li{position:relative;padding:0 0 14px 18px}
+.leyenda-linea li::before{content:"";position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--acento);box-shadow:0 0 0 3px var(--blanco)}
+.leyenda-linea b{font:800 15px var(--cuerpo);color:var(--acento)}
+.leyenda-linea p{margin:2px 0 0;font-size:15px;line-height:1.45}
+.leyenda-fuentes{margin:30px 0 0;padding-top:16px;border-top:1px solid var(--linea)}
+.leyenda-fuentes h2,.leyenda-mas h2{font-family:var(--titulos);font-size:26px;margin:0 0 10px}
+.leyenda-fuentes li{font-size:14px;margin:4px 0}
+.leyenda-fuentes a{text-decoration:underline}
+.leyenda-mas{margin:36px 0 40px}
+@media (max-width:960px){.leyenda-cuerpo{grid-template-columns:1fr}.leyenda-linea{position:static}.leyendas-rejilla,.leyendas-rejilla--mini{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:700px){
+  .leyenda-portada,.leyenda-cab{grid-template-columns:1fr}
+  .leyenda-portada__img{max-height:340px;overflow:hidden}
+  .leyenda-cab__imagen{aspect-ratio:4/3}
+  .leyenda-cifras{grid-template-columns:1fr 1fr}
+  .leyenda-cifras li:nth-child(3){padding-left:0;border-left:0}
+  .leyenda-cifras li:nth-child(n+3){border-top:1px solid var(--linea)}
+  .leyendas-rejilla,.leyendas-rejilla--mini{grid-template-columns:1fr}
+  .leyenda-portada__texto{padding:22px}
+}
+
+/* Líderes de la temporada: podios */
+.podios{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:24px 0 8px}
+.podio{background:var(--blanco);border:1px solid var(--linea);border-radius:22px;overflow:hidden}
+.podio h2{margin:0;padding:14px 18px;font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--texto);color:var(--fondo)}
+.podio__lider{display:grid;grid-template-columns:auto 1fr;grid-template-areas:"num unidad" "num jugador" "num equipo";column-gap:14px;align-items:center;padding:18px}
+.podio__lider strong{grid-area:num;font-family:var(--titulos);font-size:62px;line-height:1;color:var(--acento)}
+.podio__unidad{grid-area:unidad;font-size:12px;color:var(--suave);font-weight:700}
+.podio__jugador{grid-area:jugador;font-family:var(--titulos);font-size:22px;line-height:1.1}
+.podio__equipo{grid-area:equipo;font-size:13px;color:var(--suave);display:flex;align-items:center;gap:6px;margin-top:4px}
+.podio__resto{list-style:none;margin:0;padding:4px 18px 16px;counter-reset:pos 1}
+.podio__resto li{counter-increment:pos;display:grid;grid-template-columns:1fr 70px auto;align-items:center;gap:10px;padding:7px 0;border-top:1px solid var(--linea);font-size:14px}
+.podio__resto li::before{content:counter(pos);position:absolute;opacity:0}
+.podio__nombre{font-weight:600;min-width:0}
+.podio__nombre small{color:var(--suave);font-weight:700;font-size:11px}
+.podio__barra,.ranking__barra{height:8px;border-radius:99px;background:var(--linea);overflow:hidden}
+.podio__barra i,.ranking__barra i{display:block;height:100%;border-radius:99px;background:var(--azul)}
+.podio__resto b{font-variant-numeric:tabular-nums}
+@media (max-width:960px){.podios{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.podios{grid-template-columns:1fr}}
+
+/* Líderes históricos: ranking con barras y pestañas */
+.pestanas--historicos{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 16px}
+.ranking{display:grid;grid-template-columns:300px minmax(0,1fr);gap:24px;align-items:start}
+.ranking[hidden]{display:none}
+.ranking__lider{position:sticky;top:100px;border-radius:24px;padding:26px;background:linear-gradient(150deg,#3B1FA8,var(--morado));color:#fff;display:flex;flex-direction:column;gap:6px}
+.ranking__lider small{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+.ranking__lider strong{font-family:var(--titulos);font-size:clamp(52px,7vw,76px);line-height:1}
+.ranking__lider span{font-family:var(--titulos);font-size:26px}
+.ranking__lista{list-style:none;margin:0;padding:0;background:var(--blanco);border:1px solid var(--linea);border-radius:22px}
+.ranking__lista li{display:grid;grid-template-columns:34px minmax(0,190px) minmax(0,1fr) auto;align-items:center;gap:14px;padding:12px 18px;border-top:1px solid var(--linea)}
+.ranking__lista li:first-child{border-top:0}
+.ranking__pos{font:800 15px var(--cuerpo);color:var(--suave)}
+.ranking__lista li:first-child .ranking__pos{color:var(--morado)}
+.ranking__nombre{font-weight:700}
+.ranking__nombre a{text-decoration:underline;text-decoration-color:var(--acento);text-underline-offset:3px}
+.ranking__barra{height:10px}
+.ranking__barra i{background:var(--morado)}
+.ranking__cifra{font-family:var(--titulos);font-size:22px;font-variant-numeric:tabular-nums}
+@media (max-width:860px){.ranking{grid-template-columns:1fr}.ranking__lider{position:static}.ranking__lista li{grid-template-columns:28px 1fr auto;row-gap:6px}.ranking__barra{grid-column:2/4;grid-row:2}}
+
+/* Historia de la liga: línea del tiempo */
+.cronologia{list-style:none;margin:20px 0 10px;padding:0;position:relative}
+.cronologia::before{content:"";position:absolute;left:150px;top:8px;bottom:8px;width:3px;background:linear-gradient(var(--acento),var(--azul))}
+.cronologia__etapa{display:grid;grid-template-columns:150px minmax(0,1fr);gap:34px;padding:0 0 34px;position:relative}
+.cronologia__etapa::before{content:"";position:absolute;left:142px;top:6px;width:19px;height:19px;border-radius:50%;background:var(--fondo);border:4px solid var(--acento)}
+.cronologia__fecha{font:900 22px/1.1 var(--cuerpo);text-align:right;padding-right:22px;color:var(--acento);padding-top:2px}
+.cronologia__contenido h2{font-family:var(--titulos);font-size:32px;line-height:1.1;margin:0 0 10px}
+.cronologia__cuerpo{display:grid;grid-template-columns:minmax(0,1fr) 190px;gap:20px;align-items:start}
+.cronologia__cuerpo p{margin:0;font-size:18px;line-height:1.7}
+.cronologia__dato{background:var(--blanco);border:1px solid var(--linea);border-radius:18px;padding:14px 16px;display:flex;flex-direction:column;gap:4px}
+.cronologia__dato strong{font-family:var(--titulos);font-size:40px;line-height:1;color:var(--azul)}
+.cronologia__dato span{font-size:13px;color:var(--suave);line-height:1.35}
+.cronologia__enlaces{font-size:14px;font-weight:700;margin:12px 0 0}
+.cronologia__enlaces a{color:var(--acento)}
+@media (max-width:760px){
+  .cronologia::before{left:9px}
+  .cronologia__etapa{grid-template-columns:1fr;gap:6px;padding-left:36px}
+  .cronologia__etapa::before{left:1px}
+  .cronologia__fecha{text-align:left;padding:0}
+  .cronologia__cuerpo{grid-template-columns:1fr}
+  .cronologia__contenido h2{font-size:26px}
+}

@@ -1,0 +1,57 @@
+---
+layout: base.njk
+title: Grandes jugadores de la historia
+resumen: "Perfiles de diez leyendas de la NBA: quiénes fueron, sus momentos clave y su legado."
+permalink: /jugadores/index.html
+---
+{% set lista = collections.leyendas | sort(false, false, "data.orden") %}
+{% set portada = lista[0] %}{% set pf = fotos[portada.data.foto] %}
+<div class="contenedor">
+  <header class="leyendas-cab">
+    <p class="leyendas-cab__kicker">Grandes jugadores</p>
+    <h1>Las leyendas que hicieron la NBA</h1>
+    <p>Diez perfiles para entender la historia de la liga a través de sus protagonistas. Elige una época o entra en cualquier perfil: cada uno cuenta quién fue el jugador, sus momentos clave y su legado.</p>
+  </header>
+
+  <a class="leyenda-portada revelar" href="{{ portada.url | url }}">
+    <span class="leyenda-portada__img">{% if pf %}<img src="{{ pf.src | url }}" alt="{{ pf.alt }}">{% endif %}</span>
+    <span class="leyenda-portada__texto">
+      <small>Perfil destacado · {{ portada.data.epoca_texto }}</small>
+      <strong>{{ portada.data.nombre }}</strong>
+      <span>{{ portada.data.entradilla }}</span>
+      <em>Leer el perfil →</em>
+    </span>
+  </a>
+
+  <div class="selector-conf" role="group" aria-label="Filtrar por época">
+    <button type="button" class="filtro activo" data-epoca="">Todas</button>
+    <button type="button" class="filtro" data-epoca="pioneros">Años 50 y 60</button>
+    <button type="button" class="filtro" data-epoca="setenta">Años 70 y 80</button>
+    <button type="button" class="filtro" data-epoca="noventa">Años 90</button>
+    <button type="button" class="filtro" data-epoca="siglo21">Siglo XXI</button>
+  </div>
+
+  <div class="leyendas-rejilla">
+    {% for l in lista %}{% if not loop.first %}{% set lf = fotos[l.data.foto] if l.data.foto else null %}
+    <a class="leyenda-tarjeta revelar" data-epoca="{{ l.data.epoca }}" href="{{ l.url | url }}">
+      <span class="leyenda-tarjeta__img{% if not lf %} leyenda-tarjeta__img--tipo{% endif %}">{% if lf %}<img src="{{ lf.src | url }}" alt="" loading="lazy">{% else %}{{ l.data.nombre | iniciales }}{% endif %}</span>
+      <span class="leyenda-tarjeta__texto">
+        <small>{{ l.data.epoca_texto }} · {{ l.data.posicion }}</small>
+        <strong>{{ l.data.nombre }}</strong>
+        <span class="leyenda-tarjeta__dato"><b>{{ l.data.cifras[0].valor }}</b> {{ l.data.cifras[0].etiqueta }}</span>
+      </span>
+    </a>
+    {% endif %}{% endfor %}
+  </div>
+  <p class="nota-fuente">Cada perfil enlaza sus fuentes. Las fotos son de Wikimedia Commons con licencia libre; sus autores aparecen en cada perfil y en los <a href="{{ '/creditos-imagenes/' | url }}">créditos de las imágenes</a>.</p>
+</div>
+<script>
+document.querySelectorAll('.selector-conf .filtro').forEach(function (b) {
+  b.addEventListener('click', function () {
+    document.querySelectorAll('.selector-conf .filtro').forEach(function (x) { x.classList.toggle('activo', x === b); });
+    var e = b.dataset.epoca;
+    document.querySelectorAll('.leyenda-tarjeta[data-epoca]').forEach(function (t) { t.hidden = !!e && t.dataset.epoca !== e; });
+    var p = document.querySelector('.leyenda-portada'); if (p) p.hidden = !!e && e !== '{{ portada.data.epoca }}';
+  });
+});
+</script>

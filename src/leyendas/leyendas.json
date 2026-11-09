@@ -1,0 +1,6 @@
+{
+  "layout": "leyenda.njk",
+  "tags": ["leyendas"],
+  "permalink": "/jugadores/{{ page.fileSlug }}/index.html",
+  "eleventyComputed": { "title": "{{ nombre }}", "resumen": "{{ entradilla }}" }
+}
