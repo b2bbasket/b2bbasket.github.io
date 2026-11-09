@@ -85,6 +85,14 @@ export default function (eleventyConfig) {
     const licencia = f.licencia_url ? `<a href="${esc(f.licencia_url)}" rel="license noopener">${esc(f.licencia)}</a>` : esc(f.licencia);
     return { src: url(f.src), alt: f.alt, credito: `Foto de archivo: ${esc(f.autor)} · ${licencia} · <a href="${esc(f.origen)}" rel="noopener">Wikimedia Commons</a>` };
   });
+  // Portadas automáticas (scripts/portadas.mjs): una imagen con el titular para compartir cada artículo.
+  // La clave sale de la dirección del artículo: /articulos/mi-titular/ → articulos-mi-titular
+  const clavePortada = (url) => slugJugador(String(url || "").replace(/^\/|\/$/g, ""));
+  eleventyConfig.addFilter("clavePortada", clavePortada);
+  eleventyConfig.addFilter("portadaDe", (url, portadas) => {
+    const clave = clavePortada(url), p = (portadas || {})[clave];
+    return p ? { og: `/img/portadas/${clave}.png?v=${p.v}`, ig: `/img/portadas/${clave}-ig.png?v=${p.v}`, clave } : null;
+  });
   // Abreviaturas oficiales de la NBA y nombre corto (apodo) de cada equipo, para las tarjetas de resultados
   const ABREV = { "Atlanta Hawks": "ATL", "Boston Celtics": "BOS", "Brooklyn Nets": "BKN", "Charlotte Hornets": "CHA", "Chicago Bulls": "CHI", "Cleveland Cavaliers": "CLE", "Dallas Mavericks": "DAL", "Denver Nuggets": "DEN", "Detroit Pistons": "DET", "Golden State Warriors": "GSW", "Houston Rockets": "HOU", "Indiana Pacers": "IND", "Los Angeles Clippers": "LAC", "Los Angeles Lakers": "LAL", "Memphis Grizzlies": "MEM", "Miami Heat": "MIA", "Milwaukee Bucks": "MIL", "Minnesota Timberwolves": "MIN", "New Orleans Pelicans": "NOP", "New York Knicks": "NYK", "Oklahoma City Thunder": "OKC", "Orlando Magic": "ORL", "Philadelphia 76ers": "PHI", "Phoenix Suns": "PHX", "Portland Trail Blazers": "POR", "Sacramento Kings": "SAC", "San Antonio Spurs": "SAS", "Toronto Raptors": "TOR", "Utah Jazz": "UTA", "Washington Wizards": "WAS" };
   eleventyConfig.addFilter("abrev", (nombre) => ABREV[nombre] || String(nombre || "").replace(/[^A-Za-z]/g, "").slice(0, 3).toUpperCase());

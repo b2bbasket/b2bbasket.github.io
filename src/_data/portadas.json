@@ -1,0 +1,27 @@
+{
+ "articulos-ejemplo-analisis": {
+  "v": "087bbf18db",
+  "titulo": "[EJEMPLO] Una noticia de última hora, para ver cómo se muestra",
+  "url": "/articulos/ejemplo-analisis/"
+ },
+ "articulos-ejemplo-cronica": {
+  "v": "16a7002762",
+  "titulo": "[EJEMPLO] Así se vería una crónica en la web",
+  "url": "/articulos/ejemplo-cronica/"
+ },
+ "articulos-guia-como-funciona-la-nba": {
+  "v": "c95185463c",
+  "titulo": "Cómo funciona la NBA: temporada, play-in, playoffs, draft y tope salarial",
+  "url": "/articulos/guia-como-funciona-la-nba/"
+ },
+ "articulos-guia-copa-nba": {
+  "v": "36964bca5e",
+  "titulo": "Cómo funciona la NBA Cup: grupos, eliminatorias y premios",
+  "url": "/articulos/guia-copa-nba/"
+ },
+ "previas-ejemplo-previa": {
+  "v": "995e2b9089",
+  "titulo": "[EJEMPLO] Equipo A vs [EJEMPLO] Equipo B: previa del partido",
+  "url": "/previas/ejemplo-previa/"
+ }
+}

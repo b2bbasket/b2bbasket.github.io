@@ -1,0 +1,30 @@
+---
+layout: base.njk
+title: "Portadas para redes"
+resumen: "Portadas automáticas de cada artículo, listas para descargar."
+permalink: /portadas/index.html
+noindex: true
+eleventyExcludeFromCollections: true
+---
+<div class="texto texto--ancho">
+  <h1 class="titulo-texto">Portadas para redes</h1>
+  <p>Cada artículo y cada previa tiene una portada automática con su titular. La horizontal es la que aparece al compartir el enlace en WhatsApp, X o Instagram; la vertical, de 1080 × 1350, está pensada para subirla como publicación de Instagram. Se crean solas unos minutos después de publicar.</p>
+  <p class="nota-fuente">Esta página no aparece en el menú ni en los buscadores.</p>
+  <div class="portadas">
+    {% for a in collections.recientes %}
+    {% set p = a.url | portadaDe(portadas) %}
+    <article class="portadas__item">
+      <h2><a href="{{ a.url | url }}">{{ a.data.title }}</a></h2>
+      {% if p %}
+      <img src="{{ p.og | url }}" alt="Portada horizontal de «{{ a.data.title }}»" loading="lazy" width="1200" height="630">
+      <p class="portadas__enlaces">
+        <a class="boton" href="{{ p.og | url }}" download="{{ p.clave }}.png">Horizontal (enlaces)</a>
+        <a class="boton" href="{{ p.ig | url }}" download="{{ p.clave }}-instagram.png">Vertical (Instagram)</a>
+      </p>
+      {% else %}
+      <p class="nota-fuente">La portada todavía se está creando. Vuelve en unos minutos.</p>
+      {% endif %}
+    </article>
+    {% endfor %}
+  </div>
+</div>
