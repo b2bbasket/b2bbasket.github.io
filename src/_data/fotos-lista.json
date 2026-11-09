@@ -1,5 +1,5 @@
 {
-  "_nota": "Fotos elegidas de Wikimedia Commons. El flujo «Descargar fotos» comprueba la licencia de cada una en Commons, descarga solo las de licencia libre y guarda autor y licencia en fotos.json. Para cada foto se prueban los candidatos en orden y se usa el primero válido.",
+  "_nota": "Fotos elegidas de Wikimedia Commons. El flujo «Descargar fotos» comprueba la licencia de cada una en Commons, descarga solo las de licencia libre y guarda autor y licencia en fotos.json. Para cada foto se prueban los candidatos en orden y se usa el primero válido. Las licencias NC o ND se descartan.",
   "fotos": [
     { "id": "jordan", "destino": "src/img/fotos/jordan.jpg", "alt": "Michael Jordan con los Chicago Bulls", "candidatos": ["Jordan by Lipofsky 16577.jpg", "Jordan Lipofsky.jpg", "Steve Lipfosky -- Michael Jordan (1997).jpg"] },
     { "id": "lebron", "destino": "src/img/fotos/lebron.jpg", "alt": "LeBron James", "candidatos": ["LeBron James (15662939969).jpg", "LeBron James (15823062226).jpg", "Lebron 2017.jpg"] },
