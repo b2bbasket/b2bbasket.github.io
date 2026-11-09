@@ -732,3 +732,8 @@ html[data-tema="oscuro"] .cal-lugar--fuera{color:#B9A2FF}
 .cal-filtro.activo{background:var(--texto);border-color:var(--texto);color:var(--fondo)}
 .cal-dato small{white-space:nowrap}
 html[data-tema="oscuro"] .cal-mes,html[data-tema="oscuro"] .cal-dato{box-shadow:inset 0 0 0 1px var(--linea)}
+
+/* Fotos de jugadores (Grandes jugadores) y créditos de imágenes */
+.foto--jugador img{max-height:460px;object-fit:cover;object-position:center 20%}
+.creditos{padding-left:1.1em}
+.creditos li{margin:0 0 .8em;line-height:1.5}
