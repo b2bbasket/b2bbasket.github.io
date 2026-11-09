@@ -127,7 +127,8 @@ async function datosWikidata(lista) {
 // ---------- 3b. Ficha (infobox) de Wikipedia: equipos con años, draft y anillos ----------
 const EQUIPOS_NBA = new Set([
   "Atlanta Hawks","Boston Celtics","Brooklyn Nets","Charlotte Hornets","Chicago Bulls","Cleveland Cavaliers","Dallas Mavericks","Denver Nuggets","Detroit Pistons","Golden State Warriors","Houston Rockets","Indiana Pacers","Los Angeles Clippers","Los Angeles Lakers","Memphis Grizzlies","Miami Heat","Milwaukee Bucks","Minnesota Timberwolves","New Orleans Pelicans","New York Knicks","Oklahoma City Thunder","Orlando Magic","Philadelphia 76ers","Phoenix Suns","Portland Trail Blazers","Sacramento Kings","San Antonio Spurs","Toronto Raptors","Utah Jazz","Washington Wizards",
-  "Seattle SuperSonics","New Jersey Nets","New York Nets","Vancouver Grizzlies","Charlotte Bobcats","New Orleans Hornets","New Orleans/Oklahoma City Hornets","Washington Bullets","Baltimore Bullets","Capital Bullets","Kansas City Kings","Kansas City-Omaha Kings","Kansas City–Omaha Kings","Cincinnati Royals","Rochester Royals","Minneapolis Lakers","San Diego Clippers","Buffalo Braves","San Diego Rockets","Philadelphia Warriors","San Francisco Warriors","Syracuse Nationals","Fort Wayne Pistons","St. Louis Hawks","Milwaukee Hawks","Tri-Cities Blackhawks","Chicago Zephyrs","Chicago Packers","New Orleans Jazz","Baltimore Bullets (1944–1954)","Indianapolis Olympians","Washington Capitols","Chicago Stags","Anderson Packers","Waterloo Hawks","Sheboygan Red Skins","Denver Nuggets (1948–1950)","St. Louis Bombers","Providence Steamrollers","Toronto Huskies","Pittsburgh Ironmen","Detroit Falcons","Cleveland Rebels","Indianapolis Jets"
+  "Seattle SuperSonics","New Jersey Nets","New York Nets","Vancouver Grizzlies","Charlotte Bobcats","New Orleans Hornets","New Orleans/Oklahoma City Hornets","Washington Bullets","Baltimore Bullets","Capital Bullets","Kansas City Kings","Kansas City-Omaha Kings","Kansas City–Omaha Kings","Cincinnati Royals","Rochester Royals","Minneapolis Lakers","San Diego Clippers","Buffalo Braves","San Diego Rockets","Philadelphia Warriors","San Francisco Warriors","Syracuse Nationals","Fort Wayne Pistons","St. Louis Hawks","Milwaukee Hawks","Tri-Cities Blackhawks","Chicago Zephyrs","Chicago Packers","New Orleans Jazz","Baltimore Bullets (1944–1954)","Indianapolis Olympians","Washington Capitols","Chicago Stags","Anderson Packers","Waterloo Hawks","Sheboygan Red Skins","Denver Nuggets (1948–1950)","St. Louis Bombers","Providence Steamrollers","Toronto Huskies","Pittsburgh Ironmen","Detroit Falcons","Cleveland Rebels","Indianapolis Jets",
+  "Baltimore Bullets (1963–73)","Baltimore Bullets (1963–1973)","Baltimore Bullets (1944–54)","New Orleans Jazz (NBA team)","Denver Nuggets (1948–50)","Chicago Packers/Zephyrs"
 ]);
 const desenlazar = (t) => String(t || "")
   .replace(/<ref[^>]*\/>|<ref[^>]*>[\s\S]*?<\/ref>/g, "")
@@ -159,12 +160,15 @@ function carrera(c) {
   const equipos = [];
   for (let n = 1; n <= 40; n++) {
     const t = c["team" + n]; if (!t) continue;
-    const enlace = t.match(/\[\[([^\]|#]+)/);
-    const nombre = enlace ? enlace[1].trim() : desenlazar(t);
-    if (!EQUIPOS_NBA.has(nombre)) { DESCONOCIDOS[nombre] = (DESCONOCIDOS[nombre] || 0) + 1; continue; }
+    const enlace = t.match(/\[\[([^\]|#]+)(?:\|([^\]]+))?\]\]/);
+    const destino = enlace ? enlace[1].trim() : desenlazar(t);
+    if (!EQUIPOS_NBA.has(destino)) { DESCONOCIDOS[destino] = (DESCONOCIDOS[destino] || 0) + 1; continue; }
+    // Nombre de la época si el texto visible es un nombre de equipo de la NBA (p. ej. «Philadelphia Warriors»)
+    const visible = enlace && enlace[2] ? desenlazar(enlace[2]) : "";
+    const nombre = EQUIPOS_NBA.has(visible) ? visible : destino;
     const anos = (desenlazar(c["years" + n]).match(/\b(19|20)\d\d\b/g) || []).map(Number);
     if (!anos.length) return null;
-    equipos.push({ equipo: nombre.replace(/ \(\d{4}–\d{4}\)$/, ""), inicio: anos[0] });
+    equipos.push({ equipo: nombre.replace(/ \((?:\d{4}–\d{2,4}|NBA team)\)$/, ""), inicio: anos[0] });
   }
   return equipos;
 }
@@ -278,4 +282,4 @@ fs.writeFileSync("src/_data/juego.json", JSON.stringify({
 }, null, 1) + "\n");
 console.log("Equipos no NBA más frecuentes (revisar que no falte ninguno): " + Object.entries(DESCONOCIDOS).sort((a, b) => b[1] - a[1]).slice(0, 60).map(([k, v]) => k + " " + v).join(" | "));
 // Muestra para revisar
-for (const j of finales.filter((j, i) => i % 45 === 0 || /^(Ray Allen|Steve Kerr|LeBron James|Pau Gasol|Kevin Garnett|Victor Wembanyama)$/.test(j.nombre))) console.log("\n" + j.nombre + "\n  - " + j.pistas.join("\n  - "));
+for (const j of finales.filter((j, i) =>  /^(Wilt Chamberlain|Kevin Duckworth|Wes Unseld|Pete Maravich|Shaquille O'Neal|Luka Dončić)$/.test(j.nombre))) console.log("\n" + j.nombre + "\n  - " + j.pistas.join("\n  - "));
