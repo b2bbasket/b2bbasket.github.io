@@ -3,13 +3,13 @@
  "generado": "2026-11-09",
  "jugadores": [
   {
-   "nombre": "A.C. Green",
+   "nombre": "A. C. Green",
    "pistas": [
     "Jugador nacido en 1963 que jugaba de ala-pívot.",
     "Fue elegido All-Star una vez, en 1990.",
     "Fue elegido con el número 23 del draft de 1985 y debutó en la NBA en 1985.",
     "Nació en Portland (Estados Unidos). Ganó 3 anillos de la NBA como jugador.",
-    "Equipos de la NBA, por orden: Los Angeles Lakers, Phoenix Suns, Dallas Mavericks y Miami Heat. Sus iniciales: A. G."
+    "Equipos de la NBA, por orden: Los Angeles Lakers, Phoenix Suns, Dallas Mavericks y Miami Heat. Sus iniciales: A. C. G."
    ],
    "fuente": "https://en.wikipedia.org/wiki/A.C._Green"
   },
@@ -1710,7 +1710,7 @@
   {
    "nombre": "Ed Macauley",
    "pistas": [
-    "Jugador nacido en 1928 que jugaba de ala-pívot y pívot.",
+    "Jugador nacido en 1928 que jugaba de pívot y ala-pívot.",
     "Fue elegido All-Star 7 veces, entre 1951 y 1957.",
     "Debutó en la NBA en 1949.",
     "Nació en San Luis (Estados Unidos). Ganó un anillo de la NBA como jugador.",
@@ -2148,6 +2148,17 @@
    "fuente": "https://en.wikipedia.org/wiki/Horace_Grant"
   },
   {
+   "nombre": "Hot Rod Hundley",
+   "pistas": [
+    "Jugador nacido en 1934 que jugaba de base.",
+    "Fue elegido All-Star 2 veces, entre 1960 y 1961.",
+    "Fue elegido con el número 1 del draft de 1957 y debutó en la NBA en 1957.",
+    "Nació en Charleston (Estados Unidos).",
+    "Toda su carrera en la NBA la pasó en los Minneapolis / Los Angeles Lakers. Sus iniciales: H. R. H."
+   ],
+   "fuente": "https://en.wikipedia.org/wiki/Rod_Hundley"
+  },
+  {
    "nombre": "Isaiah Thomas",
    "pistas": [
     "Jugador nacido en 1989 que jugaba de base.",
@@ -2363,7 +2374,7 @@
     "Fue elegido All-Star 7 veces, entre 1986 y 1992.",
     "Fue elegido con el número 1 del draft de 1982 y debutó en la NBA en 1982.",
     "Nació en Gastonia (Estados Unidos). Ganó 3 anillos de la NBA como jugador.",
-    "Toda su carrera en la NBA la pasó en los Los Angeles Lakers. Sus iniciales: J. W."
+    "Toda su carrera en la NBA la pasó en Los Angeles Lakers. Sus iniciales: J. W."
    ],
    "fuente": "https://en.wikipedia.org/wiki/James_Worthy"
   },
@@ -2539,7 +2550,7 @@
     "Fue elegido All-Star 14 veces, entre 1961 y 1974.",
     "Fue elegido con el número 2 del draft de 1960 y debutó en la NBA en 1960.",
     "Nació en Chelyan (Estados Unidos). Ganó un anillo de la NBA como jugador.",
-    "Toda su carrera en la NBA la pasó en los Los Angeles Lakers. Sus iniciales: J. W."
+    "Toda su carrera en la NBA la pasó en Los Angeles Lakers. Sus iniciales: J. W."
    ],
    "fuente": "https://en.wikipedia.org/wiki/Jerry_West"
   },
@@ -3061,7 +3072,7 @@
    "fuente": "https://en.wikipedia.org/wiki/Khris_Middleton"
   },
   {
-   "nombre": "Kiki Vandeweghe",
+   "nombre": "Kiki VanDeWeghe",
    "pistas": [
     "Jugador nacido en 1958 que jugaba de alero.",
     "Fue elegido All-Star 2 veces, entre 1983 y 1984.",
@@ -3089,7 +3100,7 @@
     "Fue elegido All-Star 18 veces, entre 1998 y 2016.",
     "Fue elegido con el número 13 del draft de 1996 y debutó en la NBA en 1996.",
     "Nació en Filadelfia (Estados Unidos). Ganó 5 anillos de la NBA como jugador.",
-    "Toda su carrera en la NBA la pasó en los Los Angeles Lakers. Sus iniciales: K. B."
+    "Toda su carrera en la NBA la pasó en Los Angeles Lakers. Sus iniciales: K. B."
    ],
    "fuente": "https://en.wikipedia.org/wiki/Kobe_Bryant"
   },
@@ -3248,7 +3259,7 @@
    "fuente": "https://en.wikipedia.org/wiki/Lauri_Markkanen"
   },
   {
-   "nombre": "Lebron James",
+   "nombre": "LeBron James",
    "pistas": [
     "Jugador nacido en 1984 que juega de escolta y ala-pívot.",
     "Fue elegido All-Star 22 veces, entre 2005 y 2026.",
@@ -3375,7 +3386,7 @@
     "Fue elegido All-Star 12 veces, entre 1980 y 1992.",
     "Debutó en la NBA en 1979.",
     "Nació en Lansing (Estados Unidos). Ganó 5 anillos de la NBA como jugador.",
-    "Toda su carrera en la NBA la pasó en los Los Angeles Lakers. Sus iniciales: M. J."
+    "Toda su carrera en la NBA la pasó en Los Angeles Lakers. Sus iniciales: M. J."
    ],
    "fuente": "https://en.wikipedia.org/wiki/Magic_Johnson"
   },
@@ -3523,13 +3534,13 @@
    "fuente": "https://en.wikipedia.org/wiki/Mel_Hutchins"
   },
   {
-   "nombre": "Metta World Peace",
+   "nombre": "Metta Sandiford-Artest",
    "pistas": [
     "Jugador nacido en 1979 que jugaba de alero y escolta.",
     "Fue elegido All-Star una vez, en 2004.",
     "Fue elegido con el número 16 del draft de 1999 y debutó en la NBA en 1999.",
     "Nació en Queens (Estados Unidos). Ganó un anillo de la NBA como jugador.",
-    "Equipos de la NBA, por orden: Chicago Bulls, Indiana Pacers, Sacramento Kings, Houston Rockets, Los Angeles Lakers y New York Knicks. Sus iniciales: M. W. P."
+    "Equipos de la NBA, por orden: Chicago Bulls, Indiana Pacers, Sacramento Kings, Houston Rockets, Los Angeles Lakers y New York Knicks. Sus iniciales: M. S."
    ],
    "fuente": "https://en.wikipedia.org/wiki/Metta_World_Peace"
   },
@@ -3655,6 +3666,17 @@
    "fuente": "https://en.wikipedia.org/wiki/Moses_Malone"
   },
   {
+   "nombre": "Nat Clifton",
+   "pistas": [
+    "Jugador nacido en 1922 que jugaba de ala-pívot y pívot.",
+    "Fue elegido All-Star una vez, en 1957.",
+    "Debutó en la NBA en 1950.",
+    "Nació en Little Rock (Estados Unidos).",
+    "Equipos de la NBA, por orden: New York Knicks y Detroit Pistons. Sus iniciales: N. C."
+   ],
+   "fuente": "https://en.wikipedia.org/wiki/Nathaniel_Clifton"
+  },
+  {
    "nombre": "Nate Archibald",
    "pistas": [
     "Jugador nacido en 1948 que jugaba de escolta y base.",
@@ -3675,17 +3697,6 @@
     "Equipos de la NBA, por orden: San Francisco / Golden State Warriors, Chicago Bulls y Cleveland Cavaliers. Sus iniciales: N. T."
    ],
    "fuente": "https://en.wikipedia.org/wiki/Nate_Thurmond"
-  },
-  {
-   "nombre": "Nathaniel Clifton",
-   "pistas": [
-    "Jugador nacido en 1922 que jugaba de ala-pívot y pívot.",
-    "Fue elegido All-Star una vez, en 1957.",
-    "Debutó en la NBA en 1950.",
-    "Nació en Little Rock (Estados Unidos).",
-    "Equipos de la NBA, por orden: New York Knicks y Detroit Pistons. Sus iniciales: N. C."
-   ],
-   "fuente": "https://en.wikipedia.org/wiki/Nathaniel_Clifton"
   },
   {
    "nombre": "Neil Johnston",
@@ -4192,17 +4203,6 @@
     "Equipos de la NBA, por orden: Golden State Warriors, Boston Celtics, Charlotte Hornets y Chicago Bulls. Sus iniciales: R. P."
    ],
    "fuente": "https://en.wikipedia.org/wiki/Robert_Parish"
-  },
-  {
-   "nombre": "Rod Hundley",
-   "pistas": [
-    "Jugador nacido en 1934 que jugaba de base.",
-    "Fue elegido All-Star 2 veces, entre 1960 y 1961.",
-    "Fue elegido con el número 1 del draft de 1957 y debutó en la NBA en 1957.",
-    "Nació en Charleston (Estados Unidos).",
-    "Toda su carrera en la NBA la pasó en los Minneapolis / Los Angeles Lakers. Sus iniciales: R. H."
-   ],
-   "fuente": "https://en.wikipedia.org/wiki/Rod_Hundley"
   },
   {
    "nombre": "Rolando Blackman",
@@ -5052,13 +5052,13 @@
    "fuente": "https://en.wikipedia.org/wiki/Zion_Williamson"
   },
   {
-   "nombre": "Žydrūnas Ilgauskas",
+   "nombre": "Zydrunas Ilgauskas",
    "pistas": [
     "Jugador nacido en 1975 que jugaba de pívot.",
     "Fue elegido All-Star 2 veces, entre 2003 y 2005.",
     "Fue elegido con el número 20 del draft de 1996 y debutó en la NBA en 1996.",
     "Nació en Kaunas (Lituania).",
-    "Equipos de la NBA, por orden: Cleveland Cavaliers y Miami Heat. Sus iniciales: Ž. I."
+    "Equipos de la NBA, por orden: Cleveland Cavaliers y Miami Heat. Sus iniciales: Z. I."
    ],
    "fuente": "https://en.wikipedia.org/wiki/%C5%BDydr%C5%ABnas_Ilgauskas"
   }
