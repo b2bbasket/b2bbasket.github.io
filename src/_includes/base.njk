@@ -21,7 +21,7 @@
 <meta property="og:description" content="{{ resumen or site.descripcion }}">
 <meta property="og:image" content="{{ site.url }}/img/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="{{ '/css/estilos.css' | url }}?v={{ site.version or 18 }}">
+<link rel="stylesheet" href="{{ '/css/estilos.css' | url }}?v={{ site.version or 19 }}">
 <script>try{var tm=localStorage.getItem("tema");if(!tm){tm=window.matchMedia("(prefers-color-scheme: dark)").matches?"oscuro":"claro"}document.documentElement.setAttribute("data-tema",tm)}catch(e){}</script>
 <script>try{if(sessionStorage.getItem("splash")){document.documentElement.classList.add("splash-visto")}else{sessionStorage.setItem("splash","1")}}catch(e){}</script>
 </head>
@@ -83,6 +83,7 @@
     <a href="{{ '/condiciones-de-uso/' | url }}">Condiciones de uso</a>
     <a href="{{ '/principios-editoriales/' | url }}">Principios editoriales</a>
     <a href="{{ '/correcciones/' | url }}">Correcciones</a>
+    <a href="{{ '/creditos-imagenes/' | url }}">Créditos de las imágenes</a>
     {% if site.banner_cookies %}<a href="#" id="cookiesPreferencias">Preferencias de cookies</a>{% endif %}
     <p>{{ site.nombre }} · {{ site.lema }} Medio independiente, no afiliado a la NBA ni a ninguna franquicia. Los nombres de equipos y jugadores se usan con fines informativos.</p>
   </div>
@@ -95,6 +96,6 @@
 </div>
 <script src="{{ '/js/cookies.js' | url }}"></script>
 {% endif %}
-<script src="{{ '/js/main.js' | url }}?v={{ site.version or 18 }}"></script>
+<script src="{{ '/js/main.js' | url }}?v={{ site.version or 19 }}"></script>
 </body>
 </html>

@@ -52,6 +52,18 @@ export default function (eleventyConfig) {
     }
     return "";
   });
+  // Fotos de Wikimedia Commons con su crédito: {% foto "jordan" %}
+  // Los datos salen de src/_data/fotos.json, que genera el flujo «Descargar fotos».
+  const esc = (t) => String(t || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  eleventyConfig.addShortcode("foto", function (id, clase = "") {
+    let fotos = {};
+    try { fotos = JSON.parse(fs.readFileSync("src/_data/fotos.json", "utf8")); } catch (e) {}
+    const f = fotos[id];
+    if (!f) return "";
+    const url = eleventyConfig.getFilter("url");
+    const licencia = f.licencia_url ? `<a href="${esc(f.licencia_url)}" rel="license noopener">${esc(f.licencia)}</a>` : esc(f.licencia);
+    return `<figure class="articulo__foto ${esc(clase)}"><img src="${url(f.src)}" alt="${esc(f.alt)}" loading="lazy"><figcaption>Foto: ${esc(f.autor)} · ${licencia} · <a href="${esc(f.origen)}" rel="noopener">Wikimedia Commons</a></figcaption></figure>`;
+  });
   eleventyConfig.addFilter("fichaDe", (lista, nombre) => (lista || []).find((f) => f.data.nombre === nombre));
   // Clasificación: ordena por porcentaje de victorias
   eleventyConfig.addFilter("clasificar", (lista) =>
