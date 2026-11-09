@@ -1,1 +1,11 @@
-{}
+{
+ "stephen-curry": {
+  "src": "/img/jugadores/stephen-curry.jpg",
+  "alt": "Stephen Curry",
+  "autor": "Clément Bardot",
+  "licencia": "CC BY-SA 4.0",
+  "licencia_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "origen": "https://commons.wikimedia.org/wiki/File:Stephen_Curry,_Olympic_Games_2024.jpg",
+  "archivo": "Stephen Curry, Olympic Games 2024.jpg"
+ }
+}
