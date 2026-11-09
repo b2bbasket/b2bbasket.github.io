@@ -20,7 +20,7 @@ layout: base.njk
         {% if lideres and lideres.length %}<button class="pestana" data-panel="lideres">Líderes del equipo</button>{% endif %}
       </div>
       <div class="panel-pestana" id="panel-historia">
-        {% if imagen %}<figure class="articulo__foto"><img src="{{ imagen }}" alt="{{ nombre }}" loading="lazy"><figcaption>{{ credito }}</figcaption></figure>{% endif %}
+        {% if imagen %}<figure class="articulo__foto"><img src="{{ imagen | url }}" alt="{{ nombre }}" loading="lazy"><figcaption>{{ credito }}</figcaption></figure>{% endif %}
         {{ content | safe }}
       </div>
       {% if lideres and lideres.length %}

@@ -4,7 +4,7 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const UA = "BackToBackMedioNBA/1.0 (https://github.com/hugoamigo2006-collab/medio-nba)";
+const UA = `BackToBackMedioNBA/1.0 (https://github.com/${process.env.GITHUB_REPOSITORY || "hugoamigo2006-collab/medio-nba"})`;
 const lista = JSON.parse(fs.readFileSync("src/_data/fotos-lista.json", "utf8")).fotos;
 const salida = "src/_data/fotos.json";
 const previas = fs.existsSync(salida) ? JSON.parse(fs.readFileSync(salida, "utf8")) : {};

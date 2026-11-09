@@ -1,11 +1,21 @@
 import fs from "node:fs";
 
+// Dirección de la web calculada a partir del repositorio de GitHub (variable GITHUB_REPOSITORY en Actions):
+// - repositorio «usuario.github.io»  → https://usuario.github.io/
+// - cualquier otro nombre            → https://usuario.github.io/nombre/
+// Así, si se cambia de cuenta o de nombre, la web se adapta sola.
+const [DUENO, REPO] = (process.env.GITHUB_REPOSITORY || "hugoamigo2006-collab/medio-nba").split("/");
+const EN_RAIZ = REPO.toLowerCase() === `${DUENO.toLowerCase()}.github.io`;
+const PREFIJO = EN_RAIZ ? "/" : `/${REPO}/`;
+const WEB = { repo: `${DUENO}/${REPO}`, prefijo: PREFIJO, url: `https://${DUENO.toLowerCase()}.github.io${EN_RAIZ ? "" : "/" + REPO}` };
+
 export default function (eleventyConfig) {
   // Copia tal cual estos archivos a la web final
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy("src/img");
-  eleventyConfig.addPassthroughCopy("src/admin");
+  eleventyConfig.addPassthroughCopy("src/admin/index.html");
+  eleventyConfig.addGlobalData("web", WEB);
 
   // Tipografías alojadas en la propia web (sin Google Fonts): se copian desde los paquetes de Fontsource
   eleventyConfig.on("eleventy.after", ({ dir }) => {
@@ -67,7 +77,7 @@ export default function (eleventyConfig) {
   // Foto de un artículo: la «Imagen principal» si la hay; si no, la del jugador indicado en «Jugador para la foto»
   const slugJugador = (t) => String(t || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   eleventyConfig.addFilter("fotoArticulo", (data) => {
-    if (data.imagen) return { src: data.imagen, alt: data.title, credito: data.credito || "" };
+    if (data.imagen) return { src: eleventyConfig.getFilter("url")(data.imagen), alt: data.title, credito: data.credito || "" };
     if (!data.jugador_foto) return null;
     const f = (data.fotos_jugadores || {})[slugJugador(data.jugador_foto)];
     if (!f) return null;
@@ -106,6 +116,6 @@ export default function (eleventyConfig) {
 
   return {
     dir: { input: "src", output: "_site" },
-    pathPrefix: "/medio-nba/",
+    pathPrefix: PREFIJO,
   };
 }

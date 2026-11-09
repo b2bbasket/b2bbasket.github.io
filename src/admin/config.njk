@@ -1,14 +1,19 @@
+---
+permalink: /admin/config.yml
+eleventyExcludeFromCollections: true
+---
+# Archivo generado al publicar: el repositorio y la dirección se calculan solos (ver eleventy.config.js).
 backend:
   name: github
-  repo: hugoamigo2006-collab/medio-nba
+  repo: {{ web.repo }}
   branch: main
 
 locale: es
-site_url: https://hugoamigo2006-collab.github.io/medio-nba/
+site_url: {{ web.url }}/
 media_folder: src/img/subidas
-public_folder: /medio-nba/img/subidas
+public_folder: /img/subidas
 
-collections:
+{% raw %}collections:
   - name: articulos
     label: Artículos
     label_singular: Artículo
@@ -251,3 +256,4 @@ collections:
           - { label: Correo de contacto, name: email, widget: string }
           - { label: Datos automáticos (resultados y clasificación), name: datos_automaticos, widget: boolean, default: true, required: false }
           - { label: Mostrar aviso de cookies (solo si hay analítica o publicidad), name: banner_cookies, widget: boolean, default: false }
+{% endraw %}

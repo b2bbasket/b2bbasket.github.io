@@ -15,9 +15,9 @@ layout: base.njk
   {{ content | safe }}
   <div class="compartir">
     <strong>Compartir</strong>
-    <a href="https://wa.me/?text={{ (title + ' ' + site.url + page.url) | urlencode }}" target="_blank" rel="noopener">WhatsApp</a>
-    <a href="https://twitter.com/intent/tweet?text={{ title | urlencode }}&url={{ (site.url + page.url) | urlencode }}" target="_blank" rel="noopener">X</a>
-    <button type="button" id="copiarEnlace" data-url="{{ site.url }}{{ page.url }}">Copiar enlace</button>
+    <a href="https://wa.me/?text={{ (title + ' ' + web.url + page.url) | urlencode }}" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="https://twitter.com/intent/tweet?text={{ title | urlencode }}&url={{ (web.url + page.url) | urlencode }}" target="_blank" rel="noopener">X</a>
+    <button type="button" id="copiarEnlace" data-url="{{ web.url }}{{ page.url }}">Copiar enlace</button>
   </div>
   <div class="autor-caja">
     <strong>{{ autor or "[Tu nombre]" }}</strong>
