@@ -1,0 +1,20 @@
+name: Comprobar web
+# En cada propuesta (pull request) construye la web para avisar de errores antes de aprobarla.
+# No publica nada.
+on:
+  pull_request:
+jobs:
+  construir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install
+      - run: npm run build
+      - name: Comprobar páginas clave
+        run: |
+          test -f _site/jugadores/index.html
+          test -f _site/creditos-imagenes/index.html
+          grep -c "articulo__foto" _site/jugadores/index.html
