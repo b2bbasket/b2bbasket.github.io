@@ -23,7 +23,7 @@ fuentes:
   - { titulo: "Kobe Bryant en cifras, comunicado de la NBA", url: "https://pr.nba.com/kobe-bryant-career-numbers/" }
   - { titulo: "MVP de las Finales, Wikipedia", url: "https://en.wikipedia.org/wiki/NBA_Finals_Most_Valuable_Player_award" }
   - { titulo: "Lista de campeones de la NBA, Wikipedia", url: "https://en.wikipedia.org/wiki/List_of_NBA_champions" }
-  - { titulo: "Líderes históricos de Back to Back (puntos)", url: "../../lideres-historicos/" }
+  - { titulo: "Líderes históricos de la NBA (puntos)", url: "../../lideres-historicos/" }
 ---
 
 Kobe Bryant pasó sus 20 temporadas en la NBA con la misma camiseta. Pocas estrellas lo han hecho, y menos aún con cinco anillos.

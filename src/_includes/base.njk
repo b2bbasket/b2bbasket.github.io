@@ -32,7 +32,7 @@
 <meta property="og:image:height" content="630">
 {% if noindex %}<meta name="robots" content="noindex">{% endif %}
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="{{ '/css/estilos.css' | url }}?v={{ site.version or 20 }}">
+<link rel="stylesheet" href="{{ '/css/estilos.css' | url }}?v={{ web.version }}">
 <script>try{var tm=localStorage.getItem("tema");if(!tm){tm=window.matchMedia("(prefers-color-scheme: dark)").matches?"oscuro":"claro"}document.documentElement.setAttribute("data-tema",tm)}catch(e){}</script>
 <script>try{if(sessionStorage.getItem("splash")){document.documentElement.classList.add("splash-visto")}else{sessionStorage.setItem("splash","1")}}catch(e){}</script>
 </head>
@@ -107,6 +107,6 @@
 </div>
 <script src="{{ '/js/cookies.js' | url }}"></script>
 {% endif %}
-<script src="{{ '/js/main.js' | url }}?v={{ site.version or 20 }}"></script>
+<script src="{{ '/js/main.js' | url }}?v={{ web.version }}"></script>
 </body>
 </html>

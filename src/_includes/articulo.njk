@@ -27,7 +27,7 @@ layout: base.njk
 
   <h1>{{ title }}</h1>
   <p class="entradilla">{{ resumen }}</p>
-  <p class="meta">Por <strong>{{ autor or "[Tu nombre]" }}</strong> · {{ page.date | fecha }} · {{ content | lectura }} min de lectura</p>
+  <p class="meta">Por <strong>{{ autor or site.autor }}</strong> · {{ page.date | fecha }} · {{ content | lectura }} min de lectura</p>
 
   {% if claves and claves.length %}
   <aside class="caja-claves caja-claves--{{ seccion }}">
@@ -53,7 +53,7 @@ layout: base.njk
     <button type="button" id="copiarEnlace" data-url="{{ web.url }}{{ page.url }}">Copiar enlace</button>
   </div>
   <div class="autor-caja">
-    <strong>{{ autor or "[Tu nombre]" }}</strong>
+    <strong>{{ autor or site.autor }}</strong>
     <span>Escribe sobre la NBA en {{ site.nombre }}. <a href="{{ '/quienes-somos/' | url }}">Más sobre quién está detrás</a> · <a href="{{ '/principios-editoriales/' | url }}">cómo trabajamos</a></span>
   </div>
 </article>

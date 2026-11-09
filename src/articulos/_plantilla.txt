@@ -4,7 +4,7 @@ title: "Titular del artículo"
 date: 2026-11-05
 seccion: cronicas
 resumen: "Entradilla: qué ha pasado y por qué importa, en una o dos frases."
-autor: "Tu nombre"
+autor: "Hugo Amigo Suárez"
 # borrador: true   <- quita la almohadilla para que NO se publique
 ---
 

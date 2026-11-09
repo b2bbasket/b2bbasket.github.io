@@ -22,7 +22,7 @@ fuentes:
   - { titulo: "Golden State Warriors, Wikipedia", url: "https://en.wikipedia.org/wiki/Golden_St._Warriors" }
   - { titulo: "Philadelphia 76ers, Wikipedia", url: "https://en.wikipedia.org/wiki/Philadelphia_76ers" }
   - { titulo: "MVP de la temporada, Wikipedia", url: "https://en.wikipedia.org/wiki/NBA_Most_Valuable_Player" }
-  - { titulo: "Líderes históricos de Back to Back (rebotes y puntos)", url: "../../lideres-historicos/" }
+  - { titulo: "Líderes históricos de la NBA (rebotes y puntos)", url: "../../lideres-historicos/" }
 ---
 
 Hay récords que se baten y récords que parecen imposibles. Los de Wilt Chamberlain pertenecen al segundo grupo.

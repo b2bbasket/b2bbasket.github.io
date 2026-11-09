@@ -1,4 +1,4 @@
-// Calendario NBA de Back to Back
+// Calendario NBA de B2B Basket
 // Lee /datos/calendario.json (generado por la actualización automática) y no inventa nada:
 // si falta un dato, lo dice.
 (function () {

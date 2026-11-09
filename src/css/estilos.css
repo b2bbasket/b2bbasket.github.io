@@ -434,7 +434,7 @@ html[data-tema="oscuro"] .tema-boton .sol{display:block}
 html[data-tema="oscuro"] .tema-boton .luna{display:none}
 @media (max-width:1040px){.tema-boton{margin:8px 0}}
 
-/* ===== v12: identidad Back to Back ===== */
+/* ===== v12: identidad B2B Basket ===== */
 .splash__logo{text-transform:uppercase;text-align:center;line-height:1}
 .splash__lema{text-transform:none;letter-spacing:.14em;font-size:13px;text-align:center;max-width:90vw;line-height:1.5}
 .logo{letter-spacing:.01em}
@@ -1093,3 +1093,11 @@ html[data-tema="oscuro"] .racha--p{color:#FF7A5E}
 .portadas__item h2{font-size:22px;margin:0 0 10px}
 .portadas__item img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--linea)}
 .portadas__enlaces{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0 0}
+
+/* Revisión 9 nov: en móvil, nada debe salirse por la derecha */
+.tablas > *{min-width:0}
+.selector-conf{flex-wrap:wrap}
+.hero__titulo{display:block}
+.oculto-visual{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.juego__inicio button{font:700 17px var(--cuerpo);padding:14px 34px;border-radius:999px;border:0;background:var(--acento);color:#fff;cursor:pointer;transition:transform .2s}
+.juego__inicio button:hover{transform:translateY(-2px)}

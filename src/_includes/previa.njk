@@ -40,7 +40,7 @@ layout: base.njk
     <div class="previa__principal">
       <h1 class="previa__titulo">{{ local }} vs {{ visitante }}</h1>
       <p class="entradilla">{{ resumen }}</p>
-      <p class="meta">Por <strong>{{ autor or "[Tu nombre]" }}</strong> · {{ page.date | fecha }}</p>
+      <p class="meta">Por <strong>{{ autor or site.autor }}</strong> · {{ page.date | fecha }}</p>
       {% if claves and claves.length %}
       <section class="claves-tarjetas" aria-labelledby="t-claves">
         <h2 id="t-claves">Las claves</h2>

@@ -167,7 +167,7 @@
   });
   document.getElementById('juegoCompartir').addEventListener('click', (e) => {
     const bolas = hoyEstado.acierto ? '🏀'.repeat(hoyEstado.intentos.length) + ' ✅' : '❌';
-    const t = 'Back to Back · Adivina el jugador (' + hoy + ')\n' + bolas + '\n' + location.href;
+    const t = 'B2B Basket · Adivina el jugador (' + hoy + ')\n' + bolas + '\n' + location.href;
     const ok = () => { const b = e.target, x = b.textContent; b.textContent = '¡Copiado!'; setTimeout(() => { b.textContent = x; }, 1800); };
     if (navigator.clipboard) navigator.clipboard.writeText(t).then(ok).catch(() => window.prompt('Copia tu resultado:', t)); else window.prompt('Copia tu resultado:', t);
   });

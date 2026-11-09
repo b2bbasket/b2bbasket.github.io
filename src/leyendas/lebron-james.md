@@ -27,7 +27,7 @@ fuentes:
   - { titulo: "MVP de la temporada, Wikipedia", url: "https://en.wikipedia.org/wiki/NBA_Most_Valuable_Player" }
   - { titulo: "Lista de campeones de la NBA, Wikipedia", url: "https://en.wikipedia.org/wiki/List_of_NBA_champions" }
   - { titulo: "LeBron James firma con los 76ers, 6abc (ESPN)", url: "https://6abc.com/post/lebron-james-join-philadelphia-76ers-2-year-8-million-deal-espn/19569037/" }
-  - { titulo: "Líderes históricos de Back to Back (puntos y asistencias)", url: "../../lideres-historicos/" }
+  - { titulo: "Líderes históricos de la NBA (puntos y asistencias)", url: "../../lideres-historicos/" }
 ---
 
 Ningún jugador ha anotado tantos puntos en la NBA como LeBron James. Pero su historia no se entiende solo con números: es la de alguien que cambió tres veces de equipo y ganó en los tres.
