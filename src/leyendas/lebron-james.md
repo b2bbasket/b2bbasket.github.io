@@ -4,7 +4,7 @@ orden: 2
 epoca: siglo21
 epoca_texto: "Siglo XXI"
 posicion: Alero
-equipos: "Cleveland Cavaliers · Miami Heat · Los Angeles Lakers"
+equipos: "Cleveland Cavaliers · Miami Heat · Los Angeles Lakers · Philadelphia 76ers"
 foto: lebron
 entradilla: "El máximo anotador de la historia de la NBA. Cuatro anillos con tres franquicias distintas y más de dos décadas en la élite."
 cifras:
@@ -20,11 +20,13 @@ hitos:
   - { ano: "2014", texto: "Vuelve a Cleveland." }
   - { ano: "2016", texto: "Los Cavaliers remontan un 3-1 en las Finales ante los Warriors: es la primera vez que pasa en unas Finales." }
   - { ano: "2020", texto: "Cuarto anillo, con los Lakers, en la burbuja de Orlando." }
+  - { ano: "2026", texto: "Firma por dos temporadas con los Philadelphia 76ers." }
 fuentes:
   - { titulo: "Cleveland Cavaliers, Wikipedia", url: "https://en.wikipedia.org/wiki/Cavs" }
   - { titulo: "Finales de 2016, Wikipedia", url: "https://en.wikipedia.org/wiki/2016_NBA_Finals" }
   - { titulo: "MVP de la temporada, Wikipedia", url: "https://en.wikipedia.org/wiki/NBA_Most_Valuable_Player" }
   - { titulo: "Lista de campeones de la NBA, Wikipedia", url: "https://en.wikipedia.org/wiki/List_of_NBA_champions" }
+  - { titulo: "LeBron James firma con los 76ers, 6abc (ESPN)", url: "https://6abc.com/post/lebron-james-join-philadelphia-76ers-2-year-8-million-deal-espn/19569037/" }
   - { titulo: "Líderes históricos de Back to Back (puntos y asistencias)", url: "../../lideres-historicos/" }
 ---
 
@@ -40,4 +42,4 @@ El regreso tuvo su recompensa en 2016. En las Finales ante los Golden State Warr
 
 ## El legado
 
-En 2018 fichó por los Lakers, con los que ganó su cuarto anillo en 2020. Ha sido cuatro veces MVP de la temporada y cuatro veces MVP de las Finales. Al final de la temporada 2025-26 sumaba 43.440 puntos, el récord de la NBA, y 12.016 asistencias, la cuarta cifra más alta de la historia.
+En 2018 fichó por los Lakers, con los que ganó su cuarto anillo en 2020, y en 2026 firmó por dos temporadas con los Philadelphia 76ers. Ha sido cuatro veces MVP de la temporada y cuatro veces MVP de las Finales. Al final de la temporada 2025-26 sumaba 43.440 puntos, el récord de la NBA, y 12.016 asistencias, la cuarta cifra más alta de la historia.
