@@ -165,7 +165,11 @@ function carrera(c) {
     if (!EQUIPOS_NBA.has(destino)) { DESCONOCIDOS[destino] = (DESCONOCIDOS[destino] || 0) + 1; continue; }
     // Nombre de la época si el texto visible es un nombre de equipo de la NBA (p. ej. «Philadelphia Warriors»)
     const visible = enlace && enlace[2] ? desenlazar(enlace[2]) : "";
-    const nombre = EQUIPOS_NBA.has(visible) ? visible : destino;
+    // o una combinación como «Baltimore / Capital Bullets» o «Philadelphia / San Francisco Warriors»
+    const apodo = (x) => x.split(/\s+/).slice(-1)[0];
+    const nombre = EQUIPOS_NBA.has(visible) ? visible
+      : visible && /\//.test(visible) && [...EQUIPOS_NBA].some((e) => apodo(e) === apodo(visible)) && !/\b(19|20)\d\d\b/.test(visible) ? visible.replace(/\s*\/\s*/g, " / ")
+      : destino;
     const anos = (desenlazar(c["years" + n]).match(/\b(19|20)\d\d\b/g) || []).map(Number);
     if (!anos.length) return null;
     equipos.push({ equipo: nombre.replace(/ \((?:\d{4}–\d{2,4}|NBA team)\)$/, ""), inicio: anos[0] });
