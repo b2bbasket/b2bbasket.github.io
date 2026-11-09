@@ -2,27 +2,25 @@
 title: Grandes jugadores de la historia
 ---
 
-**[BORRADOR: datos pendientes de verificar con fuentes antes de publicar.]**
-
 Diez leyendas que han marcado la historia de la liga, con tres datos de cada una.
 
 ## 1. Michael Jordan
 
 - Ganó seis títulos con los Bulls y fue elegido MVP de las Finales las seis veces.
-- Su promedio de 30,1 puntos por partido es la mejor marca de la historia, junto a la de Chamberlain.
-- Dejó el baloncesto en 1993 para probar suerte en el béisbol.
+- Sus 30,1 puntos por partido son el mejor promedio de la historia, justo por delante de Chamberlain (30,07).
+- Se retiró en 1993 y al año siguiente jugó al béisbol en las ligas menores, con los Birmingham Barons. Volvió a la NBA en 1995.
 
 ## 2. LeBron James
 
-- Es el máximo anotador de la historia, con más de 43.000 puntos.
-- Ganó cuatro anillos con tres franquicias distintas: Heat, Cavaliers y Lakers.
+- Es el máximo anotador de la historia, con más de 43.000 puntos en temporada regular.
+- Ganó cuatro anillos con tres franquicias distintas: Heat (2012 y 2013), Cavaliers (2016) y Lakers (2020).
 - Debutó en la NBA en 2003 como número 1 del draft.
 
 ## 3. Kareem Abdul-Jabbar
 
 - Ganó seis MVP, un récord que nadie ha igualado.
 - Su "skyhook" es uno de los tiros más imparables de la historia.
-- Nació como Lew Alcindor y cambió de nombre en 1971.
+- Nació como Lew Alcindor y adoptó el nombre de Kareem Abdul-Jabbar en 1971, al convertirse al islam.
 
 ## 4. Magic Johnson
 
@@ -33,14 +31,14 @@ Diez leyendas que han marcado la historia de la liga, con tres datos de cada una
 ## 5. Larry Bird
 
 - Fue MVP tres años seguidos, de 1984 a 1986.
-- Ganó el concurso de triples tres veces consecutivas.
-- Años después, como entrenador de los Pacers, los llevó a las Finales de 2000.
+- Ganó el concurso de triples tres veces seguidas: 1986, 1987 y 1988.
+- Ya como entrenador, llevó a los Indiana Pacers a las Finales de 2000.
 
 ## 6. Bill Russell
 
 - Ganó 11 títulos con los Celtics, el máximo de la historia.
-- Fue el primer entrenador afroamericano en ganar un campeonato de la NBA, siendo jugador y entrenador a la vez.
-- El trofeo al MVP de las Finales lleva su nombre.
+- Fue el primer entrenador afroamericano de la liga, desde 1966, y ganó como jugador-entrenador los títulos de 1968 y 1969.
+- Desde 2009, el trofeo al MVP de las Finales lleva su nombre.
 
 ## 7. Wilt Chamberlain
 
@@ -51,26 +49,27 @@ Diez leyendas que han marcado la historia de la liga, con tres datos de cada una
 ## 8. Kobe Bryant
 
 - Jugó 20 temporadas, todas con los Lakers, y ganó cinco títulos.
-- Anotó 81 puntos contra los Raptors en 2006.
-- Se despidió con 60 puntos en su último partido, en 2016.
+- Anotó 81 puntos contra los Raptors el 22 de enero de 2006, la segunda mejor marca de la historia.
+- Se despidió con 60 puntos ante los Utah Jazz en su último partido, el 13 de abril de 2016.
 
 ## 9. Shaquille O'Neal
 
 - Fue el número 1 del draft de 1992 y ganó cuatro títulos.
-- Fue MVP de las Finales tres años seguidos, de 2000 a 2002.
-- Anotó más de 28.000 puntos en su carrera.
+- Fue MVP de las Finales tres años seguidos, de 2000 a 2002. Solo Jordan lo había conseguido antes.
+- Anotó 28.596 puntos en su carrera.
 
 ## 10. Tim Duncan
 
-- Ganó cinco títulos y pasó sus 19 temporadas en los Spurs.
+- Ganó cinco títulos y jugó sus 19 temporadas en los Spurs.
 - Fue MVP de la liga en 2002 y 2003.
-- Es uno de los jugadores con más selecciones al mejor quinteto de la liga de la historia.
-
-## Qué hay que verificar
-
-- Todos los datos de cada jugador con NBA.com y fuentes de referencia.
-- Si quieres imágenes, solo fotos con licencia libre de Wikimedia Commons, con su crédito.
+- Fue el número 1 del draft de 1997.
 
 ## Fuentes
 
-- [Pendiente: NBA.com y listas de referencia]
+- Perfiles de leyendas en NBA.com: [Jordan](https://www.nba.com/news/history-nba-legend-michael-jordan), [Kareem Abdul-Jabbar](https://www.nba.com/news/history-nba-legend-kareem-abdul-jabbar), [Magic Johnson](https://www.nba.com/news/history-nba-legend-magic-johnson), [Larry Bird](https://nba.com/history/legends/profiles/larry-bird), [Bill Russell](https://www.nba.com/news/history-nba-legend-bill-russell), [Wilt Chamberlain](https://www.nba.com/news/history-nba-legend-wilt-chamberlain) y [Tim Duncan](https://www.nba.com/news/archive-75-tim-duncan)
+- [Kobe Bryant en cifras, comunicado de la NBA](https://pr.nba.com/kobe-bryant-career-numbers/)
+- [Ganadores del concurso de triples, NBA.com](https://www.nba.com/news/history-3-point-contest)
+- [MVP de la temporada](https://en.wikipedia.org/wiki/NBA_Most_Valuable_Player) y [MVP de las Finales](https://en.wikipedia.org/wiki/NBA_Finals_Most_Valuable_Player_award), Wikipedia
+- [Promedio de puntos en la carrera, Land of Basketball](https://www.landofbasketball.com/all_time_leaders/points_per_game_career_season.htm)
+- [Números 1 del draft, Wikipedia](https://en.wikipedia.org/wiki/List_of_first_overall_NBA_draft_picks)
+- [Líderes históricos](../lideres-historicos/) de Back to Back (puntos de LeBron, Kobe y Shaq; rebotes de Chamberlain)
