@@ -1,10 +1,11 @@
 {
-  "nombre": "Back to Back",
+  "nombre": "B2B Basket",
   "abreviatura": "B2B",
   "lema": "Baloncesto sin descanso. Toda la NBA al ritmo de la liga.",
   "instagram_usuario": "@b2b.basket",
   "descripcion": "Baloncesto sin descanso. Toda la NBA al ritmo de la liga: noticias, previas, crónicas y estadísticas en español.",
   "instagram": "https://www.instagram.com/b2b.basket/",
+  "autor": "Hugo Amigo Suárez",
   "email": "b2bbasketnba@gmail.com",
   "datos_automaticos": true,
   "banner_cookies": false

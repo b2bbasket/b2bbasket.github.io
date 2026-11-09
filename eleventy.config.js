@@ -7,7 +7,7 @@ import fs from "node:fs";
 const [DUENO, REPO] = (process.env.GITHUB_REPOSITORY || "hugoamigo2006-collab/medio-nba").split("/");
 const EN_RAIZ = REPO.toLowerCase() === `${DUENO.toLowerCase()}.github.io`;
 const PREFIJO = EN_RAIZ ? "/" : `/${REPO}/`;
-const WEB = { repo: `${DUENO}/${REPO}`, prefijo: PREFIJO, url: `https://${DUENO.toLowerCase()}.github.io${EN_RAIZ ? "" : "/" + REPO}` };
+const WEB = { version: Date.now().toString(36), repo: `${DUENO}/${REPO}`, prefijo: PREFIJO, url: `https://${DUENO.toLowerCase()}.github.io${EN_RAIZ ? "" : "/" + REPO}` };
 
 export default function (eleventyConfig) {
   // Copia tal cual estos archivos a la web final

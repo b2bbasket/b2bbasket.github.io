@@ -2,7 +2,7 @@
 title: Quiénes somos
 ---
 
-**Back to Back (B2B)** es un medio digital independiente sobre la NBA, escrito en español. Aquí encontrarás noticias, previas, crónicas, análisis, estadísticas e historias de la mejor liga de baloncesto del mundo.
+**B2B Basket** es un medio digital independiente sobre la NBA, escrito en español. Aquí encontrarás noticias, previas, crónicas, análisis, estadísticas e historias de la mejor liga de baloncesto del mundo.
 
 ## Quién está detrás
 
@@ -16,9 +16,9 @@ Quería crear un espacio propio desde el que informar sobre la NBA y, sobre todo
 
 B2B quiere combinar el rigor periodístico con una forma de comunicar cercana, dinámica y visual. No pretende ser una página que recopila noticias, sino un medio con personalidad propia y con una comunidad de aficionados detrás.
 
-## Por qué «Back to Back»
+## Por qué B2B
 
-En baloncesto, *back to back* tiene un doble significado: los partidos que se juegan en noches consecutivas y los títulos ganados dos años seguidos. Representa la exigencia, la constancia y la ambición de seguir compitiendo al máximo nivel.
+B2B son las siglas de *back to back*, una expresión que en baloncesto tiene un doble significado: los partidos que se juegan en noches consecutivas y los títulos ganados dos años seguidos. Representa la exigencia, la constancia y la ambición de seguir compitiendo al máximo nivel.
 
 También resume la filosofía del proyecto: no quedarse en una publicación puntual, sino trabajar día a día para construir algo con continuidad.
 
@@ -28,6 +28,6 @@ Por transparencia, conviene que lo sepas: los Golden State Warriors son uno de m
 
 ## ¿Quieres colaborar?
 
-Ahora mismo soy el único responsable de B2B: desarrollo el proyecto, me encargo de la web y preparo los contenidos. Me gustaría que, en el futuro, se incorporasen otras personas interesadas en el baloncesto y el periodismo deportivo, para que B2B se convierta en un proyecto colectivo.
+Ahora mismo soy el único responsable de B2B Basket: desarrollo el proyecto, me encargo de la web y preparo los contenidos. Me gustaría que, en el futuro, se incorporasen otras personas interesadas en el baloncesto y el periodismo deportivo, para que B2B Basket se convierta en un proyecto colectivo.
 
 Si quieres proponer un tema, avisarnos de un error o sumarte al proyecto, escríbenos desde la página de [contacto](../contacto/).

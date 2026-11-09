@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 title: "Adivina el jugador"
-resumen: "El minijuego diario de Back to Back: adivina el jugador de la NBA con cinco pistas."
+resumen: "El minijuego diario de B2B Basket: adivina el jugador de la NBA con cinco pistas."
 permalink: /juego/index.html
 ---
 <div class="contenedor">
@@ -57,4 +57,4 @@ permalink: /juego/index.html
 @keyframes rachaSube{0%{transform:scale(1)}35%{transform:scale(1.12)}100%{transform:scale(1)}}
 @keyframes llamaSube{0%{transform:scale(.5)}50%{transform:scale(1.5)}100%{transform:scale(1)}}
 </style>
-<script src="{{ '/js/juego.js' | url }}?v={{ juego.generado }}" data-datos="{{ '/juego/jugadores.json' | url }}?v={{ juego.generado }}" id="scriptJuego"></script>
+<script src="{{ '/js/juego.js' | url }}?v={{ web.version }}" data-datos="{{ '/juego/jugadores.json' | url }}?v={{ juego.generado }}" id="scriptJuego"></script>

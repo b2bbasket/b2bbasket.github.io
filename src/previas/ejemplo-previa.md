@@ -4,7 +4,7 @@ visitante: "[EJEMPLO] Equipo B"
 date: 2026-11-02
 fecha_hora: "Texto de ejemplo: día y hora en horario peninsular"
 donde: "Texto de ejemplo: canal o plataforma"
-autor: "[Tu nombre]"
+autor: "Hugo Amigo Suárez"
 claves:
   - "Primera clave del partido, inventada para ver el diseño."
   - "Segunda clave del partido."

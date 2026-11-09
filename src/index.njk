@@ -47,6 +47,7 @@ permalink: /index.html
 })();
 </script>
 
+<h1 class="oculto-visual">{{ site.nombre }}: la NBA en español</h1>
 <section class="portada contenedor">
   {% if collections.portada.length %}
   <div class="slider revelar" id="slider" tabindex="0" aria-roledescription="carrusel" aria-label="Noticias destacadas">
@@ -57,9 +58,9 @@ permalink: /index.html
         <div class="hero__fondo"{% if fotoHero %} style="background-image:url('{{ fotoHero.src }}')"{% endif %}></div>
         <div class="hero__texto">
           {% for s in secciones %}{% if s.clave == a.data.seccion %}<span class="etiqueta">{{ s.menu }}</span>{% endif %}{% endfor %}
-          <h1 class="hero__titulo">{{ a.data.title }}</h1>
+          <h2 class="hero__titulo">{{ a.data.title }}</h2>
           <p>{{ a.data.resumen }}</p>
-          <small>Por {{ a.data.autor or "[Tu nombre]" }} · {{ a.date | fecha }}</small>
+          <small>Por {{ a.data.autor or site.autor }} · {{ a.date | fecha }}</small>
         </div>
       </a>
       {% endfor %}
