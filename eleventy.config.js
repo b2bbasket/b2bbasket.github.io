@@ -64,6 +64,17 @@ export default function (eleventyConfig) {
     const licencia = f.licencia_url ? `<a href="${esc(f.licencia_url)}" rel="license noopener">${esc(f.licencia)}</a>` : esc(f.licencia);
     return `<figure class="articulo__foto ${esc(clase)}"><img src="${url(f.src)}" alt="${esc(f.alt)}" loading="lazy"><figcaption>Foto: ${esc(f.autor)} · ${licencia} · <a href="${esc(f.origen)}" rel="noopener">Wikimedia Commons</a></figcaption></figure>`;
   });
+  // Foto de un artículo: la «Imagen principal» si la hay; si no, la del jugador indicado en «Jugador para la foto»
+  const slugJugador = (t) => String(t || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  eleventyConfig.addFilter("fotoArticulo", (data) => {
+    if (data.imagen) return { src: data.imagen, alt: data.title, credito: data.credito || "" };
+    if (!data.jugador_foto) return null;
+    const f = (data.fotos_jugadores || {})[slugJugador(data.jugador_foto)];
+    if (!f) return null;
+    const url = eleventyConfig.getFilter("url");
+    const licencia = f.licencia_url ? `<a href="${esc(f.licencia_url)}" rel="license noopener">${esc(f.licencia)}</a>` : esc(f.licencia);
+    return { src: url(f.src), alt: f.alt, credito: `Foto de archivo: ${esc(f.autor)} · ${licencia} · <a href="${esc(f.origen)}" rel="noopener">Wikimedia Commons</a>` };
+  });
   eleventyConfig.addFilter("fichaDe", (lista, nombre) => (lista || []).find((f) => f.data.nombre === nombre));
   // Clasificación: ordena por porcentaje de victorias
   eleventyConfig.addFilter("clasificar", (lista) =>

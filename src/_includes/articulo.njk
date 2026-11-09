@@ -10,7 +10,8 @@ layout: base.njk
   <h1>{{ title }}</h1>
   <p class="entradilla">{{ resumen }}</p>
   <p class="meta">Por <strong>{{ autor or "[Tu nombre]" }}</strong> · {{ page.date | fecha }} · {{ content | lectura }} min de lectura</p>
-  {% if imagen %}<figure class="articulo__foto"><img src="{{ imagen }}" alt="{{ title }}" loading="lazy"><figcaption>{{ credito }}</figcaption></figure>{% endif %}
+  {% set foto = { imagen: imagen, credito: credito, title: title, jugador_foto: jugador_foto, fotos_jugadores: fotos_jugadores } | fotoArticulo %}
+  {% if foto %}<figure class="articulo__foto"><img src="{{ foto.src }}" alt="{{ foto.alt }}"><figcaption>{{ foto.credito | safe }}</figcaption></figure>{% endif %}
   {{ content | safe }}
   <div class="compartir">
     <strong>Compartir</strong>
