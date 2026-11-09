@@ -1086,3 +1086,10 @@ html[data-tema="oscuro"] .racha--p{color:#FF7A5E}
   .cronologia__cuerpo{grid-template-columns:1fr}
   .cronologia__contenido h2{font-size:26px}
 }
+
+/* Portadas para redes (/portadas/) */
+.texto--ancho{max-width:900px}
+.portadas{display:grid;gap:28px;margin-top:24px}
+.portadas__item h2{font-size:22px;margin:0 0 10px}
+.portadas__item img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--linea)}
+.portadas__enlaces{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0 0}

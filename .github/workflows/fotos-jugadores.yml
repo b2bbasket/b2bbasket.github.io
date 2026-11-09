@@ -37,3 +37,4 @@ jobs:
           git pull --rebase --autostash
           git push
           gh workflow run publicar.yml
+          gh workflow run portadas.yml

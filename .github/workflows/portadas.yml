@@ -1,0 +1,50 @@
+name: Portadas automáticas
+# Crea una portada con el titular para cada artículo y previa (src/img/portadas)
+# y vuelve a publicar la web. Se lanza sola al publicar o editar un artículo,
+# o a mano: Actions → Portadas automáticas → Run workflow.
+on:
+  push:
+    branches: [main, claude/portadas-automaticas]
+    paths:
+      - src/articulos/**
+      - src/previas/**
+      - scripts/portadas.mjs
+  workflow_dispatch:
+    inputs:
+      todas:
+        description: "Rehacer todas las portadas (por ejemplo, tras cambiar el diseño)"
+        type: boolean
+        default: false
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: portadas
+  cancel-in-progress: false
+jobs:
+  portadas:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install
+      - run: npm run build
+      - name: Instalar el navegador que hace las capturas
+        run: |
+          npm install --no-save playwright@1.48.2
+          npx playwright install --with-deps chromium
+      - run: node scripts/portadas.mjs ${{ inputs.todas && '--todas' || '' }}
+      - name: Guardar y publicar
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -z "$(git status --porcelain src/img/portadas src/_data/portadas.json)" ]; then echo "Sin portadas nuevas"; exit 0; fi
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add -A src/img/portadas src/_data/portadas.json
+          git commit -m "Portadas automáticas de los artículos"
+          git pull --rebase --autostash
+          git push
+          gh workflow run publicar.yml
