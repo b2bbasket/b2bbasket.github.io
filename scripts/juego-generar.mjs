@@ -203,7 +203,7 @@ async function fichasWikipedia(articulos) {
       const wt = p.revisions?.[0]?.slots?.main?.content;
       if (!wt) continue;
       const c = infobox(wt);
-      if (c) out[redir[p.title] || p.title] = c;
+      if (c) { c.__titulo = p.title.replace(/ \([^)]*\)$/, ""); out[redir[p.title] || p.title] = c; }
     }
     console.log(`  Fichas de Wikipedia: ${Math.min(i + 40, articulos.length)} / ${articulos.length}`);
     await espera(500);
@@ -232,6 +232,8 @@ function construir(j, d, f) {
   if (!d.pais || !d.lugar) return falta("lugar", j);
   const pos = posicion(d.posiciones);
   if (!f) return falta("sin ficha en Wikipedia", j);
+  // El título del artículo tiene la grafía correcta (LeBron, Jokić...); la lista de All-Stars a veces no
+  if (f.__titulo) j = { ...j, nombre: f.__titulo };
   const eq = carrera(f);
   if (!eq) return falta("equipos sin años", j);
   if (!eq.length) return falta("sin equipos NBA en la ficha", j);
@@ -253,7 +255,7 @@ function construir(j, d, f) {
     `Fue elegido All-Star ${j.veces === 1 ? "una vez" : j.veces + " veces"}${j.veces > 1 ? `, entre ${j.primero} y ${j.ultimo}` : `, en ${j.primero}`}.`,
     draftTxt,
     `Nació en ${lugar}.${titulos ? ` Ganó ${titulos === 1 ? "un anillo" : titulos + " anillos"} de la NBA como jugador.` : ""}`,
-    `${nombres.length === 1 ? `Toda su carrera en la NBA la ${activo ? "ha pasado" : "pasó"} en los ${nombres[0]}` : `Equipos de la NBA, por orden: ${lista(nombres)}`}. Sus iniciales: ${iniciales}`,
+    `${nombres.length === 1 ? `Toda su carrera en la NBA la ${activo ? "ha pasado" : "pasó"} en ${/^Los /.test(nombres[0]) ? "" : "los "}${nombres[0]}` : `Equipos de la NBA, por orden: ${lista(nombres)}`}. Sus iniciales: ${iniciales}`,
   ];
   return { nombre: j.nombre, pistas, fuente: "https://en.wikipedia.org/wiki/" + encodeURIComponent(j.articulo.replace(/ /g, "_")) };
 }
@@ -286,4 +288,4 @@ fs.writeFileSync("src/_data/juego.json", JSON.stringify({
 }, null, 1) + "\n");
 console.log("Equipos no NBA más frecuentes (revisar que no falte ninguno): " + Object.entries(DESCONOCIDOS).sort((a, b) => b[1] - a[1]).slice(0, 60).map(([k, v]) => k + " " + v).join(" | "));
 // Muestra para revisar
-for (const j of finales.filter((j, i) =>  /^(Wilt Chamberlain|Kevin Duckworth|Wes Unseld|Pete Maravich|Shaquille O'Neal|Luka Dončić)$/.test(j.nombre))) console.log("\n" + j.nombre + "\n  - " + j.pistas.join("\n  - "));
+for (const j of finales.filter((j, i) =>  /^(LeBron James|Magic Johnson|Nikola Jokić|Michael Jordan)$/.test(j.nombre))) console.log("\n" + j.nombre + "\n  - " + j.pistas.join("\n  - "));
