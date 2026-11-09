@@ -22,3 +22,4 @@ jobs:
           test -f _site/juego/jugadores.json
           grep -q "repo: " _site/admin/config.yml && grep -q "collections:" _site/admin/config.yml
           head -12 _site/admin/config.yml
+          python3 -c "import yaml,sys; yaml.safe_load(open('_site/admin/config.yml')); print('config.yml del panel: OK')"
