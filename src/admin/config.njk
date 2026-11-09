@@ -47,6 +47,44 @@ public_folder: /img/subidas
       - { label: Crédito de la imagen, name: credito, widget: string, required: false }
       - { label: Texto del artículo, name: body, widget: markdown }
 
+  - name: leyendas
+    label: Grandes jugadores
+    label_singular: Perfil de jugador
+    folder: src/leyendas
+    create: true
+    extension: md
+    format: frontmatter
+    slug: "{{fields.nombre}}"
+    summary: "{{nombre}} · {{epoca_texto}}"
+    fields:
+      - { label: Nombre, name: nombre, widget: string }
+      - { label: Orden en la portada de la sección, name: orden, widget: number, value_type: int, hint: "El 1 sale como perfil destacado." }
+      - { label: Época (para el filtro), name: epoca, widget: select, options: [{ label: "Años 50 y 60", value: pioneros }, { label: "Años 70 y 80", value: setenta }, { label: "Años 90", value: noventa }, { label: "Siglo XXI", value: siglo21 }] }
+      - { label: Época (texto visible), name: epoca_texto, widget: string, hint: "Por ejemplo: Años 90" }
+      - { label: Posición, name: posicion, widget: string }
+      - { label: Equipos, name: clubes, widget: string, hint: "Separados por « · »" }
+      - { label: Foto (identificador de fotos.json o de fotos de jugadores), name: foto, widget: string, required: false, hint: "Déjalo vacío para mostrar las iniciales. Pídeme a Claude que busque una foto con licencia libre." }
+      - { label: Entradilla, name: entradilla, widget: text }
+      - label: Cifras destacadas (cuatro, todas verificadas)
+        name: cifras
+        widget: list
+        fields:
+          - { label: Valor, name: valor, widget: string }
+          - { label: Qué significa, name: etiqueta, widget: string }
+      - label: Momentos clave
+        name: hitos
+        widget: list
+        fields:
+          - { label: Año, name: ano, widget: string }
+          - { label: Qué pasó, name: texto, widget: string }
+      - label: Fuentes
+        name: fuentes
+        widget: list
+        fields:
+          - { label: Título, name: titulo, widget: string }
+          - { label: Enlace, name: url, widget: string }
+      - { label: Relato (introducción y apartados con ##), name: body, widget: markdown }
+
   - name: previas
     label: Previas de partido
     label_singular: Previa
