@@ -1,54 +1,54 @@
 {
- "fecha": "Jornada NBA del 7 de noviembre de 2026",
+ "fecha": "Jornada NBA del 8 de noviembre de 2026",
  "partidos": [
   {
-   "local": "Indiana Pacers",
-   "pl": 102,
-   "visitante": "Denver Nuggets",
-   "pv": 114,
-   "fecha": "2026-11-07"
+   "local": "Chicago Bulls",
+   "pl": 121,
+   "visitante": "Philadelphia 76ers",
+   "pv": 127,
+   "fecha": "2026-11-08"
   },
   {
-   "local": "Atlanta Hawks",
-   "pl": 124,
-   "visitante": "Brooklyn Nets",
+   "local": "Detroit Pistons",
+   "pl": 116,
+   "visitante": "Los Angeles Lakers",
    "pv": 121,
-   "fecha": "2026-11-07"
+   "fecha": "2026-11-08"
   },
   {
-   "local": "Cleveland Cavaliers",
+   "local": "Minnesota Timberwolves",
+   "pl": 115,
+   "visitante": "Utah Jazz",
+   "pv": 100,
+   "fecha": "2026-11-08"
+  },
+  {
+   "local": "Dallas Mavericks",
+   "pl": 130,
+   "visitante": "Brooklyn Nets",
+   "pv": 93,
+   "fecha": "2026-11-08"
+  },
+  {
+   "local": "Milwaukee Bucks",
    "pl": 97,
-   "visitante": "New York Knicks",
-   "pv": 109,
-   "fecha": "2026-11-07"
+   "visitante": "Boston Celtics",
+   "pv": 117,
+   "fecha": "2026-11-08"
   },
   {
-   "local": "Oklahoma City Thunder",
-   "pl": 114,
-   "visitante": "Washington Wizards",
-   "pv": 75,
-   "fecha": "2026-11-07"
+   "local": "Los Angeles Clippers",
+   "pl": 139,
+   "visitante": "New Orleans Pelicans",
+   "pv": 123,
+   "fecha": "2026-11-08"
   },
   {
-   "local": "Golden State Warriors",
-   "pl": 126,
-   "visitante": "Orlando Magic",
-   "pv": 119,
-   "fecha": "2026-11-07"
-  },
-  {
-   "local": "Phoenix Suns",
-   "pl": 102,
-   "visitante": "Houston Rockets",
-   "pv": 99,
-   "fecha": "2026-11-07"
-  },
-  {
-   "local": "Portland Trail Blazers",
-   "pl": 103,
-   "visitante": "San Antonio Spurs",
-   "pv": 125,
-   "fecha": "2026-11-07"
+   "local": "Sacramento Kings",
+   "pl": 108,
+   "visitante": "Miami Heat",
+   "pv": 114,
+   "fecha": "2026-11-08"
   }
  ]
 }
