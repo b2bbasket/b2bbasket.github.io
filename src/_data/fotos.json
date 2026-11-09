@@ -1,1 +1,152 @@
-{}
+{
+ "jordan": {
+  "src": "/img/fotos/jordan.jpg",
+  "alt": "Michael Jordan con los Chicago Bulls",
+  "archivo": "Jordan by Lipofsky 16577.jpg",
+  "origen": "https://commons.wikimedia.org/wiki/File:Jordan_by_Lipofsky_16577.jpg",
+  "autor": "Steve Lipofsky www.Basketballphoto.com",
+  "licencia": "CC BY-SA 3.0",
+  "licencia_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "restricciones": ""
+ },
+ "lebron": {
+  "src": "/img/fotos/lebron.jpg",
+  "alt": "LeBron James",
+  "archivo": "LeBron James (15662939969).jpg",
+  "origen": "https://commons.wikimedia.org/wiki/File:LeBron_James_(15662939969).jpg",
+  "autor": "Keith Allison from Hanover, MD, USA",
+  "licencia": "CC BY-SA 2.0",
+  "licencia_url": "https://creativecommons.org/licenses/by-sa/2.0",
+  "restricciones": ""
+ },
+ "kareem": {
+  "src": "/img/fotos/kareem.jpg",
+  "alt": "Kareem Abdul-Jabbar con los Lakers",
+  "archivo": "Kareem-Abdul-Jabbar Lipofsky.jpg",
+  "origen": "https://commons.wikimedia.org/wiki/File:Kareem-Abdul-Jabbar_Lipofsky.jpg",
+  "autor": "copyright Steve lipofsky www.Basketballphoto.com",
+  "licencia": "CC BY 3.0",
+  "licencia_url": "https://creativecommons.org/licenses/by/3.0",
+  "restricciones": ""
+ },
+ "magic": {
+  "src": "/img/fotos/magic.jpg",
+  "alt": "Magic Johnson con los Lakers",
+  "archivo": "Magic Lipofsky.jpg",
+  "origen": "https://commons.wikimedia.org/wiki/File:Magic_Lipofsky.jpg",
+  "autor": "[copyright held by Steve Lipofsky]",
+  "licencia": "CC BY-SA 3.0",
+  "licencia_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "restricciones": ""
+ },
+ "bird": {
+  "src": "/img/fotos/bird.jpg",
+  "alt": "Larry Bird con los Celtics",
+  "archivo": "Larry Bird Lipofsky (high quality).jpg",
+  "origen": "https://commons.wikimedia.org/wiki/File:Larry_Bird_Lipofsky_(high_quality).jpg",
+  "autor": "Steve Lipofsky www.Basketballphoto.com",
+  "licencia": "CC BY-SA 3.0",
+  "licencia_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "restricciones": ""
+ },
+ "russell": {
+  "src": "/img/fotos/russell.jpg",
+  "alt": "Bill Russell con los Celtics",
+  "archivo": "Bill Russell dribbling Boston Celtics.jpg",
+  "origen": "https://commons.wikimedia.org/wiki/File:Bill_Russell_dribbling_Boston_Celtics.jpg",
+  "autor": "Unknown author Unknown author",
+  "licencia": "Public domain",
+  "licencia_url": "",
+  "restricciones": ""
+ },
+ "chamberlain": {
+  "src": "/img/fotos/chamberlain.jpg",
+  "alt": "Wilt Chamberlain",
+  "archivo": "Wilt Chamberlain of the Los Angeles Lakers in the 1969 NBA World Championship Series.jpg",
+  "origen": "https://commons.wikimedia.org/wiki/File:Wilt_Chamberlain_of_the_Los_Angeles_Lakers_in_the_1969_NBA_World_Championship_Series.jpg",
+  "autor": "Unknown author Unknown author",
+  "licencia": "Public domain",
+  "licencia_url": "",
+  "restricciones": ""
+ },
+ "kobe": {
+  "src": "/img/fotos/kobe.jpg",
+  "alt": "Kobe Bryant con los Lakers",
+  "archivo": "Kobe Bryant 2014.jpg",
+  "origen": "https://commons.wikimedia.org/wiki/File:Kobe_Bryant_2014.jpg",
+  "autor": "Keith Allison",
+  "licencia": "CC BY-SA 2.0",
+  "licencia_url": "https://creativecommons.org/licenses/by-sa/2.0",
+  "restricciones": ""
+ },
+ "shaq": {
+  "src": "/img/fotos/shaq.jpg",
+  "alt": "Shaquille O'Neal",
+  "archivo": "Lipofsky Shaquille O'Neal.jpg",
+  "origen": "https://commons.wikimedia.org/wiki/File:Lipofsky_Shaquille_O%27Neal.jpg",
+  "autor": "Copyright by Steve Lipofsky Basketballphoto.com",
+  "licencia": "CC BY 3.0",
+  "licencia_url": "https://creativecommons.org/licenses/by/3.0",
+  "restricciones": ""
+ },
+ "duncan": {
+  "src": "/img/fotos/duncan.jpg",
+  "alt": "Tim Duncan con los Spurs",
+  "archivo": "TD shooting over Andrew Bynum.jpg",
+  "origen": "https://commons.wikimedia.org/wiki/File:TD_shooting_over_Andrew_Bynum.jpg",
+  "autor": "Michael248",
+  "licencia": "CC BY-SA 2.0",
+  "licencia_url": "https://creativecommons.org/licenses/by-sa/2.0",
+  "restricciones": ""
+ },
+ "seccion-equipos": {
+  "src": "/img/secciones/equipos.jpg",
+  "alt": "Pista del Madison Square Garden",
+  "archivo": "Madison Square Garden court.jpg",
+  "origen": "https://commons.wikimedia.org/wiki/File:Madison_Square_Garden_court.jpg",
+  "autor": "Ganley894 at English Wikipedia",
+  "licencia": "Public domain",
+  "licencia_url": "",
+  "restricciones": ""
+ },
+ "seccion-noticias": {
+  "src": "/img/secciones/noticias.jpg",
+  "alt": "Partido de la NBA entre Suns y Raptors",
+  "archivo": "NBA basketball, Raptors in Phoenix.jpg",
+  "origen": "https://commons.wikimedia.org/wiki/File:NBA_basketball,_Raptors_in_Phoenix.jpg",
+  "autor": "Cltjames",
+  "licencia": "CC0",
+  "licencia_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "restricciones": ""
+ },
+ "seccion-previas": {
+  "src": "/img/secciones/previas.jpg",
+  "alt": "Salto inicial de un partido de playoffs",
+  "archivo": "Bulls Pacers 2011 playoffs game 1 jump ball.jpg",
+  "origen": "https://commons.wikimedia.org/wiki/File:Bulls_Pacers_2011_playoffs_game_1_jump_ball.jpg",
+  "autor": "Tony B.",
+  "licencia": "CC BY-SA 2.0",
+  "licencia_url": "https://creativecommons.org/licenses/by-sa/2.0",
+  "restricciones": ""
+ },
+ "seccion-cronicas": {
+  "src": "/img/secciones/cronicas.jpg",
+  "alt": "Balón entrando en la canasta",
+  "archivo": "Basketball through hoop.jpg",
+  "origen": "https://commons.wikimedia.org/wiki/File:Basketball_through_hoop.jpg",
+  "autor": "Airman 1st Class Kerelin Molina",
+  "licencia": "Public domain",
+  "licencia_url": "",
+  "restricciones": ""
+ },
+ "seccion-guias": {
+  "src": "/img/secciones/guias.jpg",
+  "alt": "Red de una canasta",
+  "archivo": "Basketball net.jpg",
+  "origen": "https://commons.wikimedia.org/wiki/File:Basketball_net.jpg",
+  "autor": "J.smith",
+  "licencia": "CC BY-SA 4.0",
+  "licencia_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "restricciones": ""
+ }
+}
