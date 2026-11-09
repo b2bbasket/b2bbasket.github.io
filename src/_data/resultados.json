@@ -3,52 +3,80 @@
  "partidos": [
   {
    "local": "Chicago Bulls",
+   "al": "CHI",
    "pl": 121,
    "visitante": "Philadelphia 76ers",
+   "av": "PHI",
    "pv": 127,
-   "fecha": "2026-11-08"
+   "fecha": "2026-11-08",
+   "rl": "1-8",
+   "rv": "9-2"
   },
   {
    "local": "Detroit Pistons",
+   "al": "DET",
    "pl": 116,
    "visitante": "Los Angeles Lakers",
+   "av": "LAL",
    "pv": 121,
-   "fecha": "2026-11-08"
+   "fecha": "2026-11-08",
+   "rl": "6-3",
+   "rv": "9-2"
   },
   {
    "local": "Minnesota Timberwolves",
+   "al": "MIN",
    "pl": 115,
    "visitante": "Utah Jazz",
+   "av": "UTA",
    "pv": 100,
-   "fecha": "2026-11-08"
+   "fecha": "2026-11-08",
+   "rl": "8-3",
+   "rv": "1-9"
   },
   {
    "local": "Dallas Mavericks",
+   "al": "DAL",
    "pl": 130,
    "visitante": "Brooklyn Nets",
+   "av": "BKN",
    "pv": 93,
-   "fecha": "2026-11-08"
+   "fecha": "2026-11-08",
+   "rl": "6-4",
+   "rv": "2-8"
   },
   {
    "local": "Milwaukee Bucks",
+   "al": "MIL",
    "pl": 97,
    "visitante": "Boston Celtics",
+   "av": "BOS",
    "pv": 117,
-   "fecha": "2026-11-08"
+   "fecha": "2026-11-08",
+   "rl": "1-9",
+   "rv": "8-2"
   },
   {
    "local": "Los Angeles Clippers",
+   "al": "LAC",
    "pl": 139,
    "visitante": "New Orleans Pelicans",
+   "av": "NOP",
    "pv": 123,
-   "fecha": "2026-11-08"
+   "fecha": "2026-11-08",
+   "rl": "2-7",
+   "rv": "4-6"
   },
   {
    "local": "Sacramento Kings",
+   "al": "SAC",
    "pl": 108,
    "visitante": "Miami Heat",
+   "av": "MIA",
    "pv": 114,
-   "fecha": "2026-11-08"
+   "fecha": "2026-11-08",
+   "rl": "1-9",
+   "rv": "4-6"
   }
  ]
 }
