@@ -912,8 +912,8 @@ html[data-tema="oscuro"] .racha--p{color:#FF7A5E}
 .indice a{font-weight:600}
 .indice a:hover{color:var(--azul)}
 .articulo--guias{counter-reset:capitulo}
-.articulo--guias h2[id]:not(#fuentes){counter-increment:capitulo;padding-top:14px;border-top:2px solid var(--linea)}
-.articulo--guias h2[id]:not(#fuentes)::before{content:counter(capitulo,decimal-leading-zero);display:block;font:800 14px var(--cuerpo);letter-spacing:.12em;color:var(--azul);margin-bottom:4px}
+.articulo--guias > h2[id]:not(#fuentes){counter-increment:capitulo;padding-top:14px;border-top:2px solid var(--linea)}
+.articulo--guias > h2[id]:not(#fuentes)::before{content:counter(capitulo,decimal-leading-zero);display:block;font:800 14px var(--cuerpo);letter-spacing:.12em;color:var(--azul);margin-bottom:4px}
 .articulo--guias table{width:100%;border-collapse:collapse;margin:1.4em 0;font-size:15px}
 .articulo--guias th,.articulo--guias td{padding:10px 12px;border-bottom:1px solid var(--linea);text-align:left;vertical-align:top}
 .articulo--guias th{background:var(--tabla-cab,#F1EFE9);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
@@ -944,3 +944,13 @@ html[data-tema="oscuro"] .racha--p{color:#FF7A5E}
 .previa-tarjeta__duelo i{font-style:normal;font-weight:900;color:var(--amarillo)}
 .previa-tarjeta > small{font-size:12px;font-weight:700;color:var(--suave)}
 .previa-tarjeta h3{margin:0;font-family:var(--titulos);font-size:20px;line-height:1.2}
+.celda-equipo .n-corto{display:none}
+@media (max-width:520px){
+  .celda-equipo .n-largo{display:none}.celda-equipo .n-corto{display:inline}
+  .tabla--clasif th,.tabla--clasif td{padding-left:8px;padding-right:8px}
+  .marcador-final{grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);padding:14px 12px;gap:8px}
+  .marcador-final__nombre{display:none}
+  .marcador-final__eq,.marcador-final__eq:last-child{column-gap:8px}
+  .marcador-final__eq strong{font-size:40px}
+  .marcador-final__abr{font-size:18px}
+}

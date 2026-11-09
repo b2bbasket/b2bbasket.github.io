@@ -11,10 +11,10 @@ permalink: /clasificacion/index.html
   {% if T.destacados %}
   <section class="destacados revelar" aria-label="Datos destacados de la temporada">
     {% set D = T.destacados %}
-    <div class="destacado"><small>Mejor balance</small><strong>{{ D.balance.v }}-{{ D.balance.d }}</strong><span><b class="chip-abr">{{ D.balance.abr }}</b> {{ D.balance.nombre }}</span></div>
-    <div class="destacado"><small>Mejor racha activa</small><strong>{{ D.racha.rachaNum }} {{ "victoria" if D.racha.rachaNum == 1 else "victorias" }}</strong><span><b class="chip-abr">{{ D.racha.abr }}</b> {{ D.racha.nombre }}</span></div>
-    <div class="destacado"><small>Más puntos por partido</small><strong>{{ D.ataque.ataque | round(1) }}</strong><span><b class="chip-abr">{{ D.ataque.abr }}</b> {{ D.ataque.nombre }}</span></div>
-    <div class="destacado"><small>Menos puntos recibidos</small><strong>{{ D.defensa.defensa | round(1) }}</strong><span><b class="chip-abr">{{ D.defensa.abr }}</b> {{ D.defensa.nombre }}</span></div>
+    <div class="destacado"><small>Mejor balance</small><strong>{{ D.balance.v }}-{{ D.balance.d }}</strong><span><b class="chip-abr">{{ D.balance.abr }}</b> {{ D.balance.nombre | apodo }}</span></div>
+    <div class="destacado"><small>Mejor racha activa</small><strong>{{ D.racha.rachaNum }} {{ "victoria" if D.racha.rachaNum == 1 else "victorias" }}</strong><span><b class="chip-abr">{{ D.racha.abr }}</b> {{ D.racha.nombre | apodo }}</span></div>
+    <div class="destacado"><small>Más puntos por partido</small><strong>{{ D.ataque.ataque | round(1) }}</strong><span><b class="chip-abr">{{ D.ataque.abr }}</b> {{ D.ataque.nombre | apodo }}</span></div>
+    <div class="destacado"><small>Menos puntos recibidos</small><strong>{{ D.defensa.defensa | round(1) }}</strong><span><b class="chip-abr">{{ D.defensa.abr }}</b> {{ D.defensa.nombre | apodo }}</span></div>
   </section>
   {% endif %}
 
@@ -26,15 +26,15 @@ permalink: /clasificacion/index.html
       <h2 class="seccion__titulo">Conferencia {{ conf }}</h2>
       {% if lista.length %}
       <div class="tabla-envoltorio"><table class="tabla tabla--clasif">
-        <thead><tr><th>#</th><th>Equipo</th><th>V</th><th>D</th><th>%</th><th>DIF</th><th class="col-extra">Casa</th><th class="col-extra">Fuera</th><th class="col-media">U10</th><th>Racha</th></tr></thead>
+        <thead><tr><th>#</th><th>Equipo</th><th>V</th><th>D</th><th>%</th><th class="col-media">DIF</th><th class="col-extra">Casa</th><th class="col-extra">Fuera</th><th class="col-media">U10</th><th>Racha</th></tr></thead>
         <tbody>
         {% for e in lista %}
           {% set f = collections.fichas | fichaDe(e.nombre) %}
           <tr class="{% if e.puesto <= 6 %}fila-playoff{% elif e.puesto <= 10 %}fila-playin{% endif %}{% if e.puesto == 6 or e.puesto == 10 %} fila-corte{% endif %}">
             <td>{{ e.puesto }}</td>
-            <td class="celda-equipo"><b class="chip-abr">{{ e.abr }}</b>{% if f %}<a href="{{ f.url | url }}">{{ e.nombre }}</a>{% else %}{{ e.nombre }}{% endif %}</td>
+            <td class="celda-equipo"><b class="chip-abr">{{ e.abr }}</b>{% if f %}<a href="{{ f.url | url }}">{% endif %}<span class="n-largo">{{ e.nombre }}</span><span class="n-corto">{{ e.nombre | apodo }}</span>{% if f %}</a>{% endif %}</td>
             <td>{{ e.v }}</td><td>{{ e.d }}</td><td>{{ e.pct | porcentaje }}</td>
-            <td>{% if e.dif == 0 %}—{% else %}{{ e.dif }}{% endif %}</td>
+            <td class="col-media">{% if e.dif == 0 %}—{% else %}{{ e.dif }}{% endif %}</td>
             <td class="col-extra">{{ e.casa.v }}-{{ e.casa.d }}</td><td class="col-extra">{{ e.fuera.v }}-{{ e.fuera.d }}</td>
             <td class="col-media">{{ e.ultimos10.v }}-{{ e.ultimos10.d }}</td>
             <td><span class="racha racha--{{ 'g' if e.rachaNum > 0 else 'p' }}">{{ e.racha }}</span></td>
