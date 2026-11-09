@@ -1,165 +1,165 @@
 {
- "actualizado": "Pendiente de actualizar (se actualiza cada semana)",
+ "actualizado": "9 de noviembre de 2026",
  "puntos": [
   {
-   "jugador": "[Jugador]",
-   "equipo": "[Equipo]",
-   "valor": ""
+   "jugador": "Luka Dončić",
+   "equipo": "Los Angeles Lakers",
+   "valor": "40,1"
   },
   {
-   "jugador": "[Jugador]",
-   "equipo": "[Equipo]",
-   "valor": ""
+   "jugador": "Stephen Curry",
+   "equipo": "Golden State Warriors",
+   "valor": "31,3"
   },
   {
-   "jugador": "[Jugador]",
-   "equipo": "[Equipo]",
-   "valor": ""
+   "jugador": "Shai Gilgeous-Alexander",
+   "equipo": "Oklahoma City Thunder",
+   "valor": "29,9"
   },
   {
-   "jugador": "[Jugador]",
-   "equipo": "[Equipo]",
-   "valor": ""
+   "jugador": "Victor Wembanyama",
+   "equipo": "San Antonio Spurs",
+   "valor": "29,1"
   },
   {
-   "jugador": "[Jugador]",
-   "equipo": "[Equipo]",
-   "valor": ""
+   "jugador": "Jayson Tatum",
+   "equipo": "Boston Celtics",
+   "valor": "27,9"
   }
  ],
  "rebotes": [
   {
-   "jugador": "[Jugador]",
-   "equipo": "[Equipo]",
-   "valor": ""
+   "jugador": "Domantas Sabonis",
+   "equipo": "Sacramento Kings",
+   "valor": "14,6"
   },
   {
-   "jugador": "[Jugador]",
-   "equipo": "[Equipo]",
-   "valor": ""
+   "jugador": "Karl-Anthony Towns",
+   "equipo": "New York Knicks",
+   "valor": "13,6"
   },
   {
-   "jugador": "[Jugador]",
-   "equipo": "[Equipo]",
-   "valor": ""
+   "jugador": "Giannis Antetokounmpo",
+   "equipo": "Miami Heat",
+   "valor": "12,7"
   },
   {
-   "jugador": "[Jugador]",
-   "equipo": "[Equipo]",
-   "valor": ""
+   "jugador": "Victor Wembanyama",
+   "equipo": "San Antonio Spurs",
+   "valor": "12,0"
   },
   {
-   "jugador": "[Jugador]",
-   "equipo": "[Equipo]",
-   "valor": ""
+   "jugador": "Rudy Gobert",
+   "equipo": "Minnesota Timberwolves",
+   "valor": "11,8"
   }
  ],
  "asistencias": [
   {
-   "jugador": "[Jugador]",
-   "equipo": "[Equipo]",
-   "valor": ""
+   "jugador": "Nikola Jokić",
+   "equipo": "Denver Nuggets",
+   "valor": "9,1"
   },
   {
-   "jugador": "[Jugador]",
-   "equipo": "[Equipo]",
-   "valor": ""
+   "jugador": "Trae Young",
+   "equipo": "Washington Wizards",
+   "valor": "8,9"
   },
   {
-   "jugador": "[Jugador]",
-   "equipo": "[Equipo]",
-   "valor": ""
+   "jugador": "Franz Wagner",
+   "equipo": "Orlando Magic",
+   "valor": "8,8"
   },
   {
-   "jugador": "[Jugador]",
-   "equipo": "[Equipo]",
-   "valor": ""
+   "jugador": "Davion Mitchell",
+   "equipo": "Miami Heat",
+   "valor": "8,2"
   },
   {
-   "jugador": "[Jugador]",
-   "equipo": "[Equipo]",
-   "valor": ""
+   "jugador": "Jayson Tatum",
+   "equipo": "Boston Celtics",
+   "valor": "8,0"
   }
  ],
  "tapones": [
   {
-   "jugador": "[Jugador]",
-   "equipo": "[Equipo]",
-   "valor": ""
+   "jugador": "Victor Wembanyama",
+   "equipo": "San Antonio Spurs",
+   "valor": "3,9"
   },
   {
-   "jugador": "[Jugador]",
-   "equipo": "[Equipo]",
-   "valor": ""
+   "jugador": "Myles Turner",
+   "equipo": "Milwaukee Bucks",
+   "valor": "2,7"
   },
   {
-   "jugador": "[Jugador]",
-   "equipo": "[Equipo]",
-   "valor": ""
+   "jugador": "Walker Kessler",
+   "equipo": "Los Angeles Lakers",
+   "valor": "2,4"
   },
   {
-   "jugador": "[Jugador]",
-   "equipo": "[Equipo]",
-   "valor": ""
+   "jugador": "Donovan Clingan",
+   "equipo": "Portland Trail Blazers",
+   "valor": "2,1"
   },
   {
-   "jugador": "[Jugador]",
-   "equipo": "[Equipo]",
-   "valor": ""
+   "jugador": "Aday Mara",
+   "equipo": "Oklahoma City Thunder",
+   "valor": "1,9"
   }
  ],
  "robos": [
   {
-   "jugador": "[Jugador]",
-   "equipo": "[Equipo]",
-   "valor": ""
+   "jugador": "Dyson Daniels",
+   "equipo": "Atlanta Hawks",
+   "valor": "2,9"
   },
   {
-   "jugador": "[Jugador]",
-   "equipo": "[Equipo]",
-   "valor": ""
+   "jugador": "Kris Dunn",
+   "equipo": "Los Angeles Clippers",
+   "valor": "2,8"
   },
   {
-   "jugador": "[Jugador]",
-   "equipo": "[Equipo]",
-   "valor": ""
+   "jugador": "Zion Williamson",
+   "equipo": "New Orleans Pelicans",
+   "valor": "2,4"
   },
   {
-   "jugador": "[Jugador]",
-   "equipo": "[Equipo]",
-   "valor": ""
+   "jugador": "Paul George",
+   "equipo": "Boston Celtics",
+   "valor": "2,4"
   },
   {
-   "jugador": "[Jugador]",
-   "equipo": "[Equipo]",
-   "valor": ""
+   "jugador": "Collin Gillespie",
+   "equipo": "Phoenix Suns",
+   "valor": "2,4"
   }
  ],
  "triples": [
   {
-   "jugador": "[Jugador]",
-   "equipo": "[Equipo]",
-   "valor": ""
+   "jugador": "Luka Dončić",
+   "equipo": "Los Angeles Lakers",
+   "valor": "5,8"
   },
   {
-   "jugador": "[Jugador]",
-   "equipo": "[Equipo]",
-   "valor": ""
+   "jugador": "Stephen Curry",
+   "equipo": "Golden State Warriors",
+   "valor": "4,8"
   },
   {
-   "jugador": "[Jugador]",
-   "equipo": "[Equipo]",
-   "valor": ""
+   "jugador": "Duncan Robinson",
+   "equipo": "Detroit Pistons",
+   "valor": "4,4"
   },
   {
-   "jugador": "[Jugador]",
-   "equipo": "[Equipo]",
-   "valor": ""
+   "jugador": "Nickeil Alexander-Walker",
+   "equipo": "Atlanta Hawks",
+   "valor": "3,9"
   },
   {
-   "jugador": "[Jugador]",
-   "equipo": "[Equipo]",
-   "valor": ""
+   "jugador": "Jamal Murray",
+   "equipo": "Denver Nuggets",
+   "valor": "3,9"
   }
  ]
 }
