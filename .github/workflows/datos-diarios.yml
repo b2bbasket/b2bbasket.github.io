@@ -1,10 +1,14 @@
 name: Actualizar datos
 on:
   schedule:
-    # 07:17 UTC = 8:17 en España en invierno (9:17 en verano). Los minutos raros evitan las horas punta de GitHub.
+    # GitHub no garantiza la hora de las tareas programadas: a veces las retrasa o se las salta.
+    # Por eso hay varias pasadas cada mañana. Si no hay partidos nuevos, no cambia nada ni publica.
+    # Horas en UTC: en invierno, España = UTC+1 (6:47, 7:47, 8:17, 9:17, 11:17).
+    - cron: '47 5 * * *'
+    - cron: '47 6 * * *'
     - cron: '17 7 * * *'
-    # Segunda pasada de seguridad por si GitHub retrasa o se salta la primera (si no hay cambios, no hace nada)
-    - cron: '17 9 * * *'
+    - cron: '17 8 * * *'
+    - cron: '17 10 * * *'
   workflow_dispatch:
 permissions:
   contents: write
