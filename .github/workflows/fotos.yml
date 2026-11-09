@@ -1,7 +1,11 @@
 name: Descargar fotos
-# Se lanza a mano (Actions → Descargar fotos → Run workflow).
+# Se lanza solo cuando cambia la lista de fotos (src/_data/fotos-lista.json) o a mano
+# (Actions → Descargar fotos → Run workflow).
 # Comprueba la licencia de cada foto en Wikimedia Commons, la descarga y guarda los créditos.
 on:
+  push:
+    paths:
+      - src/_data/fotos-lista.json
   workflow_dispatch:
 permissions:
   contents: write
