@@ -4,7 +4,7 @@ name: Portadas automáticas
 # o a mano: Actions → Portadas automáticas → Run workflow.
 on:
   push:
-    branches: [main, claude/portadas-automaticas]
+    branches: [main]
     paths:
       - src/articulos/**
       - src/previas/**
