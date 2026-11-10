@@ -1,10 +1,10 @@
 {
- "actualizado": "9 de noviembre de 2026 (automático)",
+ "actualizado": "10 de noviembre de 2026 (automático)",
  "este": [
   {
    "equipo": "Atlanta Hawks",
    "v": 7,
-   "d": 4
+   "d": 5
   },
   {
    "equipo": "Boston Celtics",
@@ -18,7 +18,7 @@
   },
   {
    "equipo": "Charlotte Hornets",
-   "v": 3,
+   "v": 4,
    "d": 7
   },
   {
@@ -29,17 +29,17 @@
   {
    "equipo": "Cleveland Cavaliers",
    "v": 5,
-   "d": 5
+   "d": 6
   },
   {
    "equipo": "Detroit Pistons",
-   "v": 6,
+   "v": 7,
    "d": 3
   },
   {
    "equipo": "Indiana Pacers",
    "v": 3,
-   "d": 7
+   "d": 8
   },
   {
    "equipo": "Miami Heat",
@@ -69,33 +69,33 @@
   {
    "equipo": "Toronto Raptors",
    "v": 5,
-   "d": 4
+   "d": 5
   },
   {
    "equipo": "Washington Wizards",
    "v": 4,
-   "d": 6
+   "d": 7
   }
  ],
  "oeste": [
   {
    "equipo": "Dallas Mavericks",
-   "v": 6,
+   "v": 7,
    "d": 4
   },
   {
    "equipo": "Denver Nuggets",
    "v": 5,
-   "d": 3
+   "d": 4
   },
   {
    "equipo": "Golden State Warriors",
-   "v": 7,
+   "v": 8,
    "d": 3
   },
   {
    "equipo": "Houston Rockets",
-   "v": 7,
+   "v": 8,
    "d": 3
   },
   {
@@ -105,12 +105,12 @@
   },
   {
    "equipo": "Los Angeles Lakers",
-   "v": 9,
+   "v": 10,
    "d": 2
   },
   {
    "equipo": "Memphis Grizzlies",
-   "v": 6,
+   "v": 7,
    "d": 3
   },
   {
@@ -121,7 +121,7 @@
   {
    "equipo": "New Orleans Pelicans",
    "v": 4,
-   "d": 6
+   "d": 7
   },
   {
    "equipo": "Oklahoma City Thunder",
@@ -131,7 +131,7 @@
   {
    "equipo": "Phoenix Suns",
    "v": 3,
-   "d": 5
+   "d": 6
   },
   {
    "equipo": "Portland Trail Blazers",
@@ -145,7 +145,7 @@
   },
   {
    "equipo": "San Antonio Spurs",
-   "v": 8,
+   "v": 9,
    "d": 2
   },
   {
