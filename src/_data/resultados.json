@@ -1,93 +1,71 @@
 {
- "fecha": "Jornada NBA del 9 de noviembre de 2026",
+ "fecha": "Jornada NBA del 10 de noviembre de 2026",
  "partidos": [
   {
-   "local": "Atlanta Hawks",
-   "al": "ATL",
-   "pl": 114,
-   "visitante": "Los Angeles Lakers",
-   "av": "LAL",
-   "pv": 124,
-   "fecha": "2026-11-09",
-   "rl": "7-5",
-   "rv": "10-2"
+   "local": "New York Knicks",
+   "al": "NYK",
+   "pl": 117,
+   "visitante": "Milwaukee Bucks",
+   "av": "MIL",
+   "pv": 85,
+   "fecha": "2026-11-10",
+   "rl": "6-4",
+   "rv": "1-10"
   },
   {
-   "local": "Charlotte Hornets",
-   "al": "CHA",
-   "pl": 124,
-   "visitante": "Cleveland Cavaliers",
-   "av": "CLE",
-   "pv": 112,
-   "fecha": "2026-11-09",
-   "rl": "4-7",
-   "rv": "5-6"
-  },
-  {
-   "local": "Detroit Pistons",
-   "al": "DET",
-   "pl": 122,
-   "visitante": "Washington Wizards",
-   "av": "WAS",
-   "pv": 111,
-   "fecha": "2026-11-09",
-   "rl": "7-3",
-   "rv": "4-7"
-  },
-  {
-   "local": "Toronto Raptors",
-   "al": "TOR",
-   "pl": 102,
-   "visitante": "Memphis Grizzlies",
-   "av": "MEM",
-   "pv": 118,
-   "fecha": "2026-11-09",
-   "rl": "5-5",
-   "rv": "7-3"
-  },
-  {
-   "local": "Dallas Mavericks",
-   "al": "DAL",
-   "pl": 125,
-   "visitante": "Indiana Pacers",
-   "av": "IND",
-   "pv": 122,
-   "fecha": "2026-11-09",
-   "rl": "7-4",
-   "rv": "3-8"
-  },
-  {
-   "local": "Houston Rockets",
-   "al": "HOU",
-   "pl": 110,
-   "visitante": "Denver Nuggets",
-   "av": "DEN",
-   "pv": 100,
-   "fecha": "2026-11-09",
-   "rl": "8-3",
-   "rv": "5-4"
+   "local": "Philadelphia 76ers",
+   "al": "PHI",
+   "pl": 101,
+   "visitante": "Boston Celtics",
+   "av": "BOS",
+   "pv": 123,
+   "fecha": "2026-11-10",
+   "rl": "9-3",
+   "rv": "9-2"
   },
   {
    "local": "Phoenix Suns",
    "al": "PHX",
-   "pl": 96,
-   "visitante": "San Antonio Spurs",
-   "av": "SAS",
-   "pv": 122,
-   "fecha": "2026-11-09",
-   "rl": "3-6",
-   "rv": "9-2"
+   "pl": 133,
+   "visitante": "Los Angeles Clippers",
+   "av": "LAC",
+   "pv": 110,
+   "fecha": "2026-11-10",
+   "rl": "4-6",
+   "rv": "2-8"
   },
   {
-   "local": "Golden State Warriors",
-   "al": "GSW",
-   "pl": 138,
-   "visitante": "New Orleans Pelicans",
-   "av": "NOP",
-   "pv": 87,
-   "fecha": "2026-11-09",
-   "rl": "8-3",
-   "rv": "4-7"
+   "local": "Utah Jazz",
+   "al": "UTA",
+   "pl": 109,
+   "visitante": "Miami Heat",
+   "av": "MIA",
+   "pv": 115,
+   "fecha": "2026-11-10",
+   "rl": "1-10",
+   "rv": "5-6"
+  },
+  {
+   "local": "Sacramento Kings",
+   "al": "SAC",
+   "pl": 100,
+   "visitante": "Orlando Magic",
+   "av": "ORL",
+   "pv": 107,
+   "fecha": "2026-11-10",
+   "rl": "1-10",
+   "rv": "3-7"
+  },
+  {
+   "local": "Portland Trail Blazers",
+   "al": "POR",
+   "pl": 123,
+   "visitante": "Oklahoma City Thunder",
+   "av": "OKC",
+   "pv": 103,
+   "fecha": "2026-11-10",
+   "rl": "7-3",
+   "rv": "8-3"
   }
  ]
 }
