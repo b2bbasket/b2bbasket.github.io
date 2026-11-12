@@ -1,0 +1,34 @@
+name: Vigilante de datos
+# Mantiene al día calendario en directo, resultados y clasificación (ver scripts/vigilante.sh).
+# Funciona en cadena: cada turno dura unas 5 h 30 min y al terminar lanza el siguiente.
+# Las tareas programadas de abajo solo son de respaldo, por si la cadena se rompe:
+# si ya hay un turno en marcha, esperan y no duplican nada.
+on:
+  workflow_dispatch:
+  push:
+    # arranca solo al aprobar cambios en el vigilante
+    branches: [main]
+    paths:
+      - scripts/vigilante.sh
+      - .github/workflows/vigilante.yml
+  schedule:
+    - cron: '41 */4 * * *'
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: vigilante
+  cancel-in-progress: false
+jobs:
+  vigilar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - run: bash scripts/vigilante.sh
+        env:
+          BALLDONTLIE_API_KEY: ${{ secrets.BALLDONTLIE_API_KEY }}
+          GH_TOKEN: ${{ github.token }}

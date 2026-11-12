@@ -64,7 +64,8 @@
   function estado(p) {
     if (p.e === 'F') return 'final';
     if (p.e === 'A') return 'aplazado';
-    if (p.e === 'L') return 'directo';
+    // Si los datos se quedaron a medias (más de 4 horas desde el inicio), no se muestra un cuarto antiguo
+    if (p.e === 'L') return (p.t && Date.now() > Date.parse(p.t) + 4 * 3600000) ? 'pendiente' : 'directo';
     if (p.t && Date.now() > Date.parse(p.t) + 10 * 60000) return 'pendiente';
     return 'proximo';
   }

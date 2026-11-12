@@ -11,10 +11,10 @@ permalink: /equipos/index.html
   </div>
   <div class="selector-conf" role="group" aria-label="Elegir conferencia">
     <button type="button" class="filtro activo" data-conf="todas">Todas</button>
-    <button type="button" class="filtro" data-conf="este">Este</button>
     <button type="button" class="filtro" data-conf="oeste">Oeste</button>
+    <button type="button" class="filtro" data-conf="este">Este</button>
   </div>
-  {% for conferencia, divisiones in equipos %}
+  {% for conferencia in ["Conferencia Oeste", "Conferencia Este"] %}{% set divisiones = equipos[conferencia] %}
   <section class="conferencia" data-conf="{{ 'este' if 'Este' in conferencia else 'oeste' }}">
     <h2 class="seccion__titulo revelar">{{ conferencia }}</h2>
     <div class="divisiones">
