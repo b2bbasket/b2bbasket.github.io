@@ -1,5 +1,5 @@
 {
- "actualizado": "11 de noviembre de 2026 (automático)",
+ "actualizado": "12 de noviembre de 2026 (automático)",
  "este": [
   {
    "equipo": "Atlanta Hawks",
@@ -8,12 +8,12 @@
   },
   {
    "equipo": "Boston Celtics",
-   "v": 9,
+   "v": 10,
    "d": 2
   },
   {
    "equipo": "Brooklyn Nets",
-   "v": 2,
+   "v": 3,
    "d": 8
   },
   {
@@ -24,11 +24,11 @@
   {
    "equipo": "Chicago Bulls",
    "v": 1,
-   "d": 8
+   "d": 9
   },
   {
    "equipo": "Cleveland Cavaliers",
-   "v": 5,
+   "v": 6,
    "d": 6
   },
   {
@@ -38,7 +38,7 @@
   },
   {
    "equipo": "Indiana Pacers",
-   "v": 3,
+   "v": 4,
    "d": 8
   },
   {
@@ -49,16 +49,16 @@
   {
    "equipo": "Milwaukee Bucks",
    "v": 1,
-   "d": 10
+   "d": 11
   },
   {
    "equipo": "New York Knicks",
    "v": 6,
-   "d": 4
+   "d": 5
   },
   {
    "equipo": "Orlando Magic",
-   "v": 3,
+   "v": 4,
    "d": 7
   },
   {
@@ -69,12 +69,12 @@
   {
    "equipo": "Toronto Raptors",
    "v": 5,
-   "d": 5
+   "d": 6
   },
   {
    "equipo": "Washington Wizards",
    "v": 4,
-   "d": 7
+   "d": 8
   }
  ],
  "oeste": [
@@ -85,17 +85,17 @@
   },
   {
    "equipo": "Denver Nuggets",
-   "v": 5,
+   "v": 6,
    "d": 4
   },
   {
    "equipo": "Golden State Warriors",
    "v": 8,
-   "d": 3
+   "d": 4
   },
   {
    "equipo": "Houston Rockets",
-   "v": 8,
+   "v": 9,
    "d": 3
   },
   {
@@ -105,13 +105,13 @@
   },
   {
    "equipo": "Los Angeles Lakers",
-   "v": 10,
+   "v": 11,
    "d": 2
   },
   {
    "equipo": "Memphis Grizzlies",
    "v": 7,
-   "d": 3
+   "d": 4
   },
   {
    "equipo": "Minnesota Timberwolves",
@@ -121,12 +121,12 @@
   {
    "equipo": "New Orleans Pelicans",
    "v": 4,
-   "d": 7
+   "d": 8
   },
   {
    "equipo": "Oklahoma City Thunder",
    "v": 8,
-   "d": 3
+   "d": 4
   },
   {
    "equipo": "Phoenix Suns",
@@ -135,7 +135,7 @@
   },
   {
    "equipo": "Portland Trail Blazers",
-   "v": 7,
+   "v": 8,
    "d": 3
   },
   {
@@ -145,13 +145,13 @@
   },
   {
    "equipo": "San Antonio Spurs",
-   "v": 9,
+   "v": 10,
    "d": 2
   },
   {
    "equipo": "Utah Jazz",
    "v": 1,
-   "d": 10
+   "d": 11
   }
  ]
 }
