@@ -20,7 +20,7 @@ permalink: /clasificacion/index.html
 
   <p class="leyenda"><span class="punto punto--playoff"></span> Playoffs directos (1-6) &nbsp; <span class="punto punto--playin"></span> Play-in (7-10) &nbsp; · &nbsp; <abbr title="Partidos de diferencia con el líder">DIF</abbr>: partidos por detrás del primero · <abbr title="Últimos diez partidos">U10</abbr>: últimos 10</p>
   <div class="tablas tablas--clasif">
-    {% for conf in ["Este", "Oeste"] %}
+    {% for conf in ["Oeste", "Este"] %}
     {% set lista = T.conferencias[conf] if T.partidosJugados else [] %}
     <section class="revelar">
       <h2 class="seccion__titulo">Conferencia {{ conf }}</h2>

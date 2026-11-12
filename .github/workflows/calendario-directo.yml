@@ -1,8 +1,6 @@
 name: Calendario en directo
 on:
-  schedule:
-    # cada 30 minutos entre las 17:00 y las 07:59 UTC (horas en las que hay partidos)
-    - cron: '*/30 17-23,0-7 * * *'
+  # El directo lo actualiza ahora el «Vigilante de datos» (vigilante.yml). Este flujo queda para lanzarlo a mano.
   workflow_dispatch:
 permissions:
   contents: write
@@ -14,10 +12,10 @@ jobs:
   directo:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
-          node-version: 20
+          node-version: 22
       - run: node scripts/calendario-directo.mjs
         env:
           BALLDONTLIE_API_KEY: ${{ secrets.BALLDONTLIE_API_KEY }}
