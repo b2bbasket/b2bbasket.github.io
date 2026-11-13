@@ -1,115 +1,16 @@
 {
- "fecha": "Jornada NBA del 11 de noviembre de 2026",
+ "fecha": "Jornada NBA del 12 de noviembre de 2026",
  "partidos": [
   {
-   "local": "Indiana Pacers",
-   "al": "IND",
-   "pl": 114,
-   "visitante": "Washington Wizards",
-   "av": "WAS",
-   "pv": 101,
-   "fecha": "2026-11-11",
-   "rl": "4-8",
-   "rv": "4-8"
-  },
-  {
-   "local": "New York Knicks",
-   "al": "NYK",
-   "pl": 107,
-   "visitante": "Cleveland Cavaliers",
-   "av": "CLE",
-   "pv": 115,
-   "fecha": "2026-11-11",
-   "rl": "6-5",
-   "rv": "6-6"
-  },
-  {
-   "local": "Toronto Raptors",
-   "al": "TOR",
-   "pl": 93,
-   "visitante": "Boston Celtics",
-   "av": "BOS",
-   "pv": 98,
-   "fecha": "2026-11-11",
-   "rl": "5-6",
-   "rv": "10-2"
-  },
-  {
-   "local": "Chicago Bulls",
-   "al": "CHI",
-   "pl": 119,
-   "visitante": "San Antonio Spurs",
-   "av": "SAS",
-   "pv": 124,
-   "fecha": "2026-11-11",
-   "rl": "1-9",
-   "rv": "10-2"
-  },
-  {
-   "local": "Memphis Grizzlies",
-   "al": "MEM",
-   "pl": 118,
-   "visitante": "Denver Nuggets",
-   "av": "DEN",
-   "pv": 123,
-   "fecha": "2026-11-11",
-   "rl": "7-4",
-   "rv": "6-4"
-  },
-  {
-   "local": "Milwaukee Bucks",
-   "al": "MIL",
-   "pl": 112,
-   "visitante": "Los Angeles Lakers",
-   "av": "LAL",
-   "pv": 123,
-   "fecha": "2026-11-11",
-   "rl": "1-11",
-   "rv": "11-2"
-  },
-  {
-   "local": "New Orleans Pelicans",
-   "al": "NOP",
-   "pl": 111,
-   "visitante": "Brooklyn Nets",
-   "av": "BKN",
-   "pv": 145,
-   "fecha": "2026-11-11",
-   "rl": "4-8",
-   "rv": "3-8"
-  },
-  {
-   "local": "Utah Jazz",
-   "al": "UTA",
-   "pl": 108,
-   "visitante": "Orlando Magic",
-   "av": "ORL",
-   "pv": 123,
-   "fecha": "2026-11-11",
-   "rl": "1-11",
-   "rv": "4-7"
-  },
-  {
-   "local": "Houston Rockets",
-   "al": "HOU",
-   "pl": 115,
-   "visitante": "Golden State Warriors",
-   "av": "GSW",
-   "pv": 108,
-   "fecha": "2026-11-11",
-   "rl": "9-3",
-   "rv": "8-4"
-  },
-  {
-   "local": "Portland Trail Blazers",
-   "al": "POR",
-   "pl": 118,
-   "visitante": "Oklahoma City Thunder",
-   "av": "OKC",
-   "pv": 108,
-   "fecha": "2026-11-11",
-   "rl": "8-3",
-   "rv": "8-4"
+   "local": "Philadelphia 76ers",
+   "al": "PHI",
+   "pl": 123,
+   "visitante": "Toronto Raptors",
+   "av": "TOR",
+   "pv": 112,
+   "fecha": "2026-11-12",
+   "rl": "10-3",
+   "rv": "5-7"
   }
  ]
 }
