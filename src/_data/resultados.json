@@ -11,6 +11,28 @@
    "fecha": "2026-11-12",
    "rl": "10-3",
    "rv": "5-7"
+  },
+  {
+   "local": "Washington Wizards",
+   "al": "WAS",
+   "pl": 140,
+   "visitante": "Detroit Pistons",
+   "av": "DET",
+   "pv": 144,
+   "fecha": "2026-11-12",
+   "rl": "4-9",
+   "rv": "8-3"
+  },
+  {
+   "local": "Minnesota Timberwolves",
+   "al": "MIN",
+   "pl": 133,
+   "visitante": "Dallas Mavericks",
+   "av": "DAL",
+   "pv": 94,
+   "fecha": "2026-11-12",
+   "rl": "9-3",
+   "rv": "7-5"
   }
  ]
 }
