@@ -24,26 +24,48 @@ permalink: /index.html
     </span>
     <span class="juego-hero__accion">
       <span class="juego-hero__estado" id="juegoHeroEstado" hidden></span>
+      <span class="juego-hero__progreso" id="juegoHeroProgreso" aria-label="Tu racha: 0 · Tus puntos: 0">
+        <span class="jh-racha" id="juegoHeroRacha" aria-hidden="true">
+          <svg class="jh-racha__fuego" viewBox="0 0 32 40" width="34" height="42"><defs><linearGradient id="jhFuego" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#FF4B2B"/><stop offset=".6" stop-color="#FF8A3D"/><stop offset="1" stop-color="#FFC93C"/></linearGradient></defs><path d="M16 1c1.5 6.5 9.5 10.5 9.5 21.5C25.5 32 21 38 16 38S6.5 32 6.5 23.5c0-5 2.5-8.5 5-10.5-.3 3.5 1 6 3 7C14 13 15.5 7 16 1z"/></svg>
+          <b class="jh-racha__num" id="juegoHeroRachaNum">0</b>
+        </span>
+        <span class="jh-puntos" aria-hidden="true"><b id="juegoHeroPuntos">0</b><small>puntos</small></span>
+      </span>
       <span class="juego-hero__cta"><span id="juegoHeroCta">Jugar ahora</span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </span>
   </a>
 </section>
 <script>
 (function () {
-  try {
-    var d = JSON.parse(localStorage.getItem('b2b-juego') || '{}');
-    var hoy = new Date().toLocaleDateString('en-CA', { timeZone: 'Europe/Madrid' });
-    var ayer = new Date(Date.parse(hoy + 'T00:00:00Z') - 86400000).toISOString().slice(0, 10);
-    var s = d.stats || {};
-    var racha = (s.ultimo === hoy || s.ultimo === ayer) ? (s.racha || 0) : 0;
-    var partes = [];
-    if (d.hoy && d.hoy.dia === hoy && d.hoy.fin) {
-      partes.push(d.hoy.acierto ? 'Resuelto hoy ✓' : 'Hoy no hubo suerte');
-      document.getElementById('juegoHeroCta').textContent = 'Ver resultado';
-    }
-    if (racha >= 2) partes.push('🔥 Racha de ' + racha);
-    if (partes.length) { var e = document.getElementById('juegoHeroEstado'); e.textContent = partes.join(' · '); e.hidden = false; }
-  } catch (err) {}
+  // Progreso real del juego (el mismo que guarda js/juego.js en este navegador): racha y puntos
+  function pintar() {
+    try {
+      var d = JSON.parse(localStorage.getItem('b2b-juego') || '{}');
+      var hoy = new Date().toLocaleDateString('en-CA', { timeZone: 'Europe/Madrid' });
+      var ayer = new Date(Date.parse(hoy + 'T00:00:00Z') - 86400000).toISOString().slice(0, 10);
+      var s = d.stats || {};
+      var racha = (s.ultimo === hoy || s.ultimo === ayer) ? (s.racha || 0) : 0;
+      var puntos = typeof d.puntos === 'number' ? d.puntos : 0;
+      document.getElementById('juegoHeroRachaNum').textContent = racha;
+      document.getElementById('juegoHeroPuntos').textContent = puntos.toLocaleString('es-ES');
+      document.getElementById('juegoHeroRacha').classList.toggle('encendida', racha > 1);
+      document.getElementById('juegoHeroProgreso').setAttribute('aria-label', 'Tu racha: ' + racha + (racha === 1 ? ' día seguido acertando' : ' días seguidos acertando') + ' · Tus puntos: ' + puntos);
+      // Estado de hoy (partidas por dificultad)
+      var pt = (d.dia && d.dia.fecha === hoy && d.dia.partidas) || {};
+      var claves = Object.keys(pt).filter(function (k) { return pt[k] && pt[k].fin; });
+      var e = document.getElementById('juegoHeroEstado');
+      if (claves.length) {
+        var ok = claves.filter(function (k) { return pt[k].acierto; }).length;
+        e.textContent = ok ? 'Hoy: ' + ok + (ok === 1 ? ' acierto ✓' : ' aciertos ✓') : 'Hoy no hubo suerte';
+        e.hidden = false;
+        document.getElementById('juegoHeroCta').textContent = claves.length >= 3 ? 'Ver resultados' : 'Seguir jugando';
+      } else { e.hidden = true; document.getElementById('juegoHeroCta').textContent = 'Jugar ahora'; }
+    } catch (err) {}
+  }
+  pintar();
+  // Al volver atrás desde el juego o si cambia en otra pestaña
+  window.addEventListener('pageshow', pintar);
+  window.addEventListener('storage', function (ev) { if (ev.key === 'b2b-juego') pintar(); });
 })();
 </script>
 
@@ -84,12 +106,13 @@ permalink: /index.html
 <section class="cifras">
   <div class="contenedor">
     {{ cabecera("Resultados de la jornada", "resultados", "bloque-cab--oscuro") }}
-    <p class="cifras__fecha">{{ resultados.fecha }}{% if resultados.partidos[0] and resultados.partidos[0].rl %} · <span class="cifras__nota">entre paréntesis, balance de cada equipo tras ese partido</span>{% endif %}</p>
-    <div class="partidos">
+    <p class="cifras__fecha" id="resultadosFecha">{{ resultados.fecha }}{% if resultados.partidos[0] and resultados.partidos[0].rl %} · <span class="cifras__nota">entre paréntesis, balance de cada equipo tras ese partido</span>{% endif %}</p>
+    <div class="partidos" id="resultadosPartidos" data-fecha="{{ resultados.partidos[0].fecha if resultados.partidos[0] else '' }}" data-directo="{{ '/datos/hoy.json' | url }}">
       {% for p in resultados.partidos %}
       {% set crUrl = (p.cronica and ('/articulos/' + p.cronica + '/')) or (collections.recientes | cronicaDe(p)) %}
       {% set ganaL = p.pl > p.pv %}
-      {% if crUrl %}<a class="partido partido--enlace revelar" href="{{ crUrl | url }}">{% else %}<div class="partido revelar">{% endif %}
+      {% set clavePartido = (p.al or (p.local | abrev)) + "-" + (p.av or (p.visitante | abrev)) %}
+      {% if crUrl %}<a class="partido partido--enlace revelar" data-partido="{{ clavePartido }}" href="{{ crUrl | url }}">{% else %}<div class="partido revelar" data-partido="{{ clavePartido }}">{% endif %}
         {% for eq in [
           { nombre: p.local, abr: p.al or (p.local | abrev), balance: p.rl, puntos: p.pl, gana: ganaL, rol: "Local" },
           { nombre: p.visitante, abr: p.av or (p.visitante | abrev), balance: p.rv, puntos: p.pv, gana: not ganaL, rol: "Visitante" }
@@ -150,3 +173,4 @@ permalink: /index.html
     {% endfor %}
   </div>
 </section>
+<script src="{{ '/js/resultados-directo.js' | url }}?v={{ web.version }}" defer></script>

@@ -176,6 +176,9 @@ export default function (eleventyConfig) {
   });
   eleventyConfig.addFilter("fechaIso", (iso) => iso ? new Intl.DateTimeFormat("es-ES", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(String(iso).length === 10 ? iso + "T12:00:00Z" : iso)) : "");
   eleventyConfig.addFilter("excluir", (lista, x) => (lista || []).filter((y) => y !== x));
+  // Color principal de cada franquicia (tarjetas de Plantillas)
+  const COLORES = { ATL: "#E03A3E", BOS: "#007A33", BKN: "#111111", CHA: "#1D1160", CHI: "#CE1141", CLE: "#860038", DAL: "#00538C", DEN: "#0E2240", DET: "#C8102E", GSW: "#1D428A", HOU: "#CE1141", IND: "#002D62", LAC: "#C8102E", LAL: "#552583", MEM: "#5D76A9", MIA: "#98002E", MIL: "#00471B", MIN: "#0C2340", NOP: "#0C2340", NYK: "#006BB6", OKC: "#007AC1", ORL: "#0077C0", PHI: "#006BB6", PHX: "#1D1160", POR: "#E03A3E", SAC: "#5A2D81", SAS: "#2B2B2B", TOR: "#CE1141", UTA: "#3E2680", WAS: "#002B5C" };
+  eleventyConfig.addFilter("colorEquipo", (abr) => COLORES[abr] || "#2B59FF");
   eleventyConfig.addFilter("metros", (m) => (m ? m.toFixed(2).replace(".", ",") + " m" : ""));
   // Autores: ficha de un autor por su nombre y artículos que firma (sin firma = firma por defecto)
   eleventyConfig.addFilter("autorDe", (autores, nombre) => ((autores && autores.autores) || []).find((a) => a.nombre === nombre));

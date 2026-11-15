@@ -1,0 +1,25 @@
+name: Vista previa temporal
+# TEMPORAL: construye la web de esta rama y la guarda en la rama vista-previa-tmp para revisarla. Se borra antes de aprobar.
+on:
+  push:
+    branches: [claude/directo-plantillas-juego]
+permissions:
+  contents: write
+jobs:
+  vista:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - run: npm install
+      - run: npm run build
+      - name: Guardar
+        run: |
+          cd _site
+          git init -q -b vista-previa-tmp
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add -A && git commit -q -m "vista previa"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" vista-previa-tmp

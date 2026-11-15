@@ -1,0 +1,42 @@
+---
+layout: base.njk
+pagination:
+  data: plantillasEquipos
+  size: 1
+  alias: nombre
+permalink: "/plantillas/{{ nombre | slugify }}/index.html"
+eleventyComputed:
+  title: "Plantilla de los {{ nombre }}"
+  resumen: "Plantilla actual de los {{ nombre }}: todos sus jugadores, con dorsal, posición, edad, país y su ficha."
+---
+{% set abr = nombre | abrev %}{% set lista = plantillas | plantillaDe(abr) %}{% set T = temporada.porNombre[nombre] %}
+{% set ficha = collections.fichas | fichaDe(nombre) %}{% set info = plantillas.equipos[abr] %}
+<div class="contenedor">
+  <p class="migas"><a href="{{ '/plantillas/' | url }}">← Todas las plantillas</a></p>
+  <header class="plantilla-cab" style="--eq:{{ abr | colorEquipo }}">
+    <span class="plantilla-cab__abr" aria-hidden="true">{{ abr }}</span>
+    <p class="plantilla-cab__kicker">Plantilla {{ temporada.temporada or "actual" }}</p>
+    <h1>{{ nombre }}</h1>
+    <p class="plantilla-cab__datos">{{ lista.length }} jugadores{% if info and info.entrenador %} · Entrenador: {{ info.entrenador }}{% endif %}{% if T and T.jugados %} · {{ T.v }}-{{ T.d }}, {{ T.puesto }}.º en el {{ T.conferencia }}{% endif %}</p>
+    {% if ficha %}<a class="plantilla-cab__ficha" href="{{ ficha.url | url }}">Ficha del equipo →</a>{% endif %}
+  </header>
+  <div class="plantilla-tarjetas">
+    {% for c in lista %}
+    <a class="jugador-mini" href="{{ ('/jugador/' + c.slug + '/') | url }}">
+      <span class="jugador-mini__foto">{% if c.foto %}<img src="{{ c.foto.url }}" alt="" loading="lazy">{% else %}<i>{{ c.nombre | iniciales }}</i>{% endif %}</span>
+      <span class="jugador-mini__dorsal">{{ c.dorsal or "–" }}</span>
+      <strong>{{ c.nombre }}</strong>
+      <small>{{ c.posicion }}{% if c.nacimiento %} · {{ c.nacimiento | edad }} años{% endif %}{% if c.altura %} · {{ c.altura | metros }}{% endif %}{% if c.pais and c.pais != "Estados Unidos" %} · {{ c.pais }}{% endif %}</small>
+      {% if c.lesionado %}<em class="chip chip--rojo">Lesionado</em>{% elif c.doble_via %}<em class="chip">Contrato dual</em>{% endif %}
+    </a>
+    {% endfor %}
+  </div>
+  <details class="fuentes-plegables">
+    <summary>Fuentes</summary>
+    <ul>
+      {% if info %}<li><a href="{{ info.fuente }}" rel="noopener">Plantilla de los {{ nombre }}, Wikipedia</a> (última revisión: {{ info.revisada | fechaIso }})</li>{% endif %}
+      <li>País, lugar de nacimiento y fotos: Wikidata y Wikimedia Commons (autor y licencia en la ficha de cada jugador)</li>
+      <li>Balance: API de balldontlie</li>
+    </ul>
+  </details>
+</div>
