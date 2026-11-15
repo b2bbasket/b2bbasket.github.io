@@ -7,7 +7,7 @@
 // Se ordenan de más a menos conocidos y se cortan en cuatro grupos.
 import fs from "node:fs";
 
-export const NIVELES = [
+const NIVELES = [
   { clave: "facil", nombre: "Fácil", puntos: 10, color: "#17A673", descripcion: "Estrellas que conoce cualquier aficionado" },
   { clave: "normal", nombre: "Normal", puntos: 20, color: "#2B59FF", descripcion: "Jugadores conocidos que exigen algo más" },
   { clave: "dificil", nombre: "Difícil", puntos: 30, color: "#FF8A1F", descripcion: "Trayectorias menos evidentes" },
