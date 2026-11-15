@@ -1101,3 +1101,43 @@ html[data-tema="oscuro"] .racha--p{color:#FF7A5E}
 .oculto-visual{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .juego__inicio button{font:700 17px var(--cuerpo);padding:14px 34px;border-radius:999px;border:0;background:var(--acento);color:#fff;cursor:pointer;transition:transform .2s}
 .juego__inicio button:hover{transform:translateY(-2px)}
+
+/* Barra superior en directo (js/directo.js) */
+.ticker--directo .ticker__pista{gap:30px}
+.ticker--directo .ticker__pista span:nth-child(4n+1){color:inherit}
+.ticker__marca--directo{display:inline-flex;align-items:center;gap:8px;color:#fff!important;background:#E5243B;padding:2px 10px;border-radius:999px;font-size:12px;letter-spacing:.08em}
+.ticker__pulso{width:8px;height:8px;border-radius:50%;background:#fff;animation:pulsoDirecto 1.2s ease-in-out infinite}
+@keyframes pulsoDirecto{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.7)}}
+.ticker a.ticker__partido{display:inline-flex;align-items:baseline;gap:7px;color:rgba(255,255,255,.78)}
+.ticker__partido b{font-weight:700;color:rgba(255,255,255,.78)}
+.ticker__partido b.gana{color:#fff}
+.ticker__guion{color:rgba(255,255,255,.45)}
+.ticker__partido small{font-size:11px;font-weight:700;color:var(--amarillo);letter-spacing:.03em}
+.ticker__nota{color:rgba(255,255,255,.5);font-weight:500;font-size:12px}
+@media (prefers-reduced-motion:reduce){.ticker__pulso{animation:none}}
+
+/* Tarjetas de cabecera con fotografía (banner--foto): la foto va debajo de un velo del color de la sección */
+.banner--foto{background-image:linear-gradient(100deg,var(--velo,rgba(22,24,29,.92)) 0%,var(--velo2,rgba(22,24,29,.72)) 48%,rgba(22,24,29,.18) 100%),var(--foto);background-size:cover;background-position:center 30%;min-height:250px;display:flex;flex-direction:column;justify-content:center;padding-bottom:56px}
+.banner--foto.t-verde{--velo:rgba(14,120,82,.95);--velo2:rgba(23,166,115,.72)}
+.banner--foto.t-morado{--velo:rgba(59,31,168,.95);--velo2:rgba(108,59,217,.7)}
+.banner--foto.t-azul{--velo:rgba(22,52,180,.95);--velo2:rgba(43,89,255,.7)}
+.banner--foto.t-naranja{--velo:rgba(200,48,20,.95);--velo2:rgba(255,75,43,.72)}
+.banner--foto.t-amarillo{--velo:rgba(255,201,60,.97);--velo2:rgba(255,201,60,.8)}
+.banner--foto::after{display:none}
+.banner--foto h1,.banner--foto p{text-shadow:0 2px 16px rgba(0,0,0,.25)}
+.banner__credito{position:absolute!important;right:14px;bottom:10px;z-index:2;font-size:11px;font-weight:500;opacity:.8;max-width:70%;text-align:right;line-height:1.3}
+.banner__credito a{color:inherit;text-decoration:underline}
+@media (max-width:860px){.banner--foto{min-height:210px;background-image:linear-gradient(180deg,var(--velo,rgba(22,24,29,.92)) 0%,var(--velo2,rgba(22,24,29,.75)) 60%,rgba(22,24,29,.4) 100%),var(--foto);padding-bottom:48px}.banner__credito{left:18px;right:18px;max-width:none;text-align:left}}
+
+/* Líderes históricos: un color para cada estadística y foto del plusmarquista */
+.pestanas--historicos .pestana{--cat:var(--morado)}
+.pestanas--historicos .pestana.activa{background:var(--cat);border-color:var(--cat);color:#fff}
+.pestanas--historicos .pestana:hover{border-color:var(--cat);color:var(--cat)}
+.pestanas--historicos .pestana.activa:hover{color:#fff}
+.ranking .ranking__lider{background:linear-gradient(150deg,color-mix(in srgb,var(--cat) 70%,#16181D),var(--cat))}
+.ranking .ranking__barra i{background:var(--cat)}
+.ranking .ranking__lista li:first-child .ranking__pos{color:var(--cat)}
+.ranking .ranking__nombre a{text-decoration-color:var(--cat)}
+.ranking__lider a{color:inherit;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+.ranking__lider--foto{position:relative;overflow:hidden;min-height:340px;justify-content:flex-end;background:linear-gradient(180deg,rgba(22,24,29,.05) 0%,color-mix(in srgb,var(--cat) 55%,transparent) 45%,color-mix(in srgb,var(--cat) 92%,#16181D) 75%),var(--foto) center 15%/cover,var(--cat)!important}
+.ranking__credito{font-style:normal;font-size:11px;opacity:.8;margin-top:6px;line-height:1.3}

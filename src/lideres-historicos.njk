@@ -5,16 +5,20 @@ resumen: "Top 10 de la historia de la NBA en puntos, rebotes, asistencias, tapon
 permalink: /lideres-historicos/index.html
 ---
 <div class="contenedor">
-  <div class="banner banner--a t-morado m-barras"><h1>Líderes históricos</h1><p>El top 10 de todos los tiempos en cada estadística. {{ lideres_historicos.actualizado }}.</p></div>
+  {% set bf = fotos["banner-lideres-historicos"] %}
+  <div class="banner banner--a t-morado m-barras{% if bf %} banner--foto{% endif %}"{% if bf %} style="--foto:url('{{ bf.src | url }}')"{% endif %}><h1>Líderes históricos</h1><p>El top 10 de todos los tiempos en cada estadística. {{ lideres_historicos.actualizado }}.</p>{% if bf %}<span class="banner__credito">Foto: {{ bf.autor | safe }} · {{ bf.licencia }}</span>{% endif %}</div>
+  {% set COLORES = ["#FF4B2B", "#2B59FF", "#17A673", "#6C3BD9", "#D7263D", "#0E8FA0"] %}
   <div class="pestanas pestanas--historicos" role="tablist" aria-label="Categorías">
-    {% for c in lideres_historicos.categorias %}<button type="button" role="tab" class="pestana{% if loop.first %} activa{% endif %}" data-cat="{{ loop.index0 }}" aria-selected="{{ 'true' if loop.first else 'false' }}">{{ c.nombre }}</button>{% endfor %}
+    {% for c in lideres_historicos.categorias %}<button type="button" role="tab" class="pestana{% if loop.first %} activa{% endif %}" style="--cat:{{ COLORES[loop.index0 % 6] }}" data-cat="{{ loop.index0 }}" aria-selected="{{ 'true' if loop.first else 'false' }}">{{ c.nombre }}</button>{% endfor %}
   </div>
   {% for c in lideres_historicos.categorias %}{% set max = c.top[0].cifra | numero %}
-  <section class="ranking revelar" data-cat="{{ loop.index0 }}"{% if not loop.first %} hidden{% endif %} aria-label="{{ c.nombre }}">
-    <div class="ranking__lider">
+  {% set rey = collections.leyendas | leyendaDe(c.top[0].jugador) %}{% set fr = fotos[rey.data.foto] if rey and rey.data.foto else null %}
+  <section class="ranking revelar" style="--cat:{{ COLORES[loop.index0 % 6] }}" data-cat="{{ loop.index0 }}"{% if not loop.first %} hidden{% endif %} aria-label="{{ c.nombre }}">
+    <div class="ranking__lider{% if fr %} ranking__lider--foto{% endif %}"{% if fr %} style="--foto:url('{{ fr.src | url }}')"{% endif %}>
       <small>Récord de la NBA · {{ c.nombre }}</small>
       <strong>{{ c.top[0].cifra }}</strong>
-      <span>{{ c.top[0].jugador }}</span>
+      <span>{% if rey %}<a href="{{ rey.url | url }}">{{ c.top[0].jugador }}</a>{% else %}{{ c.top[0].jugador }}{% endif %}</span>
+      {% if fr %}<em class="ranking__credito">Foto: {{ fr.autor | safe }} · {{ fr.licencia }}</em>{% endif %}
     </div>
     <ol class="ranking__lista">
       {% for j in c.top %}

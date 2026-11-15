@@ -6,7 +6,8 @@
 # funciona en cadena de forma continua. Si la cadena se rompiera, la reinicia cualquiera de las
 # tareas programadas de respaldo (vigilante.yml) o el botón «Run workflow».
 #
-#   · En horas de partido (18:00-09:59, hora de España): calendario en directo cada 10 minutos.
+#   · En horas de partido (18:00-09:59, hora de España): calendario en directo cada 10 minutos,
+#     y cada 5 mientras haya algún partido en juego.
 #   · Por la mañana (07:00-13:59): actualización completa (resultados, clasificación, calendario) cada hora.
 #   · El resto del día: actualización completa cada 4 horas, por si cambia el calendario.
 # Solo guarda y publica cuando algo ha cambiado de verdad.
@@ -48,7 +49,8 @@ while [ "$(date +%s)" -lt "$FIN" ]; do
   # Calendario en directo
   if [ "$HORA" -ge 18 ] || [ "$HORA" -le 9 ]; then
     node scripts/calendario-directo.mjs && guardar "Calendario: actualizar partidos de hoy"
-    ESPERA=600
+    # Con partidos en juego, cada 5 minutos (la barra de directo de la web); si no, cada 10
+    if node -e 'const c=require("./src/_data/calendario.json");process.exit((c.partidos||[]).some(p=>p&&p.e==="L")?0:1)'; then ESPERA=300; else ESPERA=600; fi
   else
     ESPERA=1800
   fi

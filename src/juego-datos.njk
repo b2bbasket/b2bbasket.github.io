@@ -2,4 +2,4 @@
 permalink: /juego/jugadores.json
 eleventyExcludeFromCollections: true
 ---
-{{ juego.jugadores | dump | safe }}
+{{ { "niveles": juegoNiveles.niveles, "grupos": juegoNiveles.grupos } | dump | safe }}

@@ -5,9 +5,11 @@ resumen: "Calendario de la temporada NBA día a día y por equipos, con horarios
 permalink: /calendario/index.html
 ---
 <div class="contenedor calendario" id="calendario" data-src="{{ '/datos/calendario.json' | url }}?v={{ calendario.actualizado or 'vacio' }}" data-base="{{ '/' | url }}">
-  <div class="banner banner--a t-azul m-calendario banner--compacto">
+  {% set bf = fotos["banner-calendario"] %}
+  <div class="banner banner--a t-azul m-calendario banner--compacto{% if bf %} banner--foto{% endif %}"{% if bf %} style="--foto:url('{{ bf.src | url }}')"{% endif %}>
     <h1>Calendario NBA</h1>
     <p>Todos los partidos de la temporada, con hora de España y de Estados Unidos.</p>
+    {% if bf %}<span class="banner__credito">Foto: {{ bf.autor | safe }} · {{ bf.licencia }}</span>{% endif %}
   </div>
 
   <div class="cal-tabs" role="tablist" aria-label="Vista del calendario">

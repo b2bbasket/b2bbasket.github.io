@@ -1,60 +1,148 @@
 ---
 layout: base.njk
 title: "Adivina el jugador"
-resumen: "El minijuego diario de B2B Basket: adivina el jugador de la NBA con cinco pistas."
+resumen: "El minijuego diario de B2B Basket: elige dificultad y adivina el jugador de la NBA con cinco pistas."
 permalink: /juego/index.html
 ---
+{% set bf = fotos["banner-juego"] %}
 <div class="contenedor">
-  <div class="banner banner--a t-verde m-calendario"><h1>Adivina el jugador</h1><p>Un jugador nuevo cada día, elegido entre {{ juego.jugadores | length }} All-Stars de toda la historia. Tienes cinco intentos y cada fallo desbloquea una pista más fácil.</p></div>
-  <div class="juego">
-    <div class="juego__racha" id="juegoRacha" aria-live="polite">
-      <span class="llama" aria-hidden="true">🔥</span>
-      <span class="juego__racha-num" id="juegoRachaNum">0</span>
-      <span class="juego__racha-txt" id="juegoRachaTxt">aciertos seguidos</span>
-    </div>
-    <div class="juego__inicio" id="juegoInicio" hidden>
-      <p>Cuando estés listo, pulsa «Empezar» para ver la primera pista.</p>
-      <button type="button" id="juegoEmpezar">Empezar</button>
-    </div>
-    <ol class="juego__pistas" id="juegoPistas"></ol>
-    <form class="juego__form" id="juegoForm" autocomplete="off" hidden>
-      <div class="juego__campo">
-        <input id="juegoCampo" placeholder="Escribe el nombre de un jugador..." aria-label="Jugador" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="juegoSugerencias">
-        <ul class="juego__sugerencias" id="juegoSugerencias" role="listbox" hidden></ul>
+  <div class="banner banner--a t-verde m-calendario{% if bf %} banner--foto{% endif %}"{% if bf %} style="--foto:url('{{ bf.src | url }}')"{% endif %}>
+    <h1>Adivina el jugador</h1>
+    <p>Cada día, un jugador distinto en cada dificultad, elegidos entre {{ juegoNiveles.total }} All-Stars de toda la historia. Cinco pistas, cinco intentos y más puntos cuantas menos pistas necesites.</p>
+    {% if bf %}<span class="banner__credito">Foto: {{ bf.autor | safe }} · {{ bf.licencia }}</span>{% endif %}
+  </div>
+
+  <div class="jg" id="juego">
+    <div class="jg-marcador">
+      <div class="jg-racha" id="juegoRacha" aria-live="polite">
+        <span class="jg-racha__llama" aria-hidden="true">🔥</span>
+        <span class="jg-racha__num" id="juegoRachaNum">0</span>
+        <span class="jg-racha__txt" id="juegoRachaTxt">días seguidos</span>
       </div>
-      <button type="submit" id="juegoBoton">Probar</button>
-    </form>
-    <p class="juego__mensaje" id="juegoMensaje" aria-live="polite"></p>
-    <div class="juego__fin" id="juegoFin" hidden>
-      <p id="juegoResultado"></p>
-      <button type="button" id="juegoCompartir">Compartir resultado</button>
-      <p class="juego__stats" id="juegoStats"></p>
-      <p class="juego__stats" id="juegoFuente"></p>
-      <p class="juego__stats">Vuelve mañana para un jugador nuevo.</p>
+      <div class="jg-total" id="juegoTotal" aria-live="polite">
+        <span class="jg-total__num" id="juegoPuntos">0</span>
+        <span class="jg-total__txt">puntos</span>
+      </div>
     </div>
+
+    <!-- Paso 1: elegir dificultad -->
+    <section class="jg-niveles" id="juegoNiveles" aria-labelledby="jgElige">
+      <h2 class="jg-titulo" id="jgElige">Elige la dificultad</h2>
+      <p class="jg-sub">Cada nivel tiene su propio jugador del día. Puedes jugar los cuatro.</p>
+      <div class="jg-niveles__rejilla">
+        {% for n in juegoNiveles.niveles %}
+        <button type="button" class="jg-nivel" data-nivel="{{ n.clave }}" style="--nv:{{ n.color }}">
+          <span class="jg-nivel__puntos"><b>{{ n.puntos }}</b> pts</span>
+          <span class="jg-nivel__nombre">{{ n.nombre }}</span>
+          <span class="jg-nivel__desc">{{ n.descripcion }}</span>
+          <span class="jg-nivel__estado" data-estado>Jugar</span>
+        </button>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- Paso 2: la partida -->
+    <section class="jg-partida" id="juegoPartida" hidden>
+      <div class="jg-partida__cab">
+        <button type="button" class="jg-volver" id="juegoVolver">← Cambiar dificultad</button>
+        <span class="jg-chip" id="juegoNivelChip"></span>
+      </div>
+      <div class="jg-premio" id="juegoPremio">
+        <div class="jg-premio__texto"><span id="juegoPremioPre">Puedes ganar</span> <b id="juegoPotencial">0</b> <span>puntos</span></div>
+        <div class="jg-premio__barra" id="juegoBarra" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+        <p class="jg-premio__nota">Cada pista nueva resta una quinta parte de los puntos. Si fallas los cinco intentos, no sumas.</p>
+      </div>
+      <ol class="jg-pistas" id="juegoPistas"></ol>
+      <form class="juego__form jg-form" id="juegoForm" autocomplete="off">
+        <div class="juego__campo">
+          <input id="juegoCampo" placeholder="Escribe el nombre de un jugador..." aria-label="Jugador" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="juegoSugerencias">
+          <ul class="juego__sugerencias" id="juegoSugerencias" role="listbox" hidden></ul>
+        </div>
+        <button type="submit" id="juegoBoton">Probar</button>
+      </form>
+      <p class="juego__mensaje" id="juegoMensaje" aria-live="polite"></p>
+      <div class="jg-fin" id="juegoFin" hidden>
+        <div class="jg-recompensa" id="juegoRecompensa" hidden><span>+<b id="juegoGanados">0</b></span><small>puntos</small></div>
+        <p class="jg-fin__resultado" id="juegoResultado"></p>
+        <div class="jg-fin__botones">
+          <button type="button" id="juegoCompartir">Compartir resultado</button>
+          <button type="button" class="jg-sec" id="juegoOtro">Probar otra dificultad</button>
+        </div>
+        <p class="juego__stats" id="juegoFuente"></p>
+      </div>
+    </section>
+    <p class="juego__stats jg-stats" id="juegoStats"></p>
+    <p class="jg-cargando" id="juegoCarga">Cargando el juego…</p>
   </div>
 </div>
 <style>
+.jg{max-width:820px;margin:26px auto 10px}
+.jg-marcador{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.jg-racha,.jg-total{display:flex;align-items:center;gap:9px;padding:10px 20px;border-radius:999px;border:2px solid var(--linea);background:var(--blanco);font-weight:700;font-size:15px;color:var(--suave)}
+.jg-racha__num,.jg-total__num{font-family:var(--titulos);font-size:28px;line-height:1;color:var(--texto)}
+.jg-racha__llama{font-size:24px;line-height:1;filter:grayscale(1);opacity:.45;transform-origin:50% 90%}
+.jg-racha.activa{border-color:#FF8A3D;background:linear-gradient(135deg,rgba(255,75,43,.14),rgba(255,201,60,.24));color:var(--texto);box-shadow:0 8px 22px rgba(255,98,43,.18)}
+.jg-racha.activa .jg-racha__num{color:var(--acento)}
+.jg-racha.activa .jg-racha__llama{filter:none;opacity:1;animation:llama 1.8s ease-in-out infinite}
+.jg-racha.sube,.jg-total.sube{animation:rachaSube .8s ease}
+.jg-total{border-color:rgba(43,89,255,.35)}
+.jg-total .jg-total__num{color:var(--azul)}
+@keyframes llama{0%,100%{transform:scale(1) rotate(-4deg)}50%{transform:scale(1.14) rotate(4deg)}}
+@keyframes rachaSube{0%{transform:scale(1)}35%{transform:scale(1.14)}100%{transform:scale(1)}}
+.jg-titulo{font-family:var(--titulos);font-size:clamp(26px,3.4vw,34px);margin:0 0 4px;text-align:center}
+.jg-sub{margin:0 0 20px;text-align:center;color:var(--suave)}
+.jg-niveles__rejilla{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.jg-nivel{--nv:#2B59FF;position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:6px;text-align:left;padding:18px 16px 16px 20px;border-radius:20px;border:2px solid color-mix(in srgb,var(--nv) 30%,transparent);background:linear-gradient(160deg,color-mix(in srgb,var(--nv) 14%,var(--blanco)),var(--blanco) 70%);color:var(--texto);font:inherit;cursor:pointer;overflow:hidden;transition:transform .2s,box-shadow .2s,border-color .2s}
+.jg-nivel::before{content:"";position:absolute;inset:0 auto 0 0;width:6px;background:var(--nv)}
+.jg-nivel:hover,.jg-nivel:focus-visible{transform:translateY(-4px);border-color:var(--nv);box-shadow:0 14px 30px color-mix(in srgb,var(--nv) 28%,transparent);outline:none}
+.jg-nivel__puntos{font-size:13px;font-weight:700;color:var(--nv);letter-spacing:.04em}
+.jg-nivel__puntos b{font-family:var(--titulos);font-size:30px;line-height:1}
+.jg-nivel__nombre{font-family:var(--titulos);font-size:25px;font-weight:800;line-height:1.05}
+.jg-nivel__desc{font-size:13.5px;color:var(--suave);line-height:1.35;flex:1}
+.jg-nivel__estado{margin-top:6px;display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:999px;background:var(--nv);color:#fff;font-size:13px;font-weight:700}
+.jg-nivel.ganado .jg-nivel__estado{background:#17A673}
+.jg-nivel.perdido .jg-nivel__estado{background:#8B8F99}
+.jg-partida[hidden],.jg-niveles[hidden],.jg-fin[hidden],.jg-recompensa[hidden],.jg-cargando[hidden],.juego__form[hidden]{display:none}
+.jg-partida{--nv:#2B59FF;animation:entra .35s ease both}
+.jg-partida__cab{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}
+.jg-volver{background:none;border:0;color:var(--suave);font:600 15px var(--cuerpo);cursor:pointer;padding:6px 0}
+.jg-volver:hover{color:var(--acento)}
+.jg-chip{background:var(--nv);color:#fff;font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding:7px 14px;border-radius:999px}
+.jg-premio{border-radius:20px;padding:16px 18px;margin-bottom:16px;background:color-mix(in srgb,var(--nv) 10%,var(--blanco));border:2px solid color-mix(in srgb,var(--nv) 28%,transparent)}
+.jg-premio__texto{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;font-weight:600;color:var(--suave)}
+.jg-premio__texto b{display:inline-block;font-family:var(--titulos);font-size:40px;line-height:1;color:var(--nv)}
+.jg-premio__texto b.baja{animation:baja .5s ease}
+@keyframes baja{0%{transform:scale(1)}40%{transform:scale(.75);opacity:.4}100%{transform:scale(1)}}
+.jg-premio__barra{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:12px 0 8px}
+.jg-premio__barra i{height:10px;border-radius:999px;background:var(--nv);transition:background .4s}
+.jg-premio__barra i.usada{background:var(--linea)}
+.jg-premio__nota{margin:0;font-size:13px;color:var(--suave)}
+.jg-pistas{list-style:none;counter-reset:pista;margin:0 0 16px;padding:0;display:grid;gap:10px}
+.jg-pistas li{counter-increment:pista;position:relative;padding:14px 16px 14px 56px;border-radius:16px;background:var(--blanco);border:1px solid var(--linea);line-height:1.45;animation:entra .4s ease both}
+.jg-pistas li::before{content:counter(pista);position:absolute;left:14px;top:12px;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--nv);color:#fff;font-weight:800;font-size:14px}
+.jg-pistas li.nueva{border-color:var(--nv);box-shadow:0 6px 18px color-mix(in srgb,var(--nv) 18%,transparent)}
+@keyframes entra{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 .juego__campo{position:relative;flex:1;min-width:0}
 .juego__campo input{width:100%;box-sizing:border-box}
+.jg-form button[type=submit]{background:var(--nv)}
 .juego__sugerencias{list-style:none;margin:6px 0 0;padding:6px;position:absolute;left:0;right:0;top:100%;z-index:30;background:var(--blanco);border:1px solid var(--linea);border-radius:16px;box-shadow:0 14px 28px rgba(22,24,29,.18);max-height:280px;overflow-y:auto}
 .juego__sugerencias[hidden]{display:none}
-.juego__form[hidden],.juego__inicio[hidden]{display:none}
-.juego__inicio{text-align:center;padding:26px 18px;border:2px dashed var(--linea);border-radius:20px;margin-bottom:16px}
-.juego__inicio p{margin:0 0 14px;color:var(--suave)}
-.juego__inicio button{font-size:17px;padding:12px 30px}
 .juego__sugerencias li{padding:11px 14px;border-radius:10px;font-weight:600;cursor:pointer}
 .juego__sugerencias li:hover,.juego__sugerencias li.activa{background:var(--hover);color:var(--acento)}
-.juego__racha{display:flex;align-items:center;justify-content:center;gap:8px;width:fit-content;margin:0 auto 18px;padding:9px 20px;border-radius:999px;border:2px solid var(--linea);background:var(--blanco);font-weight:700;font-size:15px;color:var(--suave)}
-.juego__racha-num{font-family:var(--titulos);font-size:26px;line-height:1;color:var(--texto)}
-.juego__racha .llama{display:none;font-size:22px;line-height:1;transform-origin:50% 90%}
-.juego__racha.activa{border-color:#FF8A3D;background:linear-gradient(135deg,rgba(255,75,43,.12),rgba(255,201,60,.2));color:var(--texto)}
-.juego__racha.activa .juego__racha-num{color:var(--acento)}
-.juego__racha.activa .llama{display:inline-block;animation:llama 1.8s ease-in-out infinite}
-.juego__racha.sube{animation:rachaSube .8s ease}
-.juego__racha.sube .llama{animation:llamaSube .8s ease,llama 1.8s ease-in-out .8s infinite}
-@keyframes llama{0%,100%{transform:scale(1) rotate(-3deg)}50%{transform:scale(1.1) rotate(3deg)}}
-@keyframes rachaSube{0%{transform:scale(1)}35%{transform:scale(1.12)}100%{transform:scale(1)}}
-@keyframes llamaSube{0%{transform:scale(.5)}50%{transform:scale(1.5)}100%{transform:scale(1)}}
+.jg-fin{text-align:center;padding:24px 18px;border-radius:20px;background:var(--blanco);border:1px solid var(--linea);animation:entra .4s ease both}
+.jg-fin__resultado{font-size:18px;font-weight:600;margin:10px 0 16px}
+.jg-fin__botones{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.jg-fin__botones button{font:700 15px var(--cuerpo);padding:12px 22px;border-radius:999px;border:2px solid var(--nv);background:var(--nv);color:#fff;cursor:pointer;transition:transform .2s}
+.jg-fin__botones button:hover{transform:translateY(-2px)}
+.jg-fin__botones .jg-sec{background:transparent;color:var(--texto);border-color:var(--linea)}
+.jg-recompensa{display:inline-flex;flex-direction:column;align-items:center;padding:16px 34px;border-radius:22px;background:linear-gradient(135deg,var(--nv),color-mix(in srgb,var(--nv) 55%,#FFC93C));color:#fff;box-shadow:0 16px 36px color-mix(in srgb,var(--nv) 40%,transparent);animation:premio .7s cubic-bezier(.2,1.6,.4,1) both}
+.jg-recompensa span{font-family:var(--titulos);font-size:58px;font-weight:800;line-height:1}
+.jg-recompensa small{font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:12px}
+@keyframes premio{0%{transform:scale(.3);opacity:0}100%{transform:scale(1);opacity:1}}
+.jg-stats{text-align:center;margin-top:18px}
+.jg-cargando{text-align:center;color:var(--suave)}
+@media (min-width:760px){.jg-niveles__rejilla{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:420px){.jg-nivel{padding:16px 12px 14px 16px}.jg-nivel__nombre{font-size:22px}.jg-premio__texto b{font-size:34px}}
+@media (prefers-reduced-motion:reduce){.jg *{animation:none!important;transition:none!important}}
 </style>
-<script src="{{ '/js/juego.js' | url }}?v={{ web.version }}" data-datos="{{ '/juego/jugadores.json' | url }}?v={{ juego.generado }}" id="scriptJuego"></script>
+<script src="{{ '/js/juego.js' | url }}?v={{ web.version }}" data-datos="{{ '/juego/jugadores.json' | url }}?v={{ web.version }}" id="scriptJuego"></script>

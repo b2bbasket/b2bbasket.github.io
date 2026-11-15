@@ -70,13 +70,12 @@
     </nav>
   </div>
 </header>
-{% if collections.noticias.length %}
-<div class="ticker" aria-label="Últimas noticias">
+{% set tickerNoticias = collections.noticias | limite(6) if collections.noticias.length else collections.recientes | limite(6) %}
+<div class="ticker" aria-label="Últimas noticias" data-directo="{{ '/datos/hoy.json' | url }}" data-calendario="{{ '/calendario/' | url }}">
   <div class="ticker__pista">
-    {% for i in [1, 2] %}<span class="ticker__marca">ÚLTIMA HORA</span>{% for a in collections.noticias | limite(6) %}<a href="{{ a.url | url }}">{{ a.data.title }}</a>{% endfor %}{% endfor %}
+    {% for i in [1, 2] %}<span class="ticker__marca">ÚLTIMA HORA</span>{% for a in tickerNoticias %}<a href="{{ a.url | url }}">{{ a.data.title }}</a>{% else %}<a href="{{ '/clasificacion/' | url }}">Clasificación NBA, actualizada cada día</a><a href="{{ '/calendario/' | url }}">Calendario y resultados de la temporada</a><a href="{{ '/juego/' | url }}">Adivina el jugador del día</a>{% endfor %}{% endfor %}
   </div>
 </div>
-{% endif %}
 <main>
 {{ content | safe }}
 </main>
@@ -115,5 +114,6 @@
 <script src="{{ '/js/cookies.js' | url }}"></script>
 {% endif %}
 <script src="{{ '/js/main.js' | url }}?v={{ web.version }}"></script>
+<script src="{{ '/js/directo.js' | url }}?v={{ web.version }}" defer></script>
 </body>
 </html>

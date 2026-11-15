@@ -126,6 +126,155 @@
     "Basketball net.jpg",
     "Chain basketball hoop.jpg"
    ]
+  },
+  {
+   "id": "banner-juego",
+   "destino": "src/img/cabeceras/juego.jpg",
+   "alt": "Balón oficial de partido de la NBA",
+   "candidatos": [
+    "$250 Spalding Game ball Basketball NBA New 600D T3I (52975895249).jpg"
+   ]
+  },
+  {
+   "id": "banner-clasificacion",
+   "destino": "src/img/cabeceras/clasificacion.jpg",
+   "alt": "Partido de los Celtics en el TD Garden de Boston",
+   "candidatos": [
+    "Celtics game versus the Timberwolves, February, 1 2009.jpg",
+    "Celtics Game.jpg"
+   ]
+  },
+  {
+   "id": "banner-calendario",
+   "destino": "src/img/cabeceras/calendario.jpg",
+   "alt": "Salto inicial de un partido entre Lakers y Hawks",
+   "candidatos": [
+    "Lakers vs Hawks.jpg",
+    "Brooklyn Nets vs NY Knicks 2018-10-03 td 06 - Pregame.jpg"
+   ]
+  },
+  {
+   "id": "banner-lideres",
+   "destino": "src/img/cabeceras/lideres.jpg",
+   "alt": "Lucha por un rebote en un partido entre Nets y Knicks",
+   "candidatos": [
+    "Brooklyn Nets vs NY Knicks 2018-10-03 td 155 - 1st Quarter.jpg",
+    "Jakob Poeltl (26769613517).jpg"
+   ]
+  },
+  {
+   "id": "banner-lideres-historicos",
+   "destino": "src/img/cabeceras/lideres-historicos.jpg",
+   "alt": "Paul Pierce levanta el trofeo Larry O'Brien",
+   "candidatos": [
+    "Pierce Takes the Trophy.jpg",
+    "Miami Heat Championship Parade 2012 2.jpg"
+   ]
+  },
+  {
+   "id": "curry",
+   "destino": "src/img/fotos/curry.jpg",
+   "alt": "Stephen Curry con los Golden State Warriors",
+   "candidatos": [
+    "Stephen Curry (Crop).jpg",
+    "Stephen Curry 2.jpg",
+    "Stephen Curry shooting.jpg"
+   ]
+  },
+  {
+   "id": "iverson",
+   "destino": "src/img/fotos/iverson.jpg",
+   "alt": "Allen Iverson con los Philadelphia 76ers",
+   "candidatos": [
+    "Allen Iverson Sixers jumper.jpg",
+    "Allen Iverson Sixers.jpg"
+   ]
+  },
+  {
+   "id": "durant",
+   "destino": "src/img/fotos/durant.jpg",
+   "alt": "Kevin Durant con los Oklahoma City Thunder",
+   "candidatos": [
+    "Kevin Durant dunk.jpg",
+    "Kevin Durant.jpg",
+    "Kevin Durant 4.jpg"
+   ]
+  },
+  {
+   "id": "nowitzki",
+   "destino": "src/img/fotos/nowitzki.jpg",
+   "alt": "Dirk Nowitzki con los Dallas Mavericks",
+   "candidatos": [
+    "Dirk Nowitzki 2.jpg",
+    "DirkNowitzki.jpg",
+    "Dirk 41.jpg"
+   ]
+  },
+  {
+   "id": "west",
+   "destino": "src/img/fotos/west.jpg",
+   "alt": "Jerry West con los Los Angeles Lakers en 1972",
+   "candidatos": [
+    "Jerry West 1972.jpeg",
+    "Jerry West and Jeff Mullins.jpeg"
+   ]
+  },
+  {
+   "id": "h-naismith",
+   "destino": "src/img/historia/naismith.jpg",
+   "alt": "James Naismith con un balón y una cesta de melocotones",
+   "candidatos": [
+    "Dr. James Naismith.jpg"
+   ]
+  },
+  {
+   "id": "h-reglas",
+   "destino": "src/img/historia/reglas.jpg",
+   "alt": "Primera página de las 13 reglas originales del baloncesto",
+   "candidatos": [
+    "Dr. James Naismith's Original 13 Rules of Basket Ball pg 1.jpg"
+   ]
+  },
+  {
+   "id": "h-lakers-1950",
+   "destino": "src/img/historia/lakers-1950.jpg",
+   "alt": "Los Minneapolis Lakers, campeones de 1950",
+   "candidatos": [
+    "1950 Minneapolis Lakers.jpeg"
+   ]
+  },
+  {
+   "id": "h-russell",
+   "destino": "src/img/historia/russell-auerbach.jpg",
+   "alt": "Bill Russell y Red Auerbach celebran el título de 1966",
+   "candidatos": [
+    "Bill Russell and Red Auerbach 1966.jpeg"
+   ]
+  },
+  {
+   "id": "h-anos60",
+   "destino": "src/img/historia/knicks-warriors-1960.jpg",
+   "alt": "Partido entre New York Knicks y Philadelphia Warriors en 1960",
+   "candidatos": [
+    "1960 New York Knicks vs. Philadelphia Warriors.jpeg",
+    "K. C. Jones gets rebound 1963.jpg"
+   ]
+  },
+  {
+   "id": "h-erving",
+   "destino": "src/img/historia/erving-nets.jpg",
+   "alt": "Julius Erving en su debut con los Nets",
+   "candidatos": [
+    "Julius Erving's Nets debut.jpg"
+   ]
+  },
+  {
+   "id": "h-dreamteam",
+   "destino": "src/img/historia/dream-team.jpg",
+   "alt": "El Dream Team en los Juegos Olímpicos de Barcelona 1992",
+   "candidatos": [
+    "Dream Team at the 1992 Summer Olympics.JPEG"
+   ]
   }
  ]
 }
