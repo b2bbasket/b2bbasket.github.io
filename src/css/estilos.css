@@ -1160,21 +1160,27 @@ html[data-tema="oscuro"] .racha--p{color:#FF7A5E}
 .hist-pareja{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:820px;margin:6px 0 10px}
 .hist-pareja .hist-foto{margin:0}
 .hist-pareja img{aspect-ratio:4/5;object-fit:cover;object-position:center 15%}
-.hist-fuentes{margin:20px 0 10px;font-size:13px;color:var(--suave);border-top:1px solid var(--linea);padding-top:12px}
-.hist-fuentes summary{cursor:pointer;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;list-style:none}
-.hist-fuentes summary::-webkit-details-marker{display:none}
-.hist-fuentes summary::after{content:" +";color:var(--acento)}
-.hist-fuentes[open] summary::after{content:" −"}
-.hist-fuentes ul{margin:10px 0;padding-left:18px;columns:2;column-gap:30px}
-.hist-fuentes li{margin:3px 0;break-inside:avoid}
-.hist-fuentes a{text-decoration:underline}
+.hist-fuentes,.fuentes-plegables{margin:20px 0 10px;font-size:13px;color:var(--suave);border-top:1px solid var(--linea);padding-top:12px}
+.hist-fuentes summary,.fuentes-plegables summary{cursor:pointer;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;list-style:none}
+.hist-fuentes summary::-webkit-details-marker,.fuentes-plegables summary::-webkit-details-marker{display:none}
+.hist-fuentes summary::after,.fuentes-plegables summary::after{content:" +";color:var(--acento)}
+.hist-fuentes[open] summary::after,.fuentes-plegables[open] summary::after{content:" −"}
+.hist-fuentes ul,.fuentes-plegables ul{margin:10px 0;padding-left:18px;columns:2;column-gap:30px}
+.hist-fuentes li,.fuentes-plegables li{margin:3px 0;break-inside:avoid}
+.hist-fuentes a,.fuentes-plegables a{text-decoration:underline}
 @media (max-width:860px){
   .hist-texto{font-size:17px}
   .hist-dato{float:none;width:auto;margin:0 0 14px}
   .hist-foto--lado,.hist-foto--lado-izq{float:none;width:100%;margin:6px 0 16px}
   .hist-foto--lado img,.hist-foto--lado-izq img{aspect-ratio:3/2}
-  .hist-fuentes ul{columns:1}
+  .hist-fuentes ul,.fuentes-plegables ul{columns:1}
 }
 .hist-dato--linea{float:none;width:auto;display:inline-flex;flex-direction:row;align-items:center;gap:14px;margin:4px 0 0;padding:12px 18px}
 .hist-dato--linea strong{font-size:34px}
 .hist-dato--linea span{max-width:200px}
+
+/* Fuentes plegadas en artículos, fichas y perfiles: dentro del texto, sin heredar tamaños de letra grandes */
+.fuentes-plegables{clear:both;font-family:var(--cuerpo);line-height:1.5}
+.fuentes-plegables ul{list-style:disc}
+.fuentes-plegables li,.fuentes-plegables p{font-size:13px!important;line-height:1.5;color:var(--suave)}
+.fuentes-plegables p{margin:8px 0 0}

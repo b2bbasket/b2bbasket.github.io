@@ -12,7 +12,7 @@ permalink: /lideres-historicos/index.html
     {% for c in lideres_historicos.categorias %}<button type="button" role="tab" class="pestana{% if loop.first %} activa{% endif %}" style="--cat:{{ COLORES[loop.index0 % 6] }}" data-cat="{{ loop.index0 }}" aria-selected="{{ 'true' if loop.first else 'false' }}">{{ c.nombre }}</button>{% endfor %}
   </div>
   {% for c in lideres_historicos.categorias %}{% set max = c.top[0].cifra | numero %}
-  {% set rey = collections.leyendas | leyendaDe(c.top[0].jugador) %}{% set fr = fotos[rey.data.foto] if rey and rey.data.foto else null %}
+  {% set rey = collections.leyendas | leyendaDe(c.top[0].jugador) %}{% set fr = fotos[rey.data.foto] if rey and rey.data.foto else fotos['lider-' + (c.top[0].jugador | slugify)] %}
   <section class="ranking revelar" style="--cat:{{ COLORES[loop.index0 % 6] }}" data-cat="{{ loop.index0 }}"{% if not loop.first %} hidden{% endif %} aria-label="{{ c.nombre }}">
     <div class="ranking__lider{% if fr %} ranking__lider--foto{% endif %}"{% if fr %} style="--foto:url('{{ fr.src | url }}')"{% endif %}>
       <small>Récord de la NBA · {{ c.nombre }}</small>
@@ -43,5 +43,13 @@ permalink: /lideres-historicos/index.html
   });
   </script>
   <p class="nota-fuente">Cifras de temporada regular. Las de los jugadores en activo cambian cada noche y se revisan periódicamente. Los tapones y los robos se registran oficialmente desde la temporada 1973-74.</p>
-  <p class="nota-fuente">Fuentes: <a href="https://en.wikipedia.org/wiki/List_of_NBA_career_scoring_leaders">puntos</a>, <a href="https://en.wikipedia.org/wiki/List_of_NBA_career_rebounding_leaders">rebotes</a>, <a href="https://en.wikipedia.org/wiki/List_of_NBA_career_assists_leaders">asistencias</a> y <a href="https://en.wikipedia.org/wiki/List_of_NBA_career_blocks_leaders">tapones</a> (listas de Wikipedia basadas en datos oficiales), contrastadas con <a href="https://landofbasketball.com/all_time_leaders/blocks_total_career_season.htm">Land of Basketball</a>; <a href="https://theanalyst.com/articles/nba-all-time-steals-leaders">robos</a> (Opta Analyst); <a href="https://landofbasketball.com/all_time_leaders/3_pointers_total_career_season.htm">triples</a> (Land of Basketball, contrastado con StatMuse).</p>
+  <details class="fuentes-plegables">
+    <summary>Fuentes</summary>
+    <ul>
+      <li><a href="https://en.wikipedia.org/wiki/List_of_NBA_career_scoring_leaders">Puntos</a>, <a href="https://en.wikipedia.org/wiki/List_of_NBA_career_rebounding_leaders">rebotes</a>, <a href="https://en.wikipedia.org/wiki/List_of_NBA_career_assists_leaders">asistencias</a> y <a href="https://en.wikipedia.org/wiki/List_of_NBA_career_blocks_leaders">tapones</a>: listas de Wikipedia basadas en datos oficiales, contrastadas con <a href="https://landofbasketball.com/all_time_leaders/blocks_total_career_season.htm">Land of Basketball</a></li>
+      <li><a href="https://theanalyst.com/articles/nba-all-time-steals-leaders">Robos</a>: Opta Analyst</li>
+      <li><a href="https://landofbasketball.com/all_time_leaders/3_pointers_total_career_season.htm">Triples</a>: Land of Basketball, contrastado con StatMuse</li>
+    </ul>
+    <p>Las fotos de los plusmarquistas proceden de Wikimedia Commons; su autor y licencia aparecen al pie de cada una y en <a href="{{ '/creditos-imagenes/' | url }}">Créditos de imágenes</a>.</p>
+  </details>
 </div>
