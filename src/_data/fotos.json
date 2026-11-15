@@ -128,5 +128,175 @@
   "licencia": "CC BY-SA 4.0",
   "licencia_url": "https://creativecommons.org/licenses/by-sa/4.0",
   "restricciones": ""
+ },
+ "banner-juego": {
+  "src": "/img/cabeceras/juego.jpg",
+  "alt": "Balón oficial de partido de la NBA",
+  "archivo": "$250 Spalding Game ball Basketball NBA New 600D T3I (52975895249).jpg",
+  "origen": "https://commons.wikimedia.org/wiki/File:$250_Spalding_Game_ball_Basketball_NBA_New_600D_T3I_(52975895249).jpg",
+  "autor": "www.derekcrowleyphotography.com",
+  "licencia": "CC BY 2.0",
+  "licencia_url": "https://creativecommons.org/licenses/by/2.0",
+  "restricciones": ""
+ },
+ "banner-clasificacion": {
+  "src": "/img/cabeceras/clasificacion.jpg",
+  "alt": "Partido de los Celtics en el TD Garden de Boston",
+  "archivo": "Celtics game versus the Timberwolves, February, 1 2009.jpg",
+  "origen": "https://commons.wikimedia.org/wiki/File:Celtics_game_versus_the_Timberwolves,_February,_1_2009.jpg",
+  "autor": "Ktr101",
+  "licencia": "CC BY 3.0",
+  "licencia_url": "https://creativecommons.org/licenses/by/3.0",
+  "restricciones": ""
+ },
+ "banner-calendario": {
+  "src": "/img/cabeceras/calendario.jpg",
+  "alt": "Salto inicial de un partido entre Lakers y Hawks",
+  "archivo": "Lakers vs Hawks.jpg",
+  "origen": "https://commons.wikimedia.org/wiki/File:Lakers_vs_Hawks.jpg",
+  "autor": "malingering",
+  "licencia": "CC BY 2.0",
+  "licencia_url": "https://creativecommons.org/licenses/by/2.0",
+  "restricciones": ""
+ },
+ "banner-lideres": {
+  "src": "/img/cabeceras/lideres.jpg",
+  "alt": "Lucha por un rebote en un partido entre Nets y Knicks",
+  "archivo": "Brooklyn Nets vs NY Knicks 2018-10-03 td 155 - 1st Quarter.jpg",
+  "origen": "https://commons.wikimedia.org/wiki/File:Brooklyn_Nets_vs_NY_Knicks_2018-10-03_td_155_-_1st_Quarter.jpg",
+  "autor": "Tdorante10",
+  "licencia": "CC BY-SA 4.0",
+  "licencia_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "restricciones": ""
+ },
+ "banner-lideres-historicos": {
+  "src": "/img/cabeceras/lideres-historicos.jpg",
+  "alt": "Paul Pierce levanta el trofeo Larry O'Brien",
+  "archivo": "Pierce Takes the Trophy.jpg",
+  "origen": "https://commons.wikimedia.org/wiki/File:Pierce_Takes_the_Trophy.jpg",
+  "autor": "Eric Kilby",
+  "licencia": "CC BY-SA 2.0",
+  "licencia_url": "https://creativecommons.org/licenses/by-sa/2.0",
+  "restricciones": ""
+ },
+ "curry": {
+  "src": "/img/fotos/curry.jpg",
+  "alt": "Stephen Curry con los Golden State Warriors",
+  "archivo": "Stephen Curry (Crop).jpg",
+  "origen": "https://commons.wikimedia.org/wiki/File:Stephen_Curry_(Crop).jpg",
+  "autor": "Keith Allison from Hanover, MD, USA",
+  "licencia": "CC BY-SA 2.0",
+  "licencia_url": "https://creativecommons.org/licenses/by-sa/2.0",
+  "restricciones": ""
+ },
+ "iverson": {
+  "src": "/img/fotos/iverson.jpg",
+  "alt": "Allen Iverson con los Philadelphia 76ers",
+  "archivo": "Allen Iverson Sixers jumper.jpg",
+  "origen": "https://commons.wikimedia.org/wiki/File:Allen_Iverson_Sixers_jumper.jpg",
+  "autor": "Kevin Burkett",
+  "licencia": "CC BY-SA 2.0",
+  "licencia_url": "https://creativecommons.org/licenses/by-sa/2.0",
+  "restricciones": ""
+ },
+ "durant": {
+  "src": "/img/fotos/durant.jpg",
+  "alt": "Kevin Durant con los Oklahoma City Thunder",
+  "archivo": "Kevin Durant dunk.jpg",
+  "origen": "https://commons.wikimedia.org/wiki/File:Kevin_Durant_dunk.jpg",
+  "autor": "Keith Allison from Owings Mills, USA",
+  "licencia": "CC BY-SA 2.0",
+  "licencia_url": "https://creativecommons.org/licenses/by-sa/2.0",
+  "restricciones": ""
+ },
+ "nowitzki": {
+  "src": "/img/fotos/nowitzki.jpg",
+  "alt": "Dirk Nowitzki con los Dallas Mavericks",
+  "archivo": "Dirk Nowitzki 2.jpg",
+  "origen": "https://commons.wikimedia.org/wiki/File:Dirk_Nowitzki_2.jpg",
+  "autor": "Keith Allison from Baltimore, USA",
+  "licencia": "CC BY-SA 2.0",
+  "licencia_url": "https://creativecommons.org/licenses/by-sa/2.0",
+  "restricciones": ""
+ },
+ "west": {
+  "src": "/img/fotos/west.jpg",
+  "alt": "Jerry West con los Los Angeles Lakers en 1972",
+  "archivo": "Jerry West 1972.jpeg",
+  "origen": "https://commons.wikimedia.org/wiki/File:Jerry_West_1972.jpeg",
+  "autor": "Malcolm W. Emmons",
+  "licencia": "Public domain",
+  "licencia_url": "",
+  "restricciones": ""
+ },
+ "h-naismith": {
+  "src": "/img/historia/naismith.jpg",
+  "alt": "James Naismith con un balón y una cesta de melocotones",
+  "archivo": "Dr. James Naismith.jpg",
+  "origen": "https://commons.wikimedia.org/wiki/File:Dr._James_Naismith.jpg",
+  "autor": "Autor desconocido",
+  "licencia": "Public domain",
+  "licencia_url": "",
+  "restricciones": ""
+ },
+ "h-reglas": {
+  "src": "/img/historia/reglas.jpg",
+  "alt": "Primera página de las 13 reglas originales del baloncesto",
+  "archivo": "Dr. James Naismith's Original 13 Rules of Basket Ball pg 1.jpg",
+  "origen": "https://commons.wikimedia.org/wiki/File:Dr._James_Naismith%27s_Original_13_Rules_of_Basket_Ball_pg_1.jpg",
+  "autor": "Dr._James_Naismith's_Original_13_Rules_of_Basket_Ball.jpg : James Naismith derivative work: Theornamentalist",
+  "licencia": "Public domain",
+  "licencia_url": "",
+  "restricciones": ""
+ },
+ "h-lakers-1950": {
+  "src": "/img/historia/lakers-1950.jpg",
+  "alt": "Los Minneapolis Lakers, campeones de 1950",
+  "archivo": "1950 Minneapolis Lakers.jpeg",
+  "origen": "https://commons.wikimedia.org/wiki/File:1950_Minneapolis_Lakers.jpeg",
+  "autor": "Autor desconocido",
+  "licencia": "Public domain",
+  "licencia_url": "",
+  "restricciones": ""
+ },
+ "h-russell": {
+  "src": "/img/historia/russell-auerbach.jpg",
+  "alt": "Bill Russell y Red Auerbach celebran el título de 1966",
+  "archivo": "Bill Russell and Red Auerbach 1966.jpeg",
+  "origen": "https://commons.wikimedia.org/wiki/File:Bill_Russell_and_Red_Auerbach_1966.jpeg",
+  "autor": "Fred Keenan",
+  "licencia": "Public domain",
+  "licencia_url": "",
+  "restricciones": ""
+ },
+ "h-anos60": {
+  "src": "/img/historia/knicks-warriors-1960.jpg",
+  "alt": "Partido entre New York Knicks y Philadelphia Warriors en 1960",
+  "archivo": "1960 New York Knicks vs. Philadelphia Warriors.jpeg",
+  "origen": "https://commons.wikimedia.org/wiki/File:1960_New_York_Knicks_vs._Philadelphia_Warriors.jpeg",
+  "autor": "Autor desconocido",
+  "licencia": "Public domain",
+  "licencia_url": "",
+  "restricciones": ""
+ },
+ "h-erving": {
+  "src": "/img/historia/erving-nets.jpg",
+  "alt": "Julius Erving en su debut con los Nets",
+  "archivo": "Julius Erving's Nets debut.jpg",
+  "origen": "https://commons.wikimedia.org/wiki/File:Julius_Erving%27s_Nets_debut.jpg",
+  "autor": "American Basketball Association",
+  "licencia": "Public domain",
+  "licencia_url": "",
+  "restricciones": ""
+ },
+ "h-dreamteam": {
+  "src": "/img/historia/dream-team.jpg",
+  "alt": "El Dream Team en los Juegos Olímpicos de Barcelona 1992",
+  "archivo": "Dream Team at the 1992 Summer Olympics.JPEG",
+  "origen": "https://commons.wikimedia.org/wiki/File:Dream_Team_at_the_1992_Summer_Olympics.JPEG",
+  "autor": "Ken Hackman, U.S. Air Force",
+  "licencia": "Public domain",
+  "licencia_url": "",
+  "restricciones": ""
  }
 }
