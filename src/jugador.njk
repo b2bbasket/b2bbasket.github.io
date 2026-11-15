@@ -1,0 +1,87 @@
+---
+layout: base.njk
+pagination:
+  data: plantillas.jugadores
+  size: 1
+  alias: j
+  addAllPagesToCollections: true
+permalink: "/jugador/{{ j.slug }}/index.html"
+eleventyComputed:
+  title: "{{ j.nombre }}"
+  resumen: "{{ j.nombre }}, {{ j.posicion | lower }} de los {{ j.equipo }}: datos, plantilla y partidos de su equipo."
+---
+{% set E = temporada.equipos[j.abr] %}
+{% set ficha = collections.fichas | fichaDe(j.equipo) %}
+{% set leyenda = collections.leyendas | leyendaDe(j.nombre) %}
+{% set companeros = plantillas | plantillaDe(j.abr) %}
+<div class="contenedor">
+  <p class="migas"><a href="{{ '/plantillas/' | url }}">Plantillas</a> › {% if ficha %}<a href="{{ ficha.url | url }}">{{ j.equipo }}</a>{% else %}{{ j.equipo }}{% endif %}</p>
+  <header class="jugador-cab">
+    <div class="jugador-cab__foto{% if not j.foto %} jugador-cab__foto--vacia{% endif %}">
+      {% if j.foto %}<img src="{{ j.foto.url }}" alt="{{ j.nombre }}" width="480" loading="eager">{% else %}<span>{{ j.nombre | iniciales }}</span>{% endif %}
+    </div>
+    <div class="jugador-cab__texto">
+      <p class="jugador-cab__kicker">{{ j.equipo }}{% if j.dorsal %} · #{{ j.dorsal }}{% endif %}</p>
+      <h1>{{ j.nombre }}</h1>
+      <p class="jugador-cab__pos">{{ j.posicion }}</p>
+      <ul class="jugador-chips">
+        {% if j.lesionado %}<li class="chip chip--rojo">Lesionado</li>{% endif %}
+        {% if j.doble_via %}<li class="chip">Contrato dual (G League)</li>{% endif %}
+        {% if leyenda %}<li class="chip chip--oro"><a href="{{ leyenda.url | url }}">Perfil de leyenda →</a></li>{% endif %}
+      </ul>
+      {% if j.foto %}<p class="jugador-cab__credito">Foto: {{ j.foto.autor }} · <a href="{{ j.foto.origen }}" rel="noopener">{{ j.foto.licencia }}</a></p>{% endif %}
+    </div>
+  </header>
+
+  <section class="jugador-datos revelar" aria-label="Datos">
+    {% if j.nacimiento %}<div><small>Edad</small><strong>{{ j.nacimiento | edad }} años</strong><span>{{ j.nacimiento | fechaIso }}</span></div>{% endif %}
+    {% if j.altura %}<div><small>Altura</small><strong>{{ j.altura | metros }}</strong></div>{% endif %}
+    {% if j.peso %}<div><small>Peso</small><strong>{{ j.peso }} kg</strong></div>{% endif %}
+    {% if j.pais %}<div><small>País</small><strong>{{ j.pais }}</strong>{% if j.paises.length > 1 %}<span>También {{ j.paises | excluir(j.pais) | join(", ") }}</span>{% endif %}</div>{% endif %}
+    {% if j.lugar %}<div><small>Nacido en</small><strong class="jugador-datos__texto">{{ j.lugar }}</strong></div>{% endif %}
+    {% if j.procedencia %}<div><small>Procedencia</small><strong class="jugador-datos__texto">{{ j.procedencia }}</strong></div>{% endif %}
+  </section>
+
+  {% if E %}
+  <section class="jugador-equipo revelar">
+    <h2 class="ficha-sub">Su equipo esta temporada</h2>
+    <div class="jugador-equipo__rejilla">
+      <div class="jugador-equipo__caja">
+        <small>Balance</small>
+        <strong>{{ E.v }}-{{ E.d }}</strong>
+        <span>{{ E.puesto }}.º en el {{ E.conferencia }}</span>
+      </div>
+      {% if E.ultimos.length %}
+      <div class="jugador-equipo__caja">
+        <small>Últimos partidos</small>
+        <ul class="jugador-lista">{% for r in E.ultimos %}<li><b class="{{ "res-v" if r.gano else "res-d" }}">{{ "V" if r.gano else "D" }}</b> {{ "vs" if r.local else "en" }} {{ r.rival }} <span>{{ r.pf }}-{{ r.pc }}</span></li>{% endfor %}</ul>
+      </div>
+      {% endif %}
+      {% if E.proximos.length %}
+      <div class="jugador-equipo__caja">
+        <small>Próximos partidos</small>
+        <ul class="jugador-lista">{% for p in E.proximos %}<li>{{ "vs" if p.local else "en" }} {{ p.rival }} <span data-hora="{{ p.t }}">{{ p.t | diaEspana }} · {{ p.t | horaEspana }}</span></li>{% endfor %}</ul>
+      </div>
+      {% endif %}
+    </div>
+  </section>
+  {% endif %}
+
+  <section class="jugador-companeros revelar">
+    <h2 class="ficha-sub">Plantilla de los {{ j.equipo }}</h2>
+    <ul class="plantilla plantilla--compacta">
+      {% for c in companeros %}<li{% if c.slug == j.slug %} class="actual"{% endif %}><a href="{{ ('/jugador/' + c.slug + '/') | url }}"><b>{{ c.dorsal or "–" }}</b> {{ c.nombre }}</a></li>{% endfor %}
+    </ul>
+  </section>
+
+  <details class="fuentes-plegables">
+    <summary>Fuentes</summary>
+    <ul>
+      <li><a href="{{ plantillas.equipos[j.abr].fuente }}" rel="noopener">Plantilla de los {{ j.equipo }}, Wikipedia</a> (dorsal, posición, altura, peso, nacimiento, procedencia y lesiones)</li>
+      {% if j.wikipedia %}<li><a href="{{ j.wikipedia }}" rel="noopener">{{ j.nombre }}, Wikipedia</a>{% if j.wikipedia_es %} · <a href="{{ j.wikipedia_es }}" rel="noopener">en español</a>{% endif %}</li>{% endif %}
+      {% if j.wikidata %}<li><a href="https://www.wikidata.org/wiki/{{ j.wikidata }}" rel="noopener">{{ j.nombre }}, Wikidata</a> (país y lugar de nacimiento)</li>{% endif %}
+      <li>Resultados y calendario del equipo: API de balldontlie</li>
+    </ul>
+    <p>Plantillas actualizadas automáticamente cada día. Última revisión de la plantilla en Wikipedia: {{ plantillas.equipos[j.abr].revisada | fechaIso }}.</p>
+  </details>
+</div>

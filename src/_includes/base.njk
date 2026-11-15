@@ -42,6 +42,7 @@
 <link rel="stylesheet" href="{{ '/css/estilos.css' | url }}?v={{ web.version }}">
 <script>try{var tm=localStorage.getItem("tema");if(!tm){tm=window.matchMedia("(prefers-color-scheme: dark)").matches?"oscuro":"claro"}document.documentElement.setAttribute("data-tema",tm)}catch(e){}</script>
 <script>try{if(sessionStorage.getItem("splash")){document.documentElement.classList.add("splash-visto")}else{sessionStorage.setItem("splash","1")}}catch(e){}</script>
+{% if site.goatcounter and not page.url.startsWith("/admin") %}<script data-goatcounter="https://{{ site.goatcounter }}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>{% endif %}
 </head>
 <body>
 <div class="splash" id="splash" aria-hidden="true">
@@ -84,10 +85,13 @@
     <h2 class="pie__titulo">Más información</h2>
     <div class="pie__tarjetas">
       <a href="{{ '/lideres-historicos/' | url }}"><strong>Líderes históricos</strong><span>Top 10 de puntos, rebotes, asistencias, tapones, robos y triples</span></a>
+      <a href="{{ '/plantillas/' | url }}"><strong>Plantillas</strong><span>Los jugadores de los 30 equipos, con su ficha y los españoles y latinos</span></a>
       <a href="{{ '/jugadores/' | url }}"><strong>Grandes jugadores</strong><span>Perfiles de {{ collections.leyendas.length }} leyendas: su carrera, sus momentos y su legado</span></a>
       <a href="{{ '/historia-de-la-liga/' | url }}"><strong>Historia de la liga</strong><span>Cómo empezó todo y cómo ha cambiado el juego</span></a>
       <div class="pie__medio"><h3>El medio</h3>
         <a href="{{ '/quienes-somos/' | url }}">Quiénes somos</a>
+        <a href="{{ '/colabora/' | url }}">Colabora</a>
+        {% if site.newsletter_url %}<a href="{{ site.newsletter_url }}" rel="noopener">Newsletter</a>{% endif %}
         <a href="{{ '/contacto/' | url }}">Contacto</a>
         <a href="{{ '/juego/' | url }}">Juego diario</a>
         <a href="{{ site.instagram }}">Instagram</a></div>
@@ -113,6 +117,7 @@
 </div>
 <script src="{{ '/js/cookies.js' | url }}"></script>
 {% endif %}
+<script src="{{ '/js/zona.js' | url }}?v={{ web.version }}"></script>
 <script src="{{ '/js/main.js' | url }}?v={{ web.version }}"></script>
 <script src="{{ '/js/directo.js' | url }}?v={{ web.version }}" defer></script>
 </body>

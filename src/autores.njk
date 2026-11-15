@@ -1,0 +1,31 @@
+---
+layout: base.njk
+pagination:
+  data: autores.autores
+  size: 1
+  alias: a
+permalink: "/autores/{{ a.slug }}/index.html"
+eleventyComputed:
+  title: "{{ a.nombre }}"
+  resumen: "{{ a.nombre }}, {{ a.rol | lower }} de B2B Basket: quién es y todos sus artículos."
+---
+{% set piezas = collections.recientes | deAutor(a.nombre, site.autor) %}
+<div class="contenedor">
+  <header class="leyendas-cab autor-cab">
+    <p class="leyendas-cab__kicker">{{ a.rol }}</p>
+    <h1>{{ a.nombre }}</h1>
+    <p>{{ a.bio }}</p>
+    {% if a.instagram or a.linkedin or a.web %}
+    <p class="autor-redes">{% if a.instagram %}<a href="{{ a.instagram }}" rel="noopener me">Instagram</a>{% endif %}{% if a.linkedin %}<a href="{{ a.linkedin }}" rel="noopener me">LinkedIn</a>{% endif %}{% if a.web %}<a href="{{ a.web }}" rel="noopener me">Web</a>{% endif %}</p>
+    {% endif %}
+  </header>
+  <h2 class="seccion__titulo">Artículos{% if piezas.length %} <small class="autor-cuenta">{{ piezas.length }}</small>{% endif %}</h2>
+  {% if piezas.length %}
+  <div class="autor-lista">
+    {% for p in piezas %}<a class="mini-articulo" href="{{ p.url | url }}"><small>{{ p.date | fecha }}</small><strong>{{ p.data.title }}</strong></a>{% endfor %}
+  </div>
+  {% else %}
+  <p class="nota-fuente">Todavía no hay artículos publicados.</p>
+  {% endif %}
+  <p class="nota-fuente">Cómo trabajamos: <a href="{{ '/principios-editoriales/' | url }}">principios editoriales</a> · <a href="{{ '/correcciones/' | url }}">correcciones</a> · <a href="{{ '/colabora/' | url }}">colabora con B2B Basket</a></p>
+</div>

@@ -1,4 +1,5 @@
 import fs from "node:fs";
+import { grafico, video } from "./scripts/bloques.mjs";
 
 // Dirección de la web calculada a partir del repositorio de GitHub (variable GITHUB_REPOSITORY en Actions):
 // - repositorio «usuario.github.io»  → https://usuario.github.io/
@@ -10,6 +11,16 @@ const PREFIJO = EN_RAIZ ? "/" : `/${REPO}/`;
 const WEB = { version: Date.now().toString(36), repo: `${DUENO}/${REPO}`, prefijo: PREFIJO, url: `https://${DUENO.toLowerCase()}.github.io${EN_RAIZ ? "" : "/" + REPO}` };
 
 export default function (eleventyConfig) {
+  // Bloques ```grafico y ```video dentro de los artículos (ver scripts/bloques.mjs)
+  eleventyConfig.amendLibrary("md", (md) => {
+    const normal = md.renderer.rules.fence;
+    md.renderer.rules.fence = (tokens, i, opciones, env, yo) => {
+      const tipo = (tokens[i].info || "").trim().toLowerCase();
+      if (tipo === "grafico" || tipo === "gráfico") return grafico(tokens[i].content);
+      if (tipo === "video" || tipo === "vídeo") return video(tokens[i].content);
+      return normal(tokens, i, opciones, env, yo);
+    };
+  });
   // Copia tal cual estos archivos a la web final
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
@@ -143,6 +154,32 @@ export default function (eleventyConfig) {
   });
   // Convierte cifras escritas en español («40,1», «43.440») en números para dibujar barras
   eleventyConfig.addFilter("numero", (t) => { const n = parseFloat(String(t || "").replace(/\./g, "").replace(",", ".")); return isNaN(n) ? 0 : n; });
+  // Plantillas (src/_data/plantillas.json): jugadores de un equipo, edad y jugadores hispanohablantes
+  eleventyConfig.addFilter("plantillaDe", (pl, abr) => ((pl && pl.jugadores) || []).filter((j) => j.abr === abr)
+    .sort((a, b) => (Number(a.dorsal) || 999) - (Number(b.dorsal) || 999) || a.nombre.localeCompare(b.nombre)));
+  eleventyConfig.addFilter("edad", (iso) => {
+    if (!iso) return "";
+    const n = new Date(iso + "T12:00:00Z"), h = new Date();
+    let e = h.getUTCFullYear() - n.getUTCFullYear();
+    if (h.getUTCMonth() < n.getUTCMonth() || (h.getUTCMonth() === n.getUTCMonth() && h.getUTCDate() < n.getUTCDate())) e--;
+    return e;
+  });
+  const HISPANOS = ["España", "México", "Argentina", "Puerto Rico", "República Dominicana", "Venezuela", "Uruguay", "Colombia", "Cuba", "Panamá", "Chile", "Nicaragua", "Ecuador", "Perú", "Paraguay", "Bolivia", "Honduras", "Guatemala", "El Salvador", "Costa Rica", "Brasil"];
+  eleventyConfig.addFilter("hispanos", (pl) => {
+    const grupos = {};
+    for (const j of (pl && pl.jugadores) || []) {
+      const pais = HISPANOS.find((p) => (j.paises || []).includes(p) || j.pais === p);
+      if (!pais) continue;
+      (grupos[pais] = grupos[pais] || []).push(j);
+    }
+    return HISPANOS.filter((p) => grupos[p]).map((p) => ({ pais: p, jugadores: grupos[p].sort((a, b) => a.nombre.localeCompare(b.nombre)) }));
+  });
+  eleventyConfig.addFilter("fechaIso", (iso) => iso ? new Intl.DateTimeFormat("es-ES", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(String(iso).length === 10 ? iso + "T12:00:00Z" : iso)) : "");
+  eleventyConfig.addFilter("excluir", (lista, x) => (lista || []).filter((y) => y !== x));
+  eleventyConfig.addFilter("metros", (m) => (m ? m.toFixed(2).replace(".", ",") + " m" : ""));
+  // Autores: ficha de un autor por su nombre y artículos que firma (sin firma = firma por defecto)
+  eleventyConfig.addFilter("autorDe", (autores, nombre) => ((autores && autores.autores) || []).find((a) => a.nombre === nombre));
+  eleventyConfig.addFilter("deAutor", (lista, nombre, porDefecto) => (lista || []).filter((p) => (p.data.autor || porDefecto) === nombre));
   // Historia de la liga: fotos de una etapa con cierta disposición (solo las que ya están descargadas)
   eleventyConfig.addFilter("porDisposicion", (lista, disps, fotos) => (lista || []).filter((f) => disps.includes(f.disp) && fotos && fotos[f.id]));
   eleventyConfig.addFilter("leyendaDe", (lista, nombre) => (lista || []).find((l) => l.data.nombre === nombre));

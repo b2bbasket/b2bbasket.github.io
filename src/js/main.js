@@ -236,3 +236,16 @@ if (filtros) {
     document.querySelectorAll('.filtrable').forEach((c) => { c.hidden = !!eq && c.dataset.equipo !== eq; });
   }));
 }
+
+// Vídeos de los artículos: YouTube solo se carga cuando el lector pulsa el botón
+document.addEventListener('click', function (e) {
+  var b = e.target.closest && e.target.closest('.video-b2b__boton');
+  if (!b) return;
+  var marco = b.parentNode, id = marco.dataset.video;
+  var f = document.createElement('iframe');
+  f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+  f.title = 'Vídeo de YouTube';
+  f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+  f.allowFullscreen = true;
+  marco.textContent = ''; marco.appendChild(f);
+});

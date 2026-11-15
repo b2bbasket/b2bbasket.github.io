@@ -55,14 +55,34 @@ layout: base.njk
         <h3>Próximos partidos</h3>
         <ul class="proximos">
           {% for p in E.proximos %}
-          <li><span class="proximos__dia">{% if p.t %}{{ p.t | diaEspana }} · {{ p.t | horaEspana }}{% else %}{{ p.d | diaCorto }}{% endif %}</span><strong>{{ "vs" if p.local else "en" }} {{ eqs[p.rival].nombre }}</strong></li>
+          <li><span class="proximos__dia">{% if p.t %}<span data-hora="{{ p.t }}">{{ p.t | diaEspana }} · {{ p.t | horaEspana }}</span>{% else %}{{ p.d | diaCorto }}{% endif %}</span><strong>{{ "vs" if p.local else "en" }} {{ eqs[p.rival].nombre }}</strong></li>
           {% endfor %}
         </ul>
         <a class="enlace-flecha" href="{{ '/calendario/' | url }}">Calendario completo →</a>
       </div>
       {% endif %}
     </div>
-    <p class="nota-fuente">Datos de la temporada regular (API de balldontlie). Horas en horario peninsular.</p>
+    <p class="nota-fuente">Datos de la temporada regular (API de balldontlie). Horas de <span data-zona-nombre>España</span>; puedes cambiar el país en el <a href="{{ '/calendario/' | url }}">Calendario</a>.</p>
+  </section>
+  {% endif %}
+
+  {% set plantilla = plantillas | plantillaDe(nombre | abrev) %}
+  {% if plantilla.length %}
+  <section class="ficha-plantilla revelar" aria-labelledby="t-plantilla">
+    <h2 id="t-plantilla" class="ficha-sub">Plantilla</h2>
+    {% if plantillas.equipos[nombre | abrev].entrenador %}<p class="plantilla-equipo__coach">Entrenador: {{ plantillas.equipos[nombre | abrev].entrenador }}</p>{% endif %}
+    <div class="plantilla-tarjetas">
+      {% for c in plantilla %}
+      <a class="jugador-mini" href="{{ ('/jugador/' + c.slug + '/') | url }}">
+        <span class="jugador-mini__foto">{% if c.foto %}<img src="{{ c.foto.url }}" alt="" loading="lazy">{% else %}<i>{{ c.nombre | iniciales }}</i>{% endif %}</span>
+        <span class="jugador-mini__dorsal">{{ c.dorsal or "–" }}</span>
+        <strong>{{ c.nombre }}</strong>
+        <small>{{ c.posicion }}{% if c.nacimiento %} · {{ c.nacimiento | edad }} años{% endif %}{% if c.pais and c.pais != "Estados Unidos" %} · {{ c.pais }}{% endif %}</small>
+        {% if c.lesionado %}<em class="chip chip--rojo">Lesionado</em>{% elif c.doble_via %}<em class="chip">Contrato dual</em>{% endif %}
+      </a>
+      {% endfor %}
+    </div>
+    <p class="nota-fuente">Plantilla de Wikipedia, actualizada cada día. <a href="{{ '/plantillas/' | url }}">Todas las plantillas →</a></p>
   </section>
   {% endif %}
 

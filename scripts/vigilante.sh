@@ -10,6 +10,7 @@
 #     y cada 5 mientras haya algún partido en juego.
 #   · Por la mañana (07:00-13:59): actualización completa (resultados, clasificación, calendario) cada hora.
 #   · El resto del día: actualización completa cada 4 horas, por si cambia el calendario.
+#   · Plantillas de los equipos: una vez al día, desde las 8:00.
 # Solo guarda y publica cuando algo ha cambiado de verdad.
 set -u
 DURACION=${DURACION:-19800}          # 5 h 30 min
@@ -44,6 +45,11 @@ while [ "$(date +%s)" -lt "$FIN" ]; do
      || [ $((AHORA - ULTIMA_COMPLETA)) -ge 14400 ]; then
     node scripts/actualizar.mjs && guardar "Actualizar resultados, clasificación y calendario"
     ULTIMA_COMPLETA=$(date +%s)
+  fi
+
+  # Plantillas (Wikipedia y Wikidata): una vez al día, a partir de las 8:00
+  if [ "$HORA" -ge 8 ] && node -e 'const p=require("./src/_data/plantillas.json");process.exit(Date.now()-Date.parse(p.actualizado||0)>20*3600e3?0:1)' 2>/dev/null; then
+    node scripts/plantillas.mjs && guardar "Actualizar plantillas de los equipos (Wikipedia y Wikidata)"
   fi
 
   # Calendario en directo

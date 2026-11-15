@@ -1,0 +1,46 @@
+---
+layout: base.njk
+title: "Españoles y latinos en la NBA"
+resumen: "Todos los jugadores españoles y latinoamericanos de la NBA esta temporada: dónde juegan y cómo le va a su equipo."
+permalink: /espanoles-y-latinos/index.html
+---
+{% set grupos = plantillas | hispanos %}
+<div class="contenedor">
+  <header class="leyendas-cab">
+    <p class="leyendas-cab__kicker">Temporada {{ temporada.temporada or "actual" }}</p>
+    <h1>Españoles y latinos en la NBA</h1>
+    <p>Los jugadores de España y de Latinoamérica que están en una plantilla de la NBA, con el momento de su equipo y su próximo partido. Se actualiza solo cada día.</p>
+  </header>
+  <div class="zona-selector" role="group" aria-label="Ver los horarios de">
+    <span>Horarios de</span>
+    <button type="button" data-zona="es">España</button><button type="button" data-zona="mx">México</button><button type="button" data-zona="ar">Argentina</button><button type="button" data-zona="co">Colombia</button>
+  </div>
+  {% for g in grupos %}
+  <section class="hispanos revelar">
+    <h2 class="hispanos__pais">{{ g.pais }} <span>{{ g.jugadores.length }}</span></h2>
+    <div class="hispanos__rejilla">
+      {% for j in g.jugadores %}{% set E = temporada.equipos[j.abr] %}
+      <a class="hispano" href="{{ ('/jugador/' + j.slug + '/') | url }}">
+        <span class="hispano__foto">{% if j.foto %}<img src="{{ j.foto.url }}" alt="" loading="lazy">{% else %}<i>{{ j.nombre | iniciales }}</i>{% endif %}</span>
+        <span class="hispano__texto">
+          <strong>{{ j.nombre }}{% if j.lesionado %} <em class="chip chip--rojo">Lesionado</em>{% endif %}</strong>
+          <small>{{ j.posicion }} · {{ j.equipo }}{% if j.paises.length > 1 %} · también {{ j.paises | excluir(g.pais) | join(", ") }}{% endif %}</small>
+          {% if E %}<span class="hispano__equipo">{{ E.v }}-{{ E.d }}{% if E.ultimos.length %} · {% for r in E.ultimos | limite(5) | reverse %}<b class="{{ "res-v" if r.gano else "res-d" }}">{{ "V" if r.gano else "D" }}</b>{% endfor %}{% endif %}{% if E.proximos.length %} · Próximo: {{ "vs" if E.proximos[0].local else "en" }} {{ E.proximos[0].rival }}, <span data-hora="{{ E.proximos[0].t }}">{{ E.proximos[0].t | diaEspana }} {{ E.proximos[0].t | horaEspana }}</span>{% endif %}</span>{% endif %}
+        </span>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+  {% else %}
+  <p>Todavía no hay datos de plantillas.</p>
+  {% endfor %}
+  <details class="fuentes-plegables">
+    <summary>Fuentes</summary>
+    <ul>
+      <li>Plantillas: plantillas de los equipos en Wikipedia</li>
+      <li>País: «país deportivo» (la selección con la que juega) o nacionalidad en Wikidata. Se incluyen los jugadores con doble nacionalidad.</li>
+      <li>Resultados y calendario: API de balldontlie</li>
+    </ul>
+    <p>Datos actualizados el {{ plantillas.actualizado | fechaIso }}.</p>
+  </details>
+</div>
