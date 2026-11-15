@@ -1,0 +1,251 @@
+// 1) Barra de progreso y cabecera compacta al hacer scroll
+const barra = document.getElementById('progreso');
+const cabecera = document.getElementById('cabecera');
+function alScroll() {
+  const alto = document.documentElement.scrollHeight - window.innerHeight;
+  barra.style.width = (alto > 0 ? (window.scrollY / alto) * 100 : 0) + '%';
+  cabecera.classList.toggle('compacta', window.scrollY > 60);
+}
+window.addEventListener('scroll', alScroll, { passive: true });
+alScroll();
+
+// 2) Aparición suave de los elementos al entrar en pantalla
+const observador = new IntersectionObserver((entradas) => {
+  entradas.forEach((e) => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observador.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll('.revelar').forEach((el, i) => {
+  el.style.transitionDelay = (i % 3) * 80 + 'ms';
+  observador.observe(el);
+});
+
+// 3) Contadores animados
+const reducir = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const contador = new IntersectionObserver((entradas) => {
+  entradas.forEach((e) => {
+    if (!e.isIntersecting) return;
+    const el = e.target, meta = +el.dataset.contar;
+    if (reducir) { el.textContent = meta; contador.unobserve(el); return; }
+    const inicio = performance.now(), dur = 1400;
+    (function paso(t) {
+      const p = Math.min((t - inicio) / dur, 1);
+      el.textContent = Math.round(meta * (1 - Math.pow(1 - p, 3)));
+      if (p < 1) requestAnimationFrame(paso);
+    })(inicio);
+    contador.unobserve(el);
+  });
+}, { threshold: 0.6 });
+document.querySelectorAll('[data-contar]').forEach((el) => contador.observe(el));
+
+// 4) Menú móvil
+const boton = document.getElementById('menuBoton');
+const nav = document.getElementById('nav');
+boton.addEventListener('click', () => {
+  const abierto = nav.classList.toggle('abierto');
+  boton.setAttribute('aria-expanded', abierto);
+});
+nav.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => {
+  nav.classList.remove('abierto');
+  boton.setAttribute('aria-expanded', 'false');
+}));
+
+// 5) Titular del destacado: aparece palabra a palabra
+const tituloHero = document.querySelector('.hero__titulo');
+if (tituloHero && !reducir) {
+  const palabras = tituloHero.textContent.trim().split(/\s+/);
+  tituloHero.textContent = '';
+  palabras.forEach((p, i) => {
+    const s = document.createElement('span');
+    s.className = 'palabra';
+    s.style.animationDelay = i * 70 + 'ms';
+    s.textContent = p;
+    tituloHero.appendChild(s);
+    tituloHero.appendChild(document.createTextNode(' '));
+  });
+}
+
+// 6) Efecto parallax suave en la imagen del destacado
+const fondoHero = document.querySelector('.hero__fondo');
+if (fondoHero && !reducir) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY < 900) {
+      fondoHero.style.transform = 'translateY(' + window.scrollY * 0.12 + 'px) scale(1.1)';
+    }
+  }, { passive: true });
+}
+
+// 7) Las tarjetas se inclinan ligeramente al pasar el ratón (solo en ordenador)
+if (!reducir && window.matchMedia('(hover: hover)').matches) {
+  document.querySelectorAll('.tarjeta').forEach((c) => {
+    c.addEventListener('mousemove', (e) => {
+      const r = c.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5;
+      const y = (e.clientY - r.top) / r.height - 0.5;
+      c.style.setProperty('--ry', x * 8 + 'deg');
+      c.style.setProperty('--rx', -y * 8 + 'deg');
+    });
+    c.addEventListener('mouseleave', () => {
+      c.style.setProperty('--rx', '0deg');
+      c.style.setProperty('--ry', '0deg');
+    });
+  });
+}
+
+// 8) Botón para volver arriba
+const botonSubir = document.getElementById('subir');
+if (botonSubir) {
+  window.addEventListener('scroll', () => {
+    botonSubir.classList.toggle('visible', window.scrollY > 500);
+  }, { passive: true });
+  botonSubir.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: reducir ? 'auto' : 'smooth' });
+  });
+}
+
+// 9) Carrusel de la portada (dedo en el móvil, flechas del teclado y botones en ordenador)
+const pistaSlider = document.getElementById('sliderPista');
+if (pistaSlider) {
+  const slider = document.getElementById('slider');
+  const slides = Array.from(pistaSlider.children);
+  const puntos = document.getElementById('sliderPuntos');
+  if (slides.length < 2) slider.classList.add('solo');
+  slides.forEach((_, i) => {
+    const b = document.createElement('button');
+    b.setAttribute('aria-label', 'Ir a la noticia ' + (i + 1));
+    b.addEventListener('click', () => ir(i));
+    puntos.appendChild(b);
+  });
+  const actual = () => Math.round(pistaSlider.scrollLeft / pistaSlider.clientWidth);
+  function ir(i) {
+    i = Math.max(0, Math.min(slides.length - 1, i));
+    pistaSlider.scrollTo({ left: i * pistaSlider.clientWidth, behavior: reducir ? 'auto' : 'smooth' });
+  }
+  function marcar() {
+    const a = actual();
+    Array.from(puntos.children).forEach((b, i) => b.classList.toggle('activo', i === a));
+  }
+  pistaSlider.addEventListener('scroll', () => requestAnimationFrame(marcar), { passive: true });
+  marcar();
+  document.getElementById('sliderIzq').addEventListener('click', () => ir(actual() - 1));
+  document.getElementById('sliderDer').addEventListener('click', () => ir(actual() + 1));
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+    const tag = (document.activeElement || {}).tagName;
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+    const r = slider.getBoundingClientRect();
+    if (r.bottom < 0 || r.top > window.innerHeight) return;
+    ir(actual() + (e.key === 'ArrowRight' ? 1 : -1));
+  });
+}
+
+// 10) Pestañas de la ficha de equipo
+document.querySelectorAll('.pestana').forEach((b) => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('.pestana').forEach((x) => x.classList.toggle('activa', x === b));
+    document.querySelectorAll('.panel-pestana').forEach((p) => { p.hidden = p.id !== 'panel-' + b.dataset.panel; });
+  });
+});
+
+// 11) Buscador desplegable de la cabecera
+(function () {
+  const caja = document.getElementById('buscarRapido');
+  if (!caja) return;
+  const campo = document.getElementById('buscarCampo');
+  const boton = document.getElementById('buscarBoton');
+  const res = document.getElementById('buscarRes');
+  const base = campo.dataset.base;
+  let datos = null;
+  const limpiar = (s) => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  function cargar() {
+    if (datos) return Promise.resolve(datos);
+    return fetch(base + 'buscador.json').then((r) => r.json()).then((d) => (datos = d)).catch(() => (datos = []));
+  }
+  function ir() {
+    const q = campo.value.trim();
+    if (q) location.href = base + 'buscar/?q=' + encodeURIComponent(q);
+  }
+  function pintar() {
+    const palabras = limpiar(campo.value.trim()).split(/\s+/).filter(Boolean);
+    res.textContent = '';
+    if (!palabras.length) return;
+    cargar().then((d) => {
+      const r = d.filter((i) => palabras.every((p) => limpiar(i.t + ' ' + i.r + ' ' + i.k).includes(p)));
+      if (!r.length) { const p = document.createElement('p'); p.textContent = 'Sin resultados.'; res.appendChild(p); return; }
+      r.slice(0, 6).forEach((i) => {
+        const a = document.createElement('a');
+        a.href = base.replace(/\/$/, '') + i.u;
+        const k = document.createElement('small'); k.textContent = i.k;
+        const t = document.createElement('strong'); t.textContent = i.t;
+        a.append(k, t); res.appendChild(a);
+      });
+      const v = document.createElement('a');
+      v.className = 'ver-todos'; v.href = base + 'buscar/?q=' + encodeURIComponent(campo.value.trim());
+      v.textContent = 'Ver todos los resultados →'; res.appendChild(v);
+    });
+  }
+  caja.addEventListener('mouseenter', cargar);
+  campo.addEventListener('focus', cargar);
+  campo.addEventListener('input', pintar);
+  campo.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') ir();
+    if (e.key === 'Escape') { campo.value = ''; res.textContent = ''; campo.blur(); caja.classList.remove('abierto'); }
+  });
+  boton.addEventListener('click', () => {
+    if (campo.value.trim()) { ir(); return; }
+    const abierto = caja.classList.toggle('abierto');
+    boton.setAttribute('aria-expanded', abierto);
+    if (abierto) campo.focus();
+  });
+  document.addEventListener('click', (e) => {
+    if (!caja.contains(e.target)) { caja.classList.remove('abierto'); res.textContent = ''; }
+  });
+})();
+
+
+// 12) Cambiar entre tema claro y oscuro (se recuerda la elección)
+const temaBoton = document.getElementById('temaBoton');
+if (temaBoton) {
+  temaBoton.addEventListener('click', () => {
+    const nuevo = document.documentElement.getAttribute('data-tema') === 'oscuro' ? 'claro' : 'oscuro';
+    document.documentElement.setAttribute('data-tema', nuevo);
+    try { localStorage.setItem('tema', nuevo); } catch (e) {}
+  });
+}
+
+// 13) Copiar el enlace de un artículo
+const copiar = document.getElementById('copiarEnlace');
+if (copiar) {
+  copiar.addEventListener('click', () => {
+    const url = copiar.dataset.url;
+    const ok = () => { const t = copiar.textContent; copiar.textContent = '¡Enlace copiado!'; setTimeout(() => { copiar.textContent = t; }, 1800); };
+    if (navigator.clipboard) navigator.clipboard.writeText(url).then(ok).catch(() => window.prompt('Copia este enlace:', url));
+    else window.prompt('Copia este enlace:', url);
+  });
+}
+
+// 14) Filtros por equipo en las secciones
+const filtros = document.getElementById('filtros');
+if (filtros) {
+  filtros.querySelectorAll('.filtro').forEach((b) => b.addEventListener('click', () => {
+    filtros.querySelectorAll('.filtro').forEach((x) => x.classList.toggle('activo', x === b));
+    const eq = b.dataset.equipo;
+    document.querySelectorAll('.filtrable').forEach((c) => { c.hidden = !!eq && c.dataset.equipo !== eq; });
+  }));
+}
+
+// Vídeos de los artículos: YouTube solo se carga cuando el lector pulsa el botón
+document.addEventListener('click', function (e) {
+  var b = e.target.closest && e.target.closest('.video-b2b__boton');
+  if (!b) return;
+  var marco = b.parentNode, id = marco.dataset.video;
+  var f = document.createElement('iframe');
+  f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+  f.title = 'Vídeo de YouTube';
+  f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+  f.allowFullscreen = true;
+  marco.textContent = ''; marco.appendChild(f);
+});

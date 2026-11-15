@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brooklyn Nets · B2B Basket</title>
+<meta name="description" content="Historia, datos y títulos de Brooklyn Nets.">
+<link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Inter";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/inter-latin-wght-normal.woff2") format("woff2")}
+@font-face{font-family:"Newsreader";font-style:normal;font-weight:600;font-display:swap;src:url("/fonts/newsreader-latin-600-normal.woff2") format("woff2")}
+@font-face{font-family:"Newsreader";font-style:normal;font-weight:700;font-display:swap;src:url("/fonts/newsreader-latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:"Newsreader";font-style:normal;font-weight:800;font-display:swap;src:url("/fonts/newsreader-latin-800-normal.woff2") format("woff2")}
+</style>
+<meta name="theme-color" content="#16181D">
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="B2B Basket">
+<meta property="og:title" content="Brooklyn Nets · B2B Basket">
+<meta property="og:description" content="Historia, datos y títulos de Brooklyn Nets.">
+
+
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://b2bbasket.github.io/img/og.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<link rel="canonical" href="https://b2bbasket.github.io/equipos/brooklyn-nets/">
+<meta name="google-site-verification" content="qITKWh_oPgjqakZjo7_RN5ahJETMUDNgEGGNbE5KbH4">
+
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/css/estilos.css?v=mwihsvsf">
+<script>try{var tm=localStorage.getItem("tema");if(!tm){tm=window.matchMedia("(prefers-color-scheme: dark)").matches?"oscuro":"claro"}document.documentElement.setAttribute("data-tema",tm)}catch(e){}</script>
+<script>try{if(sessionStorage.getItem("splash")){document.documentElement.classList.add("splash-visto")}else{sessionStorage.setItem("splash","1")}}catch(e){}</script>
+
+</head>
+<body>
+<div class="splash" id="splash" aria-hidden="true">
+  <svg class="splash__balon" viewBox="0 0 100 100" fill="none" stroke="#FF4B2B" stroke-width="5"><circle cx="50" cy="50" r="44"/><path d="M50 6v88M6 50h88M16 18c22 18 22 46 0 64M84 18c-22 18-22 46 0 64"/></svg>
+  <div class="splash__logo">B2B Basket<span>.</span></div>
+  <div class="splash__linea"></div>
+  <div class="splash__lema">Baloncesto sin descanso. Toda la NBA al ritmo de la liga.</div>
+</div>
+<div class="progreso" id="progreso"></div>
+<header class="cabecera" id="cabecera">
+  <div class="contenedor cabecera__fila">
+    <a class="logo" href="/" aria-label="B2B Basket">B2B<span>.</span></a>
+    <button class="menu-boton" id="menuBoton" aria-label="Abrir menú" aria-expanded="false">Menú</button>
+    <nav class="nav" id="nav">
+      <a href="/noticias/">Noticias</a><a href="/previas/">Previas</a><a href="/cronicas/">Crónicas</a><a href="/guias/">Guías</a>
+      <a href="/equipos/">Equipos</a>
+      <a href="/clasificacion/">Clasificación</a>
+      <a href="/calendario/">Calendario</a>
+      <a href="/lideres/">Líderes</a>
+      <button type="button" class="tema-boton" id="temaBoton" aria-label="Cambiar entre tema claro y oscuro" title="Tema claro / oscuro"><svg class="luna" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="sol" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <div class="buscar-rapido" id="buscarRapido">
+        <button type="button" class="buscar-rapido__boton" id="buscarBoton" aria-label="Buscar" aria-expanded="false"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button>
+        <input type="search" id="buscarCampo" placeholder="Buscar en la web..." autocomplete="off" aria-label="Buscar" data-base="/">
+        <div class="buscar-rapido__res" id="buscarRes"></div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="ticker" aria-label="Últimas noticias" data-directo="/datos/hoy.json" data-calendario="/calendario/">
+  <div class="ticker__pista">
+    <span class="ticker__marca">ÚLTIMA HORA</span><a href="/articulos/ejemplo-analisis/">[EJEMPLO] Una noticia de última hora, para ver cómo se muestra</a><span class="ticker__marca">ÚLTIMA HORA</span><a href="/articulos/ejemplo-analisis/">[EJEMPLO] Una noticia de última hora, para ver cómo se muestra</a>
+  </div>
+</div>
+<main>
+
+
+<div class="contenedor">
+  <header class="ficha-cab">
+    <span class="ficha-cab__fantasma" aria-hidden="true">BKN</span>
+    <p class="ficha-cab__kicker">Conferencia Este · División Atlántico</p>
+    <h1>Brooklyn Nets</h1>
+    
+    <ul class="ficha-cab__temporada" aria-label="Esta temporada">
+      <li><strong>13.º</strong><span>en el Este</span></li>
+      <li><strong>3-9</strong><span>balance</span></li>
+      <li><strong class="racha racha--p">P1</strong><span>racha</span></li>
+    </ul>
+    
+  </header>
+
+  <ul class="ficha-cifras">
+    <li><small>Fundación</small><strong>1967 (como New Jersey Americans, en la ABA)</strong></li>
+    <li><small>Títulos de la NBA</small><strong>0 en la NBA (2 en la ABA: 1974 y 1976)</strong></li>
+    <li><small>Pabellón</small><strong>Barclays Center (Brooklyn)</strong></li>
+    <li><small>Máximo anotador</small><strong>Brook Lopez · 10.444</strong></li>
+  </ul>
+
+  
+  <section class="ficha-actual revelar" aria-labelledby="t-actual">
+    <h2 id="t-actual" class="ficha-sub">Esta temporada</h2>
+    <div class="ficha-actual__rejilla">
+      <div class="ficha-actual__bloque">
+        <h3>Últimos partidos</h3>
+        <ol class="forma">
+          
+          <li class="forma__item forma__item--p">
+            <b>P</b>
+            <span>en MEM</span>
+            <em>110-129</em>
+            <small>sáb, 14 nov</small>
+          </li>
+          
+          <li class="forma__item forma__item--g">
+            <b>G</b>
+            <span>en NOP</span>
+            <em>145-111</em>
+            <small>mié, 11 nov</small>
+          </li>
+          
+          <li class="forma__item forma__item--p">
+            <b>P</b>
+            <span>en DAL</span>
+            <em>93-130</em>
+            <small>dom, 8 nov</small>
+          </li>
+          
+          <li class="forma__item forma__item--p">
+            <b>P</b>
+            <span>en ATL</span>
+            <em>121-124</em>
+            <small>sáb, 7 nov</small>
+          </li>
+          
+          <li class="forma__item forma__item--g">
+            <b>G</b>
+            <span>vs CHA</span>
+            <em>114-104</em>
+            <small>mié, 4 nov</small>
+          </li>
+          
+        </ol>
+      </div>
+      <div class="ficha-actual__bloque">
+        <h3>En números</h3>
+        <dl class="numeros">
+          <div><dt>En casa</dt><dd>1-3</dd></div>
+          <div><dt>Fuera</dt><dd>2-6</dd></div>
+          <div><dt>Puntos a favor</dt><dd>110.2</dd></div>
+          <div><dt>Puntos en contra</dt><dd>116.4</dd></div>
+        </dl>
+      </div>
+      
+      <div class="ficha-actual__bloque">
+        <h3>Próximos partidos</h3>
+        <ul class="proximos">
+          
+          <li><span class="proximos__dia"><span data-hora="2026-11-17T00:30:00.000Z">mar, 17 nov · 01:30</span></span><strong>vs Philadelphia 76ers</strong></li>
+          
+          <li><span class="proximos__dia"><span data-hora="2026-11-19T00:30:00.000Z">jue, 19 nov · 01:30</span></span><strong>vs Chicago Bulls</strong></li>
+          
+          <li><span class="proximos__dia"><span data-hora="2026-11-21T00:30:00.000Z">sáb, 21 nov · 01:30</span></span><strong>vs Orlando Magic</strong></li>
+          
+        </ul>
+        <a class="enlace-flecha" href="/calendario/">Calendario completo →</a>
+      </div>
+      
+    </div>
+    <p class="nota-fuente">Datos de la temporada regular (API de balldontlie). Horas de <span data-zona-nombre>España</span>; puedes cambiar el país en el <a href="/calendario/">Calendario</a>.</p>
+  </section>
+  
+
+  
+  
+  <section class="ficha-plantilla revelar" aria-labelledby="t-plantilla">
+    <h2 id="t-plantilla" class="ficha-sub">Plantilla</h2>
+    <p class="plantilla-equipo__coach">Entrenador: Jordi Fernández</p>
+    <div class="plantilla-tarjetas">
+      
+      <a class="jugador-mini" href="/jugador/keon-ellis/">
+        <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Keon_Ellis.jpg/500px-Keon_Ellis.jpg" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">1</span>
+        <strong>Keon Ellis</strong>
+        <small>Base o escolta · 26 años</small>
+        
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/danny-wolf/">
+        <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Danny_Wolf.jpg/500px-Danny_Wolf.jpg" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">2</span>
+        <strong>Danny Wolf</strong>
+        <small>Alero o ala-pívot · 22 años · Israel</small>
+        
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/drake-powell/">
+        <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/UNC_vs_NCSU_%28Feb_2024%29_27_%28Powell%29.jpg/500px-UNC_vs_NCSU_%28Feb_2024%29_27_%28Powell%29.jpg" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">4</span>
+        <strong>Drake Powell</strong>
+        <small>Escolta o alero · 21 años</small>
+        
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/egor-demin/">
+        <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Egor_Demin_-_BYU_Blue_vs._White_2024_%28cropped%29.jpg/500px-Egor_Demin_-_BYU_Blue_vs._White_2024_%28cropped%29.jpg" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">8</span>
+        <strong>Egor Dëmin</strong>
+        <small>Base o escolta · 20 años · Rusia</small>
+        
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/joshua-jefferson/">
+        <span class="jugador-mini__foto"><i>JJ</i></span>
+        <span class="jugador-mini__dorsal">9</span>
+        <strong>Joshua Jefferson</strong>
+        <small>Alero o ala-pívot · 22 años</small>
+        
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/nolan-traore/">
+        <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Nolan_Traor%C3%A9_at_the_2024_U18_EuroBasket.jpg/500px-Nolan_Traor%C3%A9_at_the_2024_U18_EuroBasket.jpg" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">10</span>
+        <strong>Nolan Traoré</strong>
+        <small>Base o escolta · 20 años · Francia</small>
+        
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/moritz-wagner/">
+        <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Wizards_Moritz_Wagner.jpg/500px-Wizards_Moritz_Wagner.jpg" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">13</span>
+        <strong>Moritz Wagner</strong>
+        <small>Ala-pívot o pívot · 29 años · Alemania</small>
+        
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/terance-mann/">
+        <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Terance_Mann.jpg/500px-Terance_Mann.jpg" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">14</span>
+        <strong>Terance Mann</strong>
+        <small>Escolta o alero · 30 años</small>
+        
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/grant-nelson/">
+        <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Grant_Nelson.jpg/500px-Grant_Nelson.jpg" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">16</span>
+        <strong>Grant Nelson</strong>
+        <small>Alero o ala-pívot · 24 años</small>
+        <em class="chip">Contrato dual</em>
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/michael-porter-jr/">
+        <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/20170329_MCDAAG_Michael_Porter_Jr._MVP_%283%29.jpg/500px-20170329_MCDAAG_Michael_Porter_Jr._MVP_%283%29.jpg" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">17</span>
+        <strong>Michael Porter Jr.</strong>
+        <small>Alero o ala-pívot · 28 años</small>
+        
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/day-ron-sharpe/">
+        <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Dayron_Sharpe_%2851833854120%29_%28cropped%29.jpg/500px-Dayron_Sharpe_%2851833854120%29_%28cropped%29.jpg" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">20</span>
+        <strong>Day&#39;Ron Sharpe</strong>
+        <small>Pívot · 25 años</small>
+        
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/noah-clowney/">
+        <span class="jugador-mini__foto"><img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Noah_Clowney.jpg" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">21</span>
+        <strong>Noah Clowney</strong>
+        <small> · 22 años</small>
+        
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/julius-randle/">
+        <span class="jugador-mini__foto"><img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Julius-Randle.jpg" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">30</span>
+        <strong>Julius Randle</strong>
+        <small>Ala-pívot o pívot · 31 años</small>
+        
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/chaney-johnson/">
+        <span class="jugador-mini__foto"><i>CJ</i></span>
+        <span class="jugador-mini__dorsal">31</span>
+        <strong>Chaney Johnson</strong>
+        <small>Escolta o alero · 24 años</small>
+        <em class="chip">Contrato dual</em>
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/tyler-bilodeau/">
+        <span class="jugador-mini__foto"><i>TB</i></span>
+        <span class="jugador-mini__dorsal">34</span>
+        <strong>Tyler Bilodeau</strong>
+        <small>Alero o ala-pívot · 22 años</small>
+        <em class="chip">Contrato dual</em>
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/ben-saraf/">
+        <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/2025-05-21_ALBA_Berlin_gegen_ratiopharm_Ulm_%28Basketball-Bundesliga_2024-25%29_by_Sandro_Halank%E2%80%93022.jpg/500px-2025-05-21_ALBA_Berlin_gegen_ratiopharm_Ulm_%28Basketball-Bundesliga_2024-25%29_by_Sandro_Halank%E2%80%93022.jpg" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">77</span>
+        <strong>Ben Saraf</strong>
+        <small>Base o escolta · 20 años · Israel</small>
+        
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/josh-minott/">
+        <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Josh_Minott_%28CnQ7EuqNKkc%29.png/500px-Josh_Minott_%28CnQ7EuqNKkc%29.png" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">00</span>
+        <strong>Josh Minott</strong>
+        <small>Alero o ala-pívot · 23 años · Jamaica</small>
+        
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/mikel-brown-jr/">
+        <span class="jugador-mini__foto"><i>MBJ</i></span>
+        <span class="jugador-mini__dorsal">0</span>
+        <strong>Mikel Brown Jr.</strong>
+        <small>Base o escolta · 20 años</small>
+        
+      </a>
+      
+    </div>
+    <p class="nota-fuente">Plantilla de Wikipedia, actualizada cada día. <a href="/plantillas/">Todas las plantillas →</a></p>
+  </section>
+  
+
+  
+  
+
+  <div class="ficha">
+    <div class="ficha__texto">
+      <div class="pestanas">
+        <button class="pestana activa" data-panel="historia">Historia</button>
+        <button class="pestana" data-panel="lideres">Líderes del equipo</button>
+      </div>
+      <div class="panel-pestana" id="panel-historia">
+        
+        <p>Los Nets nacieron en 1967 como equipo fundador de la ABA, con el nombre de New Jersey Americans y sede en Teaneck (Nueva Jersey). Un año después se mudaron a Long Island como New York Nets, y con Julius Erving como estrella ganaron los títulos de la ABA de 1974 y 1976.</p>
+<h2 id="la-entrada-en-la-nba">La entrada en la NBA</h2>
+<p>La franquicia llegó a la NBA en 1976, con la fusión de las dos ligas. Para pagar la compensación de 4,8 millones de dólares que exigían los Knicks por entrar en su mercado, los Nets vendieron el contrato de Erving a los Philadelphia 76ers. En 1977 volvieron a Nueva Jersey como New Jersey Nets.</p>
+<h2 id="las-finales-con-jason-kidd">Las Finales con Jason Kidd</h2>
+<p>Con Jason Kidd, líder histórico de la franquicia en asistencias, los Nets alcanzaron las Finales de la NBA en 2002 y 2003, pero perdieron ante los Lakers y los Spurs, respectivamente.</p>
+<h2 id="brooklyn">Brooklyn</h2>
+<p>En 2012 el equipo se trasladó a Brooklyn y empezó a jugar en el Barclays Center. La etapa de Kevin Durant y Kyrie Irving no cumplió las expectativas: en 2022 y en 2023 cayeron en primera ronda sin ganar un solo partido. En la temporada 2025-26, con Jordi Fernández como entrenador, terminaron con un balance de 20-62 y sin playoffs.</p>
+<details class="fuentes-plegables" id="fuentes"><summary>Fuentes</summary><ul>
+<li><a href="https://en.wikipedia.org/wiki/Brooklyn_Nets">Brooklyn Nets, Wikipedia</a></li>
+<li><a href="https://en.wikipedia.org/wiki/2002_NBA_Finals">Finales de 2002</a> y <a href="https://en.wikipedia.org/wiki/2003_NBA_Finals">Finales de 2003</a>, Wikipedia</li>
+<li><a href="https://en.wikipedia.org/wiki/Brooklyn_Nets_accomplishments_and_records">Récords y líderes de los Nets, Wikipedia</a></li>
+</ul></details>
+
+      </div>
+      
+      <div class="panel-pestana" id="panel-lideres" hidden>
+        <h2 id="lideres-historicos-de-la-franquicia">Líderes históricos de la franquicia</h2>
+        <div class="lideres-franquicia">
+          
+          <div class="lider-cifra"><small>Puntos</small><strong>10.444</strong><span>Brook Lopez</span></div>
+          
+          <div class="lider-cifra"><small>Rebotes</small><strong>7.576</strong><span>Buck Williams</span></div>
+          
+          <div class="lider-cifra"><small>Asistencias</small><strong>4.620</strong><span>Jason Kidd</span></div>
+          
+        </div>
+        <p class="nota-fuente">Temporada regular, datos hasta el final de la temporada 2025-26. Fuente: Wikipedia, «Brooklyn Nets accomplishments and records».</p>
+      </div>
+      
+    </div>
+  </div>
+  <p class="ficha__volver"><a href="/equipos/">← Todos los equipos</a></p>
+</div>
+
+</main>
+<footer class="pie">
+  <div class="contenedor">
+    <h2 class="pie__titulo">Más información</h2>
+    <div class="pie__tarjetas">
+      <a href="/lideres-historicos/"><strong>Líderes históricos</strong><span>Top 10 de puntos, rebotes, asistencias, tapones, robos y triples</span></a>
+      <a href="/plantillas/"><strong>Plantillas</strong><span>Los jugadores de los 30 equipos, con su ficha y los españoles y latinos</span></a>
+      <a href="/jugadores/"><strong>Grandes jugadores</strong><span>Perfiles de 15 leyendas: su carrera, sus momentos y su legado</span></a>
+      <a href="/historia-de-la-liga/"><strong>Historia de la liga</strong><span>Cómo empezó todo y cómo ha cambiado el juego</span></a>
+      <div class="pie__medio"><h3>El medio</h3>
+        <a href="/quienes-somos/">Quiénes somos</a>
+        <a href="/colabora/">Colabora</a>
+        
+        <a href="/contacto/">Contacto</a>
+        <a href="/juego/">Juego diario</a>
+        <a href="https://www.instagram.com/b2b.basket/">Instagram</a></div>
+    </div>
+  </div>
+  <div class="contenedor pie__legal">
+    <a href="/aviso-legal/">Aviso legal</a>
+    <a href="/privacidad/">Privacidad</a>
+    <a href="/cookies/">Cookies</a>
+    <a href="/condiciones-de-uso/">Condiciones de uso</a>
+    <a href="/principios-editoriales/">Principios editoriales</a>
+    <a href="/correcciones/">Correcciones</a>
+    <a href="/creditos-imagenes/">Créditos de las imágenes</a>
+    
+    <p>B2B Basket · Baloncesto sin descanso. Toda la NBA al ritmo de la liga. Medio independiente, no afiliado a la NBA ni a ninguna franquicia. Los nombres de equipos y jugadores se usan con fines informativos.</p>
+  </div>
+</footer>
+<button class="subir" id="subir" aria-label="Volver arriba"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+<script src="/js/zona.js?v=mwihsvsf"></script>
+<script src="/js/main.js?v=mwihsvsf"></script>
+<script src="/js/directo.js?v=mwihsvsf" defer></script>
+</body>
+</html>

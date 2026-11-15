@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Houston Rockets · B2B Basket</title>
+<meta name="description" content="Historia, datos y títulos de Houston Rockets.">
+<link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Inter";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/inter-latin-wght-normal.woff2") format("woff2")}
+@font-face{font-family:"Newsreader";font-style:normal;font-weight:600;font-display:swap;src:url("/fonts/newsreader-latin-600-normal.woff2") format("woff2")}
+@font-face{font-family:"Newsreader";font-style:normal;font-weight:700;font-display:swap;src:url("/fonts/newsreader-latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:"Newsreader";font-style:normal;font-weight:800;font-display:swap;src:url("/fonts/newsreader-latin-800-normal.woff2") format("woff2")}
+</style>
+<meta name="theme-color" content="#16181D">
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="B2B Basket">
+<meta property="og:title" content="Houston Rockets · B2B Basket">
+<meta property="og:description" content="Historia, datos y títulos de Houston Rockets.">
+
+
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://b2bbasket.github.io/img/og.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<link rel="canonical" href="https://b2bbasket.github.io/equipos/houston-rockets/">
+<meta name="google-site-verification" content="qITKWh_oPgjqakZjo7_RN5ahJETMUDNgEGGNbE5KbH4">
+
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/css/estilos.css?v=mwihsvsf">
+<script>try{var tm=localStorage.getItem("tema");if(!tm){tm=window.matchMedia("(prefers-color-scheme: dark)").matches?"oscuro":"claro"}document.documentElement.setAttribute("data-tema",tm)}catch(e){}</script>
+<script>try{if(sessionStorage.getItem("splash")){document.documentElement.classList.add("splash-visto")}else{sessionStorage.setItem("splash","1")}}catch(e){}</script>
+
+</head>
+<body>
+<div class="splash" id="splash" aria-hidden="true">
+  <svg class="splash__balon" viewBox="0 0 100 100" fill="none" stroke="#FF4B2B" stroke-width="5"><circle cx="50" cy="50" r="44"/><path d="M50 6v88M6 50h88M16 18c22 18 22 46 0 64M84 18c-22 18-22 46 0 64"/></svg>
+  <div class="splash__logo">B2B Basket<span>.</span></div>
+  <div class="splash__linea"></div>
+  <div class="splash__lema">Baloncesto sin descanso. Toda la NBA al ritmo de la liga.</div>
+</div>
+<div class="progreso" id="progreso"></div>
+<header class="cabecera" id="cabecera">
+  <div class="contenedor cabecera__fila">
+    <a class="logo" href="/" aria-label="B2B Basket">B2B<span>.</span></a>
+    <button class="menu-boton" id="menuBoton" aria-label="Abrir menú" aria-expanded="false">Menú</button>
+    <nav class="nav" id="nav">
+      <a href="/noticias/">Noticias</a><a href="/previas/">Previas</a><a href="/cronicas/">Crónicas</a><a href="/guias/">Guías</a>
+      <a href="/equipos/">Equipos</a>
+      <a href="/clasificacion/">Clasificación</a>
+      <a href="/calendario/">Calendario</a>
+      <a href="/lideres/">Líderes</a>
+      <button type="button" class="tema-boton" id="temaBoton" aria-label="Cambiar entre tema claro y oscuro" title="Tema claro / oscuro"><svg class="luna" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="sol" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <div class="buscar-rapido" id="buscarRapido">
+        <button type="button" class="buscar-rapido__boton" id="buscarBoton" aria-label="Buscar" aria-expanded="false"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button>
+        <input type="search" id="buscarCampo" placeholder="Buscar en la web..." autocomplete="off" aria-label="Buscar" data-base="/">
+        <div class="buscar-rapido__res" id="buscarRes"></div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="ticker" aria-label="Últimas noticias" data-directo="/datos/hoy.json" data-calendario="/calendario/">
+  <div class="ticker__pista">
+    <span class="ticker__marca">ÚLTIMA HORA</span><a href="/articulos/ejemplo-analisis/">[EJEMPLO] Una noticia de última hora, para ver cómo se muestra</a><span class="ticker__marca">ÚLTIMA HORA</span><a href="/articulos/ejemplo-analisis/">[EJEMPLO] Una noticia de última hora, para ver cómo se muestra</a>
+  </div>
+</div>
+<main>
+
+
+<div class="contenedor">
+  <header class="ficha-cab">
+    <span class="ficha-cab__fantasma" aria-hidden="true">HOU</span>
+    <p class="ficha-cab__kicker">Conferencia Oeste · División Suroeste</p>
+    <h1>Houston Rockets</h1>
+    
+    <ul class="ficha-cab__temporada" aria-label="Esta temporada">
+      <li><strong>3.º</strong><span>en el Oeste</span></li>
+      <li><strong>10-3</strong><span>balance</span></li>
+      <li><strong class="racha racha--g">G3</strong><span>racha</span></li>
+    </ul>
+    
+  </header>
+
+  <ul class="ficha-cifras">
+    <li><small>Fundación</small><strong>1967 (como San Diego Rockets)</strong></li>
+    <li><small>Títulos de la NBA</small><strong>2 (1994 y 1995)</strong></li>
+    <li><small>Pabellón</small><strong>Toyota Center (Houston)</strong></li>
+    <li><small>Máximo anotador</small><strong>Hakeem Olajuwon · 26.511</strong></li>
+  </ul>
+
+  
+  <section class="ficha-actual revelar" aria-labelledby="t-actual">
+    <h2 id="t-actual" class="ficha-sub">Esta temporada</h2>
+    <div class="ficha-actual__rejilla">
+      <div class="ficha-actual__bloque">
+        <h3>Últimos partidos</h3>
+        <ol class="forma">
+          
+          <li class="forma__item forma__item--g">
+            <b>G</b>
+            <span>vs UTA</span>
+            <em>125-118</em>
+            <small>vie, 13 nov</small>
+          </li>
+          
+          <li class="forma__item forma__item--g">
+            <b>G</b>
+            <span>vs GSW</span>
+            <em>115-108</em>
+            <small>mié, 11 nov</small>
+          </li>
+          
+          <li class="forma__item forma__item--g">
+            <b>G</b>
+            <span>vs DEN</span>
+            <em>110-100</em>
+            <small>lun, 9 nov</small>
+          </li>
+          
+          <li class="forma__item forma__item--p">
+            <b>P</b>
+            <span>en PHX</span>
+            <em>99-102</em>
+            <small>sáb, 7 nov</small>
+          </li>
+          
+          <li class="forma__item forma__item--p">
+            <b>P</b>
+            <span>vs MIN</span>
+            <em>107-117</em>
+            <small>mié, 4 nov</small>
+          </li>
+          
+        </ol>
+      </div>
+      <div class="ficha-actual__bloque">
+        <h3>En números</h3>
+        <dl class="numeros">
+          <div><dt>En casa</dt><dd>7-1</dd></div>
+          <div><dt>Fuera</dt><dd>3-2</dd></div>
+          <div><dt>Puntos a favor</dt><dd>116.2</dd></div>
+          <div><dt>Puntos en contra</dt><dd>107.4</dd></div>
+        </dl>
+      </div>
+      
+      <div class="ficha-actual__bloque">
+        <h3>Próximos partidos</h3>
+        <ul class="proximos">
+          
+          <li><span class="proximos__dia"><span data-hora="2026-11-16T00:00:00.000Z">lun, 16 nov · 01:00</span></span><strong>en Washington Wizards</strong></li>
+          
+          <li><span class="proximos__dia"><span data-hora="2026-11-17T00:30:00.000Z">mar, 17 nov · 01:30</span></span><strong>en Miami Heat</strong></li>
+          
+          <li><span class="proximos__dia"><span data-hora="2026-11-19T00:00:00.000Z">jue, 19 nov · 01:00</span></span><strong>en Indiana Pacers</strong></li>
+          
+        </ul>
+        <a class="enlace-flecha" href="/calendario/">Calendario completo →</a>
+      </div>
+      
+    </div>
+    <p class="nota-fuente">Datos de la temporada regular (API de balldontlie). Horas de <span data-zona-nombre>España</span>; puedes cambiar el país en el <a href="/calendario/">Calendario</a>.</p>
+  </section>
+  
+
+  
+  
+  <section class="ficha-plantilla revelar" aria-labelledby="t-plantilla">
+    <h2 id="t-plantilla" class="ficha-sub">Plantilla</h2>
+    <p class="plantilla-equipo__coach">Entrenador: Ime Udoka</p>
+    <div class="plantilla-tarjetas">
+      
+      <a class="jugador-mini" href="/jugador/amen-thompson/">
+        <span class="jugador-mini__foto"><i>AT</i></span>
+        <span class="jugador-mini__dorsal">1</span>
+        <strong>Amen Thompson</strong>
+        <small>Escolta o alero · 23 años</small>
+        
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/bruce-thornton/">
+        <span class="jugador-mini__foto"><i>BT</i></span>
+        <span class="jugador-mini__dorsal">2</span>
+        <strong>Bruce Thornton</strong>
+        <small>Base o escolta · 23 años</small>
+        
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/julian-phillips/">
+        <span class="jugador-mini__foto"><i>JP</i></span>
+        <span class="jugador-mini__dorsal">3</span>
+        <strong>Julian Phillips</strong>
+        <small>Alero o ala-pívot · 23 años</small>
+        <em class="chip">Contrato dual</em>
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/fred-vanvleet/">
+        <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Fred_VanVleet_%2851915270294%29_%28cropped%29.jpg/500px-Fred_VanVleet_%2851915270294%29_%28cropped%29.jpg" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">5</span>
+        <strong>Fred VanVleet</strong>
+        <small>Base o escolta · 32 años</small>
+        
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/kevin-durant/">
+        <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Kevin_Durant_Feb_2014.jpg/500px-Kevin_Durant_Feb_2014.jpg" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">7</span>
+        <strong>Kevin Durant</strong>
+        <small>Alero o ala-pívot · 38 años</small>
+        
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/jae-sean-tate/">
+        <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Jae%27Sean_Tate_%282017%29.jpg/500px-Jae%27Sean_Tate_%282017%29.jpg" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">8</span>
+        <strong>Jae&#39;Sean Tate</strong>
+        <small>Alero o ala-pívot · 31 años</small>
+        
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/oscar-tshiebwe/">
+        <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Oscar_Tshiebwe_Kentucky_%28cropped%29.jpg/500px-Oscar_Tshiebwe_Kentucky_%28cropped%29.jpg" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">9</span>
+        <strong>Oscar Tshiebwe</strong>
+        <small>Ala-pívot o pívot · 26 años · República Democrática del Congo</small>
+        <em class="chip">Contrato dual</em>
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/jabari-smith-jr/">
+        <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Jabari_Smith_Jr.jpg/500px-Jabari_Smith_Jr.jpg" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">10</span>
+        <strong>Jabari Smith Jr.</strong>
+        <small>Alero o ala-pívot · 23 años</small>
+        
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/steven-adams/">
+        <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Steven_Adams_%2832049572304%29.jpg/500px-Steven_Adams_%2832049572304%29.jpg" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">12</span>
+        <strong>Steven Adams</strong>
+        <small>Pívot · 33 años · Nueva Zelanda</small>
+        
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/reed-sheppard/">
+        <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Reed_Sheppard_Kentucky_v._Kansas.jpg/500px-Reed_Sheppard_Kentucky_v._Kansas.jpg" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">15</span>
+        <strong>Reed Sheppard</strong>
+        <small>Base o escolta · 22 años</small>
+        
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/tari-eason/">
+        <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Tari_Eason_%28cropped%29.jpg/500px-Tari_Eason_%28cropped%29.jpg" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">17</span>
+        <strong>Tari Eason</strong>
+        <small>Alero o ala-pívot · 25 años</small>
+        
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/quadir-copeland/">
+        <span class="jugador-mini__foto"><i>QC</i></span>
+        <span class="jugador-mini__dorsal">25</span>
+        <strong>Quadir Copeland</strong>
+        <small>Base o escolta · 23 años</small>
+        <em class="chip">Contrato dual</em>
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/isaiah-crawford/">
+        <span class="jugador-mini__foto"><i>IC</i></span>
+        <span class="jugador-mini__dorsal">27</span>
+        <strong>Isaiah Crawford</strong>
+        <small>Alero o ala-pívot · 25 años</small>
+        
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/alperen-sengun/">
+        <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Alperen_%C5%9Eeng%C3%BCn_23_T%C3%BCrkiye_20250823_%282%29_%28cropped%29.jpg/500px-Alperen_%C5%9Eeng%C3%BCn_23_T%C3%BCrkiye_20250823_%282%29_%28cropped%29.jpg" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">28</span>
+        <strong>Alperen Şengün</strong>
+        <small>Pívot · 24 años · Turquía</small>
+        
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/clint-capela/">
+        <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Clint_Capela_2016.jpg/500px-Clint_Capela_2016.jpg" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">30</span>
+        <strong>Clint Capela</strong>
+        <small>Pívot · 32 años · Suiza</small>
+        <em class="chip chip--rojo">Lesionado</em>
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/bogdan-bogdanovic/">
+        <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Bogdan_%2851636059777%29_%28cropped%29.jpg/500px-Bogdan_%2851636059777%29_%28cropped%29.jpg" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">31</span>
+        <strong>Bogdan Bogdanović</strong>
+        <small>Base o escolta · 34 años · Serbia</small>
+        
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/marcus-smart/">
+        <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/MarcusSmart2021_%28cropped%29.jpg/500px-MarcusSmart2021_%28cropped%29.jpg" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">36</span>
+        <strong>Marcus Smart</strong>
+        <small>Base o escolta · 32 años</small>
+        
+      </a>
+      
+    </div>
+    <p class="nota-fuente">Plantilla de Wikipedia, actualizada cada día. <a href="/plantillas/">Todas las plantillas →</a></p>
+  </section>
+  
+
+  
+  
+
+  <div class="ficha">
+    <div class="ficha__texto">
+      <div class="pestanas">
+        <button class="pestana activa" data-panel="historia">Historia</button>
+        <button class="pestana" data-panel="lideres">Líderes del equipo</button>
+      </div>
+      <div class="panel-pestana" id="panel-historia">
+        
+        <p>Los Rockets nacieron en San Diego en 1967 y se trasladaron a Houston en 1971. Moses Malone, MVP en 1979 y 1982, los llevó a sus primeras Finales en 1981, que perdieron ante los Celtics.</p>
+<h2 id="los-titulos-de-olajuwon">Los títulos de Olajuwon</h2>
+<p>Hakeem Olajuwon, elegido con el número 1 del draft de 1984, es el máximo anotador y reboteador de la franquicia. Tras perder las Finales de 1986, también ante Boston, los Rockets ganaron dos títulos seguidos: en 1994 ante los Knicks y en 1995, como sextos del Oeste, barriendo a los Orlando Magic.</p>
+<h2 id="yao-harden-y-el-presente">Yao, Harden y el presente</h2>
+<p>Yao Ming fue el número 1 del draft de 2002, y James Harden, que llegó en un traspaso en 2012, es el líder histórico del club en asistencias. En julio de 2025, los Rockets incorporaron a Kevin Durant en un traspaso a siete bandas.</p>
+<details class="fuentes-plegables" id="fuentes"><summary>Fuentes</summary><ul>
+<li><a href="https://en.wikipedia.org/wiki/History_of_the_Houston_Rockets">Historia de los Houston Rockets, Wikipedia</a></li>
+<li><a href="https://en.wikipedia.org/wiki/List_of_NBA_champions">Lista de campeones de la NBA, Wikipedia</a></li>
+<li>Líderes: <a href="https://en.wikipedia.org/wiki/List_of_NBA_franchise_career_scoring_leaders">puntos, Wikipedia</a>, <a href="https://www.nba.com/news/top-5-all-time-houston-rockets-rebounders">rebotes, NBA.com</a>, <a href="https://www.nba.com/news/top-5-all-time-houston-rockets-assists-leaders">asistencias, NBA.com</a></li>
+</ul></details>
+
+      </div>
+      
+      <div class="panel-pestana" id="panel-lideres" hidden>
+        <h2 id="lideres-historicos-de-la-franquicia">Líderes históricos de la franquicia</h2>
+        <div class="lideres-franquicia">
+          
+          <div class="lider-cifra"><small>Puntos</small><strong>26.511</strong><span>Hakeem Olajuwon</span></div>
+          
+          <div class="lider-cifra"><small>Rebotes</small><strong>13.382</strong><span>Hakeem Olajuwon</span></div>
+          
+          <div class="lider-cifra"><small>Asistencias</small><strong>4.796</strong><span>James Harden</span></div>
+          
+        </div>
+        <p class="nota-fuente">Temporada regular. Puntos: Wikipedia (datos al 30 de octubre de 2026). Rebotes: NBA.com (julio-agosto de 2026). Asistencias: NBA.com (julio-agosto de 2026).</p>
+      </div>
+      
+    </div>
+  </div>
+  <p class="ficha__volver"><a href="/equipos/">← Todos los equipos</a></p>
+</div>
+
+</main>
+<footer class="pie">
+  <div class="contenedor">
+    <h2 class="pie__titulo">Más información</h2>
+    <div class="pie__tarjetas">
+      <a href="/lideres-historicos/"><strong>Líderes históricos</strong><span>Top 10 de puntos, rebotes, asistencias, tapones, robos y triples</span></a>
+      <a href="/plantillas/"><strong>Plantillas</strong><span>Los jugadores de los 30 equipos, con su ficha y los españoles y latinos</span></a>
+      <a href="/jugadores/"><strong>Grandes jugadores</strong><span>Perfiles de 15 leyendas: su carrera, sus momentos y su legado</span></a>
+      <a href="/historia-de-la-liga/"><strong>Historia de la liga</strong><span>Cómo empezó todo y cómo ha cambiado el juego</span></a>
+      <div class="pie__medio"><h3>El medio</h3>
+        <a href="/quienes-somos/">Quiénes somos</a>
+        <a href="/colabora/">Colabora</a>
+        
+        <a href="/contacto/">Contacto</a>
+        <a href="/juego/">Juego diario</a>
+        <a href="https://www.instagram.com/b2b.basket/">Instagram</a></div>
+    </div>
+  </div>
+  <div class="contenedor pie__legal">
+    <a href="/aviso-legal/">Aviso legal</a>
+    <a href="/privacidad/">Privacidad</a>
+    <a href="/cookies/">Cookies</a>
+    <a href="/condiciones-de-uso/">Condiciones de uso</a>
+    <a href="/principios-editoriales/">Principios editoriales</a>
+    <a href="/correcciones/">Correcciones</a>
+    <a href="/creditos-imagenes/">Créditos de las imágenes</a>
+    
+    <p>B2B Basket · Baloncesto sin descanso. Toda la NBA al ritmo de la liga. Medio independiente, no afiliado a la NBA ni a ninguna franquicia. Los nombres de equipos y jugadores se usan con fines informativos.</p>
+  </div>
+</footer>
+<button class="subir" id="subir" aria-label="Volver arriba"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+<script src="/js/zona.js?v=mwihsvsf"></script>
+<script src="/js/main.js?v=mwihsvsf"></script>
+<script src="/js/directo.js?v=mwihsvsf" defer></script>
+</body>
+</html>

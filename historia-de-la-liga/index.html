@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Historia de la liga · B2B Basket</title>
+<meta name="description" content="La historia de la NBA de 1891 a hoy: el invento de Naismith, el nacimiento de la liga, las grandes dinastías, la ABA, Magic y Bird, Jordan, el Dream Team y la era del triple.">
+<link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Inter";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/inter-latin-wght-normal.woff2") format("woff2")}
+@font-face{font-family:"Newsreader";font-style:normal;font-weight:600;font-display:swap;src:url("/fonts/newsreader-latin-600-normal.woff2") format("woff2")}
+@font-face{font-family:"Newsreader";font-style:normal;font-weight:700;font-display:swap;src:url("/fonts/newsreader-latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:"Newsreader";font-style:normal;font-weight:800;font-display:swap;src:url("/fonts/newsreader-latin-800-normal.woff2") format("woff2")}
+</style>
+<meta name="theme-color" content="#16181D">
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="B2B Basket">
+<meta property="og:title" content="Historia de la liga · B2B Basket">
+<meta property="og:description" content="La historia de la NBA de 1891 a hoy: el invento de Naismith, el nacimiento de la liga, las grandes dinastías, la ABA, Magic y Bird, Jordan, el Dream Team y la era del triple.">
+
+
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://b2bbasket.github.io/img/og.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<link rel="canonical" href="https://b2bbasket.github.io/historia-de-la-liga/">
+<meta name="google-site-verification" content="qITKWh_oPgjqakZjo7_RN5ahJETMUDNgEGGNbE5KbH4">
+
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/css/estilos.css?v=mwihsvsf">
+<script>try{var tm=localStorage.getItem("tema");if(!tm){tm=window.matchMedia("(prefers-color-scheme: dark)").matches?"oscuro":"claro"}document.documentElement.setAttribute("data-tema",tm)}catch(e){}</script>
+<script>try{if(sessionStorage.getItem("splash")){document.documentElement.classList.add("splash-visto")}else{sessionStorage.setItem("splash","1")}}catch(e){}</script>
+
+</head>
+<body>
+<div class="splash" id="splash" aria-hidden="true">
+  <svg class="splash__balon" viewBox="0 0 100 100" fill="none" stroke="#FF4B2B" stroke-width="5"><circle cx="50" cy="50" r="44"/><path d="M50 6v88M6 50h88M16 18c22 18 22 46 0 64M84 18c-22 18-22 46 0 64"/></svg>
+  <div class="splash__logo">B2B Basket<span>.</span></div>
+  <div class="splash__linea"></div>
+  <div class="splash__lema">Baloncesto sin descanso. Toda la NBA al ritmo de la liga.</div>
+</div>
+<div class="progreso" id="progreso"></div>
+<header class="cabecera" id="cabecera">
+  <div class="contenedor cabecera__fila">
+    <a class="logo" href="/" aria-label="B2B Basket">B2B<span>.</span></a>
+    <button class="menu-boton" id="menuBoton" aria-label="Abrir menú" aria-expanded="false">Menú</button>
+    <nav class="nav" id="nav">
+      <a href="/noticias/">Noticias</a><a href="/previas/">Previas</a><a href="/cronicas/">Crónicas</a><a href="/guias/">Guías</a>
+      <a href="/equipos/">Equipos</a>
+      <a href="/clasificacion/">Clasificación</a>
+      <a href="/calendario/">Calendario</a>
+      <a href="/lideres/">Líderes</a>
+      <button type="button" class="tema-boton" id="temaBoton" aria-label="Cambiar entre tema claro y oscuro" title="Tema claro / oscuro"><svg class="luna" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="sol" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <div class="buscar-rapido" id="buscarRapido">
+        <button type="button" class="buscar-rapido__boton" id="buscarBoton" aria-label="Buscar" aria-expanded="false"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button>
+        <input type="search" id="buscarCampo" placeholder="Buscar en la web..." autocomplete="off" aria-label="Buscar" data-base="/">
+        <div class="buscar-rapido__res" id="buscarRes"></div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="ticker" aria-label="Últimas noticias" data-directo="/datos/hoy.json" data-calendario="/calendario/">
+  <div class="ticker__pista">
+    <span class="ticker__marca">ÚLTIMA HORA</span><a href="/articulos/ejemplo-analisis/">[EJEMPLO] Una noticia de última hora, para ver cómo se muestra</a><span class="ticker__marca">ÚLTIMA HORA</span><a href="/articulos/ejemplo-analisis/">[EJEMPLO] Una noticia de última hora, para ver cómo se muestra</a>
+  </div>
+</div>
+<main>
+
+<div class="contenedor">
+  <header class="leyendas-cab">
+    <p class="leyendas-cab__kicker">Historia de la liga</p>
+    <h1>De unas cestas de melocotones a la NBA de hoy</h1>
+    <p>Cómo un juego inventado en un gimnasio de Massachusetts se convirtió en la mejor liga de baloncesto del mundo: sus dinastías, sus rivalidades y los cambios de reglas que la hicieron como es.</p>
+  </header>
+  <ol class="cronologia cronologia--larga">
+    
+    
+    <li class="cronologia__etapa revelar">
+      <div class="cronologia__fecha">1891</div>
+      <div class="cronologia__contenido">
+        <h2 id="un-invento-de-gimnasio">Un invento de gimnasio</h2>
+        <div class="hist-texto">
+          <figure class="hist-foto hist-foto--lado"><img src="/img/historia/naismith.jpg" alt="James Naismith con un balón y una cesta de melocotones" loading="lazy"><figcaption><span>James Naismith con un balón y una cesta de melocotones</span> <small>Foto: Autor desconocido · Public domain</small></figcaption></figure>
+          
+          
+          <p>La historia de la NBA empieza medio siglo antes que la propia liga. En diciembre de 1891, James Naismith, un profesor canadiense de educación física de la escuela de la YMCA en Springfield (Massachusetts), buscaba un juego de interior para que sus alumnos se mantuvieran activos durante el invierno. Colgó dos cestas de melocotones en la barandilla del gimnasio y escribió un reglamento de 13 normas.</p>
+          
+          
+          <p>El nuevo deporte se extendió muy rápido por las escuelas y universidades de Estados Unidos. Las cestas dieron paso a aros con red, el balón de fútbol a uno específico y, en pocas décadas, ya había ligas profesionales. Ninguna, sin embargo, consiguió consolidarse a escala nacional.</p>
+          
+          
+          <div class="cronologia__dato hist-dato hist-dato--linea"><strong>13</strong><span>reglas en el primer reglamento</span></div>
+        </div>
+        
+        
+        
+      </div>
+    </li>
+    
+    
+    <li class="cronologia__etapa revelar">
+      <div class="cronologia__fecha">1946-1954</div>
+      <div class="cronologia__contenido">
+        <h2 id="nace-la-liga">Nace la liga</h2>
+        <div class="hist-texto">
+          
+          <div class="cronologia__dato hist-dato"><strong>68-66</strong><span>resultado del primer partido</span></div>
+          
+          <p>La liga actual nació en 1946 como la BAA (Basketball Association of America), impulsada por los propietarios de los grandes pabellones del este, que querían llenar sus recintos cuando no había hockey. El primer partido se jugó el 1 de noviembre de 1946 en Toronto: los New York Knicks ganaron 68-66 a los Toronto Huskies.</p>
+          
+          
+          <p>En 1949, la BAA se fusionó con su rival, la NBL (National Basketball League), y la nueva liga pasó a llamarse NBA. Su primera gran estrella fue George Mikan, el pívot de los Minneapolis Lakers, que ganaron cinco títulos entre 1949 y 1954. Era tan dominante cerca del aro que la liga ensanchó la zona para alejarlo de la canasta.</p>
+          
+          
+          <p>En 1950, la NBA se abrió por fin a los jugadores negros: Chuck Cooper fue el primero elegido en el draft, Nat Clifton el primero en firmar un contrato y Earl Lloyd el primero en disputar un partido, el 31 de octubre de 1950.</p>
+          
+          
+          
+        </div>
+        
+        <figure class="hist-foto hist-foto--ancha"><img src="/img/historia/lakers-1950.jpg" alt="Los Minneapolis Lakers, campeones de 1950" loading="lazy"><figcaption><span>Los Minneapolis Lakers, campeones de 1950</span> <small>Foto: Autor desconocido · Public domain</small></figcaption></figure>
+        
+      </div>
+    </li>
+    
+    
+    <li class="cronologia__etapa revelar">
+      <div class="cronologia__fecha">1950-1955</div>
+      <div class="cronologia__contenido">
+        <h2 id="baloncesto-sin-reloj">Baloncesto sin reloj</h2>
+        <div class="hist-texto">
+          
+          <div class="cronologia__dato hist-dato"><strong>24</strong><span>segundos de posesión desde 1954</span></div>
+          
+          <p>En los primeros años no había reloj de posesión, y los equipos que iban por delante se dedicaban a guardar el balón. El caso más extremo llegó el 22 de noviembre de 1950, cuando los Fort Wayne Pistons ganaron 19-18 a los Minneapolis Lakers, el partido con menos puntos de la historia.</p>
+          
+          
+          <p>La solución la ideó Danny Biasone, propietario de los Syracuse Nationals: obligar a tirar en 24 segundos. La regla se estrenó en la temporada 1954-55, aceleró el juego y disparó la anotación. Es, probablemente, el cambio de reglas más importante de la historia de la liga.</p>
+          
+          
+          
+        </div>
+        
+        
+        
+      </div>
+    </li>
+    
+    
+    <li class="cronologia__etapa revelar">
+      <div class="cronologia__fecha">1957-1969</div>
+      <div class="cronologia__contenido">
+        <h2 id="russell-contra-chamberlain">Russell contra Chamberlain</h2>
+        <div class="hist-texto">
+          <figure class="hist-foto hist-foto--lado"><img src="/img/historia/russell-auerbach.jpg" alt="Bill Russell y Red Auerbach celebran el título de 1966" loading="lazy"><figcaption><span>Bill Russell y Red Auerbach celebran el título de 1966</span> <small>Foto: Fred Keenan · Public domain</small></figcaption></figure>
+          
+          
+          <p>Los Boston Celtics de Bill Russell y del entrenador Red Auerbach construyeron la mayor dinastía del deporte estadounidense: 11 títulos en 13 temporadas entre 1957 y 1969, ocho de ellos seguidos. Russell no era un gran anotador, pero su defensa, sus rebotes y su inteligencia cambiaron la forma de entender el juego.</p>
+          <figure class="hist-foto hist-foto--lado-izq"><img src="/img/historia/knicks-warriors-1960.jpg" alt="Partido entre New York Knicks y Philadelphia Warriors en 1960" loading="lazy"><figcaption><span>Partido entre New York Knicks y Philadelphia Warriors en 1960</span> <small>Foto: Autor desconocido · Public domain</small></figcaption></figure>
+          
+          <p>Su gran rival fue Wilt Chamberlain, el anotador más imparable de su tiempo. El 2 de marzo de 1962 anotó 100 puntos en un partido ante los Knicks, y esa temporada promedió 50,4 puntos por partido, dos récords que siguen vigentes. Sus duelos con Russell definieron toda una década, aunque casi siempre los ganó Boston.</p>
+          
+          
+          <div class="cronologia__dato hist-dato hist-dato--linea"><strong>11</strong><span>títulos de los Celtics en 13 temporadas</span></div>
+        </div>
+        
+        
+        <p class="cronologia__enlaces">Perfiles: <a href="/jugadores/bill-russell/">Bill Russell</a> · <a href="/jugadores/wilt-chamberlain/">Wilt Chamberlain</a> · <a href="/jugadores/jerry-west/">Jerry West</a></p>
+      </div>
+    </li>
+    
+    
+    <li class="cronologia__etapa revelar">
+      <div class="cronologia__fecha">1967-1976</div>
+      <div class="cronologia__contenido">
+        <h2 id="la-aba-la-liga-rebelde">La ABA, la liga rebelde</h2>
+        <div class="hist-texto">
+          <figure class="hist-foto hist-foto--lado"><img src="/img/historia/erving-nets.jpg" alt="Julius Erving con los New York Nets de la ABA" loading="lazy"><figcaption><span>Julius Erving con los New York Nets de la ABA</span> <small>Foto: Autor desconocido · Public domain</small></figcaption></figure>
+          
+          
+          <p>En 1967 nació una liga rival, la ABA (American Basketball Association), con un balón de rayas rojas, blancas y azules, la línea de tres puntos y un estilo de juego mucho más espectacular. Allí brillaron jugadores como Julius Erving, «Dr. J», que convirtió el mate en un arte, y en 1976 la ABA celebró el primer concurso de mates profesional.</p>
+          
+          
+          <p>La competencia por los jugadores dejó a la ABA sin dinero, y en 1976 cuatro de sus equipos entraron en la NBA: los Nets, los Nuggets, los Pacers y los Spurs. La NBA heredó su talento y, con los años, también su línea de tres.</p>
+          
+          
+          <div class="cronologia__dato hist-dato hist-dato--linea"><strong>4</strong><span>equipos de la ABA que entraron en la NBA</span></div>
+        </div>
+        
+        
+        
+      </div>
+    </li>
+    
+    
+    <li class="cronologia__etapa revelar">
+      <div class="cronologia__fecha">1979-1989</div>
+      <div class="cronologia__contenido">
+        <h2 id="magic-bird-y-la-linea-de-tres">Magic, Bird y la línea de tres</h2>
+        <div class="hist-texto">
+          
+          <div class="cronologia__dato hist-dato"><strong>1985</strong><span>primera lotería del draft</span></div>
+          
+          <p>A finales de los años 70 la NBA atravesaba una crisis: poca audiencia y finales que se emitían en diferido. Todo cambió en la temporada 1979-80, con la llegada de dos novatos que ya se habían enfrentado en la final universitaria de 1979: Magic Johnson, en los Lakers, y Larry Bird, en los Celtics.</p>
+          
+          
+          <p>Su rivalidad, la de dos estilos y dos ciudades, llenó los pabellones durante toda la década. Lakers y Celtics se repartieron ocho de los diez títulos de los años 80 y se enfrentaron en tres Finales. Esa misma temporada la NBA estrenó la línea de tres: el primer triple lo anotó Chris Ford, de los Celtics, el 12 de octubre de 1979. En 1985 se celebró la primera lotería del draft, que ganaron los Knicks, que eligieron a Patrick Ewing.</p>
+          
+          
+          
+        </div>
+        <div class="hist-pareja"><figure class="hist-foto hist-foto--pareja"><img src="/img/fotos/magic.jpg" alt="Magic Johnson con los Lakers" loading="lazy"><figcaption><span>Magic Johnson con los Lakers</span> <small>Foto: Steve Lipofsky (Basketballphoto.com) · CC BY-SA 3.0</small></figcaption></figure><figure class="hist-foto hist-foto--pareja"><img src="/img/fotos/bird.jpg" alt="Larry Bird con los Celtics" loading="lazy"><figcaption><span>Larry Bird con los Celtics</span> <small>Foto: Steve Lipofsky (Basketballphoto.com) · CC BY-SA 3.0</small></figcaption></figure></div>
+        
+        <p class="cronologia__enlaces">Perfiles: <a href="/jugadores/magic-johnson/">Magic Johnson</a> · <a href="/jugadores/larry-bird/">Larry Bird</a> · <a href="/jugadores/kareem-abdul-jabbar/">Kareem Abdul-Jabbar</a></p>
+      </div>
+    </li>
+    
+    
+    <li class="cronologia__etapa revelar">
+      <div class="cronologia__fecha">1991-1998</div>
+      <div class="cronologia__contenido">
+        <h2 id="jordan-y-el-dream-team">Jordan y el Dream Team</h2>
+        <div class="hist-texto">
+          <figure class="hist-foto hist-foto--lado"><img src="/img/fotos/jordan.jpg" alt="Michael Jordan con los Chicago Bulls" loading="lazy"><figcaption><span>Michael Jordan con los Chicago Bulls</span> <small>Foto: Steve Lipofsky (Basketballphoto.com) · CC BY-SA 3.0</small></figcaption></figure>
+          
+          
+          <p>Michael Jordan llevó la NBA a otra dimensión. Con Scottie Pippen y el entrenador Phil Jackson, los Chicago Bulls ganaron seis títulos en ocho años, en dos tandas de tres seguidos (1991-1993 y 1996-1998). En la temporada 1995-96 ganaron 72 partidos y perdieron solo 10, un récord que duró dos décadas.</p>
+          
+          
+          <p>En 1992, por primera vez, los jugadores de la NBA pudieron ir a los Juegos Olímpicos. El Dream Team de Barcelona, con Jordan, Magic Johnson, Larry Bird, Charles Barkley y compañía, ganó el oro sin apuros y convirtió la NBA en un fenómeno mundial. Muchos de los grandes jugadores europeos de las décadas siguientes crecieron viendo aquellos partidos.</p>
+          
+          
+          <div class="cronologia__dato hist-dato hist-dato--linea"><strong>6</strong><span>títulos de los Bulls en ocho años</span></div>
+        </div>
+        
+        <figure class="hist-foto hist-foto--ancha"><img src="/img/historia/dream-team.jpg" alt="El Dream Team en los Juegos Olímpicos de Barcelona 1992" loading="lazy"><figcaption><span>El Dream Team en los Juegos Olímpicos de Barcelona 1992</span> <small>Foto: Ken Hackman, U.S. Air Force · Public domain</small></figcaption></figure>
+        <p class="cronologia__enlaces">Perfiles: <a href="/jugadores/michael-jordan/">Michael Jordan</a></p>
+      </div>
+    </li>
+    
+    
+    <li class="cronologia__etapa revelar">
+      <div class="cronologia__fecha">1999-2014</div>
+      <div class="cronologia__contenido">
+        <h2 id="lakers-spurs-y-una-liga-global">Lakers, Spurs y una liga global</h2>
+        <div class="hist-texto">
+          
+          <div class="cronologia__dato hist-dato"><strong>5</strong><span>títulos de los Spurs de Tim Duncan</span></div>
+          
+          <p>Tras la retirada de Jordan, el cambio de siglo tuvo dos grandes protagonistas. Los Lakers de Shaquille O&#39;Neal y Kobe Bryant ganaron tres títulos seguidos entre 2000 y 2002, y los San Antonio Spurs de Tim Duncan y Gregg Popovich, cinco entre 1999 y 2014. Antes de la temporada 2001-02, la liga permitió la defensa en zona e introdujo la regla de los tres segundos defensivos.</p>
+          
+          
+          <p>Fue también la época en que la NBA se hizo internacional. Dirk Nowitzki, Pau Gasol, Manu Ginóbili, Tony Parker o Yao Ming demostraron que las estrellas podían llegar de cualquier parte. Nowitzki fue el primer MVP europeo en 2007, y Pau Gasol ganó dos anillos con los Lakers de Kobe Bryant en 2009 y 2010.</p>
+          
+          
+          
+        </div>
+        <div class="hist-pareja"><figure class="hist-foto hist-foto--pareja"><img src="/img/fotos/kobe.jpg" alt="Kobe Bryant con los Lakers" loading="lazy"><figcaption><span>Kobe Bryant con los Lakers</span> <small>Foto: Keith Allison · CC BY-SA 2.0</small></figcaption></figure><figure class="hist-foto hist-foto--pareja"><img src="/img/fotos/duncan.jpg" alt="Tim Duncan con los Spurs" loading="lazy"><figcaption><span>Tim Duncan con los Spurs</span> <small>Foto: Keith Allison · CC BY-SA 2.0</small></figcaption></figure></div>
+        
+        <p class="cronologia__enlaces">Perfiles: <a href="/jugadores/kobe-bryant/">Kobe Bryant</a> · <a href="/jugadores/shaquille-oneal/">Shaquille O&#39;Neal</a> · <a href="/jugadores/tim-duncan/">Tim Duncan</a> · <a href="/jugadores/dirk-nowitzki/">Dirk Nowitzki</a></p>
+      </div>
+    </li>
+    
+    
+    <li class="cronologia__etapa revelar">
+      <div class="cronologia__fecha">2015-hoy</div>
+      <div class="cronologia__contenido">
+        <h2 id="la-era-del-triple">La era del triple</h2>
+        <div class="hist-texto">
+          <figure class="hist-foto hist-foto--lado"><img src="/img/fotos/curry.jpg" alt="Stephen Curry con los Golden State Warriors" loading="lazy"><figcaption><span>Stephen Curry con los Golden State Warriors</span> <small>Foto: Keith Allison from Hanover, MD, USA · CC BY-SA 2.0</small></figcaption></figure>
+          
+          
+          <p>Los Golden State Warriors de Stephen Curry ganaron cuatro títulos entre 2015 y 2022 y cambiaron el baloncesto para siempre: el triple pasó de ser un recurso a ser el centro del juego. Su gran rival fue LeBron James, que en 2016 remontó un 3-1 en las Finales con los Cleveland Cavaliers, algo que nadie había conseguido nunca en unas Finales.</p>
+          
+          
+          <p>La liga se ha vuelto más internacional que nunca: entre 2019 y 2025, todos los MVP de la temporada nacieron fuera de Estados Unidos, con Giannis Antetokounmpo, Nikola Jokić, Joel Embiid y Shai Gilgeous-Alexander. La NBA también ha cambiado su calendario, con el play-in desde la temporada 2020-21 y la NBA Cup desde 2023. En 2026, los New York Knicks ganaron su primer título en 53 años.</p>
+          
+          
+          <div class="cronologia__dato hist-dato hist-dato--linea"><strong>2026</strong><span>los Knicks, campeones 53 años después</span></div>
+        </div>
+        
+        
+        <p class="cronologia__enlaces">Perfiles: <a href="/jugadores/stephen-curry/">Stephen Curry</a> · <a href="/jugadores/lebron-james/">LeBron James</a> · <a href="/jugadores/kevin-durant/">Kevin Durant</a></p>
+      </div>
+    </li>
+    
+  </ol>
+  <details class="fuentes-plegables">
+    <summary>Fuentes</summary>
+    <ul><li><a href="https://en.wikipedia.org/wiki/James_Naismith" rel="noopener">James Naismith y el origen del baloncesto, Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Basketball_Association_of_America" rel="noopener">Basketball Association of America, Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Timeline_of_the_NBA" rel="noopener">Cronología de la NBA, Wikipedia</a></li><li><a href="https://www.nba.com/news/history-this-date-in-nba-nov" rel="noopener">Efemérides de noviembre (primer partido y Pistons-Lakers 19-18), NBA.com</a></li><li><a href="https://en.wikipedia.org/wiki/George_Mikan" rel="noopener">George Mikan, Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Earl_Lloyd" rel="noopener">Earl Lloyd, Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Shot_clock" rel="noopener">Reloj de posesión, Wikipedia</a></li><li><a href="https://www.nba.com/news/history-nba-legend-wilt-chamberlain" rel="noopener">Perfil de Wilt Chamberlain, NBA.com</a></li><li><a href="https://en.wikipedia.org/wiki/American_Basketball_Association" rel="noopener">American Basketball Association, Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/1979%E2%80%9380_NBA_season" rel="noopener">Temporada 1979-80 (línea de tres), Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/NBA_draft_lottery" rel="noopener">Lotería del draft, Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/1992_United_States_men%27s_Olympic_basketball_team" rel="noopener">Dream Team de 1992, Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Defensive_three-second_violation" rel="noopener">Tres segundos defensivos y defensa en zona, Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/NBA_Most_Valuable_Player_Award" rel="noopener">MVP de la temporada, Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/NBA_play-in_tournament" rel="noopener">Play-in, Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/List_of_NBA_champions" rel="noopener">Lista de campeones de la NBA, Wikipedia</a></li></ul>
+    <p>Las fotografías proceden de Wikimedia Commons y se usan según su licencia; el autor y la licencia de cada una aparecen al pie de la foto y en <a href="/creditos-imagenes/">Créditos de imágenes</a>.</p>
+  </details>
+</div>
+
+</main>
+<footer class="pie">
+  <div class="contenedor">
+    <h2 class="pie__titulo">Más información</h2>
+    <div class="pie__tarjetas">
+      <a href="/lideres-historicos/"><strong>Líderes históricos</strong><span>Top 10 de puntos, rebotes, asistencias, tapones, robos y triples</span></a>
+      <a href="/plantillas/"><strong>Plantillas</strong><span>Los jugadores de los 30 equipos, con su ficha y los españoles y latinos</span></a>
+      <a href="/jugadores/"><strong>Grandes jugadores</strong><span>Perfiles de 15 leyendas: su carrera, sus momentos y su legado</span></a>
+      <a href="/historia-de-la-liga/"><strong>Historia de la liga</strong><span>Cómo empezó todo y cómo ha cambiado el juego</span></a>
+      <div class="pie__medio"><h3>El medio</h3>
+        <a href="/quienes-somos/">Quiénes somos</a>
+        <a href="/colabora/">Colabora</a>
+        
+        <a href="/contacto/">Contacto</a>
+        <a href="/juego/">Juego diario</a>
+        <a href="https://www.instagram.com/b2b.basket/">Instagram</a></div>
+    </div>
+  </div>
+  <div class="contenedor pie__legal">
+    <a href="/aviso-legal/">Aviso legal</a>
+    <a href="/privacidad/">Privacidad</a>
+    <a href="/cookies/">Cookies</a>
+    <a href="/condiciones-de-uso/">Condiciones de uso</a>
+    <a href="/principios-editoriales/">Principios editoriales</a>
+    <a href="/correcciones/">Correcciones</a>
+    <a href="/creditos-imagenes/">Créditos de las imágenes</a>
+    
+    <p>B2B Basket · Baloncesto sin descanso. Toda la NBA al ritmo de la liga. Medio independiente, no afiliado a la NBA ni a ninguna franquicia. Los nombres de equipos y jugadores se usan con fines informativos.</p>
+  </div>
+</footer>
+<button class="subir" id="subir" aria-label="Volver arriba"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+<script src="/js/zona.js?v=mwihsvsf"></script>
+<script src="/js/main.js?v=mwihsvsf"></script>
+<script src="/js/directo.js?v=mwihsvsf" defer></script>
+</body>
+</html>

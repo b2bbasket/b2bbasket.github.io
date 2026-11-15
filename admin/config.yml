@@ -1,0 +1,320 @@
+# Archivo generado al publicar: el repositorio y la dirección se calculan solos (ver eleventy.config.js).
+backend:
+  name: github
+  repo: b2bbasket/b2bbasket.github.io
+  branch: main
+
+locale: es
+site_url: https://b2bbasket.github.io/
+media_folder: src/img/subidas
+public_folder: /img/subidas
+
+collections:
+  - name: articulos
+    label: Artículos
+    label_singular: Artículo
+    folder: src/articulos
+    create: true
+    extension: md
+    format: frontmatter
+    slug: "{{slug}}"
+    summary: "{{title}} · {{seccion}}"
+    sortable_fields: [date, title]
+    fields:
+      - { label: Titular, name: title, widget: string }
+      - { label: Fecha de publicación, name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - label: Sección
+        name: seccion
+        widget: select
+        options:
+          - { label: Noticias, value: noticias }
+          - { label: Previas, value: previas }
+          - { label: Crónicas, value: cronicas }
+          - { label: Guías, value: guias }
+      - { label: Equipo principal (opcional, sirve para filtrar), name: equipo, widget: select, required: false, options: ["Atlanta Hawks", "Boston Celtics", "Brooklyn Nets", "Charlotte Hornets", "Chicago Bulls", "Cleveland Cavaliers", "Dallas Mavericks", "Denver Nuggets", "Detroit Pistons", "Golden State Warriors", "Houston Rockets", "Indiana Pacers", "Los Angeles Clippers", "Los Angeles Lakers", "Memphis Grizzlies", "Miami Heat", "Milwaukee Bucks", "Minnesota Timberwolves", "New Orleans Pelicans", "New York Knicks", "Oklahoma City Thunder", "Orlando Magic", "Philadelphia 76ers", "Phoenix Suns", "Portland Trail Blazers", "Sacramento Kings", "San Antonio Spurs", "Toronto Raptors", "Utah Jazz", "Washington Wizards"] }
+      - { label: Crónica de un partido - equipo local (opcional), name: equipo_local, widget: select, required: false, hint: "Solo para crónicas: así se enlaza sola desde Resultados de la jornada", options: ["Atlanta Hawks", "Boston Celtics", "Brooklyn Nets", "Charlotte Hornets", "Chicago Bulls", "Cleveland Cavaliers", "Dallas Mavericks", "Denver Nuggets", "Detroit Pistons", "Golden State Warriors", "Houston Rockets", "Indiana Pacers", "Los Angeles Clippers", "Los Angeles Lakers", "Memphis Grizzlies", "Miami Heat", "Milwaukee Bucks", "Minnesota Timberwolves", "New Orleans Pelicans", "New York Knicks", "Oklahoma City Thunder", "Orlando Magic", "Philadelphia 76ers", "Phoenix Suns", "Portland Trail Blazers", "Sacramento Kings", "San Antonio Spurs", "Toronto Raptors", "Utah Jazz", "Washington Wizards"] }
+      - { label: Crónica de un partido - equipo visitante (opcional), name: equipo_visitante, widget: select, required: false, options: ["Atlanta Hawks", "Boston Celtics", "Brooklyn Nets", "Charlotte Hornets", "Chicago Bulls", "Cleveland Cavaliers", "Dallas Mavericks", "Denver Nuggets", "Detroit Pistons", "Golden State Warriors", "Houston Rockets", "Indiana Pacers", "Los Angeles Clippers", "Los Angeles Lakers", "Memphis Grizzlies", "Miami Heat", "Milwaukee Bucks", "Minnesota Timberwolves", "New Orleans Pelicans", "New York Knicks", "Oklahoma City Thunder", "Orlando Magic", "Philadelphia 76ers", "Phoenix Suns", "Portland Trail Blazers", "Sacramento Kings", "San Antonio Spurs", "Toronto Raptors", "Utah Jazz", "Washington Wizards"] }
+      - { label: Entradilla, name: resumen, widget: text, hint: "Qué ha pasado y por qué importa, en una o dos frases." }
+      - { label: Claves (opcional), name: claves, widget: list, required: false, field: { label: Clave, name: clave, widget: string }, hint: "Tres o cuatro frases cortas. En crónicas salen como «Las claves del partido»; en noticias, como «Lo esencial»; en guías, como «En 30 segundos»." }
+      - { label: Autor, name: autor, widget: string, default: "Hugo Amigo Suárez" }
+      - { label: "Revisado por (quien ha leído y comprobado la pieza antes de publicarla; opcional)", name: revisado_por, widget: string, required: false }
+      - { label: Borrador (si está activado, NO se publica), name: borrador, widget: boolean, default: true, required: false }
+      - { label: Jugador para la foto (opcional), name: jugador_foto, widget: string, required: false, hint: "Escribe el nombre completo, por ejemplo «Stephen Curry» o «Aday Mara». La web buscará sola una foto suya con licencia libre en Wikimedia Commons y pondrá el crédito. Si rellenas «Imagen principal», se usa esa en su lugar." }
+      - { label: Imagen principal (solo con licencia o autorización), name: imagen, widget: image, required: false }
+      - { label: Crédito de la imagen, name: credito, widget: string, required: false }
+      - label: Texto del artículo
+        name: body
+        widget: markdown
+        hint: "Para un gráfico, escribe un bloque de código con el lenguaje grafico: primera línea ```grafico, luego tipo: barras (o lineas), titulo: ..., unidad: ..., fuente: ..., y una línea por dato con el formato «Nombre: 12,5» (decimales con coma). Cierra con ```. Para un vídeo de YouTube: ```video, el enlace en la línea siguiente, un pie opcional y ```."
+
+  - name: leyendas
+    label: Grandes jugadores
+    label_singular: Perfil de jugador
+    folder: src/leyendas
+    create: true
+    extension: md
+    format: frontmatter
+    slug: "{{fields.nombre}}"
+    summary: "{{nombre}} · {{epoca_texto}}"
+    fields:
+      - { label: Nombre, name: nombre, widget: string }
+      - { label: Orden en la portada de la sección, name: orden, widget: number, value_type: int, hint: "El 1 sale como perfil destacado." }
+      - { label: Época (para el filtro), name: epoca, widget: select, options: [{ label: "Años 50 y 60", value: pioneros }, { label: "Años 70 y 80", value: setenta }, { label: "Años 90", value: noventa }, { label: "Siglo XXI", value: siglo21 }] }
+      - { label: Época (texto visible), name: epoca_texto, widget: string, hint: "Por ejemplo: Años 90" }
+      - { label: Posición, name: posicion, widget: string }
+      - { label: Equipos, name: clubes, widget: string, hint: "Separados por « · »" }
+      - { label: Foto (identificador de fotos.json o de fotos de jugadores), name: foto, widget: string, required: false, hint: "Déjalo vacío para mostrar las iniciales. Pídeme a Claude que busque una foto con licencia libre." }
+      - { label: Entradilla, name: entradilla, widget: text }
+      - label: Cifras destacadas (cuatro, todas verificadas)
+        name: cifras
+        widget: list
+        fields:
+          - { label: Valor, name: valor, widget: string }
+          - { label: Qué significa, name: etiqueta, widget: string }
+      - label: Momentos clave
+        name: hitos
+        widget: list
+        fields:
+          - { label: Año, name: ano, widget: string }
+          - { label: Qué pasó, name: texto, widget: string }
+      - label: Fuentes
+        name: fuentes
+        widget: list
+        fields:
+          - { label: Título, name: titulo, widget: string }
+          - { label: Enlace, name: url, widget: string }
+      - { label: "Relato (introducción y apartados con ##)", name: body, widget: markdown }
+
+  - name: previas
+    label: Previas de partido
+    label_singular: Previa
+    folder: src/previas
+    create: true
+    extension: md
+    format: frontmatter
+    slug: "{{year}}-{{month}}-{{day}}-{{fields.local}}-vs-{{fields.visitante}}"
+    summary: "{{local}} vs {{visitante}}"
+    fields:
+      - { label: Equipo local, name: local, widget: select, options: ["Atlanta Hawks", "Boston Celtics", "Brooklyn Nets", "Charlotte Hornets", "Chicago Bulls", "Cleveland Cavaliers", "Dallas Mavericks", "Denver Nuggets", "Detroit Pistons", "Golden State Warriors", "Houston Rockets", "Indiana Pacers", "Los Angeles Clippers", "Los Angeles Lakers", "Memphis Grizzlies", "Miami Heat", "Milwaukee Bucks", "Minnesota Timberwolves", "New Orleans Pelicans", "New York Knicks", "Oklahoma City Thunder", "Orlando Magic", "Philadelphia 76ers", "Phoenix Suns", "Portland Trail Blazers", "Sacramento Kings", "San Antonio Spurs", "Toronto Raptors", "Utah Jazz", "Washington Wizards"] }
+      - { label: Equipo visitante, name: visitante, widget: select, options: ["Atlanta Hawks", "Boston Celtics", "Brooklyn Nets", "Charlotte Hornets", "Chicago Bulls", "Cleveland Cavaliers", "Dallas Mavericks", "Denver Nuggets", "Detroit Pistons", "Golden State Warriors", "Houston Rockets", "Indiana Pacers", "Los Angeles Clippers", "Los Angeles Lakers", "Memphis Grizzlies", "Miami Heat", "Milwaukee Bucks", "Minnesota Timberwolves", "New Orleans Pelicans", "New York Knicks", "Oklahoma City Thunder", "Orlando Magic", "Philadelphia 76ers", "Phoenix Suns", "Portland Trail Blazers", "Sacramento Kings", "San Antonio Spurs", "Toronto Raptors", "Utah Jazz", "Washington Wizards"] }
+      - { label: Fecha del partido, name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: Día y hora (horario peninsular), name: fecha_hora, widget: string, hint: "Por ejemplo: Lunes 2 de noviembre, 01:30" }
+      - { label: Dónde verlo, name: donde, widget: string }
+      - { label: Autor, name: autor, widget: string, default: "Hugo Amigo Suárez" }
+      - { label: "Revisado por (quien ha leído y comprobado la pieza antes de publicarla; opcional)", name: revisado_por, widget: string, required: false }
+      - { label: Las claves del partido, name: claves, widget: list, required: false, field: { label: Clave, name: clave, widget: string } }
+      - label: Jugadores a seguir (opcional)
+        name: a_seguir
+        widget: list
+        required: false
+        fields:
+          - { label: Jugador, name: jugador, widget: string }
+          - { label: Equipo, name: equipo, widget: string }
+          - { label: Por qué (una frase, con datos verificados), name: motivo, widget: string, required: false }
+      - { label: Bajas del equipo local, name: bajas_local, widget: list, required: false, field: { label: Jugador, name: jugador, widget: string } }
+      - { label: Bajas del equipo visitante, name: bajas_visitante, widget: list, required: false, field: { label: Jugador, name: jugador, widget: string } }
+      - { label: Borrador (si está activado, NO se publica), name: borrador, widget: boolean, default: true, required: false }
+      - { label: Texto de la previa, name: body, widget: markdown, required: false }
+
+  - name: fichas
+    label: Fichas de equipo
+    label_singular: Ficha de equipo
+    folder: src/fichas
+    create: true
+    extension: md
+    format: frontmatter
+    slug: "{{slug}}"
+    summary: "{{nombre}} · {{conferencia}}"
+    fields:
+      - { label: Nombre del equipo, name: nombre, widget: string, hint: "Igual que en la lista de equipos, por ejemplo Boston Celtics" }
+      - { label: Conferencia, name: conferencia, widget: select, options: [Este, Oeste] }
+      - { label: División, name: division, widget: select, options: [Atlántico, Central, Sureste, Noroeste, Pacífico, Suroeste] }
+      - { label: Año de fundación, name: fundacion, widget: string, required: false }
+      - { label: Pabellón, name: pabellon, widget: string, required: false }
+      - { label: Títulos de la NBA, name: titulos, widget: string, required: false }
+      - { label: Imagen (solo con licencia o autorización), name: imagen, widget: image, required: false }
+      - { label: Crédito y licencia de la imagen, name: credito, widget: string, required: false, hint: "Autor, licencia y enlace de origen" }
+      - label: Líderes del equipo
+        name: lideres
+        widget: list
+        required: false
+        summary: "{{fields.categoria}}: {{fields.jugador}}"
+        fields:
+          - { label: Categoría, name: categoria, widget: string, hint: "Por ejemplo: Puntos, Rebotes, Asistencias" }
+          - { label: Jugador, name: jugador, widget: string }
+          - { label: Cifra (opcional), name: dato, widget: string, required: false }
+      - { label: Nota sobre los líderes (fuente o aviso), name: nota_lideres, widget: string, required: false }
+      - { label: Borrador (si está activado, NO se publica), name: borrador, widget: boolean, default: true, required: false }
+      - { label: Historia del equipo, name: body, widget: markdown }
+
+  - name: paginas
+    label: Páginas
+    files:
+      - label: Quiénes somos
+        name: quienes_somos
+        file: src/paginas/quienes-somos.md
+        fields:
+          - { label: Título, name: title, widget: string }
+          - { label: Texto, name: body, widget: markdown }
+
+  - name: ajustes
+    label: Resultados y ajustes
+    files:
+      - label: Resultados de la jornada
+        name: resultados
+        file: src/_data/resultados.json
+        fields:
+          - { label: Fecha o título del bloque, name: fecha, widget: string }
+          - label: Partidos
+            name: partidos
+            widget: list
+            fields:
+              - { label: Equipo local, name: local, widget: string }
+              - { label: Puntos local, name: pl, widget: number, value_type: int }
+              - { label: Equipo visitante, name: visitante, widget: string }
+              - { label: Puntos visitante, name: pv, widget: number, value_type: int }
+              - { label: Balance del local tras el partido (opcional, ej. 9-2), name: rl, widget: string, required: false, hint: "Se rellena solo con los datos automáticos. Si lo escribes a mano, que sea el balance justo después de este partido." }
+              - { label: Balance del visitante tras el partido (opcional), name: rv, widget: string, required: false }
+              - { label: Abreviatura local (opcional, ej. LAL), name: al, widget: string, required: false }
+              - { label: Abreviatura visitante (opcional), name: av, widget: string, required: false }
+              - { label: Crónica del partido (opcional), name: cronica, widget: relation, collection: articulos, search_fields: [title], value_field: "{{slug}}", display_fields: [title], required: false }
+      - label: Clasificación
+        name: clasificacion
+        file: src/_data/clasificacion.json
+        fields:
+          - { label: Actualizada el, name: actualizado, widget: string }
+          - label: Conferencia Este
+            name: este
+            widget: list
+            summary: "{{fields.equipo}}: {{fields.v}}-{{fields.d}}"
+            fields:
+              - { label: Equipo, name: equipo, widget: string }
+              - { label: Victorias, name: v, widget: number, value_type: int }
+              - { label: Derrotas, name: d, widget: number, value_type: int }
+          - label: Conferencia Oeste
+            name: oeste
+            widget: list
+            summary: "{{fields.equipo}}: {{fields.v}}-{{fields.d}}"
+            fields:
+              - { label: Equipo, name: equipo, widget: string }
+              - { label: Victorias, name: v, widget: number, value_type: int }
+              - { label: Derrotas, name: d, widget: number, value_type: int }
+      - label: Líderes de la temporada (cada semana)
+        name: lideres_temporada
+        file: src/_data/lideres_temporada.json
+        fields:
+          - { label: Actualizado el, name: actualizado, widget: string }
+          - label: Top 5 en puntos
+            name: puntos
+            widget: list
+            summary: "{{fields.jugador}}"
+            fields:
+              - { label: Jugador, name: jugador, widget: string }
+              - { label: Equipo, name: equipo, widget: string }
+              - { label: Promedio por partido, name: valor, widget: string, required: false }
+          - label: Top 5 en rebotes
+            name: rebotes
+            widget: list
+            summary: "{{fields.jugador}}"
+            fields:
+              - { label: Jugador, name: jugador, widget: string }
+              - { label: Equipo, name: equipo, widget: string }
+              - { label: Promedio por partido, name: valor, widget: string, required: false }
+          - label: Top 5 en asistencias
+            name: asistencias
+            widget: list
+            summary: "{{fields.jugador}}"
+            fields:
+              - { label: Jugador, name: jugador, widget: string }
+              - { label: Equipo, name: equipo, widget: string }
+              - { label: Promedio por partido, name: valor, widget: string, required: false }
+          - label: Top 5 en tapones
+            name: tapones
+            widget: list
+            summary: "{{fields.jugador}}"
+            fields:
+              - { label: Jugador, name: jugador, widget: string }
+              - { label: Equipo, name: equipo, widget: string }
+              - { label: Promedio por partido, name: valor, widget: string, required: false }
+          - label: Top 5 en robos
+            name: robos
+            widget: list
+            summary: "{{fields.jugador}}"
+            fields:
+              - { label: Jugador, name: jugador, widget: string }
+              - { label: Equipo, name: equipo, widget: string }
+              - { label: Promedio por partido, name: valor, widget: string, required: false }
+          - label: Top 5 en triples
+            name: triples
+            widget: list
+            summary: "{{fields.jugador}}"
+            fields:
+              - { label: Jugador, name: jugador, widget: string }
+              - { label: Equipo, name: equipo, widget: string }
+              - { label: Promedio por partido, name: valor, widget: string, required: false }
+      - label: Líderes históricos (top 10)
+        name: lideres_historicos
+        file: src/_data/lideres_historicos.json
+        fields:
+          - { label: Texto de actualización, name: actualizado, widget: string }
+          - label: Categorías
+            name: categorias
+            widget: list
+            summary: "{{fields.nombre}}"
+            fields:
+              - { label: Nombre, name: nombre, widget: string }
+              - { label: Datos verificados, name: verificado, widget: boolean, default: false, required: false }
+              - label: Top 10
+                name: top
+                widget: list
+                summary: "{{fields.jugador}}: {{fields.cifra}}"
+                fields:
+                  - { label: Jugador, name: jugador, widget: string }
+                  - { label: Cifra, name: cifra, widget: string, required: false }
+      - label: Minijuego diario (jugadores y pistas)
+        name: juego
+        file: src/_data/juego.json
+        fields:
+          - label: Jugadores
+            name: jugadores
+            widget: list
+            summary: "{{fields.nombre}}"
+            fields:
+              - { label: Nombre, name: nombre, widget: string }
+              - { label: Otros nombres válidos (apellido, apodo), name: alias, widget: list, required: false, field: { label: Alias, name: alias, widget: string } }
+              - { label: Pistas (de la más difícil a la más fácil), name: pistas, widget: list, field: { label: Pista, name: pista, widget: string } }
+      - label: Equipo (autores)
+        name: autores
+        file: src/_data/autores.json
+        fields:
+          - label: Autores
+            name: autores
+            widget: list
+            summary: "{{fields.nombre}} · {{fields.rol}}"
+            fields:
+              - { label: Nombre (igual que en la firma de los artículos), name: nombre, widget: string }
+              - { label: "Dirección de la página (sin tildes ni espacios, p. ej. hugo-amigo-suarez)", name: slug, widget: string }
+              - { label: Cargo, name: rol, widget: string }
+              - { label: Biografía breve, name: bio, widget: text }
+              - { label: Enlace de Instagram, name: instagram, widget: string, required: false }
+              - { label: Enlace de LinkedIn, name: linkedin, widget: string, required: false }
+              - { label: Web o portfolio, name: web, widget: string, required: false }
+      - label: Datos del medio
+        name: site
+        file: src/_data/site.json
+        fields:
+          - { label: Nombre del medio, name: nombre, widget: string }
+          - { label: Nombre corto (logo de la cabecera), name: abreviatura, widget: string }
+          - { label: Eslogan, name: lema, widget: string }
+          - { label: Usuario de Instagram (con @), name: instagram_usuario, widget: string }
+          - { label: Descripción, name: descripcion, widget: text }
+          - { label: Enlace de Instagram, name: instagram, widget: string }
+          - { label: Firma por defecto de los artículos, name: autor, widget: string, required: false }
+          - { label: "Código de verificación de Google Search Console (solo el código, sin comillas)", name: google_verificacion, widget: string, required: false }
+          - { label: Correo de contacto, name: email, widget: string }
+          - { label: "Código de GoatCounter (la parte de tu dirección antes de .goatcounter.com; vacío = sin estadísticas)", name: goatcounter, widget: string, required: false }
+          - { label: "Enlace de suscripción a la newsletter (vacío = no se muestra)", name: newsletter_url, widget: string, required: false }
+          - { label: Texto de la newsletter, name: newsletter_texto, widget: string, required: false }
+          - { label: Datos automáticos (resultados y clasificación), name: datos_automaticos, widget: boolean, default: true, required: false }
+          - { label: Mostrar aviso de cookies (solo si hay analítica o publicidad), name: banner_cookies, widget: boolean, default: false }
+

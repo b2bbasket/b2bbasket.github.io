@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /portadas/
+
+Sitemap: https://b2bbasket.github.io/sitemap.xml

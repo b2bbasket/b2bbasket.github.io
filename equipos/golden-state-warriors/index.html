@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Golden State Warriors · B2B Basket</title>
+<meta name="description" content="Historia, datos y títulos de Golden State Warriors.">
+<link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Inter";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/inter-latin-wght-normal.woff2") format("woff2")}
+@font-face{font-family:"Newsreader";font-style:normal;font-weight:600;font-display:swap;src:url("/fonts/newsreader-latin-600-normal.woff2") format("woff2")}
+@font-face{font-family:"Newsreader";font-style:normal;font-weight:700;font-display:swap;src:url("/fonts/newsreader-latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:"Newsreader";font-style:normal;font-weight:800;font-display:swap;src:url("/fonts/newsreader-latin-800-normal.woff2") format("woff2")}
+</style>
+<meta name="theme-color" content="#16181D">
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="B2B Basket">
+<meta property="og:title" content="Golden State Warriors · B2B Basket">
+<meta property="og:description" content="Historia, datos y títulos de Golden State Warriors.">
+
+
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://b2bbasket.github.io/img/og.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<link rel="canonical" href="https://b2bbasket.github.io/equipos/golden-state-warriors/">
+<meta name="google-site-verification" content="qITKWh_oPgjqakZjo7_RN5ahJETMUDNgEGGNbE5KbH4">
+
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/css/estilos.css?v=mwihsvsf">
+<script>try{var tm=localStorage.getItem("tema");if(!tm){tm=window.matchMedia("(prefers-color-scheme: dark)").matches?"oscuro":"claro"}document.documentElement.setAttribute("data-tema",tm)}catch(e){}</script>
+<script>try{if(sessionStorage.getItem("splash")){document.documentElement.classList.add("splash-visto")}else{sessionStorage.setItem("splash","1")}}catch(e){}</script>
+
+</head>
+<body>
+<div class="splash" id="splash" aria-hidden="true">
+  <svg class="splash__balon" viewBox="0 0 100 100" fill="none" stroke="#FF4B2B" stroke-width="5"><circle cx="50" cy="50" r="44"/><path d="M50 6v88M6 50h88M16 18c22 18 22 46 0 64M84 18c-22 18-22 46 0 64"/></svg>
+  <div class="splash__logo">B2B Basket<span>.</span></div>
+  <div class="splash__linea"></div>
+  <div class="splash__lema">Baloncesto sin descanso. Toda la NBA al ritmo de la liga.</div>
+</div>
+<div class="progreso" id="progreso"></div>
+<header class="cabecera" id="cabecera">
+  <div class="contenedor cabecera__fila">
+    <a class="logo" href="/" aria-label="B2B Basket">B2B<span>.</span></a>
+    <button class="menu-boton" id="menuBoton" aria-label="Abrir menú" aria-expanded="false">Menú</button>
+    <nav class="nav" id="nav">
+      <a href="/noticias/">Noticias</a><a href="/previas/">Previas</a><a href="/cronicas/">Crónicas</a><a href="/guias/">Guías</a>
+      <a href="/equipos/">Equipos</a>
+      <a href="/clasificacion/">Clasificación</a>
+      <a href="/calendario/">Calendario</a>
+      <a href="/lideres/">Líderes</a>
+      <button type="button" class="tema-boton" id="temaBoton" aria-label="Cambiar entre tema claro y oscuro" title="Tema claro / oscuro"><svg class="luna" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="sol" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <div class="buscar-rapido" id="buscarRapido">
+        <button type="button" class="buscar-rapido__boton" id="buscarBoton" aria-label="Buscar" aria-expanded="false"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button>
+        <input type="search" id="buscarCampo" placeholder="Buscar en la web..." autocomplete="off" aria-label="Buscar" data-base="/">
+        <div class="buscar-rapido__res" id="buscarRes"></div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="ticker" aria-label="Últimas noticias" data-directo="/datos/hoy.json" data-calendario="/calendario/">
+  <div class="ticker__pista">
+    <span class="ticker__marca">ÚLTIMA HORA</span><a href="/articulos/ejemplo-analisis/">[EJEMPLO] Una noticia de última hora, para ver cómo se muestra</a><span class="ticker__marca">ÚLTIMA HORA</span><a href="/articulos/ejemplo-analisis/">[EJEMPLO] Una noticia de última hora, para ver cómo se muestra</a>
+  </div>
+</div>
+<main>
+
+
+<div class="contenedor">
+  <header class="ficha-cab">
+    <span class="ficha-cab__fantasma" aria-hidden="true">GSW</span>
+    <p class="ficha-cab__kicker">Conferencia Oeste · División Pacífico</p>
+    <h1>Golden State Warriors</h1>
+    
+    <ul class="ficha-cab__temporada" aria-label="Esta temporada">
+      <li><strong>8.º</strong><span>en el Oeste</span></li>
+      <li><strong>8-5</strong><span>balance</span></li>
+      <li><strong class="racha racha--p">P2</strong><span>racha</span></li>
+    </ul>
+    
+  </header>
+
+  <ul class="ficha-cifras">
+    <li><small>Fundación</small><strong>1946 (como Philadelphia Warriors)</strong></li>
+    <li><small>Títulos de la NBA</small><strong>7 (1947, 1956, 1975, 2015, 2017, 2018 y 2022)</strong></li>
+    <li><small>Pabellón</small><strong>Chase Center (San Francisco)</strong></li>
+    <li><small>Máximo anotador</small><strong>Stephen Curry · 26.674</strong></li>
+  </ul>
+
+  
+  <section class="ficha-actual revelar" aria-labelledby="t-actual">
+    <h2 id="t-actual" class="ficha-sub">Esta temporada</h2>
+    <div class="ficha-actual__rejilla">
+      <div class="ficha-actual__bloque">
+        <h3>Últimos partidos</h3>
+        <ol class="forma">
+          
+          <li class="forma__item forma__item--p">
+            <b>P</b>
+            <span>en SAS</span>
+            <em>85-123</em>
+            <small>vie, 13 nov</small>
+          </li>
+          
+          <li class="forma__item forma__item--p">
+            <b>P</b>
+            <span>en HOU</span>
+            <em>108-115</em>
+            <small>mié, 11 nov</small>
+          </li>
+          
+          <li class="forma__item forma__item--g">
+            <b>G</b>
+            <span>vs NOP</span>
+            <em>138-87</em>
+            <small>lun, 9 nov</small>
+          </li>
+          
+          <li class="forma__item forma__item--g">
+            <b>G</b>
+            <span>vs ORL</span>
+            <em>126-119</em>
+            <small>sáb, 7 nov</small>
+          </li>
+          
+          <li class="forma__item forma__item--g">
+            <b>G</b>
+            <span>vs MIA</span>
+            <em>120-100</em>
+            <small>jue, 5 nov</small>
+          </li>
+          
+        </ol>
+      </div>
+      <div class="ficha-actual__bloque">
+        <h3>En números</h3>
+        <dl class="numeros">
+          <div><dt>En casa</dt><dd>6-1</dd></div>
+          <div><dt>Fuera</dt><dd>2-4</dd></div>
+          <div><dt>Puntos a favor</dt><dd>116.7</dd></div>
+          <div><dt>Puntos en contra</dt><dd>112.4</dd></div>
+        </dl>
+      </div>
+      
+      <div class="ficha-actual__bloque">
+        <h3>Próximos partidos</h3>
+        <ul class="proximos">
+          
+          <li><span class="proximos__dia"><span data-hora="2026-11-17T01:00:00.000Z">mar, 17 nov · 02:00</span></span><strong>en New Orleans Pelicans</strong></li>
+          
+          <li><span class="proximos__dia"><span data-hora="2026-11-19T01:00:00.000Z">jue, 19 nov · 02:00</span></span><strong>en Dallas Mavericks</strong></li>
+          
+          <li><span class="proximos__dia"><span data-hora="2026-11-20T01:00:00.000Z">vie, 20 nov · 02:00</span></span><strong>en Memphis Grizzlies</strong></li>
+          
+        </ul>
+        <a class="enlace-flecha" href="/calendario/">Calendario completo →</a>
+      </div>
+      
+    </div>
+    <p class="nota-fuente">Datos de la temporada regular (API de balldontlie). Horas de <span data-zona-nombre>España</span>; puedes cambiar el país en el <a href="/calendario/">Calendario</a>.</p>
+  </section>
+  
+
+  
+  
+  <section class="ficha-plantilla revelar" aria-labelledby="t-plantilla">
+    <h2 id="t-plantilla" class="ficha-sub">Plantilla</h2>
+    <p class="plantilla-equipo__coach">Entrenador: Steve Kerr</p>
+    <div class="plantilla-tarjetas">
+      
+      <a class="jugador-mini" href="/jugador/yaxel-lendeborg/">
+        <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/20260211_Yaxel_Lendeborg_13.jpg/500px-20260211_Yaxel_Lendeborg_13.jpg" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">1</span>
+        <strong>Yaxel Lendeborg</strong>
+        <small>Alero o ala-pívot · 24 años</small>
+        
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/brandin-podziemski/">
+        <span class="jugador-mini__foto"><i>BP</i></span>
+        <span class="jugador-mini__dorsal">2</span>
+        <strong>Brandin Podziemski</strong>
+        <small>Base o escolta · 23 años</small>
+        
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/will-richard/">
+        <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Will_Richard.jpg/500px-Will_Richard.jpg" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">3</span>
+        <strong>Will Richard</strong>
+        <small>Base o escolta · 23 años</small>
+        
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/moses-moody/">
+        <span class="jugador-mini__foto"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f0/Moses_Moody_White_House_2023.jpg" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">4</span>
+        <strong>Moses Moody</strong>
+        <small>Base o escolta · 24 años</small>
+        <em class="chip chip--rojo">Lesionado</em>
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/kristaps-porzingis/">
+        <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Kristaps_Porzi%C5%86%C4%A3is_2022.jpg/500px-Kristaps_Porzi%C5%86%C4%A3is_2022.jpg" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">7</span>
+        <strong>Kristaps Porziņģis</strong>
+        <small>Ala-pívot o pívot · 31 años · Letonia</small>
+        <em class="chip chip--rojo">Lesionado</em>
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/de-anthony-melton/">
+        <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/De%27Anthony_Melton_%28cropped%29.jpg/500px-De%27Anthony_Melton_%28cropped%29.jpg" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">8</span>
+        <strong>De&#39;Anthony Melton</strong>
+        <small>Base o escolta · 28 años</small>
+        
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/jimmy-butler-iii/">
+        <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/CES_2026_-_Jimmy_Butler_01_%28cropped%29.jpg/500px-CES_2026_-_Jimmy_Butler_01_%28cropped%29.jpg" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">10</span>
+        <strong>Jimmy Butler III</strong>
+        <small>Alero o ala-pívot · 37 años</small>
+        <em class="chip chip--rojo">Lesionado</em>
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/brandon-williams/">
+        <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Brandon_Williams_%28241110-A-EU436-1002%29_%28cropped%29.jpg/500px-Brandon_Williams_%28241110-A-EU436-1002%29_%28cropped%29.jpg" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">12</span>
+        <strong>Brandon Williams</strong>
+        <small>Base o escolta · 26 años</small>
+        <em class="chip chip--rojo">Lesionado</em>
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/gui-santos/">
+        <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Gui_Santos.png/500px-Gui_Santos.png" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">15</span>
+        <strong>Gui Santos</strong>
+        <small>Alero o ala-pívot · 24 años · Brasil</small>
+        
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/lj-cryer/">
+        <span class="jugador-mini__foto"><i>LC</i></span>
+        <span class="jugador-mini__dorsal">18</span>
+        <strong>LJ Cryer</strong>
+        <small>Base o escolta · 25 años</small>
+        <em class="chip">Contrato dual</em>
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/al-horford/">
+        <span class="jugador-mini__foto"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Al_Horford_of_the_Boston_Celtics_during_an_event_celebrating_the_team%E2%80%99s_2024_NBA_Championship_on_November_21%2C_2024_on_the_South_Lawn_of_the_White_House_%28cropped%29.jpg" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">20</span>
+        <strong>Al Horford</strong>
+        <small>Pívot · 40 años · República Dominicana</small>
+        
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/draymond-green/">
+        <span class="jugador-mini__foto"><img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Draymond_Green_2019.jpg" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">23</span>
+        <strong>Draymond Green</strong>
+        <small>Ala-pívot o pívot · 36 años</small>
+        
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/charles-bassey/">
+        <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Charles_Bassey.png/500px-Charles_Bassey.png" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">28</span>
+        <strong>Charles Bassey</strong>
+        <small>Ala-pívot o pívot · 26 años · Nigeria</small>
+        
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/stephen-curry/">
+        <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Stephen_Curry_Shooting_%28cropped%29_%28cropped%29.jpg/500px-Stephen_Curry_Shooting_%28cropped%29_%28cropped%29.jpg" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">30</span>
+        <strong>Stephen Curry</strong>
+        <small>Base o escolta · 38 años</small>
+        <em class="chip chip--rojo">Lesionado</em>
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/georges-niang/">
+        <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Big_12_Championship_%2825772775155%29_%28cropped%29_-_Georges_Niang.jpg/500px-Big_12_Championship_%2825772775155%29_%28cropped%29_-_Georges_Niang.jpg" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">32</span>
+        <strong>Georges Niang</strong>
+        <small>Alero o ala-pívot · 33 años</small>
+        
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/malevy-leons/">
+        <span class="jugador-mini__foto"><i>ML</i></span>
+        <span class="jugador-mini__dorsal">33</span>
+        <strong>Malevy Leons</strong>
+        <small>Alero o ala-pívot · 27 años · Países Bajos</small>
+        <em class="chip">Contrato dual</em>
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/graham-ike/">
+        <span class="jugador-mini__foto"><i>GI</i></span>
+        <span class="jugador-mini__dorsal">45</span>
+        <strong>Graham Ike</strong>
+        <small>Ala-pívot o pívot · 24 años</small>
+        <em class="chip">Contrato dual</em>
+      </a>
+      
+      <a class="jugador-mini" href="/jugador/gary-payton-ii/">
+        <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Gary_Payton_II_Wizards_%28cropped%29.jpg/500px-Gary_Payton_II_Wizards_%28cropped%29.jpg" alt="" loading="lazy"></span>
+        <span class="jugador-mini__dorsal">0</span>
+        <strong>Gary Payton II</strong>
+        <small>Base o escolta · 33 años</small>
+        
+      </a>
+      
+    </div>
+    <p class="nota-fuente">Plantilla de Wikipedia, actualizada cada día. <a href="/plantillas/">Todas las plantillas →</a></p>
+  </section>
+  
+
+  
+  
+
+  <div class="ficha">
+    <div class="ficha__texto">
+      <div class="pestanas">
+        <button class="pestana activa" data-panel="historia">Historia</button>
+        <button class="pestana" data-panel="lideres">Líderes del equipo</button>
+      </div>
+      <div class="panel-pestana" id="panel-historia">
+        
+        <p>Los Warriors nacieron en Filadelfia en 1946 como equipo fundador de la BAA y ganaron el primer título de la liga, en 1947. Volvieron a ser campeones en 1956. El 2 de marzo de 1962, Wilt Chamberlain anotó 100 puntos con los Warriors ante los Knicks, en Hershey (Pensilvania), un récord que sigue vigente.</p>
+<h2 id="de-san-francisco-a-oakland-y-vuelta">De San Francisco a Oakland y vuelta</h2>
+<p>Ese mismo año, 1962, el equipo se mudó a la bahía de San Francisco, y en 1971 adoptó el nombre de Golden State al trasladarse a Oakland. Con Rick Barry ganó el título de 1975. Desde 2019 juega en el Chase Center, en San Francisco.</p>
+<h2 id="la-dinastia-de-curry">La dinastía de Curry</h2>
+<p>Con Stephen Curry, Klay Thompson, Draymond Green y Steve Kerr como entrenador desde 2014, los Warriors ganaron cuatro títulos (2015, 2017, 2018 y 2022). El equipo de 2015-16 terminó la temporada regular con 73 victorias y 9 derrotas, el mejor balance de la historia de la NBA, aunque después perdió las Finales ante los Cavaliers.</p>
+<details class="fuentes-plegables" id="fuentes"><summary>Fuentes</summary><ul>
+<li><a href="https://en.wikipedia.org/wiki/Golden_St._Warriors">Golden State Warriors, Wikipedia</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Wilt_Chamberlain's_100-point_game">El partido de 100 puntos de Chamberlain, Wikipedia</a></li>
+<li>Líderes: <a href="https://en.wikipedia.org/wiki/List_of_NBA_franchise_career_scoring_leaders">puntos, Wikipedia</a>, <a href="https://www.nba.com/news/top-5-all-time-golden-state-warriors-leading-rebounders">rebotes, NBA.com</a>, <a href="https://www.nba.com/news/top-5-all-time-golden-state-warriors-assists-leaders">asistencias, NBA.com</a></li>
+</ul></details>
+
+      </div>
+      
+      <div class="panel-pestana" id="panel-lideres" hidden>
+        <h2 id="lideres-historicos-de-la-franquicia">Líderes históricos de la franquicia</h2>
+        <div class="lideres-franquicia">
+          
+          <div class="lider-cifra"><small>Puntos</small><strong>26.674</strong><span>Stephen Curry</span></div>
+          
+          <div class="lider-cifra"><small>Rebotes</small><strong>12.771</strong><span>Nate Thurmond</span></div>
+          
+          <div class="lider-cifra"><small>Asistencias</small><strong>6.743</strong><span>Stephen Curry</span></div>
+          
+        </div>
+        <p class="nota-fuente">Temporada regular. Puntos: Wikipedia (datos al 30 de octubre de 2026). Rebotes: NBA.com (julio-agosto de 2026). Asistencias: NBA.com (julio-agosto de 2026). Curry sigue en activo, así que sus cifras aumentan cada semana.</p>
+      </div>
+      
+    </div>
+  </div>
+  <p class="ficha__volver"><a href="/equipos/">← Todos los equipos</a></p>
+</div>
+
+</main>
+<footer class="pie">
+  <div class="contenedor">
+    <h2 class="pie__titulo">Más información</h2>
+    <div class="pie__tarjetas">
+      <a href="/lideres-historicos/"><strong>Líderes históricos</strong><span>Top 10 de puntos, rebotes, asistencias, tapones, robos y triples</span></a>
+      <a href="/plantillas/"><strong>Plantillas</strong><span>Los jugadores de los 30 equipos, con su ficha y los españoles y latinos</span></a>
+      <a href="/jugadores/"><strong>Grandes jugadores</strong><span>Perfiles de 15 leyendas: su carrera, sus momentos y su legado</span></a>
+      <a href="/historia-de-la-liga/"><strong>Historia de la liga</strong><span>Cómo empezó todo y cómo ha cambiado el juego</span></a>
+      <div class="pie__medio"><h3>El medio</h3>
+        <a href="/quienes-somos/">Quiénes somos</a>
+        <a href="/colabora/">Colabora</a>
+        
+        <a href="/contacto/">Contacto</a>
+        <a href="/juego/">Juego diario</a>
+        <a href="https://www.instagram.com/b2b.basket/">Instagram</a></div>
+    </div>
+  </div>
+  <div class="contenedor pie__legal">
+    <a href="/aviso-legal/">Aviso legal</a>
+    <a href="/privacidad/">Privacidad</a>
+    <a href="/cookies/">Cookies</a>
+    <a href="/condiciones-de-uso/">Condiciones de uso</a>
+    <a href="/principios-editoriales/">Principios editoriales</a>
+    <a href="/correcciones/">Correcciones</a>
+    <a href="/creditos-imagenes/">Créditos de las imágenes</a>
+    
+    <p>B2B Basket · Baloncesto sin descanso. Toda la NBA al ritmo de la liga. Medio independiente, no afiliado a la NBA ni a ninguna franquicia. Los nombres de equipos y jugadores se usan con fines informativos.</p>
+  </div>
+</footer>
+<button class="subir" id="subir" aria-label="Volver arriba"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+<script src="/js/zona.js?v=mwihsvsf"></script>
+<script src="/js/main.js?v=mwihsvsf"></script>
+<script src="/js/directo.js?v=mwihsvsf" defer></script>
+</body>
+</html>

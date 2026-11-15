@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plantilla de los New Orleans Pelicans · B2B Basket</title>
+<meta name="description" content="Plantilla actual de los New Orleans Pelicans: todos sus jugadores, con dorsal, posición, edad, país y su ficha.">
+<link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Inter";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/inter-latin-wght-normal.woff2") format("woff2")}
+@font-face{font-family:"Newsreader";font-style:normal;font-weight:600;font-display:swap;src:url("/fonts/newsreader-latin-600-normal.woff2") format("woff2")}
+@font-face{font-family:"Newsreader";font-style:normal;font-weight:700;font-display:swap;src:url("/fonts/newsreader-latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:"Newsreader";font-style:normal;font-weight:800;font-display:swap;src:url("/fonts/newsreader-latin-800-normal.woff2") format("woff2")}
+</style>
+<meta name="theme-color" content="#16181D">
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="B2B Basket">
+<meta property="og:title" content="Plantilla de los New Orleans Pelicans · B2B Basket">
+<meta property="og:description" content="Plantilla actual de los New Orleans Pelicans: todos sus jugadores, con dorsal, posición, edad, país y su ficha.">
+
+
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://b2bbasket.github.io/img/og.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<link rel="canonical" href="https://b2bbasket.github.io/plantillas/new-orleans-pelicans/">
+<meta name="google-site-verification" content="qITKWh_oPgjqakZjo7_RN5ahJETMUDNgEGGNbE5KbH4">
+
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/css/estilos.css?v=mwihsvsf">
+<script>try{var tm=localStorage.getItem("tema");if(!tm){tm=window.matchMedia("(prefers-color-scheme: dark)").matches?"oscuro":"claro"}document.documentElement.setAttribute("data-tema",tm)}catch(e){}</script>
+<script>try{if(sessionStorage.getItem("splash")){document.documentElement.classList.add("splash-visto")}else{sessionStorage.setItem("splash","1")}}catch(e){}</script>
+
+</head>
+<body>
+<div class="splash" id="splash" aria-hidden="true">
+  <svg class="splash__balon" viewBox="0 0 100 100" fill="none" stroke="#FF4B2B" stroke-width="5"><circle cx="50" cy="50" r="44"/><path d="M50 6v88M6 50h88M16 18c22 18 22 46 0 64M84 18c-22 18-22 46 0 64"/></svg>
+  <div class="splash__logo">B2B Basket<span>.</span></div>
+  <div class="splash__linea"></div>
+  <div class="splash__lema">Baloncesto sin descanso. Toda la NBA al ritmo de la liga.</div>
+</div>
+<div class="progreso" id="progreso"></div>
+<header class="cabecera" id="cabecera">
+  <div class="contenedor cabecera__fila">
+    <a class="logo" href="/" aria-label="B2B Basket">B2B<span>.</span></a>
+    <button class="menu-boton" id="menuBoton" aria-label="Abrir menú" aria-expanded="false">Menú</button>
+    <nav class="nav" id="nav">
+      <a href="/noticias/">Noticias</a><a href="/previas/">Previas</a><a href="/cronicas/">Crónicas</a><a href="/guias/">Guías</a>
+      <a href="/equipos/">Equipos</a>
+      <a href="/clasificacion/">Clasificación</a>
+      <a href="/calendario/">Calendario</a>
+      <a href="/lideres/">Líderes</a>
+      <button type="button" class="tema-boton" id="temaBoton" aria-label="Cambiar entre tema claro y oscuro" title="Tema claro / oscuro"><svg class="luna" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="sol" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <div class="buscar-rapido" id="buscarRapido">
+        <button type="button" class="buscar-rapido__boton" id="buscarBoton" aria-label="Buscar" aria-expanded="false"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button>
+        <input type="search" id="buscarCampo" placeholder="Buscar en la web..." autocomplete="off" aria-label="Buscar" data-base="/">
+        <div class="buscar-rapido__res" id="buscarRes"></div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="ticker" aria-label="Últimas noticias" data-directo="/datos/hoy.json" data-calendario="/calendario/">
+  <div class="ticker__pista">
+    <span class="ticker__marca">ÚLTIMA HORA</span><a href="/articulos/ejemplo-analisis/">[EJEMPLO] Una noticia de última hora, para ver cómo se muestra</a><span class="ticker__marca">ÚLTIMA HORA</span><a href="/articulos/ejemplo-analisis/">[EJEMPLO] Una noticia de última hora, para ver cómo se muestra</a>
+  </div>
+</div>
+<main>
+
+
+<div class="contenedor">
+  <p class="migas"><a href="/plantillas/">← Todas las plantillas</a></p>
+  <header class="plantilla-cab" style="--eq:#0C2340">
+    <span class="plantilla-cab__abr" aria-hidden="true">NOP</span>
+    <p class="plantilla-cab__kicker">Plantilla 2026</p>
+    <h1>New Orleans Pelicans</h1>
+    <p class="plantilla-cab__datos">18 jugadores · Entrenador: Jamahl Mosley · 4-10, 12.º en el Oeste</p>
+    <a class="plantilla-cab__ficha" href="/equipos/new-orleans-pelicans/">Ficha del equipo →</a>
+  </header>
+  <div class="plantilla-tarjetas">
+    
+    <a class="jugador-mini" href="/jugador/zion-williamson/">
+      <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Zion_Williamson_2020_%28cropped%29.jpg/500px-Zion_Williamson_2020_%28cropped%29.jpg" alt="" loading="lazy"></span>
+      <span class="jugador-mini__dorsal">1</span>
+      <strong>Zion Williamson</strong>
+      <small>Alero o ala-pívot · 26 años · 1,98 m</small>
+      
+    </a>
+    
+    <a class="jugador-mini" href="/jugador/herbert-jones/">
+      <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Herb_Jones.jpg/500px-Herb_Jones.jpg" alt="" loading="lazy"></span>
+      <span class="jugador-mini__dorsal">2</span>
+      <strong>Herbert Jones</strong>
+      <small>Alero o ala-pívot · 28 años · 2,01 m</small>
+      
+    </a>
+    
+    <a class="jugador-mini" href="/jugador/jordan-poole/">
+      <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/20180206_UM-NW_Jordan_Poole_7DM26858.jpg/500px-20180206_UM-NW_Jordan_Poole_7DM26858.jpg" alt="" loading="lazy"></span>
+      <span class="jugador-mini__dorsal">3</span>
+      <strong>Jordan Poole</strong>
+      <small>Base o escolta · 27 años · 1,93 m</small>
+      
+    </a>
+    
+    <a class="jugador-mini" href="/jugador/dejounte-murray/">
+      <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Dejounte_Murray_Tours_the_METC_%285148235%29_%28cropped%29.jpg/500px-Dejounte_Murray_Tours_the_METC_%285148235%29_%28cropped%29.jpg" alt="" loading="lazy"></span>
+      <span class="jugador-mini__dorsal">5</span>
+      <strong>Dejounte Murray</strong>
+      <small>Base o escolta · 30 años · 1,93 m</small>
+      
+    </a>
+    
+    <a class="jugador-mini" href="/jugador/deandre-jordan/">
+      <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/DeAndre_Jordan.jpg/500px-DeAndre_Jordan.jpg" alt="" loading="lazy"></span>
+      <span class="jugador-mini__dorsal">6</span>
+      <strong>DeAndre Jordan</strong>
+      <small>Pívot · 38 años · 2,11 m</small>
+      
+    </a>
+    
+    <a class="jugador-mini" href="/jugador/malik-dia/">
+      <span class="jugador-mini__foto"><i>MD</i></span>
+      <span class="jugador-mini__dorsal">8</span>
+      <strong>Malik Dia</strong>
+      <small>Alero o ala-pívot · 22 años · 2,06 m</small>
+      <em class="chip">Contrato dual</em>
+    </a>
+    
+    <a class="jugador-mini" href="/jugador/trendon-watford/">
+      <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Trendon_Watford_%28cropped%29.jpg/500px-Trendon_Watford_%28cropped%29.jpg" alt="" loading="lazy"></span>
+      <span class="jugador-mini__dorsal">9</span>
+      <strong>Trendon Watford</strong>
+      <small>Escolta o alero · 26 años · 2,06 m</small>
+      
+    </a>
+    
+    <a class="jugador-mini" href="/jugador/jaron-pierre-jr/">
+      <span class="jugador-mini__foto"><i>JPJ</i></span>
+      <span class="jugador-mini__dorsal">10</span>
+      <strong>Jaron Pierre Jr.</strong>
+      <small>Base o escolta · 24 años · 1,98 m</small>
+      <em class="chip">Contrato dual</em>
+    </a>
+    
+    <a class="jugador-mini" href="/jugador/bryce-mcgowens/">
+      <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Bryce_McGowens.jpg/500px-Bryce_McGowens.jpg" alt="" loading="lazy"></span>
+      <span class="jugador-mini__dorsal">11</span>
+      <strong>Bryce McGowens</strong>
+      <small>Base o escolta · 24 años · 1,98 m</small>
+      
+    </a>
+    
+    <a class="jugador-mini" href="/jugador/julian-reese/">
+      <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Julian_Reese_%2854424016534%29_%28cropped%29.jpg/500px-Julian_Reese_%2854424016534%29_%28cropped%29.jpg" alt="" loading="lazy"></span>
+      <span class="jugador-mini__dorsal">13</span>
+      <strong>Julian Reese</strong>
+      <small>Alero o ala-pívot · 23 años · 2,11 m</small>
+      <em class="chip">Contrato dual</em>
+    </a>
+    
+    <a class="jugador-mini" href="/jugador/aj-johnson/">
+      <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/1_aj_johnson_2025.jpg/500px-1_aj_johnson_2025.jpg" alt="" loading="lazy"></span>
+      <span class="jugador-mini__dorsal">14</span>
+      <strong>AJ Johnson</strong>
+      <small>Base o escolta · 21 años · 1,98 m</small>
+      
+    </a>
+    
+    <a class="jugador-mini" href="/jugador/karlo-matkovic/">
+      <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/SWE-CRO_20220218_Karlo_Matkovic.jpg/500px-SWE-CRO_20220218_Karlo_Matkovic.jpg" alt="" loading="lazy"></span>
+      <span class="jugador-mini__dorsal">17</span>
+      <strong>Karlo Matković</strong>
+      <small>Ala-pívot o pívot · 25 años · 2,11 m · Croacia</small>
+      
+    </a>
+    
+    <a class="jugador-mini" href="/jugador/yves-missi/">
+      <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Yves_Missi.jpg/500px-Yves_Missi.jpg" alt="" loading="lazy"></span>
+      <span class="jugador-mini__dorsal">21</span>
+      <strong>Yves Missi</strong>
+      <small>Pívot · 22 años · 2,11 m · Camerún</small>
+      <em class="chip chip--rojo">Lesionado</em>
+    </a>
+    
+    <a class="jugador-mini" href="/jugador/derik-queen/">
+      <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Derik_Queen_%2854424016534%29_%28cropped%29.jpg/500px-Derik_Queen_%2854424016534%29_%28cropped%29.jpg" alt="" loading="lazy"></span>
+      <span class="jugador-mini__dorsal">22</span>
+      <strong>Derik Queen</strong>
+      <small>Pívot · 21 años · 2,11 m</small>
+      
+    </a>
+    
+    <a class="jugador-mini" href="/jugador/bennedict-mathurin/">
+      <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Bennedict_Mathurin_%28cropped%29.jpg/500px-Bennedict_Mathurin_%28cropped%29.jpg" alt="" loading="lazy"></span>
+      <span class="jugador-mini__dorsal">24</span>
+      <strong>Bennedict Mathurin</strong>
+      <small>Escolta o alero · 24 años · 1,96 m · Canadá</small>
+      
+    </a>
+    
+    <a class="jugador-mini" href="/jugador/trey-murphy-iii/">
+      <span class="jugador-mini__foto"><i>TMI</i></span>
+      <span class="jugador-mini__dorsal">25</span>
+      <strong>Trey Murphy III</strong>
+      <small>Alero o ala-pívot · 26 años · 2,06 m</small>
+      
+    </a>
+    
+    <a class="jugador-mini" href="/jugador/saddiq-bey/">
+      <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Saddiq_Bey_%28cropped%29.jpg/500px-Saddiq_Bey_%28cropped%29.jpg" alt="" loading="lazy"></span>
+      <span class="jugador-mini__dorsal">41</span>
+      <strong>Saddiq Bey</strong>
+      <small>Escolta o alero · 27 años · 2,03 m</small>
+      
+    </a>
+    
+    <a class="jugador-mini" href="/jugador/jeremiah-fears/">
+      <span class="jugador-mini__foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Jeremiah_Fears_at_Oklahoma.png/500px-Jeremiah_Fears_at_Oklahoma.png" alt="" loading="lazy"></span>
+      <span class="jugador-mini__dorsal">0</span>
+      <strong>Jeremiah Fears</strong>
+      <small>Base o escolta · 20 años · 1,91 m</small>
+      
+    </a>
+    
+  </div>
+  <details class="fuentes-plegables">
+    <summary>Fuentes</summary>
+    <ul>
+      <li><a href="https://en.wikipedia.org/wiki/Template:New_Orleans_Pelicans_roster" rel="noopener">Plantilla de los New Orleans Pelicans, Wikipedia</a> (última revisión: 28 de octubre de 2026)</li>
+      <li>País, lugar de nacimiento y fotos: Wikidata y Wikimedia Commons (autor y licencia en la ficha de cada jugador)</li>
+      <li>Balance: API de balldontlie</li>
+    </ul>
+  </details>
+</div>
+
+</main>
+<footer class="pie">
+  <div class="contenedor">
+    <h2 class="pie__titulo">Más información</h2>
+    <div class="pie__tarjetas">
+      <a href="/lideres-historicos/"><strong>Líderes históricos</strong><span>Top 10 de puntos, rebotes, asistencias, tapones, robos y triples</span></a>
+      <a href="/plantillas/"><strong>Plantillas</strong><span>Los jugadores de los 30 equipos, con su ficha y los españoles y latinos</span></a>
+      <a href="/jugadores/"><strong>Grandes jugadores</strong><span>Perfiles de 15 leyendas: su carrera, sus momentos y su legado</span></a>
+      <a href="/historia-de-la-liga/"><strong>Historia de la liga</strong><span>Cómo empezó todo y cómo ha cambiado el juego</span></a>
+      <div class="pie__medio"><h3>El medio</h3>
+        <a href="/quienes-somos/">Quiénes somos</a>
+        <a href="/colabora/">Colabora</a>
+        
+        <a href="/contacto/">Contacto</a>
+        <a href="/juego/">Juego diario</a>
+        <a href="https://www.instagram.com/b2b.basket/">Instagram</a></div>
+    </div>
+  </div>
+  <div class="contenedor pie__legal">
+    <a href="/aviso-legal/">Aviso legal</a>
+    <a href="/privacidad/">Privacidad</a>
+    <a href="/cookies/">Cookies</a>
+    <a href="/condiciones-de-uso/">Condiciones de uso</a>
+    <a href="/principios-editoriales/">Principios editoriales</a>
+    <a href="/correcciones/">Correcciones</a>
+    <a href="/creditos-imagenes/">Créditos de las imágenes</a>
+    
+    <p>B2B Basket · Baloncesto sin descanso. Toda la NBA al ritmo de la liga. Medio independiente, no afiliado a la NBA ni a ninguna franquicia. Los nombres de equipos y jugadores se usan con fines informativos.</p>
+  </div>
+</footer>
+<button class="subir" id="subir" aria-label="Volver arriba"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+<script src="/js/zona.js?v=mwihsvsf"></script>
+<script src="/js/main.js?v=mwihsvsf"></script>
+<script src="/js/directo.js?v=mwihsvsf" defer></script>
+</body>
+</html>

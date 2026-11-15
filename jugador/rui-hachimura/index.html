@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rui Hachimura · B2B Basket</title>
+<meta name="description" content="Rui Hachimura, alero o ala-pívot de los Los Angeles Clippers: datos, plantilla y partidos de su equipo.">
+<link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Inter";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/inter-latin-wght-normal.woff2") format("woff2")}
+@font-face{font-family:"Newsreader";font-style:normal;font-weight:600;font-display:swap;src:url("/fonts/newsreader-latin-600-normal.woff2") format("woff2")}
+@font-face{font-family:"Newsreader";font-style:normal;font-weight:700;font-display:swap;src:url("/fonts/newsreader-latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:"Newsreader";font-style:normal;font-weight:800;font-display:swap;src:url("/fonts/newsreader-latin-800-normal.woff2") format("woff2")}
+</style>
+<meta name="theme-color" content="#16181D">
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="B2B Basket">
+<meta property="og:title" content="Rui Hachimura · B2B Basket">
+<meta property="og:description" content="Rui Hachimura, alero o ala-pívot de los Los Angeles Clippers: datos, plantilla y partidos de su equipo.">
+
+
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://b2bbasket.github.io/img/og.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<link rel="canonical" href="https://b2bbasket.github.io/jugador/rui-hachimura/">
+<meta name="google-site-verification" content="qITKWh_oPgjqakZjo7_RN5ahJETMUDNgEGGNbE5KbH4">
+
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/css/estilos.css?v=mwihsvsf">
+<script>try{var tm=localStorage.getItem("tema");if(!tm){tm=window.matchMedia("(prefers-color-scheme: dark)").matches?"oscuro":"claro"}document.documentElement.setAttribute("data-tema",tm)}catch(e){}</script>
+<script>try{if(sessionStorage.getItem("splash")){document.documentElement.classList.add("splash-visto")}else{sessionStorage.setItem("splash","1")}}catch(e){}</script>
+
+</head>
+<body>
+<div class="splash" id="splash" aria-hidden="true">
+  <svg class="splash__balon" viewBox="0 0 100 100" fill="none" stroke="#FF4B2B" stroke-width="5"><circle cx="50" cy="50" r="44"/><path d="M50 6v88M6 50h88M16 18c22 18 22 46 0 64M84 18c-22 18-22 46 0 64"/></svg>
+  <div class="splash__logo">B2B Basket<span>.</span></div>
+  <div class="splash__linea"></div>
+  <div class="splash__lema">Baloncesto sin descanso. Toda la NBA al ritmo de la liga.</div>
+</div>
+<div class="progreso" id="progreso"></div>
+<header class="cabecera" id="cabecera">
+  <div class="contenedor cabecera__fila">
+    <a class="logo" href="/" aria-label="B2B Basket">B2B<span>.</span></a>
+    <button class="menu-boton" id="menuBoton" aria-label="Abrir menú" aria-expanded="false">Menú</button>
+    <nav class="nav" id="nav">
+      <a href="/noticias/">Noticias</a><a href="/previas/">Previas</a><a href="/cronicas/">Crónicas</a><a href="/guias/">Guías</a>
+      <a href="/equipos/">Equipos</a>
+      <a href="/clasificacion/">Clasificación</a>
+      <a href="/calendario/">Calendario</a>
+      <a href="/lideres/">Líderes</a>
+      <button type="button" class="tema-boton" id="temaBoton" aria-label="Cambiar entre tema claro y oscuro" title="Tema claro / oscuro"><svg class="luna" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="sol" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <div class="buscar-rapido" id="buscarRapido">
+        <button type="button" class="buscar-rapido__boton" id="buscarBoton" aria-label="Buscar" aria-expanded="false"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button>
+        <input type="search" id="buscarCampo" placeholder="Buscar en la web..." autocomplete="off" aria-label="Buscar" data-base="/">
+        <div class="buscar-rapido__res" id="buscarRes"></div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="ticker" aria-label="Últimas noticias" data-directo="/datos/hoy.json" data-calendario="/calendario/">
+  <div class="ticker__pista">
+    <span class="ticker__marca">ÚLTIMA HORA</span><a href="/articulos/ejemplo-analisis/">[EJEMPLO] Una noticia de última hora, para ver cómo se muestra</a><span class="ticker__marca">ÚLTIMA HORA</span><a href="/articulos/ejemplo-analisis/">[EJEMPLO] Una noticia de última hora, para ver cómo se muestra</a>
+  </div>
+</div>
+<main>
+
+
+
+
+<div class="contenedor">
+  <p class="migas"><a href="/plantillas/">Plantillas</a> › <a href="/equipos/los-angeles-clippers/">Los Angeles Clippers</a></p>
+  <header class="jugador-cab">
+    <div class="jugador-cab__foto">
+      <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/2019_Rui_Hachimura_dribble_%2848824158846%29_%28cropped%29.jpg/500px-2019_Rui_Hachimura_dribble_%2848824158846%29_%28cropped%29.jpg" alt="Rui Hachimura" width="480" loading="eager">
+    </div>
+    <div class="jugador-cab__texto">
+      <p class="jugador-cab__kicker">Los Angeles Clippers · #28</p>
+      <h1>Rui Hachimura</h1>
+      <p class="jugador-cab__pos">Alero o ala-pívot</p>
+      <ul class="jugador-chips">
+        
+        
+        
+      </ul>
+      <p class="jugador-cab__credito">Foto: All-Pro Reels from District of Columbia, USA · <a href="https://commons.wikimedia.org/wiki/File:2019_Rui_Hachimura_dribble_(48824158846)_(cropped).jpg" rel="noopener">CC BY-SA 2.0</a></p>
+    </div>
+  </header>
+
+  <section class="jugador-datos revelar" aria-label="Datos">
+    <div><small>Edad</small><strong>28 años</strong><span>8 de febrero de 1998</span></div>
+    <div><small>Altura</small><strong>2,03 m</strong></div>
+    <div><small>Peso</small><strong>104 kg</strong></div>
+    <div><small>País</small><strong>Japón</strong></div>
+    <div><small>Nacido en</small><strong class="jugador-datos__texto">Toyama, Japón</strong></div>
+    <div><small>Procedencia</small><strong class="jugador-datos__texto">Gonzaga</strong></div>
+  </section>
+
+  
+  <section class="jugador-equipo revelar">
+    <h2 class="ficha-sub">Su equipo esta temporada</h2>
+    <div class="jugador-equipo__rejilla">
+      <div class="jugador-equipo__caja">
+        <small>Balance</small>
+        <strong>3-8</strong>
+        <span>13.º en el Oeste</span>
+      </div>
+      
+      <div class="jugador-equipo__caja">
+        <small>Últimos partidos</small>
+        <ul class="jugador-lista"><li><b class="res-v">V</b> vs OKC <span>113-112</span></li><li><b class="res-d">D</b> en PHX <span>110-133</span></li><li><b class="res-v">V</b> vs NOP <span>139-123</span></li><li><b class="res-d">D</b> vs MIA <span>116-117</span></li><li><b class="res-d">D</b> vs TOR <span>118-125</span></li></ul>
+      </div>
+      
+      
+      <div class="jugador-equipo__caja">
+        <small>Próximos partidos</small>
+        <ul class="jugador-lista"><li>vs CHA <span data-hora="2026-11-15T21:30:00.000Z">dom, 15 nov · 22:30</span></li><li>vs UTA <span data-hora="2026-11-18T03:30:00.000Z">mié, 18 nov · 04:30</span></li><li>en SAS <span data-hora="2026-11-20T01:00:00.000Z">vie, 20 nov · 02:00</span></li></ul>
+      </div>
+      
+    </div>
+  </section>
+  
+
+  <section class="jugador-companeros revelar">
+    <h2 class="ficha-sub">Plantilla de los Los Angeles Clippers</h2>
+    <ul class="plantilla plantilla--compacta">
+      <li><a href="/jugador/keaton-wagler/"><b>1</b> Keaton Wagler</a></li><li><a href="/jugador/bradley-beal/"><b>3</b> Bradley Beal</a></li><li><a href="/jugador/kobe-sanders/"><b>4</b> Kobe Sanders</a></li><li><a href="/jugador/derrick-jones-jr/"><b>5</b> Derrick Jones Jr.</a></li><li><a href="/jugador/brandon-ingram/"><b>7</b> Brandon Ingram</a></li><li><a href="/jugador/kris-dunn/"><b>8</b> Kris Dunn</a></li><li><a href="/jugador/gradey-dick/"><b>9</b> Gradey Dick</a></li><li><a href="/jugador/darius-garland/"><b>10</b> Darius Garland</a></li><li><a href="/jugador/brook-lopez/"><b>11</b> Brook Lopez</a></li><li><a href="/jugador/nick-martinelli/"><b>12</b> Nick Martinelli</a></li><li><a href="/jugador/yanic-konan-niederhauser/"><b>14</b> Yanic Konan Niederhäuser</a></li><li><a href="/jugador/baba-miller/"><b>18</b> Baba Miller</a></li><li><a href="/jugador/jalen-pickett/"><b>21</b> Jalen Pickett</a></li><li><a href="/jugador/jordan-miller/"><b>22</b> Jordan Miller</a></li><li><a href="/jugador/isaiah-jackson/"><b>23</b> Isaiah Jackson</a></li><li><a href="/jugador/cam-christie/"><b>24</b> Cam Christie</a></li><li class="actual"><a href="/jugador/rui-hachimura/"><b>28</b> Rui Hachimura</a></li><li><a href="/jugador/max-strus/"><b>31</b> Max Strus</a></li>
+    </ul>
+  </section>
+
+  <details class="fuentes-plegables">
+    <summary>Fuentes</summary>
+    <ul>
+      <li><a href="https://en.wikipedia.org/wiki/Template:Los_Angeles_Clippers_roster" rel="noopener">Plantilla de los Los Angeles Clippers, Wikipedia</a> (dorsal, posición, altura, peso, nacimiento, procedencia y lesiones)</li>
+      <li><a href="https://en.wikipedia.org/wiki/Rui_Hachimura" rel="noopener">Rui Hachimura, Wikipedia</a> · <a href="https://es.wikipedia.org/wiki/Rui_Hachimura" rel="noopener">en español</a></li>
+      <li><a href="https://www.wikidata.org/wiki/Q22959347" rel="noopener">Rui Hachimura, Wikidata</a> (país y lugar de nacimiento)</li>
+      <li>Resultados y calendario del equipo: API de balldontlie</li>
+    </ul>
+    <p>Plantillas actualizadas automáticamente cada día. Última revisión de la plantilla en Wikipedia: 9 de noviembre de 2026.</p>
+  </details>
+</div>
+
+</main>
+<footer class="pie">
+  <div class="contenedor">
+    <h2 class="pie__titulo">Más información</h2>
+    <div class="pie__tarjetas">
+      <a href="/lideres-historicos/"><strong>Líderes históricos</strong><span>Top 10 de puntos, rebotes, asistencias, tapones, robos y triples</span></a>
+      <a href="/plantillas/"><strong>Plantillas</strong><span>Los jugadores de los 30 equipos, con su ficha y los españoles y latinos</span></a>
+      <a href="/jugadores/"><strong>Grandes jugadores</strong><span>Perfiles de 15 leyendas: su carrera, sus momentos y su legado</span></a>
+      <a href="/historia-de-la-liga/"><strong>Historia de la liga</strong><span>Cómo empezó todo y cómo ha cambiado el juego</span></a>
+      <div class="pie__medio"><h3>El medio</h3>
+        <a href="/quienes-somos/">Quiénes somos</a>
+        <a href="/colabora/">Colabora</a>
+        
+        <a href="/contacto/">Contacto</a>
+        <a href="/juego/">Juego diario</a>
+        <a href="https://www.instagram.com/b2b.basket/">Instagram</a></div>
+    </div>
+  </div>
+  <div class="contenedor pie__legal">
+    <a href="/aviso-legal/">Aviso legal</a>
+    <a href="/privacidad/">Privacidad</a>
+    <a href="/cookies/">Cookies</a>
+    <a href="/condiciones-de-uso/">Condiciones de uso</a>
+    <a href="/principios-editoriales/">Principios editoriales</a>
+    <a href="/correcciones/">Correcciones</a>
+    <a href="/creditos-imagenes/">Créditos de las imágenes</a>
+    
+    <p>B2B Basket · Baloncesto sin descanso. Toda la NBA al ritmo de la liga. Medio independiente, no afiliado a la NBA ni a ninguna franquicia. Los nombres de equipos y jugadores se usan con fines informativos.</p>
+  </div>
+</footer>
+<button class="subir" id="subir" aria-label="Volver arriba"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+<script src="/js/zona.js?v=mwihsvsf"></script>
+<script src="/js/main.js?v=mwihsvsf"></script>
+<script src="/js/directo.js?v=mwihsvsf" defer></script>
+</body>
+</html>

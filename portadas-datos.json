@@ -1,0 +1,52 @@
+[
+ {
+  "clave": "articulos-ejemplo-analisis",
+  "url": "/articulos/ejemplo-analisis/",
+  "titulo": "[EJEMPLO] Una noticia de última hora, para ver cómo se muestra",
+  "seccion": "noticias",
+  "etiqueta": "Noticias",
+  "fecha": "31 de octubre de 2026",
+  "autor": "",
+  "foto": null
+ },
+ {
+  "clave": "articulos-ejemplo-cronica",
+  "url": "/articulos/ejemplo-cronica/",
+  "titulo": "[EJEMPLO] Así se vería una crónica en la web",
+  "seccion": "cronicas",
+  "etiqueta": "Crónicas",
+  "fecha": "1 de noviembre de 2026",
+  "autor": "",
+  "foto": null
+ },
+ {
+  "clave": "previas-ejemplo-previa",
+  "url": "/previas/ejemplo-previa/",
+  "titulo": "[EJEMPLO] Equipo A vs [EJEMPLO] Equipo B: previa del partido",
+  "seccion": "previas",
+  "etiqueta": "Previas",
+  "fecha": "2 de noviembre de 2026",
+  "autor": "Hugo Amigo Suárez",
+  "foto": null
+ },
+ {
+  "clave": "articulos-guia-como-funciona-la-nba",
+  "url": "/articulos/guia-como-funciona-la-nba/",
+  "titulo": "Cómo funciona la NBA: temporada, play-in, playoffs, draft y tope salarial",
+  "seccion": "guias",
+  "etiqueta": "Guías",
+  "fecha": "9 de noviembre de 2026",
+  "autor": "Hugo Amigo Suárez",
+  "foto": null
+ },
+ {
+  "clave": "articulos-guia-copa-nba",
+  "url": "/articulos/guia-copa-nba/",
+  "titulo": "Cómo funciona la NBA Cup: grupos, eliminatorias y premios",
+  "seccion": "guias",
+  "etiqueta": "Guías",
+  "fecha": "9 de noviembre de 2026",
+  "autor": "Hugo Amigo Suárez",
+  "foto": null
+ }
+]

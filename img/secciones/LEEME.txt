@@ -1,0 +1,1 @@
+Aquí van las imágenes de cada sección. Nómbralas con la clave de la sección y la extensión: noticias.jpg, previas.jpg, cronicas.jpg, analisis.jpg, datos.jpg, guias.jpg, historias.jpg, equipos.jpg (también valen .png y .webp). Solo imágenes propias o con licencia.

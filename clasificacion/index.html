@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clasificación · B2B Basket</title>
+<meta name="description" content="Clasificación de la NBA por conferencias, con racha, últimos diez partidos y balance en casa y fuera.">
+<link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Inter";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/inter-latin-wght-normal.woff2") format("woff2")}
+@font-face{font-family:"Newsreader";font-style:normal;font-weight:600;font-display:swap;src:url("/fonts/newsreader-latin-600-normal.woff2") format("woff2")}
+@font-face{font-family:"Newsreader";font-style:normal;font-weight:700;font-display:swap;src:url("/fonts/newsreader-latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:"Newsreader";font-style:normal;font-weight:800;font-display:swap;src:url("/fonts/newsreader-latin-800-normal.woff2") format("woff2")}
+</style>
+<meta name="theme-color" content="#16181D">
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="B2B Basket">
+<meta property="og:title" content="Clasificación · B2B Basket">
+<meta property="og:description" content="Clasificación de la NBA por conferencias, con racha, últimos diez partidos y balance en casa y fuera.">
+
+
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://b2bbasket.github.io/img/og.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<link rel="canonical" href="https://b2bbasket.github.io/clasificacion/">
+<meta name="google-site-verification" content="qITKWh_oPgjqakZjo7_RN5ahJETMUDNgEGGNbE5KbH4">
+
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/css/estilos.css?v=mwihsvsf">
+<script>try{var tm=localStorage.getItem("tema");if(!tm){tm=window.matchMedia("(prefers-color-scheme: dark)").matches?"oscuro":"claro"}document.documentElement.setAttribute("data-tema",tm)}catch(e){}</script>
+<script>try{if(sessionStorage.getItem("splash")){document.documentElement.classList.add("splash-visto")}else{sessionStorage.setItem("splash","1")}}catch(e){}</script>
+
+</head>
+<body>
+<div class="splash" id="splash" aria-hidden="true">
+  <svg class="splash__balon" viewBox="0 0 100 100" fill="none" stroke="#FF4B2B" stroke-width="5"><circle cx="50" cy="50" r="44"/><path d="M50 6v88M6 50h88M16 18c22 18 22 46 0 64M84 18c-22 18-22 46 0 64"/></svg>
+  <div class="splash__logo">B2B Basket<span>.</span></div>
+  <div class="splash__linea"></div>
+  <div class="splash__lema">Baloncesto sin descanso. Toda la NBA al ritmo de la liga.</div>
+</div>
+<div class="progreso" id="progreso"></div>
+<header class="cabecera" id="cabecera">
+  <div class="contenedor cabecera__fila">
+    <a class="logo" href="/" aria-label="B2B Basket">B2B<span>.</span></a>
+    <button class="menu-boton" id="menuBoton" aria-label="Abrir menú" aria-expanded="false">Menú</button>
+    <nav class="nav" id="nav">
+      <a href="/noticias/">Noticias</a><a href="/previas/">Previas</a><a href="/cronicas/">Crónicas</a><a href="/guias/">Guías</a>
+      <a href="/equipos/">Equipos</a>
+      <a href="/clasificacion/">Clasificación</a>
+      <a href="/calendario/">Calendario</a>
+      <a href="/lideres/">Líderes</a>
+      <button type="button" class="tema-boton" id="temaBoton" aria-label="Cambiar entre tema claro y oscuro" title="Tema claro / oscuro"><svg class="luna" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="sol" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <div class="buscar-rapido" id="buscarRapido">
+        <button type="button" class="buscar-rapido__boton" id="buscarBoton" aria-label="Buscar" aria-expanded="false"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button>
+        <input type="search" id="buscarCampo" placeholder="Buscar en la web..." autocomplete="off" aria-label="Buscar" data-base="/">
+        <div class="buscar-rapido__res" id="buscarRes"></div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="ticker" aria-label="Últimas noticias" data-directo="/datos/hoy.json" data-calendario="/calendario/">
+  <div class="ticker__pista">
+    <span class="ticker__marca">ÚLTIMA HORA</span><a href="/articulos/ejemplo-analisis/">[EJEMPLO] Una noticia de última hora, para ver cómo se muestra</a><span class="ticker__marca">ÚLTIMA HORA</span><a href="/articulos/ejemplo-analisis/">[EJEMPLO] Una noticia de última hora, para ver cómo se muestra</a>
+  </div>
+</div>
+<main>
+
+<div class="contenedor">
+  
+  <div class="banner t-morado banner--foto" style="--foto:url('/img/cabeceras/clasificacion.jpg')"><h1>Clasificación</h1><p>Temporada regular por conferencias. Actualizada: 15 de noviembre de 2026 (automático).</p><span class="banner__credito">Foto: Ktr101 · CC BY 3.0</span></div>
+
+  
+  <section class="destacados revelar" aria-label="Datos destacados de la temporada">
+    
+    <div class="destacado"><small>Mejor balance</small><strong>11-2</strong><span><b class="chip-abr">LAL</b> Lakers</span></div>
+    <div class="destacado"><small>Mejor racha activa</small><strong>11 victorias</strong><span><b class="chip-abr">SAS</b> Spurs</span></div>
+    <div class="destacado"><small>Más puntos por partido</small><strong>122.2</strong><span><b class="chip-abr">LAL</b> Lakers</span></div>
+    <div class="destacado"><small>Menos puntos recibidos</small><strong>103.1</strong><span><b class="chip-abr">BOS</b> Celtics</span></div>
+  </section>
+  
+
+  <p class="leyenda"><span class="punto punto--playoff"></span> Playoffs directos (1-6) &nbsp; <span class="punto punto--playin"></span> Play-in (7-10) &nbsp; · &nbsp; <abbr title="Partidos de diferencia con el líder">DIF</abbr>: partidos por detrás del primero · <abbr title="Últimos diez partidos">U10</abbr>: últimos 10</p>
+  <div class="tablas tablas--clasif">
+    
+    
+    <section class="revelar">
+      <h2 class="seccion__titulo">Conferencia Oeste</h2>
+      
+      <div class="tabla-envoltorio"><table class="tabla tabla--clasif">
+        <thead><tr><th>#</th><th>Equipo</th><th>V</th><th>D</th><th>%</th><th class="col-media">DIF</th><th class="col-extra">Casa</th><th class="col-extra">Fuera</th><th class="col-media">U10</th><th>Racha</th></tr></thead>
+        <tbody>
+        
+          
+          <tr class="fila-playoff">
+            <td>1</td>
+            <td class="celda-equipo"><b class="chip-abr">LAL</b><a href="/equipos/los-angeles-lakers/"><span class="n-largo">Los Angeles Lakers</span><span class="n-corto">Lakers</span></a></td>
+            <td>11</td><td>2</td><td>.846</td>
+            <td class="col-media">—</td>
+            <td class="col-extra">5-1</td><td class="col-extra">6-1</td>
+            <td class="col-media">8-2</td>
+            <td><span class="racha racha--g">G7</span></td>
+          </tr>
+        
+          
+          <tr class="fila-playoff">
+            <td>2</td>
+            <td class="celda-equipo"><b class="chip-abr">SAS</b><a href="/equipos/san-antonio-spurs/"><span class="n-largo">San Antonio Spurs</span><span class="n-corto">Spurs</span></a></td>
+            <td>11</td><td>2</td><td>.846</td>
+            <td class="col-media">—</td>
+            <td class="col-extra">5-2</td><td class="col-extra">6-0</td>
+            <td class="col-media">10-0</td>
+            <td><span class="racha racha--g">G11</span></td>
+          </tr>
+        
+          
+          <tr class="fila-playoff">
+            <td>3</td>
+            <td class="celda-equipo"><b class="chip-abr">HOU</b><a href="/equipos/houston-rockets/"><span class="n-largo">Houston Rockets</span><span class="n-corto">Rockets</span></a></td>
+            <td>10</td><td>3</td><td>.769</td>
+            <td class="col-media">1</td>
+            <td class="col-extra">7-1</td><td class="col-extra">3-2</td>
+            <td class="col-media">7-3</td>
+            <td><span class="racha racha--g">G3</span></td>
+          </tr>
+        
+          
+          <tr class="fila-playoff">
+            <td>4</td>
+            <td class="celda-equipo"><b class="chip-abr">POR</b><a href="/equipos/portland-trail-blazers/"><span class="n-largo">Portland Trail Blazers</span><span class="n-corto">Trail Blazers</span></a></td>
+            <td>9</td><td>3</td><td>.750</td>
+            <td class="col-media">1.5</td>
+            <td class="col-extra">3-2</td><td class="col-extra">6-1</td>
+            <td class="col-media">7-3</td>
+            <td><span class="racha racha--g">G3</span></td>
+          </tr>
+        
+          
+          <tr class="fila-playoff">
+            <td>5</td>
+            <td class="celda-equipo"><b class="chip-abr">MEM</b><a href="/equipos/memphis-grizzlies/"><span class="n-largo">Memphis Grizzlies</span><span class="n-corto">Grizzlies</span></a></td>
+            <td>9</td><td>4</td><td>.692</td>
+            <td class="col-media">2</td>
+            <td class="col-extra">3-4</td><td class="col-extra">6-0</td>
+            <td class="col-media">6-4</td>
+            <td><span class="racha racha--g">G2</span></td>
+          </tr>
+        
+          
+          <tr class="fila-playoff fila-corte">
+            <td>6</td>
+            <td class="celda-equipo"><b class="chip-abr">MIN</b><a href="/equipos/minnesota-timberwolves/"><span class="n-largo">Minnesota Timberwolves</span><span class="n-corto">Timberwolves</span></a></td>
+            <td>9</td><td>4</td><td>.692</td>
+            <td class="col-media">2</td>
+            <td class="col-extra">5-2</td><td class="col-extra">4-2</td>
+            <td class="col-media">6-4</td>
+            <td><span class="racha racha--p">P1</span></td>
+          </tr>
+        
+          
+          <tr class="fila-playin">
+            <td>7</td>
+            <td class="celda-equipo"><b class="chip-abr">DEN</b><a href="/equipos/denver-nuggets/"><span class="n-largo">Denver Nuggets</span><span class="n-corto">Nuggets</span></a></td>
+            <td>7</td><td>4</td><td>.636</td>
+            <td class="col-media">3</td>
+            <td class="col-extra">2-2</td><td class="col-extra">5-2</td>
+            <td class="col-media">7-3</td>
+            <td><span class="racha racha--g">G2</span></td>
+          </tr>
+        
+          
+          <tr class="fila-playin">
+            <td>8</td>
+            <td class="celda-equipo"><b class="chip-abr">GSW</b><a href="/equipos/golden-state-warriors/"><span class="n-largo">Golden State Warriors</span><span class="n-corto">Warriors</span></a></td>
+            <td>8</td><td>5</td><td>.615</td>
+            <td class="col-media">3</td>
+            <td class="col-extra">6-1</td><td class="col-extra">2-4</td>
+            <td class="col-media">8-2</td>
+            <td><span class="racha racha--p">P2</span></td>
+          </tr>
+        
+          
+          <tr class="fila-playin">
+            <td>9</td>
+            <td class="celda-equipo"><b class="chip-abr">OKC</b><a href="/equipos/oklahoma-city-thunder/"><span class="n-largo">Oklahoma City Thunder</span><span class="n-corto">Thunder</span></a></td>
+            <td>8</td><td>5</td><td>.615</td>
+            <td class="col-media">3</td>
+            <td class="col-extra">5-0</td><td class="col-extra">3-5</td>
+            <td class="col-media">5-5</td>
+            <td><span class="racha racha--p">P3</span></td>
+          </tr>
+        
+          
+          <tr class="fila-playin fila-corte">
+            <td>10</td>
+            <td class="celda-equipo"><b class="chip-abr">DAL</b><a href="/equipos/dallas-mavericks/"><span class="n-largo">Dallas Mavericks</span><span class="n-corto">Mavericks</span></a></td>
+            <td>7</td><td>6</td><td>.538</td>
+            <td class="col-media">4</td>
+            <td class="col-extra">5-2</td><td class="col-extra">2-4</td>
+            <td class="col-media">6-4</td>
+            <td><span class="racha racha--p">P2</span></td>
+          </tr>
+        
+          
+          <tr class="">
+            <td>11</td>
+            <td class="celda-equipo"><b class="chip-abr">PHX</b><a href="/equipos/phoenix-suns/"><span class="n-largo">Phoenix Suns</span><span class="n-corto">Suns</span></a></td>
+            <td>5</td><td>6</td><td>.455</td>
+            <td class="col-media">5</td>
+            <td class="col-extra">5-3</td><td class="col-extra">0-3</td>
+            <td class="col-media">5-5</td>
+            <td><span class="racha racha--g">G2</span></td>
+          </tr>
+        
+          
+          <tr class="">
+            <td>12</td>
+            <td class="celda-equipo"><b class="chip-abr">NOP</b><a href="/equipos/new-orleans-pelicans/"><span class="n-largo">New Orleans Pelicans</span><span class="n-corto">Pelicans</span></a></td>
+            <td>4</td><td>10</td><td>.286</td>
+            <td class="col-media">7.5</td>
+            <td class="col-extra">3-6</td><td class="col-extra">1-4</td>
+            <td class="col-media">4-6</td>
+            <td><span class="racha racha--p">P6</span></td>
+          </tr>
+        
+          
+          <tr class="">
+            <td>13</td>
+            <td class="celda-equipo"><b class="chip-abr">LAC</b><a href="/equipos/los-angeles-clippers/"><span class="n-largo">Los Angeles Clippers</span><span class="n-corto">Clippers</span></a></td>
+            <td>3</td><td>8</td><td>.273</td>
+            <td class="col-media">7</td>
+            <td class="col-extra">3-3</td><td class="col-extra">0-5</td>
+            <td class="col-media">2-8</td>
+            <td><span class="racha racha--g">G1</span></td>
+          </tr>
+        
+          
+          <tr class="">
+            <td>14</td>
+            <td class="celda-equipo"><b class="chip-abr">SAC</b><a href="/equipos/sacramento-kings/"><span class="n-largo">Sacramento Kings</span><span class="n-corto">Kings</span></a></td>
+            <td>1</td><td>11</td><td>.083</td>
+            <td class="col-media">9.5</td>
+            <td class="col-extra">0-7</td><td class="col-extra">1-4</td>
+            <td class="col-media">1-9</td>
+            <td><span class="racha racha--p">P5</span></td>
+          </tr>
+        
+          
+          <tr class="">
+            <td>15</td>
+            <td class="celda-equipo"><b class="chip-abr">UTA</b><a href="/equipos/utah-jazz/"><span class="n-largo">Utah Jazz</span><span class="n-corto">Jazz</span></a></td>
+            <td>1</td><td>12</td><td>.077</td>
+            <td class="col-media">10</td>
+            <td class="col-extra">1-6</td><td class="col-extra">0-6</td>
+            <td class="col-media">0-10</td>
+            <td><span class="racha racha--p">P11</span></td>
+          </tr>
+        
+        </tbody>
+      </table></div>
+      
+    </section>
+    
+    
+    <section class="revelar">
+      <h2 class="seccion__titulo">Conferencia Este</h2>
+      
+      <div class="tabla-envoltorio"><table class="tabla tabla--clasif">
+        <thead><tr><th>#</th><th>Equipo</th><th>V</th><th>D</th><th>%</th><th class="col-media">DIF</th><th class="col-extra">Casa</th><th class="col-extra">Fuera</th><th class="col-media">U10</th><th>Racha</th></tr></thead>
+        <tbody>
+        
+          
+          <tr class="fila-playoff">
+            <td>1</td>
+            <td class="celda-equipo"><b class="chip-abr">BOS</b><a href="/equipos/boston-celtics/"><span class="n-largo">Boston Celtics</span><span class="n-corto">Celtics</span></a></td>
+            <td>10</td><td>2</td><td>.833</td>
+            <td class="col-media">—</td>
+            <td class="col-extra">5-0</td><td class="col-extra">5-2</td>
+            <td class="col-media">9-1</td>
+            <td><span class="racha racha--g">G5</span></td>
+          </tr>
+        
+          
+          <tr class="fila-playoff">
+            <td>2</td>
+            <td class="celda-equipo"><b class="chip-abr">PHI</b><a href="/equipos/philadelphia-76ers/"><span class="n-largo">Philadelphia 76ers</span><span class="n-corto">76ers</span></a></td>
+            <td>11</td><td>3</td><td>.786</td>
+            <td class="col-media">—</td>
+            <td class="col-extra">6-2</td><td class="col-extra">5-1</td>
+            <td class="col-media">8-2</td>
+            <td><span class="racha racha--g">G2</span></td>
+          </tr>
+        
+          
+          <tr class="fila-playoff">
+            <td>3</td>
+            <td class="celda-equipo"><b class="chip-abr">DET</b><a href="/equipos/detroit-pistons/"><span class="n-largo">Detroit Pistons</span><span class="n-corto">Pistons</span></a></td>
+            <td>8</td><td>4</td><td>.667</td>
+            <td class="col-media">2</td>
+            <td class="col-extra">3-2</td><td class="col-extra">5-2</td>
+            <td class="col-media">6-4</td>
+            <td><span class="racha racha--p">P1</span></td>
+          </tr>
+        
+          
+          <tr class="fila-playoff">
+            <td>4</td>
+            <td class="celda-equipo"><b class="chip-abr">ATL</b><a href="/equipos/atlanta-hawks/"><span class="n-largo">Atlanta Hawks</span><span class="n-corto">Hawks</span></a></td>
+            <td>7</td><td>6</td><td>.538</td>
+            <td class="col-media">3.5</td>
+            <td class="col-extra">3-3</td><td class="col-extra">4-3</td>
+            <td class="col-media">5-5</td>
+            <td><span class="racha racha--p">P2</span></td>
+          </tr>
+        
+          
+          <tr class="fila-playoff">
+            <td>5</td>
+            <td class="celda-equipo"><b class="chip-abr">MIA</b><a href="/equipos/miami-heat/"><span class="n-largo">Miami Heat</span><span class="n-corto">Heat</span></a></td>
+            <td>7</td><td>6</td><td>.538</td>
+            <td class="col-media">3.5</td>
+            <td class="col-extra">3-3</td><td class="col-extra">4-3</td>
+            <td class="col-media">7-3</td>
+            <td><span class="racha racha--g">G4</span></td>
+          </tr>
+        
+          
+          <tr class="fila-playoff fila-corte">
+            <td>6</td>
+            <td class="celda-equipo"><b class="chip-abr">CLE</b><a href="/equipos/cleveland-cavaliers/"><span class="n-largo">Cleveland Cavaliers</span><span class="n-corto">Cavaliers</span></a></td>
+            <td>7</td><td>7</td><td>.500</td>
+            <td class="col-media">4</td>
+            <td class="col-extra">5-2</td><td class="col-extra">2-5</td>
+            <td class="col-media">4-6</td>
+            <td><span class="racha racha--g">G1</span></td>
+          </tr>
+        
+          
+          <tr class="fila-playin">
+            <td>7</td>
+            <td class="celda-equipo"><b class="chip-abr">NYK</b><a href="/equipos/new-york-knicks/"><span class="n-largo">New York Knicks</span><span class="n-corto">Knicks</span></a></td>
+            <td>6</td><td>6</td><td>.500</td>
+            <td class="col-media">4</td>
+            <td class="col-extra">4-3</td><td class="col-extra">2-3</td>
+            <td class="col-media">6-4</td>
+            <td><span class="racha racha--p">P2</span></td>
+          </tr>
+        
+          
+          <tr class="fila-playin">
+            <td>8</td>
+            <td class="celda-equipo"><b class="chip-abr">ORL</b><a href="/equipos/orlando-magic/"><span class="n-largo">Orlando Magic</span><span class="n-corto">Magic</span></a></td>
+            <td>5</td><td>7</td><td>.417</td>
+            <td class="col-media">5</td>
+            <td class="col-extra">1-4</td><td class="col-extra">4-3</td>
+            <td class="col-media">5-5</td>
+            <td><span class="racha racha--g">G3</span></td>
+          </tr>
+        
+          
+          <tr class="fila-playin">
+            <td>9</td>
+            <td class="celda-equipo"><b class="chip-abr">TOR</b><a href="/equipos/toronto-raptors/"><span class="n-largo">Toronto Raptors</span><span class="n-corto">Raptors</span></a></td>
+            <td>5</td><td>7</td><td>.417</td>
+            <td class="col-media">5</td>
+            <td class="col-extra">2-3</td><td class="col-extra">3-4</td>
+            <td class="col-media">3-7</td>
+            <td><span class="racha racha--p">P3</span></td>
+          </tr>
+        
+          
+          <tr class="fila-playin fila-corte">
+            <td>10</td>
+            <td class="celda-equipo"><b class="chip-abr">IND</b><a href="/equipos/indiana-pacers/"><span class="n-largo">Indiana Pacers</span><span class="n-corto">Pacers</span></a></td>
+            <td>5</td><td>9</td><td>.357</td>
+            <td class="col-media">6</td>
+            <td class="col-extra">2-5</td><td class="col-extra">3-4</td>
+            <td class="col-media">3-7</td>
+            <td><span class="racha racha--p">P1</span></td>
+          </tr>
+        
+          
+          <tr class="">
+            <td>11</td>
+            <td class="celda-equipo"><b class="chip-abr">CHA</b><a href="/equipos/charlotte-hornets/"><span class="n-largo">Charlotte Hornets</span><span class="n-corto">Hornets</span></a></td>
+            <td>4</td><td>8</td><td>.333</td>
+            <td class="col-media">6</td>
+            <td class="col-extra">3-4</td><td class="col-extra">1-4</td>
+            <td class="col-media">3-7</td>
+            <td><span class="racha racha--p">P1</span></td>
+          </tr>
+        
+          
+          <tr class="">
+            <td>12</td>
+            <td class="celda-equipo"><b class="chip-abr">WAS</b><a href="/equipos/washington-wizards/"><span class="n-largo">Washington Wizards</span><span class="n-corto">Wizards</span></a></td>
+            <td>4</td><td>9</td><td>.308</td>
+            <td class="col-media">6.5</td>
+            <td class="col-extra">2-3</td><td class="col-extra">2-6</td>
+            <td class="col-media">2-8</td>
+            <td><span class="racha racha--p">P6</span></td>
+          </tr>
+        
+          
+          <tr class="">
+            <td>13</td>
+            <td class="celda-equipo"><b class="chip-abr">BKN</b><a href="/equipos/brooklyn-nets/"><span class="n-largo">Brooklyn Nets</span><span class="n-corto">Nets</span></a></td>
+            <td>3</td><td>9</td><td>.250</td>
+            <td class="col-media">7</td>
+            <td class="col-extra">1-3</td><td class="col-extra">2-6</td>
+            <td class="col-media">3-7</td>
+            <td><span class="racha racha--p">P1</span></td>
+          </tr>
+        
+          
+          <tr class="">
+            <td>14</td>
+            <td class="celda-equipo"><b class="chip-abr">CHI</b><a href="/equipos/chicago-bulls/"><span class="n-largo">Chicago Bulls</span><span class="n-corto">Bulls</span></a></td>
+            <td>3</td><td>9</td><td>.250</td>
+            <td class="col-media">7</td>
+            <td class="col-extra">1-4</td><td class="col-extra">2-5</td>
+            <td class="col-media">2-8</td>
+            <td><span class="racha racha--g">G2</span></td>
+          </tr>
+        
+          
+          <tr class="">
+            <td>15</td>
+            <td class="celda-equipo"><b class="chip-abr">MIL</b><a href="/equipos/milwaukee-bucks/"><span class="n-largo">Milwaukee Bucks</span><span class="n-corto">Bucks</span></a></td>
+            <td>1</td><td>12</td><td>.077</td>
+            <td class="col-media">9.5</td>
+            <td class="col-extra">1-6</td><td class="col-extra">0-6</td>
+            <td class="col-media">1-9</td>
+            <td><span class="racha racha--p">P9</span></td>
+          </tr>
+        
+        </tbody>
+      </table></div>
+      
+    </section>
+    
+  </div>
+  <p class="nota-fuente">Datos: API de balldontlie, calculados con todos los resultados de la temporada regular. Con empates, el orden es por porcentaje de victorias; los criterios oficiales de desempate de la NBA pueden ordenar de otra forma a los equipos igualados.</p>
+</div>
+
+</main>
+<footer class="pie">
+  <div class="contenedor">
+    <h2 class="pie__titulo">Más información</h2>
+    <div class="pie__tarjetas">
+      <a href="/lideres-historicos/"><strong>Líderes históricos</strong><span>Top 10 de puntos, rebotes, asistencias, tapones, robos y triples</span></a>
+      <a href="/plantillas/"><strong>Plantillas</strong><span>Los jugadores de los 30 equipos, con su ficha y los españoles y latinos</span></a>
+      <a href="/jugadores/"><strong>Grandes jugadores</strong><span>Perfiles de 15 leyendas: su carrera, sus momentos y su legado</span></a>
+      <a href="/historia-de-la-liga/"><strong>Historia de la liga</strong><span>Cómo empezó todo y cómo ha cambiado el juego</span></a>
+      <div class="pie__medio"><h3>El medio</h3>
+        <a href="/quienes-somos/">Quiénes somos</a>
+        <a href="/colabora/">Colabora</a>
+        
+        <a href="/contacto/">Contacto</a>
+        <a href="/juego/">Juego diario</a>
+        <a href="https://www.instagram.com/b2b.basket/">Instagram</a></div>
+    </div>
+  </div>
+  <div class="contenedor pie__legal">
+    <a href="/aviso-legal/">Aviso legal</a>
+    <a href="/privacidad/">Privacidad</a>
+    <a href="/cookies/">Cookies</a>
+    <a href="/condiciones-de-uso/">Condiciones de uso</a>
+    <a href="/principios-editoriales/">Principios editoriales</a>
+    <a href="/correcciones/">Correcciones</a>
+    <a href="/creditos-imagenes/">Créditos de las imágenes</a>
+    
+    <p>B2B Basket · Baloncesto sin descanso. Toda la NBA al ritmo de la liga. Medio independiente, no afiliado a la NBA ni a ninguna franquicia. Los nombres de equipos y jugadores se usan con fines informativos.</p>
+  </div>
+</footer>
+<button class="subir" id="subir" aria-label="Volver arriba"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+<script src="/js/zona.js?v=mwihsvsf"></script>
+<script src="/js/main.js?v=mwihsvsf"></script>
+<script src="/js/directo.js?v=mwihsvsf" defer></script>
+</body>
+</html>
