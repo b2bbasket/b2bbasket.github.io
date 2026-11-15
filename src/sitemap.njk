@@ -1,0 +1,12 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- for p in collections.all %}
+{%- if p.url and p.url.endsWith("/") and not p.data.noindex and not p.url.startsWith("/admin") %}
+  <url><loc>{{ web.url }}{{ p.url }}</loc>{% if "articulo" in (p.data.tags or []) or p.url.startsWith("/previas/") %}<lastmod>{{ p.date.toISOString().slice(0, 10) }}</lastmod>{% endif %}</url>
+{%- endif %}
+{%- endfor %}
+</urlset>

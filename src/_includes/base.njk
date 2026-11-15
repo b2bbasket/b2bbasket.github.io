@@ -31,6 +31,13 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 {% if noindex %}<meta name="robots" content="noindex">{% endif %}
+<link rel="canonical" href="{{ web.url }}{{ page.url }}">
+{% if site.google_verificacion %}<meta name="google-site-verification" content="{{ site.google_verificacion }}">{% endif %}
+{% if page.url == "/" %}
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":{{ site.nombre | dump | safe }},"alternateName":["B2B","B2B Basket NBA"],"url":"{{ web.url }}/","inLanguage":"es","description":{{ site.descripcion | dump | safe }},"publisher":{"@type":"Organization","name":{{ site.nombre | dump | safe }},"url":"{{ web.url }}/","logo":"{{ web.url }}/img/og.png"{% if site.instagram %},"sameAs":[{{ site.instagram | dump | safe }}]{% endif %}}}</script>
+{% elif "articulo" in (tags or []) or page.url.startsWith("/previas/") %}
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":{{ title | dump | safe }},"description":{{ (resumen or site.descripcion) | dump | safe }},"datePublished":"{{ page.date.toISOString() }}","inLanguage":"es","mainEntityOfPage":"{{ web.url }}{{ page.url }}","image":["{% if portadaOg %}{{ web.url }}{{ portadaOg.og }}{% else %}{{ web.url }}/img/og.png{% endif %}"],"author":{"@type":"Person","name":{{ (autor or site.autor) | dump | safe }},"url":"{{ web.url }}/quienes-somos/"},"publisher":{"@type":"Organization","name":{{ site.nombre | dump | safe }},"logo":{"@type":"ImageObject","url":"{{ web.url }}/img/og.png"}}}</script>
+{% endif %}
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="{{ '/css/estilos.css' | url }}?v={{ web.version }}">
 <script>try{var tm=localStorage.getItem("tema");if(!tm){tm=window.matchMedia("(prefers-color-scheme: dark)").matches?"oscuro":"claro"}document.documentElement.setAttribute("data-tema",tm)}catch(e){}</script>
