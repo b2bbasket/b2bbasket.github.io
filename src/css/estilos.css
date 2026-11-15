@@ -1363,3 +1363,5 @@ html[data-tema="oscuro"] .racha--p{color:#FF7A5E}
 .jh-racha__num{top:8px;font-size:16px}
 .jh-corto{display:none}
 @media (max-width:480px){.jh-largo{display:none}.jh-corto{display:inline}.juego-hero__estado{font-size:12px;padding:6px 10px}}
+.equipo-tarjeta__abr{top:-2px}
+.plantilla-cab h1{line-height:1.05}
