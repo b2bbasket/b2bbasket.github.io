@@ -121,6 +121,13 @@ export default function (eleventyConfig) {
     if (!(this.page.outputPath || "").endsWith(".html")) return contenido;
     return contenido.replace(/<h2>([\s\S]*?)<\/h2>/g, (m, t) => `<h2 id="${idTitulo(t)}">${t}</h2>`);
   });
+  // Fuentes plegadas: cualquier «## Fuentes» seguido de una lista se convierte en un desplegable
+  // discreto al final (mismo estilo que en Historia de la liga y Grandes jugadores).
+  eleventyConfig.addTransform("fuentesPlegables", function (contenido) {
+    if (!(this.page.outputPath || "").endsWith(".html")) return contenido;
+    return contenido.replace(/<h2(?: id="([^"]*)")?>\s*Fuentes\s*<\/h2>\s*(<ul>[\s\S]*?<\/ul>)/g,
+      (m, id, lista) => `<details class="fuentes-plegables"${id ? ` id="${id}"` : ""}><summary>Fuentes</summary>${lista}</details>`);
+  });
   // Agrupa artículos por día de publicación (teletipo de Noticias)
   eleventyConfig.addFilter("porDia", function (lista) {
     const fecha = eleventyConfig.getFilter("fecha");

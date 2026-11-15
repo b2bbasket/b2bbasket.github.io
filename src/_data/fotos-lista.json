@@ -269,6 +269,32 @@
    "candidatos": [
     "Dream Team at the 1992 Summer Olympics.JPEG"
    ]
+  },
+  {
+   "id": "lider-wilt-chamberlain",
+   "destino": "src/img/fotos/lider-wilt-chamberlain.jpg",
+   "alt": "Wilt Chamberlain, con los Lakers, en las Finales de 1969 ante los Celtics",
+   "candidatos": [
+    "Wilt Chamberlain of the Los Angeles Lakers in the 1969 NBA World Championship Series.jpg",
+    "Wilt Chamberlain.jpg"
+   ]
+  },
+  {
+   "id": "lider-john-stockton",
+   "destino": "src/img/fotos/lider-john-stockton.jpg",
+   "alt": "John Stockton, base de los Utah Jazz, en 1996",
+   "candidatos": [
+    "John Stockton.jpg"
+   ]
+  },
+  {
+   "id": "lider-hakeem-olajuwon",
+   "destino": "src/img/fotos/lider-hakeem-olajuwon.jpg",
+   "alt": "Hakeem Olajuwon con la Universidad de Houston",
+   "candidatos": [
+    "Hakeem.jpg",
+    "Hakeem and Jordan (cropped).jpg"
+   ]
   }
  ]
 }

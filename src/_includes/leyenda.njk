@@ -31,10 +31,10 @@ layout: base.njk
       </aside>
     </div>
 
-    <section class="leyenda-fuentes">
-      <h2>Fuentes</h2>
+    <details class="fuentes-plegables">
+      <summary>Fuentes</summary>
       <ul>{% for s in fuentes %}<li><a href="{{ s.url }}" rel="noopener">{{ s.titulo }}</a></li>{% endfor %}</ul>
-    </section>
+    </details>
 
     {% set misma = collections.leyendas | mismaEpoca(epoca, page.url) %}
     <section class="leyenda-mas">
