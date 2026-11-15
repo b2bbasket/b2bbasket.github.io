@@ -69,7 +69,7 @@
     if (p.t && Date.now() > Date.parse(p.t) + 10 * 60000) return 'pendiente';
     return 'proximo';
   }
-  const TRAD = [[/1st Qtr/i, '1.er cuarto'], [/2nd Qtr/i, '2.º cuarto'], [/3rd Qtr/i, '3.er cuarto'], [/4th Qtr/i, '4.º cuarto'], [/Halftime/i, 'Descanso'], [/End of 1st/i, 'Fin del 1.er cuarto'], [/End of 2nd/i, 'Fin del 2.º cuarto'], [/End of 3rd/i, 'Fin del 3.er cuarto'], [/End of 4th/i, 'Fin del 4.º cuarto'], [/\bOT\b/i, 'Prórroga']];
+  const TRAD = [[/1st Qtr/i, '1.er cuarto'], [/2nd Qtr/i, '2.º cuarto'], [/3rd Qtr/i, '3.er cuarto'], [/4th Qtr/i, '4.º cuarto'], [/Halftime/i, 'Descanso'], [/End of 1st/i, 'Fin del 1.er cuarto'], [/End of 2nd/i, 'Fin del 2.º cuarto'], [/End of 3rd/i, 'Fin del 3.er cuarto'], [/End of 4th/i, 'Fin del 4.º cuarto'], [/\bOT\b/i, 'Prórroga'], [/\s*\b(Q\d|OT\d?)\s+(\d+:\d\d)/i, ' · $2']];
   function traducir(x) { let s = x || ''; TRAD.forEach(([re, es]) => { s = s.replace(re, es); }); return s; }
   const ETIQUETA = { final: 'Final', directo: 'En juego', proximo: 'Próximo', pendiente: 'Pendiente de actualizar', aplazado: 'Aplazado' };
 

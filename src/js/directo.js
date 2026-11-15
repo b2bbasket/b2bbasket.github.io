@@ -7,7 +7,7 @@
   const pista = barra.querySelector('.ticker__pista');
   const original = pista.innerHTML;
   let enDirecto = false;
-  const TRAD = [[/1st Qtr/i, '1.er cuarto'], [/2nd Qtr/i, '2.º cuarto'], [/3rd Qtr/i, '3.er cuarto'], [/4th Qtr/i, '4.º cuarto'], [/Halftime/i, 'Descanso'], [/End of 1st/i, 'Fin del 1.er cuarto'], [/End of 2nd/i, 'Fin del 2.º cuarto'], [/End of 3rd/i, 'Fin del 3.er cuarto'], [/End of 4th/i, 'Fin del 4.º cuarto'], [/\bOT\b/i, 'Prórroga']];
+  const TRAD = [[/1st Qtr/i, '1.er cuarto'], [/2nd Qtr/i, '2.º cuarto'], [/3rd Qtr/i, '3.er cuarto'], [/4th Qtr/i, '4.º cuarto'], [/Halftime/i, 'Descanso'], [/End of 1st/i, 'Fin del 1.er cuarto'], [/End of 2nd/i, 'Fin del 2.º cuarto'], [/End of 3rd/i, 'Fin del 3.er cuarto'], [/End of 4th/i, 'Fin del 4.º cuarto'], [/\bOT\b/i, 'Prórroga'], [/\s*\b(Q\d|OT\d?)\s+(\d+:\d\d)/i, ' · $2']];
   const traducir = (x) => { let s = x || ''; TRAD.forEach(([re, es]) => { s = s.replace(re, es); }); return s; };
   const esc = (s) => String(s == null ? '' : s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 

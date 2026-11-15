@@ -129,11 +129,12 @@ fuentes:
         <h2>{{ e.titulo }}</h2>
         <div class="hist-texto">
           {% if lados[0] %}{{ foto(fotos[lados[0].id], lados[0].disp) }}{% endif %}
-          <div class="cronologia__dato hist-dato"><strong>{{ e.dato }}</strong><span>{{ e.dato_texto }}</span></div>
+          {% if not lados[0] %}<div class="cronologia__dato hist-dato"><strong>{{ e.dato }}</strong><span>{{ e.dato_texto }}</span></div>{% endif %}
           {% for p in e.parrafos %}
           <p>{{ p }}</p>
           {% if loop.first and lados[1] %}{{ foto(fotos[lados[1].id], lados[1].disp) }}{% endif %}
           {% endfor %}
+          {% if lados[0] %}<div class="cronologia__dato hist-dato hist-dato--linea"><strong>{{ e.dato }}</strong><span>{{ e.dato_texto }}</span></div>{% endif %}
         </div>
         {% if pareja.length %}<div class="hist-pareja">{% for f in pareja %}{{ foto(fotos[f.id], "pareja") }}{% endfor %}</div>{% endif %}
         {% for f in anchas %}{{ foto(fotos[f.id], "ancha") }}{% endfor %}

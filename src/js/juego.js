@@ -96,7 +96,7 @@
         const p = datos.dia.partidas[b.dataset.nivel];
         const est = b.querySelector('[data-estado]');
         b.classList.remove('ganado', 'perdido');
-        if (p && p.fin) { b.classList.add(p.acierto ? 'ganado' : 'perdido'); est.textContent = p.acierto ? '✓ +' + p.puntos + ' puntos' : 'Fallado · ver solución'; }
+        if (p && p.fin) { b.classList.add(p.acierto ? 'ganado' : 'perdido'); est.textContent = p.acierto ? '✓ +' + p.puntos + ' puntos' : '✗ Ver solución'; }
         else if (p && p.intentos.length) est.textContent = 'Continuar (' + p.intentos.length + '/5)';
         else est.textContent = 'Jugar';
       });
