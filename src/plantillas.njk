@@ -1,0 +1,44 @@
+---
+layout: base.njk
+title: "Plantillas NBA"
+resumen: "Las plantillas actuales de los 30 equipos de la NBA, con la ficha de cada jugador, actualizadas cada día."
+permalink: /plantillas/index.html
+---
+<div class="contenedor">
+  <header class="leyendas-cab">
+    <p class="leyendas-cab__kicker">Temporada {{ temporada.temporada or "actual" }}</p>
+    <h1>Plantillas de los 30 equipos</h1>
+    <p>{{ plantillas.jugadores.length }} jugadores, con su ficha. Se actualizan solas cada día. Busca un jugador o entra en un equipo.</p>
+  </header>
+  <div class="plantillas-buscar">
+    <input type="search" id="buscarJugador" placeholder="Buscar jugador..." aria-label="Buscar jugador" autocomplete="off">
+  </div>
+  <p class="plantillas-enlace"><a href="{{ '/espanoles-y-latinos/' | url }}">Españoles y latinos en la NBA →</a></p>
+  <div class="plantillas-rejilla" id="plantillasRejilla">
+    {% for conferencia in ["Conferencia Oeste", "Conferencia Este"] %}{% for division, lista in equipos[conferencia] %}{% for nombre in lista %}
+    {% set abr = nombre | abrev %}{% set ficha = collections.fichas | fichaDe(nombre) %}
+    <section class="plantilla-equipo">
+      <h2><a href="{{ (ficha.url if ficha else '/equipos/') | url }}">{{ nombre }}</a></h2>
+      {% if plantillas.equipos[abr].entrenador %}<p class="plantilla-equipo__coach">Entrenador: {{ plantillas.equipos[abr].entrenador }}</p>{% endif %}
+      <ul class="plantilla plantilla--compacta">
+        {% for c in plantillas | plantillaDe(abr) %}<li data-nombre="{{ c.nombre | lower }}"><a href="{{ ('/jugador/' + c.slug + '/') | url }}"><b>{{ c.dorsal or "–" }}</b> {{ c.nombre }}{% if c.lesionado %} <i class="plantilla__les" title="Lesionado">+</i>{% endif %}</a></li>{% endfor %}
+      </ul>
+    </section>
+    {% endfor %}{% endfor %}{% endfor %}
+  </div>
+  <p class="nota-fuente"><i class="plantilla__les">+</i> Lesionado. Fuente: plantillas de Wikipedia y datos de Wikidata, actualizados el {{ plantillas.actualizado | fechaIso }}.</p>
+</div>
+<script>
+(function () {
+  var c = document.getElementById('buscarJugador');
+  var lim = function (s) { return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); };
+  c.addEventListener('input', function () {
+    var q = lim(c.value.trim());
+    document.querySelectorAll('.plantilla-equipo').forEach(function (s) {
+      var hay = 0;
+      s.querySelectorAll('li').forEach(function (li) { var ok = !q || lim(li.dataset.nombre).indexOf(q) > -1; li.hidden = !ok; if (ok) hay++; });
+      s.hidden = !!q && !hay;
+    });
+  });
+})();
+</script>

@@ -27,7 +27,8 @@ layout: base.njk
 
   <h1>{{ title }}</h1>
   <p class="entradilla">{{ resumen }}</p>
-  <p class="meta">Por <strong>{{ autor or site.autor }}</strong> · {{ page.date | fecha }} · {{ content | lectura }} min de lectura</p>
+  {% set firma = autor or site.autor %}{% set ficha_autor = autores | autorDe(firma) %}
+  <p class="meta">Por <strong>{% if ficha_autor %}<a href="{{ ('/autores/' + ficha_autor.slug + '/') | url }}">{{ firma }}</a>{% else %}{{ firma }}{% endif %}</strong>{% if revisado_por %} · Edición: {{ revisado_por }}{% endif %} · {{ page.date | fecha }} · {{ content | lectura }} min de lectura</p>
 
   {% if claves and claves.length %}
   <aside class="caja-claves caja-claves--{{ seccion }}">
@@ -52,9 +53,10 @@ layout: base.njk
     <a href="https://twitter.com/intent/tweet?text={{ title | urlencode }}&url={{ (web.url + page.url) | urlencode }}" target="_blank" rel="noopener">X</a>
     <button type="button" id="copiarEnlace" data-url="{{ web.url }}{{ page.url }}">Copiar enlace</button>
   </div>
+  {% if site.newsletter_url %}<div class="newsletter"><strong>Newsletter de {{ site.nombre }}</strong><span>{{ site.newsletter_texto }}</span><a class="boton" href="{{ site.newsletter_url }}" rel="noopener">Suscribirme gratis</a></div>{% endif %}
   <div class="autor-caja">
-    <strong>{{ autor or site.autor }}</strong>
-    <span>Escribe sobre la NBA en {{ site.nombre }}. <a href="{{ '/quienes-somos/' | url }}">Más sobre quién está detrás</a> · <a href="{{ '/principios-editoriales/' | url }}">cómo trabajamos</a></span>
+    <strong>{% if ficha_autor %}<a href="{{ ('/autores/' + ficha_autor.slug + '/') | url }}">{{ firma }}</a>{% else %}{{ firma }}{% endif %}</strong>
+    <span>{% if ficha_autor %}{{ ficha_autor.rol }}. {{ ficha_autor.bio }}{% else %}Escribe sobre la NBA en {{ site.nombre }}.{% endif %} <a href="{{ '/principios-editoriales/' | url }}">Cómo trabajamos</a> · <a href="{{ '/colabora/' | url }}">Colabora</a></span>
   </div>
 </article>
 {% set relacionados = collections.recientes | excepto(page.url) | deSeccion(seccion) | limite(2) %}

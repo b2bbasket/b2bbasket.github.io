@@ -1184,3 +1184,132 @@ html[data-tema="oscuro"] .racha--p{color:#FF7A5E}
 .fuentes-plegables ul{list-style:disc}
 .fuentes-plegables li,.fuentes-plegables p{font-size:13px!important;line-height:1.5;color:var(--suave)}
 .fuentes-plegables p{margin:8px 0 0}
+
+/* ===== Plantillas, fichas de jugadores y españoles y latinos ===== */
+.migas{font-size:13px;color:var(--suave);margin:24px 0 0}
+.migas a{text-decoration:underline;text-underline-offset:3px}
+.chip{display:inline-flex;align-items:center;font:700 12px var(--cuerpo);padding:5px 11px;border-radius:999px;background:var(--hover);color:var(--texto);font-style:normal}
+.chip--rojo{background:#E5243B;color:#fff}
+.chip--oro{background:var(--amarillo);color:#16181D}
+.chip a{color:inherit}
+.jugador-cab{display:grid;grid-template-columns:260px minmax(0,1fr);gap:32px;align-items:end;margin:18px 0 26px}
+.jugador-cab__foto{aspect-ratio:4/5;border-radius:24px;overflow:hidden;background:linear-gradient(150deg,var(--azul),#16181D)}
+.jugador-cab__foto img{width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block}
+.jugador-cab__foto--vacia{display:grid;place-items:center}
+.jugador-cab__foto--vacia span{font-family:var(--titulos);font-size:72px;font-weight:800;color:rgba(255,255,255,.85)}
+.jugador-cab__kicker{font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--acento);margin:0}
+.jugador-cab h1{font-family:var(--titulos);font-size:clamp(40px,6vw,68px);line-height:1;margin:8px 0 6px}
+.jugador-cab__pos{font-size:19px;color:var(--suave);margin:0 0 14px}
+.jugador-chips{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px;padding:0}
+.jugador-cab__credito{font-size:11px;color:var(--suave);margin:0}
+.jugador-cab__credito a{text-decoration:underline}
+.jugador-datos{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin:0 0 30px}
+.jugador-datos>div{background:var(--blanco);border:1px solid var(--linea);border-radius:18px;padding:14px 16px;display:flex;flex-direction:column;gap:3px}
+.jugador-datos small,.jugador-equipo__caja small{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--suave)}
+.jugador-datos strong{font-family:var(--titulos);font-size:28px;line-height:1.1}
+.jugador-datos .jugador-datos__texto{font-family:var(--cuerpo);font-size:17px;font-weight:700;line-height:1.3}
+.jugador-datos span{font-size:13px;color:var(--suave)}
+.jugador-equipo__rejilla{display:grid;grid-template-columns:200px repeat(2,minmax(0,1fr));gap:12px;margin-bottom:30px}
+.jugador-equipo__caja{background:var(--blanco);border:1px solid var(--linea);border-radius:18px;padding:16px}
+.jugador-equipo__caja>strong{display:block;font-family:var(--titulos);font-size:40px;line-height:1.1}
+.jugador-equipo__caja>span{color:var(--suave);font-size:14px}
+.jugador-lista{list-style:none;margin:8px 0 0;padding:0;font-size:15px}
+.jugador-lista li{display:flex;gap:8px;align-items:baseline;padding:5px 0;border-top:1px solid var(--linea)}
+.jugador-lista li:first-child{border-top:0}
+.jugador-lista span{margin-left:auto;color:var(--suave);font-size:13px;white-space:nowrap}
+.gana,.pierde{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:6px;font-size:11px;font-weight:800;color:#fff;background:#17A673;margin-right:2px}
+.pierde{background:#D7263D}
+.plantilla{list-style:none;margin:0;padding:0}
+.plantilla--compacta{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:4px 16px}
+.plantilla--compacta li a{display:flex;gap:10px;align-items:baseline;padding:7px 4px;border-bottom:1px solid var(--linea);font-weight:600}
+.plantilla--compacta li a:hover{color:var(--acento)}
+.plantilla--compacta li.actual a{color:var(--acento)}
+.plantilla--compacta b{min-width:24px;font-variant-numeric:tabular-nums;color:var(--suave);font-size:13px}
+.plantilla--compacta li[hidden]{display:none}
+.plantilla__les{display:inline-grid;place-items:center;width:16px;height:16px;border-radius:50%;background:#E5243B;color:#fff;font:800 12px/1 var(--cuerpo);font-style:normal;vertical-align:middle}
+.jugador-companeros{margin-bottom:24px}
+.plantillas-buscar{margin:4px 0 10px}
+.plantillas-buscar input{width:100%;max-width:420px;box-sizing:border-box;font:600 16px var(--cuerpo);padding:13px 18px;border:2px solid var(--linea);border-radius:999px;background:var(--blanco);color:var(--texto)}
+.plantillas-enlace{margin:0 0 22px;font-weight:700}
+.plantillas-enlace a{color:var(--acento)}
+.plantillas-rejilla{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px}
+.plantilla-equipo{background:var(--blanco);border:1px solid var(--linea);border-radius:20px;padding:18px}
+.plantilla-equipo[hidden]{display:none}
+.plantilla-equipo h2{font-family:var(--titulos);font-size:24px;margin:0 0 2px}
+.plantilla-equipo .plantilla--compacta{grid-template-columns:1fr}
+.plantilla-equipo__coach{font-size:13px;color:var(--suave);margin:0 0 10px}
+.ficha-plantilla{margin:10px 0 34px}
+.plantilla-tarjetas{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+.jugador-mini{position:relative;display:flex;flex-direction:column;gap:3px;background:var(--blanco);border:1px solid var(--linea);border-radius:18px;padding:12px;transition:transform .2s,box-shadow .2s}
+.jugador-mini:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(22,24,29,.1)}
+.jugador-mini__foto{display:block;aspect-ratio:1;border-radius:12px;overflow:hidden;background:linear-gradient(150deg,var(--azul),#16181D);margin-bottom:6px}
+.jugador-mini__foto img{width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block}
+.jugador-mini__foto i{display:grid;place-items:center;height:100%;font:800 30px var(--titulos);font-style:normal;color:rgba(255,255,255,.85)}
+.jugador-mini__dorsal{position:absolute;top:18px;left:18px;background:rgba(22,24,29,.75);color:#fff;font:800 13px var(--cuerpo);padding:3px 8px;border-radius:999px}
+.jugador-mini strong{font-size:15px;line-height:1.2}
+.jugador-mini small{font-size:12px;color:var(--suave);line-height:1.35}
+.jugador-mini .chip{align-self:flex-start;margin-top:4px;font-size:11px;padding:3px 9px}
+.hispanos{margin:0 0 30px}
+.hispanos__pais{font-family:var(--titulos);font-size:30px;margin:0 0 12px;display:flex;align-items:center;gap:10px}
+.hispanos__pais span{font:800 14px var(--cuerpo);background:var(--acento);color:#fff;border-radius:999px;padding:3px 11px}
+.hispanos__rejilla{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:12px}
+.hispano{display:flex;gap:14px;align-items:center;background:var(--blanco);border:1px solid var(--linea);border-radius:18px;padding:12px;transition:transform .2s}
+.hispano:hover{transform:translateY(-2px)}
+.hispano__foto{flex:0 0 76px;height:76px;border-radius:14px;overflow:hidden;background:linear-gradient(150deg,var(--azul),#16181D)}
+.hispano__foto img{width:100%;height:100%;object-fit:cover;object-position:center 15%}
+.hispano__foto i{display:grid;place-items:center;height:100%;font:800 24px var(--titulos);font-style:normal;color:#fff}
+.hispano__texto{display:flex;flex-direction:column;gap:3px;min-width:0}
+.hispano__texto strong{font-size:17px}
+.hispano__texto small{font-size:13px;color:var(--suave)}
+.hispano__equipo{font-size:12px;color:var(--suave);display:flex;flex-wrap:wrap;gap:2px;align-items:center}
+.hispano .chip{font-size:10px;padding:2px 7px;vertical-align:middle}
+@media (max-width:860px){
+  .jugador-cab{grid-template-columns:1fr;gap:18px}
+  .jugador-cab__foto{max-width:260px}
+  .jugador-equipo__rejilla{grid-template-columns:1fr}
+  .plantilla-tarjetas{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hispanos__rejilla,.plantillas-rejilla{grid-template-columns:1fr}
+}
+.equipos-enlaces{display:flex;flex-wrap:wrap;gap:8px 22px;margin:14px 0 4px}
+.pie__tarjetas{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+/* Selector de país para los horarios (js/zona.js) */
+.zona-selector{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:16px 0 4px}
+.zona-selector span{font-size:13px;font-weight:700;color:var(--suave);margin-right:4px}
+.zona-selector button{font:700 14px var(--cuerpo);padding:8px 14px;border-radius:999px;border:2px solid var(--linea);background:var(--blanco);color:var(--texto);cursor:pointer}
+.zona-selector button.activo{background:var(--azul);border-color:var(--azul);color:#fff}
+/* Páginas de autor */
+.autor-redes{display:flex;gap:16px;margin-top:12px!important;font-weight:700}
+.autor-redes a{color:var(--acento)}
+.autor-cuenta{font:800 14px var(--cuerpo);background:var(--acento);color:#fff;border-radius:999px;padding:3px 11px;vertical-align:middle}
+.autor-lista{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin-bottom:24px}
+.meta a,.autor-caja strong a{text-decoration:underline;text-underline-offset:3px}
+/* Gráficos y vídeos dentro de los artículos (scripts/bloques.mjs) */
+.grafico{margin:28px 0;padding:20px 22px;background:var(--blanco);border:1px solid var(--linea);border-radius:20px;font-family:var(--cuerpo)}
+.grafico__titulo{font-weight:800;font-size:17px!important;margin:0 0 14px!important;line-height:1.3}
+.grafico__titulo span{font-weight:500;color:var(--suave)}
+.grafico ol{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.grafico li{display:grid;grid-template-columns:minmax(90px,30%) minmax(0,1fr) auto;gap:12px;align-items:center;font-size:15px;margin:0!important}
+.grafico__etiqueta{font-weight:700;line-height:1.25}
+.grafico__barra{height:14px;border-radius:99px;background:var(--hover);overflow:hidden}
+.grafico__barra i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--acento),#FF8A3D)}
+.grafico li b{font-family:var(--titulos);font-size:20px;font-variant-numeric:tabular-nums}
+.grafico figcaption{font-size:12px;color:var(--suave);margin-top:12px}
+.grafico svg{width:100%;height:auto;display:block;overflow:visible}
+.grafico polyline{fill:none;stroke:var(--acento);stroke-width:3.5;stroke-linejoin:round;stroke-linecap:round}
+.grafico circle{fill:var(--blanco);stroke:var(--acento);stroke-width:3}
+.grafico text{font:700 14px var(--cuerpo);fill:var(--texto);text-anchor:middle}
+.grafico text.e{font-weight:600;fill:var(--suave);font-size:13px}
+@media (max-width:600px){.grafico li{grid-template-columns:1fr auto;row-gap:4px}.grafico__barra{grid-column:1/3;grid-row:2}}
+.video-b2b{margin:28px 0}
+.video-b2b__marco{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:radial-gradient(circle at 30% 30%,#2a2e38,#16181D)}
+.video-b2b__marco iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-b2b__boton{position:absolute;inset:0;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border:0;background:none;color:#fff;font:700 17px var(--cuerpo);cursor:pointer}
+.video-b2b__boton small{font-weight:500;font-size:12px;opacity:.7}
+.video-b2b__play{width:70px;height:70px;border-radius:50%;background:var(--acento);position:relative;transition:transform .2s}
+.video-b2b__play::after{content:"";position:absolute;left:28px;top:22px;border-style:solid;border-width:13px 0 13px 21px;border-color:transparent transparent transparent #fff}
+.video-b2b__boton:hover .video-b2b__play{transform:scale(1.08)}
+.video-b2b figcaption{font-size:13px;color:var(--suave);margin-top:8px}
+.aviso-bloque{padding:12px 16px;border-radius:12px;background:#FFF3CD;color:#5c4a00;font-size:14px}
+.newsletter{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;margin:28px 0 18px;padding:18px 20px;border-radius:18px;background:linear-gradient(135deg,rgba(43,89,255,.1),rgba(255,75,43,.08));border:1px solid var(--linea)}
+.newsletter strong{font-family:var(--titulos);font-size:21px;flex-basis:100%}
+.newsletter span{flex:1;min-width:200px;color:var(--suave)}

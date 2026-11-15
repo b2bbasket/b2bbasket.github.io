@@ -42,6 +42,8 @@
 
   // ---- Utilidades de fecha (zonas horarias con Intl: respeta horario de verano e invierno) ----
   const MAD = 'Europe/Madrid';
+  // Zona elegida por el lector (js/zona.js): España, México, Argentina o Colombia
+  const zona = () => (window.b2bZona ? window.b2bZona : { nombre: 'España', tz: MAD });
   const fmtCache = {};
   const fmt = (clave, opciones) => fmtCache[clave] || (fmtCache[clave] = new Intl.DateTimeFormat(opciones.locale || 'es-ES', opciones));
   const fechaEnZona = (d, tz) => fmt('ymd' + tz, { timeZone: tz, year: 'numeric', month: '2-digit', day: '2-digit', locale: 'en-CA' }).format(d);
@@ -78,8 +80,8 @@
     if (!p.t) return { es: 'Hora por confirmar', us: '', fechaEs: '' };
     const d = new Date(p.t);
     const tz = EQ[p.h] ? EQ[p.h][2] : 'America/New_York';
-    const fechaEs = fechaEnZona(d, MAD);
-    let es = horaEnZona(d, MAD);
+    const fechaEs = fechaEnZona(d, zona().tz);
+    let es = horaEnZona(d, zona().tz);
     let extra = '';
     if (fechaEs !== p.d) { const f = deYmd(fechaEs); extra = DIAS_C[f.getUTCDay()] + ' ' + f.getUTCDate(); }
     return { es, extra, us: horaEnZona(d, tz) + ' ' + siglaZona(d, tz), ciudad: EQ[p.h] ? EQ[p.h][1] : '' };
@@ -123,7 +125,7 @@
     if (!p.t) hs.appendChild(el('span', 'cal-hora', 'Hora por confirmar'));
     else {
       const es = el('span', 'cal-hora');
-      es.appendChild(el('em', '', 'España'));
+      es.appendChild(el('em', '', zona().nombre));
       es.appendChild(document.createTextNode(h.es + (h.extra ? ' · ' + h.extra : '')));
       const us = el('span', 'cal-hora');
       us.appendChild(el('em', '', 'EE. UU.'));
@@ -238,7 +240,7 @@
     if (p.po) linea.appendChild(el('span', 'cal-tag', 'Playoffs'));
     info.appendChild(linea);
     const h = horarios(p);
-    info.appendChild(el('span', 'cal-fila__horas', p.t ? 'España ' + h.es + (h.extra ? ' (' + h.extra + ')' : '') + ' · EE. UU. ' + h.us + (h.ciudad ? ' (' + h.ciudad + ')' : '') : 'Hora por confirmar'));
+    info.appendChild(el('span', 'cal-fila__horas', p.t ? zona().nombre + ' ' + h.es + (h.extra ? ' (' + h.extra + ')' : '') + ' · EE. UU. ' + h.us + (h.ciudad ? ' (' + h.ciudad + ')' : '') : 'Hora por confirmar'));
     fila.appendChild(info);
 
     const res = el('div', 'cal-fila__res');
@@ -369,6 +371,9 @@
     seleccionarDia(desdeHash && porDia.has(desdeHash) ? desdeHash : (desdeHash && /^\d{4}/.test(desdeHash) ? desdeHash : diaInicial()), false);
     pintarEquipo();
   }
+
+  // Al cambiar el país de los horarios, se vuelve a pintar todo
+  document.addEventListener('b2b:zona', () => { if (datos && meses.length) { seleccionarDia(diaSel, false); pintarEquipo(); } });
 
   function recargar() {
     if (document.hidden || !datos) return;

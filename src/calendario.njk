@@ -8,7 +8,7 @@ permalink: /calendario/index.html
   {% set bf = fotos["banner-calendario"] %}
   <div class="banner banner--a t-azul m-calendario banner--compacto{% if bf %} banner--foto{% endif %}"{% if bf %} style="--foto:url('{{ bf.src | url }}')"{% endif %}>
     <h1>Calendario NBA</h1>
-    <p>Todos los partidos de la temporada, con hora de España y de Estados Unidos.</p>
+    <p>Todos los partidos de la temporada, con la hora de España, México, Argentina o Colombia y la de Estados Unidos.</p>
     {% if bf %}<span class="banner__credito">Foto: {{ bf.autor | safe }} · {{ bf.licencia }}</span>{% endif %}
   </div>
 
@@ -21,6 +21,10 @@ permalink: /calendario/index.html
     </button>
   </div>
 
+  <div class="zona-selector" role="group" aria-label="Ver los horarios de">
+    <span>Horarios de</span>
+    <button type="button" data-zona="es">España</button><button type="button" data-zona="mx">México</button><button type="button" data-zona="ar">Argentina</button><button type="button" data-zona="co">Colombia</button>
+  </div>
   <p class="cal-aviso" id="calAviso" role="status">Cargando el calendario…</p>
 
   <section class="cal-panel" id="panelGeneral" role="tabpanel" aria-labelledby="tabGeneral">
@@ -67,7 +71,7 @@ permalink: /calendario/index.html
   </section>
 
   <p class="nota-fuente cal-nota" id="calNota">
-    Datos: API de balldontlie. Las fechas siguen el calendario oficial de EE. UU.; la hora de España se calcula para Europe/Madrid y la de EE. UU. para la ciudad del equipo local, con los cambios de horario de verano e invierno de cada país. En partidos en sede neutral (por ejemplo en México, Europa o la final de la Copa NBA) la hora local real puede ser otra. Los resultados en juego se actualizan cada 30 minutos aproximadamente.
+    Datos: API de balldontlie. Las fechas siguen el calendario oficial de EE. UU.; la hora de España se calcula para Europe/Madrid (y la de México, Argentina y Colombia para sus capitales) y la de EE. UU. para la ciudad del equipo local, con los cambios de horario de verano e invierno de cada país. En partidos en sede neutral (por ejemplo en México, Europa o la final de la Copa NBA) la hora local real puede ser otra. Los resultados en juego se actualizan cada 30 minutos aproximadamente.
   </p>
 </div>
 <script src="{{ '/js/calendario.js' | url }}?v={{ web.version }}"></script>

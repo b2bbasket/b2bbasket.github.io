@@ -41,11 +41,15 @@ public_folder: /img/subidas
       - { label: Entradilla, name: resumen, widget: text, hint: "Qué ha pasado y por qué importa, en una o dos frases." }
       - { label: Claves (opcional), name: claves, widget: list, required: false, field: { label: Clave, name: clave, widget: string }, hint: "Tres o cuatro frases cortas. En crónicas salen como «Las claves del partido»; en noticias, como «Lo esencial»; en guías, como «En 30 segundos»." }
       - { label: Autor, name: autor, widget: string, default: "Hugo Amigo Suárez" }
+      - { label: "Revisado por (quien ha leído y comprobado la pieza antes de publicarla; opcional)", name: revisado_por, widget: string, required: false }
       - { label: Borrador (si está activado, NO se publica), name: borrador, widget: boolean, default: true, required: false }
       - { label: Jugador para la foto (opcional), name: jugador_foto, widget: string, required: false, hint: "Escribe el nombre completo, por ejemplo «Stephen Curry» o «Aday Mara». La web buscará sola una foto suya con licencia libre en Wikimedia Commons y pondrá el crédito. Si rellenas «Imagen principal», se usa esa en su lugar." }
       - { label: Imagen principal (solo con licencia o autorización), name: imagen, widget: image, required: false }
       - { label: Crédito de la imagen, name: credito, widget: string, required: false }
-      - { label: Texto del artículo, name: body, widget: markdown }
+      - label: Texto del artículo
+        name: body
+        widget: markdown
+        hint: "Para un gráfico, escribe un bloque de código con el lenguaje grafico: primera línea ```grafico, luego tipo: barras (o lineas), titulo: ..., unidad: ..., fuente: ..., y una línea por dato con el formato «Nombre: 12,5» (decimales con coma). Cierra con ```. Para un vídeo de YouTube: ```video, el enlace en la línea siguiente, un pie opcional y ```."
 
   - name: leyendas
     label: Grandes jugadores
@@ -101,6 +105,7 @@ public_folder: /img/subidas
       - { label: Día y hora (horario peninsular), name: fecha_hora, widget: string, hint: "Por ejemplo: Lunes 2 de noviembre, 01:30" }
       - { label: Dónde verlo, name: donde, widget: string }
       - { label: Autor, name: autor, widget: string, default: "Hugo Amigo Suárez" }
+      - { label: "Revisado por (quien ha leído y comprobado la pieza antes de publicarla; opcional)", name: revisado_por, widget: string, required: false }
       - { label: Las claves del partido, name: claves, widget: list, required: false, field: { label: Clave, name: clave, widget: string } }
       - label: Jugadores a seguir (opcional)
         name: a_seguir
@@ -282,6 +287,22 @@ public_folder: /img/subidas
               - { label: Nombre, name: nombre, widget: string }
               - { label: Otros nombres válidos (apellido, apodo), name: alias, widget: list, required: false, field: { label: Alias, name: alias, widget: string } }
               - { label: Pistas (de la más difícil a la más fácil), name: pistas, widget: list, field: { label: Pista, name: pista, widget: string } }
+      - label: Equipo (autores)
+        name: autores
+        file: src/_data/autores.json
+        fields:
+          - label: Autores
+            name: autores
+            widget: list
+            summary: "{{fields.nombre}} · {{fields.rol}}"
+            fields:
+              - { label: Nombre (igual que en la firma de los artículos), name: nombre, widget: string }
+              - { label: "Dirección de la página (sin tildes ni espacios, p. ej. hugo-amigo-suarez)", name: slug, widget: string }
+              - { label: Cargo, name: rol, widget: string }
+              - { label: Biografía breve, name: bio, widget: text }
+              - { label: Enlace de Instagram, name: instagram, widget: string, required: false }
+              - { label: Enlace de LinkedIn, name: linkedin, widget: string, required: false }
+              - { label: Web o portfolio, name: web, widget: string, required: false }
       - label: Datos del medio
         name: site
         file: src/_data/site.json
@@ -295,6 +316,9 @@ public_folder: /img/subidas
           - { label: Firma por defecto de los artículos, name: autor, widget: string, required: false }
           - { label: "Código de verificación de Google Search Console (solo el código, sin comillas)", name: google_verificacion, widget: string, required: false }
           - { label: Correo de contacto, name: email, widget: string }
+          - { label: "Código de GoatCounter (la parte de tu dirección antes de .goatcounter.com; vacío = sin estadísticas)", name: goatcounter, widget: string, required: false }
+          - { label: "Enlace de suscripción a la newsletter (vacío = no se muestra)", name: newsletter_url, widget: string, required: false }
+          - { label: Texto de la newsletter, name: newsletter_texto, widget: string, required: false }
           - { label: Datos automáticos (resultados y clasificación), name: datos_automaticos, widget: boolean, default: true, required: false }
           - { label: Mostrar aviso de cookies (solo si hay analítica o publicidad), name: banner_cookies, widget: boolean, default: false }
 {% endraw %}
