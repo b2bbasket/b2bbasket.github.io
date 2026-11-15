@@ -1217,8 +1217,8 @@ html[data-tema="oscuro"] .racha--p{color:#FF7A5E}
 .jugador-lista li{display:flex;gap:8px;align-items:baseline;padding:5px 0;border-top:1px solid var(--linea)}
 .jugador-lista li:first-child{border-top:0}
 .jugador-lista span{margin-left:auto;color:var(--suave);font-size:13px;white-space:nowrap}
-.gana,.pierde{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:6px;font-size:11px;font-weight:800;color:#fff;background:#17A673;margin-right:2px}
-.pierde{background:#D7263D}
+.res-v,.res-d{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:6px;font-size:11px;font-weight:800;color:#fff;background:#17A673;margin-right:2px}
+.res-d{background:#D7263D}
 .plantilla{list-style:none;margin:0;padding:0}
 .plantilla--compacta{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:4px 16px}
 .plantilla--compacta li a{display:flex;gap:10px;align-items:baseline;padding:7px 4px;border-bottom:1px solid var(--linea);font-weight:600}

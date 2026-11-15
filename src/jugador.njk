@@ -54,7 +54,7 @@ eleventyComputed:
       {% if E.ultimos.length %}
       <div class="jugador-equipo__caja">
         <small>Últimos partidos</small>
-        <ul class="jugador-lista">{% for r in E.ultimos %}<li><b class="{{ 'gana' if r.gano else 'pierde' }}">{{ "V" if r.gano else "D" }}</b> {{ "vs" if r.local else "en" }} {{ r.rival }} <span>{{ r.pf }}-{{ r.pc }}</span></li>{% endfor %}</ul>
+        <ul class="jugador-lista">{% for r in E.ultimos %}<li><b class="{{ "res-v" if r.gano else "res-d" }}">{{ "V" if r.gano else "D" }}</b> {{ "vs" if r.local else "en" }} {{ r.rival }} <span>{{ r.pf }}-{{ r.pc }}</span></li>{% endfor %}</ul>
       </div>
       {% endif %}
       {% if E.proximos.length %}

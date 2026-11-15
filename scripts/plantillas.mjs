@@ -137,7 +137,7 @@ for (const grupo of trozos([...new Set(Object.values(archivos))], 40)) {
     if (!LIBRE.test(lic) || /NC|ND/i.test(lic)) continue;
     const autor = sinMarcado((m.Artist || {}).value || "").replace(/\s+/g, " ").slice(0, 80) || "Autor desconocido";
     const original = (norm[p.title] || p.title).replace(/^File:/, "");
-    fotos[original] = { url: ii.thumburl || ii.url, origen: ii.descriptionurl, autor, licencia: lic, licencia_url: (m.LicenseUrl || {}).value || "" };
+    fotos[original] = { url: String(ii.thumburl || ii.url).split("?")[0], origen: ii.descriptionurl, autor, licencia: lic, licencia_url: (m.LicenseUrl || {}).value || "" };
   }
   await espera(300);
 }

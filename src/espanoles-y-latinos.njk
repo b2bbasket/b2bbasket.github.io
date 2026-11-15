@@ -25,7 +25,7 @@ permalink: /espanoles-y-latinos/index.html
         <span class="hispano__texto">
           <strong>{{ j.nombre }}{% if j.lesionado %} <em class="chip chip--rojo">Lesionado</em>{% endif %}</strong>
           <small>{{ j.posicion }} · {{ j.equipo }}{% if j.paises.length > 1 %} · también {{ j.paises | excluir(g.pais) | join(", ") }}{% endif %}</small>
-          {% if E %}<span class="hispano__equipo">{{ E.v }}-{{ E.d }}{% if E.ultimos.length %} · {% for r in E.ultimos | limite(5) | reverse %}<b class="{{ 'gana' if r.gano else 'pierde' }}">{{ "V" if r.gano else "D" }}</b>{% endfor %}{% endif %}{% if E.proximos.length %} · Próximo: {{ "vs" if E.proximos[0].local else "en" }} {{ E.proximos[0].rival }}, <span data-hora="{{ E.proximos[0].t }}">{{ E.proximos[0].t | diaEspana }} {{ E.proximos[0].t | horaEspana }}</span>{% endif %}</span>{% endif %}
+          {% if E %}<span class="hispano__equipo">{{ E.v }}-{{ E.d }}{% if E.ultimos.length %} · {% for r in E.ultimos | limite(5) | reverse %}<b class="{{ "res-v" if r.gano else "res-d" }}">{{ "V" if r.gano else "D" }}</b>{% endfor %}{% endif %}{% if E.proximos.length %} · Próximo: {{ "vs" if E.proximos[0].local else "en" }} {{ E.proximos[0].rival }}, <span data-hora="{{ E.proximos[0].t }}">{{ E.proximos[0].t | diaEspana }} {{ E.proximos[0].t | horaEspana }}</span>{% endif %}</span>{% endif %}
         </span>
       </a>
       {% endfor %}
