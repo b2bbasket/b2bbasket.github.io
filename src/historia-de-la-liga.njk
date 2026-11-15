@@ -1,78 +1,151 @@
 ---
 layout: base.njk
 title: Historia de la liga
-resumen: "Una línea del tiempo con los momentos y los cambios de reglas que explican cómo la NBA llegó a ser lo que es hoy."
+resumen: "La historia de la NBA de 1891 a hoy: el invento de Naismith, el nacimiento de la liga, las grandes dinastías, la ABA, Magic y Bird, Jordan, el Dream Team y la era del triple."
 permalink: /historia-de-la-liga/index.html
+# Cada etapa: «parrafos» (texto), «dato» (cifra destacada) y «fotos» con su disposición:
+#   lado (al lado del texto, derecha) · lado-izq (al lado, izquierda) · ancha (debajo, a todo el ancho) · pareja (dos fotos juntas)
 etapas:
-  - ano: "1946"
+  - ano: "1891"
+    titulo: "Un invento de gimnasio"
+    dato: "13"
+    dato_texto: "reglas en el primer reglamento"
+    parrafos:
+      - "La historia de la NBA empieza medio siglo antes que la propia liga. En diciembre de 1891, James Naismith, un profesor canadiense de educación física de la escuela de la YMCA en Springfield (Massachusetts), buscaba un juego de interior para que sus alumnos se mantuvieran activos durante el invierno. Colgó dos cestas de melocotones en la barandilla del gimnasio y escribió un reglamento de 13 normas."
+      - "El nuevo deporte se extendió muy rápido por las escuelas y universidades de Estados Unidos. Las cestas dieron paso a aros con red, el balón de fútbol a uno específico y, en pocas décadas, ya había ligas profesionales. Ninguna, sin embargo, consiguió consolidarse a escala nacional."
+    fotos:
+      - { id: "h-naismith", disp: "lado" }
+  - ano: "1946-1954"
     titulo: "Nace la liga"
     dato: "68-66"
     dato_texto: "resultado del primer partido"
-    texto: "La liga nació en 1946 como la BAA (Basketball Association of America). El primer partido se jugó el 1 de noviembre de 1946 en Toronto: los New York Knicks ganaron 68-66 a los Toronto Huskies. En 1949, la BAA se fusionó con la NBL (National Basketball League) y la nueva liga pasó a llamarse NBA."
-  - ano: "1950-1954"
+    parrafos:
+      - "La liga actual nació en 1946 como la BAA (Basketball Association of America), impulsada por los propietarios de los grandes pabellones del este, que querían llenar sus recintos cuando no había hockey. El primer partido se jugó el 1 de noviembre de 1946 en Toronto: los New York Knicks ganaron 68-66 a los Toronto Huskies."
+      - "En 1949, la BAA se fusionó con su rival, la NBL (National Basketball League), y la nueva liga pasó a llamarse NBA. Su primera gran estrella fue George Mikan, el pívot de los Minneapolis Lakers, que ganaron cinco títulos entre 1949 y 1954. Era tan dominante cerca del aro que la liga ensanchó la zona para alejarlo de la canasta."
+      - "En 1950, la NBA se abrió por fin a los jugadores negros: Chuck Cooper fue el primero elegido en el draft, Nat Clifton el primero en firmar un contrato y Earl Lloyd el primero en disputar un partido, el 31 de octubre de 1950."
+    fotos:
+      - { id: "h-lakers-1950", disp: "ancha" }
+  - ano: "1950-1955"
     titulo: "Baloncesto sin reloj"
-    dato: "19-18"
-    dato_texto: "el partido con menos puntos de la historia"
-    texto: "En los primeros años no había reloj de posesión, y los equipos que iban por delante se dedicaban a guardar el balón. El caso más extremo llegó el 22 de noviembre de 1950, cuando los Fort Wayne Pistons ganaron 19-18 a los Minneapolis Lakers. En la temporada 1954-55 se introdujo el reloj de 24 segundos, ideado por Danny Biasone, propietario de los Syracuse Nationals, que aceleró el juego y marcó un antes y un después."
+    dato: "24"
+    dato_texto: "segundos de posesión desde 1954"
+    parrafos:
+      - "En los primeros años no había reloj de posesión, y los equipos que iban por delante se dedicaban a guardar el balón. El caso más extremo llegó el 22 de noviembre de 1950, cuando los Fort Wayne Pistons ganaron 19-18 a los Minneapolis Lakers, el partido con menos puntos de la historia."
+      - "La solución la ideó Danny Biasone, propietario de los Syracuse Nationals: obligar a tirar en 24 segundos. La regla se estrenó en la temporada 1954-55, aceleró el juego y disparó la anotación. Es, probablemente, el cambio de reglas más importante de la historia de la liga."
   - ano: "1957-1969"
     titulo: "Russell contra Chamberlain"
     dato: "11"
     dato_texto: "títulos de los Celtics en 13 temporadas"
-    texto: "Los Celtics de Bill Russell dominaron la época con 11 títulos en 13 temporadas, entre 1957 y 1969. Su gran rival fue Wilt Chamberlain, que el 2 de marzo de 1962 anotó 100 puntos en un partido y esa temporada promedió 50,4 puntos."
-    enlaces: [{ texto: "Bill Russell", url: "/jugadores/bill-russell/" }, { texto: "Wilt Chamberlain", url: "/jugadores/wilt-chamberlain/" }]
-  - ano: "1976"
-    titulo: "La fusión con la ABA"
+    parrafos:
+      - "Los Boston Celtics de Bill Russell y del entrenador Red Auerbach construyeron la mayor dinastía del deporte estadounidense: 11 títulos en 13 temporadas entre 1957 y 1969, ocho de ellos seguidos. Russell no era un gran anotador, pero su defensa, sus rebotes y su inteligencia cambiaron la forma de entender el juego."
+      - "Su gran rival fue Wilt Chamberlain, el anotador más imparable de su tiempo. El 2 de marzo de 1962 anotó 100 puntos en un partido ante los Knicks, y esa temporada promedió 50,4 puntos por partido, dos récords que siguen vigentes. Sus duelos con Russell definieron toda una década, aunque casi siempre los ganó Boston."
+    fotos:
+      - { id: "h-russell", disp: "lado" }
+      - { id: "h-anos60", disp: "lado-izq" }
+    enlaces: [{ texto: "Bill Russell", url: "/jugadores/bill-russell/" }, { texto: "Wilt Chamberlain", url: "/jugadores/wilt-chamberlain/" }, { texto: "Jerry West", url: "/jugadores/jerry-west/" }]
+  - ano: "1967-1976"
+    titulo: "La ABA, la liga rebelde"
     dato: "4"
     dato_texto: "equipos de la ABA que entraron en la NBA"
-    texto: "En 1976, cuatro equipos de la liga rival, la ABA, entraron en la NBA: los Nets, los Nuggets, los Pacers y los Spurs."
+    parrafos:
+      - "En 1967 nació una liga rival, la ABA (American Basketball Association), con un balón de rayas rojas, blancas y azules, la línea de tres puntos y un estilo de juego mucho más espectacular. Allí brillaron jugadores como Julius Erving, «Dr. J», que convirtió el mate en un arte, y en 1976 la ABA celebró el primer concurso de mates profesional."
+      - "La competencia por los jugadores dejó a la ABA sin dinero, y en 1976 cuatro de sus equipos entraron en la NBA: los Nets, los Nuggets, los Pacers y los Spurs. La NBA heredó su talento y, con los años, también su línea de tres."
+    fotos:
+      - { id: "h-erving", disp: "lado" }
   - ano: "1979-1989"
     titulo: "Magic, Bird y la línea de tres"
     dato: "1985"
     dato_texto: "primera lotería del draft"
-    texto: "En la temporada 1979-80 la NBA adoptó la línea de tres puntos. El primer triple lo anotó Chris Ford, de los Celtics, el 12 de octubre de 1979. Esa misma temporada debutaron Magic Johnson y Larry Bird, cuya rivalidad, entre Lakers y Celtics, hizo crecer la liga durante toda la década. En 1985 se celebró la primera lotería del draft, que ganaron los Knicks, que eligieron a Patrick Ewing."
-    enlaces: [{ texto: "Magic Johnson", url: "/jugadores/magic-johnson/" }, { texto: "Larry Bird", url: "/jugadores/larry-bird/" }]
+    parrafos:
+      - "A finales de los años 70 la NBA atravesaba una crisis: poca audiencia y finales que se emitían en diferido. Todo cambió en la temporada 1979-80, con la llegada de dos novatos que ya se habían enfrentado en la final universitaria de 1979: Magic Johnson, en los Lakers, y Larry Bird, en los Celtics."
+      - "Su rivalidad, la de dos estilos y dos ciudades, llenó los pabellones durante toda la década. Lakers y Celtics se repartieron ocho de los diez títulos de los años 80 y se enfrentaron en tres Finales. Esa misma temporada la NBA estrenó la línea de tres: el primer triple lo anotó Chris Ford, de los Celtics, el 12 de octubre de 1979. En 1985 se celebró la primera lotería del draft, que ganaron los Knicks, que eligieron a Patrick Ewing."
+    fotos:
+      - { id: "magic", disp: "pareja" }
+      - { id: "bird", disp: "pareja" }
+    enlaces: [{ texto: "Magic Johnson", url: "/jugadores/magic-johnson/" }, { texto: "Larry Bird", url: "/jugadores/larry-bird/" }, { texto: "Kareem Abdul-Jabbar", url: "/jugadores/kareem-abdul-jabbar/" }]
   - ano: "1991-1998"
     titulo: "Jordan y el Dream Team"
     dato: "6"
     dato_texto: "títulos de los Bulls en ocho años"
-    texto: "Michael Jordan convirtió a los Bulls en una dinastía, con seis títulos entre 1991 y 1998, y el Dream Team de los Juegos Olímpicos de Barcelona 1992 llevó la NBA a todo el mundo."
+    parrafos:
+      - "Michael Jordan llevó la NBA a otra dimensión. Con Scottie Pippen y el entrenador Phil Jackson, los Chicago Bulls ganaron seis títulos en ocho años, en dos tandas de tres seguidos (1991-1993 y 1996-1998). En la temporada 1995-96 ganaron 72 partidos y perdieron solo 10, un récord que duró dos décadas."
+      - "En 1992, por primera vez, los jugadores de la NBA pudieron ir a los Juegos Olímpicos. El Dream Team de Barcelona, con Jordan, Magic Johnson, Larry Bird, Charles Barkley y compañía, ganó el oro sin apuros y convirtió la NBA en un fenómeno mundial. Muchos de los grandes jugadores europeos de las décadas siguientes crecieron viendo aquellos partidos."
+    fotos:
+      - { id: "jordan", disp: "lado" }
+      - { id: "h-dreamteam", disp: "ancha" }
     enlaces: [{ texto: "Michael Jordan", url: "/jugadores/michael-jordan/" }]
-  - ano: "2001-hoy"
-    titulo: "El siglo XXI"
+  - ano: "1999-2014"
+    titulo: "Lakers, Spurs y una liga global"
+    dato: "5"
+    dato_texto: "títulos de los Spurs de Tim Duncan"
+    parrafos:
+      - "Tras la retirada de Jordan, el cambio de siglo tuvo dos grandes protagonistas. Los Lakers de Shaquille O'Neal y Kobe Bryant ganaron tres títulos seguidos entre 2000 y 2002, y los San Antonio Spurs de Tim Duncan y Gregg Popovich, cinco entre 1999 y 2014. Antes de la temporada 2001-02, la liga permitió la defensa en zona e introdujo la regla de los tres segundos defensivos."
+      - "Fue también la época en que la NBA se hizo internacional. Dirk Nowitzki, Pau Gasol, Manu Ginóbili, Tony Parker o Yao Ming demostraron que las estrellas podían llegar de cualquier parte. Nowitzki fue el primer MVP europeo en 2007, y Pau Gasol ganó dos anillos con los Lakers de Kobe Bryant en 2009 y 2010."
+    fotos:
+      - { id: "kobe", disp: "pareja" }
+      - { id: "duncan", disp: "pareja" }
+    enlaces: [{ texto: "Kobe Bryant", url: "/jugadores/kobe-bryant/" }, { texto: "Shaquille O'Neal", url: "/jugadores/shaquille-oneal/" }, { texto: "Tim Duncan", url: "/jugadores/tim-duncan/" }, { texto: "Dirk Nowitzki", url: "/jugadores/dirk-nowitzki/" }]
+  - ano: "2015-hoy"
+    titulo: "La era del triple"
     dato: "2026"
     dato_texto: "los Knicks, campeones 53 años después"
-    texto: "Antes de la temporada 2001-02, la liga permitió la defensa en zona e introdujo la regla de los tres segundos defensivos. El tiro de tres se convirtió en el arma principal con Stephen Curry y los Warriors. En la temporada 2020-21 se estrenó el play-in, que la liga hizo permanente en 2022, y en 2023 se disputó la primera NBA Cup. En 2026, los Knicks ganaron su primer título en 53 años."
+    parrafos:
+      - "Los Golden State Warriors de Stephen Curry ganaron cuatro títulos entre 2015 y 2022 y cambiaron el baloncesto para siempre: el triple pasó de ser un recurso a ser el centro del juego. Su gran rival fue LeBron James, que en 2016 remontó un 3-1 en las Finales con los Cleveland Cavaliers, algo que nadie había conseguido nunca en unas Finales."
+      - "La liga se ha vuelto más internacional que nunca: entre 2019 y 2025, todos los MVP de la temporada nacieron fuera de Estados Unidos, con Giannis Antetokounmpo, Nikola Jokić, Joel Embiid y Shai Gilgeous-Alexander. La NBA también ha cambiado su calendario, con el play-in desde la temporada 2020-21 y la NBA Cup desde 2023. En 2026, los New York Knicks ganaron su primer título en 53 años."
+    fotos:
+      - { id: "curry", disp: "lado" }
+    enlaces: [{ texto: "Stephen Curry", url: "/jugadores/stephen-curry/" }, { texto: "LeBron James", url: "/jugadores/lebron-james/" }, { texto: "Kevin Durant", url: "/jugadores/kevin-durant/" }]
 fuentes:
+  - { titulo: "James Naismith y el origen del baloncesto, Wikipedia", url: "https://en.wikipedia.org/wiki/James_Naismith" }
+  - { titulo: "Basketball Association of America, Wikipedia", url: "https://en.wikipedia.org/wiki/Basketball_Association_of_America" }
   - { titulo: "Cronología de la NBA, Wikipedia", url: "https://en.wikipedia.org/wiki/Timeline_of_the_NBA" }
   - { titulo: "Efemérides de noviembre (primer partido y Pistons-Lakers 19-18), NBA.com", url: "https://www.nba.com/news/history-this-date-in-nba-nov" }
+  - { titulo: "George Mikan, Wikipedia", url: "https://en.wikipedia.org/wiki/George_Mikan" }
+  - { titulo: "Earl Lloyd, Wikipedia", url: "https://en.wikipedia.org/wiki/Earl_Lloyd" }
   - { titulo: "Reloj de posesión, Wikipedia", url: "https://en.wikipedia.org/wiki/Shot_clock" }
   - { titulo: "Perfil de Wilt Chamberlain, NBA.com", url: "https://www.nba.com/news/history-nba-legend-wilt-chamberlain" }
+  - { titulo: "American Basketball Association, Wikipedia", url: "https://en.wikipedia.org/wiki/American_Basketball_Association" }
   - { titulo: "Temporada 1979-80 (línea de tres), Wikipedia", url: "https://en.wikipedia.org/wiki/1979%E2%80%9380_NBA_season" }
   - { titulo: "Lotería del draft, Wikipedia", url: "https://en.wikipedia.org/wiki/NBA_draft_lottery" }
+  - { titulo: "Dream Team de 1992, Wikipedia", url: "https://en.wikipedia.org/wiki/1992_United_States_men%27s_Olympic_basketball_team" }
   - { titulo: "Tres segundos defensivos y defensa en zona, Wikipedia", url: "https://en.wikipedia.org/wiki/Defensive_three-second_violation" }
+  - { titulo: "MVP de la temporada, Wikipedia", url: "https://en.wikipedia.org/wiki/NBA_Most_Valuable_Player_Award" }
   - { titulo: "Play-in, Wikipedia", url: "https://en.wikipedia.org/wiki/NBA_play-in_tournament" }
   - { titulo: "Lista de campeones de la NBA, Wikipedia", url: "https://en.wikipedia.org/wiki/List_of_NBA_champions" }
 ---
+{% macro foto(f, disp) %}{% if f %}<figure class="hist-foto hist-foto--{{ disp }}"><img src="{{ f.src | url }}" alt="{{ f.alt }}" loading="lazy"><figcaption><span>{{ f.alt }}</span> <small>Foto: {{ f.autor | safe }} · {{ f.licencia }}</small></figcaption></figure>{% endif %}{% endmacro %}
 <div class="contenedor">
   <header class="leyendas-cab">
     <p class="leyendas-cab__kicker">Historia de la liga</p>
-    <h1>De 68-66 a la NBA de hoy</h1>
-    <p>Los momentos y los cambios de reglas que explican cómo la NBA llegó a ser lo que es. Una línea del tiempo de 1946 a hoy.</p>
+    <h1>De unas cestas de melocotones a la NBA de hoy</h1>
+    <p>Cómo un juego inventado en un gimnasio de Massachusetts se convirtió en la mejor liga de baloncesto del mundo: sus dinastías, sus rivalidades y los cambios de reglas que la hicieron como es.</p>
   </header>
-  <ol class="cronologia">
+  <ol class="cronologia cronologia--larga">
     {% for e in etapas %}
+    {% set lados = e.fotos | porDisposicion(["lado", "lado-izq"], fotos) %}{% set pareja = e.fotos | porDisposicion(["pareja"], fotos) %}{% set anchas = e.fotos | porDisposicion(["ancha"], fotos) %}
     <li class="cronologia__etapa revelar">
       <div class="cronologia__fecha">{{ e.ano }}</div>
       <div class="cronologia__contenido">
         <h2>{{ e.titulo }}</h2>
-        <div class="cronologia__cuerpo">
-          <p>{{ e.texto }}</p>
-          <div class="cronologia__dato"><strong>{{ e.dato }}</strong><span>{{ e.dato_texto }}</span></div>
+        <div class="hist-texto">
+          {% if lados[0] %}{{ foto(fotos[lados[0].id], lados[0].disp) }}{% endif %}
+          {% if not lados[0] %}<div class="cronologia__dato hist-dato"><strong>{{ e.dato }}</strong><span>{{ e.dato_texto }}</span></div>{% endif %}
+          {% for p in e.parrafos %}
+          <p>{{ p }}</p>
+          {% if loop.first and lados[1] %}{{ foto(fotos[lados[1].id], lados[1].disp) }}{% endif %}
+          {% endfor %}
+          {% if lados[0] %}<div class="cronologia__dato hist-dato hist-dato--linea"><strong>{{ e.dato }}</strong><span>{{ e.dato_texto }}</span></div>{% endif %}
         </div>
+        {% if pareja.length %}<div class="hist-pareja">{% for f in pareja %}{{ foto(fotos[f.id], "pareja") }}{% endfor %}</div>{% endif %}
+        {% for f in anchas %}{{ foto(fotos[f.id], "ancha") }}{% endfor %}
         {% if e.enlaces %}<p class="cronologia__enlaces">Perfiles: {% for l in e.enlaces %}<a href="{{ l.url | url }}">{{ l.texto }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</p>{% endif %}
       </div>
     </li>
     {% endfor %}
   </ol>
-  <section class="leyenda-fuentes"><h2>Fuentes</h2><ul>{% for s in fuentes %}<li><a href="{{ s.url }}" rel="noopener">{{ s.titulo }}</a></li>{% endfor %}</ul></section>
+  <details class="hist-fuentes">
+    <summary>Fuentes</summary>
+    <ul>{% for s in fuentes %}<li><a href="{{ s.url }}" rel="noopener">{{ s.titulo }}</a></li>{% endfor %}</ul>
+    <p>Las fotografías proceden de Wikimedia Commons y se usan según su licencia; el autor y la licencia de cada una aparecen al pie de la foto y en <a href="{{ '/creditos-imagenes/' | url }}">Créditos de imágenes</a>.</p>
+  </details>
 </div>

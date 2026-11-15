@@ -6,7 +6,8 @@ permalink: /lideres/index.html
 ---
 {% set cats = [ { k: "puntos", n: "Puntos", u: "por partido" }, { k: "rebotes", n: "Rebotes", u: "por partido" }, { k: "asistencias", n: "Asistencias", u: "por partido" }, { k: "tapones", n: "Tapones", u: "por partido" }, { k: "robos", n: "Robos", u: "por partido" }, { k: "triples", n: "Triples", u: "por partido" } ] %}
 <div class="contenedor">
-  <div class="banner banner--a t-azul m-estrella"><h1>Líderes esta temporada</h1><p>Los cinco mejores en cada estadística. Actualizado: {{ lideres_temporada.actualizado }}.</p></div>
+  {% set bf = fotos["banner-lideres"] %}
+  <div class="banner banner--a t-azul m-estrella{% if bf %} banner--foto{% endif %}"{% if bf %} style="--foto:url('{{ bf.src | url }}')"{% endif %}><h1>Líderes esta temporada</h1><p>Los cinco mejores en cada estadística. Actualizado: {{ lideres_temporada.actualizado }}.</p>{% if bf %}<span class="banner__credito">Foto: {{ bf.autor | safe }} · {{ bf.licencia }}</span>{% endif %}</div>
   <div class="podios">
     {% for c in cats %}{% set lista = lideres_temporada[c.k] %}{% set top = lista[0] %}
     <section class="podio revelar podio--{{ c.k }}">

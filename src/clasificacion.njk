@@ -6,7 +6,8 @@ permalink: /clasificacion/index.html
 ---
 {% set T = temporada %}
 <div class="contenedor">
-  <div class="banner t-morado"><h1>Clasificación</h1><p>Temporada regular por conferencias. Actualizada: {{ clasificacion.actualizado }}.</p></div>
+  {% set bf = fotos["banner-clasificacion"] %}
+  <div class="banner t-morado{% if bf %} banner--foto{% endif %}"{% if bf %} style="--foto:url('{{ bf.src | url }}')"{% endif %}><h1>Clasificación</h1><p>Temporada regular por conferencias. Actualizada: {{ clasificacion.actualizado }}.</p>{% if bf %}<span class="banner__credito">Foto: {{ bf.autor | safe }} · {{ bf.licencia }}</span>{% endif %}</div>
 
   {% if T.destacados %}
   <section class="destacados revelar" aria-label="Datos destacados de la temporada">
