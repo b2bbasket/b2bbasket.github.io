@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 title: Grandes jugadores de la historia
-resumen: "Perfiles de diez leyendas de la NBA: quiénes fueron, sus momentos clave y su legado."
+resumen: "Perfiles de quince leyendas de la NBA: quiénes fueron, sus momentos clave y su legado."
 permalink: /jugadores/index.html
 ---
 {% set lista = collections.leyendas | sort(false, false, "data.orden") %}
@@ -10,7 +10,7 @@ permalink: /jugadores/index.html
   <header class="leyendas-cab">
     <p class="leyendas-cab__kicker">Grandes jugadores</p>
     <h1>Las leyendas que hicieron la NBA</h1>
-    <p>Diez perfiles para entender la historia de la liga a través de sus protagonistas. Elige una época o entra en cualquier perfil: cada uno cuenta quién fue el jugador, sus momentos clave y su legado.</p>
+    <p>{{ collections.leyendas.length }} perfiles para entender la historia de la liga a través de sus protagonistas. Elige una época o entra en cualquier perfil: cada uno cuenta quién fue el jugador, sus momentos clave y su legado.</p>
   </header>
 
   <a class="leyenda-portada revelar" href="{{ portada.url | url }}">

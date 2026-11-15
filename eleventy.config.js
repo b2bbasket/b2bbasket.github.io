@@ -136,6 +136,8 @@ export default function (eleventyConfig) {
   });
   // Convierte cifras escritas en español («40,1», «43.440») en números para dibujar barras
   eleventyConfig.addFilter("numero", (t) => { const n = parseFloat(String(t || "").replace(/\./g, "").replace(",", ".")); return isNaN(n) ? 0 : n; });
+  // Historia de la liga: fotos de una etapa con cierta disposición (solo las que ya están descargadas)
+  eleventyConfig.addFilter("porDisposicion", (lista, disps, fotos) => (lista || []).filter((f) => disps.includes(f.disp) && fotos && fotos[f.id]));
   eleventyConfig.addFilter("leyendaDe", (lista, nombre) => (lista || []).find((l) => l.data.nombre === nombre));
   eleventyConfig.addFilter("fichaDe", (lista, nombre) => (lista || []).find((f) => f.data.nombre === nombre));
   // Clasificación: ordena por porcentaje de victorias

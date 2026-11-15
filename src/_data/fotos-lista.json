@@ -228,14 +228,6 @@
    ]
   },
   {
-   "id": "h-reglas",
-   "destino": "src/img/historia/reglas.jpg",
-   "alt": "Primera página de las 13 reglas originales del baloncesto",
-   "candidatos": [
-    "Dr. James Naismith's Original 13 Rules of Basket Ball pg 1.jpg"
-   ]
-  },
-  {
    "id": "h-lakers-1950",
    "destino": "src/img/historia/lakers-1950.jpg",
    "alt": "Los Minneapolis Lakers, campeones de 1950",
@@ -263,9 +255,11 @@
   {
    "id": "h-erving",
    "destino": "src/img/historia/erving-nets.jpg",
-   "alt": "Julius Erving en su debut con los Nets",
+   "alt": "Julius Erving con los New York Nets de la ABA",
    "candidatos": [
-    "Julius Erving's Nets debut.jpg"
+    "Julius Erving Nets (3).jpeg",
+    "Willie Wise and Julius Erving.jpg",
+    "Julius Erving Nets (2).jpeg"
    ]
   },
   {
