@@ -1,60 +1,16 @@
 {
- "fecha": "Jornada NBA del 14 de noviembre de 2026",
+ "fecha": "Jornada NBA del 15 de noviembre de 2026",
  "partidos": [
   {
-   "local": "New Orleans Pelicans",
-   "al": "NOP",
-   "pl": 108,
-   "visitante": "Denver Nuggets",
-   "av": "DEN",
-   "pv": 116,
-   "fecha": "2026-11-14",
-   "rl": "4-10",
-   "rv": "7-4"
-  },
-  {
-   "local": "Cleveland Cavaliers",
-   "al": "CLE",
-   "pl": 127,
-   "visitante": "Dallas Mavericks",
-   "av": "DAL",
-   "pv": 117,
-   "fecha": "2026-11-14",
-   "rl": "7-7",
-   "rv": "7-6"
-  },
-  {
-   "local": "Miami Heat",
-   "al": "MIA",
-   "pl": 137,
-   "visitante": "Detroit Pistons",
-   "av": "DET",
-   "pv": 117,
-   "fecha": "2026-11-14",
-   "rl": "7-6",
-   "rv": "8-4"
-  },
-  {
-   "local": "Memphis Grizzlies",
-   "al": "MEM",
-   "pl": 129,
-   "visitante": "Brooklyn Nets",
-   "av": "BKN",
-   "pv": 110,
-   "fecha": "2026-11-14",
-   "rl": "9-4",
-   "rv": "3-9"
-  },
-  {
-   "local": "Minnesota Timberwolves",
-   "al": "MIN",
-   "pl": 106,
-   "visitante": "Chicago Bulls",
-   "av": "CHI",
-   "pv": 117,
-   "fecha": "2026-11-14",
-   "rl": "9-4",
-   "rv": "3-9"
+   "local": "Philadelphia 76ers",
+   "al": "PHI",
+   "pl": 131,
+   "visitante": "Indiana Pacers",
+   "av": "IND",
+   "pv": 124,
+   "fecha": "2026-11-15",
+   "rl": "11-3",
+   "rv": "5-9"
   }
  ]
 }
