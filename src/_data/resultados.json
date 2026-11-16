@@ -88,6 +88,17 @@
    "fecha": "2026-11-15",
    "rl": "1-13",
    "rv": "8-6"
+  },
+  {
+   "local": "Sacramento Kings",
+   "al": "SAC",
+   "pl": 103,
+   "visitante": "Oklahoma City Thunder",
+   "av": "OKC",
+   "pv": 125,
+   "fecha": "2026-11-15",
+   "rl": "1-12",
+   "rv": "9-5"
   }
  ]
 }
