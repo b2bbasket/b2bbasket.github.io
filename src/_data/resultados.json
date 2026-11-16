@@ -11,6 +11,61 @@
    "fecha": "2026-11-15",
    "rl": "11-3",
    "rv": "5-9"
+  },
+  {
+   "local": "Phoenix Suns",
+   "al": "PHX",
+   "pl": 123,
+   "visitante": "Los Angeles Lakers",
+   "av": "LAL",
+   "pv": 131,
+   "fecha": "2026-11-15",
+   "rl": "5-7",
+   "rv": "12-2"
+  },
+  {
+   "local": "Los Angeles Clippers",
+   "al": "LAC",
+   "pl": 113,
+   "visitante": "Charlotte Hornets",
+   "av": "CHA",
+   "pv": 105,
+   "fecha": "2026-11-15",
+   "rl": "4-8",
+   "rv": "4-9"
+  },
+  {
+   "local": "Utah Jazz",
+   "al": "UTA",
+   "pl": 102,
+   "visitante": "San Antonio Spurs",
+   "av": "SAS",
+   "pv": 110,
+   "fecha": "2026-11-15",
+   "rl": "1-13",
+   "rv": "12-2"
+  },
+  {
+   "local": "Boston Celtics",
+   "al": "BOS",
+   "pl": 131,
+   "visitante": "Dallas Mavericks",
+   "av": "DAL",
+   "pv": 94,
+   "fecha": "2026-11-15",
+   "rl": "11-2",
+   "rv": "7-7"
+  },
+  {
+   "local": "Toronto Raptors",
+   "al": "TOR",
+   "pl": 108,
+   "visitante": "New York Knicks",
+   "av": "NYK",
+   "pv": 112,
+   "fecha": "2026-11-15",
+   "rl": "5-8",
+   "rv": "7-6"
   }
  ]
 }

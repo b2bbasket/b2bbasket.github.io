@@ -1,5 +1,5 @@
 {
- "actualizado": "15 de noviembre de 2026 (automático)",
+ "actualizado": "16 de noviembre de 2026 (automático)",
  "este": [
   {
    "equipo": "Atlanta Hawks",
@@ -8,7 +8,7 @@
   },
   {
    "equipo": "Boston Celtics",
-   "v": 10,
+   "v": 11,
    "d": 2
   },
   {
@@ -19,7 +19,7 @@
   {
    "equipo": "Charlotte Hornets",
    "v": 4,
-   "d": 8
+   "d": 9
   },
   {
    "equipo": "Chicago Bulls",
@@ -53,7 +53,7 @@
   },
   {
    "equipo": "New York Knicks",
-   "v": 6,
+   "v": 7,
    "d": 6
   },
   {
@@ -69,7 +69,7 @@
   {
    "equipo": "Toronto Raptors",
    "v": 5,
-   "d": 7
+   "d": 8
   },
   {
    "equipo": "Washington Wizards",
@@ -81,7 +81,7 @@
   {
    "equipo": "Dallas Mavericks",
    "v": 7,
-   "d": 6
+   "d": 7
   },
   {
    "equipo": "Denver Nuggets",
@@ -100,12 +100,12 @@
   },
   {
    "equipo": "Los Angeles Clippers",
-   "v": 3,
+   "v": 4,
    "d": 8
   },
   {
    "equipo": "Los Angeles Lakers",
-   "v": 11,
+   "v": 12,
    "d": 2
   },
   {
@@ -131,7 +131,7 @@
   {
    "equipo": "Phoenix Suns",
    "v": 5,
-   "d": 6
+   "d": 7
   },
   {
    "equipo": "Portland Trail Blazers",
@@ -145,13 +145,13 @@
   },
   {
    "equipo": "San Antonio Spurs",
-   "v": 11,
+   "v": 12,
    "d": 2
   },
   {
    "equipo": "Utah Jazz",
    "v": 1,
-   "d": 12
+   "d": 13
   }
  ]
 }
