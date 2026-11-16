@@ -1,6 +1,6 @@
 {
  "_nota": "Generado por scripts/plantillas.mjs a partir de las plantillas de Wikipedia, Wikidata y Wikimedia Commons. No editar a mano.",
- "actualizado": "2026-11-15T11:58:38.282Z",
+ "actualizado": "2026-11-16T08:01:35.063Z",
  "equipos": {
   "POR": {
    "equipo": "Portland Trail Blazers",
@@ -29,7 +29,7 @@
   "MIN": {
    "equipo": "Minnesota Timberwolves",
    "entrenador": "Chris Finch",
-   "revisada": "2026-11-13T17:31:16Z",
+   "revisada": "2026-11-16T04:45:40Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Minnesota_Timberwolves_roster"
   },
   "HOU": {
@@ -9778,7 +9778,7 @@
    "articulo": "Johni Broome",
    "equipo": "Minnesota Timberwolves",
    "abr": "MIN",
-   "dorsal": "–",
+   "dorsal": "12",
    "pos": "C",
    "posicion": "Pívot",
    "altura": 2.06,
