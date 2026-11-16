@@ -1,60 +1,65 @@
 {
- "actualizado": "9 de noviembre de 2026",
+ "actualizado": "16 de noviembre de 2026",
  "puntos": [
   {
    "jugador": "Luka Dončić",
    "equipo": "Los Angeles Lakers",
-   "valor": "40,1"
-  },
-  {
-   "jugador": "Stephen Curry",
-   "equipo": "Golden State Warriors",
-   "valor": "31,3"
+   "valor": "39,0"
   },
   {
    "jugador": "Shai Gilgeous-Alexander",
    "equipo": "Oklahoma City Thunder",
-   "valor": "29,9"
-  },
-  {
-   "jugador": "Victor Wembanyama",
-   "equipo": "San Antonio Spurs",
-   "valor": "29,1"
-  },
-  {
-   "jugador": "Jayson Tatum",
-   "equipo": "Boston Celtics",
-   "valor": "27,9"
-  }
- ],
- "rebotes": [
-  {
-   "jugador": "Domantas Sabonis",
-   "equipo": "Sacramento Kings",
-   "valor": "14,6"
-  },
-  {
-   "jugador": "Karl-Anthony Towns",
-   "equipo": "New York Knicks",
-   "valor": "13,6"
+   "valor": "30,9"
   },
   {
    "jugador": "Giannis Antetokounmpo",
    "equipo": "Miami Heat",
-   "valor": "12,7"
+   "valor": "28,9"
   },
   {
    "jugador": "Victor Wembanyama",
    "equipo": "San Antonio Spurs",
-   "valor": "12,0"
+   "valor": "28,6"
+  },
+  {
+   "jugador": "Stephen Curry",
+   "equipo": "Golden State Warriors",
+   "valor": "27,8"
+  }
+ ],
+ "rebotes": [
+  {
+   "jugador": "Karl-Anthony Towns",
+   "equipo": "New York Knicks",
+   "valor": "13,9"
+  },
+  {
+   "jugador": "Domantas Sabonis",
+   "equipo": "Sacramento Kings",
+   "valor": "13,2"
+  },
+  {
+   "jugador": "Giannis Antetokounmpo",
+   "equipo": "Miami Heat",
+   "valor": "12,5"
+  },
+  {
+   "jugador": "Victor Wembanyama",
+   "equipo": "San Antonio Spurs",
+   "valor": "11,6"
   },
   {
    "jugador": "Rudy Gobert",
    "equipo": "Minnesota Timberwolves",
-   "valor": "11,8"
+   "valor": "11,4"
   }
  ],
  "asistencias": [
+  {
+   "jugador": "Davion Mitchell",
+   "equipo": "Miami Heat",
+   "valor": "9,2"
+  },
   {
    "jugador": "Nikola Jokić",
    "equipo": "Denver Nuggets",
@@ -63,49 +68,44 @@
   {
    "jugador": "Trae Young",
    "equipo": "Washington Wizards",
-   "valor": "8,9"
+   "valor": "8,7"
+  },
+  {
+   "jugador": "Josh Giddey",
+   "equipo": "Chicago Bulls",
+   "valor": "8,5"
   },
   {
    "jugador": "Franz Wagner",
    "equipo": "Orlando Magic",
-   "valor": "8,8"
-  },
-  {
-   "jugador": "Davion Mitchell",
-   "equipo": "Miami Heat",
    "valor": "8,2"
-  },
-  {
-   "jugador": "Jayson Tatum",
-   "equipo": "Boston Celtics",
-   "valor": "8,0"
   }
  ],
  "tapones": [
   {
    "jugador": "Victor Wembanyama",
    "equipo": "San Antonio Spurs",
-   "valor": "3,9"
-  },
-  {
-   "jugador": "Myles Turner",
-   "equipo": "Milwaukee Bucks",
-   "valor": "2,7"
+   "valor": "4,3"
   },
   {
    "jugador": "Walker Kessler",
    "equipo": "Los Angeles Lakers",
-   "valor": "2,4"
+   "valor": "2,2"
   },
   {
    "jugador": "Donovan Clingan",
    "equipo": "Portland Trail Blazers",
+   "valor": "2,2"
+  },
+  {
+   "jugador": "Myles Turner",
+   "equipo": "Milwaukee Bucks",
    "valor": "2,1"
   },
   {
-   "jugador": "Aday Mara",
-   "equipo": "Oklahoma City Thunder",
-   "valor": "1,9"
+   "jugador": "Mo Bamba",
+   "equipo": "Utah Jazz",
+   "valor": "1,8"
   }
  ],
  "robos": [
@@ -115,50 +115,50 @@
    "valor": "2,9"
   },
   {
-   "jugador": "Kris Dunn",
-   "equipo": "Los Angeles Clippers",
-   "valor": "2,8"
+   "jugador": "Matisse Thybulle",
+   "equipo": "Los Angeles Lakers",
+   "valor": "2,2"
   },
   {
-   "jugador": "Zion Williamson",
-   "equipo": "New Orleans Pelicans",
-   "valor": "2,4"
+   "jugador": "Christian Braun",
+   "equipo": "Denver Nuggets",
+   "valor": "2,2"
   },
   {
    "jugador": "Paul George",
    "equipo": "Boston Celtics",
-   "valor": "2,4"
+   "valor": "2,1"
   },
   {
-   "jugador": "Collin Gillespie",
-   "equipo": "Phoenix Suns",
-   "valor": "2,4"
+   "jugador": "Bam Adebayo",
+   "equipo": "Miami Heat",
+   "valor": "2,1"
   }
  ],
  "triples": [
   {
    "jugador": "Luka Dončić",
    "equipo": "Los Angeles Lakers",
-   "valor": "5,8"
+   "valor": "5,4"
   },
   {
    "jugador": "Stephen Curry",
    "equipo": "Golden State Warriors",
-   "valor": "4,8"
+   "valor": "4,3"
+  },
+  {
+   "jugador": "Desmond Bane",
+   "equipo": "Orlando Magic",
+   "valor": "4,1"
+  },
+  {
+   "jugador": "Klay Thompson",
+   "equipo": "Miami Heat",
+   "valor": "4,0"
   },
   {
    "jugador": "Duncan Robinson",
    "equipo": "Detroit Pistons",
-   "valor": "4,4"
-  },
-  {
-   "jugador": "Nickeil Alexander-Walker",
-   "equipo": "Atlanta Hawks",
-   "valor": "3,9"
-  },
-  {
-   "jugador": "Jamal Murray",
-   "equipo": "Denver Nuggets",
    "valor": "3,9"
   }
  ]
