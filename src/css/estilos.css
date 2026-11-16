@@ -1313,3 +1313,55 @@ html[data-tema="oscuro"] .racha--p{color:#FF7A5E}
 .newsletter{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;margin:28px 0 18px;padding:18px 20px;border-radius:18px;background:linear-gradient(135deg,rgba(43,89,255,.1),rgba(255,75,43,.08));border:1px solid var(--linea)}
 .newsletter strong{font-family:var(--titulos);font-size:21px;flex-basis:100%}
 .newsletter span{flex:1;min-width:200px;color:var(--suave)}
+/* Portada · resultados de la jornada con partidos en directo (js/resultados-directo.js) */
+.partido--directo{box-shadow:inset 0 0 0 2px rgba(229,36,59,.75);background:rgba(229,36,59,.1)}
+.partido--directo .partido__fila{opacity:1}
+.partido--directo .partido__fila--gana .partido__abr{background:rgba(255,255,255,.1);color:#fff}
+.partido--directo .partido__fila--gana .partido__puntos{color:#fff}
+.partido__directo{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 2px}
+.partido__vivo{display:inline-flex;align-items:center;gap:7px;background:#E5243B;color:#fff;font-size:11px;font-weight:800;letter-spacing:.08em;padding:4px 10px;border-radius:999px}
+.partido__vivo i{width:7px;height:7px;border-radius:50%;background:#fff;animation:pulsoDirecto 1.2s ease-in-out infinite}
+.partido__periodo{font-size:12px;font-weight:700;color:var(--amarillo)}
+.cifras__vivo{color:#FF6B7D;font-weight:700}
+@media (prefers-reduced-motion:reduce){.partido__vivo i{animation:none}}
+/* Plantillas en dos niveles: equipos y plantilla de cada equipo */
+.equipos-tarjetas{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin:6px 0 20px}
+.equipo-tarjeta{--eq:#2B59FF;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;min-height:150px;padding:18px;border-radius:20px;color:#fff;background:linear-gradient(150deg,var(--eq) 0%,color-mix(in srgb,var(--eq) 55%,#16181D) 100%);box-shadow:0 6px 18px rgba(22,24,29,.12);transition:transform .2s,box-shadow .2s}
+.equipo-tarjeta[hidden]{display:none}
+.equipo-tarjeta:hover,.equipo-tarjeta:focus-visible{transform:translateY(-4px);box-shadow:0 14px 30px color-mix(in srgb,var(--eq) 40%,transparent)}
+.equipo-tarjeta__abr{position:absolute;right:-6px;top:-14px;font-family:var(--titulos);font-weight:800;font-size:84px;line-height:1;color:rgba(255,255,255,.14);letter-spacing:-.02em}
+.equipo-tarjeta__ciudad{position:relative;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.8}
+.equipo-tarjeta__nombre{position:relative;font-family:var(--titulos);font-size:28px;line-height:1.05;margin:2px 0 8px}
+.equipo-tarjeta__datos{position:relative;font-size:12px;font-weight:600;opacity:.85}
+.plantillas-resultados{list-style:none;margin:0 0 18px;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:8px}
+.plantillas-resultados[hidden],.plantillas-resultados li[hidden]{display:none}
+.plantillas-resultados a{display:flex;flex-direction:column;padding:10px 14px;border-radius:14px;background:var(--blanco);border:1px solid var(--linea)}
+.plantillas-resultados a:hover{border-color:var(--acento)}
+.plantillas-resultados span{font-size:12px;color:var(--suave)}
+.plantilla-cab{--eq:#2B59FF;position:relative;overflow:hidden;margin:14px 0 22px;padding:28px 26px;border-radius:24px;color:#fff;background:linear-gradient(140deg,var(--eq),color-mix(in srgb,var(--eq) 50%,#16181D))}
+.plantilla-cab__abr{position:absolute;right:-10px;bottom:-30px;font-family:var(--titulos);font-weight:800;font-size:170px;line-height:1;color:rgba(255,255,255,.12)}
+.plantilla-cab__kicker{position:relative;margin:0;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+.plantilla-cab h1{position:relative;font-family:var(--titulos);font-size:clamp(32px,5vw,52px);margin:6px 0 8px;color:#fff}
+.plantilla-cab__datos{position:relative;margin:0 0 12px;opacity:.9}
+.plantilla-cab__ficha{position:relative;display:inline-block;font-weight:700;background:rgba(255,255,255,.16);padding:8px 14px;border-radius:999px;color:#fff}
+.plantilla-cab__ficha:hover{background:rgba(255,255,255,.26)}
+@media (max-width:600px){.equipos-tarjetas{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.equipo-tarjeta{min-height:120px;padding:14px}.equipo-tarjeta__nombre{font-size:22px}.equipo-tarjeta__abr{font-size:64px}}
+/* Portada · juego: racha y puntos encima de «Jugar ahora» (datos reales de js/juego.js) */
+.juego-hero__progreso{display:inline-flex;align-items:center;gap:4px;padding:4px 14px 4px 6px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14)}
+.jh-racha{position:relative;display:inline-grid;place-items:center;width:34px;height:42px}
+.jh-racha__fuego{position:absolute;inset:0;fill:#6B7080;opacity:.75;transition:fill .3s,opacity .3s;transform-origin:50% 90%}
+.jh-racha__num{position:relative;top:7px;font-family:var(--titulos);font-size:15px;line-height:1;color:#fff;font-variant-numeric:tabular-nums}
+.jh-racha.encendida .jh-racha__fuego{fill:url(#jhFuego);opacity:1;filter:drop-shadow(0 0 8px rgba(255,120,43,.75));animation:llamaHero 1.8s ease-in-out infinite}
+.jh-racha.encendida .jh-racha__num{color:#16181D}
+.jh-puntos{display:inline-flex;align-items:baseline;gap:5px;padding-left:10px;margin-left:4px;border-left:1px solid rgba(255,255,255,.18);color:#fff}
+.jh-puntos b{font-family:var(--titulos);font-size:22px;line-height:1;color:var(--amarillo);font-variant-numeric:tabular-nums}
+.jh-puntos small{font-size:12px;font-weight:700;color:#A9AEBD}
+@media (prefers-reduced-motion:reduce){.jh-racha.encendida .jh-racha__fuego{animation:none}}
+@keyframes llamaHero{0%,100%{transform:scale(1) rotate(-4deg)}50%{transform:scale(1.1) rotate(4deg)}}
+@media (max-width:860px){.juego-hero__progreso{order:1}.juego-hero__estado{order:2}.juego-hero__cta{order:3;flex-basis:100%}}
+.jh-racha{width:38px}
+.jh-racha__num{top:8px;font-size:16px}
+.jh-corto{display:none}
+@media (max-width:480px){.jh-largo{display:none}.jh-corto{display:inline}.juego-hero__estado{font-size:12px;padding:6px 10px}}
+.equipo-tarjeta__abr{top:-2px}
+.plantilla-cab h1{line-height:1.05}
