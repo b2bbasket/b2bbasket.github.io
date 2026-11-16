@@ -66,6 +66,28 @@
    "fecha": "2026-11-15",
    "rl": "5-8",
    "rv": "7-6"
+  },
+  {
+   "local": "Washington Wizards",
+   "al": "WAS",
+   "pl": 119,
+   "visitante": "Houston Rockets",
+   "av": "HOU",
+   "pv": 147,
+   "fecha": "2026-11-15",
+   "rl": "4-10",
+   "rv": "11-3"
+  },
+  {
+   "local": "Milwaukee Bucks",
+   "al": "MIL",
+   "pl": 106,
+   "visitante": "Atlanta Hawks",
+   "av": "ATL",
+   "pv": 113,
+   "fecha": "2026-11-15",
+   "rl": "1-13",
+   "rv": "8-6"
   }
  ]
 }

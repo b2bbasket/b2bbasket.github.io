@@ -3,7 +3,7 @@
  "este": [
   {
    "equipo": "Atlanta Hawks",
-   "v": 7,
+   "v": 8,
    "d": 6
   },
   {
@@ -49,7 +49,7 @@
   {
    "equipo": "Milwaukee Bucks",
    "v": 1,
-   "d": 12
+   "d": 13
   },
   {
    "equipo": "New York Knicks",
@@ -74,7 +74,7 @@
   {
    "equipo": "Washington Wizards",
    "v": 4,
-   "d": 9
+   "d": 10
   }
  ],
  "oeste": [
@@ -95,7 +95,7 @@
   },
   {
    "equipo": "Houston Rockets",
-   "v": 10,
+   "v": 11,
    "d": 3
   },
   {
