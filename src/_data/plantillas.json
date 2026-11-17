@@ -1,6 +1,6 @@
 {
  "_nota": "Generado por scripts/plantillas.mjs a partir de las plantillas de Wikipedia, Wikidata y Wikimedia Commons. No editar a mano.",
- "actualizado": "2026-11-16T08:01:35.063Z",
+ "actualizado": "2026-11-17T07:04:35.916Z",
  "equipos": {
   "POR": {
    "equipo": "Portland Trail Blazers",
@@ -29,7 +29,7 @@
   "MIN": {
    "equipo": "Minnesota Timberwolves",
    "entrenador": "Chris Finch",
-   "revisada": "2026-11-16T04:45:40Z",
+   "revisada": "2026-11-16T20:04:21Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Minnesota_Timberwolves_roster"
   },
   "HOU": {
@@ -65,7 +65,7 @@
   "UTA": {
    "equipo": "Utah Jazz",
    "entrenador": "Will Hardy",
-   "revisada": "2026-11-13T17:17:39Z",
+   "revisada": "2026-11-17T01:34:39Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Utah_Jazz_roster"
   },
   "NYK": {
@@ -107,7 +107,7 @@
   "MEM": {
    "equipo": "Memphis Grizzlies",
    "entrenador": "Tuomas Iisalo",
-   "revisada": "2026-11-14T03:39:37Z",
+   "revisada": "2026-11-16T20:02:57Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Memphis_Grizzlies_roster"
   },
   "LAC": {
@@ -149,7 +149,7 @@
   "MIL": {
    "equipo": "Milwaukee Bucks",
    "entrenador": "Taylor Jenkins",
-   "revisada": "2026-11-09T14:48:29Z",
+   "revisada": "2026-11-16T20:03:48Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Milwaukee_Bucks_roster"
   },
   "BKN": {
@@ -179,7 +179,7 @@
   "WAS": {
    "equipo": "Washington Wizards",
    "entrenador": "Brian Keefe",
-   "revisada": "2026-11-09T00:09:45Z",
+   "revisada": "2026-11-16T15:45:10Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Washington_Wizards_roster"
   }
  },
@@ -7941,7 +7941,7 @@
    "peso": 95,
    "nacimiento": "2004-12-17",
    "procedencia": "South Carolina",
-   "lesionado": false,
+   "lesionado": true,
    "doble_via": false,
    "g_league": false,
    "pais": "Estados Unidos",
@@ -8900,9 +8900,15 @@
    ],
    "lugar": "",
    "wikipedia": "https://en.wikipedia.org/wiki/Tre_Donaldson",
-   "wikipedia_es": "",
+   "wikipedia_es": "https://es.wikipedia.org/wiki/Tre_Donaldson",
    "wikidata": "Q131367543",
-   "foto": null,
+   "foto": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Tre_Donaldson.jpg/500px-Tre_Donaldson.jpg",
+    "origen": "https://commons.wikimedia.org/wiki/File:Tre_Donaldson.jpg",
+    "autor": "MGoBlog",
+    "licencia": "CC BY-SA 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by-sa/2.0"
+   },
    "slug": "tre-donaldson"
   },
   {
@@ -9374,7 +9380,7 @@
    "peso": 84,
    "nacimiento": "2003-05-21",
    "procedencia": "",
-   "lesionado": false,
+   "lesionado": true,
    "doble_via": false,
    "g_league": false,
    "pais": "Francia",
@@ -9726,7 +9732,7 @@
    "peso": 93,
    "nacimiento": "2001-10-13",
    "procedencia": "UCLA",
-   "lesionado": false,
+   "lesionado": true,
    "doble_via": false,
    "g_league": false,
    "pais": "Estados Unidos",
@@ -15865,38 +15871,6 @@
    "slug": "tony-bradley"
   },
   {
-   "nombre": "Trey Alexander",
-   "articulo": "Trey Alexander",
-   "equipo": "Utah Jazz",
-   "abr": "UTA",
-   "dorsal": "15",
-   "pos": "G",
-   "posicion": "Base o escolta",
-   "altura": 1.96,
-   "peso": 84,
-   "nacimiento": "2003-05-02",
-   "procedencia": "Creighton",
-   "lesionado": false,
-   "doble_via": true,
-   "g_league": false,
-   "pais": "Estados Unidos",
-   "paises": [
-    "Estados Unidos"
-   ],
-   "lugar": "Oklahoma City, Estados Unidos",
-   "wikipedia": "https://en.wikipedia.org/wiki/Trey_Alexander",
-   "wikipedia_es": "https://es.wikipedia.org/wiki/Trey_Alexander",
-   "wikidata": "Q116848936",
-   "foto": {
-    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Trey_Alexander_2024.jpg/500px-Trey_Alexander_2024.jpg",
-    "origen": "https://commons.wikimedia.org/wiki/File:Trey_Alexander_2024.jpg",
-    "autor": "Governor Eric Holcomb",
-    "licencia": "Public domain",
-    "licencia_url": ""
-   },
-   "slug": "trey-alexander"
-  },
-  {
    "nombre": "AJ Dybantsa",
    "articulo": "AJ Dybantsa",
    "equipo": "Washington Wizards",
@@ -16357,7 +16331,7 @@
    "peso": 86,
    "nacimiento": "2006-03-07",
    "procedencia": "Texas",
-   "lesionado": false,
+   "lesionado": true,
    "doble_via": false,
    "g_league": false,
    "pais": "Estados Unidos",
