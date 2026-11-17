@@ -9,12 +9,12 @@
   {
    "equipo": "Boston Celtics",
    "v": 11,
-   "d": 2
+   "d": 3
   },
   {
    "equipo": "Brooklyn Nets",
    "v": 3,
-   "d": 9
+   "d": 10
   },
   {
    "equipo": "Charlotte Hornets",
@@ -24,11 +24,11 @@
   {
    "equipo": "Chicago Bulls",
    "v": 3,
-   "d": 9
+   "d": 10
   },
   {
    "equipo": "Cleveland Cavaliers",
-   "v": 7,
+   "v": 8,
    "d": 7
   },
   {
@@ -43,7 +43,7 @@
   },
   {
    "equipo": "Miami Heat",
-   "v": 7,
+   "v": 8,
    "d": 6
   },
   {
@@ -58,12 +58,12 @@
   },
   {
    "equipo": "Orlando Magic",
-   "v": 5,
+   "v": 6,
    "d": 7
   },
   {
    "equipo": "Philadelphia 76ers",
-   "v": 11,
+   "v": 12,
    "d": 3
   },
   {
@@ -74,7 +74,7 @@
   {
    "equipo": "Washington Wizards",
    "v": 4,
-   "d": 10
+   "d": 11
   }
  ],
  "oeste": [
@@ -86,17 +86,17 @@
   {
    "equipo": "Denver Nuggets",
    "v": 7,
-   "d": 4
+   "d": 5
   },
   {
    "equipo": "Golden State Warriors",
    "v": 8,
-   "d": 5
+   "d": 6
   },
   {
    "equipo": "Houston Rockets",
    "v": 11,
-   "d": 3
+   "d": 4
   },
   {
    "equipo": "Los Angeles Clippers",
@@ -110,17 +110,17 @@
   },
   {
    "equipo": "Memphis Grizzlies",
-   "v": 9,
+   "v": 10,
    "d": 4
   },
   {
    "equipo": "Minnesota Timberwolves",
-   "v": 9,
+   "v": 10,
    "d": 4
   },
   {
    "equipo": "New Orleans Pelicans",
-   "v": 4,
+   "v": 5,
    "d": 10
   },
   {
@@ -130,13 +130,13 @@
   },
   {
    "equipo": "Phoenix Suns",
-   "v": 5,
+   "v": 6,
    "d": 7
   },
   {
    "equipo": "Portland Trail Blazers",
    "v": 9,
-   "d": 3
+   "d": 4
   },
   {
    "equipo": "Sacramento Kings",
