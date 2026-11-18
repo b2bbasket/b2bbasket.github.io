@@ -35,6 +35,17 @@
    "rv": "9-4"
   },
   {
+   "local": "Los Angeles Lakers",
+   "al": "LAL",
+   "pl": 118,
+   "visitante": "Charlotte Hornets",
+   "av": "CHA",
+   "pv": 114,
+   "fecha": "2026-11-17",
+   "rl": "13-2",
+   "rv": "4-10"
+  },
+  {
    "local": "Los Angeles Clippers",
    "al": "LAC",
    "pl": 107,
