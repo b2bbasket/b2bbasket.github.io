@@ -1,6 +1,6 @@
 {
  "_nota": "Generado por scripts/plantillas.mjs a partir de las plantillas de Wikipedia, Wikidata y Wikimedia Commons. No editar a mano.",
- "actualizado": "2026-11-17T07:04:35.916Z",
+ "actualizado": "2026-11-18T07:06:58.909Z",
  "equipos": {
   "POR": {
    "equipo": "Portland Trail Blazers",
@@ -35,7 +35,7 @@
   "HOU": {
    "equipo": "Houston Rockets",
    "entrenador": "Ime Udoka",
-   "revisada": "2026-11-15T01:58:01Z",
+   "revisada": "2026-11-17T16:50:02Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Houston_Rockets_roster"
   },
   "CHA": {
@@ -53,7 +53,7 @@
   "ATL": {
    "equipo": "Atlanta Hawks",
    "entrenador": "Quin Snyder",
-   "revisada": "2026-10-30T15:30:42Z",
+   "revisada": "2026-11-17T18:02:42Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Atlanta_Hawks_roster"
   },
   "NOP": {
@@ -65,7 +65,7 @@
   "UTA": {
    "equipo": "Utah Jazz",
    "entrenador": "Will Hardy",
-   "revisada": "2026-11-17T01:34:39Z",
+   "revisada": "2026-11-18T01:59:16Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Utah_Jazz_roster"
   },
   "NYK": {
@@ -107,7 +107,7 @@
   "MEM": {
    "equipo": "Memphis Grizzlies",
    "entrenador": "Tuomas Iisalo",
-   "revisada": "2026-11-16T20:02:57Z",
+   "revisada": "2026-11-18T01:42:12Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Memphis_Grizzlies_roster"
   },
   "LAC": {
@@ -161,7 +161,7 @@
   "CHI": {
    "equipo": "Chicago Bulls",
    "entrenador": "Tiago Splitter",
-   "revisada": "2026-11-14T02:13:13Z",
+   "revisada": "2026-11-17T14:56:34Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Chicago_Bulls_roster"
   },
   "IND": {
@@ -286,8 +286,8 @@
    "equipo": "Atlanta Hawks",
    "abr": "ATL",
    "dorsal": "24",
-   "pos": "F",
-   "posicion": "Alero o ala-pívot",
+   "pos": "SF",
+   "posicion": "Alero",
    "altura": 1.98,
    "peso": 102,
    "nacimiento": "1999-03-03",
@@ -499,38 +499,6 @@
    "slug": "jock-landale"
   },
   {
-   "nombre": "Keshon Gilbert",
-   "articulo": "Keshon Gilbert",
-   "equipo": "Atlanta Hawks",
-   "abr": "ATL",
-   "dorsal": "00",
-   "pos": "G",
-   "posicion": "Base o escolta",
-   "altura": 1.91,
-   "peso": 91,
-   "nacimiento": "2003-06-30",
-   "procedencia": "Iowa State",
-   "lesionado": false,
-   "doble_via": true,
-   "g_league": false,
-   "pais": "Estados Unidos",
-   "paises": [
-    "Estados Unidos"
-   ],
-   "lugar": "San Luis, Estados Unidos",
-   "wikipedia": "https://en.wikipedia.org/wiki/Keshon_Gilbert",
-   "wikipedia_es": "https://es.wikipedia.org/wiki/Keshon_Gilbert",
-   "wikidata": "Q132455351",
-   "foto": {
-    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Keshon_Gilbert_G-League_2026_%28cropped%29.jpg/500px-Keshon_Gilbert_G-League_2026_%28cropped%29.jpg",
-    "origen": "https://commons.wikimedia.org/wiki/File:Keshon_Gilbert_G-League_2026_(cropped).jpg",
-    "autor": "Rh723",
-    "licencia": "CC BY 4.0",
-    "licencia_url": "https://creativecommons.org/licenses/by/4.0"
-   },
-   "slug": "keshon-gilbert"
-  },
-  {
    "nombre": "Kingston Flemings",
    "articulo": "Kingston Flemings",
    "equipo": "Atlanta Hawks",
@@ -677,6 +645,33 @@
     "licencia_url": "https://creativecommons.org/licenses/by-sa/2.0"
    },
    "slug": "onyeka-okongwu"
+  },
+  {
+   "nombre": "Rafael Castro",
+   "articulo": "Rafael Castro",
+   "equipo": "Atlanta Hawks",
+   "abr": "ATL",
+   "dorsal": "30",
+   "pos": "C",
+   "posicion": "Pívot",
+   "altura": 2.11,
+   "peso": 102,
+   "nacimiento": "2003-03-30",
+   "procedencia": "George Washington",
+   "lesionado": false,
+   "doble_via": true,
+   "g_league": false,
+   "pais": "República Dominicana",
+   "paises": [
+    "República Dominicana",
+    "Estados Unidos"
+   ],
+   "lugar": "",
+   "wikipedia": "https://en.wikipedia.org/wiki/Rafael_Castro",
+   "wikipedia_es": "",
+   "wikidata": "Q135360243",
+   "foto": null,
+   "slug": "rafael-castro"
   },
   {
    "nombre": "RayJ Dennis",
@@ -2460,7 +2455,7 @@
    "procedencia": "Texas",
    "lesionado": false,
    "doble_via": false,
-   "g_league": true,
+   "g_league": false,
    "pais": "Estados Unidos",
    "paises": [
     "Estados Unidos"
@@ -2797,7 +2792,7 @@
    "procedencia": "Fresno State",
    "lesionado": false,
    "doble_via": false,
-   "g_league": false,
+   "g_league": true,
    "pais": "Estados Unidos",
    "paises": [
     "Estados Unidos"
@@ -5117,7 +5112,7 @@
    ],
    "lugar": "Owerri, Nigeria",
    "wikipedia": "https://en.wikipedia.org/wiki/Ugonna_Onyenso",
-   "wikipedia_es": "",
+   "wikipedia_es": "https://es.wikipedia.org/wiki/Ugonna_Onyenso",
    "wikidata": "Q113383777",
    "foto": null,
    "slug": "ugonna-onyenso"
@@ -8135,7 +8130,7 @@
    "procedencia": "",
    "lesionado": false,
    "doble_via": false,
-   "g_league": true,
+   "g_league": false,
    "pais": "México",
    "paises": [
     "México"
@@ -15547,6 +15542,32 @@
     "licencia_url": ""
    },
    "slug": "jaxson-hayes"
+  },
+  {
+   "nombre": "Jonas Aidoo",
+   "articulo": "Jonas Aidoo",
+   "equipo": "Utah Jazz",
+   "abr": "UTA",
+   "dorsal": "25",
+   "pos": "C",
+   "posicion": "Pívot",
+   "altura": 2.11,
+   "peso": 109,
+   "nacimiento": "2002-12-10",
+   "procedencia": "Arkansas",
+   "lesionado": false,
+   "doble_via": true,
+   "g_league": false,
+   "pais": "Estados Unidos",
+   "paises": [
+    "Estados Unidos"
+   ],
+   "lugar": "Durham, Estados Unidos",
+   "wikipedia": "https://en.wikipedia.org/wiki/Jonas_Aidoo",
+   "wikipedia_es": "",
+   "wikidata": "Q125132516",
+   "foto": null,
+   "slug": "jonas-aidoo"
   },
   {
    "nombre": "Josh Green",
