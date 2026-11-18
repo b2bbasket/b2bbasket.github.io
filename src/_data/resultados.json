@@ -1,60 +1,16 @@
 {
- "fecha": "Jornada NBA del 16 de noviembre de 2026",
+ "fecha": "Jornada NBA del 17 de noviembre de 2026",
  "partidos": [
   {
-   "local": "Boston Celtics",
-   "al": "BOS",
-   "pl": 105,
-   "visitante": "Orlando Magic",
-   "av": "ORL",
-   "pv": 115,
-   "fecha": "2026-11-16",
-   "rl": "11-3",
-   "rv": "6-7"
-  },
-  {
-   "local": "Cleveland Cavaliers",
-   "al": "CLE",
-   "pl": 126,
-   "visitante": "Chicago Bulls",
-   "av": "CHI",
-   "pv": 115,
-   "fecha": "2026-11-16",
-   "rl": "8-7",
-   "rv": "3-10"
-  },
-  {
-   "local": "Washington Wizards",
-   "al": "WAS",
-   "pl": 120,
-   "visitante": "Memphis Grizzlies",
-   "av": "MEM",
-   "pv": 136,
-   "fecha": "2026-11-16",
-   "rl": "4-11",
-   "rv": "10-4"
-  },
-  {
-   "local": "Brooklyn Nets",
-   "al": "BKN",
-   "pl": 123,
-   "visitante": "Philadelphia 76ers",
-   "av": "PHI",
-   "pv": 135,
-   "fecha": "2026-11-16",
-   "rl": "3-10",
-   "rv": "12-3"
-  },
-  {
-   "local": "Miami Heat",
-   "al": "MIA",
-   "pl": 128,
-   "visitante": "Houston Rockets",
-   "av": "HOU",
-   "pv": 110,
-   "fecha": "2026-11-16",
-   "rl": "8-6",
-   "rv": "11-4"
+   "local": "Toronto Raptors",
+   "al": "TOR",
+   "pl": 102,
+   "visitante": "New York Knicks",
+   "av": "NYK",
+   "pv": 111,
+   "fecha": "2026-11-17",
+   "rl": "5-9",
+   "rv": "8-6"
   },
   {
    "local": "Minnesota Timberwolves",
@@ -62,32 +18,21 @@
    "pl": 106,
    "visitante": "Portland Trail Blazers",
    "av": "POR",
-   "pv": 98,
-   "fecha": "2026-11-16",
-   "rl": "10-4",
+   "pv": 105,
+   "fecha": "2026-11-17",
+   "rl": "11-4",
+   "rv": "9-5"
+  },
+  {
+   "local": "San Antonio Spurs",
+   "al": "SAS",
+   "pl": 93,
+   "visitante": "Detroit Pistons",
+   "av": "DET",
+   "pv": 105,
+   "fecha": "2026-11-17",
+   "rl": "12-3",
    "rv": "9-4"
-  },
-  {
-   "local": "New Orleans Pelicans",
-   "al": "NOP",
-   "pl": 115,
-   "visitante": "Golden State Warriors",
-   "av": "GSW",
-   "pv": 94,
-   "fecha": "2026-11-16",
-   "rl": "5-10",
-   "rv": "8-6"
-  },
-  {
-   "local": "Denver Nuggets",
-   "al": "DEN",
-   "pl": 105,
-   "visitante": "Phoenix Suns",
-   "av": "PHX",
-   "pv": 117,
-   "fecha": "2026-11-16",
-   "rl": "7-5",
-   "rv": "6-7"
   }
  ]
 }
