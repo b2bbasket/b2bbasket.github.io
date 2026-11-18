@@ -33,6 +33,17 @@
    "fecha": "2026-11-17",
    "rl": "12-3",
    "rv": "9-4"
+  },
+  {
+   "local": "Los Angeles Clippers",
+   "al": "LAC",
+   "pl": 107,
+   "visitante": "Utah Jazz",
+   "av": "UTA",
+   "pv": 132,
+   "fecha": "2026-11-17",
+   "rl": "4-9",
+   "rv": "2-13"
   }
  ]
 }
