@@ -9,7 +9,7 @@
   {
    "equipo": "Boston Celtics",
    "v": 11,
-   "d": 3
+   "d": 4
   },
   {
    "equipo": "Brooklyn Nets",
@@ -33,7 +33,7 @@
   },
   {
    "equipo": "Detroit Pistons",
-   "v": 9,
+   "v": 10,
    "d": 4
   },
   {
@@ -80,18 +80,18 @@
  "oeste": [
   {
    "equipo": "Dallas Mavericks",
-   "v": 7,
+   "v": 8,
    "d": 7
   },
   {
    "equipo": "Denver Nuggets",
-   "v": 7,
+   "v": 8,
    "d": 5
   },
   {
    "equipo": "Golden State Warriors",
    "v": 8,
-   "d": 6
+   "d": 7
   },
   {
    "equipo": "Houston Rockets",
@@ -106,7 +106,7 @@
   {
    "equipo": "Los Angeles Lakers",
    "v": 13,
-   "d": 2
+   "d": 3
   },
   {
    "equipo": "Memphis Grizzlies",
@@ -121,7 +121,7 @@
   {
    "equipo": "New Orleans Pelicans",
    "v": 5,
-   "d": 10
+   "d": 11
   },
   {
    "equipo": "Oklahoma City Thunder",
@@ -130,7 +130,7 @@
   },
   {
    "equipo": "Phoenix Suns",
-   "v": 6,
+   "v": 7,
    "d": 7
   },
   {
@@ -141,7 +141,7 @@
   {
    "equipo": "Sacramento Kings",
    "v": 1,
-   "d": 12
+   "d": 13
   },
   {
    "equipo": "San Antonio Spurs",
@@ -150,7 +150,7 @@
   },
   {
    "equipo": "Utah Jazz",
-   "v": 2,
+   "v": 3,
    "d": 13
   }
  ]

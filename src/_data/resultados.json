@@ -68,6 +68,17 @@
    "rv": "5-11"
   },
   {
+   "local": "New Orleans Pelicans",
+   "al": "NOP",
+   "pl": 109,
+   "visitante": "Detroit Pistons",
+   "av": "DET",
+   "pv": 122,
+   "fecha": "2026-11-18",
+   "rl": "5-11",
+   "rv": "10-4"
+  },
+  {
    "local": "Oklahoma City Thunder",
    "al": "OKC",
    "pl": 112,
@@ -77,6 +88,50 @@
    "fecha": "2026-11-18",
    "rl": "9-6",
    "rv": "9-6"
+  },
+  {
+   "local": "Denver Nuggets",
+   "al": "DEN",
+   "pl": 105,
+   "visitante": "Boston Celtics",
+   "av": "BOS",
+   "pv": 101,
+   "fecha": "2026-11-18",
+   "rl": "8-5",
+   "rv": "11-4"
+  },
+  {
+   "local": "Dallas Mavericks",
+   "al": "DAL",
+   "pl": 116,
+   "visitante": "Golden State Warriors",
+   "av": "GSW",
+   "pv": 94,
+   "fecha": "2026-11-18",
+   "rl": "8-7",
+   "rv": "8-7"
+  },
+  {
+   "local": "Los Angeles Lakers",
+   "al": "LAL",
+   "pl": 97,
+   "visitante": "Utah Jazz",
+   "av": "UTA",
+   "pv": 109,
+   "fecha": "2026-11-18",
+   "rl": "13-3",
+   "rv": "3-13"
+  },
+  {
+   "local": "Sacramento Kings",
+   "al": "SAC",
+   "pl": 107,
+   "visitante": "Phoenix Suns",
+   "av": "PHX",
+   "pv": 128,
+   "fecha": "2026-11-18",
+   "rl": "1-13",
+   "rv": "7-7"
   }
  ]
 }
