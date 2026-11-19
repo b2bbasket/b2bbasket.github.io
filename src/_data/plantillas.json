@@ -1,6 +1,6 @@
 {
  "_nota": "Generado por scripts/plantillas.mjs a partir de las plantillas de Wikipedia, Wikidata y Wikimedia Commons. No editar a mano.",
- "actualizado": "2026-11-18T07:06:58.909Z",
+ "actualizado": "2026-11-19T07:11:04.101Z",
  "equipos": {
   "POR": {
    "equipo": "Portland Trail Blazers",
@@ -41,7 +41,7 @@
   "CHA": {
    "equipo": "Charlotte Hornets",
    "entrenador": "Charles Lee",
-   "revisada": "2026-11-13T17:17:05Z",
+   "revisada": "2026-11-19T03:03:19Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Charlotte_Hornets_roster"
   },
   "SAC": {
@@ -119,7 +119,7 @@
   "DET": {
    "equipo": "Detroit Pistons",
    "entrenador": "J. B. Bickerstaff",
-   "revisada": "2026-11-13T17:25:08Z",
+   "revisada": "2026-11-19T05:01:04Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Detroit_Pistons_roster"
   },
   "PHI": {
@@ -173,7 +173,7 @@
   "CLE": {
    "equipo": "Cleveland Cavaliers",
    "entrenador": "Kenny Atkinson",
-   "revisada": "2026-11-08T23:51:18Z",
+   "revisada": "2026-11-19T02:26:56Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Cleveland_Cavaliers_roster"
   },
   "WAS": {
@@ -1825,7 +1825,7 @@
    ],
    "lugar": "Billings, Estados Unidos",
    "wikipedia": "https://en.wikipedia.org/wiki/Tyler_Bilodeau",
-   "wikipedia_es": "",
+   "wikipedia_es": "https://es.wikipedia.org/wiki/Tyler_Bilodeau",
    "wikidata": "Q133277046",
    "foto": null,
    "slug": "tyler-bilodeau"
@@ -2037,7 +2037,7 @@
    "procedencia": "Washington",
    "lesionado": false,
    "doble_via": false,
-   "g_league": false,
+   "g_league": true,
    "pais": "Alemania",
    "paises": [
     "Alemania"
@@ -2550,7 +2550,7 @@
    "paises": [
     "Estados Unidos"
    ],
-   "lugar": "",
+   "lugar": "Columbus, Estados Unidos",
    "wikipedia": "https://en.wikipedia.org/wiki/Jaylin_Sellers",
    "wikipedia_es": "https://es.wikipedia.org/wiki/Jaylin_Sellers",
    "wikidata": "Q137892280",
@@ -2861,7 +2861,7 @@
    "paises": [
     "Estados Unidos"
    ],
-   "lugar": "",
+   "lugar": "Poughkeepsie, Estados Unidos",
    "wikipedia": "https://en.wikipedia.org/wiki/Tobe_Awaka",
    "wikipedia_es": "https://es.wikipedia.org/wiki/Tobe_Awaka",
    "wikidata": "Q133567052",
@@ -3343,32 +3343,6 @@
    "slug": "peyton-watson"
   },
   {
-   "nombre": "Riley Minix",
-   "articulo": "Riley Minix",
-   "equipo": "Cleveland Cavaliers",
-   "abr": "CLE",
-   "dorsal": "12",
-   "pos": "F",
-   "posicion": "Alero o ala-pívot",
-   "altura": 2.01,
-   "peso": 104,
-   "nacimiento": "2000-09-22",
-   "procedencia": "Morehead State",
-   "lesionado": false,
-   "doble_via": true,
-   "g_league": false,
-   "pais": "Estados Unidos",
-   "paises": [
-    "Estados Unidos"
-   ],
-   "lugar": "Condado de Río Indio, Estados Unidos",
-   "wikipedia": "https://en.wikipedia.org/wiki/Riley_Minix",
-   "wikipedia_es": "https://es.wikipedia.org/wiki/Riley_Minix",
-   "wikidata": "Q124788516",
-   "foto": null,
-   "slug": "riley-minix"
-  },
-  {
    "nombre": "Sam Merrill",
    "articulo": "Sam Merrill",
    "equipo": "Cleveland Cavaliers",
@@ -3463,6 +3437,32 @@
     "licencia_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
    },
    "slug": "tyrese-proctor"
+  },
+  {
+   "nombre": "Zack Austin",
+   "articulo": "Zack Austin",
+   "equipo": "Cleveland Cavaliers",
+   "abr": "CLE",
+   "dorsal": "55",
+   "pos": "G",
+   "posicion": "Base o escolta",
+   "altura": 1.96,
+   "peso": 98,
+   "nacimiento": "2001-08-11",
+   "procedencia": "Pittsburgh",
+   "lesionado": false,
+   "doble_via": true,
+   "g_league": false,
+   "pais": "Estados Unidos",
+   "paises": [
+    "Estados Unidos"
+   ],
+   "lugar": "",
+   "wikipedia": "https://en.wikipedia.org/wiki/Zack_Austin",
+   "wikipedia_es": "",
+   "wikidata": "Q136387903",
+   "foto": null,
+   "slug": "zack-austin"
   },
   {
    "nombre": "Caleb Martin",
@@ -4814,7 +4814,7 @@
    "peso": 75,
    "nacimiento": "1999-07-02",
    "procedencia": "Arkansas",
-   "lesionado": true,
+   "lesionado": false,
    "doble_via": false,
    "g_league": false,
    "pais": "Estados Unidos",
