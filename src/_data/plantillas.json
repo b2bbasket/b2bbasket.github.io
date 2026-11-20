@@ -1,6 +1,6 @@
 {
  "_nota": "Generado por scripts/plantillas.mjs a partir de las plantillas de Wikipedia, Wikidata y Wikimedia Commons. No editar a mano.",
- "actualizado": "2026-11-19T07:11:04.101Z",
+ "actualizado": "2026-11-20T07:04:53.658Z",
  "equipos": {
   "POR": {
    "equipo": "Portland Trail Blazers",
@@ -35,7 +35,7 @@
   "HOU": {
    "equipo": "Houston Rockets",
    "entrenador": "Ime Udoka",
-   "revisada": "2026-11-17T16:50:02Z",
+   "revisada": "2026-11-20T00:02:05Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Houston_Rockets_roster"
   },
   "CHA": {
@@ -113,7 +113,7 @@
   "LAC": {
    "equipo": "Los Angeles Clippers",
    "entrenador": "Tyronn Lue",
-   "revisada": "2026-11-09T15:18:32Z",
+   "revisada": "2026-11-20T03:07:26Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Los_Angeles_Clippers_roster"
   },
   "DET": {
@@ -5777,7 +5777,7 @@
    "procedencia": "Ohio State",
    "lesionado": false,
    "doble_via": false,
-   "g_league": false,
+   "g_league": true,
    "pais": "Estados Unidos",
    "paises": [
     "Estados Unidos"
@@ -7259,7 +7259,7 @@
    "peso": 110,
    "nacimiento": "2003-03-14",
    "procedencia": "Penn State",
-   "lesionado": true,
+   "lesionado": false,
    "doble_via": false,
    "g_league": false,
    "pais": "Suiza",
