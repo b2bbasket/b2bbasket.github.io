@@ -3,7 +3,7 @@
  "este": [
   {
    "equipo": "Atlanta Hawks",
-   "v": 9,
+   "v": 10,
    "d": 6
   },
   {
@@ -14,32 +14,32 @@
   {
    "equipo": "Brooklyn Nets",
    "v": 3,
-   "d": 11
+   "d": 12
   },
   {
    "equipo": "Charlotte Hornets",
    "v": 4,
-   "d": 10
+   "d": 11
   },
   {
    "equipo": "Chicago Bulls",
    "v": 4,
-   "d": 10
+   "d": 11
   },
   {
    "equipo": "Cleveland Cavaliers",
-   "v": 8,
+   "v": 9,
    "d": 8
   },
   {
    "equipo": "Detroit Pistons",
    "v": 10,
-   "d": 4
+   "d": 5
   },
   {
    "equipo": "Indiana Pacers",
    "v": 5,
-   "d": 10
+   "d": 11
   },
   {
    "equipo": "Miami Heat",
@@ -58,7 +58,7 @@
   },
   {
    "equipo": "Orlando Magic",
-   "v": 6,
+   "v": 7,
    "d": 8
   },
   {
@@ -68,12 +68,12 @@
   },
   {
    "equipo": "Toronto Raptors",
-   "v": 5,
+   "v": 6,
    "d": 10
   },
   {
    "equipo": "Washington Wizards",
-   "v": 5,
+   "v": 6,
    "d": 11
   }
  ],
@@ -121,11 +121,11 @@
   {
    "equipo": "New Orleans Pelicans",
    "v": 5,
-   "d": 11
+   "d": 12
   },
   {
    "equipo": "Oklahoma City Thunder",
-   "v": 9,
+   "v": 10,
    "d": 6
   },
   {
