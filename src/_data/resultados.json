@@ -66,6 +66,39 @@
    "fecha": "2026-11-20",
    "rl": "10-6",
    "rv": "5-12"
+  },
+  {
+   "local": "Utah Jazz",
+   "al": "UTA",
+   "pl": 101,
+   "visitante": "Phoenix Suns",
+   "av": "PHX",
+   "pv": 111,
+   "fecha": "2026-11-20",
+   "rl": "3-14",
+   "rv": "8-7"
+  },
+  {
+   "local": "Denver Nuggets",
+   "al": "DEN",
+   "pl": 133,
+   "visitante": "Houston Rockets",
+   "av": "HOU",
+   "pv": 124,
+   "fecha": "2026-11-20",
+   "rl": "9-5",
+   "rv": "12-5"
+  },
+  {
+   "local": "Los Angeles Lakers",
+   "al": "LAL",
+   "pl": 106,
+   "visitante": "Sacramento Kings",
+   "av": "SAC",
+   "pv": 104,
+   "fecha": "2026-11-20",
+   "rl": "14-3",
+   "rv": "1-14"
   }
  ]
 }
