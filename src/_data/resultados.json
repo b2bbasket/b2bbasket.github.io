@@ -1,104 +1,16 @@
 {
- "fecha": "Jornada NBA del 20 de noviembre de 2026",
+ "fecha": "Jornada NBA del 21 de noviembre de 2026",
  "partidos": [
   {
-   "local": "Atlanta Hawks",
-   "al": "ATL",
-   "pl": 111,
-   "visitante": "Charlotte Hornets",
-   "av": "CHA",
-   "pv": 97,
-   "fecha": "2026-11-20",
-   "rl": "10-6",
-   "rv": "4-11"
-  },
-  {
-   "local": "Brooklyn Nets",
-   "al": "BKN",
-   "pl": 111,
-   "visitante": "Orlando Magic",
-   "av": "ORL",
-   "pv": 113,
-   "fecha": "2026-11-20",
-   "rl": "3-12",
-   "rv": "7-8"
-  },
-  {
-   "local": "Cleveland Cavaliers",
-   "al": "CLE",
-   "pl": 128,
-   "visitante": "Indiana Pacers",
-   "av": "IND",
-   "pv": 119,
-   "fecha": "2026-11-20",
-   "rl": "9-8",
-   "rv": "5-11"
-  },
-  {
-   "local": "Detroit Pistons",
-   "al": "DET",
-   "pl": 102,
-   "visitante": "Toronto Raptors",
-   "av": "TOR",
-   "pv": 105,
-   "fecha": "2026-11-20",
-   "rl": "10-5",
-   "rv": "6-10"
-  },
-  {
-   "local": "Chicago Bulls",
-   "al": "CHI",
-   "pl": 94,
-   "visitante": "Washington Wizards",
-   "av": "WAS",
-   "pv": 98,
-   "fecha": "2026-11-20",
-   "rl": "4-11",
-   "rv": "6-11"
-  },
-  {
-   "local": "Oklahoma City Thunder",
-   "al": "OKC",
-   "pl": 126,
-   "visitante": "New Orleans Pelicans",
-   "av": "NOP",
-   "pv": 120,
-   "fecha": "2026-11-20",
-   "rl": "10-6",
-   "rv": "5-12"
-  },
-  {
-   "local": "Utah Jazz",
-   "al": "UTA",
-   "pl": 101,
-   "visitante": "Phoenix Suns",
-   "av": "PHX",
-   "pv": 111,
-   "fecha": "2026-11-20",
-   "rl": "3-14",
-   "rv": "8-7"
-  },
-  {
-   "local": "Denver Nuggets",
-   "al": "DEN",
-   "pl": 133,
-   "visitante": "Houston Rockets",
-   "av": "HOU",
-   "pv": 124,
-   "fecha": "2026-11-20",
-   "rl": "9-5",
-   "rv": "12-5"
-  },
-  {
-   "local": "Los Angeles Lakers",
-   "al": "LAL",
-   "pl": 106,
-   "visitante": "Sacramento Kings",
-   "av": "SAC",
-   "pv": 104,
-   "fecha": "2026-11-20",
+   "local": "Philadelphia 76ers",
+   "al": "PHI",
+   "pl": 132,
+   "visitante": "Milwaukee Bucks",
+   "av": "MIL",
+   "pv": 129,
+   "fecha": "2026-11-21",
    "rl": "14-3",
-   "rv": "1-14"
+   "rv": "1-16"
   }
  ]
 }
