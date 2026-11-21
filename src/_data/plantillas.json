@@ -1,6 +1,6 @@
 {
  "_nota": "Generado por scripts/plantillas.mjs a partir de las plantillas de Wikipedia, Wikidata y Wikimedia Commons. No editar a mano.",
- "actualizado": "2026-11-20T07:04:53.658Z",
+ "actualizado": "2026-11-21T07:06:35.480Z",
  "equipos": {
   "POR": {
    "equipo": "Portland Trail Blazers",
@@ -41,7 +41,7 @@
   "CHA": {
    "equipo": "Charlotte Hornets",
    "entrenador": "Charles Lee",
-   "revisada": "2026-11-19T03:03:19Z",
+   "revisada": "2026-11-20T15:28:05Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Charlotte_Hornets_roster"
   },
   "SAC": {
@@ -53,7 +53,7 @@
   "ATL": {
    "equipo": "Atlanta Hawks",
    "entrenador": "Quin Snyder",
-   "revisada": "2026-11-17T18:02:42Z",
+   "revisada": "2026-11-20T15:35:07Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Atlanta_Hawks_roster"
   },
   "NOP": {
@@ -101,7 +101,7 @@
   "MIA": {
    "equipo": "Miami Heat",
    "entrenador": "Erik Spoelstra",
-   "revisada": "2026-10-28T20:45:01Z",
+   "revisada": "2026-11-20T15:32:23Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Miami_Heat_roster"
   },
   "MEM": {
@@ -155,7 +155,7 @@
   "BKN": {
    "equipo": "Brooklyn Nets",
    "entrenador": "Jordi Fernández",
-   "revisada": "2026-11-11T13:27:18Z",
+   "revisada": "2026-11-20T14:33:56Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Brooklyn_Nets_roster"
   },
   "CHI": {
@@ -173,7 +173,7 @@
   "CLE": {
    "equipo": "Cleveland Cavaliers",
    "entrenador": "Kenny Atkinson",
-   "revisada": "2026-11-19T02:26:56Z",
+   "revisada": "2026-11-20T15:10:56Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Cleveland_Cavaliers_roster"
   },
   "WAS": {
@@ -190,8 +190,8 @@
    "equipo": "Atlanta Hawks",
    "abr": "ATL",
    "dorsal": "2",
-   "pos": "F",
-   "posicion": "Alero o ala-pívot",
+   "pos": "G",
+   "posicion": "Base o escolta",
    "altura": 1.96,
    "peso": 86,
    "nacimiento": "1999-01-02",
@@ -228,7 +228,7 @@
    "peso": 100,
    "nacimiento": "2005-10-05",
    "procedencia": "Georgia",
-   "lesionado": false,
+   "lesionado": true,
    "doble_via": false,
    "g_league": false,
    "pais": "Estados Unidos",
@@ -260,7 +260,7 @@
    "peso": 86,
    "nacimiento": "1991-09-19",
    "procedencia": "Lehigh",
-   "lesionado": false,
+   "lesionado": true,
    "doble_via": false,
    "g_league": false,
    "pais": "Estados Unidos",
@@ -286,8 +286,8 @@
    "equipo": "Atlanta Hawks",
    "abr": "ATL",
    "dorsal": "24",
-   "pos": "SF",
-   "posicion": "Alero",
+   "pos": "F",
+   "posicion": "Alero o ala-pívot",
    "altura": 1.98,
    "peso": 102,
    "nacimiento": "1999-03-03",
@@ -1290,7 +1290,7 @@
    "procedencia": "Ramot Yam High School ([[Hefer Valley Regional Council",
    "lesionado": false,
    "doble_via": false,
-   "g_league": true,
+   "g_league": false,
    "pais": "Israel",
    "paises": [
     "Israel"
@@ -1542,7 +1542,7 @@
    "procedencia": "Iowa State",
    "lesionado": false,
    "doble_via": false,
-   "g_league": true,
+   "g_league": false,
    "pais": "Estados Unidos",
    "paises": [
     "Estados Unidos"
@@ -3040,7 +3040,7 @@
    "peso": 104,
    "nacimiento": "2001-06-18",
    "procedencia": "USC",
-   "lesionado": false,
+   "lesionado": true,
    "doble_via": false,
    "g_league": false,
    "pais": "Estados Unidos",
@@ -3258,7 +3258,7 @@
    "peso": 95,
    "nacimiento": "2000-12-10",
    "procedencia": "Memphis",
-   "lesionado": false,
+   "lesionado": true,
    "doble_via": false,
    "g_league": false,
    "pais": "Estados Unidos",
@@ -15229,7 +15229,7 @@
    ],
    "lugar": "Central Point, Estados Unidos",
    "wikipedia": "https://en.wikipedia.org/wiki/Nate_Bittle",
-   "wikipedia_es": "",
+   "wikipedia_es": "https://es.wikipedia.org/wiki/Nate_Bittle",
    "wikidata": "Q107343485",
    "foto": null,
    "slug": "nate-bittle"
