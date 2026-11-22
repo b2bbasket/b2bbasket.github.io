@@ -1,6 +1,6 @@
 {
  "_nota": "Generado por scripts/plantillas.mjs a partir de las plantillas de Wikipedia, Wikidata y Wikimedia Commons. No editar a mano.",
- "actualizado": "2026-11-21T07:06:35.480Z",
+ "actualizado": "2026-11-22T07:09:11.751Z",
  "equipos": {
   "POR": {
    "equipo": "Portland Trail Blazers",
@@ -137,7 +137,7 @@
   "DEN": {
    "equipo": "Denver Nuggets",
    "entrenador": "David Adelman",
-   "revisada": "2026-10-28T20:48:38Z",
+   "revisada": "2026-11-21T14:35:01Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Denver_Nuggets_roster"
   },
   "OKC": {
@@ -4231,7 +4231,7 @@
    "procedencia": "Dayton",
    "lesionado": false,
    "doble_via": false,
-   "g_league": false,
+   "g_league": true,
    "pais": "Estados Unidos",
    "paises": [
     "Estados Unidos"
