@@ -1,71 +1,16 @@
 {
- "fecha": "Jornada NBA del 21 de noviembre de 2026",
+ "fecha": "Jornada NBA del 22 de noviembre de 2026",
  "partidos": [
   {
-   "local": "Philadelphia 76ers",
-   "al": "PHI",
-   "pl": 132,
-   "visitante": "Milwaukee Bucks",
-   "av": "MIL",
-   "pv": 129,
-   "fecha": "2026-11-21",
-   "rl": "14-3",
-   "rv": "1-16"
-  },
-  {
-   "local": "New York Knicks",
-   "al": "NYK",
-   "pl": 97,
-   "visitante": "Portland Trail Blazers",
-   "av": "POR",
-   "pv": 96,
-   "fecha": "2026-11-21",
-   "rl": "10-6",
+   "local": "Atlanta Hawks",
+   "al": "ATL",
+   "pl": 107,
+   "visitante": "Detroit Pistons",
+   "av": "DET",
+   "pv": 97,
+   "fecha": "2026-11-22",
+   "rl": "11-6",
    "rv": "10-6"
-  },
-  {
-   "local": "Dallas Mavericks",
-   "al": "DAL",
-   "pl": 110,
-   "visitante": "Los Angeles Clippers",
-   "av": "LAC",
-   "pv": 100,
-   "fecha": "2026-11-21",
-   "rl": "9-7",
-   "rv": "4-11"
-  },
-  {
-   "local": "Minnesota Timberwolves",
-   "al": "MIN",
-   "pl": 104,
-   "visitante": "Memphis Grizzlies",
-   "av": "MEM",
-   "pv": 95,
-   "fecha": "2026-11-21",
-   "rl": "12-5",
-   "rv": "12-5"
-  },
-  {
-   "local": "San Antonio Spurs",
-   "al": "SAS",
-   "pl": 114,
-   "visitante": "New Orleans Pelicans",
-   "av": "NOP",
-   "pv": 91,
-   "fecha": "2026-11-21",
-   "rl": "14-3",
-   "rv": "5-13"
-  },
-  {
-   "local": "Sacramento Kings",
-   "al": "SAC",
-   "pl": 97,
-   "visitante": "Boston Celtics",
-   "av": "BOS",
-   "pv": 96,
-   "fecha": "2026-11-21",
-   "rl": "2-14",
-   "rv": "11-5"
   }
  ]
 }
