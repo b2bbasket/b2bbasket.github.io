@@ -88,6 +88,28 @@
    "fecha": "2026-11-23",
    "rl": "13-5",
    "rv": "4-12"
+  },
+  {
+   "local": "Los Angeles Lakers",
+   "al": "LAL",
+   "pl": 109,
+   "visitante": "Utah Jazz",
+   "av": "UTA",
+   "pv": 94,
+   "fecha": "2026-11-23",
+   "rl": "15-3",
+   "rv": "3-16"
+  },
+  {
+   "local": "Sacramento Kings",
+   "al": "SAC",
+   "pl": 107,
+   "visitante": "San Antonio Spurs",
+   "av": "SAS",
+   "pv": 123,
+   "fecha": "2026-11-23",
+   "rl": "2-15",
+   "rv": "15-3"
   }
  ]
 }

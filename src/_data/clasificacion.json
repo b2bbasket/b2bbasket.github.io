@@ -105,7 +105,7 @@
   },
   {
    "equipo": "Los Angeles Lakers",
-   "v": 14,
+   "v": 15,
    "d": 3
   },
   {
@@ -141,17 +141,17 @@
   {
    "equipo": "Sacramento Kings",
    "v": 2,
-   "d": 14
+   "d": 15
   },
   {
    "equipo": "San Antonio Spurs",
-   "v": 14,
+   "v": 15,
    "d": 3
   },
   {
    "equipo": "Utah Jazz",
    "v": 3,
-   "d": 15
+   "d": 16
   }
  ]
 }
