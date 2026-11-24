@@ -35,6 +35,17 @@
    "rv": "10-8"
   },
   {
+   "local": "Toronto Raptors",
+   "al": "TOR",
+   "pl": 111,
+   "visitante": "Milwaukee Bucks",
+   "av": "MIL",
+   "pv": 116,
+   "fecha": "2026-11-23",
+   "rl": "6-11",
+   "rv": "2-16"
+  },
+  {
    "local": "Minnesota Timberwolves",
    "al": "MIN",
    "pl": 142,
@@ -44,6 +55,39 @@
    "fecha": "2026-11-23",
    "rl": "13-5",
    "rv": "3-13"
+  },
+  {
+   "local": "Chicago Bulls",
+   "al": "CHI",
+   "pl": 122,
+   "visitante": "Cleveland Cavaliers",
+   "av": "CLE",
+   "pv": 108,
+   "fecha": "2026-11-23",
+   "rl": "5-12",
+   "rv": "9-9"
+  },
+  {
+   "local": "New Orleans Pelicans",
+   "al": "NOP",
+   "pl": 119,
+   "visitante": "Phoenix Suns",
+   "av": "PHX",
+   "pv": 123,
+   "fecha": "2026-11-23",
+   "rl": "5-14",
+   "rv": "9-7"
+  },
+  {
+   "local": "Houston Rockets",
+   "al": "HOU",
+   "pl": 116,
+   "visitante": "Los Angeles Clippers",
+   "av": "LAC",
+   "pv": 104,
+   "fecha": "2026-11-23",
+   "rl": "13-5",
+   "rv": "4-12"
   }
  ]
 }

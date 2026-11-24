@@ -23,13 +23,13 @@
   },
   {
    "equipo": "Chicago Bulls",
-   "v": 4,
+   "v": 5,
    "d": 12
   },
   {
    "equipo": "Cleveland Cavaliers",
    "v": 9,
-   "d": 8
+   "d": 9
   },
   {
    "equipo": "Detroit Pistons",
@@ -48,7 +48,7 @@
   },
   {
    "equipo": "Milwaukee Bucks",
-   "v": 1,
+   "v": 2,
    "d": 16
   },
   {
@@ -69,7 +69,7 @@
   {
    "equipo": "Toronto Raptors",
    "v": 6,
-   "d": 10
+   "d": 11
   },
   {
    "equipo": "Washington Wizards",
@@ -95,13 +95,13 @@
   },
   {
    "equipo": "Houston Rockets",
-   "v": 12,
+   "v": 13,
    "d": 5
   },
   {
    "equipo": "Los Angeles Clippers",
    "v": 4,
-   "d": 11
+   "d": 12
   },
   {
    "equipo": "Los Angeles Lakers",
@@ -121,7 +121,7 @@
   {
    "equipo": "New Orleans Pelicans",
    "v": 5,
-   "d": 13
+   "d": 14
   },
   {
    "equipo": "Oklahoma City Thunder",
@@ -130,7 +130,7 @@
   },
   {
    "equipo": "Phoenix Suns",
-   "v": 8,
+   "v": 9,
    "d": 7
   },
   {
