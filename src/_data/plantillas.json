@@ -1,6 +1,6 @@
 {
  "_nota": "Generado por scripts/plantillas.mjs a partir de las plantillas de Wikipedia, Wikidata y Wikimedia Commons. No editar a mano.",
- "actualizado": "2026-11-23T07:07:24.750Z",
+ "actualizado": "2026-11-24T07:01:53.161Z",
  "equipos": {
   "POR": {
    "equipo": "Portland Trail Blazers",
@@ -11,7 +11,7 @@
   "TOR": {
    "equipo": "Toronto Raptors",
    "entrenador": "Darko Rajaković",
-   "revisada": "2026-11-08T00:59:50Z",
+   "revisada": "2026-11-23T19:46:18Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Toronto_Raptors_roster"
   },
   "BOS": {
@@ -23,7 +23,7 @@
   "SAS": {
    "equipo": "San Antonio Spurs",
    "entrenador": "Mitch Johnson",
-   "revisada": "2026-11-09T00:06:47Z",
+   "revisada": "2026-11-23T19:47:24Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:San_Antonio_Spurs_roster"
   },
   "MIN": {
@@ -35,7 +35,7 @@
   "HOU": {
    "equipo": "Houston Rockets",
    "entrenador": "Ime Udoka",
-   "revisada": "2026-11-20T00:02:05Z",
+   "revisada": "2026-11-23T19:46:45Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Houston_Rockets_roster"
   },
   "CHA": {
@@ -47,7 +47,7 @@
   "SAC": {
    "equipo": "Sacramento Kings",
    "entrenador": "Doug Christie",
-   "revisada": "2026-11-13T17:20:46Z",
+   "revisada": "2026-11-23T19:44:57Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Sacramento_Kings_roster"
   },
   "ATL": {
@@ -59,7 +59,7 @@
   "NOP": {
    "equipo": "New Orleans Pelicans",
    "entrenador": "Jamahl Mosley",
-   "revisada": "2026-10-28T20:50:07Z",
+   "revisada": "2026-11-23T19:40:52Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:New_Orleans_Pelicans_roster"
   },
   "UTA": {
@@ -95,7 +95,7 @@
   "ORL": {
    "equipo": "Orlando Magic",
    "entrenador": "Sean Sweeney",
-   "revisada": "2026-11-09T00:02:10Z",
+   "revisada": "2026-11-23T19:38:27Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Orlando_Magic_roster"
   },
   "MIA": {
@@ -107,31 +107,31 @@
   "MEM": {
    "equipo": "Memphis Grizzlies",
    "entrenador": "Tuomas Iisalo",
-   "revisada": "2026-11-18T01:42:12Z",
+   "revisada": "2026-11-23T19:35:52Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Memphis_Grizzlies_roster"
   },
   "LAC": {
    "equipo": "Los Angeles Clippers",
    "entrenador": "Tyronn Lue",
-   "revisada": "2026-11-20T03:07:26Z",
+   "revisada": "2026-11-23T19:34:23Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Los_Angeles_Clippers_roster"
   },
   "DET": {
    "equipo": "Detroit Pistons",
    "entrenador": "J. B. Bickerstaff",
-   "revisada": "2026-11-23T01:25:46Z",
+   "revisada": "2026-11-23T19:45:51Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Detroit_Pistons_roster"
   },
   "PHI": {
    "equipo": "Philadelphia 76ers",
    "entrenador": "Nick Nurse",
-   "revisada": "2026-11-08T23:49:58Z",
+   "revisada": "2026-11-23T19:32:35Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Philadelphia_76ers_roster"
   },
   "PHX": {
    "equipo": "Phoenix Suns",
    "entrenador": "Jordan Ott",
-   "revisada": "2026-10-28T20:52:08Z",
+   "revisada": "2026-11-23T19:47:47Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Phoenix_Suns_roster"
   },
   "DEN": {
@@ -149,13 +149,13 @@
   "MIL": {
    "equipo": "Milwaukee Bucks",
    "entrenador": "Taylor Jenkins",
-   "revisada": "2026-11-16T20:03:48Z",
+   "revisada": "2026-11-23T19:33:09Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Milwaukee_Bucks_roster"
   },
   "BKN": {
    "equipo": "Brooklyn Nets",
    "entrenador": "Jordi Fernández",
-   "revisada": "2026-11-20T14:33:56Z",
+   "revisada": "2026-11-23T19:39:12Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Brooklyn_Nets_roster"
   },
   "CHI": {
@@ -179,7 +179,7 @@
   "WAS": {
    "equipo": "Washington Wizards",
    "entrenador": "Brian Keefe",
-   "revisada": "2026-11-16T15:45:10Z",
+   "revisada": "2026-11-23T16:47:24Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Washington_Wizards_roster"
   }
  },
@@ -1752,7 +1752,7 @@
    "peso": 86,
    "nacimiento": "2006-05-28",
    "procedencia": "INSEP (Paris, France)",
-   "lesionado": false,
+   "lesionado": true,
    "doble_via": false,
    "g_league": false,
    "pais": "Francia",
@@ -2108,7 +2108,7 @@
    ],
    "lugar": "Champaign, Estados Unidos",
    "wikipedia": "https://en.wikipedia.org/wiki/Kylan_Boswell",
-   "wikipedia_es": "",
+   "wikipedia_es": "https://es.wikipedia.org/wiki/Kylan_Boswell",
    "wikidata": "Q122961726",
    "foto": null,
    "slug": "kylan-boswell"
@@ -5801,7 +5801,7 @@
    "peso": 116,
    "nacimiento": "1994-05-18",
    "procedencia": "",
-   "lesionado": true,
+   "lesionado": false,
    "doble_via": false,
    "g_league": false,
    "pais": "Suiza",
@@ -6791,7 +6791,7 @@
    "peso": 86,
    "nacimiento": "1997-09-02",
    "procedencia": "Duke",
-   "lesionado": true,
+   "lesionado": false,
    "doble_via": false,
    "g_league": false,
    "pais": "Estados Unidos",
@@ -8096,7 +8096,7 @@
    "peso": 97,
    "nacimiento": "1994-03-12",
    "procedencia": "Syracuse",
-   "lesionado": false,
+   "lesionado": true,
    "doble_via": false,
    "g_league": false,
    "pais": "Estados Unidos",
@@ -9375,7 +9375,7 @@
    "peso": 84,
    "nacimiento": "2003-05-21",
    "procedencia": "",
-   "lesionado": true,
+   "lesionado": false,
    "doble_via": false,
    "g_league": false,
    "pais": "Francia",
@@ -10539,7 +10539,7 @@
    "peso": 107,
    "nacimiento": "2004-05-14",
    "procedencia": "Baylor",
-   "lesionado": true,
+   "lesionado": false,
    "doble_via": false,
    "g_league": false,
    "pais": "Camerún",
@@ -11881,7 +11881,7 @@
    "peso": 94,
    "nacimiento": "2001-06-03",
    "procedencia": "Gonzaga",
-   "lesionado": true,
+   "lesionado": false,
    "doble_via": false,
    "g_league": false,
    "pais": "Estados Unidos",
@@ -12354,7 +12354,7 @@
    "peso": 102,
    "nacimiento": "2003-05-26",
    "procedencia": "St. Joseph's",
-   "lesionado": true,
+   "lesionado": false,
    "doble_via": false,
    "g_league": false,
    "pais": "Estados Unidos",
@@ -14010,6 +14010,39 @@
    "slug": "emanuel-sharp"
   },
   {
+   "nombre": "Gabe Vincent",
+   "articulo": "Gabe Vincent",
+   "equipo": "Sacramento Kings",
+   "abr": "SAC",
+   "dorsal": "–",
+   "pos": "G",
+   "posicion": "Base o escolta",
+   "altura": 1.88,
+   "peso": 91,
+   "nacimiento": "1996-06-14",
+   "procedencia": "UC Santa Barbara",
+   "lesionado": false,
+   "doble_via": false,
+   "g_league": false,
+   "pais": "Nigeria",
+   "paises": [
+    "Nigeria",
+    "Estados Unidos"
+   ],
+   "lugar": "Modesto, Estados Unidos",
+   "wikipedia": "https://en.wikipedia.org/wiki/Gabe_Vincent",
+   "wikipedia_es": "https://es.wikipedia.org/wiki/Gabe_Vincent",
+   "wikidata": "Q61989472",
+   "foto": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Gabe_Vincent_at_the_2023_Miami_Heat_Family_Festival_%28cropped%29.png/500px-Gabe_Vincent_at_the_2023_Miami_Heat_Family_Festival_%28cropped%29.png",
+    "origen": "https://commons.wikimedia.org/wiki/File:Gabe_Vincent_at_the_2023_Miami_Heat_Family_Festival_(cropped).png",
+    "autor": "Gatorfan252525",
+    "licencia": "CC BY-SA 4.0",
+    "licencia_url": "https://creativecommons.org/licenses/by-sa/4.0"
+   },
+   "slug": "gabe-vincent"
+  },
+  {
    "nombre": "Jonathan Mogbo",
    "articulo": "Jonathan Mogbo",
    "equipo": "Sacramento Kings",
@@ -14425,7 +14458,7 @@
    "peso": 98,
    "nacimiento": "2006-03-02",
    "procedencia": "Rutgers",
-   "lesionado": false,
+   "lesionado": true,
    "doble_via": false,
    "g_league": false,
    "pais": "Estados Unidos",
@@ -15246,7 +15279,7 @@
    "peso": 97,
    "nacimiento": "2000-06-14",
    "procedencia": "Duke",
-   "lesionado": false,
+   "lesionado": true,
    "doble_via": false,
    "g_league": false,
    "pais": "Canadá",
@@ -16352,7 +16385,7 @@
    "peso": 86,
    "nacimiento": "2006-03-07",
    "procedencia": "Texas",
-   "lesionado": true,
+   "lesionado": false,
    "doble_via": false,
    "g_league": false,
    "pais": "Estados Unidos",
