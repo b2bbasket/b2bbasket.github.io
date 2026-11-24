@@ -1,82 +1,49 @@
 {
- "fecha": "Jornada NBA del 22 de noviembre de 2026",
+ "fecha": "Jornada NBA del 23 de noviembre de 2026",
  "partidos": [
   {
-   "local": "Atlanta Hawks",
-   "al": "ATL",
-   "pl": 107,
-   "visitante": "Detroit Pistons",
-   "av": "DET",
-   "pv": 97,
-   "fecha": "2026-11-22",
-   "rl": "11-6",
-   "rv": "10-6"
+   "local": "Charlotte Hornets",
+   "al": "CHA",
+   "pl": 111,
+   "visitante": "Memphis Grizzlies",
+   "av": "MEM",
+   "pv": 117,
+   "fecha": "2026-11-23",
+   "rl": "4-12",
+   "rv": "13-5"
   },
   {
-   "local": "Miami Heat",
-   "al": "MIA",
-   "pl": 123,
+   "local": "Philadelphia 76ers",
+   "al": "PHI",
+   "pl": 111,
+   "visitante": "Portland Trail Blazers",
+   "av": "POR",
+   "pv": 128,
+   "fecha": "2026-11-23",
+   "rl": "14-4",
+   "rv": "11-6"
+  },
+  {
+   "local": "Indiana Pacers",
+   "al": "IND",
+   "pl": 125,
    "visitante": "Oklahoma City Thunder",
    "av": "OKC",
-   "pv": 113,
-   "fecha": "2026-11-22",
-   "rl": "10-6",
-   "rv": "10-7"
+   "pv": 120,
+   "fecha": "2026-11-23",
+   "rl": "6-12",
+   "rv": "10-8"
   },
   {
-   "local": "Washington Wizards",
-   "al": "WAS",
-   "pl": 116,
-   "visitante": "Orlando Magic",
-   "av": "ORL",
-   "pv": 96,
-   "fecha": "2026-11-22",
-   "rl": "7-11",
-   "rv": "7-9"
-  },
-  {
-   "local": "Chicago Bulls",
-   "al": "CHI",
-   "pl": 145,
-   "visitante": "Denver Nuggets",
-   "av": "DEN",
-   "pv": 151,
-   "fecha": "2026-11-22",
-   "rl": "4-12",
-   "rv": "10-5"
-  },
-  {
-   "local": "Utah Jazz",
-   "al": "UTA",
-   "pl": 114,
-   "visitante": "Dallas Mavericks",
-   "av": "DAL",
+   "local": "Minnesota Timberwolves",
+   "al": "MIN",
+   "pl": 142,
+   "visitante": "Brooklyn Nets",
+   "av": "BKN",
    "pv": 116,
-   "fecha": "2026-11-22",
-   "rl": "3-15",
-   "rv": "10-7"
-  },
-  {
-   "local": "New York Knicks",
-   "al": "NYK",
-   "pl": 113,
-   "visitante": "Indiana Pacers",
-   "av": "IND",
-   "pv": 106,
-   "fecha": "2026-11-22",
-   "rl": "11-6",
-   "rv": "5-12"
-  },
-  {
-   "local": "Golden State Warriors",
-   "al": "GSW",
-   "pl": 88,
-   "visitante": "Boston Celtics",
-   "av": "BOS",
-   "pv": 87,
-   "fecha": "2026-11-22",
-   "rl": "9-8",
-   "rv": "11-6"
+   "fecha": "2026-11-23",
+   "rl": "13-5",
+   "rv": "3-13"
   }
  ]
 }

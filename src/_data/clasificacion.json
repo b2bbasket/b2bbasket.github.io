@@ -1,5 +1,5 @@
 {
- "actualizado": "23 de noviembre de 2026 (automático)",
+ "actualizado": "24 de noviembre de 2026 (automático)",
  "este": [
   {
    "equipo": "Atlanta Hawks",
@@ -14,12 +14,12 @@
   {
    "equipo": "Brooklyn Nets",
    "v": 3,
-   "d": 12
+   "d": 13
   },
   {
    "equipo": "Charlotte Hornets",
    "v": 4,
-   "d": 11
+   "d": 12
   },
   {
    "equipo": "Chicago Bulls",
@@ -38,7 +38,7 @@
   },
   {
    "equipo": "Indiana Pacers",
-   "v": 5,
+   "v": 6,
    "d": 12
   },
   {
@@ -64,7 +64,7 @@
   {
    "equipo": "Philadelphia 76ers",
    "v": 14,
-   "d": 3
+   "d": 4
   },
   {
    "equipo": "Toronto Raptors",
@@ -110,12 +110,12 @@
   },
   {
    "equipo": "Memphis Grizzlies",
-   "v": 12,
+   "v": 13,
    "d": 5
   },
   {
    "equipo": "Minnesota Timberwolves",
-   "v": 12,
+   "v": 13,
    "d": 5
   },
   {
@@ -126,7 +126,7 @@
   {
    "equipo": "Oklahoma City Thunder",
    "v": 10,
-   "d": 7
+   "d": 8
   },
   {
    "equipo": "Phoenix Suns",
@@ -135,7 +135,7 @@
   },
   {
    "equipo": "Portland Trail Blazers",
-   "v": 10,
+   "v": 11,
    "d": 6
   },
   {
