@@ -1,6 +1,6 @@
 {
  "_nota": "Generado por scripts/plantillas.mjs a partir de las plantillas de Wikipedia, Wikidata y Wikimedia Commons. No editar a mano.",
- "actualizado": "2026-11-24T07:01:53.161Z",
+ "actualizado": "2026-11-25T07:07:16.476Z",
  "equipos": {
   "POR": {
    "equipo": "Portland Trail Blazers",
@@ -47,7 +47,7 @@
   "SAC": {
    "equipo": "Sacramento Kings",
    "entrenador": "Doug Christie",
-   "revisada": "2026-11-23T19:44:57Z",
+   "revisada": "2026-11-24T17:03:56Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Sacramento_Kings_roster"
   },
   "ATL": {
@@ -1293,7 +1293,8 @@
    "g_league": false,
    "pais": "Israel",
    "paises": [
-    "Israel"
+    "Israel",
+    "Sudáfrica"
    ],
    "lugar": "Johannesburgo, Sudáfrica",
    "wikipedia": "https://en.wikipedia.org/wiki/Ben_Saraf",
@@ -8731,7 +8732,8 @@
    "g_league": false,
    "pais": "Serbia",
    "paises": [
-    "Serbia"
+    "Serbia",
+    "Reino Unido"
    ],
    "lugar": "Leicester, Reino Unido",
    "wikipedia": "https://en.wikipedia.org/wiki/Nikola_Jovi%C4%87",
@@ -14014,7 +14016,7 @@
    "articulo": "Gabe Vincent",
    "equipo": "Sacramento Kings",
    "abr": "SAC",
-   "dorsal": "–",
+   "dorsal": "10",
    "pos": "G",
    "posicion": "Base o escolta",
    "altura": 1.88,
