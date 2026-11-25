@@ -11,6 +11,28 @@
    "fecha": "2026-11-24",
    "rl": "7-10",
    "rv": "11-6"
+  },
+  {
+   "local": "Washington Wizards",
+   "al": "WAS",
+   "pl": 116,
+   "visitante": "Boston Celtics",
+   "av": "BOS",
+   "pv": 131,
+   "fecha": "2026-11-24",
+   "rl": "7-12",
+   "rv": "12-6"
+  },
+  {
+   "local": "Denver Nuggets",
+   "al": "DEN",
+   "pl": 101,
+   "visitante": "Dallas Mavericks",
+   "av": "DAL",
+   "pv": 120,
+   "fecha": "2026-11-24",
+   "rl": "10-6",
+   "rv": "11-7"
   }
  ]
 }

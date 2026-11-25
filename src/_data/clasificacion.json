@@ -8,7 +8,7 @@
   },
   {
    "equipo": "Boston Celtics",
-   "v": 11,
+   "v": 12,
    "d": 6
   },
   {
@@ -74,19 +74,19 @@
   {
    "equipo": "Washington Wizards",
    "v": 7,
-   "d": 11
+   "d": 12
   }
  ],
  "oeste": [
   {
    "equipo": "Dallas Mavericks",
-   "v": 10,
+   "v": 11,
    "d": 7
   },
   {
    "equipo": "Denver Nuggets",
    "v": 10,
-   "d": 5
+   "d": 6
   },
   {
    "equipo": "Golden State Warriors",
