@@ -1,115 +1,16 @@
 {
- "fecha": "Jornada NBA del 23 de noviembre de 2026",
+ "fecha": "Jornada NBA del 24 de noviembre de 2026",
  "partidos": [
   {
-   "local": "Charlotte Hornets",
-   "al": "CHA",
-   "pl": 111,
-   "visitante": "Memphis Grizzlies",
-   "av": "MEM",
-   "pv": 117,
-   "fecha": "2026-11-23",
-   "rl": "4-12",
-   "rv": "13-5"
-  },
-  {
-   "local": "Philadelphia 76ers",
-   "al": "PHI",
-   "pl": 111,
-   "visitante": "Portland Trail Blazers",
-   "av": "POR",
-   "pv": 128,
-   "fecha": "2026-11-23",
-   "rl": "14-4",
-   "rv": "11-6"
-  },
-  {
-   "local": "Indiana Pacers",
-   "al": "IND",
-   "pl": 125,
-   "visitante": "Oklahoma City Thunder",
-   "av": "OKC",
-   "pv": 120,
-   "fecha": "2026-11-23",
-   "rl": "6-12",
-   "rv": "10-8"
-  },
-  {
-   "local": "Toronto Raptors",
-   "al": "TOR",
-   "pl": 111,
-   "visitante": "Milwaukee Bucks",
-   "av": "MIL",
-   "pv": 116,
-   "fecha": "2026-11-23",
-   "rl": "6-11",
-   "rv": "2-16"
-  },
-  {
-   "local": "Minnesota Timberwolves",
-   "al": "MIN",
-   "pl": 142,
-   "visitante": "Brooklyn Nets",
-   "av": "BKN",
-   "pv": 116,
-   "fecha": "2026-11-23",
-   "rl": "13-5",
-   "rv": "3-13"
-  },
-  {
-   "local": "Chicago Bulls",
-   "al": "CHI",
-   "pl": 122,
-   "visitante": "Cleveland Cavaliers",
-   "av": "CLE",
-   "pv": 108,
-   "fecha": "2026-11-23",
-   "rl": "5-12",
-   "rv": "9-9"
-  },
-  {
-   "local": "New Orleans Pelicans",
-   "al": "NOP",
-   "pl": 119,
-   "visitante": "Phoenix Suns",
-   "av": "PHX",
-   "pv": 123,
-   "fecha": "2026-11-23",
-   "rl": "5-14",
-   "rv": "9-7"
-  },
-  {
-   "local": "Houston Rockets",
-   "al": "HOU",
-   "pl": 116,
-   "visitante": "Los Angeles Clippers",
-   "av": "LAC",
+   "local": "Orlando Magic",
+   "al": "ORL",
+   "pl": 86,
+   "visitante": "Detroit Pistons",
+   "av": "DET",
    "pv": 104,
-   "fecha": "2026-11-23",
-   "rl": "13-5",
-   "rv": "4-12"
-  },
-  {
-   "local": "Los Angeles Lakers",
-   "al": "LAL",
-   "pl": 109,
-   "visitante": "Utah Jazz",
-   "av": "UTA",
-   "pv": 94,
-   "fecha": "2026-11-23",
-   "rl": "15-3",
-   "rv": "3-16"
-  },
-  {
-   "local": "Sacramento Kings",
-   "al": "SAC",
-   "pl": 107,
-   "visitante": "San Antonio Spurs",
-   "av": "SAS",
-   "pv": 123,
-   "fecha": "2026-11-23",
-   "rl": "2-15",
-   "rv": "15-3"
+   "fecha": "2026-11-24",
+   "rl": "7-10",
+   "rv": "11-6"
   }
  ]
 }
