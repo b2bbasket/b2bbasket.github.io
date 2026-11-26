@@ -77,6 +77,28 @@
    "fecha": "2026-11-25",
    "rl": "14-5",
    "rv": "9-8"
+  },
+  {
+   "local": "Golden State Warriors",
+   "al": "GSW",
+   "pl": 129,
+   "visitante": "Sacramento Kings",
+   "av": "SAC",
+   "pv": 110,
+   "fecha": "2026-11-25",
+   "rl": "10-8",
+   "rv": "2-16"
+  },
+  {
+   "local": "Portland Trail Blazers",
+   "al": "POR",
+   "pl": 116,
+   "visitante": "San Antonio Spurs",
+   "av": "SAS",
+   "pv": 111,
+   "fecha": "2026-11-25",
+   "rl": "12-6",
+   "rv": "15-4"
   }
  ]
 }
