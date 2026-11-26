@@ -1,38 +1,82 @@
 {
- "fecha": "Jornada NBA del 24 de noviembre de 2026",
+ "fecha": "Jornada NBA del 25 de noviembre de 2026",
  "partidos": [
   {
-   "local": "Orlando Magic",
-   "al": "ORL",
-   "pl": 86,
-   "visitante": "Detroit Pistons",
-   "av": "DET",
+   "local": "Philadelphia 76ers",
+   "al": "PHI",
+   "pl": 111,
+   "visitante": "Miami Heat",
+   "av": "MIA",
    "pv": 104,
-   "fecha": "2026-11-24",
-   "rl": "7-10",
-   "rv": "11-6"
+   "fecha": "2026-11-25",
+   "rl": "15-4",
+   "rv": "10-7"
   },
   {
-   "local": "Washington Wizards",
-   "al": "WAS",
+   "local": "Charlotte Hornets",
+   "al": "CHA",
+   "pl": 105,
+   "visitante": "Chicago Bulls",
+   "av": "CHI",
+   "pv": 107,
+   "fecha": "2026-11-25",
+   "rl": "4-13",
+   "rv": "6-12"
+  },
+  {
+   "local": "New York Knicks",
+   "al": "NYK",
+   "pl": 121,
+   "visitante": "Cleveland Cavaliers",
+   "av": "CLE",
+   "pv": 102,
+   "fecha": "2026-11-25",
+   "rl": "12-6",
+   "rv": "9-10"
+  },
+  {
+   "local": "Oklahoma City Thunder",
+   "al": "OKC",
+   "pl": 106,
+   "visitante": "Minnesota Timberwolves",
+   "av": "MIN",
+   "pv": 113,
+   "fecha": "2026-11-25",
+   "rl": "10-9",
+   "rv": "14-5"
+  },
+  {
+   "local": "Memphis Grizzlies",
+   "al": "MEM",
+   "pl": 115,
+   "visitante": "Los Angeles Clippers",
+   "av": "LAC",
+   "pv": 97,
+   "fecha": "2026-11-25",
+   "rl": "14-5",
+   "rv": "4-13"
+  },
+  {
+   "local": "Milwaukee Bucks",
+   "al": "MIL",
+   "pl": 97,
+   "visitante": "Brooklyn Nets",
+   "av": "BKN",
+   "pv": 104,
+   "fecha": "2026-11-25",
+   "rl": "2-17",
+   "rv": "4-13"
+  },
+  {
+   "local": "Houston Rockets",
+   "al": "HOU",
    "pl": 116,
-   "visitante": "Boston Celtics",
-   "av": "BOS",
-   "pv": 131,
-   "fecha": "2026-11-24",
-   "rl": "7-12",
-   "rv": "12-6"
-  },
-  {
-   "local": "Denver Nuggets",
-   "al": "DEN",
-   "pl": 101,
-   "visitante": "Dallas Mavericks",
-   "av": "DAL",
-   "pv": 120,
-   "fecha": "2026-11-24",
-   "rl": "10-6",
-   "rv": "11-7"
+   "visitante": "Phoenix Suns",
+   "av": "PHX",
+   "pv": 104,
+   "fecha": "2026-11-25",
+   "rl": "14-5",
+   "rv": "9-8"
   }
  ]
 }
