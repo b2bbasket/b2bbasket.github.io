@@ -1,11 +1,11 @@
 {
  "_nota": "Generado por scripts/plantillas.mjs a partir de las plantillas de Wikipedia, Wikidata y Wikimedia Commons. No editar a mano.",
- "actualizado": "2026-11-25T07:07:16.476Z",
+ "actualizado": "2026-11-26T07:13:04.520Z",
  "equipos": {
   "POR": {
    "equipo": "Portland Trail Blazers",
    "entrenador": "Micah Nori",
-   "revisada": "2026-11-09T00:08:27Z",
+   "revisada": "2026-11-26T02:56:20Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Portland_Trail_Blazers_roster"
   },
   "TOR": {
@@ -41,7 +41,7 @@
   "CHA": {
    "equipo": "Charlotte Hornets",
    "entrenador": "Charles Lee",
-   "revisada": "2026-11-20T15:28:05Z",
+   "revisada": "2026-11-26T01:13:55Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Charlotte_Hornets_roster"
   },
   "SAC": {
@@ -137,7 +137,7 @@
   "DEN": {
    "equipo": "Denver Nuggets",
    "entrenador": "David Adelman",
-   "revisada": "2026-11-21T14:35:01Z",
+   "revisada": "2026-11-25T14:56:23Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Denver_Nuggets_roster"
   },
   "OKC": {
@@ -155,13 +155,13 @@
   "BKN": {
    "equipo": "Brooklyn Nets",
    "entrenador": "Jordi Fernández",
-   "revisada": "2026-11-23T19:39:12Z",
+   "revisada": "2026-11-26T02:59:41Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Brooklyn_Nets_roster"
   },
   "CHI": {
    "equipo": "Chicago Bulls",
    "entrenador": "Tiago Splitter",
-   "revisada": "2026-11-17T14:56:34Z",
+   "revisada": "2026-11-26T01:16:23Z",
    "fuente": "https://en.wikipedia.org/wiki/Template:Chicago_Bulls_roster"
   },
   "IND": {
@@ -1287,10 +1287,10 @@
    "altura": 1.96,
    "peso": 96,
    "nacimiento": "2006-04-14",
-   "procedencia": "Ramot Yam High School ([[Hefer Valley Regional Council",
+   "procedencia": "",
    "lesionado": false,
    "doble_via": false,
-   "g_league": false,
+   "g_league": true,
    "pais": "Israel",
    "paises": [
     "Israel",
@@ -1349,7 +1349,7 @@
    "procedencia": "Michigan",
    "lesionado": false,
    "doble_via": false,
-   "g_league": true,
+   "g_league": false,
    "pais": "Israel",
    "paises": [
     "Israel",
@@ -1414,7 +1414,7 @@
    "procedencia": "North Carolina",
    "lesionado": false,
    "doble_via": false,
-   "g_league": false,
+   "g_league": true,
    "pais": "Estados Unidos",
    "paises": [
     "Estados Unidos"
@@ -1543,7 +1543,7 @@
    "procedencia": "Iowa State",
    "lesionado": false,
    "doble_via": false,
-   "g_league": false,
+   "g_league": true,
    "pais": "Estados Unidos",
    "paises": [
     "Estados Unidos"
@@ -1752,7 +1752,7 @@
    "altura": 1.93,
    "peso": 86,
    "nacimiento": "2006-05-28",
-   "procedencia": "INSEP (Paris, France)",
+   "procedencia": "",
    "lesionado": true,
    "doble_via": false,
    "g_league": false,
@@ -2004,7 +2004,7 @@
    "peso": 90,
    "nacimiento": "1995-10-08",
    "procedencia": "Duke",
-   "lesionado": false,
+   "lesionado": true,
    "doble_via": false,
    "g_league": false,
    "pais": "Estados Unidos",
@@ -2758,7 +2758,7 @@
    "peso": 98,
    "nacimiento": "1993-05-25",
    "procedencia": "UCLA",
-   "lesionado": false,
+   "lesionado": true,
    "doble_via": false,
    "g_league": false,
    "pais": "Jamaica",
@@ -2778,38 +2778,6 @@
     "licencia_url": "https://creativecommons.org/licenses/by-sa/2.0"
    },
    "slug": "norman-powell"
-  },
-  {
-   "nombre": "Orlando Robinson",
-   "articulo": "Orlando Robinson",
-   "equipo": "Chicago Bulls",
-   "abr": "CHI",
-   "dorsal": "00",
-   "pos": "C",
-   "posicion": "Pívot",
-   "altura": 2.08,
-   "peso": 107,
-   "nacimiento": "2000-07-10",
-   "procedencia": "Fresno State",
-   "lesionado": false,
-   "doble_via": false,
-   "g_league": true,
-   "pais": "Estados Unidos",
-   "paises": [
-    "Estados Unidos"
-   ],
-   "lugar": "Las Vegas, Estados Unidos",
-   "wikipedia": "https://en.wikipedia.org/wiki/Orlando_Robinson",
-   "wikipedia_es": "https://es.wikipedia.org/wiki/Orlando_Robinson",
-   "wikidata": "Q100917336",
-   "foto": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Orlando_Robinson.jpg",
-    "origen": "https://commons.wikimedia.org/wiki/File:Orlando_Robinson.jpg",
-    "autor": "Ron Sellers",
-    "licencia": "CC BY-SA 2.0",
-    "licencia_url": "https://creativecommons.org/licenses/by-sa/2.0"
-   },
-   "slug": "orlando-robinson"
   },
   {
    "nombre": "Patrick Williams",
@@ -4232,7 +4200,7 @@
    "procedencia": "Dayton",
    "lesionado": false,
    "doble_via": false,
-   "g_league": true,
+   "g_league": false,
    "pais": "Estados Unidos",
    "paises": [
     "Estados Unidos"
@@ -13419,7 +13387,7 @@
    "altura": 2.16,
    "peso": 121,
    "nacimiento": "2005-06-26",
-   "procedencia": "Zibo High School",
+   "procedencia": "",
    "lesionado": false,
    "doble_via": false,
    "g_league": false,
@@ -15599,7 +15567,7 @@
    ],
    "lugar": "Durham, Estados Unidos",
    "wikipedia": "https://en.wikipedia.org/wiki/Jonas_Aidoo",
-   "wikipedia_es": "",
+   "wikipedia_es": "https://es.wikipedia.org/wiki/Jonas_Aidoo",
    "wikidata": "Q125132516",
    "foto": null,
    "slug": "jonas-aidoo"
