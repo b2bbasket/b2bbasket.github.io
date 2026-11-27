@@ -1,6 +1,6 @@
 {
  "_nota": "Generado por scripts/plantillas.mjs a partir de las plantillas de Wikipedia, Wikidata y Wikimedia Commons. No editar a mano.",
- "actualizado": "2026-11-26T07:13:04.520Z",
+ "actualizado": "2026-11-27T07:06:26.703Z",
  "equipos": {
   "POR": {
    "equipo": "Portland Trail Blazers",
@@ -5625,7 +5625,8 @@
    "g_league": false,
    "pais": "Estados Unidos",
    "paises": [
-    "Estados Unidos"
+    "Estados Unidos",
+    "República Dominicana"
    ],
    "lugar": "Puerto Rico, Estados Unidos",
    "wikipedia": "https://en.wikipedia.org/wiki/Yaxel_Lendeborg",
@@ -6267,7 +6268,7 @@
    "paises": [
     "Estados Unidos"
    ],
-   "lugar": "",
+   "lugar": "Russellville, Estados Unidos",
    "wikipedia": "https://en.wikipedia.org/wiki/Braden_Smith_(basketball)",
    "wikipedia_es": "https://es.wikipedia.org/wiki/Braden_Smith_(baloncestista)",
    "wikidata": "Q115522167",
@@ -15061,7 +15062,13 @@
    "wikipedia": "https://en.wikipedia.org/wiki/Jamal_Shead",
    "wikipedia_es": "https://es.wikipedia.org/wiki/Jamal_Shead",
    "wikidata": "Q106818507",
-   "foto": null,
+   "foto": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Jamal_Shead%2C_2025_%28cropped%29.png/500px-Jamal_Shead%2C_2025_%28cropped%29.png",
+    "origen": "https://commons.wikimedia.org/wiki/File:Jamal_Shead,_2025_(cropped).png",
+    "autor": "Houston Roundball Review Media Group",
+    "licencia": "CC BY 3.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/3.0"
+   },
    "slug": "jamal-shead"
   },
   {
@@ -15569,7 +15576,13 @@
    "wikipedia": "https://en.wikipedia.org/wiki/Jonas_Aidoo",
    "wikipedia_es": "https://es.wikipedia.org/wiki/Jonas_Aidoo",
    "wikidata": "Q125132516",
-   "foto": null,
+   "foto": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Jonas_Aidoo.jpg/500px-Jonas_Aidoo.jpg",
+    "origen": "https://commons.wikimedia.org/wiki/File:Jonas_Aidoo.jpg",
+    "autor": "edwarddallas",
+    "licencia": "Public domain",
+    "licencia_url": ""
+   },
    "slug": "jonas-aidoo"
   },
   {
