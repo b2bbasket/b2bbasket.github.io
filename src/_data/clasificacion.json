@@ -3,18 +3,18 @@
  "este": [
   {
    "equipo": "Atlanta Hawks",
-   "v": 11,
+   "v": 12,
    "d": 6
   },
   {
    "equipo": "Boston Celtics",
    "v": 12,
-   "d": 6
+   "d": 7
   },
   {
    "equipo": "Brooklyn Nets",
    "v": 4,
-   "d": 13
+   "d": 14
   },
   {
    "equipo": "Charlotte Hornets",
@@ -33,28 +33,28 @@
   },
   {
    "equipo": "Detroit Pistons",
-   "v": 11,
+   "v": 12,
    "d": 6
   },
   {
    "equipo": "Indiana Pacers",
    "v": 6,
-   "d": 12
+   "d": 13
   },
   {
    "equipo": "Miami Heat",
-   "v": 10,
+   "v": 11,
    "d": 7
   },
   {
    "equipo": "Milwaukee Bucks",
    "v": 2,
-   "d": 17
+   "d": 18
   },
   {
    "equipo": "New York Knicks",
    "v": 12,
-   "d": 6
+   "d": 7
   },
   {
    "equipo": "Orlando Magic",
@@ -63,12 +63,12 @@
   },
   {
    "equipo": "Philadelphia 76ers",
-   "v": 15,
+   "v": 16,
    "d": 4
   },
   {
    "equipo": "Toronto Raptors",
-   "v": 6,
+   "v": 7,
    "d": 11
   },
   {
@@ -80,18 +80,18 @@
  "oeste": [
   {
    "equipo": "Dallas Mavericks",
-   "v": 11,
+   "v": 12,
    "d": 7
   },
   {
    "equipo": "Denver Nuggets",
-   "v": 10,
+   "v": 11,
    "d": 6
   },
   {
    "equipo": "Golden State Warriors",
    "v": 10,
-   "d": 8
+   "d": 9
   },
   {
    "equipo": "Houston Rockets",
@@ -101,26 +101,26 @@
   {
    "equipo": "Los Angeles Clippers",
    "v": 4,
-   "d": 13
+   "d": 14
   },
   {
    "equipo": "Los Angeles Lakers",
    "v": 15,
-   "d": 3
+   "d": 4
   },
   {
    "equipo": "Memphis Grizzlies",
-   "v": 14,
+   "v": 15,
    "d": 5
   },
   {
    "equipo": "Minnesota Timberwolves",
    "v": 14,
-   "d": 5
+   "d": 6
   },
   {
    "equipo": "New Orleans Pelicans",
-   "v": 5,
+   "v": 6,
    "d": 14
   },
   {
@@ -131,11 +131,11 @@
   {
    "equipo": "Phoenix Suns",
    "v": 9,
-   "d": 8
+   "d": 9
   },
   {
    "equipo": "Portland Trail Blazers",
-   "v": 12,
+   "v": 13,
    "d": 6
   },
   {
@@ -145,13 +145,13 @@
   },
   {
    "equipo": "San Antonio Spurs",
-   "v": 15,
+   "v": 16,
    "d": 4
   },
   {
    "equipo": "Utah Jazz",
    "v": 3,
-   "d": 16
+   "d": 17
   }
  ]
 }
